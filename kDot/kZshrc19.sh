@@ -1,4 +1,6 @@
 #=============================================================
+# i dont see Collor ?
+#=============================================================
 export EDITOR="vim"
 export ZPLUG_HOME=$HOME/.zplug
 # zplug initialization

@@ -2,7 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # My-bash-----bashrc----acer18 alf king 
 
-
+#########################################################################
+#  LEGACY BASH
 #########################################################################
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
