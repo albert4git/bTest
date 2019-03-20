@@ -1,0 +1,105 @@
+===================================================================================================
+gcc test.c -l sqlite3
+gcc -o testDB test.c -l sqlite3
+$./a.out
+Opened database successfully
+
+gcc -o version version.c -l sqlite3 -std=c99
+
+===================================================================================================
+all: hello.exe
+
+hello.exe: hello.o
+	 gcc -o hello.exe hello.o
+
+hello.o: hello.c
+	 gcc -c hello.c
+     
+clean:
+	 rm hello.o hello.exe
+
+Run the "make" utility as follows:
+
+> make
+gcc -c hello.c
+gcc -o hello.exe hello.o
+
+
+=====================================================================================
+
+CC=gcc
+CFLAGS=-I.
+DEPS = hellomake.h
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+hellomake: hellomake.o hellofunc.o 
+	$(CC) -o hellomake hellomake.o hellofunc.o 
+===================================================================================================
+===================================================================================================
+More GCC Compiler Options
+
+A few commonly-used GCC compiler options are:
+
+$ g++ -Wall -g -o Hello.exe Hello.cpp
+
+    -o: specifies the output executable filename.
+    -Wall: prints "all" Warning messages.
+    -g: generates additional symbolic debuggging information for use with gdb debugger.
+
+Compile and Link Separately
+
+The above command compile the source file into object file and link with other object files and system libraries into executable in one step. You may separate compile and link in two steps as follows:
+
+// Compile-only with -c option
+> g++ -c -Wall -g Hello.cpp
+// Link object file(s) into an executable
+> g++ -g -o Hello.exe Hello.o
+
+===================================================================================================
+
+Compile and Link Multiple Source Files
+
+Suppose that your program has two source files: file1.cpp, file2.cpp. You could compile all of them in a single command:
+
+> g++ -o myprog.exe file1.cpp file2.cpp 
+
+However, we usually compile each of the source files separately into object file, and link them together in the later stage. In this case, changes in one file does not require re-compilation of the other files.
+
+> g++ -c file1.cpp
+> g++ -c file2.cpp
+> g++ -o myprog.exe file1.o file2.o
+===================================================================================================
+Pre-processing: via the GNU C Preprocessor (cpp.exe), which includes the headers (#include) and expands the macros (#define).
+
+> cpp hello.c > hello.i
+
+The resultant intermediate file "hello.i" contains the expanded source code.
+Compilation: The compiler compiles the pre-processed source code into assembly code for a specific processor.
+
+> gcc -S hello.i
+
+The -S option specifies to produce assembly code, instead of object code. The resultant assembly file is "hello.s".
+Assembly: The assembler (as.exe) converts the assembly code into machine code in the object file "hello.o".
+
+> as -o hello.o hello.s
+
+Linker: Finally, the linker (ld.exe) links the object code with the library code to produce an executable file "hello.exe".
+
+> ld -o hello.exe hello.o ...libraries...
+
+===================================================================================================
+Verbose Mode (-v)
+
+You can see the detailed compilation process by enabling -v (verbose) option. For example,
+
+> gcc -v -o hello.exe hello.c
+
+===================================================================================================
+
+===================================================================================================
+
+===================================================================================================
+file:///home/red/Documents/MAKE/GCC%20and%20Make%20-%20A%20Tutorial%20on%20how%20to%20compile,%20link%20and%20build%20C_C++%20applications.html
+===================================================================================================
