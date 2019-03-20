@@ -400,6 +400,39 @@ __setprompt	kDot/kBashColorRC19.sh	/^function __setprompt$/;"	f
 mkd	kDot/kZshrc19.sh	/^function mkd() {$/;"	f
 tre	kDot/kZshrc19.sh	/^function tre() {$/;"	f
 fkill	kDot/kZshrc19.sh	/^fkill() {$/;"	f
+$MYVIMRC	kDot/kMinit.vim	/^        let $MYVIMRC='~\/.config\/nvim\/init.vim'$/;"	v
+s:thesaurus_pat	kDot/kMinit.vim	/^        let s:thesaurus_pat = "~\/git\/aTest\/dotFiles\/DICT\/mthesaur.txt"$/;"	v
+maplocalleader	kDot/kMinit.vim	/^        let maplocalleader=','$/;"	v
+mapleader	kDot/kMinit.vim	/^        let mapleader=' '$/;"	v
+vimrc	kDot/kMinit.vim	/^        augroup vimrc$/;"	a
+g:pymode_python	kDot/kMinit.vim	/^        let g:pymode_python = 'python3'$/;"	v
+<cr>	kDot/kMinit.vim	/^        nnoremap <cr> o<esc>$/;"	m
+<CR>	kDot/kMinit.vim	/^        inoremap <silent><expr> <CR> (pumvisible() && bufname('%') !=# '[Command Line]' ? "\\<C-e>\\<CR>" : "\\<C-g>u\\<CR>")$/;"	m
+}	kDot/kMinit.vim	/^        noremap } }^$/;"	m
+>	kDot/kMinit.vim	/^        nnoremap > v>$/;"	m
+<	kDot/kMinit.vim	/^        nnoremap < v<$/;"	m
+<	kDot/kMinit.vim	/^        vnoremap < <gv$/;"	m
+>	kDot/kMinit.vim	/^        vnoremap > >gv$/;"	m
+.	kDot/kMinit.vim	/^        vnoremap . :normal .<CR>$/;"	m
+w!!	kDot/kMinit.vim	/^        cmap w!! w !sudo tee % >\/dev\/null$/;"	m
+cd	kDot/kMinit.vim	/^        map cd :cd %:p:h<cr>$/;"	m
+ScriptExecute	kDot/kMinit.vim	/^        function! ScriptExecute()$/;"	f
+ScriptExecutePermission	kDot/kMinit.vim	/^        augroup ScriptExecutePermission$/;"	a
+SourceVimrc	kDot/kMinit.vim	/^        augroup SourceVimrc$/;"	a
+<F1>	kDot/kMinit.vim	/^        inoremap <F1> <ESC>$/;"	m
+<F1>	kDot/kMinit.vim	/^        nnoremap <F1> <ESC>$/;"	m
+<F1>	kDot/kMinit.vim	/^        vnoremap <F1> <ESC>$/;"	m
+g:nnv_search_paths	kDot/kMinit.vim	/^        let g:nnv_search_paths = ['~\/git\/aTest\/dotFiles\/']$/;"	v
+g:nnv_search_paths	kDot/kMinit.vim	/^        let g:nnv_search_paths = ['~\/git\/aTest\/dotFiles\/']$/;"	v
+g:oblique#clear_highlight	kDot/kMinit.vim	/^        let g:oblique#clear_highlight =0$/;"	v
+;l	kDot/kMinit.vim	/^        nnoremap ;l :execute "leftabove vsplit" bufname('#')<cr>$/;"	m
+;r	kDot/kMinit.vim	/^        nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>$/;"	m
+<C-j>	kDot/kMinit.vim	/^        nnoremap <C-j> :bn<cr>$/;"	m
+<C-k>	kDot/kMinit.vim	/^        nnoremap <C-k> :bp<cr>$/;"	m
+<m-right>	kDot/kMinit.vim	/^        nnoremap <m-right> :vertical resize +3<cr>$/;"	m
+<m-left>	kDot/kMinit.vim	/^        nnoremap <m-left> :vertical resize -3<cr>$/;"	m
+<m-up>	kDot/kMinit.vim	/^        nnoremap <m-up> :resize +3<cr>$/;"	m
+<m-down>	kDot/kMinit.vim	/^        nnoremap <m-down> :resize -3<cr>$/;"	m
 g:python_host_prog	kDot/minYcmJedi.vim	/^let g:python_host_prog = '\/usr\/bin\/python2'$/;"	v
 g:python3_host_prog	kDot/minYcmJedi.vim	/^let g:python3_host_prog = '\/usr\/bin\/python3'$/;"	v
 g:airline_theme	kDot/minYcmJedi.vim	/^                let g:airline_theme='light'$/;"	v
@@ -978,6 +1011,256 @@ g:LanguageClient_serverCommands	kDot/minLangServ.vim	/^let g:LanguageClient_serv
 M	kDot/minLangServ.vim	/^nnoremap <silent> M :call LanguageClient#textDocument_hover()<CR>$/;"	m
 gd	kDot/minLangServ.vim	/^nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>$/;"	m
 <F2>	kDot/minLangServ.vim	/^nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>$/;"	m
+g:python_host_prog	kDot/minFzfDeoLsJediSnip.vim	/^let g:python_host_prog = '\/usr\/bin\/python2'$/;"	v
+g:python3_host_prog	kDot/minFzfDeoLsJediSnip.vim	/^let g:python3_host_prog = '\/usr\/bin\/python3'$/;"	v
+]c	kDot/minFzfDeoLsJediSnip.vim	/^                        nmap ]c <Plug>GitGutterNextHunk$/;"	m
+[c	kDot/minFzfDeoLsJediSnip.vim	/^                        nmap [c <Plug>GitGutterPrevHunk$/;"	m
+hp	kDot/minFzfDeoLsJediSnip.vim	/^                        nmap hp <Plug>GitGutterPreviewHunk$/;"	m
+hs	kDot/minFzfDeoLsJediSnip.vim	/^                        nmap hs <Plug>GitGutterStageHunk$/;"	m
+hu	kDot/minFzfDeoLsJediSnip.vim	/^                        nmap hu <Plug>GitGutterUndoHunk$/;"	m
+g:gitgutter_signs	kDot/minFzfDeoLsJediSnip.vim	/^                        let g:gitgutter_signs = 1$/;"	v
+g:gitgutter_max_signs	kDot/minFzfDeoLsJediSnip.vim	/^                        let g:gitgutter_max_signs = 2000$/;"	v
+g:extradite_width	kDot/minFzfDeoLsJediSnip.vim	/^                        let g:extradite_width = 60$/;"	v
+g:extradite_showhash	kDot/minFzfDeoLsJediSnip.vim	/^                        let g:extradite_showhash = 1 "show abbre commit hashes.$/;"	v
+g:brightest#highlight	kDot/minFzfDeoLsJediSnip.vim	/^                let g:brightest#highlight = { "group" : "Define" }$/;"	v
+g:TagHighlightSettings	kDot/minFzfDeoLsJediSnip.vim	/^                        let g:TagHighlightSettings = {}$/;"	v
+g:TagHighlightSettings	kDot/minFzfDeoLsJediSnip.vim	/^                let g:TagHighlightSettings['TagFileName'] = 'tags'$/;"	v
+g:TagHighlightSettings	kDot/minFzfDeoLsJediSnip.vim	/^                let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'$/;"	v
+g:TagHighlightSettings	kDot/minFzfDeoLsJediSnip.vim	/^                let g:TagHighlightSettings['CtagsVariant'] = 'exuberant'$/;"	v
+g:TagHighlightSettings	kDot/minFzfDeoLsJediSnip.vim	/^                let g:TagHighlightSettings['CtagsArguments'] = []$/;"	v
+g:TagHighlightSettings	kDot/minFzfDeoLsJediSnip.vim	/^                let g:TagHighlightSettings['CtagsExtraArguments'] = []$/;"	v
+g:TagHighlightSettings	kDot/minFzfDeoLsJediSnip.vim	/^                let g:TagHighlightSettings['ForcePythonVariant'] = 'if_pyth3'$/;"	v
+g:TagHighlightSettings	kDot/minFzfDeoLsJediSnip.vim	/^                let g:TagHighlightSettings['PythonVariantPriority'] = [$/;"	v
+g:echodoc_enable_at_startup	kDot/minFzfDeoLsJediSnip.vim	/^                let g:echodoc_enable_at_startup = 1$/;"	v
+g:python_support_python2_require	kDot/minFzfDeoLsJediSnip.vim	/^                let g:python_support_python2_require = 0$/;"	v
+g:python_support_python3_require	kDot/minFzfDeoLsJediSnip.vim	/^                let g:python_support_python3_require = 0$/;"	v
+g:dokumentary_docprgs	kDot/minFzfDeoLsJediSnip.vim	/^                let g:dokumentary_docprgs = {'c': 'cdoc {0}'}$/;"	v
+g:pyref_mapping	kDot/minFzfDeoLsJediSnip.vim	/^                let g:pyref_mapping = 'T'$/;"	v
+g:pyref_python	kDot/minFzfDeoLsJediSnip.vim	/^                let g:pyref_python = '\/usr\/share\/doc\/python3\/html\/'$/;"	v
+g:ref_pydoc_cmd	kDot/minFzfDeoLsJediSnip.vim	/^                let g:ref_pydoc_cmd = 'pydoc'$/;"	v
+g:ref_pydoc_complete_head	kDot/minFzfDeoLsJediSnip.vim	/^                let g:ref_pydoc_complete_head = 1$/;"	v
+g:airline_theme	kDot/minFzfDeoLsJediSnip.vim	/^                let g:airline_theme='light'$/;"	v
+g:airline_section_c	kDot/minFzfDeoLsJediSnip.vim	/^                let g:airline_section_c = '%{strftime("%Y %b %d %X")}'$/;"	v
+g:airline#extensions#tabline#enabled	kDot/minFzfDeoLsJediSnip.vim	/^                let g:airline#extensions#tabline#enabled = 2$/;"	v
+g:airline#extensions#tabline#buffer_min_count	kDot/minFzfDeoLsJediSnip.vim	/^                let g:airline#extensions#tabline#buffer_min_count = 1$/;"	v
+g:airline#extensions#syntastic#enabled	kDot/minFzfDeoLsJediSnip.vim	/^                let g:airline#extensions#syntastic#enabled = 1$/;"	v
+g:airline#extensions#branch#enabled	kDot/minFzfDeoLsJediSnip.vim	/^                let g:airline#extensions#branch#enabled = 1$/;"	v
+g:airline_symbols	kDot/minFzfDeoLsJediSnip.vim	/^                        let g:airline_symbols = {}$/;"	v
+g:highlightedyank_highlight_duration	kDot/minFzfDeoLsJediSnip.vim	/^                let g:highlightedyank_highlight_duration = -1$/;"	v
+g:indentLine_enabled	kDot/minFzfDeoLsJediSnip.vim	/^                let g:indentLine_enabled = 1$/;"	v
+g:indentLine_noConcealCursor	kDot/minFzfDeoLsJediSnip.vim	/^                let g:indentLine_noConcealCursor='nc'$/;"	v
+g:indentLine_color_term	kDot/minFzfDeoLsJediSnip.vim	/^                let g:indentLine_color_term = 10$/;"	v
+g:indentLine_faster	kDot/minFzfDeoLsJediSnip.vim	/^                    let g:indentLine_faster = 1$/;"	v
+g:indentLine_char	kDot/minFzfDeoLsJediSnip.vim	/^                    let g:indentLine_char = '.'$/;"	v
+g:indentLine_char	kDot/minFzfDeoLsJediSnip.vim	/^                    let g:indentLine_char = '|'$/;"	v
+g:indentLine_first_char	kDot/minFzfDeoLsJediSnip.vim	/^                    let g:indentLine_first_char='.'$/;"	v
+g:indentLine_first_char	kDot/minFzfDeoLsJediSnip.vim	/^                    let g:indentLine_first_char='|'$/;"	v
+g:indentLine_showFirstIndentLevel	kDot/minFzfDeoLsJediSnip.vim	/^                    let g:indentLine_showFirstIndentLevel=1$/;"	v
+g:indentLine_fileTypeExclude	kDot/minFzfDeoLsJediSnip.vim	/^                        let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']$/;"	v
+g:side_search_prg	kDot/minFzfDeoLsJediSnip.vim	/^        let g:side_search_prg = 'ag --word-regexp'$/;"	v
+g:side_search_splitter	kDot/minFzfDeoLsJediSnip.vim	/^        let g:side_search_splitter = 'vnew'$/;"	v
+g:side_search_split_pct	kDot/minFzfDeoLsJediSnip.vim	/^        let g:side_search_split_pct = 0.4$/;"	v
+<Leader>ss	kDot/minFzfDeoLsJediSnip.vim	/^        nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p$/;"	m
+SS	kDot/minFzfDeoLsJediSnip.vim	/^        command! -complete=file -nargs=+ SS execute 'SideSearch <args>'$/;"	c
+g:nv_search_paths	kDot/minFzfDeoLsJediSnip.vim	/^                let g:nv_search_paths = ['~\/git\/aTest\/dotFiles\/', '~\/git\/aTest\/pyLabGitPdbPythonMode27' ]$/;"	v
+g:unite_source_history_yank_save_clipboard	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_source_history_yank_save_clipboard = 1$/;"	v
+g:unite_source_mark_marks	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_source_mark_marks = "abcdefghijklmnopqrstuvwxyz"$/;"	v
+g:unite_candidate_icon	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_candidate_icon = '∘'$/;"	v
+g:unite_source_history_yank_enable	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_source_history_yank_enable = 1$/;"	v
+g:unite_enable_start_insert	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_enable_start_insert = 0$/;"	v
+g:unite_enable_short_source_mes	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_enable_short_source_mes = 0$/;"	v
+g:unite_force_overwrite_statusline	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_force_overwrite_statusline = 1$/;"	v
+g:unite_prompt	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_prompt = '::: '$/;"	v
+g:unite_marked_icon	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_marked_icon = '✓'$/;"	v
+g:unite_winheight	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_winheight = 15$/;"	v
+g:unite_winwidth	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_winwidth = 50$/;"	v
+g:unite_update_time	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_update_time = 200$/;"	v
+g:unite_split_rule	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_split_rule = 'botright'$/;"	v
+g:unite_split_rule	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_split_rule = "topleft"$/;"	v
+g:unite_data_directory	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_data_directory ='~\/.config\/nvim\/tmp\/unite'$/;"	v
+g:unite_source_buffer_time_format	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_source_buffer_time_format = '(%d-%m-%Y %H:%M:%S) '$/;"	v
+g:unite_source_file_mru_time_format	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_source_file_mru_time_format = '(%d-%m-%Y %H:%M:%S) '$/;"	v
+g:unite_source_directory_mru_time_format	kDot/minFzfDeoLsJediSnip.vim	/^                let g:unite_source_directory_mru_time_format = '(%d-%m-%Y %H:%M:%S) '$/;"	v
+<C-q>	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <C-q> :Unite help buffer file_mru file file_rec bookmark <CR>$/;"	m
+<Leader>u	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>u :Unite help file_mru file buffer file_rec bookmark <CR>$/;"	m
+<Leader>\	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>\\ :Unite -silent -vertical -winwidth=40  -direction=botright -toggle outline<CR>$/;"	m
+<Leader>h	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>h :UniteWithCursorWord -silent help<CR>$/;"	m
+<Leader>r	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>r :<C-u>Unite -buffer-name=register register<CR>$/;"	m
+<Leader>c	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>$/;"	m
+<Leader>j	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>j :<C-u>Unite -buffer-name=jump jump<CR>$/;"	m
+<Leader>'	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>' :Unite bookmark <CR>$/;"	m
+g:side_search_prg	kDot/minFzfDeoLsJediSnip.vim	/^        let g:side_search_prg = 'ag --word-regexp'$/;"	v
+g:side_search_splitter	kDot/minFzfDeoLsJediSnip.vim	/^                let g:side_search_splitter = 'vnew'$/;"	v
+g:side_search_split_pct	kDot/minFzfDeoLsJediSnip.vim	/^                let g:side_search_split_pct = 0.4$/;"	v
+<Leader>ss	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p$/;"	m
+SS	kDot/minFzfDeoLsJediSnip.vim	/^                command! -complete=file -nargs=+ SS execute 'SideSearch <args>'$/;"	c
+UltiSnipsCallUnite	kDot/minFzfDeoLsJediSnip.vim	/^                function! UltiSnipsCallUnite()$/;"	f
+<F3>	kDot/minFzfDeoLsJediSnip.vim	/^                inoremap <F3> <C-R>=(pumvisible()? "\\<LT>C-E>":"")<CR><C-R>=UltiSnipsCallUnite()<CR>$/;"	m
+g:UltiSnipsExpandTrigger	kDot/minFzfDeoLsJediSnip.vim	/^                let g:UltiSnipsExpandTrigger="<tab>"$/;"	v
+g:UltiSnipsJumpBackwardTrigger	kDot/minFzfDeoLsJediSnip.vim	/^                let g:UltiSnipsJumpBackwardTrigger="<S-tab>"$/;"	v
+g:UltiSnipsJumpForwardTrigger	kDot/minFzfDeoLsJediSnip.vim	/^                let g:UltiSnipsJumpForwardTrigger="<C-q>"$/;"	v
+<C-s>	kDot/minFzfDeoLsJediSnip.vim	/^                imap <C-s>    <Plug>(neosnippet_start_unite_snippet)$/;"	m
+<C-b>	kDot/minFzfDeoLsJediSnip.vim	/^                imap <C-b>    <Plug>(neosnippet_expand_or_jump)$/;"	m
+<Leader>y	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>$/;"	m
+g:bling_time	kDot/minFzfDeoLsJediSnip.vim	/^                let g:bling_time = 42$/;"	v
+g:bling_color_fg	kDot/minFzfDeoLsJediSnip.vim	/^                let g:bling_color_fg = 'green'$/;"	v
+g:bling_color_cterm	kDot/minFzfDeoLsJediSnip.vim	/^                let g:bling_color_cterm = 'reverse'$/;"	v
+g:ale_sign_column_always	kDot/minFzfDeoLsJediSnip.vim	/^                let g:ale_sign_column_always = 1$/;"	v
+g:ale_sign_error	kDot/minFzfDeoLsJediSnip.vim	/^                let g:ale_sign_error = '>>'$/;"	v
+g:ale_sign_warning	kDot/minFzfDeoLsJediSnip.vim	/^                let g:ale_sign_warning = '--'$/;"	v
+g:ale_linters	kDot/minFzfDeoLsJediSnip.vim	/^                let g:ale_linters = {$/;"	v
+NERDTreeShowBookmarks	kDot/minFzfDeoLsJediSnip.vim	/^                 let NERDTreeShowBookmarks=1$/;"	v
+NERDTreeIgnore	kDot/minFzfDeoLsJediSnip.vim	/^                 let NERDTreeIgnore=['\\.py[cd]$', '\\~$', '\\.swo$', '\\.swp$', '^\\.git$', '^\\.hg$', '^\\.svn$', '\\.bzr$']$/;"	v
+NERDTreeChDirMode	kDot/minFzfDeoLsJediSnip.vim	/^                 let NERDTreeChDirMode=0$/;"	v
+NERDTreeQuitOnOpen	kDot/minFzfDeoLsJediSnip.vim	/^                 let NERDTreeQuitOnOpen=1$/;"	v
+NERDTreeMouseMode	kDot/minFzfDeoLsJediSnip.vim	/^                 let NERDTreeMouseMode=2$/;"	v
+NERDTreeShowHidden	kDot/minFzfDeoLsJediSnip.vim	/^                 let NERDTreeShowHidden=1$/;"	v
+NERDTreeKeepTreeInNewTab	kDot/minFzfDeoLsJediSnip.vim	/^                 let NERDTreeKeepTreeInNewTab=1$/;"	v
+NERDTreeToggleInCurDir	kDot/minFzfDeoLsJediSnip.vim	/^                 function! NERDTreeToggleInCurDir()$/;"	f
+g:NERDDefaultAlign	kDot/minFzfDeoLsJediSnip.vim	/^                 let g:NERDDefaultAlign = 'left'$/;"	v
+g:NERDCommentEmptyLines	kDot/minFzfDeoLsJediSnip.vim	/^                 let g:NERDCommentEmptyLines = 1$/;"	v
+g:NERDTrimTrailingWhitespace	kDot/minFzfDeoLsJediSnip.vim	/^                 let g:NERDTrimTrailingWhitespace = 1$/;"	v
+<F2>	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <F2> <Esc>:help <C-r><C-w><CR>$/;"	m
+<C-F2>	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <C-F2> <Esc>:helpgrep <C-r><C-w><CR>$/;"	m
+<F3>	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>$/;"	m
+<F4>	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <F4> :w<CR>:!python %<CR>$/;"	m
+<F5>	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <F5> :TagbarToggle<CR>$/;"	m
+<F7>	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <F7> :Scratch<CR>$/;"	m
+<F6>	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <F6> :ScratchPreview<CR>$/;"	m
+<F9>	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <F9> :call ToggleQuickFix()<CR>$/;"	m
+<Leader>b	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>b :cprev<cr>zvzz$/;"	m
+<Leader>n	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>n :cnext<cr>zvzz$/;"	m
+<F8>	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <F8> :LocationToggle<cr>$/;"	m
+<LocalLeader>n	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <LocalLeader>n :lnext<cr>zvzz$/;"	m
+<LocalLeader>b	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <LocalLeader>b :lprev<cr>zvzz$/;"	m
+<localleader>r	kDot/minFzfDeoLsJediSnip.vim	/^                        noremap <localleader>r :Ranger<CR>$/;"	m
+g:undoquit_mapping	kDot/minFzfDeoLsJediSnip.vim	/^                 let g:undoquit_mapping = ';q' $/;"	v
+zp	kDot/minFzfDeoLsJediSnip.vim	/^                 nmap zp <Plug>yankstack_substitute_older_paste$/;"	m
+zn	kDot/minFzfDeoLsJediSnip.vim	/^                 nmap zn <Plug>yankstack_substitute_newer_paste$/;"	m
+g:EasyMotion_smartcase	kDot/minFzfDeoLsJediSnip.vim	/^                let g:EasyMotion_smartcase = 1$/;"	v
+g:EasyMotion_do_mapping	kDot/minFzfDeoLsJediSnip.vim	/^                let g:EasyMotion_do_mapping = 0 "-Disable default mappings$/;"	v
+<LocalLeader><LocalLeader>	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <LocalLeader><LocalLeader> <Plug>(easymotion-overwin-w)$/;"	m
+<C-W>r	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <C-W>r  <Plug>(Visual-Split-Resize)$/;"	m
+<C-W>s	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <C-W>s <Plug>(Visual-Split-Split)$/;"	m
+g:myplugin_enablefeature	kDot/minFzfDeoLsJediSnip.vim	/^                let g:myplugin_enablefeature = 1$/;"	v
+g:myplugin_defaultdir	kDot/minFzfDeoLsJediSnip.vim	/^                let g:myplugin_defaultdir = $HOME$/;"	v
+g:myplugin_weirdmode	kDot/minFzfDeoLsJediSnip.vim	/^                let g:myplugin_weirdmode = 'm'$/;"	v
+autoformat_settings	kDot/minFzfDeoLsJediSnip.vim	/^                augroup autoformat_settings$/;"	a
+<Leader>a&	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>a& :Tabularize \/&<CR>$/;"	m
+<Leader>a&	kDot/minFzfDeoLsJediSnip.vim	/^                vmap <Leader>a& :Tabularize \/&<CR>$/;"	m
+<Leader>a=	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>a= :Tabularize \/^[^=]*\\zs=<CR>$/;"	m
+<Leader>a=	kDot/minFzfDeoLsJediSnip.vim	/^                vmap <Leader>a= :Tabularize \/^[^=]*\\zs=<CR>$/;"	m
+<Leader>a=>	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>a=> :Tabularize \/=><CR>$/;"	m
+<Leader>a=>	kDot/minFzfDeoLsJediSnip.vim	/^                vmap <Leader>a=> :Tabularize \/=><CR>$/;"	m
+<Leader>a:	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>a: :Tabularize \/:<CR>$/;"	m
+<Leader>a:	kDot/minFzfDeoLsJediSnip.vim	/^                vmap <Leader>a: :Tabularize \/:<CR>$/;"	m
+<Leader>a::	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>a:: :Tabularize \/:\\zs<CR>$/;"	m
+<Leader>a::	kDot/minFzfDeoLsJediSnip.vim	/^                vmap <Leader>a:: :Tabularize \/:\\zs<CR>$/;"	m
+<Leader>a,	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>a, :Tabularize \/,<CR>$/;"	m
+<Leader>a,	kDot/minFzfDeoLsJediSnip.vim	/^                vmap <Leader>a, :Tabularize \/,<CR>$/;"	m
+<Leader>a,,	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>a,, :Tabularize \/,\\zs<CR>$/;"	m
+<Leader>a,,	kDot/minFzfDeoLsJediSnip.vim	/^                vmap <Leader>a,, :Tabularize \/,\\zs<CR>$/;"	m
+<Leader>a<Bar>	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>a<Bar> :Tabularize \/<Bar><CR>$/;"	m
+<Leader>a<Bar>	kDot/minFzfDeoLsJediSnip.vim	/^                vmap <Leader>a<Bar> :Tabularize \/<Bar><CR>$/;"	m
+g:table_mode_corner_corner	kDot/minFzfDeoLsJediSnip.vim	/^                let g:table_mode_corner_corner='+'$/;"	v
+g:table_mode_header_fillchar	kDot/minFzfDeoLsJediSnip.vim	/^                let g:table_mode_header_fillchar='='$/;"	v
+g:jedi#use_splits_not_buffers	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#use_splits_not_buffers = "left"$/;"	v
+g:jedi#popup_on_dot	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#popup_on_dot = 0$/;"	v
+g:jedi#goto_command	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#goto_command = "<leader>d"$/;"	v
+g:jedi#goto_assignments_command	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#goto_assignments_command = "<leader>g"$/;"	v
+g:jedi#goto_definitions_command	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#goto_definitions_command = ""$/;"	v
+g:jedi#documentation_command	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#documentation_command = "M"$/;"	v
+g:jedi#usages_command	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#usages_command = "<leader>n"$/;"	v
+g:jedi#rename_command	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#rename_command = "<leader>r"$/;"	v
+g:jedi#completions_command	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#completions_command = "<C-z>"$/;"	v
+g:jedi#popup_on_dot	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#popup_on_dot = 1$/;"	v
+g:jedi#completions_enabled	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#completions_enabled = 1$/;"	v
+g:jedi#popup_select_first	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#popup_select_first = 1$/;"	v
+g:jedi#show_call_signatures	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#show_call_signatures = "1"$/;"	v
+g:jedi#goto_command	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#goto_command = "gt"$/;"	v
+g:jedi#auto_close_doc	kDot/minFzfDeoLsJediSnip.vim	/^        let g:jedi#auto_close_doc = 0  " close preview window after completion$/;"	v
+g:deoplete#enable_at_startup	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#enable_at_startup = 1$/;"	v
+g:deoplete#enable_ignore_case	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#enable_ignore_case = 1$/;"	v
+g:deoplete#enable_smart_case	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#enable_smart_case = 1$/;"	v
+g:deoplete#enable_camel_case	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#enable_camel_case = 1$/;"	v
+g:deoplete#enable_refresh_always	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#enable_refresh_always = 1$/;"	v
+g:deoplete#max_abbr_width	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#max_abbr_width = 0$/;"	v
+g:deoplete#max_menu_width	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#max_menu_width = 0$/;"	v
+g:deoplete#sources#ternjs#timeout	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#sources#ternjs#timeout = 3$/;"	v
+g:deoplete#sources#ternjs#types	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#sources#ternjs#types = 1$/;"	v
+g:deoplete#sources#ternjs#docs	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#sources#ternjs#docs = 1$/;"	v
+g:deoplete#skip_chars	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#skip_chars = ['(', ')', '<', '>']$/;"	v
+g:deoplete#tag#cache_limit_size	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#tag#cache_limit_size = 800000$/;"	v
+g:deoplete#file#enable_buffer_path	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#file#enable_buffer_path = 1$/;"	v
+g:LanguageClient_serverCommands	kDot/minFzfDeoLsJediSnip.vim	/^        let g:LanguageClient_serverCommands = {$/;"	v
+g:deoplete#sources#jedi#statement_length	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#sources#jedi#statement_length = 30$/;"	v
+g:deoplete#sources#jedi#show_docstring	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#sources#jedi#show_docstring = 1$/;"	v
+g:deoplete#sources#jedi#short_types	kDot/minFzfDeoLsJediSnip.vim	/^        let g:deoplete#sources#jedi#short_types = 1$/;"	v
+<C-g>	kDot/minFzfDeoLsJediSnip.vim	/^        inoremap <expr><C-g>     deoplete#undo_completion()$/;"	m
+<C-l>	kDot/minFzfDeoLsJediSnip.vim	/^        inoremap <expr><C-l>     deoplete#refresh()$/;"	m
+<C-h>	kDot/minFzfDeoLsJediSnip.vim	/^        inoremap <expr><C-h>     deoplete#smart_close_popup()."\\<C-h>"$/;"	m
+<C-o>	kDot/minFzfDeoLsJediSnip.vim	/^        inoremap <silent> <C-o> <C-x><C-o>$/;"	m
+<C-d>	kDot/minFzfDeoLsJediSnip.vim	/^        inoremap <silent> <C-d> <C-x><C-d>$/;"	m
+<C-f>	kDot/minFzfDeoLsJediSnip.vim	/^        inoremap <silent> <C-f> <C-x><C-f>$/;"	m
+<C-l>	kDot/minFzfDeoLsJediSnip.vim	/^        inoremap <silent> <C-l> <C-x><C-l>$/;"	m
+<C-]>	kDot/minFzfDeoLsJediSnip.vim	/^        inoremap <silent> <C-]> <C-x><C-]>$/;"	m
+;d	kDot/minFzfDeoLsJediSnip.vim	/^        nnoremap ;d mayiw`a:exe "!dict -P - $(echo " . @" . "\\| recode latin1..utf-8)"<CR>$/;"	m
+g:fzf_layout	kDot/minFzfDeoLsJediSnip.vim	/^        let g:fzf_layout = { 'window': 'enew' }$/;"	v
+g:fzf_layout	kDot/minFzfDeoLsJediSnip.vim	/^        let g:fzf_layout = { 'window': '-tabnew' }$/;"	v
+g:fzf_layout	kDot/minFzfDeoLsJediSnip.vim	/^        let g:fzf_layout = { 'window': '10split enew' }$/;"	v
+g:fzf_colors	kDot/minFzfDeoLsJediSnip.vim	/^        let g:fzf_colors =$/;"	v
+fzf_statusline	kDot/minFzfDeoLsJediSnip.vim	/^        function! s:fzf_statusline()$/;"	f
+g:fzf_command_prefix	kDot/minFzfDeoLsJediSnip.vim	/^        let g:fzf_command_prefix = 'Fzf'$/;"	v
+g:fzf_action	kDot/minFzfDeoLsJediSnip.vim	/^        let g:fzf_action = {$/;"	v
+<leader><tab>	kDot/minFzfDeoLsJediSnip.vim	/^        nmap <leader><tab> <plug>(fzf-maps-n)$/;"	m
+<leader><tab>	kDot/minFzfDeoLsJediSnip.vim	/^        omap <leader><tab> <plug>(fzf-maps-o)$/;"	m
+<C-j>	kDot/minFzfDeoLsJediSnip.vim	/^        imap <expr><C-j> fzf#vim#complete#word({'left': '18%'})$/;"	m
+<C-l>	kDot/minFzfDeoLsJediSnip.vim	/^        imap <C-l> <plug>(fzf-complete-line)$/;"	m
+FZFTag	kDot/minFzfDeoLsJediSnip.vim	/^        command! FZFTag if !empty(tagfiles()) | call fzf#run({$/;"	c
+tag_handler	kDot/minFzfDeoLsJediSnip.vim	/^        function! s:tag_handler(tag)$/;"	f
+<Leader>t	kDot/minFzfDeoLsJediSnip.vim	/^        nnoremap <silent> <Leader>t :FZFTag<cr>$/;"	m
+g:fzf_buffers_jump	kDot/minFzfDeoLsJediSnip.vim	/^        let g:fzf_buffers_jump = 1$/;"	v
+g:fzf_commits_log_options	kDot/minFzfDeoLsJediSnip.vim	/^        let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'$/;"	v
+g:fzf_tags_command	kDot/minFzfDeoLsJediSnip.vim	/^        let g:fzf_tags_command = 'ctags -R'$/;"	v
+g:fzf_commands_expect	kDot/minFzfDeoLsJediSnip.vim	/^        let g:fzf_commands_expect = 'alt-enter,ctrl-x'$/;"	v
+generate_tags	kDot/minFzfDeoLsJediSnip.vim	/^        let generate_tags=1$/;"	v
+g:ctrlp_cmd	kDot/minFzfDeoLsJediSnip.vim	/^        let g:ctrlp_cmd = 'CtrlPMRU'$/;"	v
+g:ctrlp_extensions	kDot/minFzfDeoLsJediSnip.vim	/^        let g:ctrlp_extensions = ['tag']$/;"	v
+g:ctrlp_match_window_bottom	kDot/minFzfDeoLsJediSnip.vim	/^        let g:ctrlp_match_window_bottom = 0$/;"	v
+g:ctrlp_match_window_reversed	kDot/minFzfDeoLsJediSnip.vim	/^        let g:ctrlp_match_window_reversed = 0$/;"	v
+g:ctrlp_custom_ignore	kDot/minFzfDeoLsJediSnip.vim	/^        let g:ctrlp_custom_ignore = '\\v\\~$|\\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[\/\\\\])\\.(hg|git|bzr)($|[\/\\\\])|__init__\\.py'$/;"	v
+g:ctrlp_dotfiles	kDot/minFzfDeoLsJediSnip.vim	/^        let g:ctrlp_dotfiles = 0$/;"	v
+g:ctrlp_switch_buffer	kDot/minFzfDeoLsJediSnip.vim	/^        let g:ctrlp_switch_buffer = 0$/;"	v
+g:ctrlp_working_path_mode	kDot/minFzfDeoLsJediSnip.vim	/^        let g:ctrlp_working_path_mode = 0$/;"	v
+g:ctrlp_map	kDot/minFzfDeoLsJediSnip.vim	/^        let g:ctrlp_map = '<leader>p'$/;"	v
+g:ctrlp_open_new_file	kDot/minFzfDeoLsJediSnip.vim	/^        let g:ctrlp_open_new_file = 'R'$/;"	v
+g:CommandTMaxFiles	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTMaxFiles = 10000 " maximum number of files scan.$/;"	v
+g:CommandTMaxDepth	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTMaxDepth = 15$/;"	v
+g:CommandTMaxCacheDirectories	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTMaxCacheDirectories = 1 " 0: no limit.$/;"	v
+g:CommandTMaxHeight	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTMaxHeight = 15 " 0: as much as available space.$/;"	v
+g:CommandTMinHeight	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTMinHeight = 0 " 0: single line.$/;"	v
+g:CommandTAlwaysShowDotFiles	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTAlwaysShowDotFiles = 0 " only if entered string contains a dot$/;"	v
+g:CommandTNeverShowDotFiles	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTNeverShowDotFiles  = 0$/;"	v
+g:CommandTScanDotDirectories	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTScanDotDirectories = 0$/;"	v
+g:CommandTMatchWindowAtTop	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTMatchWindowAtTop   = 0 " match window appear at bottom.$/;"	v
+g:CommandTMatchWindowReverse	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTMatchWindowReverse = 1 " let the best match at bottom.$/;"	v
+g:CommandTTageIncludeFilenames	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTTageIncludeFilenames = 1 " include filenames when matches$/;"	v
+;p	kDot/minFzfDeoLsJediSnip.vim	/^        nnoremap ;p :CtrlP<cr>$/;"	m
+;m	kDot/minFzfDeoLsJediSnip.vim	/^        nnoremap ;m :CtrlPMRU<cr>$/;"	m
+;h	kDot/minFzfDeoLsJediSnip.vim	/^        nnoremap ;h :CommandTHelp<cr>$/;"	m
+;b	kDot/minFzfDeoLsJediSnip.vim	/^        nnoremap ;b :CommandTBuffer<cr>$/;"	m
+g:CommandTCancelMap	kDot/minFzfDeoLsJediSnip.vim	/^        let g:CommandTCancelMap=['<C-x>', '<C-c>']$/;"	v
+LocationToggle	kDot/minFzfDeoLsJediSnip.vim	/^        command! LocationToggle call LocationToggle()$/;"	c
+LocationToggle	kDot/minFzfDeoLsJediSnip.vim	/^        function! LocationToggle()$/;"	f
+ToggleQuickFix	kDot/minFzfDeoLsJediSnip.vim	/^        function! ToggleQuickFix()$/;"	f
+<Leader>l	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>l :lgrep -R <cword> .<cr>$/;"	m
+<Leader>g	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>g :execute "vimgrep \/" . expand("<cword>") . "\/j **" <Bar> cw<CR>$/;"	m
+<Leader>a	kDot/minFzfDeoLsJediSnip.vim	/^                nnoremap <Leader>a :Ack <cword> .<cr>$/;"	m
+<Leader>5	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>5 :Pydoc <cword> .<cr>$/;"	m
+<Leader>6	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>6 :Rg <cword> .<cr>$/;"	m
+<Leader>7	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>7 :Ag <cword> .<cr>$/;"	m
+<Leader>8	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>8 <Plug>AgRawSearch <cword> .<cr>$/;"	m
+<Leader>/	kDot/minFzfDeoLsJediSnip.vim	/^                nmap <Leader>\/ <Plug>AgRawSearch$/;"	m
 TheSilverSearcher	kDot/pBOX.vim	/^function! TheSilverSearcher()$/;"	f
 SSSearch	kDot/pBOX.vim	/^command! SSSearch call TheSilverSearcher()$/;"	c
 <Leader>sp	kDot/pBOX.vim	/^nnoremap <Leader>sp :SSSearch<CR>$/;"	m
@@ -1701,36 +1984,3 @@ ToggleQuickFix	kDot/kDEO2.vim	/^        function! ToggleQuickFix()$/;"	f
 <Leader>7	kDot/kDEO2.vim	/^                nmap <Leader>7 :Ag <cword> .<cr>$/;"	m
 <Leader>8	kDot/kDEO2.vim	/^                nmap <Leader>8 <Plug>AgRawSearch <cword> .<cr>$/;"	m
 <Leader>/	kDot/kDEO2.vim	/^                nmap <Leader>\/ <Plug>AgRawSearch$/;"	m
-$MYVIMRC	kDot/kMinit.vim	/^        let $MYVIMRC='~\/.config\/nvim\/init.vim'$/;"	v
-s:thesaurus_pat	kDot/kMinit.vim	/^        let s:thesaurus_pat = "~\/git\/aTest\/dotFiles\/DICT\/mthesaur.txt"$/;"	v
-maplocalleader	kDot/kMinit.vim	/^        let maplocalleader=','$/;"	v
-mapleader	kDot/kMinit.vim	/^        let mapleader=' '$/;"	v
-vimrc	kDot/kMinit.vim	/^        augroup vimrc$/;"	a
-g:pymode_python	kDot/kMinit.vim	/^        let g:pymode_python = 'python3'$/;"	v
-<cr>	kDot/kMinit.vim	/^        nnoremap <cr> o<esc>$/;"	m
-<CR>	kDot/kMinit.vim	/^        inoremap <silent><expr> <CR> (pumvisible() && bufname('%') !=# '[Command Line]' ? "\\<C-e>\\<CR>" : "\\<C-g>u\\<CR>")$/;"	m
-}	kDot/kMinit.vim	/^        noremap } }^$/;"	m
->	kDot/kMinit.vim	/^        nnoremap > v>$/;"	m
-<	kDot/kMinit.vim	/^        nnoremap < v<$/;"	m
-<	kDot/kMinit.vim	/^        vnoremap < <gv$/;"	m
->	kDot/kMinit.vim	/^        vnoremap > >gv$/;"	m
-.	kDot/kMinit.vim	/^        vnoremap . :normal .<CR>$/;"	m
-w!!	kDot/kMinit.vim	/^        cmap w!! w !sudo tee % >\/dev\/null$/;"	m
-cd	kDot/kMinit.vim	/^        map cd :cd %:p:h<cr>$/;"	m
-ScriptExecute	kDot/kMinit.vim	/^        function! ScriptExecute()$/;"	f
-ScriptExecutePermission	kDot/kMinit.vim	/^        augroup ScriptExecutePermission$/;"	a
-SourceVimrc	kDot/kMinit.vim	/^        augroup SourceVimrc$/;"	a
-<F1>	kDot/kMinit.vim	/^        inoremap <F1> <ESC>$/;"	m
-<F1>	kDot/kMinit.vim	/^        nnoremap <F1> <ESC>$/;"	m
-<F1>	kDot/kMinit.vim	/^        vnoremap <F1> <ESC>$/;"	m
-g:nnv_search_paths	kDot/kMinit.vim	/^        let g:nnv_search_paths = ['~\/git\/aTest\/dotFiles\/']$/;"	v
-g:nnv_search_paths	kDot/kMinit.vim	/^        let g:nnv_search_paths = ['~\/git\/aTest\/dotFiles\/']$/;"	v
-g:oblique#clear_highlight	kDot/kMinit.vim	/^        let g:oblique#clear_highlight =0$/;"	v
-;l	kDot/kMinit.vim	/^        nnoremap ;l :execute "leftabove vsplit" bufname('#')<cr>$/;"	m
-;r	kDot/kMinit.vim	/^        nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>$/;"	m
-<C-j>	kDot/kMinit.vim	/^        nnoremap <C-j> :bn<cr>$/;"	m
-<C-k>	kDot/kMinit.vim	/^        nnoremap <C-k> :bp<cr>$/;"	m
-<m-right>	kDot/kMinit.vim	/^        nnoremap <m-right> :vertical resize +3<cr>$/;"	m
-<m-left>	kDot/kMinit.vim	/^        nnoremap <m-left> :vertical resize -3<cr>$/;"	m
-<m-up>	kDot/kMinit.vim	/^        nnoremap <m-up> :resize +3<cr>$/;"	m
-<m-down>	kDot/kMinit.vim	/^        nnoremap <m-down> :resize -3<cr>$/;"	m
