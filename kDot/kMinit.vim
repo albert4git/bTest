@@ -175,8 +175,7 @@
 
 "-2Remap-}}}
 
-        source ~/git/aTest/dotFiles/nVim/DEO3.vim
-        "source ~/git/aTest/dotFiles/nVim/DEO2.vim
+        source ~/git/bTest/kDot/kDEO3.vim
         "source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
         ":::::::::::::::::::::::::::-=2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         source ~/git/aTest/dotFiles/nVim/mix/n-badwolf.vim 
