@@ -1,4 +1,4 @@
-
+#===TMUX==================================================================================
 
 windows:
   - pdbA:
@@ -34,26 +34,3 @@ windows:
         - BASH4:
           - bash
 
-windows:
-  - pdbA:
-      layout: main-vertical
-      panes:
-        - nvim pdbA/FindMax.py
-        - zsh
-  - nVim:
-      layout: main-vertical
-      panes:
-        - nvim
-        - zsh
-  - OneP:
-      layout: tiled
-      panes:
-        - zsh
-        - bash
-  - io4P:
-      layout: tiled
-      panes:
-        - zsh
-        - fish
-        - sh
-        - bash
