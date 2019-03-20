@@ -377,26 +377,6 @@ g#	kDot/kDEO3.vim	/^        nmap <silent> g# g#zz$/;"	m
 ScrollOtherWindow	kDot/kDEO3.vim	/^        fun! ScrollOtherWindow(dir)$/;"	f
 <C-M-Down>	kDot/kDEO3.vim	/^        nmap <silent> <C-M-Down> :call ScrollOtherWindow("down")<CR>$/;"	m
 <C-M-Up>	kDot/kDEO3.vim	/^        nmap <silent> <C-M-Up> :call ScrollOtherWindow("up")<CR>$/;"	m
-fd1	kDot/kBashColorRC19.sh	/^fd1() {$/;"	f
-fd2	kDot/kBashColorRC19.sh	/^fd2() {$/;"	f
-fda	kDot/kBashColorRC19.sh	/^fda() {$/;"	f
-fkill	kDot/kBashColorRC19.sh	/^fkill() {$/;"	f
-fGcoc_preview	kDot/kBashColorRC19.sh	/^fGcoc_preview() {$/;"	f
-fGshow_preview	kDot/kBashColorRC19.sh	/^fGshow_preview() {$/;"	f
-fGshow	kDot/kBashColorRC19.sh	/^fGshow() {$/;"	f
-fGcs	kDot/kBashColorRC19.sh	/^fGcs() {$/;"	f
-fGstash	kDot/kBashColorRC19.sh	/^fGstash() {$/;"	f
-extract	kDot/kBashColorRC19.sh	/^extract () {$/;"	f
-ftext	kDot/kBashColorRC19.sh	/^ftext ()$/;"	f
-cpp	kDot/kBashColorRC19.sh	/^cpp()$/;"	f
-cpg	kDot/kBashColorRC19.sh	/^cpg ()$/;"	f
-mvg	kDot/kBashColorRC19.sh	/^mvg ()$/;"	f
-mkdirg	kDot/kBashColorRC19.sh	/^mkdirg ()$/;"	f
-up	kDot/kBashColorRC19.sh	/^up ()$/;"	f
-pwdtail	kDot/kBashColorRC19.sh	/^pwdtail ()$/;"	f
-netinfo	kDot/kBashColorRC19.sh	/^netinfo ()$/;"	f
-whatsmyip	kDot/kBashColorRC19.sh	/^function whatsmyip ()$/;"	f
-__setprompt	kDot/kBashColorRC19.sh	/^function __setprompt$/;"	f
 mkd	kDot/kZshrc19.sh	/^function mkd() {$/;"	f
 tre	kDot/kZshrc19.sh	/^function tre() {$/;"	f
 fkill	kDot/kZshrc19.sh	/^fkill() {$/;"	f
