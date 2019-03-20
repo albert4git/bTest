@@ -1,0 +1,19 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+callback	DODO10/dodo2Select.c	/^static int callback(void *NotUsed, int argc, char **argv, char **azColName) {$/;"	f	file:
+main	DODO10/dodo2Select.c	/^int main(int argc, char* argv[]) {$/;"	f
+callback	DODO10/dodo10CreateInsertSel.c	/^static int callback(void *NotUsed, int argc, char **argv, char **azColName) {$/;"	f	file:
+main	DODO10/dodo10CreateInsertSel.c	/^int main(int argc, char* argv[]) {$/;"	f
+main	DODO10/main.go	/^package main$/;"	p
+main	DODO10/main.go	/^func main() {$/;"	f
+main	DODO10/openDodo10.c	/^int main(int argc, char* argv[]) {$/;"	f
+create_connection	DODO10/pythonDodo10.py	/^def create_connection(db_file):$/;"	f
+select_all_tasks	DODO10/pythonDodo10.py	/^def select_all_tasks(conn):$/;"	f
+select_task_by_priority	DODO10/pythonDodo10.py	/^def select_task_by_priority(conn, priority):$/;"	f
+main	DODO10/pythonDodo10.py	/^def main():$/;"	f
+CFLAGS	DODO10/Makefile	/^CFLAGS=-Wall -g$/;"	m
+main	DODO10/dodoSelectAll.c	/^int main ()$/;"	f
