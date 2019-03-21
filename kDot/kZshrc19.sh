@@ -64,8 +64,9 @@ alias so="source ~/.zshrc"
 alias nv='nvim'
 alias ni1='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
 alias ni2='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
-alias deo='deonvim NONE -u ~/git/aTest/dotFiles/nVim/minit.vim'
+# alias deo='deonvim NONE -u ~/git/aTest/dotFiles/nVim/minit.vim'
 alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
+alias deo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias vi='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias vim='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 
@@ -92,23 +93,6 @@ alias lss='LC_COLLATE=C ls -A --color -h --group-directories-first'
 alias addr="ip -o a | cut -d ' ' -f2,7"
 alias mpath='echo $PATH | tr -s ":" "\n"'
 
-# cd ../.. = ...
-# cd ../../.. = ....
-# mkdir -p = md
-# git add = ga
-# git add --all = gaa
-# git branch = gb
-# git commit -m = gcmsg
-# git checkout = gco
-# git pull origin currentbranch = ggpull
-# git push origin currentbranch = ggpush
-# systemctl start = sc-start
-# systemctl stop = sc-stop
-# systemctl status = sc-status
-# systemctl enable = sc-enable
-
-#=If you want to check out the whole list, again the=======================================
-# https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 
 #==========================================================================================
 function mkd() {
@@ -153,80 +137,9 @@ export CLICOLOR=1
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 #==========================================================================================
 #HISTFILE=~/.histfile
-HISTSIZE=5000
+HISTSIZE=9000
 SAVEHIST=1717
-#==========================================================================================
-# zplug "themes/bira", from:oh-my-zsh, as:theme
-# zplug "dracula/zsh", as:theme
-# zplug "eendroroy/alien"
-# zplug "eendroroy/alien-minimal"
-# zplug "subnixr/minimal"
-# zplug "geometry-zsh/geometry"
-#=============================================================
-# MNML_USER_CHAR=$USER
-# MNML_INSERT_CHAR='do:'
-# zplug 'subnixr/minimal', use:minimal.zsh, as:theme
-# zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-# zplug "denysdovhan/spaceship-prompt", as:theme
 
-#==========================================================================================
-# zplug "themes/bira", from:oh-my-zsh, as:theme
-
-# ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
-# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!"
-# ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%}?"
-# ZSH_THEME_GIT_PROMPT_CLEAN=""
-#==========================================================================================
-# define RPS1 in order to avoid the annoying vim status
-# export RPS1=" "
-# zplug 'plugins/vi-mode', from:oh-my-zsh
-#==========================================================================================
-zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
-#=============================================================
-SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section (Disabled)
-  git           # Git section (git_branch + git_status)
-  user          # Username section
-  host          # Hostname section
-  vi_mode       # Vi-mode indicator (Disabled)
-  dir           # Current directory section
-  battery       # Battery level and status
-  # package     # Package version (Disabled)
-  pyenv         # Pyenv section
-  exec_time     # Execution time
-  line_sep      # Line break
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-#=====================================================
-# red:dirty, white:ahead, and green:clean.
-SPACESHIP_CHAR_COLOR_SUCCESS="green"
-SPACESHIP_CHAR_COLOR_FAILURE="red"
-SPACESHIP_CHAR_COLOR_SECONDARY="yellow"
-#==========================================
-SPACESHIP_BATTERY_SHOW="always"
-SPACESHIP_USER_SHOW="true"
-#?SPACESHIP_USER_SHOW="always"
-SPACESHIP_USER_PREFIX="User"
-SPACESHIP_USER_COLOR="cyan"
-#=====================================================
-spaceship_vi_mode_enable="true"
-SPACESHIP_VI_MODE_SHOW="true"
-SPACESHIP_VI_MODE_COLOR="cyan"
-SPACESHIP_VI_MODE_INSERT="InMODE"
-SPACESHIP_VI_MODE_NORMAL="NMODE"
-#=====================================================
-SPACESHIP_GIT_STATUS_SHOW="true"
-SPACESHIP_GIT_BRANCH_SUFFIX=""
-SPACESHIP_GIT_STATUS_COLOR="cyan"
-# SPACESHIP_TIME_COLOR="green"
-# SPACESHIP_TIME_SHOW="true"
-SPACESHIP_DIR_COLOR="yellow"
-#=====================================================
-SPACESHIP_CHAR_COLOR_SUCCESS="white"
-SPACESHIP_CHAR_COLOR_FAILURE="red"
 #==========================================================================================
 #==========================================================================================
 zplug "lib/completion",   from:oh-my-zsh
@@ -292,14 +205,86 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
+
+
 #==========================================================================================
+# zplug "themes/bira", from:oh-my-zsh, as:theme
+# zplug "dracula/zsh", as:theme
+# zplug "eendroroy/alien"
+# zplug "eendroroy/alien-minimal"
+# zplug "subnixr/minimal"
+# zplug "geometry-zsh/geometry"
 #=============================================================
+# MNML_USER_CHAR=$USER
+# MNML_INSERT_CHAR='do:'
+# zplug 'subnixr/minimal', use:minimal.zsh, as:theme
+# zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+# zplug "denysdovhan/spaceship-prompt", as:theme
+#==========================================================================================
+# zplug "themes/bira", from:oh-my-zsh, as:theme
+
+# ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
+# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!"
+# ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%}?"
+# ZSH_THEME_GIT_PROMPT_CLEAN=""
+#==========================================================================================
+# define RPS1 in order to avoid the annoying vim status
+# export RPS1=" "
+# zplug 'plugins/vi-mode', from:oh-my-zsh
+#==========================================================================================
+zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
+#======================================================
+# red:dirty, white:ahead, and green:clean.
+SPACESHIP_CHAR_COLOR_SUCCESS="green"
+SPACESHIP_CHAR_COLOR_FAILURE="red"
+SPACESHIP_CHAR_COLOR_SECONDARY="yellow"
+#==========================================
+# SPACESHIP_BATTERY_SHOW="always"
+# SPACESHIP_USER_SHOW="true"
+# SPACESHIP_USER_SHOW="always"
+# SPACESHIP_USER_PREFIX="user:"
+# SPACESHIP_USER_COLOR="red"
+#======================================================
+# spaceship_vi_mode_enable="true"
+# SPACESHIP_VI_MODE_SHOW="true"
+# SPACESHIP_VI_MODE_COLOR="cyan"
+# SPACESHIP_VI_MODE_INSERT="InMODE"
+# SPACESHIP_VI_MODE_NORMAL="NMODE"
+#======================================================
+SPACESHIP_GIT_STATUS_SHOW="true"
+SPACESHIP_GIT_BRANCH_SUFFIX=":"
+SPACESHIP_GIT_STATUS_COLOR="cyan"
+SPACESHIP_GIT_STATUS_COLOR="red"
+SPACESHIP_DIR_COLOR="green"
+#======================================================
+# SPACESHIP_TIME_SHOW="true"
+# SPACESHIP_TIME_COLOR="yellow"
+#===============================================================
+SPACESHIP_PROMPT_ORDER=(
+  vi_mode       # Vi-mode indicator (Disabled)
+  dir           # Current directory section
+  git           # Git section (git_branch + git_status)
+  pyenv         # Pyenv section
+  exec_time     # Execution time
+  line_sep      # Line break
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
+  # host          # Hostname section
+  # user          # Username section
+  # battery       # Battery level and status
+  # time          # Time stamps section (Disabled)
+  # package     # Package version (Disabled)
+
+#==========================================================================================
 # https://github.com/olivierverdier/zsh-git-prompt
 # ZSH_GIT_PROMPT="$HOME/zsh-git-prompt/zshrc.sh"
 # CUSTOM_GIT="$HOME/dotfiles/scripts/custom_git.zsh"
 # [ -s $ZSH_GIT_PROMPT ] && source $ZSH_GIT_PROMPT
 # [ -s $CUSTOM_GIT ] && source $CUSTOM_GIT
-#=============================================================
 #==========================================================================================
 # # Setting ag as the default source for fzf - include hidden files
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
@@ -343,7 +328,8 @@ zplug load --verbose
 # export PATH=${PATH}:~/.composer/vendor/bin
 # export PATH=${PATH}:/home/vagrant/bin
 # export PATH=${PATH}:vendor/bin
-#=LOAD=PROFILE===============================================
+
+#===LOAD===PROFILE========================================================================
 #if [ -x /etc/profile ]; then
 #    setopt -G
 #    . /etc/profile
@@ -356,11 +342,28 @@ zplug load --verbose
 # returning command and folder completion when line is empty like a bash, but better
 # blanktab() { [[ $#BUFFER == 0 ]] && CURSOR=3 zle list-choices || zle expand-or-complete }
 # zle -N blanktab && bindkey '^I' blanktab
+#==========================================================================================
+# We have environment variables available in our shells. Sometimes we want to
+# manipulate the value of these variables or just visually inspect them
+#==========================================================================================
+# cd ../.. = ...
+# cd ../../.. = ....
+# mkdir -p = md
+# git add = ga
+# git add --all = gaa
+# git branch = gb
+# git commit -m = gcmsg
+# git checkout = gco
+# git pull origin currentbranch = ggpull
+# git push origin currentbranch = ggpush
+# systemctl start = sc-start
+# systemctl stop = sc-stop
+# systemctl status = sc-status
+# systemctl enable = sc-enable
 
+#=If you want to check out the whole list, again the=======================================
+# https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 #==========================================================================================
 # finally install and load those plugins
 zplug check || zplug install
 zplug load
-#==========================================================================================
-# We have environment variables available in our shells. Sometimes we want to
-# manipulate the value of these variables or just visually inspect them

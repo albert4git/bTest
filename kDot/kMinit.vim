@@ -186,8 +186,11 @@
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
         set signcolumn=yes
-        hi signcolumn     ctermbg=10
-        hi LineNr         ctermbg=199 ctermfg=16 
+        "hi signcolumn     ctermbg=10
+        hi signcolumn     ctermbg=23
+
+        "hi LineNr         ctermbg=199 ctermfg=16 
+        hi LineNr         ctermbg=22 ctermfg=15 
         set cursorcolumn
         hi CursorLine     ctermbg=8
         set colorcolumn=92,100,112,120
