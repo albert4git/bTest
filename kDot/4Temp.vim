@@ -55,10 +55,6 @@ windows:
           - sh
         - BASH4:
           - bash
-======================================================
-Since vimagit 1.7, jump mappings have changed:
-   Jump next hunk : N -> <C-n>
-   Jump prev hunk : P -> <C-p>
 
 
 
