@@ -1,8 +1,10 @@
 #===TMUX==================================================================================
 #===FREE==================================================================================
 #===WILLY=================================================================================
-#WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 
+# SIGNAL
+# SIGNAL
+# USA
 windows:
   - pdbA:
       layout: main-vertical
