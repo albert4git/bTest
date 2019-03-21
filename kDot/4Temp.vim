@@ -2,6 +2,23 @@
 #===FREE==================================================================================
 #===WILLY=================================================================================
 
+
+  <CF>      From `stage mode`: amend the staged changes into the previous
+            commit, without modifying previous commit message.
+
+  <CC>      From `commit mode`, commit all staged changes with commit flavor
+            (`normal` or `amend`) with message in "Commit message" section.
+
+  <CA>      From `stage mode` or `commit mode`: set commit mode in amend
+            flavor, and display "Commit message" section with previous commit
+            message.
+            Commit will be meld with previous commit.
+
+  <CU>      From `commit mode`: go back to stage mode (current commit message
+            will be lost).
+
+
+
 # SIGNAL
 # SIGNAL
 # USA
@@ -38,4 +55,10 @@ windows:
           - sh
         - BASH4:
           - bash
+======================================================
+Since vimagit 1.7, jump mappings have changed:
+   Jump next hunk : N -> <C-n>
+   Jump prev hunk : P -> <C-p>
+
+
 
