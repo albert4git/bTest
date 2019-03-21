@@ -9,6 +9,11 @@
 
 git log --oneline 
 
+git log -5
+
+git log ./4Temp.vim
+
 git diff --stat HEAD~5
+git diff --stat HEAD~4
 
-
+git diff HEAD~2
