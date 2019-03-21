@@ -4,14 +4,13 @@ name = Albert
 username = alf
 
 [alias]
-	# aliases starting with !sh
-	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort    # list all aliases
-	st = status
-	ci = commit
-	cie = commit --allow-empty-message -m ''
-	cp = cherry-pick
-	df = diff -C --color-words
-	findg = !sh -c 'git lg --grep="$@"'    # search for a string in the commit message log
+# aliases starting with !sh
+aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort    # list all aliases
+tst = status
+tci = commit
+tcie = commit --allow-empty-message -m ''
+tdf = diff -C --color-words
+tfind = !sh -c 'git lg --grep="$@"'    # search for a string in the commit message log
 
 [core]
 editor = vim

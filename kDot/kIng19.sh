@@ -18,6 +18,7 @@
 #NW=$(date +"%m-%d-%Y")
 #NW="AB"
 ##########################################################################################
+rm ~/.tmuxinator/kBank20.yml
 rm ~/.tmuxinator/kBank19.yml
 rm ~/.zshrc
 rm ~/.tmux.conf 
@@ -36,8 +37,8 @@ ln -s ~/git/bTest/kDot/kCtags19           ~/.ctags
 ln -s ~/git/bTest/kDot/kBashColorRC19.sh  ~/.bashrc
 ln -s ~/git/bTest/kDot/kGitconfig.vim     ~/.gitconfig
 ln -s ~/git/bTest/kDot/kGitignore         ~/.gitignore
-ln -b ~/git/bTest/kDot/kMinit.vim         ~/.config/nvim/init.vim
 ln -b ~/git/bTest/kDot/inkPreRc19.vim     ~/.vimrc
+ln -b ~/git/bTest/kDot/kMinit.vim         ~/.config/nvim/init.vim
 #------------------------------------------------------------------------------------------
 
 
