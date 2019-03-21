@@ -59,11 +59,15 @@ export PYTHONPATH=${PYTHONPATH}:/home/red/git/aTest/dotFiles/nVim/swamPython3/
 #=============================================================
 export LS_COLORS
 alias hh='history'
+alias xx='exa -lT'
 alias so="source ~/.zshrc"
 alias nv='nvim'
 alias ni1='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
 alias ni2='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
 alias deo='deonvim NONE -u ~/git/aTest/dotFiles/nVim/minit.vim'
+alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
+alias vi='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
+alias vim='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 
 
 
