@@ -1,29 +1,32 @@
 mgTester.txt
 
-:Author: red
-:Email: red@red-Swift-SF113-31
-:Date: 2019-03-22 01:22
+KingKong: :Author: red
+KingKong: :Email: red@red-Swift-SF113-31
+KingKong: :Date: 2019-03-22 01:22
 
-KING KING KING KING KING KING
-KING KING KING KING KING KING
+KingKong: KING KING KING KING KING KING
+KingKong: KING KING KING KING KING KING
 
-SHAUEN SHAUEN SHAUEN SHAUEN
-SHAUEN SHAUEN SHAUEN SHAUEN
+KingKong: SHAUEN SHAUEN SHAUEN SHAUEN
+KingKong: SHAUEN SHAUEN SHAUEN SHAUEN
 
-MMMM MMM MMM MMMM MMM MMMMM
-MMMM MMM MMM MMMM MMM MMMMM
+KingKong: MMMM MMM MMM MMMM MMM MMMMM
+KingKong: MMMM MMM MMM MMMM MMM MMMMM
 
-YYY-RED: Avengers     KONG   BONG     JAVA-King
-YYY-RED: Avengers     KONG   BONG     JAVA-MMM
-
-
-YYY-NORMAL: THOR      KONG   BONG     CPP-MMM
-YYY-NORMAL: THOR      JGUAR  KING2     CPP
+KingKong: YYY-RED: Avengers     KONG   BONG     JAVA-King
+KingKong: YYY-RED: Avengers     KONG   BONG     JAVA-MMM
 
 
-BLACK: Avengers KONG HALK-MMM   DNA
-BLACK: Avengers KONG HALK-MMM   DNA
+KingKong: YY-NORMAL: THOR      KONG   BONG     CPP-MMM
+KingKong: YYY-NORMAL: THOR      JGUAR  KING2     CPP
 
 
-PINK: Avengers-MMM
-BLUE: IRONMAN-MMM
+KingKong: BLACK: Avengers KONG HALK-MMM   DNA
+KingKong: BLACK: Avengers KONG HALK-MMM   DNA
+
+Weding Weding Weding Weding Weding Weding
+Weding Weding Weding Weding Weding Weding
+Weding Weding Weding Weding Weding Weding
+
+KingKong: PINK: Avengers-MMM
+KingKong: BLUE: IRONMAN-MMM
