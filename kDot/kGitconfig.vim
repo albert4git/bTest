@@ -3,6 +3,7 @@ email = berman.albert@gmail.com
 name = Albert
 username = alf
 
+
 [alias]
 # aliases starting with !sh
 aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort    # list all aliases

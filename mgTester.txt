@@ -16,10 +16,14 @@ KingKong: MMMM MMM MMM MMMM MMM MMMMM
 KingKong: YYY-RED: Avengers     KONG   BONG     JAVA-King
 KingKong: YYY-RED: Avengers     KONG   BONG     JAVA-MMM
 
+KingKong: YYY-RED: Avengers     KONG   BONG     JAVA-King
+KingKong: YYY-RED: Avengers     KONG   BONG     JAVA-MMM
 
-KingKong: YY-NORMAL: THOR      KONG   BONG     CPP-MMM
-KingKong: YYY-NORMAL: THOR      JGUAR  KING2     CPP
+GAME YYY-NORMAL: THOR             CPP-MMM
+GAME YYY-NORMAL: THOR             CPP
 
+GAME YYY-NORMAL: THOR             CPP-MMM
+GAME YYY-NORMAL: THOR             CPP
 
 KingKong: BLACK: Avengers KONG HALK-MMM   DNA
 KingKong: BLACK: Avengers KONG HALK-MMM   DNA
@@ -28,5 +32,5 @@ Weding Weding Weding Weding Weding Weding
 Weding Weding Weding Weding Weding Weding
 Weding Weding Weding Weding Weding Weding
 
-KingKong: PINK: Avengers-MMM
-KingKong: BLUE: IRONMAN-MMM
+MASTER2: PINK: Avengers-MMM
+MASTER2: BLUE: IRONMAN-MMM
