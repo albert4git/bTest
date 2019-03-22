@@ -13,16 +13,16 @@ SHAUEN SHAUEN SHAUEN SHAUEN
 MMMM MMM MMM MMMM MMM MMMMM
 MMMM MMM MMM MMMM MMM MMMMM
 
-YYY-RED: Avengers             JAVA-King
-YYY-RED: Avengers             JAVA-MMM
+YYY-RED: Avengers     KONG        JAVA-King
+YYY-RED: Avengers     KONG        JAVA-MMM
 
 
-YYY-NORMAL: THOR             CPP-MMM
-YYY-NORMAL: THOR             CPP
+YYY-NORMAL: THOR      KONG       CPP-MMM
+YYY-NORMAL: THOR      JGUAR       CPP
 
 
-BLACK: Avengers HALK-MMM
-BLACK: Avengers HALK-MMM
+BLACK: Avengers KONG HALK-MMM
+BLACK: Avengers KONG HALK-MMM
 
 
 PINK: Avengers-MMM
