@@ -4,18 +4,26 @@ mgTester.txt
 :Email: red@red-Swift-SF113-31
 :Date: 2019-03-22 01:22
 
+KING KING KING KING KING KING
+KING KING KING KING KING KING
 
-RED: Avengers             JAVA-King
-RED: Avengers             JAVA
+SHAUEN SHAUEN SHAUEN SHAUEN
+SHAUEN SHAUEN SHAUEN SHAUEN
+
+MMMM MMM MMM MMMM MMM MMMMM
+MMMM MMM MMM MMMM MMM MMMMM
+
+YYY-RED: Avengers             JAVA-King
+YYY-RED: Avengers             JAVA-MMM
 
 
-NORMAL: THOR             CPP
-NORMAL: THOR             CPP
+YYY-NORMAL: THOR             CPP-MMM
+YYY-NORMAL: THOR             CPP
 
 
-BLACK: Avengers HALK
-BLACK: Avengers HALK
+BLACK: Avengers HALK-MMM
+BLACK: Avengers HALK-MMM
 
 
-PINK: Avengers
-BLUE: IRONMAN
+PINK: Avengers-MMM
+BLUE: IRONMAN-MMM
