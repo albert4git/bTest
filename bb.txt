@@ -4,16 +4,16 @@ bb.txt
 :Email: red@red-Swift-SF113-31
 :Date: 2019-03-22 05:39
 
-two two two king
-two two two king
-two two two king
-
-
-two two two king
-two two two king
-two two two king
-
-
-two two two king
-two two two king
-two two two king
+king3 two two two king
+king3 two two two king
+king3 two two two king
+    
+    
+king3 two two two king
+king3 two two two king
+king3 two two two king
+    
+    
+king3 two two two king
+king3 two two two king
+king3 two two two king
