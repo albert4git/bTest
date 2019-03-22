@@ -17,11 +17,12 @@
   <CU>      From `commit mode`: go back to stage mode (current commit message
             will be lost).
 
+//FLAG
+//FLAG
+//FLAG
 
-
-# SIGNAL
-# SIGNAL
 # USA
+
 windows:
   - pdbA:
       layout: main-vertical
