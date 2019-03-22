@@ -1,29 +1,35 @@
 mgTester.txt
 
-MASTER2: :Author: red
-MASTER2: :Email: red@red-Swift-SF113-31
-MASTER2: :Date: 2019-03-22 01:22
+KingKong: :Author: red
+KingKong: :Email: red@red-Swift-SF113-31
+KingKong: :Date: 2019-03-22 01:22
 
-MASTER2: KING KING KING KING KING KING
-MASTER2: KING KING KING KING KING KING
+KingKong: KING KING KING KING KING KING
+KingKong: KING KING KING KING KING KING
 
-SHAUEN SHAUEN SHAUEN SHAUEN
-SHAUEN SHAUEN SHAUEN SHAUEN
+KingKong: SHAUEN SHAUEN SHAUEN SHAUEN
+KingKong: SHAUEN SHAUEN SHAUEN SHAUEN
 
 MMMM MMM MMM MMMM MMM MMMMM
 MMMM MMM MMM MMMM MMM MMMMM
 
-YYY-RED: Avengers     KONG   BONG     JAVA-King
-YYY-RED: Avengers     KONG   BONG     JAVA-MMM
+KingKong: MMMM MMM MMM MMMM MMM MMMMM
+KingKong: MMMM MMM MMM MMMM MMM MMMMM
+
+KingKong: YYY-RED: Avengers     KONG   BONG     JAVA-King
+KingKong: YYY-RED: Avengers     KONG   BONG     JAVA-MMM
 
 
 GAME YYY-NORMAL: THOR             CPP-MMM
 GAME YYY-NORMAL: THOR             CPP
 
 
-BLACK: Avengers KONG HALK-MMM   DNA
-BLACK: Avengers KONG HALK-MMM   DNA
+KingKong: BLACK: Avengers KONG HALK-MMM   DNA
+KingKong: BLACK: Avengers KONG HALK-MMM   DNA
 
+Weding Weding Weding Weding Weding Weding
+Weding Weding Weding Weding Weding Weding
+Weding Weding Weding Weding Weding Weding
 
 MASTER2: PINK: Avengers-MMM
 MASTER2: BLUE: IRONMAN-MMM
