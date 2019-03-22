@@ -1,0 +1,21 @@
+mgTester.txt
+
+:Author: red
+:Email: red@red-Swift-SF113-31
+:Date: 2019-03-22 01:22
+
+
+RED: Avengers             JAVA-King
+RED: Avengers             JAVA
+
+
+NORMAL: THOR             CPP
+NORMAL: THOR             CPP
+
+
+BLACK: Avengers HALK
+BLACK: Avengers HALK
+
+
+PINK: Avengers
+BLUE: IRONMAN
