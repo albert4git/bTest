@@ -83,7 +83,15 @@ call plug#begin('~/.config/nvim/plugged/')
                         endif
                 "-------------------------------------------------------------------------- 
                 Plug 'aghareza/vim-gitgrep'
+                "==========================================================================
+                "Plug 'int3/vim-extradite'
+                "        ":Extradite | :Extradite! -- vertical.
+                "        let g:extradite_width = 60
+                "        let g:extradite_showhash = 1 "show abbre commit hashes.
+                "Plug 'lambdalisue/gina.vim'
                 "-------------------------------------------------------------------------- 
+                Plug 'jreybert/vimagit'
+                "==========================================================================
                 Plug 'tpope/vim-fugitive'
                 " Usage:
                 "   - :Git[!] [args]
@@ -109,10 +117,6 @@ call plug#begin('~/.config/nvim/plugged/')
                         " . to start command-line with :Git [CURSOR] SHA à la fugitive
                         " q to close
                 "-------------------------------------------------------------------------- 
-                Plug 'int3/vim-extradite'
-                        ":Extradite | :Extradite! -- vertical.
-                        let g:extradite_width = 60
-                        let g:extradite_showhash = 1 "show abbre commit hashes.
         "-6-}}}
 
 
@@ -655,14 +659,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "source ~/git/aTest/dotFiles/nVim/logoQF.vim
         "source ~/git/aTest/dotFiles/nVim/logoAsyncPy.vim
         "==================================================================================
-        "==================================================================================
-        Plug 'lambdalisue/gina.vim'
-        Plug 'jreybert/vimagit'
-        "==================================================================================
         Plug 'rkulla/pydiction'
-        Plug 'lambdalisue/lista.nvim'
-                nnoremap # :<C-u>Lista<CR>
-                nnoremap g# :<C-u>ListaCursorWord<CR>
         "======================================================
                 let g:lista#custom_mappings = [
                                         \ ['<C-f>', '<Left>'],
