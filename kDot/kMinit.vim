@@ -282,8 +282,11 @@
         nnoremap ;l :execute "leftabove vsplit" bufname('#')<cr>
         nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>
         "------------------------------------------------------------------------------------
-        nnoremap <C-j> :bn<cr>
-        nnoremap <C-k> :bp<cr>
+        " nnoremap <C-j> :bn<cr>
+        " nnoremap <C-k> :bp<cr>
+        "---------------------------------------------------
+        nnoremap <S-j> :bn<cr>
+        nnoremap <S-k> :bp<cr>
         "---------------------------------------------------
         nnoremap <m-right> :vertical resize +3<cr>
         nnoremap <m-left> :vertical resize -3<cr>

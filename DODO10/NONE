@@ -1,4 +1,10 @@
-===================================================================================================
+
+$db->exec('CREATE TABLE foo (id INTEGER, bar STRING)');
+$db->exec("INSERT INTO foo (id, bar) VALUES (1, 'This is a test')");
+
+
+
+=========================================================================================:==========
 gcc test.c -l sqlite3
 gcc -o testDB test.c -l sqlite3
 $./a.out

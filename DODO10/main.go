@@ -15,6 +15,7 @@ func main() {
 	statement, _ = database.Prepare("INSERT INTO people (firstname, lastname) VALUES (?, ?)")
 	statement.Exec("Nic", "Raboy")
 	statement.Exec("Boris", "Backer")
+
 	rows, _ := database.Query("SELECT id, firstname, lastname FROM people")
 	var id int
 	var firstname string

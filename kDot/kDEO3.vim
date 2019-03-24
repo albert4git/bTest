@@ -140,7 +140,10 @@ call plug#begin('~/.config/nvim/plugged/')
         "--------------------------------------------------------------------------------- 
         Plug 'gotcha/vimpdb'
         "--------------------------------------------------------------------------------- 
-        Plug 'vim-vdebug/vdebug'
+        Plug 'cpiger/NeoDebug'
+
+        "--------------------------------------------------------------------------------- 
+                " Plug 'vim-vdebug/vdebug'
                 " <F5>: start/run (to next breakpoint/end of script)
                 " <F2>: step over
                 " <F3>: step into
@@ -297,6 +300,28 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         Plug 'davidhalter/jedi-vim'
         Plug 'zchee/deoplete-jedi'
+
+        "? Plug 'justmao945/vim-clang'
+        Plug 'zchee/deoplete-clang'
+        " Make sure you use single quotes
+        function! DoRemote(arg)
+                UpdateRemotePlugins
+        endfunction
+
+        "---------------------------------------------------------------------------------- 
+        Plug 'tobyS/pdv'
+        Plug 'gauteh/vim-cppman'
+        Plug 'cskeeters/javadoc.vim'
+        Plug 'lucapette/vim-ruby-doc'
+        Plug 'plasticboy/vim-markdown'
+        "---------------------------------------------------------------------------------- 
+        Plug 'fishbullet/deoplete-ruby'
+        Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+        Plug 'takkii/ruby-dictionary3'
+        "---------------------------------------------------------------------------------- 
+        "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+        "---------------------------------------------------------------------------------- 
+        Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
         "---------------------------------------------------------------------------------- 
         Plug 'autozimu/LanguageClient-neovim', {
                                 \ 'branch': 'next',
@@ -745,19 +770,16 @@ call plug#begin('~/.config/nvim/plugged/')
         "         hi! def link ObliqueLine         String
         "--------------------------------------------------------------------------------- 
         Plug 'vim-scripts/javaDoc.vim'
-        " Plug 'artur-shaik/vim-javacomplete2'
-        "         imap <F3> <Plug>(JavaComplete-Imports-RemoveUnused)
-        "         autocmd FileType java setlocal omnifunc=javacomplete#Complete
-                " nmap <F4> <Plug>(JavaComplete-Imports-Add)
-                " nmap <F5> <Plug>(JavaComplete-Imports-AddMissing)
-                " nmap <F6> <Plug>(JavaComplete-Imports-RemoveUnused)
+        Plug 'artur-shaik/vim-javacomplete2'
+        " imap <F3> <Plug>(JavaComplete-Imports-RemoveUnused)
+        " nmap <F4> <Plug>(JavaComplete-Imports-Add)
+        " nmap <F5> <Plug>(JavaComplete-Imports-AddMissing)
+        " nmap <F6> <Plug>(JavaComplete-Imports-RemoveUnused)
+        "--------------------------------------------------------------------------------- 
         "--------------------------------------------------------------------------------- 
         " :setlocal omnifunc=javacomplete#Complete
         " :setlocal completefunc=javacomplete#CompleteParamsInfo
-        " if has("autocmd")
-        " autocmd Filetype java setlocal omnifunc=javacomplete#Complete
         " autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
-        " endif
 
         "--------------------------------------------------------------------------------- 
         " Plug 'junegunn/vim-easy-align'
@@ -833,10 +855,12 @@ call plug#end()
         let g:deoplete#max_abbr_width = 0
         let g:deoplete#max_menu_width = 0
         "--------------------------------------------------------------------------------
+        "--------------------------------------------------------------------------------
         let g:deoplete#sources#ternjs#timeout = 3
         let g:deoplete#sources#ternjs#types = 1
         let g:deoplete#sources#ternjs#docs = 1
         call deoplete#custom#source('_', 'min_pattern_length', 3)
+        "--------------------------------------------------------------------------------
         "--------------------------------------------------------------------------------
         let g:deoplete#skip_chars = ['(', ')', '<', '>']
         let g:deoplete#tag#cache_limit_size = 800000
@@ -868,6 +892,7 @@ call plug#end()
         autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
         autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
         autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        autocmd! FileType java setlocal omnifunc=javacomplete#Complete
         autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
         autocmd! FileType python setlocal omnifunc=jedi#completions
         autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -901,13 +926,67 @@ call plug#end()
         "inoremap <silent> <C-u> <C-x><C-u>
         "===PLAY15=================================================================================
         nnoremap ;d mayiw`a:exe "!dict -P - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
-        "--------------------------------------------------------------------------------
+        "==========================================================================================
+        "Plugin 'clang'
+        "Plugin 'clang-complete'
+        " if has('nvim')
+        "         Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+        "         Plug 'zchee/deoplete-jedi'
+        "         Plug 'zchee/deoplete-clang'
+        " else
+        "         Plug 'Shougo/vimproc.vim',   {'do': 'make'}
+        "         Plug 'Shougo/neocomplete.vim'
+        "         Plug 'davidhalter/jedi-vim', {'for': 'python'}
+        "         Plug 'justmao945/vim-clang', {'for': ['h', 'cpp']}
+        " endif
+        "==========================================================================================
+
+        "===VIM-CLANG=========================================================
+        "? let g:clang_auto = 1
+        "? let g:clang_cpp_options = '-std=c++ -stdlib=libc++'
+        "let g:clang_exec = 'clang'
+        """""""""""""""""""""""""
+        """"    deoplete     """"
+        """""""""""""""""""""""""
+        let g:deoplete#omni_patterns = {}
+        let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
+        let g:deoplete#sources = {}
+        let g:deoplete#sources._ = []
+        let g:deoplete#file#enable_buffer_path = 1
+
+
+        "===DEOPLETE-CLANG===================================================
+        let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-6.0/lib/libclang.so.1"
+        let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+        let g:deoplete#sources#clang#sort_algo = 'priority' " alphabetical
+
+        "===CCC===============================================================
+
+        "===PHP===============================================================
+        let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+        let g:deoplete#ignore_sources.php = ['phpcd', 'omni']
+        " let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+        " let g:deoplete#ignore_sources.php = ['omni']
+
+        "===RUBY===============================================================
+        setlocal dictionary+=~/.config/nvim/repos/github.com/takkii/ruby-dictionary3/autoload/source/ruby_method_deoplete
+        call deoplete#custom#source('dictionary', 'ruby', ['[^. *\t]\.\w*\|\h\w*::'])
+
+        "===SOLAR===============================================================
+        " import * as solargraph from 'solargraph-utils';
+        " let configuration = new Solargraph.Configuration();
+        " let provider = new Solargraph.SocketProvider(configuration);
+        " provider.start().then(() => {
+        "     console.log('Socket server is listening on port ' + provider.port);
+        " });
+        "==========================================================================================
         call deoplete#custom#source('neosnippet',    'rank', 690)
         call deoplete#custom#source('ultisnips',     'rank', 680)
         call deoplete#custom#source('padawan',       'rank', 660)
         call deoplete#custom#source('go',            'rank', 650)
         call deoplete#custom#source('vim',           'rank', 640)
         call deoplete#custom#source('flow',          'rank', 630)
+        call deoplete#custom#source('clang',         'rank', 625)
         call deoplete#custom#source('TernJS',        'rank', 620)
         call deoplete#custom#source('LanguageClient','rank', 610)
         call deoplete#custom#source('jedi',          'rank', 600)
@@ -921,22 +1000,55 @@ call plug#end()
         call deoplete#custom#source('dictionary',    'rank', 310)
         call deoplete#custom#source('tmux-complete', 'rank', 300)
         call deoplete#custom#source('syntax',        'rank', 200)
-        "--------------------------------------------------------------------------------
-        call deoplete#custom#source('LanguageClient','mark', 'ℰ')
-        call deoplete#custom#source('omni',          'mark', '⌾')
-        call deoplete#custom#source('flow',          'mark', '⌁')
-        call deoplete#custom#source('TernJS',        'mark', '⌁')
-        call deoplete#custom#source('go',            'mark', '⌁')
-        call deoplete#custom#source('jedi',          'mark', '⌁')
-        call deoplete#custom#source('vim',           'mark', '⌁')
-        call deoplete#custom#source('neosnippet',    'mark', '⌘')
+        "---------------------------------------------------------------------------------
+        call deoplete#custom#source('LanguageClient','mark', 'ℰLgCl')
+        call deoplete#custom#source('omni',          'mark', '⌾mni')
+        call deoplete#custom#source('flow',          'mark', '⌁flow')
+        call deoplete#custom#source('padawan',       'mark', '⌁Pd')
+        call deoplete#custom#source('TernJS',        'mark', '⌁Tern')
+        call deoplete#custom#source('clang',         'mark', '⌁Clng')
+        call deoplete#custom#source('go',            'mark', '⌁Go')
+        call deoplete#custom#source('jedi',          'mark', '⌁Jdi')
+        call deoplete#custom#source('vim',           'mark', '⌁Vim')
+        call deoplete#custom#source('neosnippet',    'mark', '⌘NeoSnp')
+        call deoplete#custom#source('ultisnips',     'mark', '⌘Ulti')
         call deoplete#custom#source('around',        'mark', '↻')
         call deoplete#custom#source('buffer',        'mark', 'ℬ')
-        call deoplete#custom#source('tmux-complete', 'mark', '⊶')
-        call deoplete#custom#source('syntax',        'mark', '♯')
-        call deoplete#custom#source('member',        'mark', '.')
+        call deoplete#custom#source('tmux-complete', 'mark', '⊶tMux')
+        call deoplete#custom#source('syntax',        'mark', 'Syntx')
+        call deoplete#custom#source('member',        'mark', '.Mmbr')
 
         "==========================================================================================
+        " " clang_complete {{{ use of clang to complete in C/C++.
+        " " let g:clang_user_options = '-std=gnu++0x -include malloc.h -fms-extensions -fgnu-runtime'
+        " " let g:clang_user_options = '-std=c++11 -stdlib=libc++'
+        " " you can use g:ClangUpdateQuickFix() with a mapping to do this
+        " " disable with 0 to solve neocomplcache problem
+        " " clang_complete, snipmate, ultisnips
+        " " :h clang_complete.txt
+
+        " let g:clang_auto_select = 0 " 0/1/2 auto select first entry in popup menu
+        " let g:clang_complete_auto = 1 " auto complete after -> . ::
+        " let g:clang_complete_copen = 1 " 1: open quickfix window on error
+        " let g:clang_hl_errors = 1 " highlight warnings and errors
+        " let g:clang_periodic_quickfix = 0 " periodically update quickfix
+        " let g:clang_snippets = 1
+        " let g:clang_snippets_engine = "ultisnips"
+        " let g:clang_conceal_snippets = 1
+        " let g:clang_trailing_placeholder = 0 " for clang_complete snippet engine
+        " let g:clang_close_preview = 0 " auto close preview window after completion
+        " let g:clang_exec = "clang" " name or path of clang executable.
+        " let g:clang_user_options =
+        "                         \ '-std=gnu99' .
+        "                         \ '-stdlib=libc' .
+        "                         \ '-I /usr/include'
+        " let g:clang_auto_user_options = "path, .clang_complete, clang"
+        " let g:clang_use_library = 1
+        " let g:clang_library_path = "/usr/lib/"
+        " let g:clang_sort_algo = "priority"
+        " let g:clang_complete_macros = 1
+        " let g:clang_complete_patterns = 1
+
         "===SetPLAY2===============================================================================
         " In Neovim, you can set up fzf window using a Vim command
         let g:fzf_layout = { 'window': 'enew' }
@@ -1252,4 +1364,24 @@ call plug#end()
         nmap <silent> <C-M-Up> :call ScrollOtherWindow("up")<CR>
 "-20Remap-}}}
 
+"gdb: no symbol table is loadet  use "file" command 
+
+" let g:neodbg_console_height        = 15  " gdb console buffer hight, Default: 15
+" let g:neodbg_openbreaks_default    = 1   " Open breakpoints window, Default: 1
+" let g:neodbg_openstacks_default    = 0   " Open stackframes window, Default: 0
+" let g:neodbg_openthreads_default   = 0   " Open threads window, Default: 0
+" let g:neodbg_openlocals_default    = 1   " Open locals window, Default: 1
+" let g:neodbg_openregisters_default = 0   " Open registers window, Default: 0
+
+" let g:neodbg_keymap_toggle_breakpoint  = '<F2>'         " toggle breakpoint on current line
+" let g:neodbg_keymap_next               = '<F12>'        " next
+" let g:neodbg_keymap_run_to_cursor      = '<C-F10>'      " run to cursor (tb and c)
+" let g:neodbg_keymap_jump               = '<C-S-F10>'    " set next statement (tb and jump)
+" let g:neodbg_keymap_step_into          = '<F11>'        " step into
+" let g:neodbg_keymap_step_out           = '<S-F11>'      " setp out
+" let g:neodbg_keymap_continue           = '<F5>'         " run or continue
+" let g:neodbg_keymap_print_variable     = '<C-P>'        " view variable under the cursor
+" let g:neodbg_keymap_stop_debugging     = '<S-F5>'       " stop debugging (kill)
+" let g:neodbg_keymap_toggle_console_win = '<F6>'         " toggle console window
+" let g:neodbg_keymap_terminate_debugger = '<C-C>'        " terminate debugger
 

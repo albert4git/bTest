@@ -9,6 +9,9 @@
 
 require 'sqlite3'
 
+#========================================================
+
+#========================================================
 begin
 
         db = SQLite3::Database.new ":memory:"
@@ -48,6 +51,7 @@ rescue SQLite3::Exception => e
 ensure
         db.close if db
 end
+
 
 
 begin
