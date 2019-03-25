@@ -12,6 +12,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'tomtom/tlib_vim'       
 
         "-AAA---------------------------------------------------------------------------{{{
+
         Plug 'MattesGroeger/vim-bookmarks'
                 let g:bookmark_no_default_key_mappings = 1
                 function! BookmarkMapKeys()
@@ -57,7 +58,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 " | Move bookmark at current line to another | `[count]mg` | `:BookmarkMoveToLine <LINE>` |
                 " | Save all bookmarks to a file             |             | `:BookmarkSave <FILE_PATH>`  |
                 " | Load bookmarks from a file               |             | `:BookmarkLoad <FILE_PATH>`  |
-                " |------------------------------------------|-------------|------------------------------|
+
         "-AAE------------------}}}
 
         "-AAA6--GitGutter-----------------------------------------------------------------------{{{
@@ -93,6 +94,15 @@ call plug#begin('~/.config/nvim/plugged/')
                 Plug 'jreybert/vimagit'
                 "==========================================================================
                 Plug 'tpope/vim-fugitive'
+                augroup ft_fugitive
+                        au!
+                        nnoremap <leader>gd :Gdiff<cr>
+                        nnoremap <leader>gs :Gstatus<cr>
+                        nnoremap <leader>gw :Gwrite<cr>
+                        nnoremap <leader>gl :Glog<cr>
+                        au BufNewFile,BufRead .git/index setlocal nolist
+                augroup END
+                "==========================================================================
                 " Usage:
                 "   - :Git[!] [args]
                 "   - :Gstatus
@@ -107,7 +117,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 "   - :Glog [args] -- load all previous revisions of current file into quickfix
                 "   - :[range]Gblame {flags}
                 "   - :[range]Gbrowse {revision}
-                "--------------------------------------------------------------------------
+                "==========================================================================
                 Plug 'junegunn/gv.vim'
                         " o or <cr> on a commit to display the content of it
                         " o or <cr> on commits to display the diff in the range
@@ -307,17 +317,31 @@ call plug#begin('~/.config/nvim/plugged/')
                 UpdateRemotePlugins
         endfunction
 
+        "--------------------------------------------------------------------------------- 
+        Plug 'artur-shaik/vim-javacomplete2'
+        nnoremap <leader>cj :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
+        autocmd filetype java nnoremap <F4> :w <bar> !javac % && java -enableassertions %:p <CR>
+        " imap <F3> <Plug>(JavaComplete-Imports-RemoveUnused)
+        " nmap <F4> <Plug>(JavaComplete-Imports-Add)
+        " nmap <F5> <Plug>(JavaComplete-Imports-AddMissing)
+        " nmap <F6> <Plug>(JavaComplete-Imports-RemoveUnused)
+        "--------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------- 
+        " :setlocal omnifunc=javacomplete#Complete
+        " :setlocal completefunc=javacomplete#CompleteParamsInfo
+        " autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+
         "---------------------------------------------------------------------------------- 
         "Plug 'tobyS/pdv'  -- php documenter
         Plug 'gauteh/vim-cppman'
                 " 1.) Install [cppman](https://github.com/aitjcize/cppman)
                 " 2.) Install this plugin using your favourite plugin manager.
 
-        "Plug 'vim-scripts/javaDoc.vim'
-        Plug 'cskeeters/javadoc.vim'
-                "let g:javadoc_path = "/usr/bin/javadoc:/home/user/javadoc"
-                let g:javadoc_path = "/usr/bin/javadoc"
-                let g:javadoc_browser = "/usr/bin/firefox"
+        "NO Plug 'vim-scripts/javaDoc.vim'
+        "Plug 'cskeeters/javadoc.vim'
+        "        "let g:javadoc_path = "/usr/bin/javadoc:/home/user/javadoc"
+        "        let g:javadoc_path = "/usr/bin/javadoc"
+        "        let g:javadoc_browser = "/usr/bin/firefox"
 
         " Plug 'lucapette/vim-ruby-doc'
         "         let g:ruby_doc_command='open'
@@ -584,8 +608,6 @@ call plug#begin('~/.config/nvim/plugged/')
          "--------------------------------------------------------------------------------- 
                 nnoremap <F4> :w<CR>:!python %<CR>
 
-        nnoremap <leader>j :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
-        autocmd filetype java nnoremap <F4> :w <bar> !javac % && java -enableassertions %:p <CR>
          "--------------------------------------------------------------------------------- 
                 nnoremap <F5> :TagbarToggle<CR>
                 nnoremap <F12> :TagbarToggle<CR>
@@ -721,7 +743,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "###Pymode???##########################################
         Plug 'python-mode/python-mode'
         let g:pymode_python = 'python3'
-        "---Other-stuff------MMM------------------------------
+        "---Other-stuff--KKK-MMM------------------------------
         let g:pymode_rope = 0 " Load rope plugin
         let g:pymode_breakpoint = 1 " Load breakpoints plugin
         let g:pymode_breakpoint_key = '<LocalLeader>t' " set/unset breakpoint
@@ -791,18 +813,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "         hi! def link ObliquePrompt       Structure
         "         hi! def link ObliqueLine         String
         "--------------------------------------------------------------------------------- 
-        Plug 'artur-shaik/vim-javacomplete2'
-        " imap <F3> <Plug>(JavaComplete-Imports-RemoveUnused)
-        " nmap <F4> <Plug>(JavaComplete-Imports-Add)
-        " nmap <F5> <Plug>(JavaComplete-Imports-AddMissing)
-        " nmap <F6> <Plug>(JavaComplete-Imports-RemoveUnused)
-        "--------------------------------------------------------------------------------- 
-        "--------------------------------------------------------------------------------- 
-        " :setlocal omnifunc=javacomplete#Complete
-        " :setlocal completefunc=javacomplete#CompleteParamsInfo
-        " autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
-
-        "--------------------------------------------------------------------------------- 
         " Plug 'junegunn/vim-easy-align'
         " Plug 'junegunn/goyo.vim'
         " Plug 'tpope/vim-rsi'
@@ -851,7 +861,7 @@ call plug#end()
         let g:jedi#goto_command = "<leader>d"
         let g:jedi#goto_assignments_command = "<leader>g"
         let g:jedi#goto_definitions_command = ""
-        "--------------MMM--------------------------
+        "----------KKK-MMM--------------------------
         let g:jedi#documentation_command = "gj"
         let g:jedi#usages_command = "<leader>n"
         let g:jedi#rename_command = "<leader>r"

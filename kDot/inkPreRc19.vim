@@ -1699,10 +1699,6 @@ let g:TagHighlightSettings = {'TagFileName': 'tags', 'CtagsExecutable': 'etags.e
 
 "-TOP-------------------------------------------------------------------------------------------------------------------
 " highlight signcolumn  ctermfg=17
-"-TOP-------------------------------------------------------------------------------------------------------------------
-" highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
-" highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
-" highlight DiffChange        cterm=bold ctermbg=11 ctermfg=227
 
 highlight DiffChange        cterm=bold ctermbg=10 "greenBright
 highlight DiffChange        cterm=bold ctermbg=9 "red

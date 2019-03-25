@@ -175,20 +175,26 @@
 
 "-2Remap-}}}
 
-        source ~/git/bTest/kDot/kDEO3.vim
+        "source ~/git/bTest/kDot/kDEO3.vim
+        source ~/git/bTest/kDot/k4DEO.vim
         "source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
-        ":::::::::::::::::::::::::::-=2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "::::::CYAN::::::::::::::::-=2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         source ~/git/aTest/dotFiles/nVim/mix/n-badwolf.vim 
+
         "colorscheme dracula
         colorscheme badwolf
-
+        "-TOP-------------------------------------------------------------------------------------------------------------------
+        highlight DiffAdd           cterm=bold ctermbg=22
+        highlight DiffDelete        cterm=bold ctermbg=3
+        highlight DiffChange        cterm=bold ctermbg=11
+        highlight DiffChange        cterm=bold ctermbg=52
+        "-TOP-------------------------------------------------------------------------------------------------------------------
         hi Normal         ctermbg=235
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
         set signcolumn=yes
         "hi signcolumn     ctermbg=10
         hi signcolumn     ctermbg=23
-
         "hi LineNr         ctermbg=199 ctermfg=16 
         hi LineNr         ctermbg=22 ctermfg=15 
         set cursorcolumn
@@ -198,35 +204,30 @@
         hi Pmenu          ctermfg=1 ctermbg=255
         hi PmenuSbar      ctermfg=11 ctermbg=5 cterm=NONE
         hi PmenuThumb     ctermfg=12 ctermbg=2 cterm=NONE
-        "------------------------------------------------
+        "------------------------------------------------------
         hi customPink     ctermbg=245 ctermfg=White
         hi lightGray      ctermbg=12
         hi darkGray       ctermbg=8
-        "------------------------------------------------
+        "------------------------------------------------------
         highlight Visual cterm=bold ctermbg=2 ctermfg=NONE
+
         set list
         set listchars=tab:▸\
-        "------------------------------------------------
+        "------------------------------------------------------
         call matchadd('customPink', 'aaa')
         call matchadd('customPink', 'AAA')
         call matchadd('customPink', '===')
         call matchadd('customPink', '###')
         call matchadd('customPink', ':::')
         call matchadd('customPink', '---')
-        "------------------------------------------------
+        "------------------------------------------------------
+        "------------------------------------------------------
+        "------------------------------------------------------
+        "------------------------------------------------------
+        "------------------------------------------------------
+        "------------------------------------------------------
         "hi Comment        ctermbg=14
         "------------------------------------------------------------------------------------------- 
-        "source ~/git/aTest/dotFiles/nVim/mix/n-mopkai.vim
-        "source ~/git/aTest/dotFiles/nVim/1startNinit19.vim
-        "source ~/git/aTest/dotFiles/nVim/nMinimumRC.vim
-        "source ~/git/aTest/dotFiles/nVim/nMinimumNeo.vim
-        "source ~/git/aTest/dotFiles/nVim/nMinimumYcmJedi.vim
-        "source ~/git/aTest/dotFiles/nVim/nMinimumLangServ.vim
-        "source ~/git/aTest/dotFiles/nVim/nMinimumNull.vim
-        "source ~/git/aTest/dotFiles/nVim/nMinimumDeoJedi.vim "LanguageClientStart
-        "source ~/git/aTest/dotFiles/nVim/nMinimumDeoJediOne.vim
-        "source ~/git/aTest/dotFiles/nVim/nMinimumDeoJediRC.vim
-        "source ~/git/aTest/dotFiles/nVim/nProtoDeoLSJediSnip.vim
         "01-source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
         "source ~/git/aTest/dotFiles/nVim/logoCyan.vim
         "------------------------------------------------------------------------------------------- 
@@ -275,24 +276,23 @@
         set wildignore+=classes
         set wildignore+=lib
 "-16-}}}
-"===============================================================================================================
 
-        ":::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"::::::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " Split previously opened file ('#') in a split window
         nnoremap ;l :execute "leftabove vsplit" bufname('#')<cr>
         nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>
-        "------------------------------------------------------------------------------------
-        " nnoremap <C-j> :bn<cr>
-        " nnoremap <C-k> :bp<cr>
+        "---------------------------------------------------------------------------------
+         nnoremap <C-j> :bn<cr>
+         nnoremap <C-k> :bp<cr>
         "---------------------------------------------------
-        nnoremap <S-j> :bn<cr>
-        nnoremap <S-k> :bp<cr>
+        "nnoremap <S-j> :bn<cr>
+        "nnoremap <S-k> :bp<cr>
         "---------------------------------------------------
         nnoremap <m-right> :vertical resize +3<cr>
         nnoremap <m-left> :vertical resize -3<cr>
         nnoremap <m-up> :resize +3<cr>
         nnoremap <m-down> :resize -3<cr>
-        ":::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"::::::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 "===============================================================================================================
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8" />
+                <title>Tst2Rotate</title>
+        </head>
+
+        <script type="text/javascript">
+                function changeImage(a) {
+                        document.getElementById("img").src=a.src;
+                }
+        </script>
+
+        <body>
+                <div id="main_img">
+                        <img id="img" src="1772031_29_b.jpg">
+                </div>
+                <div id="thumb_img">
+                        <img src='1772031_29_t.jpg'  onclick='changeImage("1772031_29_b.jpg");'>
+                        <img src='1772031_55_t.jpg'  onclick='changeImage("1772031_55_b.jpg");'>
+                        <img src='1772031_53_t.jpg'  onclick='changeImage("1772031_53_b.jpg");'>
+                </div>
+
+        </body>
+</html>

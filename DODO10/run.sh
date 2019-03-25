@@ -8,10 +8,14 @@
 #
 # gcc -o selectDodo10 dodoSelectAll.c -l sqlite3
 
+gcc -o do2Sel c2DodoSel.cpp -l sqlite3
 
-gcc -o dodo10CIS dodo10CreateInsertSel.c -l sqlite3
-gcc -o openDodo10 openDodo10.c -l sqlite3
-gcc -o select2Dodo10 dodo2Select.c -l sqlite3
+gcc -o doCIS cDodoCIS.c -l sqlite3
+gcc -o doCheck cDodoCheck.c -l sqlite3
+gcc -o doSel cDodoSel.c -l sqlite3
+#--------------------------------------------
+gcc -o doSel cDodoSelAll.c -l sqlite3
 
-./dodo10CIS
-./selectDodo10
+./doCheck
+./doCIS
+./doSel

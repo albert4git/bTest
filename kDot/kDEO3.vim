@@ -300,7 +300,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         Plug 'davidhalter/jedi-vim'
         Plug 'zchee/deoplete-jedi'
-
         "? Plug 'justmao945/vim-clang'
         Plug 'zchee/deoplete-clang'
         " Make sure you use single quotes
@@ -308,12 +307,24 @@ call plug#begin('~/.config/nvim/plugged/')
                 UpdateRemotePlugins
         endfunction
 
+        " DO I NEED pdv for JAVA and CPP ??
         "---------------------------------------------------------------------------------- 
-        Plug 'tobyS/pdv'
+        " Plug 'tobyS/pdv'  -- php documenter
         Plug 'gauteh/vim-cppman'
+                " 1.) Install [cppman](https://github.com/aitjcize/cppman)
+                " 2.) Install this plugin using your favourite plugin manager.
+        "---------------------------------------------------------------------------------- 
+        "Plug 'vim-scripts/javaDoc.vim'
         Plug 'cskeeters/javadoc.vim'
-        Plug 'lucapette/vim-ruby-doc'
-        Plug 'plasticboy/vim-markdown'
+                "let g:javadoc_path = "/usr/bin/javadoc:/home/user/javadoc"
+                let g:javadoc_path = "/usr/bin/javadoc"
+                let g:javadoc_browser = "/usr/bin/firefox"
+
+        " Plug 'lucapette/vim-ruby-doc'
+        "         let g:ruby_doc_command='open'
+        "         let g:ruby_doc_ruby_mapping='KK'
+        "         let g:ruby_doc_ruby_host='https://apidock/ruby'
+
         "---------------------------------------------------------------------------------- 
         Plug 'fishbullet/deoplete-ruby'
         Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
@@ -663,6 +674,18 @@ call plug#begin('~/.config/nvim/plugged/')
                 nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
                 vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
                 " }
+
+        "---------------------------------------------------------------------------------- 
+        Plug 'plasticboy/vim-markdown'
+                " - `zr`: reduces fold level throughout the buffer
+                " - `zR`: opens all folds
+                " - `zm`: increases fold level throughout the buffer
+                " - `zM`: folds everything all the way
+                " - `za`: open a fold your cursor is on
+                " - `zA`: open a fold your cursor is on recursively
+                " - `zc`: close a fold your cursor is on
+                " - `zC`: close a fold your cursor is on recursively
+
         "--------------------------------------------------------------------------------- 
                 " abc,def,ghi , some , shrt 
                 " a,b,c
@@ -699,7 +722,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "###Pymode???##########################################
         Plug 'python-mode/python-mode'
         let g:pymode_python = 'python3'
-        "---Other-stuff---------------------------------------
+        "---Other-stuff--KKK-MMM------------------------------
         let g:pymode_rope = 0 " Load rope plugin
         let g:pymode_breakpoint = 1 " Load breakpoints plugin
         let g:pymode_breakpoint_key = '<LocalLeader>t' " set/unset breakpoint
@@ -769,7 +792,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "         hi! def link ObliquePrompt       Structure
         "         hi! def link ObliqueLine         String
         "--------------------------------------------------------------------------------- 
-        Plug 'vim-scripts/javaDoc.vim'
         Plug 'artur-shaik/vim-javacomplete2'
         " imap <F3> <Plug>(JavaComplete-Imports-RemoveUnused)
         " nmap <F4> <Plug>(JavaComplete-Imports-Add)
@@ -830,7 +852,7 @@ call plug#end()
         let g:jedi#goto_command = "<leader>d"
         let g:jedi#goto_assignments_command = "<leader>g"
         let g:jedi#goto_definitions_command = ""
-        "--------------MMM--------------------------
+        "----------KKK-MMM--------------------------
         let g:jedi#documentation_command = "gj"
         let g:jedi#usages_command = "<leader>n"
         let g:jedi#rename_command = "<leader>r"
@@ -1384,4 +1406,3 @@ call plug#end()
 " let g:neodbg_keymap_stop_debugging     = '<S-F5>'       " stop debugging (kill)
 " let g:neodbg_keymap_toggle_console_win = '<F6>'         " toggle console window
 " let g:neodbg_keymap_terminate_debugger = '<C-C>'        " terminate debugger
-

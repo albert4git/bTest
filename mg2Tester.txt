@@ -1,7 +1,0 @@
-mg2Tester.txt
-
-:Author: red
-:Email: red@red-Swift-SF113-31
-:Date: 2019-03-22 01:30
-
-YYYY
