@@ -1,9 +1,6 @@
 sqlitejdbc code can be downloaded using git from
 https://github.com/crawshaw/sqlitejdbc. 
 
-javac -classpath .;sqlitejdbc-v056.jar Text.java
-
-java -classpath .;sqlitejdbc-v056.jar Text
 
 javac HelloWorld.java
 This basic usage compiles the program to produce Hello‐

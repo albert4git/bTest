@@ -14,9 +14,20 @@
 ##########################################################################################
 #ls kong18
 #rm kong18/18-*
-#NOW=$(date +"%m-%d-%Y-%T")
 #NW=$(date +"%m-%d-%Y")
 #NW="AB"
+
+
+NOW=$(date +"%m-%d-%Y-%T")
+NW=$(date +"%m-%d-%Y-%H-%M-%S")
+cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW"
+
+cp -r ~/git/bTest/ /media/red/0A942CAB942C9B69/BB9BLOCK/"bTest$NW"
+cp -r ~/git/bTest/ /media/red/F1E8-C819/BBFBLOCK/"bTest$NW"
+
+#cp ~/.profile kong18/"18-profile.$NW"
+
+
 ##########################################################################################
 rm ~/.tmuxinator/kBank20.yml
 rm ~/.tmuxinator/kBank19.yml
