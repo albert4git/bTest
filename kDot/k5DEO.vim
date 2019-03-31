@@ -6,30 +6,47 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 "-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
 call plug#begin('~/.config/nvim/plugged/')
-        " Plug 'c9s/perlomni.vim'
-        " cal AddPerlOmniRule({ 'only':1, 'head': '^has\s\+\w\+' , 
-        "                         \'context': '\s\+is\s*=>\s*$'  , 
-        "                         \'backward': '[''"]\?\w*$' , 
-        "                         \'comp': function('s:CompMooseIs') } )
 
-        " cal AddPerlOmniRule({
-        "                         \'only':1, 
-        "                         \'context': '&$', 
-        "                         \'backward': '\<\U\w\+$', 
-        "                         \'comp': function('s:CompBufferFunction') })
         "=================================================================================
-        Plug 'wokalski/autocomplete-flow'
-        let g:autocomplete_flow#insert_paren_after_function = 0
-        "Plug 'deoplete-plugins/deoplete-zsh'
+        Plug 'c9s/helper.vim'
+        Plug 'c9s/treemenu.vim'
+        Plug 'nixprime/cpsm'
+        Plug 'roxma/nvim-yarp'
+        Plug 'roxma/vim-hug-neovim-rpc'
+        Plug 'tomtom/tlib_vim'       
 
-        Plug 'vhakulinen/neovim-intellij-complete-deoplete'
-        Plug 'WolfgangMehner/c-support'
-        Plug 'vim-scripts/ri-browser'
+        "=================================================================================
+        " Plug 'deoplete-plugins/deoplete-zsh'
+        " Plug 'WolfgangMehner/c-support'
+        " Plug 'vim-scripts/ri-browser'
+        " Plug 'dhruvasagar/vim-open-url'
+        "---------------------------------------------------------------------------------- 
+        "Plug 'tobyS/pdv'  -- php documenter
+        "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+        "---------------------------------------------------------------------------------- 
 
-        Plug 'eagletmt/neco-ghc'
-        let g:haskellmode_completion_ghc = 1
-        autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+        "---------------------------------------------------------------------------------- 
+        "============DDDDoc==============================================================
+        "---------------------------------------------------------------------------------- 
+        "NO Plug 'vim-scripts/javaDoc.vim'
+        Plug 'cskeeters/javadoc.vim'
+                "let g:javadoc_path = "/usr/bin/javadoc:/home/user/javadoc"
+                let g:javadoc_path = "/usr/bin/javadoc"
+                let g:javadoc_browser = "/usr/bin/firefox"
 
+        " Plug 'lucapette/vim-ruby-doc'
+        "         let g:ruby_doc_command='open'
+        "         let g:ruby_doc_ruby_mapping='KK'
+        "         let g:ruby_doc_ruby_host='https://apidock/ruby'
+        "=================================================================================
+        Plug 'gauteh/vim-cppman'
+                " 1.) Install [cppman](https://github.com/aitjcize/cppman)
+                " 2.) Install this plugin using your favourite plugin manager.
+
+        "---------------------------------------------------------------------------------- 
+        "============DDDStart==============================================================
+        "---------------------------------------------------------------------------------- 
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         "=================================================================================
         Plug 'Shougo/neco-syntax'
         Plug 'Shougo/neco-vim'
@@ -39,41 +56,82 @@ call plug#begin('~/.config/nvim/plugged/')
         let g:necovim#complete_functions.Ref =
                                 \ 'ref#complete'
         "=================================================================================
+        Plug 'davidhalter/jedi-vim'
+        Plug 'zchee/deoplete-jedi'
+        "=================================================================================
+        Plug 'zchee/deoplete-clang'
+        "=================================================================================
+        function! DoRemote(arg)
+                UpdateRemotePlugins
+        endfunction
+        "=================================================================================
+         Plug 'c9s/perlomni.vim'
+        " cal AddPerlOmniRule({ 'only':1, 'head': '^has\s\+\w\+' , 
+        "                         \'context': '\s\+is\s*=>\s*$'  , 
+        "                         \'backward': '[''"]\?\w*$' , 
+        "                         \'comp': function('s:CompMooseIs') } )
+        " cal AddPerlOmniRule({
+        "                         \'only':1, 
+        "                         \'context': '&$', 
+        "                         \'backward': '\<\U\w\+$', 
+        "                         \'comp': function('s:CompBufferFunction') })
+        "=================================================================================
+        Plug 'wokalski/autocomplete-flow'
+                let g:autocomplete_flow#insert_paren_after_function = 0
+        "=================================================================================
         " Plug 'thalesmello/webcomplete.vim'
         " " Use <C-X><C-U> in insert mode to get completions
         " set completefunc=webcomplete#complete
-
         " " Use <C-X><C-O> in insert mode to get completions
         " set omnifunc=webcomplete#complete
-
         "=================================================================================
-
+        Plug 'vhakulinen/neovim-intellij-complete-deoplete'
+        "=================================================================================
+        Plug 'eagletmt/neco-ghc'
+        let g:haskellmode_completion_ghc = 1
+        autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+        "=================================================================================
         Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
         "If you would prefer adding a period then set:
         let g:deoplete#sources#go#package_dot = 1
         let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-
-        "Plug 'dhruvasagar/vim-open-url'
-        " padawan {
+        "=================================================================================
         Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
         Plug 'mkusher/padawan.vim'
-
         let $PATH=$PATH . ':' . expand('~/.config/composer/vendor/bin/')
         let g:padawan#composer_command = "/usr/bin/composer"
-        " }
+        "=================================================================================
+        Plug 'artur-shaik/vim-javacomplete2'
+        nnoremap <leader>cj :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
+        autocmd filetype java nnoremap <F4> :w <bar> !javac % && java -enableassertions %:p <CR>
+        " imap <F3> <Plug>(JavaComplete-Imports-RemoveUnused)
+        " nmap <F4> <Plug>(JavaComplete-Imports-Add)
+        " nmap <F5> <Plug>(JavaComplete-Imports-AddMissing)
+        " nmap <F6> <Plug>(JavaComplete-Imports-RemoveUnused)
+        "--------------------------------------------------------------------------------- 
+        " :setlocal omnifunc=javacomplete#Complete
+        " :setlocal completefunc=javacomplete#CompleteParamsInfo
+        " autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+        "=================================================================================
 
-        Plug 'gauteh/vim-cppman'
-                " 1.) Install [cppman](https://github.com/aitjcize/cppman)
-                " 2.) Install this plugin using your favourite plugin manager.
+        "---------------------------------------------------------------------------------- 
+        "Err Plug 'skwp/vim-ruby-conque'
+        "=================================================================================
+        Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
+        Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+        "=================================================================================
+        Plug 'fishbullet/deoplete-ruby'
+        Plug 'takkii/ruby-dictionary3'
+        "=================================================================================
+        Plug 'autozimu/LanguageClient-neovim', {
+                                \ 'branch': 'next',
+                                \ 'do': 'bash install.sh',
+                                \ }
+        "---------------------------------------------------------------------------------- 
+        "=============DDDStop==============================================================
+        "---------------------------------------------------------------------------------- 
 
-        Plug 'c9s/helper.vim'
-        Plug 'c9s/treemenu.vim'
-        Plug 'nixprime/cpsm'
-        Plug 'roxma/nvim-yarp'
-        Plug 'roxma/vim-hug-neovim-rpc'
-        Plug 'tomtom/tlib_vim'       
-
-        "-AAA---------------------------------------------------------------------------{{{
+        "---AAA-------------------------------------------------------------------------{{{
 
         Plug 'MattesGroeger/vim-bookmarks'
                 let g:bookmark_no_default_key_mappings = 1
@@ -369,60 +427,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "         hi IndentGuidesOdd   ctermbg=22
         "         hi IndentGuidesEven  ctermbg=239
         "---------------------------------------------------------------------------------- 
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-        Plug 'davidhalter/jedi-vim'
-        Plug 'zchee/deoplete-jedi'
-        "? Plug 'justmao945/vim-clang'
-        Plug 'zchee/deoplete-clang'
-        " Make sure you use single quotes
-        function! DoRemote(arg)
-                UpdateRemotePlugins
-        endfunction
-
-        "--------------------------------------------------------------------------------- 
-        Plug 'artur-shaik/vim-javacomplete2'
-        nnoremap <leader>cj :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
-        autocmd filetype java nnoremap <F4> :w <bar> !javac % && java -enableassertions %:p <CR>
-        " imap <F3> <Plug>(JavaComplete-Imports-RemoveUnused)
-        " nmap <F4> <Plug>(JavaComplete-Imports-Add)
-        " nmap <F5> <Plug>(JavaComplete-Imports-AddMissing)
-        " nmap <F6> <Plug>(JavaComplete-Imports-RemoveUnused)
-        "--------------------------------------------------------------------------------- 
-        "--------------------------------------------------------------------------------- 
-        " :setlocal omnifunc=javacomplete#Complete
-        " :setlocal completefunc=javacomplete#CompleteParamsInfo
-        " autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
-
-        "---------------------------------------------------------------------------------- 
-        "Plug 'tobyS/pdv'  -- php documenter
-
-        "NO Plug 'vim-scripts/javaDoc.vim'
-        Plug 'cskeeters/javadoc.vim'
-                "let g:javadoc_path = "/usr/bin/javadoc:/home/user/javadoc"
-                let g:javadoc_path = "/usr/bin/javadoc"
-                let g:javadoc_browser = "/usr/bin/firefox"
-
-        " Plug 'lucapette/vim-ruby-doc'
-        "         let g:ruby_doc_command='open'
-        "         let g:ruby_doc_ruby_mapping='KK'
-        "         let g:ruby_doc_ruby_host='https://apidock/ruby'
-
-        "Err Plug 'skwp/vim-ruby-conque'
-        "Plug 'ternjs/tern_for_vim'
-        Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
-        Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-
-        "---------------------------------------------------------------------------------- 
-        Plug 'fishbullet/deoplete-ruby'
-        Plug 'takkii/ruby-dictionary3'
-        "---------------------------------------------------------------------------------- 
-        "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-        "---------------------------------------------------------------------------------- 
-        "---------------------------------------------------------------------------------- 
-        Plug 'autozimu/LanguageClient-neovim', {
-                                \ 'branch': 'next',
-                                \ 'do': 'bash install.sh',
-                                \ }
         "---------------------------------------------------------------------------------- 
         Plug 'vim-scripts/Lynx-Offline-Documentation-Browser'
         "---------------------------------------------------------------------------------- 
@@ -994,6 +998,7 @@ call plug#end()
 
         "--------------------------------------------------------------------------------
         autocmd! filetype python setlocal textwidth=100
+
         "--------------------------------------------------------------------------------
         set complete=.,w,b,t,i,u,kspell
         "            | | | | | | |
@@ -1034,19 +1039,18 @@ call plug#end()
         " endif
         "==========================================================================================
 
-        "===VIM-CLANG=========================================================
+        "===VIM-CLANG=========DDDClang================================================
         "? let g:clang_auto = 1
         "? let g:clang_cpp_options = '-std=c++ -stdlib=libc++'
         "let g:clang_exec = 'clang'
-        """""""""""""""""""""""""
-        """"    deoplete     """"
-        """""""""""""""""""""""""
+        """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
         let g:deoplete#omni_patterns = {}
         let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
         let g:deoplete#sources = {}
         let g:deoplete#sources._ = []
         let g:deoplete#file#enable_buffer_path = 1
 
+        "===PHP=DDD==============================================================
         let g:neocomplete#force_omni_input_patterns = {}
         let g:neocomplete#force_omni_input_patterns.php =
                                 \ '\h\w*\|[^- \t]->\w*'
@@ -1056,14 +1060,6 @@ call plug#end()
         let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
         let g:deoplete#sources#clang#sort_algo = 'priority' " alphabetical
 
-        "===CCC===============================================================
-
-        "===PHP===============================================================
-        "? let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-        "? let g:deoplete#ignore_sources.php = ['phpcd', 'omni']
-
-        " let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-        " let g:deoplete#ignore_sources.php = ['omni']
 
         "===RUBY===============================================================
         setlocal dictionary+=~/.config/nvim/repos/github.com/takkii/ruby-dictionary3/autoload/source/ruby_method_deoplete
@@ -1076,7 +1072,8 @@ call plug#end()
         " provider.start().then(() => {
         "     console.log('Socket server is listening on port ' + provider.port);
         " });
-        "======================DDD=================================================================
+
+        "=====================DDDMarkStart==============================================================
         call deoplete#custom#source('neosnippet',    'rank', 690)
         call deoplete#custom#source('ultisnips',     'rank', 680)
         call deoplete#custom#source('padawan',       'rank', 660)
@@ -1101,51 +1098,26 @@ call plug#end()
         call deoplete#custom#source('LanguageClient','mark', 'ℰLgCl')
         call deoplete#custom#source('omni',          'mark', '⌾mni')
         call deoplete#custom#source('flow',          'mark', '⌁flow')
+        call deoplete#custom#source('perlomni',      'mark', '⌁perl')
         call deoplete#custom#source('padawan',       'mark', '⌁Pd')
         call deoplete#custom#source('TernJS',        'mark', '⌁Tern')
+        call deoplete#custom#source('tern',          'mark', '⌁tern')
         call deoplete#custom#source('clang',         'mark', '⌁Clng')
         call deoplete#custom#source('go',            'mark', '⌁Go')
         call deoplete#custom#source('jedi',          'mark', '⌁Jdi')
         call deoplete#custom#source('vim',           'mark', '⌁Vim')
         call deoplete#custom#source('neosnippet',    'mark', '⌘NeoSnp')
         call deoplete#custom#source('ultisnips',     'mark', '⌘Ulti')
-        call deoplete#custom#source('around',        'mark', '↻')
-        call deoplete#custom#source('buffer',        'mark', 'ℬ')
+        call deoplete#custom#source('around',        'mark', '↻round')
+        call deoplete#custom#source('buffer',        'mark', 'ℬ uffer')
         call deoplete#custom#source('tmux-complete', 'mark', '⊶tMux')
-        call deoplete#custom#source('syntax',        'mark', 'Syntx')
+        call deoplete#custom#source('syntax',        'mark', '⊶Syntx')
         call deoplete#custom#source('member',        'mark', '.Mmbr')
+        "==========================================================================================
+        "=====================DDDMarkEnd==============================================================
+        "==========================================================================================
 
         "==========================================================================================
-        " " clang_complete {{{ use of clang to complete in C/C++.
-        " " let g:clang_user_options = '-std=gnu++0x -include malloc.h -fms-extensions -fgnu-runtime'
-        " " let g:clang_user_options = '-std=c++11 -stdlib=libc++'
-        " " you can use g:ClangUpdateQuickFix() with a mapping to do this
-        " " disable with 0 to solve neocomplcache problem
-        " " clang_complete, snipmate, ultisnips
-        " " :h clang_complete.txt
-
-        " let g:clang_auto_select = 0 " 0/1/2 auto select first entry in popup menu
-        " let g:clang_complete_auto = 1 " auto complete after -> . ::
-        " let g:clang_complete_copen = 1 " 1: open quickfix window on error
-        " let g:clang_hl_errors = 1 " highlight warnings and errors
-        " let g:clang_periodic_quickfix = 0 " periodically update quickfix
-        " let g:clang_snippets = 1
-        " let g:clang_snippets_engine = "ultisnips"
-        " let g:clang_conceal_snippets = 1
-        " let g:clang_trailing_placeholder = 0 " for clang_complete snippet engine
-        " let g:clang_close_preview = 0 " auto close preview window after completion
-        " let g:clang_exec = "clang" " name or path of clang executable.
-        " let g:clang_user_options =
-        "                         \ '-std=gnu99' .
-        "                         \ '-stdlib=libc' .
-        "                         \ '-I /usr/include'
-        " let g:clang_auto_user_options = "path, .clang_complete, clang"
-        " let g:clang_use_library = 1
-        " let g:clang_library_path = "/usr/lib/"
-        " let g:clang_sort_algo = "priority"
-        " let g:clang_complete_macros = 1
-        " let g:clang_complete_patterns = 1
-
         "===SetPLAY2===============================================================================
         " In Neovim, you can set up fzf window using a Vim command
         let g:fzf_layout = { 'window': 'enew' }
@@ -1330,10 +1302,16 @@ call plug#end()
                 nnoremap <Leader>l :lgrep -R <cword> .<cr>
                 nnoremap <Leader>g :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
                 nnoremap <Leader>a :Ack <cword> .<cr>
-                "=nnoremap ? :Ack ================================================
-        map <F2> :exec "!xterm -e 'pydoc ".expand("<cword>")."'"<CR><CR>
-        imap <F2> <ESC>:exec "!xterm -e 'pydoc ".expand("<cword>")."'"<CR><CR>i
+                "===noremap ? :Ack ===MMM===KKK============================================
+                map <F2> :exec "!xterm -e 'pydoc ".expand("<cword>")."'"<CR><CR>
+                imap <F2> <ESC>:exec "!xterm -e 'pydoc ".expand("<cword>")."'"<CR><CR>i
+
+                "================================================================="
+                " imap <F2> <ESC>:exec "!terminal -e 'pydoc ".expand("<cword>")."'"<CR><CR>i
+                " map <F2> :exec "!terminal -e 'pydoc ".expand("<cword>")."'"<CR><CR>
+
                 nmap <Leader>5 :Pydoc <cword> .<cr>
+                "================================================================="
                 nmap <Leader>6 :Rg <cword> .<cr>
                 nmap <Leader>7 :Ag <cword> .<cr>
                 nmap <Leader>8 <Plug>AgRawSearch <cword> .<cr>
@@ -1471,7 +1449,10 @@ autocmd BufEnter term://* nnoremap <buffer> gx viW"xy \| :call Open(@x)<CR>
 autocmd FileType c,cpp set keywordprg=cppman
 command! -nargs=+ Cppman silent! call system("tmux split-window cppman " . expand(<q-args>))
 autocmd FileType cpp nnoremap <silent><buffer> M <Esc>:Cppman <cword><CR>
-
+"================================================
+autocmd FileType python set keywordprg=Pydoc
+command! -nargs=+ Pydoc silent! call system("tmux split-window Pydoc " . expand(<q-args>))
+autocmd FileType python nnoremap <silent><buffer> M <Esc>:Pydoc <cword><CR>
 "==========================================================================================
 
 command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)

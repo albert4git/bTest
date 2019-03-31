@@ -20,6 +20,7 @@
                 document.pic.src='pic1.png';
         }
 }
+
 </script>
 
 // <img src="pic1.png" name="pic" onclick="test()"/>

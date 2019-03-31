@@ -9,6 +9,7 @@ public class jaHelloCl
                 Calendar calendar = GregorianCalendar.getInstance();
                 System.out.print(calendar.getTime());
                 System.out.println(" - Hello, World!");
+                System.out.println("---");
 
         }
 }

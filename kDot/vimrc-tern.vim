@@ -1,3 +1,4 @@
+
 " Set bin if you have many instalations
 let g:deoplete#sources#ternjs#tern_bin = '/path/to/tern_bin'
 let g:deoplete#sources#ternjs#timeout = 1

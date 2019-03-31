@@ -12,9 +12,11 @@
 
 $db = new SQLite3('dodo10.db');
 
+
 $results = $db->query('SELECT Name FROM Cars');
 while ($row = $results->fetchArray()) {
-    var_dump($row);
+        var_dump($row);
 }
+
 ?>
 

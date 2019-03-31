@@ -18,6 +18,8 @@ my $db = DBI->connect("dbi:SQLite:test.db", "", "",
 $db->do("CREATE TABLE n (id INTEGER PRIMARY KEY, f TEXT, l TEXT)");
 $db->do("INSERT INTO n VALUES (NULL, 'john', 'smith')");
 my $all = $db->selectall_arrayref("SELECT * FROM n");
+my $all = $db->select_all_tasks()
+
 
 foreach my $row (@$all) {
         my ($id, $first, $last) = @$row;
