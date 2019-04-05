@@ -23,6 +23,8 @@ int main()
         int num;
         printf("Enter value of num:");
         scanf("%d",&num);
+
+
         switch (num)
         {
                 case 1:

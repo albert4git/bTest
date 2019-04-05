@@ -12,6 +12,7 @@
         let s:thesaurus_pat = "~/git/aTest/dotFiles/DICT/mthesaur.txt"
         set dictionary+=/home/red/git/aTest/dotFiles/DICT/english-words.txt
         "set dictionary="/usr/dict/words"     
+        "set shell=bash
         set shell=/bin/bash
         set nocompatible
         filetype on
@@ -24,6 +25,7 @@
         set shell=/bin/zsh
         set tags+=.tags;
         set tags+=tags;
+
         "------------------------------------------------------------------------------------------
         augroup vimrc
                 autocmd!
@@ -178,17 +180,17 @@
         "source ~/git/bTest/kDot/kDEO3.vim
         source ~/git/bTest/kDot/k5DEO.vim
         "source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
+
         "::::::CYAN::::::::::::::::-=2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         source ~/git/aTest/dotFiles/nVim/mix/n-badwolf.vim 
-
         "colorscheme dracula
         colorscheme badwolf
-        "-TOP-------------------------------------------------------------------------------------------------------------------
+        "-TOP----------------------------------------------------------------------------------------------------------
         highlight DiffAdd           cterm=bold ctermbg=22
         highlight DiffDelete        cterm=bold ctermbg=3
         highlight DiffChange        cterm=bold ctermbg=11
         highlight DiffChange        cterm=bold ctermbg=52
-        "-TOP-------------------------------------------------------------------------------------------------------------------
+        "-TOP----------------------------------------------------------------------------------------------------------
         hi Normal         ctermbg=235
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
@@ -197,7 +199,6 @@
         hi signcolumn     ctermbg=23
         "hi LineNr         ctermbg=199 ctermfg=16 
         hi LineNr         ctermbg=22 ctermfg=15 
-        set cursorcolumn
         hi CursorLine     ctermbg=8
         set colorcolumn=92,100,112,120
         set pumheight=12
@@ -207,23 +208,24 @@
         "------------------------------------------------------
         hi customPink     ctermbg=245 ctermfg=White
         hi lightGray      ctermbg=12
-        hi darkGray       ctermbg=8
+        hi darkGray       ctermbg=211
         "------------------------------------------------------
         highlight Visual cterm=bold ctermbg=2 ctermfg=NONE
+        set cursorcolumn
 
         set list
         set listchars=tab:▸\
-        "------------------------------------------------------
+        "---???---------------------------------------------------------------------------- 
+        call matchadd('darkGray', '???')
+        call matchadd('darkGray', 'KKK')
+        call matchadd('darkGray', 'TTT')
+        call matchadd('darkGray', 'DDD')
         call matchadd('customPink', 'aaa')
         call matchadd('customPink', 'AAA')
         call matchadd('customPink', '===')
         call matchadd('customPink', '###')
         call matchadd('customPink', ':::')
         call matchadd('customPink', '---')
-        "------------------------------------------------------
-        "------------------------------------------------------
-        "------------------------------------------------------
-        "------------------------------------------------------
         "------------------------------------------------------
         "------------------------------------------------------
         "hi Comment        ctermbg=14
@@ -278,9 +280,6 @@
 "-16-}}}
 
 "::::::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        " Split previously opened file ('#') in a split window
-        nnoremap ;l :execute "leftabove vsplit" bufname('#')<cr>
-        nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>
         "---------------------------------------------------------------------------------
          nnoremap <C-j> :bn<cr>
          nnoremap <C-k> :bp<cr>
@@ -288,28 +287,12 @@
         "nnoremap <S-j> :bn<cr>
         "nnoremap <S-k> :bp<cr>
         "---------------------------------------------------
-        nnoremap <m-right> :vertical resize +3<cr>
-        nnoremap <m-left> :vertical resize -3<cr>
-        nnoremap <m-up> :resize +3<cr>
-        nnoremap <m-down> :resize -3<cr>
+        nnoremap <S-right> :vertical resize +3<cr>
+        nnoremap <S-left> :vertical resize -3<cr>
+        nnoremap <S-up> :resize +3<cr>
+        nnoremap <S-down> :resize -3<cr>
 "::::::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 "===============================================================================================================
-
-"===============================================================================================================
-        " function! OpenUrlUnderCursor()
-        "         let pathFF="/usr/bin/firefox"
-        "         execute "normal BvEy"
-        "         let urlFF=matchstr(@0, '[a-z]*:\/\/[^ >,;]*')
-        "         if urlFF != ""
-        "                 silent exec "!open -a ".pathFF." '".urlFF."'" | redraw! 
-        "                 echo "opened ".urlFF
-        "         else
-        "                 echo "No URL under cursor."
-        "         endif
-        " endfunction
-        " nmap <leader>o :call OpenUrlUnderCursor()<CR>
-        " nmap <F2> :call OpenUrlUnderCursor()<CR>
-
 "===============================================================================================================
 "===============================================================================================================

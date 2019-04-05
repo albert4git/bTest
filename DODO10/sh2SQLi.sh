@@ -22,6 +22,7 @@ read Descr
 echo "im gonna run" sqlite3 tasks.db "insert into todo \
      (project,duedate,status,description) \
      values (\"$Proj\",$Due,\"$Stat\",\"$Descr\");"
+
 sqlite3 tasks.db "insert into todo (project,duedate,status,description) \
          values (\"$Proj\",$Due,\"$Stat\",\"$Descr\");"
 

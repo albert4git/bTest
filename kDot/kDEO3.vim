@@ -1251,7 +1251,7 @@ call plug#end()
         autocmd QuickFixCmdPost grep cwindow
         autocmd! vimrc QuickfixCmdPost [^l]* nested copen | wincmd p
         autocmd! vimrc QuickfixCmdPost l* nested lopen | wincmd p
-        "===PLAY4===SUCHE=========************======================================================
+        "===PLAY4=== SUCHE =========************======================================================
                 nnoremap <Leader>l :lgrep -R <cword> .<cr>
                 nnoremap <Leader>g :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
                 nnoremap <Leader>a :Ack <cword> .<cr>
