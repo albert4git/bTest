@@ -26,6 +26,8 @@
         set tags+=.tags;
         set tags+=tags;
 
+        "set grepprg=/bin/grep\ -nH
+        set grepprg=rg\ --vimgrep
         "------------------------------------------------------------------------------------------
         augroup vimrc
                 autocmd!
@@ -212,6 +214,10 @@
         "------------------------------------------------------
         highlight Visual cterm=bold ctermbg=2 ctermfg=NONE
         set cursorcolumn
+
+        hi Pmenue                      ctermfg=11
+        hi CursorColumn                ctermbg=16
+        set nuw =6
 
         set list
         set listchars=tab:▸\

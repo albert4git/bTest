@@ -531,6 +531,7 @@ call plug#end()
                 redraw!
         endfunction
         map <F10> :call OnlineDoc8()<CR>
+
         "------------------------------------------------------------------------ 
         function! OpenUrlUnderCursor()
                 let path="/Applications/Safari.app"
