@@ -1,3 +1,4 @@
+
 "--------------------------------------------------------------------------------
 "---------------------------GVIM-------------------------------------------------
 "--------------------------------------------------------------------------------
@@ -228,8 +229,8 @@ set complete+=k
 iabbr str start
 iabbr supe superuser
 iabbr que question
-iabbrev #i #include
-iabbrev #d #define
+iabbrev #i #include (typing "#i" and space will be expanded to "#include")
+iabbrev #d #define  (typing "#d" and space will be expanded to "#define")
 iab cmnt /*<CR><CR>*/<Up>
 iabbrev @@    alf@nomail.com
 iabbrev ccopy Copyright 2013 Alf , no rights reserved.

@@ -20,7 +20,10 @@ Let's look at one more mapping before we move on. Run the following command:
 
 :onoremap ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
 
-Try it by putting your cursor in a section's text and typing cah. This time Vim will delete not only the heading's text but also the line of equal signs that denotes a heading. You can think of this movement as "around this section's heading".
+Try it by putting your cursor in a section's text and typing cah. This time
+Vim will delete not only the heading's text but also the line of equal signs
+that denotes a heading. You can think of this movement as "around this
+section's heading".
 
 What's different about this mapping? Let's look at them side by side:
 
@@ -76,8 +79,11 @@ The rest of the mapping is the same, so we still start on the first character of
 
         nnoremap <leader>e :splitMYVIMRC<cr>
 
-        iabbrev @@    albert@stevelosh.com
+        iabbrev @@    albert@stev.com
         iabbrev ccopy Copyright 2013 Steve Losh, all rights reserved.
+        autocmd FileType vim :iabbrev <buffer> iff if ()<left>
+        autocmd FileType vim :iabbrev <buffer> iff if ()<left>
+
 
         steve@stevelosh.com
         Copyright 2013 Steve Losh, all rights reserved.
@@ -102,9 +108,14 @@ The rest of the mapping is the same, so we still start on the first character of
 
         iabbrev <buffer> --- &mdash;
 
+
         autocmd FileType vim :iabbrev <buffer> iff if ()<left>
         autocmd FileType vim :iabbrev <buffer> iff if ()<left>
 
+        iabbrev @@    albert@stev.com
+        iabbrev ccopy Copyright 2013 Steve Losh, all rights reserved.
+        autocmd FileType vim :iabbrev <buffer> iff if ()<left>
+        autocmd FileType vim :iabbrev <buffer> iff if ()<left>
         iabbrev <buffer> iff if ()<left>
 
         i

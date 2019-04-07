@@ -38497,6 +38497,9 @@ noremap <m-v> <c-v>
 noremap! <m-z>v <c-v>
 "in case i forget
 nnoremap <m-x>v :echo "This is Vim " . v:version . " Crap Edition"<enter>
+
+iabbrev /// /// <summary><enter><c-u>///<enter><c-u>/// </summary><up>
+
 nnoremap Y y$
 nnoremap S 0D
 vnoremap <bs> d

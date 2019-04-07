@@ -412,6 +412,7 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 " Substitute
 nnoremap <c-s> :%s/
 vnoremap <c-s> :s/
+inoremap <C-u> <esc>mzgUiw`za
 
 " HTML tag closing
 inoremap <C-_> <space><bs><esc>:call InsertCloseTag()<cr>a
@@ -908,8 +909,6 @@ augroup ft_clojure
 
 augroup END
 
-" }}}
-" Common Lisp {{{
 
 " Helper Functions {{{
 function! HighlightLispRepl() "{{{
@@ -2163,6 +2162,9 @@ let g:microdata_attributes_complete = 0
 let g:atia_attributes_complete = 0
 
 " }}}
+
+
+let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
 " Language Server Protocol {{{
 
 let g:LanguageClient_serverCommands = {
@@ -2765,6 +2767,11 @@ nnoremap <leader>V :call ToggleVirtualEdit()<cr>
 
 " }}}
 " Error Toggles {{{
+
+onoremap ir i[
+onoremap ar a[
+vnoremap ir i[
+vnoremap ar a[
 
 command! ErrorsToggle call ErrorsToggle()
 function! ErrorsToggle() " {{{

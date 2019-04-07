@@ -1,10 +1,11 @@
+"file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
+"Last modified: Mo Okt 22, 2018  12:58
+"------------------------------------------------------------------------------------------
 "------------------------------------------------------------------------------------------
 "       *[q*     |:cprevious|
 "       *]q*     |:cnext|
 "       *[Q*     |:cfirst|
 "       *]Q*     |:clast|
-"       nnoremap <Leader>b :cprev<cr>zvzz
-"       nnoremap <Leader>n :cnext<cr>zvzz
 "       *[l*     |:lprevious|
 "       *]l*     |:lnext|
 "       *[L*     |:lfirst|
@@ -17,7 +18,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 "let g:deoplete#sources#jedi#extra_path = $PYTHONPATH
 "==========================================================================================
 
-"-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
+"-AAA---UnPlug---nPlugStart---------------------------------------------------------------------------------{{{
 call plug#begin('~/.config/nvim/plugged/')
 
         "=================================================================================
@@ -27,7 +28,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
         Plug 'tomtom/tlib_vim'       
-
+        Plug 'vifm/neovim-vifm'
         "=================================================================================
         " Plug 'deoplete-plugins/deoplete-zsh'
         " Plug 'vim-scripts/ri-browser'
@@ -36,7 +37,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "Plug 'tobyS/pdv'  -- php documenter
         "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
         "---------------------------------------------------------------------------------- 
-
 
 "===DDDStart===DEOPLETE============================================================================
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -120,7 +120,6 @@ call plug#begin('~/.config/nvim/plugged/')
 "===DDDStop===DEOPLETE=============================================================================
 
         "---------------------------------------------------------------------------------- 
-        "============DDDDoc================================================================
         "NO Plug 'vim-scripts/javaDoc.vim'
         "---------------------------------------------------------------------------------- 
         "Plug 'cskeeters/javadoc.vim'
@@ -132,7 +131,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "         let g:ruby_doc_command='open'
         "         let g:ruby_doc_ruby_mapping='KK'
         "         let g:ruby_doc_ruby_host='https://apidock/ruby'
-        "=================================================================================
+        "---------------------------------------------------------------------------------- 
         Plug 'gauteh/vim-cppman'
                 " 1.) Install [cppman](https://github.com/aitjcize/cppman)
                 " 2.) Install this plugin using your favourite plugin manager.
@@ -172,13 +171,6 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "---AAA6---GitGutter---Fugitive---Magit---GV------------------------------------{{{
                 Plug 'airblade/vim-gitgutter'
-                        nmap ]c <Plug>GitGutterNextHunk
-                        nmap [c <Plug>GitGutterPrevHunk
-                "------------------------------------------------------
-                        nmap hp <Plug>GitGutterPreviewHunk
-                        nmap hs <Plug>GitGutterStageHunk
-                        nmap hu <Plug>GitGutterUndoHunk
-                "------------------------------------------------------
                         let g:gitgutter_signs = 1
                         let g:gitgutter_max_signs = 4000
                 "---------------------------------------------------------------------------
@@ -230,22 +222,12 @@ call plug#begin('~/.config/nvim/plugged/')
                 "   - ]] and [[ to move between commits
                 "   - . to start command-line with :Git [CURSOR] SHA à la fugitive
                 "   - q to close
-                "--------------------------------------------------------------------------- 
-                Plug 'vim-scripts/FuzzyFinder'
-                "--------------------------------------------------------------------------- 
-        "-6-}}}
+        "---6Git---}}}
 
+        "---------------------------------------------------------------------------------- 
+        Plug 'vim-scripts/FuzzyFinder'
+        "---------------------------------------------------------------------------------- 
 
-        "------TESTING------------------------------------------------------------------ 
-        " Plug 'severin-lemaignan/vim-minimap'
-        " Plug 'koron/minimap-vim'
-        " Plug 'WolfgangMehner/bash-support'
-        " Plug 'itchyny/calendar.vim'
-        " Plug 'vim-scripts/foo.vim'
-        "--------------------------------------------------------------------------------- 
-        Plug 'eparreno/vim-l9'
-        " Plug 'WolfgangMehner/c-support'
-        " Plug 'vim-scripts/c.vim'
         "--------------------------------------------------------------------------------- 
         Plug 'pboettch/vim-cmake-syntax'        " CMake
         Plug 'octol/vim-cpp-enhanced-highlight' " C++
@@ -278,9 +260,9 @@ call plug#begin('~/.config/nvim/plugged/')
         " <Leader>e: evaluate the expression under visual highlight and display the result
         "--------------------------------------------------------------------------------- 
         "Plug 'ashisha/image.vim'
-        "---------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------- 
         Plug 'brooth/far.vim'
-        "---???---------------------------------------------------------------------------- 
+        "---???--------------------------------------------------------------------------- 
         Plug 'osyo-manga/vim-brightest'
                 let g:brightest#highlight = { "group" : "Define" }
 "===TagHighlight=================================================================================== 
@@ -434,7 +416,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:nv_search_paths = ['/media/red/F1E8-C819/hTML-Zp-Link/' ]
                 let g:nv_search_paths = ['~/git/', '~/git/aTest/pyLabGitPdbPythonMode27' ]
                 "let g:nv_search_paths = ['~/git/aTest/dotFiles/', '~/git/aTest/pyLabGitPdbPythonMode27' ]
-        nnoremap <Leader>3 :NV <C-r><C-w><CR> | wincmd p
         "----------------------------------------------------------------------
         Plug 'Shougo/neomru.vim'
         "--------------------------------------
@@ -470,21 +451,10 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:unite_source_buffer_time_format = '(%d-%m-%Y %H:%M:%S) '
                 let g:unite_source_file_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
                 let g:unite_source_directory_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
-        "------------------------------------------------------------------------------------------------------
-                nnoremap <C-q> :Unite help buffer file_mru file file_rec bookmark <CR>
-                nnoremap <Leader>u :Unite help file_mru file buffer file_rec bookmark <CR>
-                nnoremap <Leader>\ :Unite -silent -vertical -winwidth=40  -direction=botright -toggle outline<CR>
-                nnoremap <Leader>h :UniteWithCursorWord -silent help<CR>
-                nnoremap <Leader>r :<C-u>Unite -buffer-name=register register<CR>
-                nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
-                nnoremap <Leader>j :<C-u>Unite -buffer-name=jump jump<CR>
-                nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
-                nnoremap <Leader>' :Unite bookmark <CR>
 
         "======================================================================================================
         Plug 'ddrscott/vim-side-search'
-        " How should we execute the search?
-        " --heading and --stats are required!
+        "--heading and --stats are required!
         let g:side_search_prg = 'ag --word-regexp'
                                 \. " --ignore='*.js.map'"
                                 \. " --heading --stats -B 1 -A 4"
@@ -492,8 +462,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:side_search_splitter = 'vnew'
                 " I like 40% splits, change it if you don't
                 let g:side_search_split_pct = 0.4
-                " SideSearch current word and return to original window
-                nnoremap <Leader>1 :SideSearch <C-r><C-w><CR> | wincmd p
                 " Create an shorter `SS` command
                 command! -complete=file -nargs=+ SS execute 'SideSearch <args>'
                 " or command abbreviation
@@ -502,12 +470,16 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'exvim/ex-matchit'
         "----------------------------------------------------------------------------------
         Plug 'ervandew/supertab'
+
+                let g:SuperTabDefaultCompletionType = "<c-n>"
+                let g:SuperTabLongestHighlight = 1
+                let g:SuperTabCrMapping = 1
         "---------------------------------------------------------------------------------- 
         Plug 'MarcWeber/vim-addon-mw-utils'
         Plug 'garbas/vim-snipmate'
         Plug 'honza/vim-snippets'
         Plug 'SirVer/ultisnips'
-"===Ulti=Expander=Unite===(C=q)====================================================================
+"===Ulti===Expander===Unite===(C=q)===============================================================
                 function! UltiSnipsCallUnite()
                         Unite -start-insert -winheight=100 -immediately -no-empty ultisnips
                         return ''
@@ -519,7 +491,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:UltiSnipsJumpForwardTrigger="<C-q>"
         Plug 'Shougo/neosnippet.vim'
         Plug 'Shougo/neosnippet-snippets'
-"===NEOSNIPP===(C-s)+(C-k)=========================================================================
+"===NEOSNIPP===(C-s)+(C-k)========================================================================
                 imap <C-s>    <Plug>(neosnippet_start_unite_snippet)
                 imap <C-k>    <Plug>(neosnippet_expand_or_jump)
                 smap <C-k>    <Plug>(neosnippet_expand_or_jump)
@@ -529,7 +501,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:neosnippet#enable_snipmate_compatibility = 1
                 " Tell Neosnippet about the other snippets
                 let g:neosnippet#snippets_directory='~/.config/nvim/plugged/vim-snippets/snippets'
-
         "------------------------------------------------------------------------------------------ 
         Plug 'tpope/vim-tbone'
         Plug 'tmux-plugins/vim-tmux'
@@ -544,9 +515,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:bling_color_cterm = 'reverse'
         "------------------------------------------------------------------------------------------ 
         Plug 'tpope/vim-unimpaired'
-        "------------------------------------------------------------------------------------------ 
-        Plug 'tpope/vim-eunuch'
 "===EUNUCH=========================================================================================
+        Plug 'tpope/vim-eunuch'
         " :Delete: Delete a buffer and the file on disk simultaneously.
         " :Unlink: Like :Delete, but keeps the now empty buffer.
         " :Move: Rename a buffer and the file on disk simultaneously.
@@ -586,10 +556,8 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'haya14busa/incsearch.vim'
         Plug 'vim-scripts/SearchComplete'
-        "---------------------------------------------------------------------------------- 
 
-
-        "-AAA3----------------------------------------------------------------------------------------------{{{
+        "----------------------------------------------------------------------------------
          Plug 'scrooloose/nerdtree'
                  let NERDTreeShowBookmarks=1
                  let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
@@ -615,62 +583,23 @@ call plug#begin('~/.config/nvim/plugged/')
                  let g:NERDCommentEmptyLines = 1
                  let g:NERDTrimTrailingWhitespace = 1
 
-"===SUCHE===SEARCH======***========================================================================
-
-
-"===F2===3===4===5===6===7===8===9==================================================================
-                nnoremap <F2> <Esc>:help <C-r><C-w><CR>
-                au! FileType vim,help nnoremap M :exec "helpgrep" expand("<cword>")<CR>
-        "----------------------------------------------------------------------------------
-                nnoremap <Leader>2 <Esc>:FzfHelptags <CR>
-                "nnoremap <Leader>2 <Esc>:helpgrep <C-r><C-w><CR>
-        "----------------------------------------------------------------------------------
-                nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
-                inoremap <F3> <esc>:NERDTreeToggle<cr>
-         "--------------------------------------------------------------------------------- 
-                nnoremap <F4> :w<CR>:!python %<CR>
-         "--------------------------------------------------------------------------------- 
-                nnoremap <F5> :TagbarToggle<CR>
-                nnoremap <F12> :TagbarToggle<CR>
-         "--------------------------------------------------------------------------------- 
-         Plug 'mtth/scratch.vim'
-                nnoremap <F7> :Scratch<CR>
-                nnoremap <F6> :ScratchPreview<CR>
-        "----------------------------------------------------------------------------------
-                nnoremap <F9> :call ToggleQuickFix()<CR>
-                nnoremap <Leader>b :cprev<cr>zvzz
-                nnoremap <Leader>n :cnext<cr>zvzz
-         "-----------------------------------------------------------
-                nnoremap <F8> :LocationToggle<cr>
-                nnoremap <LocalLeader>n :lnext<cr>zvzz
-                nnoremap <LocalLeader>b :lprev<cr>zvzz
-        "---------------------------------------------------------------------------------- 
+        Plug 'mtth/scratch.vim'
         Plug 'francoiscabrol/ranger.vim'
         "        let g:NERDTreeHijackNetrw = 0 
         "        let g:ranger_replace_netrw = 1 
         "        let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
-                        noremap <localleader>r :Ranger <CR>
         "----------------------------------------------------------------------------------
          Plug 'henrik/vim-qargs'
-         "-----------------------------------------------------------
+        "----------------------------------------------------------------------------------
          Plug 'AndrewRadev/undoquit.vim'
-                 let g:undoquit_mapping = ';q' 
-                 "---c-w+u------ 
+        "----------------------------------------------------------------------------------
          Plug 'maxbrunsfeld/vim-yankstack'
-                 nmap zp <Plug>yankstack_substitute_older_paste
-                 nmap zn <Plug>yankstack_substitute_newer_paste
         "----------------------------------------------------------------------------------
         Plug 'easymotion/vim-easymotion'
                 let g:EasyMotion_smartcase = 1
                 let g:EasyMotion_do_mapping = 0 "-Disable default mappings
-                nmap <LocalLeader><LocalLeader> <Plug>(easymotion-overwin-w)
         Plug 'wellle/visual-split.vim'
                 " :VSSplit, :VSSplitAbove or :VSSplitBelow to create the split
-                " :VSResize to execute the VSResize ex command on the selected range
-                nmap <C-W>r  <Plug>(Visual-Split-Resize)
-                nmap <C-W>s <Plug>(Visual-Split-Split)
-        "---AAA-nnn-----------------------------------------------------}}}
-
         "==================================================================================
         Plug 'nvie/vim-flake8'
         "---------------------------------------------------------------------------------- 
@@ -680,62 +609,52 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:myplugin_enablefeature = 1
                 let g:myplugin_defaultdir = $HOME
                 let g:myplugin_weirdmode = 'm'
-
+        "----------------------------------------------------------------------------------
         Plug 'google/vim-syncopate'
         "----------------------------------------------------------------------------------
         Plug 'google/vim-codefmt'
-                augroup autoformat_settings
-                        autocmd FileType bzl AutoFormatBuffer buildifier
-                        autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
-                        autocmd FileType dart AutoFormatBuffer dartfmt
-                        autocmd FileType go AutoFormatBuffer gofmt
-                        autocmd FileType gn AutoFormatBuffer gn
-                        autocmd FileType html,css,json AutoFormatBuffer js-beautify
-                        autocmd FileType java AutoFormatBuffer google-java-format
-                        autocmd FileType python AutoFormatBuffer yapf
-                        " Alternative: autocmd FileType python AutoFormatBuffer autopep8
-                augroup END
-        "---------------------------------------------------------------------------------- 
+        augroup autoformat_settings
+                autocmd FileType bzl AutoFormatBuffer buildifier
+                autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+                autocmd FileType dart AutoFormatBuffer dartfmt
+                autocmd FileType go AutoFormatBuffer gofmt
+                autocmd FileType gn AutoFormatBuffer gn
+                autocmd FileType html,css,json AutoFormatBuffer js-beautify
+                autocmd FileType java AutoFormatBuffer google-java-format
+                autocmd FileType python AutoFormatBuffer yapf
+                " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+        augroup END
+        "--------------------------------------------------------------------------------- 
+        Plug 'dhruvasagar/vim-table-mode'
+                let g:table_mode_corner_corner='+'
+                let g:table_mode_header_fillchar='='
+                " :TableModeToggle
+                " +-------+---------+--------+
+                " | hallo | albert  | montag |
+                " +=======+=========+========+
+                " | isr   | student | id     |
+                " +-------+---------+--------+
         "================================================================================== 
         Plug 'godlygeek/tabular'
                 " Tabularize {
-                nmap <Leader>a& :Tabularize /&<CR>
-                vmap <Leader>a& :Tabularize /&<CR>
-                nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-                vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-                nmap <Leader>a=> :Tabularize /=><CR>
-                vmap <Leader>a=> :Tabularize /=><CR>
-                nmap <Leader>a: :Tabularize /:<CR>
-                vmap <Leader>a: :Tabularize /:<CR>
-                nmap <Leader>a:: :Tabularize /:\zs<CR>
-                vmap <Leader>a:: :Tabularize /:\zs<CR>
-                nmap <Leader>a, :Tabularize /,<CR>
-                vmap <Leader>a, :Tabularize /,<CR>
-                nmap <Leader>a,, :Tabularize /,\zs<CR>
-                vmap <Leader>a,, :Tabularize /,\zs<CR>
-                nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-                vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+                " nmap <Leader>a& :Tabularize /&<CR>
+                " vmap <Leader>a& :Tabularize /&<CR>
+                " nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+                " vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+                " nmap <Leader>a=> :Tabularize /=><CR>
+                " vmap <Leader>a=> :Tabularize /=><CR>
+                " nmap <Leader>a: :Tabularize /:<CR>
+                " vmap <Leader>a: :Tabularize /:<CR>
+                " nmap <Leader>a:: :Tabularize /:\zs<CR>
+                " vmap <Leader>a:: :Tabularize /:\zs<CR>
+                " nmap <Leader>a, :Tabularize /,<CR>
+                " vmap <Leader>a, :Tabularize /,<CR>
+                " nmap <Leader>a,, :Tabularize /,\zs<CR>
+                " vmap <Leader>a,, :Tabularize /,\zs<CR>
+                " nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+                " vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
                 " }
-        " Attempt to format a list of things that have equals signs, aligning them
-        " automatically using the tabularize plugin. Tabularize is finnicky and has
-        " bad defaults, so we have to tell it exactly what we think we want
-        function! FormatEquals()
-                normal gg
-                let @z=@/
-                let @/='\v^((var.+\=.+;|import.+from.+|^)(\n^$))+(\n^((var.+\=.+require|import)@!|var.+createClass))'
-        endfunction
-
-        nnoremap <leader>= :call FormatEquals()<cr> <bar> Vn:Tabularize /\v(\=\|from)<cr> <bar> :let @/=@z<cr>
-        " tabularize around : or =
-        vnoremap <silent> <Leader>tt :Tabularize /:\zs/l0r1<CR>
-        vnoremap <silent> <Leader>t= :Tabularize /=\zs/l0r1<cr>
-        vnoremap <silent> <Leader>t, :Tabularize /,\zs/l0r1<cr>
-        nnoremap <silent> <Leader>tt :Tabularize<CR>
-        "--------------------------------------------------------------------------------- 
-                " abc,def,ghi
-                " the, some , shrt 
-                " a,b,c
-        "--------------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------- 
 
         "---------------------------------------------------------------------------------- 
         Plug 'plasticboy/vim-markdown'
@@ -755,16 +674,6 @@ call plug#begin('~/.config/nvim/plugged/')
         " Also setting text files as Markdown, effectively, as the same rules
         "autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
 
-        "--------------------------------------------------------------------------------- 
-        Plug 'dhruvasagar/vim-table-mode'
-                let g:table_mode_corner_corner='+'
-                let g:table_mode_header_fillchar='='
-                " :TableModeToggle
-                " +-------+---------+--------+
-                " | hallo | albert  | montag |
-                " +=======+=========+========+
-                " | isr   | student | id     |
-                " +-------+---------+--------+
         "==================================================================================
         source ~/git/bTest/kDot/logoTextObjct.vim
         "source ~/git/bTest/kDot/logoHtml.vim
@@ -866,10 +775,20 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'tpope/vim-rails'
         " Plug 'tweekmonster/django-plus.vim'
         " Plug 'skalnik/vim-vroom'
-        "---iii---------------------------------------------------------------------------- 
+        "------TESTING--------------------------------------------------------------------- 
+        Plug 'eparreno/vim-l9'
+        " Plug 'WolfgangMehner/c-support'
+        " Plug 'vim-scripts/c.vim'
+        "--------------------------------------------------------------------------------- 
+        " Plug 'WolfgangMehner/bash-support'
+        " Plug 'severin-lemaignan/vim-minimap'
+        " Plug 'koron/minimap-vim'
+        " Plug 'itchyny/calendar.vim'
+        " Plug 'vim-scripts/foo.vim'
+        Plug 'matze/vim-move'
 
 call plug#end()
-"---nPlugEnd-nPlugStop3}----------------}}
+"---nPlugEnd---nPlugStop3------------}}}
 
         ":TERMINAL
         tnoremap <Esc> <C-\><C-n>
@@ -939,10 +858,7 @@ call plug#end()
         let g:deoplete#sources#jedi#show_docstring = 1
         let g:deoplete#sources#jedi#short_types = 1
         "-------------------------------------------------------------------------------- 
-        " Plugin key-mappings.
-        inoremap <expr><C-g>     deoplete#undo_completion()
-        inoremap <expr><C-l>     deoplete#refresh()
-        inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
+
         "-------------------------------------------------------------------------------- 
         autocmd! FileType python setlocal completeopt-=preview
         "--------------------------------------------------------------------------------
@@ -1134,7 +1050,7 @@ call plug#end()
                         endif
                 endif
         endfunction
-        nnoremap <silent> <Leader>t :FZFTag<cr>
+
 
         "==========================================================================================
         "-[Buffers] Jump to the existing window if possible
@@ -1179,26 +1095,6 @@ call plug#end()
         let g:CommandTMatchWindowAtTop   = 0 " match window appear at bottom.
         let g:CommandTMatchWindowReverse = 1 " let the best match at bottom.
         let g:CommandTTageIncludeFilenames = 1 " include filenames when matches
-        "===PLAY6==================================================================================
-        nnoremap ;h :CommandTHelp<cr>
-        nnoremap ;b :CommandTBuffer<cr>
-        let g:CommandTCancelMap=['<C-x>', '<C-c>']
-        "--------------------------------------------------------------------------
-        " <Leader>t provide fast, intuitive mechanism for opening files and buffers
-        " <BS> <Del> -- delete
-        " <Left> <C-h> -- move left.
-        " <Right> <C-l> -- move right
-        " <C-a> -- move to the start.
-        " <C-e> -- move to the end.
-        " <C-u> -- clear the contents of the prompt.
-        " <Tab> -- switch focus between the file listing and prompt.
-        "--------------------------------------------------------------------------
-        " <C-CR> <C-s> -- split open
-        " <C-v> -- vsplit
-        " <C-t> -- tab
-        " <C-j> <C-n> <Down> -- select next file in file listing.
-        " <C-k> <C-p> <Up> -- select previous file in file listing.
-        " <Esc> <C-c> -- cancel (dismisses file listing)
         "==========================================================================================
         command! LocationToggle call LocationToggle()
         function! LocationToggle()
@@ -1228,33 +1124,98 @@ call plug#end()
                         endtry
                 endif
         endfunction
-
         "==========================================================================================
         "---Open-Quickfix-window-automatically---------------------------------------------
         autocmd QuickFixCmdPost grep cwindow
         autocmd! vimrc QuickfixCmdPost [^l]* nested copen | wincmd p
         autocmd! vimrc QuickfixCmdPost l* nested lopen | wincmd p
 
-"-aaa20---REMAP----------------------------------------------------------------------------------{{{
+"---AAA---REMAP---1100--------------------------------------------------------------------------------------{{{
         "1y$  //yank current row to register 1
         "<C-r>a to paste from register a
-        "---2ESC------------------------------------------------------------------------------------
+        "---ESC------------------------------------------------------------------------------------
         imap            ;;              <ESC>
         "-open a file with same basename but different extension        
         map <expr>      ,R              ":e ".expand("%:r")."."
-        "------------------------------------------------------------------------------------------
+        "==========================================================================================
+        nnoremap <C-q> :Unite help buffer file_mru file file_rec bookmark <CR>
+        nnoremap <Leader>u :Unite help file_mru file buffer file_rec bookmark <CR>
+        nnoremap <Leader>\ :Unite -silent -vertical -winwidth=40  -direction=botright -toggle outline<CR>
+        nnoremap <Leader>h :UniteWithCursorWord -silent help<CR>
+        nnoremap <Leader>r :<C-u>Unite -buffer-name=register register<CR>
+        nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
+        nnoremap <Leader>j :<C-u>Unite -buffer-name=jump jump<CR>
+        nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
+        nnoremap <Leader>' :Unite bookmark <CR>
+        "==========================================================================================
+        nnoremap <Leader>' <Plug>BookmarkShowAll
+        "==========================================================================================
+        nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
+        "==========================================================================================
+        " tabularize around : or =
+        vnoremap <Leader>i :Tabularize /:\zs/l0r1<CR>
+        vnoremap <Leader>tt :Tabularize /:\zs/l0r1<CR>
+        vnoremap <Leader>t= :Tabularize /=\zs/l0r1<cr>
+        vnoremap <Leader>t, :Tabularize /,\zs/l0r1<cr>
+        nnoremap <Leader>t :Tabularize<CR>
+        "---------------------------------------------------------------------------------- 
+        " abc,def,ghi
+        " the, some , shrt
+        " a,b,c
+        "---------------------------------------------------------------------------------- 
+        nnoremap <silent> <Leader>z :FZFTag<cr>
+        "---------------------------------------------------------------------------------- 
+        nnoremap <F2> <Esc>:help <C-r><C-w><CR>
+        "---------------------------------------------------------------------------------- 
+        au! FileType vim,help nnoremap M :exec "helpgrep" expand("<cword>")<CR>
+        "----------------------------------------------------------------------------------
+        nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
+        inoremap <F3> <esc>:NERDTreeToggle<cr>
+        "---------------------------------------------------------------------------------- 
+        nnoremap <F4> :w<CR>:!python %<CR>
+        "---------------------------------------------------------------------------------- 
+        nnoremap <F5> :TagbarToggle<CR>
+        "---------------------------------------------------------------------------------- 
+        nnoremap <F6> :ScratchPreview<CR>
+        nnoremap <F7> :Scratch<CR>
+        "---------------------------------------------------------------------------------- 
+        nnoremap <F8> :LocationToggle<cr>
+        nnoremap <LocalLeader>n :lnext<cr>zvzz
+        nnoremap <LocalLeader>b :lprev<cr>zvzz
+        "----------------------------------------------------------------------------------
+        nnoremap <F9> :call ToggleQuickFix()<CR>
+        nnoremap <Leader>b :cprev<cr>zvzz
+        nnoremap <Leader>n :cnext<cr>zvzz
+        "---------------------------------------------------------------------------------- 
+        nnoremap <F12> :TagbarToggle<CR>
+        nnoremap TT :TagbarToggle<CR>
+        "---------------------------------------------------------------------------------- 
+        nmap <LocalLeader><LocalLeader> <Plug>(easymotion-overwin-w)
+        "------------------------------------------------------------------
+        noremap <localleader>r :Ranger <CR>
+        "------------------------------------------------------------------
+        "---:VSResize to execute VSResize ex command on selected rang------
+        nmap <C-W>r  <Plug>(Visual-Split-Resize)
+        nmap <C-W>s <Plug>(Visual-Split-Split)
+        "------------------------------------------------------------------
+        let g:undoquit_mapping = ';q' 
+        "------------------------------------------------------------------
+        nmap zp <Plug>yankstack_substitute_older_paste
+        nmap zn <Plug>yankstack_substitute_newer_paste
+        "---------------------------------------------------------------------------------- 
         "Ex: :Ex Pull word under cursor into :Ex LHS of a subs ztitute (replace)
         nnoremap <LocalLeader>w :<C-r>=expand("<cword>")<CR>
         nnoremap <LocalLeader>z :<C-r>=getline(".")<CR>
-        "-Unfuck--my--screen------------------------------------
-        nnoremap fu :syntax sync fromstart<cr>:redraw!<cr>
         "------------------------------------------------------------------------------------------
+        "---UnfuckMyScren--------------------------------------------------------------------------
+        nnoremap fu :syntax sync fromstart<cr>:redraw!<cr>
         nnoremap zu :<c-u>update<cr>
+        "------------------------------------------------------------------------------------------
         "---PlusMinus------------------------------------------------------------------------------
         nnoremap ( <c-x>:y x\|@x<cr>
         nnoremap ) <c-a>:y x\|@x<cr>
         "------------------------------------------------------------------------------------------
-        "???makes macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
+        "macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
         nnoremap Q @q
         vnoremap Q :norm @q<cr>
         "------------------------------------------------------------------------------------------
@@ -1268,63 +1229,76 @@ call plug#end()
         nnoremap qw <C-w>q<CR>
         nnoremap wq <C-w>q<CR>
         nnoremap ww <C-w>o<CR>
-
-        "------------------------------------------------------------------------------------------
-        nnoremap ;l :execute "leftabove vsplit" bufname('#')<cr>
-        nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>
-        "------------------------------------------------------------------------------------------
-        nnoremap ;d mayiw`a:exe "!dict -P - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
-        "------------------------------------------------------------------------------------------
-        nnoremap ;e :ls<cr>:b<space>
-        "------------------------------------------------------------------------------------------
-        nnoremap ;v <c-w>v<c-w>l
-        "---FORMATP--------------------------------------------------------------------------------
-        nnoremap ;t :set tw=70<cr>v<s-}>gq<end>
-        nnoremap W gwip
-        "---Align Current Paragraph ---------------------------------------------------------------
-        noremap <LocalLeader>a =ip
-        "------------------------------------------------------------------------------------------
-        map <Leader>d :read !date --rfc-3339=date<CR>kJ$
-        map <Leader>D :read !date -R<CR>kJ
-
         "------------------------------------------------------------------------------------------
         nnoremap ZZ  <Nop> 
-        nnoremap ZZ mzzt3<c-u>`z
+        nnoremap ZZ mzzt1<c-u>`z
         nnoremap zs mzzt3<c-u>`z
         nnoremap zx mzzt35<c-u>`z
         nnoremap zh mzzt10<c-u>`z
         nnoremap EE :source $MYVIMRC<CR>
         nnoremap BB ggVG
         nnoremap CC ggVG"+y
-        "---Underline the current line ------------------------------------------------------------
+        "------------------------------------------------------------------------------------------
+        nnoremap W gwip
+        nnoremap ;t :set tw=70<cr>v<s-}>gq<end>
+        "------------------------------------------------------------------------------------------
+        nnoremap ;l :execute "leftabove vsplit" bufname('#')<cr>
+        nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>
+        "------------------------------------------------------------------------------------------
+        nnoremap ;d mayiw`a:exe ":Capture !dict -P - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
+        nnoremap ,d mayiw`a:exe ":Capture !dict -d fd-eng-deu - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
+        "------------------------------------------------------------------------------------------
+        nnoremap ;v <c-w>v<c-w>l
+        "------------------------------------------------------------------------------------------
+        nnoremap ;e :ls<cr>:b<space>
+        "------------------------------------------------------------------------------------------
+        "---AlignCurrentParagraph------------------------------------------------------------------
+        noremap <LocalLeader>a =ip
+        "------------------------------------------------------------------------------------------
+        map <Leader>d :read !date --rfc-3339=date<CR>kJ$
+        map <Leader>e :read !date -R<CR>kJ
+        "------------------------------------------------------------------------------------------
+        "---UnderlineTheCurrentLine----------------------------------------------------------------
         nmap <silent> <leader>- :t.<CR>Vr-
-        "---Line Transporter------------------------------------
+        "------------------------------------------------------------------------------------------
+        "---LineTransporter------------------------------------------------------------------------
         nnoremap <C-down> :m .+1<CR>==
         nnoremap <C-up> :m .-2<CR>==
         "---------------------------------------------------------------
-        nmap <Leader>m <Plug>BookmarkShowAll
+        " <A-k>   Move current line/selection up
+        " <A-j>   Move current line/selection down
+        " <A-h>   Move current character/selection left
+        " <A-l>   Move current character/selection right
+
+
         "---------------------------------------------------------------
+        "---------------------------------------------------------------
+        nnoremap z0 zczO    " Make zO recursively open whatever fold 
         nnoremap z9 :call ShowFuncKeys(<q-bang>)<cr>
         nnoremap z8 :call <SID>SynStack()<CR>
         nnoremap ;z :call FocusLine()<cr>
-        nnoremap z0 zczO    " Make zO recursively open whatever fold 
         "---------------------------------------------------------------
         nnoremap <Leader>w :set number!<return>
-        "FOKUS-POKUS 
-        "Usage: dp - Delete between ()
-        onoremap p i(
-        "------------------------------------------------------------------------------
-        "Switch  with c ("VERY" useful) ccc
-        " nmap c' cs'"
-        " nmap c" cs"'
 
+        "---------------------------------------------------------------
+        "Usage: dip - Delete between (ooi aja)  [ jajaj ]
+        onoremap p i(
+        onoremap r i[
+        vnoremap r i[
+        " Keys   Operator   Movement
+        " ----   --------   -------------
+        " dw     Delete     to next word
+        " ci(    Change     inside parens
+        " yt,    Yank       until comm
         "------------------------------------------------------------------------------------------
+
         nnoremap <BS> X
-        "---its-2018------------------------------------------------------------------------------
+        "---it2018---------------------------------------------------------------------------------
         noremap j gj
         noremap k gk
         noremap gj j
         noremap gk k
+
         "------------------------------------------------------------------------------------------
         cnoremap <C-A> <Home>
         cnoremap <C-E> <End>
@@ -1353,15 +1327,16 @@ call plug#end()
         nnoremap do  :diffoff!<cr>
         "------------------------------------------------------------------------------------------
         "??? inoremap <C-_> <space><bs><esc>:call InsertCloseTag()<cr>a
-        "-------------------------------------------------------------------------
+        "--------------------------------------------------------------------------
         "Clear hlsearch and set nopaste
         nnoremap <silent> <Esc><Esc> :<C-u>set nopaste<CR>:nohlsearch<CR>
-        "-------------------------------------------------------------------------
+        "--------------------------------------------------------------------------
         nmap <silent> n nzz
         nmap <silent> N Nzz
         nmap <silent> g* g*zz
         nmap <silent> g# g#zz
-        "--Super-useful! From an idea by Michael Naumann--------------------------------------------
+        "----------------------------------------------------------------------------------
+        "---Super-useful!FromMichaelNaumann------------------------------------------------
         vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
         vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
         "----------------------------------------------------------------------------------
@@ -1379,28 +1354,37 @@ call plug#end()
         nmap <silent> <C-M-Down> :call ScrollOtherWindow("down")<CR>
         nmap <silent> <C-M-Up> :call ScrollOtherWindow("up")<CR>
 
-        "===MMM===KKK=======================================================================
+        "===MMM===KKK==============================================================================
         " map <F2> :exec "!xterm -e 'pydoc ".expand("<cword>")."'"<CR><CR>
         " imap <F2> <ESC>:exec "!xterm -e 'pydoc ".expand("<cword>")."'"<CR><CR>i
-        ""====================================================================================
+        "==========================================================================================
         "autocmd FileType python set keywordprg=Pydoc
         "command! -nargs=+ Pydoc silent! call system("tmux split-window Pydoc " . expand(<q-args>))
         "autocmd FileType python nnoremap <silent><buffer> M <Esc>:Pydoc <cword><CR>
-        ""====================================================================================
-        nmap <Leader>4 :PymodeDoc <cword> .<cr>
-        nmap <Leader>5 :Pydoc <cword> .<cr>
-        "===================================================================================="
-        nmap <Leader>6 :Rg <cword> .<cr>
-        nmap <Leader>7 :Ag <cword> .<cr>
-        nmap <Leader>8 <Plug>AgRawSearch <cword> .<cr>
-        nmap <Leader>/ <Plug>AgRawSearch
-        ""====================================================================================
+        "==========================================================================================
+        " Python Debugging
+        nnoremap <Leader>p Oimport pdb; pdb.set_trace()
+        nnoremap <Leader>P Oprint("variable=%s" % variable)<Esc>
+        "==========================================================================================
+        nnoremap <Leader>1 :SideSearch <C-r><C-w><CR> | wincmd p
+        nnoremap <Leader>2 <Esc>:FzfHelptags <CR>
+        nnoremap <Leader>3 :NV <C-r><C-w><CR> | wincmd p
+        "nnoremap <Leader>2 <Esc>:helpgrep <C-r><C-w><CR>
+        "==========================================================================================
+        nnoremap <Leader>4 :PymodeDoc <cword> .<cr>
+        nnoremap <Leader>5 :Pydoc <cword> .<cr>
+        "==========================================================================================
+        nnoremap <Leader>6 :Rg <cword> .<cr>
+        nnoremap <Leader>7 :Ag <cword> .<cr>
+        nnoremap <Leader>8 <Plug>AgRawSearch <cword> .<cr>
+        nnoremap <Leader>/ <Plug>AgRawSearch
+        "==========================================================================================
         " bind K to grep word under cursor
-        nnoremap T :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
         nnoremap <Leader>l :lgrep  <cword> .<cr>
         nnoremap <Leader>g :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
         nnoremap <Leader>a :Ack <cword> .<cr>
-
+        nnoremap T :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+        "==========================================================================================
         function! s:VSetSearch()
                 let temp = @@
                 norm! gvy
@@ -1418,39 +1402,122 @@ call plug#end()
         "  p - open entry in a preview window                             "
         "-----------------------------------------------------------------"
 
-        ":Ex-TRIGER Execute VIM colon command under cursor 
-        nnoremap <C-z> yy:<C-r>"<cr>
+        "---------------------------------------------------------------
+        nmap ]c <Plug>GitGutterNextHunk
+        nmap [c <Plug>GitGutterPrevHunk
+        "---------------------------------------------------------------
+        nmap hp <Plug>GitGutterPreviewHunk
+        nmap hs <Plug>GitGutterStageHunk
+        nmap hu <Plug>GitGutterUndoHunk
+        "---------------------------------------------------------------
+        inoremap <expr><C-g>     deoplete#undo_completion()
+        inoremap <expr><C-l>     deoplete#refresh()
+        inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
 
-        "copy last changed line here
+        "==========================================================================================
+        "===:Ex-TRIGER Execute VIM colon command under cursor======================================
+        nnoremap <C-z> yy:<C-r>"<cr>
+        "==========================================================================================
+        "===copyLastChangedLineHe==================================================================
         nnoremap ;p :'.t.<cr>
         vnoremap ;p :'.t.<cr>
-
-        " Jump backwards to previous function, assumes code is indented (useful when
-        " inside function)
+        "==========================================================================================
+        "Jump backwards to previous function, assumes code indented (useful when inside function)
         nnoremap ;f ?^func\\|^[a-zA-Z].*func<CR>,/
+        "==========================================================================================
+        nnoremap ;h :CommandTHelp<cr>
+        nnoremap ;b :CommandTBuffer<cr>
+        let g:CommandTCancelMap=['<C-x>', '<C-c>']
+        "==========================================================================================
+        " <Leader>t provide fast, intuitive mechanism for opening files and buffers
+        " <BS> <Del> -- delete
+        " <Left> <C-h> -- move left.
+        " <Right> <C-l> -- move right
+        " <C-a> -- move to the start.
+        " <C-e> -- move to the end.
+        " <C-u> -- clear the contents of the prompt.
+        " <Tab> -- switch focus between the file listing and prompt.
+        "--------------------------------------------------------------------------
+        " <C-CR> <C-s> -- split open
+        " <C-v> -- vsplit
+        " <C-t> -- tab
+        " <C-j> <C-n> <Down> -- select next file in file listing.
+        " <C-k> <C-p> <Up> -- select previous file in file listing.
+        " <Esc> <C-c> -- cancel (dismisses file listing)
+        "==========================================================================================
 
-        " Python Debugging
-        map <Leader>p Oimport pdb; pdb.set_trace()
-        map <Leader>P Oprint("variable=%s" % variable)<Esc>
-
-"-20Remap-}}}
+"---20Remap---1400---}}}
 
 "===================================================================================================
-"Todo TODO FIXME 
+ab funcion function
+ab funicton function
+ab funciton function
+ab fucntion function
+ab dupate update
+ab upate update
+iabbrev AB Alf Barman
+ab udpate update
 
-    ab funcion function
-    ab funicton function
-    ab funciton function
-    ab fucntion function
-    ab dupate update
-    ab upate update
-    iabbrev AB Alf Barman
-    ab udpate update
+iabbrev yyy "---------------------------------------------------------------------------------
+iabbrev yyy1 "---------------------------------------------------------------------------------------------
+iabbrev yyy2 "--------------------------------------------------------------------------------------------------{{{
+iabbrev yyy4 "....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10....+...11....+..12<esc>
+iabbrev a@    albert@sv.com
+iabbrev c@ Copyright 2018 Albert, all rights reserved.
+autocmd FileType vim :iabbrev <buffer> iff if ()<left>
+autocmd FileType c,cpp :iabbrev <buffer> iff if () { }<left>
 
-    augroup HiglightTODO
-    autocmd!
-    autocmd BufWinEnter,WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO\|FIXME\|ALBERT', -1)
-    augroup END
+"===================================================================================================
+iabbrev str START
+iabbrev strt START
+iabbrev stp STOP
+iabbrev supe superuser
+iabbrev que question
+iabbrev #i #include
+iabbrev #d #define
+iabbrev cmnt /*<CR><CR>*/<Up>
+
+"===================================================================================================
+function! EatChar(pat)
+        let c = nr2char(getchar(0))
+        return (c =~ a:pat) ? '' : c
+endfunction
+
+function! MakeSpacelessIabbrev(from, to)
+        execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
+endfunction
+function! MakeSpacelessBufferIabbrev(from, to)
+        execute "iabbrev <silent> <buffer> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
+endfunction
+
+call MakeSpacelessIabbrev('bb/',  'http://bitbucket.org/')
+call MakeSpacelessIabbrev('gh/',  'http://github.com/')
+call MakeSpacelessIabbrev('ghs/', 'http://github.com/sjl/')
+
+
+let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
+
+" Indent from insert mode
+imap <c-l> <c-o>gi
+" Substitute
+nnoremap <C-s> :%s/
+" InsertUperCase
+inoremap <C-u> <esc>mzgUiw`za
+
+"===================================================================================================
+nmap \sh :source ~/.vim/stuff/vimsh/vimsh.vim<enter>
+nmap \te :source ~/.vim/stuff/tetris.vim<enter>
+nmap \tl :source ~/.vim/stuff/taglist.vim<enter>:Tlist<enter>
+nmap \sc :runtime autoload/syntaxcomplete.vim<enter>
+nmap \pb :ProjectBrowse .<enter>
+nmap \ss :set spell<enter>
+nmap \us :set nospell<enter>
+nmap \sw :set wrap<enter>
+nmap \uw :set nowrap<enter>
+nmap \ls1 :set ls=1<enter>
+nmap \ls2 :set ls=2<enter>
+"in case i forget
+
 
 "===================================================================================================
 function! Open(url)
@@ -1462,14 +1529,14 @@ autocmd BufEnter term://* nnoremap <buffer> gx viW"xy \| :call Open(@x)<CR>
 "===================================================================================================
 autocmd FileType cpp set keywordprg=cppman
 command! -nargs=+ Cppman silent! call system("tmux split-window cppman " . expand(<q-args>))
-autocmd FileType cpp nnoremap <silent><buffer> M <Esc>:Cppman <cword><CR>
+autocmd FileType cpp nnoremap <buffer> M <Esc>:Cppman <cword><CR>
 
 "====BFind==========================================================================================
 command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 
 
-"-AAA---MyFUNC----------------------------------------------------------------------------------------{{{
+"---AAA---MyFUNC--------------------------------------------------------------------------------{{{
         " Focus the current line.  Basically:
         function! FocusLine()
                 let oldscrolloff = &scrolloff
@@ -1478,6 +1545,7 @@ command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-
                 let &scrolloff = oldscrolloff
         endfunction
 
+        "----------------------------------------------------------------------------------
         function! <SID>SynStack()
                 if !exists("*synstack")
                         return
@@ -1498,12 +1566,80 @@ command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-
         endfunction
         com! -bang ShowFuncKeys :call ShowFuncKeys(<q-bang>)
 
-"-}}}
+        "----------------------------------------------------------------------------------
+        function! ShowFunc()
+                let gf_s = &grepformat
+                let gp_s = &grepprg
+
+                let &grepformat = '%*\k%*\sfunction%*\s%l%*\s%f %*\s%m'
+                let &grepprg = 'ctags -x --c-types=f --sort=no -o -'
+
+                write
+                silent! grep %
+                cwindow
+
+                let &grepformat = gf_s
+                let &grepprg = gp_s
+        endfunc
+        command! ShowFunc call ShowFunc()
+
+        "----------------------------------------------------------------------------------
+        function! SaveCurrentSession()
+                if v:this_session != ""
+                        exe "mksession! " . v:this_session
+                endif
+        endfunction
+        au BufRead Session.vim so %
+        au VimLeave * call SaveCurrentSession()
+
+        "----------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        "Jump between windows
+        map <F10> <c-W>w
+
+        "--AAA--------------------------------------------------------------------------------------
+        nmap <s-tab> :if &modifiable && !&readonly && &modified <cr> :w<cr> :endif<cr> :bp<cr>
+        "--AAA--------------------------------------------------------------------------------------
+        "The . register is basically everything you've just typed in input mode "aP
+        :let @a = @.
+        
+        "--AAA--------------------------------------------------------------------------------------
+        iabbrev Adate  <c-r>=strftime("%F")<cr>
+
+
+        "Use this vmap to enclose a block with fold markers:
+        vmap <leader>v mz:<esc>'<OXXX <esc>'>oXXX <esc>`z?XXX<cr>A<space>
+
+        map <A-e> :!echo <cword> \| ispell -d british -a -- <return>
+        map <A-d> :!echo <cword> \| ispell -d danish -a -- <return>
+
+        "Help in help in help
+        :map <F3> "zyw:exe  "h ".@z.""<CR>
+
+        "VimTip{{{1 792: Preloading registers
+        let @m=":'a,'bs/"
+        let @s=":%!sort -u"
+
+        " This auto command will call LastMod function everytime you save a file
+        " autocmd BufWrite *   ks|call LastMod()|'s
+
+        " will reverse all the lines in a file. Useful for certain files like logs.
+        " :g/^/m0
+
+
+
+        " Control-] pop open a window and show the tag there.
+        " nnoremap <A-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
+
+        "876: selecting blocks of paragraphs.
+        :map <C-S-v> (V)
+
+
+"---------------------}}}
 
 
 "==========================================================================================
 "gdb: no symbol table is loadet  use "file" command 
-
 " let g:neodbg_console_height        = 15  " gdb console buffer hight, Default: 15
 " let g:neodbg_openbreaks_default    = 1   " Open breakpoints window, Default: 1
 " let g:neodbg_openstacks_default    = 0   " Open stackframes window, Default: 0
@@ -1522,16 +1658,14 @@ command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-
 " let g:neodbg_keymap_stop_debugging     = '<S-F5>'       " stop debugging (kill)
 " let g:neodbg_keymap_toggle_console_win = '<F6>'         " toggle console window
 " let g:neodbg_keymap_terminate_debugger = '<C-C>'        " terminate debugger
-
-
-"------------------------------------------------------------------------------------------
-" <leader>gl to view history
-" ]q and [q to move between versions (unimpaired.vim)
-" <leader>gd to open diff
-" :q to end diff
-" <leader>ge to return to my working copy.
 "------------------------------------------------------------------------------------------
 "  nnoremap <c-p> :Files<CR>
 "  nnoremap <c-l> :Lines<CR>
 "  nnoremap <c-c> :Commits<CR>
 "  nnoremap <c-k> :Commands<CR>
+"---!!!------------------------------------------------------------------------------------
+" <leader>gl to view history
+" ]q and [q to move between versions (unimpaired.vim)
+" <leader>gd to open diff
+" :q to end diff
+" <leader>ge to return to my working copy.

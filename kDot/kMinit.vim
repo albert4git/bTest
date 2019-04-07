@@ -26,8 +26,12 @@
         set tags+=.tags;
         set tags+=tags;
 
+        "------------------------------------------------------------------------------------------
+        set makeprg=gcc\ -o\ %<\ % 
+        "------------------------------------------------------------------------------------------
         "set grepprg=/bin/grep\ -nH
         set grepprg=rg\ --vimgrep
+        let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
         "------------------------------------------------------------------------------------------
         augroup vimrc
                 autocmd!
@@ -222,16 +226,19 @@
         set list
         set listchars=tab:▸\
         "---???---------------------------------------------------------------------------- 
+        call matchadd('darkGray', '!!!')
         call matchadd('darkGray', '???')
+        call matchadd('darkGray', 'AAA')
         call matchadd('darkGray', 'KKK')
+        call matchadd('darkGray', 'MMM')
         call matchadd('darkGray', 'TTT')
         call matchadd('darkGray', 'DDD')
-        call matchadd('customPink', 'aaa')
-        call matchadd('customPink', 'AAA')
         call matchadd('customPink', '===')
+        call matchadd('customPink', '==')
         call matchadd('customPink', '###')
         call matchadd('customPink', ':::')
         call matchadd('customPink', '---')
+        call matchadd('customPink', '--')
         "------------------------------------------------------
         "------------------------------------------------------
         "hi Comment        ctermbg=14
@@ -299,6 +306,5 @@
         nnoremap <S-down> :resize -3<cr>
 "::::::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-"===============================================================================================================
 "===============================================================================================================
 "===============================================================================================================

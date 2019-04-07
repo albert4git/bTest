@@ -11,9 +11,9 @@ $./a.out
 Opened database successfully
 
 gcc -o version version.c -l sqlite3 -std=c99
-
 ===================================================================================================
-all: hello.exe
+all: hello.exe 
+
 
 hello.exe: hello.o
 	 gcc -o hello.exe hello.o
