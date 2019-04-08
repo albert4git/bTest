@@ -3,6 +3,36 @@
 #===WILLY=================================================================================
 
 
+Format String              Example output
+-------------              --------------
+%c                         Thu 27 Sep 2007 07:37:42 AM EDT (depends on locale)
+%a %d %b %Y                Thu 27 Sep 2007
+%b %d, %Y                  Sep 27, 2007
+%d/%m/%y %H:%M:%S          27/09/07 07:36:32
+%H:%M:%S                   07:36:44
+%T                         07:38:09
+%m/%d/%y                   09/27/07
+%y%m%d                     070927
+%x %X (%Z)                 09/27/2007 08:00:59 AM (EDT)
+%Y-%m-%d                   2016-11-23
+%F                         2016-11-23 (works on some systems)
+
+RFC822 format:
+%a, %d %b %Y %H:%M:%S %z   Wed, 29 Aug 2007 02:37:15 -0400
+
+ISO8601/W3C format (http://www.w3.org/TR/NOTE-datetime):
+%FT%T%z                    2007-08-29T02:37:13-0400
+
+
+:iab <expr> dts strftime("%c")
+:iab <expr> dts strftime("%c")
+
+To replace text with the current date in a substitute command:
+
+:s/text to replace/\=strftime("%c")/
+
+
+
 let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
 " Language Server Protocol {{{
 
@@ -246,3 +276,85 @@ setlocal errorformat=%E%f:%l:\ %m,%-Z%p^,%-C%.%#,%-G%.%#
 " endif
 "==========================================================================================
 "https://github.com/dhruvasagar/vim-open-url
+VimTip	{{{1 1365: Series of high quality VIM tips
+http://vim.sourceforge.net/tip_view.php?tip_id=
+
+Some time ago I have created a series of VIM tips and I would like to share them with the community.
+They are detailed (with graphics) and show some of the advance features of VIM.
+
+Check them out:
+
+Workspace efficiency - Vim tip 1 of 3:
+http://amix.dk/blog/viewEntry/158
+
+Search don't scroll - Vim tip 2 of 3:
+http://amix.dk/blog/viewEntry/160
+
+Taming your Vim config - Vim tip 3 of 3:
+http://amix.dk/blog/viewEntry/162
+
+As a bonus people should check out my 800 lines long vimrc (almost everything is commented):
+http://amix.dk/vim/vimrc.html
+
+"AAA----------------------------------------------------------------------------------
+VimTip	{{{1 1381: hightlight a kind of special filetype docs in vim
+http://vim.sourceforge.net/tip_view.php?tip_id=
+
+
+suppose the filetype is en. Then, write a file
+~/.vim/syntax/en.vim with contents as follows:
+syn region enConstant start=/</hs=e+1 end=/>/he=s-1
+syn region enType start=/`/hs=e+1 end=/`/he=s-1
+syn region enString start=/|/hs=e+1 end=/|/he=s-1
+syn region enTodo start=/@/hs=e+1 end=/@/he=s-1
+syn sync minlines=10
+syn case match
+
+hi def link enIdentifier Identifier
+hi def link enString String
+hi def link enType Type
+hi def link enUnderlined Underlined
+let b:current_syntax = "en"
+----------- end of en.vim ---------------
+
+we also need another file
+~/.vim/filetype.vim :
+
+augroup filetypedetect
+au BufNewFile,BufRead *.en setf en
+augroup END
+
+----------- end of filetype.vim ---------
+"--------------------------------------------------------------------------------- 
+
+:silent bufdo tar -rvf archive.tar %:p
+"zzzX:w
+(2) Here are some script I recommends:
+Project-1.4.1
+TagList-4.2
+MiniBufExpl-6.3.2
+ShowMarks-2.2
+OmniCppComplete-0.4
+CRefVim-1.0.4
+exUtility-4.1.0
+"--------------------------------------------------------------------------------- 
+  http://www.geocities.com/yegappan/vim_faq_help.txt
+
+to the "doc" directory - for example, in Unix/Linux systems:
+
+  $ cp vim_faq_help.txt ~/.vim/doc
+
+Then in Vim, do:
+
+  :helptags ~/.vim/doc
+
+After that, to access the FAQ, do:
+
+  :help FAQ
+
+Also, a must-read is Bram Moolenaar's "Seven Habits of Effective Text Editing" at:
+
+  http://www.moolenaar.net/habits.html
+
+
+"--------------------------------------------------------------------------------- 

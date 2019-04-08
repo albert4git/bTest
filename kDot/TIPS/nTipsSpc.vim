@@ -1029,6 +1029,7 @@ function! ToggleShowWhitespace()
         call HideWhitespace()
     endif
 endfunction
+nmap <Leader>ws :call ToggleShowWhitespace()<CR>
 ------------------------------------------------
 You will also need some highlighting:
 

@@ -30,8 +30,10 @@
         set makeprg=gcc\ -o\ %<\ % 
         "------------------------------------------------------------------------------------------
         "set grepprg=/bin/grep\ -nH
+        "let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
         set grepprg=rg\ --vimgrep
         let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
+        "let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
         "------------------------------------------------------------------------------------------
         augroup vimrc
                 autocmd!
@@ -208,9 +210,12 @@
         hi CursorLine     ctermbg=8
         set colorcolumn=92,100,112,120
         set pumheight=12
+        " Popup menu hightLight Group
         hi Pmenu          ctermfg=1 ctermbg=255
         hi PmenuSbar      ctermfg=11 ctermbg=5 cterm=NONE
         hi PmenuThumb     ctermfg=12 ctermbg=2 cterm=NONE
+        hi PmenuSel       ctermbg=10 ctermfg=1
+
         "------------------------------------------------------
         hi customPink     ctermbg=245 ctermfg=White
         hi lightGray      ctermbg=12
@@ -293,9 +298,11 @@
 "-16-}}}
 
 "::::::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "--AAA--------------------------------------------------------------------------------------
+        nmap <s-tab> :if &modifiable && !&readonly && &modified <cr> :w<cr> :endif<cr> :bp<cr>
         "---------------------------------------------------------------------------------
-         nnoremap <C-j> :bn<cr>
-         nnoremap <C-k> :bp<cr>
+        nnoremap <C-j> :bn<cr>
+        nnoremap <C-k> :bp<cr>
         "---------------------------------------------------
         "nnoremap <S-j> :bn<cr>
         "nnoremap <S-k> :bp<cr>

@@ -61,18 +61,7 @@
                                          \ }
         "----------------------------------------------------------------------------------
 
-        "----------------------------------------------------------------------------------
-        nmap <m-1> <esc>viq<left> 
-                nmap <m-q> <esc>vaq<left> 
-                        nmap <m-0> <esc>vab<left> 
-                                nmap <m-3> <esc>viB 
-                                        nmap <m-i> <esc>vio 
-                                        nmap <m-9> <esc>vif 
-                        nmap <m-8> <esc>vaf 
-                nmap <m-7> <esc>vip 
-        nmap <m-6> <esc>vih 
-        "---------------------------------------------------------------------------------- 
- 
+
         "-AAA3----------------------------------------------------------------------------------------------{{{
         "" Plug 'tpope/vim-surround'
         Plug 'machakann/vim-sandwich'
@@ -90,19 +79,6 @@
                 xmap s <Nop>
         "-------------------------------------------------------------
                 let g:textobj_sandwich_no_default_key_mappings = 1
-                omap ia <Plug>(textobj-sandwich-auto-i)
-                xmap ia <Plug>(textobj-sandwich-auto-i)
-                omap aa <Plug>(textobj-sandwich-auto-a)
-                xmap aa <Plug>(textobj-sandwich-auto-a)
-        "--------------------------------------------------------------
-        "---[ {(hello) ( noch ) ('Mal') ("tomos") } tormos]
-        "---------------SYMPY-SANDWICH---------------------------------
-                vmap sb "zdi sympy.pprint(<c-r>z)<esc>
-                vmap sn "zdi print(<c-r>z)<esc> 
-                "-wrap <b></b> around selected text
-                "vmap sb "zdi<b><c-r>z</b><esc>
-                "-wrap <?=   ?> around visually selected text
-                "vmap st "zdi<?= <c-r>z ?><esc> 
         Plug 'jiangmiao/auto-pairs'
                 "   <M-o> : neline with indentation
                 "   <M-a> : jump to of line

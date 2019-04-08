@@ -1,0 +1,12 @@
+timeTest.txt
+
+:Author: red
+:Email: red@red-Swift-SF113-31
+:Date: 2019-04-07 15:50
+
+    Created:            So 07 Apr 2019 07:37:49  CEST
+    Last Modified: So 07 Apr 2019 08:12:02  CEST
+    Last Modified: So 07 Apr 2019 08:12:02  CEST
+"   Last Modified: So 07 Apr 2019 08:12:02  CEST
+
+Time-stamp: <DATE TIME USER> 

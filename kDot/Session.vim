@@ -8,7 +8,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +12 NONE
-badd +1594 k5DEO.vim
+badd +1596 k5DEO.vim
+badd +12 timeTest.txt
+badd +27 4Temp.vim
 badd +30 kMinit.vim
 badd +2 logoTextObjct.vim
 badd +3 logoGit.vim
@@ -31,12 +33,12 @@ setlocal fdl=0
 setlocal fml=6
 setlocal fdn=20
 setlocal nofen
-let s:l = 1613 - ((25 * winheight(0) + 17) / 35)
+let s:l = 1474 - ((19 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1613
-normal! 015|
+1474
+normal! 0
 lcd ~/git/bTest/kDot
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

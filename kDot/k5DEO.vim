@@ -1,5 +1,6 @@
 "file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
 "Last modified: Mo Okt 22, 2018  12:58
+"xdg-open
 "------------------------------------------------------------------------------------------
 "------------------------------------------------------------------------------------------
 "       *[q*     |:cprevious|
@@ -191,14 +192,14 @@ call plug#begin('~/.config/nvim/plugged/')
                 Plug 'jreybert/vimagit'
                 "===========================================================================
                 Plug 'tpope/vim-fugitive'
-                augroup ft_fugitive
-                        au!
-                        nnoremap <leader>gd :Gdiff<cr>
-                        nnoremap <leader>gs :Gstatus<cr>
-                        nnoremap <leader>gw :Gwrite<cr>
-                        nnoremap <leader>gl :Glog<cr>
-                        au BufNewFile,BufRead .git/index setlocal nolist
-                augroup END
+                " augroup ft_fugitive
+                "         au!
+                "         nnoremap <leader>gd :Gdiff<cr>
+                "         nnoremap <leader>gs :Gstatus<cr>
+                "         nnoremap <leader>gw :Gwrite<cr>
+                "         nnoremap <leader>gl :Glog<cr>
+                "         au BufNewFile,BufRead .git/index setlocal nolist
+                " augroup END
                 "==========================================================================
                 "   - :Git[!] [args]
                 "   - :Gstatus
@@ -636,26 +637,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 " +-------+---------+--------+
         "================================================================================== 
         Plug 'godlygeek/tabular'
-                " Tabularize {
-                " nmap <Leader>a& :Tabularize /&<CR>
-                " vmap <Leader>a& :Tabularize /&<CR>
-                " nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-                " vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-                " nmap <Leader>a=> :Tabularize /=><CR>
-                " vmap <Leader>a=> :Tabularize /=><CR>
-                " nmap <Leader>a: :Tabularize /:<CR>
-                " vmap <Leader>a: :Tabularize /:<CR>
-                " nmap <Leader>a:: :Tabularize /:\zs<CR>
-                " vmap <Leader>a:: :Tabularize /:\zs<CR>
-                " nmap <Leader>a, :Tabularize /,<CR>
-                " vmap <Leader>a, :Tabularize /,<CR>
-                " nmap <Leader>a,, :Tabularize /,\zs<CR>
-                " vmap <Leader>a,, :Tabularize /,\zs<CR>
-                " nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-                " vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-                " }
-        "---------------------------------------------------------------------------------- 
-
         "---------------------------------------------------------------------------------- 
         Plug 'plasticboy/vim-markdown'
                 " - `zr`: reduces fold level throughout the buffer
@@ -671,11 +652,10 @@ call plug#begin('~/.config/nvim/plugged/')
         autocmd BufNewFile,BufReadPost *.md set filetype=markdown
         " Automatically remove trailing whitespace on Markdown files
         autocmd BufWritePre *.md :%s/\s\+$//e
-        " Also setting text files as Markdown, effectively, as the same rules
-        "autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
 
         "==================================================================================
         source ~/git/bTest/kDot/logoTextObjct.vim
+        source ~/git/bTest/kDot/logoABB.vim
         "source ~/git/bTest/kDot/logoHtml.vim
         "source ~/git/bTest/kDot/logoGit.vim
         "source ~/git/bTest/kDot/logoMako.vim
@@ -1152,12 +1132,6 @@ call plug#end()
         "==========================================================================================
         nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
         "==========================================================================================
-        " tabularize around : or =
-        vnoremap <Leader>i :Tabularize /:\zs/l0r1<CR>
-        vnoremap <Leader>tt :Tabularize /:\zs/l0r1<CR>
-        vnoremap <Leader>t= :Tabularize /=\zs/l0r1<cr>
-        vnoremap <Leader>t, :Tabularize /,\zs/l0r1<cr>
-        nnoremap <Leader>t :Tabularize<CR>
         "---------------------------------------------------------------------------------- 
         " abc,def,ghi
         " the, some , shrt
@@ -1167,7 +1141,11 @@ call plug#end()
         "---------------------------------------------------------------------------------- 
         nnoremap <F2> <Esc>:help <C-r><C-w><CR>
         "---------------------------------------------------------------------------------- 
+        "---HelpInHelpInHelp---------------------------------------------------------------
+        map <F2> "zyw:exe  "h ".@z.""<CR>
+        "---------------------------------------------------------------------------------- 
         au! FileType vim,help nnoremap M :exec "helpgrep" expand("<cword>")<CR>
+
         "----------------------------------------------------------------------------------
         nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
         inoremap <F3> <esc>:NERDTreeToggle<cr>
@@ -1186,6 +1164,9 @@ call plug#end()
         nnoremap <F9> :call ToggleQuickFix()<CR>
         nnoremap <Leader>b :cprev<cr>zvzz
         nnoremap <Leader>n :cnext<cr>zvzz
+        "----------------------------------------------------------------------------------
+        "Jump between windows
+        map <F10> <c-w>w
         "---------------------------------------------------------------------------------- 
         nnoremap <F12> :TagbarToggle<CR>
         nnoremap TT :TagbarToggle<CR>
@@ -1261,18 +1242,21 @@ call plug#end()
         "---UnderlineTheCurrentLine----------------------------------------------------------------
         nmap <silent> <leader>- :t.<CR>Vr-
         "------------------------------------------------------------------------------------------
-        "---LineTransporter------------------------------------------------------------------------
-        nnoremap <C-down> :m .+1<CR>==
-        nnoremap <C-up> :m .-2<CR>==
-        "---------------------------------------------------------------
-        " <A-k>   Move current line/selection up
-        " <A-j>   Move current line/selection down
-        " <A-h>   Move current character/selection left
-        " <A-l>   Move current character/selection right
 
+        "------------------------------------------------------------------------------------------
+        " Control-] pop open a window and show the tag there.
+         nnoremap <A-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
 
-        "---------------------------------------------------------------
-        "---------------------------------------------------------------
+        "------------------------------------------------------------------------------------------
+        "copy the current visual selection to ~/.vbuf
+        vmap <A-c> :w !cat >> ./Tbuf<CR>
+
+        "------------------------------------------------------------------------------------------
+        "---FIREFOX--------------------------------------------------------------------------------
+        nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
+
+        "------------------------------------------------------------------------------------------
+        "------------------------------------------------------------------------------------------
         nnoremap z0 zczO    " Make zO recursively open whatever fold 
         nnoremap z9 :call ShowFuncKeys(<q-bang>)<cr>
         nnoremap z8 :call <SID>SynStack()<CR>
@@ -1280,25 +1264,56 @@ call plug#end()
         "---------------------------------------------------------------
         nnoremap <Leader>w :set number!<return>
 
-        "---------------------------------------------------------------
-        "Usage: dip - Delete between (ooi aja)  [ jajaj ]
-        onoremap p i(
-        onoremap r i[
-        vnoremap r i[
+        "------------------------------------------------------------------------------------------
         " Keys   Operator   Movement
         " ----   --------   -------------
         " dw     Delete     to next word
         " ci(    Change     inside parens
         " yt,    Yank       until comm
         "------------------------------------------------------------------------------------------
-
+        "---SANDWICH1------------------------------------------------------------------------------
+        omap ia <Plug>(textobj-sandwich-auto-i)
+        xmap ia <Plug>(textobj-sandwich-auto-i)
+        omap aa <Plug>(textobj-sandwich-auto-a)
+        xmap aa <Plug>(textobj-sandwich-auto-a)
+        "------------------------------------------------------------------------------------------
+        "---dia--daa--vaa--------------------------------------------------------------------------
+        "------------------------------------------------------------------------------------------
+        "---[ {(hello) ( noch ) ('Mal') ("tomos") } tormos]
+        "------------------------------------------------------------------------------------------
+        nmap <A-1> <esc>viq<left> 
+        nmap <A-q> <esc>vaq<left> 
+                        nmap <A-0> <esc>vab<left> 
+                        nmap <A-b> <esc>vab<left> 
+                                nmap <A-3> <esc>viB 
+                                        nmap <A-i> <esc>vio 
+                                        nmap <A-9> <esc>vif 
+                        nmap <A-8> <esc>vaf 
+                        nmap <A-f> <esc>vaf 
+                nmap <A-7> <esc>vip 
+        nmap <A-6> <esc>vih 
+        nmap <A-h> <esc>vih 
+        "------------------------------------------------------------------------------------------
+        "Usage: dip - Delete between (ooi aja)  [ jajaj ]
+        onoremap p i(
+        vnoremap p i(
+        onoremap r i[
+        vnoremap r i[
+        "------------------------------------------------------------------------------------------
+        "---SANDWICH2------------------------------------------------------------------------------
+        vmap sb "zdi sympy.pprint(<c-r>z)<esc>
+        vmap sn "zdi print(<c-r>z)<esc> 
+        "-wrap <b></b> around selected text
+        "vmap sb "zdi<b><c-r>z</b><esc>
+        "-wrap <?=   ?> around visually selected text
+        "vmap st "zdi<?= <c-r>z ?><esc> 
+        "------------------------------------------------------------------------------------------
         nnoremap <BS> X
         "---it2018---------------------------------------------------------------------------------
         noremap j gj
         noremap k gk
         noremap gj j
         noremap gk k
-
         "------------------------------------------------------------------------------------------
         cnoremap <C-A> <Home>
         cnoremap <C-E> <End>
@@ -1448,83 +1463,7 @@ call plug#end()
 
 "---20Remap---1400---}}}
 
-"===================================================================================================
-ab funcion function
-ab funicton function
-ab funciton function
-ab fucntion function
-ab dupate update
-ab upate update
-iabbrev AB Alf Barman
-ab udpate update
 
-iabbrev yyy "---------------------------------------------------------------------------------
-iabbrev yyy1 "---------------------------------------------------------------------------------------------
-iabbrev yyy2 "--------------------------------------------------------------------------------------------------{{{
-iabbrev yyy4 "....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10....+...11....+..12<esc>
-iabbrev a@    albert@sv.com
-iabbrev c@ Copyright 2018 Albert, all rights reserved.
-autocmd FileType vim :iabbrev <buffer> iff if ()<left>
-autocmd FileType c,cpp :iabbrev <buffer> iff if () { }<left>
-
-"===================================================================================================
-iabbrev str START
-iabbrev strt START
-iabbrev stp STOP
-iabbrev supe superuser
-iabbrev que question
-iabbrev #i #include
-iabbrev #d #define
-iabbrev cmnt /*<CR><CR>*/<Up>
-
-"===================================================================================================
-function! EatChar(pat)
-        let c = nr2char(getchar(0))
-        return (c =~ a:pat) ? '' : c
-endfunction
-
-function! MakeSpacelessIabbrev(from, to)
-        execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
-endfunction
-function! MakeSpacelessBufferIabbrev(from, to)
-        execute "iabbrev <silent> <buffer> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
-endfunction
-
-call MakeSpacelessIabbrev('bb/',  'http://bitbucket.org/')
-call MakeSpacelessIabbrev('gh/',  'http://github.com/')
-call MakeSpacelessIabbrev('ghs/', 'http://github.com/sjl/')
-
-
-let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
-
-" Indent from insert mode
-imap <c-l> <c-o>gi
-" Substitute
-nnoremap <C-s> :%s/
-" InsertUperCase
-inoremap <C-u> <esc>mzgUiw`za
-
-"===================================================================================================
-nmap \sh :source ~/.vim/stuff/vimsh/vimsh.vim<enter>
-nmap \te :source ~/.vim/stuff/tetris.vim<enter>
-nmap \tl :source ~/.vim/stuff/taglist.vim<enter>:Tlist<enter>
-nmap \sc :runtime autoload/syntaxcomplete.vim<enter>
-nmap \pb :ProjectBrowse .<enter>
-nmap \ss :set spell<enter>
-nmap \us :set nospell<enter>
-nmap \sw :set wrap<enter>
-nmap \uw :set nowrap<enter>
-nmap \ls1 :set ls=1<enter>
-nmap \ls2 :set ls=2<enter>
-"in case i forget
-
-
-"===================================================================================================
-function! Open(url)
-        silent execute '!open ' . a:url
-        redraw!
-endfunction
-autocmd BufEnter term://* nnoremap <buffer> gx viW"xy \| :call Open(@x)<CR>
 
 "===================================================================================================
 autocmd FileType cpp set keywordprg=cppman
@@ -1593,46 +1532,7 @@ command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-
         au VimLeave * call SaveCurrentSession()
 
         "----------------------------------------------------------------------------------
-        "----------------------------------------------------------------------------------
-        "Jump between windows
-        map <F10> <c-W>w
 
-        "--AAA--------------------------------------------------------------------------------------
-        nmap <s-tab> :if &modifiable && !&readonly && &modified <cr> :w<cr> :endif<cr> :bp<cr>
-        "--AAA--------------------------------------------------------------------------------------
-        "The . register is basically everything you've just typed in input mode "aP
-        :let @a = @.
-        
-        "--AAA--------------------------------------------------------------------------------------
-        iabbrev Adate  <c-r>=strftime("%F")<cr>
-
-
-        "Use this vmap to enclose a block with fold markers:
-        vmap <leader>v mz:<esc>'<OXXX <esc>'>oXXX <esc>`z?XXX<cr>A<space>
-
-        map <A-e> :!echo <cword> \| ispell -d british -a -- <return>
-        map <A-d> :!echo <cword> \| ispell -d danish -a -- <return>
-
-        "Help in help in help
-        :map <F3> "zyw:exe  "h ".@z.""<CR>
-
-        "VimTip{{{1 792: Preloading registers
-        let @m=":'a,'bs/"
-        let @s=":%!sort -u"
-
-        " This auto command will call LastMod function everytime you save a file
-        " autocmd BufWrite *   ks|call LastMod()|'s
-
-        " will reverse all the lines in a file. Useful for certain files like logs.
-        " :g/^/m0
-
-
-
-        " Control-] pop open a window and show the tag there.
-        " nnoremap <A-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
-
-        "876: selecting blocks of paragraphs.
-        :map <C-S-v> (V)
 
 
 "---------------------}}}
