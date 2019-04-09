@@ -1,2 +1,0 @@
-        "copy the current visual selection to ~/.vbuf
-        vmap <A-c> :w cat >> Tbuf<CR>

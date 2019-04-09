@@ -1562,12 +1562,13 @@ call plug#end()
                         Pulse
                 endfunction
 
-                function! JumpToTag()
-                        call JumpTo("normal! \<c-]>")
-                endfunction
 
                 function! JumpToTagInSplit()
                         call JumpToInSplit("normal! \<c-]>")
+                endfunction
+
+                function! JumpToTag()
+                        call JumpTo("normal! \<c-]>")
                 endfunction
         "------------------------------------------------------------------------------------------
                 nnoremap <C-]> :silent! call JumpToTag()<cr>

@@ -144,6 +144,8 @@ a separate line. Vim provides the put and put! commands for that purpose but
 they are not mapped by default to anything.  Typing the commands is much slower
 than inserting a line and pasting to it so I have created the following maps:
 
+
+
 nnoremap ,p :pu "<CR>
 nnoremap ,P :pu! "<CR>
 "AAA----------------------------------------------------------------------------------------------"
@@ -195,7 +197,12 @@ http://vim.sourceforge.net/tip_view.php?tip_id=
 
 :help uganda
 
-     Here is how to make a patch.  Make a local copy of the file you are going to change, and edit it.  Then, change to the directory (such as vim62/) containing the src/ source directory.  If you are editing one of the help files and do not have the vim source files, change to your $VIMRUNTIME directory (usually /usr/local/share/vim/vimxx/ on *NIX systems).  Use the diff program to make the patch like this:
+     Here is how to make a patch.  Make a local copy of the file you are going
+     to change, and edit it.  Then, change to the directory (such as vim62/)
+     containing the src/ source directory.  If you are editing one of the help
+     files and do not have the vim source files, change to your $VIMRUNTIME
+     directory (usually /usr/local/share/vim/vimxx/ on *NIX systems).  Use the
+     diff program to make the patch like this:
 
 $ diff -c /src/eval.c path/to/my/eval.c > /tmp/eval.c.diff
 

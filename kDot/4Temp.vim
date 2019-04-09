@@ -1,7 +1,31 @@
 #===TMUX==================================================================================
 #===FREE==================================================================================
+Instead you can use :normal command.  The secret is to add a <CR> (^M) on the
+end of the command.   For example, to search for "pattern" and move the cursor
+to the end of the matching pattern issue the command:
+
+:normal /pattern/e+1^M
+
+where ^M is a real carriage return.  It can be entered with <c-v><c-m>.
+
+Another use is when you want to enter a bunch of normal commands together.  For
+example, if you were looking to find a '{' to highlight and delete a C block.
+The '{' may not be on the same line so you can't use the "f" normal command.   
+
+:normal V/{/^M%d
 #===WILLY=================================================================================
 
+"!!! :Xbit
+!chmod a+x %
+
+fun! SetExecutableBit()
+        let fname = expand("%:p")
+        :checktime
+        exec "au FileChangedShell " . fname . " :echo"
+        :silent !chmod a+x %
+        :checktime
+        exec "au! FileChangedShell " . fname
+endfun
 
 Format String              Example output
 -------------              --------------

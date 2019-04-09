@@ -1,5 +1,8 @@
 "file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
-"Last modified: Mo Okt 22, 2018  12:58
+"===============================================================================================================
+" Created:            Di 09 Apr 2019 12:46:32  CEST
+" Last Modified:      Di 09 Apr 2019 01:37:52  CEST
+"===============================================================================================================
 "xdg-open
 "------------------------------------------------------------------------------------------
 "------------------------------------------------------------------------------------------
@@ -30,6 +33,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'roxma/vim-hug-neovim-rpc'
         Plug 'tomtom/tlib_vim'       
         Plug 'vifm/neovim-vifm'
+        Plug 'vim-scripts/timestamp.vim'
         "=================================================================================
         " Plug 'deoplete-plugins/deoplete-zsh'
         " Plug 'vim-scripts/ri-browser'
@@ -464,9 +468,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 " I like 40% splits, change it if you don't
                 let g:side_search_split_pct = 0.4
                 " Create an shorter `SS` command
-                command! -complete=file -nargs=+ SS execute 'SideSearch <args>'
-                " or command abbreviation
                 cabbrev SS SideSearch
+                command! -complete=file -nargs=+ SS execute 'SideSearch <args>'
         "----------------------------------------------------------------------------------
         Plug 'exvim/ex-matchit'
         "----------------------------------------------------------------------------------
@@ -1004,7 +1007,7 @@ call plug#end()
                         \ 'ctrl-x': ':Lynx',
                         \ 'ctrl-v': 'vsplit' }
         "------------------------------------------------------------------------------------------
-        " Selecting Mappings
+        " KKK Selecting Mappings
         nmap <leader><tab> <plug>(fzf-maps-n)
         xmap <leader><tab> <plug>(fzf-maps-x)
         omap <leader><tab> <plug>(fzf-maps-o)
@@ -1184,7 +1187,7 @@ call plug#end()
         nmap zp <Plug>yankstack_substitute_older_paste
         nmap zn <Plug>yankstack_substitute_newer_paste
         "---------------------------------------------------------------------------------- 
-        "Ex: :Ex Pull word under cursor into :Ex LHS of a subs ztitute (replace)
+        "Transport Down Ex: Pull word under cursor into :Ex LHS of a subs ztitute (replace)
         nnoremap <LocalLeader>w :<C-r>=expand("<cword>")<CR>
         nnoremap <LocalLeader>z :<C-r>=getline(".")<CR>
         "------------------------------------------------------------------------------------------
@@ -1248,8 +1251,7 @@ call plug#end()
          nnoremap <A-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
 
         "------------------------------------------------------------------------------------------
-        "copy the current visual selection to ~/.vbuf
-        vmap <A-c> :w !cat >> ./Tbuf<CR>
+        vmap <A-c> :w !cat >> ./zbuf<CR>
 
         "------------------------------------------------------------------------------------------
         "---FIREFOX--------------------------------------------------------------------------------
@@ -1261,8 +1263,6 @@ call plug#end()
         nnoremap z9 :call ShowFuncKeys(<q-bang>)<cr>
         nnoremap z8 :call <SID>SynStack()<CR>
         nnoremap ;z :call FocusLine()<cr>
-        "---------------------------------------------------------------
-        nnoremap <Leader>w :set number!<return>
 
         "------------------------------------------------------------------------------------------
         " Keys   Operator   Movement
@@ -1299,6 +1299,50 @@ call plug#end()
         vnoremap p i(
         onoremap r i[
         vnoremap r i[
+
+        "------------------------------------------------------------------------------------------
+        " quote a word
+        nnoremap q1 :silent! normal mpea'<esc>bi'<esc>`pl
+        " double quote a word
+        nnoremap q2 :silent! normal mpea"<esc>bi"<esc>`pl
+
+        "now _F will display which function you are currently in.
+        map _F ma[[k"xyy`a:echo @x<CR>
+
+        "------------------------------------------------------------------------------------------
+        "Use this vmap to enclose a block with fold markers:
+        vmap ;s mz:<esc>'<O// YYY<esc>'>o// YYY<esc>`z?YYY<cr>A<space>
+        " :onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+
+        "------------------------------------------------------------------------------------------
+        cabbrev SD call Sround("","")
+        cabbrev SD1 call Sround("{","}")
+        cabbrev SD2 call Sround("<b>","</b>")
+
+        fun! Sround(s1, s2) range
+                exe "normal vgvmboma\<ESC>"
+                normal `a
+                let lineA = line(".")
+                let columnA = col(".")
+
+                normal `b
+                let lineB = line(".")
+                let columnB = col(".")
+
+                " exchange marks
+                if lineA > lineB || lineA <= lineB && columnA > columnB
+                        " save b in c
+                        normal mc
+                        " store a in b
+                        normal `amb
+                        " set a to old b
+                        normal `cma
+                endif
+
+                exe "normal `ba" . a:s2 . "\<ESC>`ai" . a:s1 . "\<ESC>"
+        endfun
+
+
         "------------------------------------------------------------------------------------------
         "---SANDWICH2------------------------------------------------------------------------------
         vmap sb "zdi sympy.pprint(<c-r>z)<esc>
@@ -1326,6 +1370,7 @@ call plug#end()
         nnoremap Y y$
         "------------------------------------------------------------------------------------------
         nnoremap H mzJ`z
+        "------------------------------------------------------------------------------------------
         "---Reselect-last-pasted txt---------------------------------------------------------------
         nnoremap gv `[v`]
         "------------------------------------------------------------------------------------------
@@ -1334,6 +1379,7 @@ call plug#end()
         "??? make it so that if I acidentally pres ^W or ^U in insert mode,
         " then <ESC>u wil undo just the ^W/^U, and not the whole insert
         " This is docmented in :help ins-special-special, a few pages down
+"------------------------------------------------------------------------------------------
         inoremap <C-W> <C-G>u<C-W>
         inoremap <C-U> <C-G>u<C-U>
         "------------------------------------------------------------------------------------------
@@ -1381,23 +1427,35 @@ call plug#end()
         nnoremap <Leader>p Oimport pdb; pdb.set_trace()
         nnoremap <Leader>P Oprint("variable=%s" % variable)<Esc>
         "==========================================================================================
+        nnoremap <Leader>0 :set number!<return>
+        "---------------------------------------------------------------
         nnoremap <Leader>1 :SideSearch <C-r><C-w><CR> | wincmd p
+        "---------------------------------------------------------------
         nnoremap <Leader>2 <Esc>:FzfHelptags <CR>
+        "---------------------------------------------------------------
         nnoremap <Leader>3 :NV <C-r><C-w><CR> | wincmd p
+        "---------------------------------------------------------------
         "nnoremap <Leader>2 <Esc>:helpgrep <C-r><C-w><CR>
         "==========================================================================================
         nnoremap <Leader>4 :PymodeDoc <cword> .<cr>
+        "---------------------------------------------------------------
         nnoremap <Leader>5 :Pydoc <cword> .<cr>
         "==========================================================================================
         nnoremap <Leader>6 :Rg <cword> .<cr>
+        "---------------------------------------------------------------
         nnoremap <Leader>7 :Ag <cword> .<cr>
+        "---------------------------------------------------------------
         nnoremap <Leader>8 <Plug>AgRawSearch <cword> .<cr>
+        "---------------------------------------------------------------
         nnoremap <Leader>/ <Plug>AgRawSearch
         "==========================================================================================
         " bind K to grep word under cursor
         nnoremap <Leader>l :lgrep  <cword> .<cr>
+        "---------------------------------------------------------------
         nnoremap <Leader>g :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+        "---------------------------------------------------------------
         nnoremap <Leader>a :Ack <cword> .<cr>
+        "---------------------------------------------------------------
         nnoremap T :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
         "==========================================================================================
         function! s:VSetSearch()
@@ -1491,6 +1549,14 @@ command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-
                 endif
                 echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
         endfunc
+
+
+        "----------------------------------------------------------------------------------
+        "cabbrev S2 call S2round('"', '"')<CR>
+        " :'<,'>call S2round('"', '"')<CR>
+        "command! -complete=file -nargs=+ SS execute 'S2round <args>'
+        "----------------------------------------------------------------------------------
+
 
         "----------------------------------------------------------------------------------
         function! ShowFuncKeys(bang)

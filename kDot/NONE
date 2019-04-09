@@ -8,5 +8,53 @@ call deoplete#sources#padawan#InstallServer()
 
 
 
+function! ExampleFunction(arg1, arg2)
+python << endPython
+
+import vim
+
+def greeting():
+    title = vim.eval("a:arg1")
+    name = vim.eval("a:arg2")
+    print("Hello,\n {}. {}".format(title, name))
+
+greeting()
+
+endPython
+endfunction
+
+command! ExFunction1 call ExampleFunction("Mr", "Jarrod Taylor")
 
 
+function! s:tag_handler(tag)
+        if !empty(a:tag)
+        let token = split(split(a:tag, '\t')[2],';"')[0]
+        let m = &magic
+        setlocal nomagic
+        execute token
+        if m
+                setlocal magic
+        endif
+        endif
+endfunction
+nnoremap <silent> <Leader>t :FZFTagA<cr>
+
+
+
+"--------------------------------------------------------------------------------- "
+function! JumpToInSplit(jumpcommand)
+        execute "normal! \<c-w>v"
+        execute a:jumpcommand
+        Pulse
+endfunction
+
+
+function! JumpToTagInSplit()
+        call JumpToInSplit("normal! \<c-]>")
+endfunction
+
+"--------------------------------------------------------------------------------- "
+function! MS2UTC(ms)
+    let seconds = strpart(a:ms, 0, strlen(a:ms) - 3)
+    return substitute(system("date -ur " . seconds), "\n\n*", "", "")
+endfunction

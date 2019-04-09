@@ -27,21 +27,22 @@ section's heading".
 
 What's different about this mapping? Let's look at them side by side:
 
-execute "normal! gg/foo\<cr>dd"
 :onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
 :onoremap ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
 
-The only difference from the previous mapping is the very end, where we select the text to operate on:
+The only difference from the previous mapping is the very end, where we select
+the text to operate on:
 
 inside heading: kvg_
 around heading: g_vk0
 
 The rest of the mapping is the same, so we still start on the first character of the line of equal signs. From there:
 
-    g_: move to the last non-blank character in the line.
-    v: enter (characterwise) visual mode.
-    k: move up a line. This puts us on the line containing the heading's text.
-    0: move to the first character of the line.
+g_: move to the last non-blank character in the line.
+v: enter (characterwise) visual mode.
+k: move up a line. This puts us on the line containing the heading's text.
+0: move to the first character of the line.
+
         """A   (>^.^<)  A"""""""""""""""""
         """"""""""""""""""""""""""""""""""
         """A   (>^.^<)  A"""""""""""""""""
@@ -80,11 +81,8 @@ The rest of the mapping is the same, so we still start on the first character of
 
         nnoremap <leader>e :splitMYVIMRC<cr>
 
-        iabbrev @@    albert@stev.com
+        iabbrev @@    albert@stevelosh.com
         iabbrev ccopy Copyright 2013 Steve Losh, all rights reserved.
-        autocmd FileType vim :iabbrev <buffer> iff if ()<left>
-        autocmd FileType vim :iabbrev <buffer> iff if ()<left>
-
 
         steve@stevelosh.com
         Copyright 2013 Steve Losh, all rights reserved.
@@ -109,17 +107,11 @@ The rest of the mapping is the same, so we still start on the first character of
 
         iabbrev <buffer> --- &mdash;
 
-
         autocmd FileType vim :iabbrev <buffer> iff if ()<left>
         autocmd FileType vim :iabbrev <buffer> iff if ()<left>
 
-        iabbrev @@    albert@stev.com
-        iabbrev ccopy Copyright 2013 Steve Losh, all rights reserved.
-        autocmd FileType vim :iabbrev <buffer> iff if ()<left>
-        autocmd FileType vim :iabbrev <buffer> iff if ()<left>
         iabbrev <buffer> iff if ()<left>
 
-        i
 
         iff
         if ()

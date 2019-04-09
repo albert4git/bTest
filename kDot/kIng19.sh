@@ -15,12 +15,11 @@
 #ls kong18
 #rm kong18/18-*
 #NW=$(date +"%m-%d-%Y")
-#NW="AB"
 
-
+TAG="Sround2"
 NOW=$(date +"%m-%d-%Y-%T")
 NW=$(date +"%m-%d-%Y-%H-%M-%S")
-cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW"
+cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW$TAG"
 pwd
 
 cp -r ~/git/bTest/ /media/red/0A942CAB942C9B69/BB9BLOCK/"bTest$NW"
