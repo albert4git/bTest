@@ -1,7 +1,7 @@
 "file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:32  CEST
-" Last Modified:      Di 09 Apr 2019 01:37:52  CEST
+" Last Modified:      Mi 10 Apr 2019 12:18:29  CEST
 "===============================================================================================================
 "xdg-open
 "------------------------------------------------------------------------------------------
@@ -484,23 +484,9 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'honza/vim-snippets'
         Plug 'SirVer/ultisnips'
 "===Ulti===Expander===Unite===(C=q)===============================================================
-                function! UltiSnipsCallUnite()
-                        Unite -start-insert -winheight=100 -immediately -no-empty ultisnips
-                        return ''
-                endfunction
-                inoremap <F4> <C-R>=(pumvisible()? "\<LT>C-E>":"")<CR><C-R>=UltiSnipsCallUnite()<CR>
-                "let g:UltiSnipsExpandTrigger="<tab>"
-                let g:UltiSnipsExpandTrigger="<C-q>"
-                let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-                let g:UltiSnipsJumpForwardTrigger="<C-q>"
         Plug 'Shougo/neosnippet.vim'
         Plug 'Shougo/neosnippet-snippets'
 "===NEOSNIPP===(C-s)+(C-k)========================================================================
-                imap <C-s>    <Plug>(neosnippet_start_unite_snippet)
-                imap <C-k>    <Plug>(neosnippet_expand_or_jump)
-                smap <C-k>    <Plug>(neosnippet_expand_or_jump)
-                xmap <C-k>    <Plug>(neosnippet_expand_target)
-                nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
                 " Enable snipMate compatibility feature.
                 let g:neosnippet#enable_snipmate_compatibility = 1
                 " Tell Neosnippet about the other snippets
@@ -1002,18 +988,6 @@ call plug#end()
 
 "===FZF=Ctrl=x==Lynx===============================================================================
         let g:fzf_command_prefix = 'Fzf'
-        let g:fzf_action = {
-                        \ 'ctrl-t': 'tab split',
-                        \ 'ctrl-x': ':Lynx',
-                        \ 'ctrl-v': 'vsplit' }
-        "------------------------------------------------------------------------------------------
-        " KKK Selecting Mappings
-        nmap <leader><tab> <plug>(fzf-maps-n)
-        xmap <leader><tab> <plug>(fzf-maps-x)
-        omap <leader><tab> <plug>(fzf-maps-o)
-        "------------------------------------------------------------------------------------------
-        imap <expr><C-j> fzf#vim#complete#word({'left': '18%'})
-        imap <C-l> <plug>(fzf-complete-line)
         "===FzfSourceSink===============================================================================
         command! FZFTag if !empty(tagfiles()) | call fzf#run({
                                 \ 'source': "cat " . join(tagfiles()) . ' | grep -P "' . expand('%:t') . '"',
@@ -1114,156 +1088,6 @@ call plug#end()
         autocmd! vimrc QuickfixCmdPost l* nested lopen | wincmd p
 
 "---AAA---REMAP---1100--------------------------------------------------------------------------------------{{{
-        "1y$  //yank current row to register 1
-        "<C-r>a to paste from register a
-        "---ESC------------------------------------------------------------------------------------
-        imap            ;;              <ESC>
-        "-open a file with same basename but different extension        
-        map <expr>      ,R              ":e ".expand("%:r")."."
-        "==========================================================================================
-        nnoremap <C-q> :Unite help buffer file_mru file file_rec bookmark <CR>
-        nnoremap <Leader>u :Unite help file_mru file buffer file_rec bookmark <CR>
-        nnoremap <Leader>\ :Unite -silent -vertical -winwidth=40  -direction=botright -toggle outline<CR>
-        nnoremap <Leader>h :UniteWithCursorWord -silent help<CR>
-        nnoremap <Leader>r :<C-u>Unite -buffer-name=register register<CR>
-        nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
-        nnoremap <Leader>j :<C-u>Unite -buffer-name=jump jump<CR>
-        nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
-        nnoremap <Leader>' :Unite bookmark <CR>
-        "==========================================================================================
-        nnoremap <Leader>' <Plug>BookmarkShowAll
-        "==========================================================================================
-        nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
-        "==========================================================================================
-        "---------------------------------------------------------------------------------- 
-        " abc,def,ghi
-        " the, some , shrt
-        " a,b,c
-        "---------------------------------------------------------------------------------- 
-        nnoremap <silent> <Leader>z :FZFTag<cr>
-        "---------------------------------------------------------------------------------- 
-        nnoremap <F2> <Esc>:help <C-r><C-w><CR>
-        "---------------------------------------------------------------------------------- 
-        "---HelpInHelpInHelp---------------------------------------------------------------
-        map <F2> "zyw:exe  "h ".@z.""<CR>
-        "---------------------------------------------------------------------------------- 
-        au! FileType vim,help nnoremap M :exec "helpgrep" expand("<cword>")<CR>
-
-        "----------------------------------------------------------------------------------
-        nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
-        inoremap <F3> <esc>:NERDTreeToggle<cr>
-        "---------------------------------------------------------------------------------- 
-        nnoremap <F4> :w<CR>:!python %<CR>
-        "---------------------------------------------------------------------------------- 
-        nnoremap <F5> :TagbarToggle<CR>
-        "---------------------------------------------------------------------------------- 
-        nnoremap <F6> :ScratchPreview<CR>
-        nnoremap <F7> :Scratch<CR>
-        "---------------------------------------------------------------------------------- 
-        nnoremap <F8> :LocationToggle<cr>
-        nnoremap <LocalLeader>n :lnext<cr>zvzz
-        nnoremap <LocalLeader>b :lprev<cr>zvzz
-        "----------------------------------------------------------------------------------
-        nnoremap <F9> :call ToggleQuickFix()<CR>
-        nnoremap <Leader>b :cprev<cr>zvzz
-        nnoremap <Leader>n :cnext<cr>zvzz
-        "----------------------------------------------------------------------------------
-        "Jump between windows
-        map <F10> <c-w>w
-        "---------------------------------------------------------------------------------- 
-        nnoremap <F12> :TagbarToggle<CR>
-        nnoremap TT :TagbarToggle<CR>
-        "---------------------------------------------------------------------------------- 
-        nmap <LocalLeader><LocalLeader> <Plug>(easymotion-overwin-w)
-        "------------------------------------------------------------------
-        noremap <localleader>r :Ranger <CR>
-        "------------------------------------------------------------------
-        "---:VSResize to execute VSResize ex command on selected rang------
-        nmap <C-W>r  <Plug>(Visual-Split-Resize)
-        nmap <C-W>s <Plug>(Visual-Split-Split)
-        "------------------------------------------------------------------
-        let g:undoquit_mapping = ';q' 
-        "------------------------------------------------------------------
-        nmap zp <Plug>yankstack_substitute_older_paste
-        nmap zn <Plug>yankstack_substitute_newer_paste
-        "---------------------------------------------------------------------------------- 
-        "Transport Down Ex: Pull word under cursor into :Ex LHS of a subs ztitute (replace)
-        nnoremap <LocalLeader>w :<C-r>=expand("<cword>")<CR>
-        nnoremap <LocalLeader>z :<C-r>=getline(".")<CR>
-        "------------------------------------------------------------------------------------------
-        "---UnfuckMyScren--------------------------------------------------------------------------
-        nnoremap fu :syntax sync fromstart<cr>:redraw!<cr>
-        nnoremap zu :<c-u>update<cr>
-        "------------------------------------------------------------------------------------------
-        "---PlusMinus------------------------------------------------------------------------------
-        nnoremap ( <c-x>:y x\|@x<cr>
-        nnoremap ) <c-a>:y x\|@x<cr>
-        "------------------------------------------------------------------------------------------
-        "macros even easier to remember: hit qq to record, q to stop recording, and Q to apply.
-        nnoremap Q @q
-        vnoremap Q :norm @q<cr>
-        "------------------------------------------------------------------------------------------
-        nmap q <Nop>
-        nnoremap q <Nop>
-        nnoremap ss :wa<cr>
-        nnoremap qq :bd<cr>
-        nnoremap qa :wa<cr> :bd<cr>
-        nnoremap qs :wa<cr> :qa<cr>
-        nnoremap ee :w<cr>:e #<cr>
-        nnoremap qw <C-w>q<CR>
-        nnoremap wq <C-w>q<CR>
-        nnoremap ww <C-w>o<CR>
-        "------------------------------------------------------------------------------------------
-        nnoremap ZZ  <Nop> 
-        nnoremap ZZ mzzt1<c-u>`z
-        nnoremap zs mzzt3<c-u>`z
-        nnoremap zx mzzt35<c-u>`z
-        nnoremap zh mzzt10<c-u>`z
-        nnoremap EE :source $MYVIMRC<CR>
-        nnoremap BB ggVG
-        nnoremap CC ggVG"+y
-        "------------------------------------------------------------------------------------------
-        nnoremap W gwip
-        nnoremap ;t :set tw=70<cr>v<s-}>gq<end>
-        "------------------------------------------------------------------------------------------
-        nnoremap ;l :execute "leftabove vsplit" bufname('#')<cr>
-        nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>
-        "------------------------------------------------------------------------------------------
-        nnoremap ;d mayiw`a:exe ":Capture !dict -P - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
-        nnoremap ,d mayiw`a:exe ":Capture !dict -d fd-eng-deu - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
-        "------------------------------------------------------------------------------------------
-        nnoremap ;v <c-w>v<c-w>l
-        "------------------------------------------------------------------------------------------
-        nnoremap ;e :ls<cr>:b<space>
-        "------------------------------------------------------------------------------------------
-        "---AlignCurrentParagraph------------------------------------------------------------------
-        noremap <LocalLeader>a =ip
-        "------------------------------------------------------------------------------------------
-        map <Leader>d :read !date --rfc-3339=date<CR>kJ$
-        map <Leader>e :read !date -R<CR>kJ
-        "------------------------------------------------------------------------------------------
-        "---UnderlineTheCurrentLine----------------------------------------------------------------
-        nmap <silent> <leader>- :t.<CR>Vr-
-        "------------------------------------------------------------------------------------------
-
-        "------------------------------------------------------------------------------------------
-        " Control-] pop open a window and show the tag there.
-         nnoremap <A-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
-
-        "------------------------------------------------------------------------------------------
-        vmap <A-c> :w !cat >> ./zbuf<CR>
-
-        "------------------------------------------------------------------------------------------
-        "---FIREFOX--------------------------------------------------------------------------------
-        nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
-
-        "------------------------------------------------------------------------------------------
-        "------------------------------------------------------------------------------------------
-        nnoremap z0 zczO    " Make zO recursively open whatever fold 
-        nnoremap z9 :call ShowFuncKeys(<q-bang>)<cr>
-        nnoremap z8 :call <SID>SynStack()<CR>
-        nnoremap ;z :call FocusLine()<cr>
-
         "------------------------------------------------------------------------------------------
         " Keys   Operator   Movement
         " ----   --------   -------------
@@ -1306,14 +1130,6 @@ call plug#end()
         " double quote a word
         nnoremap q2 :silent! normal mpea"<esc>bi"<esc>`pl
 
-        "now _F will display which function you are currently in.
-        map _F ma[[k"xyy`a:echo @x<CR>
-
-        "------------------------------------------------------------------------------------------
-        "Use this vmap to enclose a block with fold markers:
-        vmap ;s mz:<esc>'<O// YYY<esc>'>o// YYY<esc>`z?YYY<cr>A<space>
-        " :onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
-
         "------------------------------------------------------------------------------------------
         cabbrev SD call Sround("","")
         cabbrev SD1 call Sround("{","}")
@@ -1347,73 +1163,11 @@ call plug#end()
         "---SANDWICH2------------------------------------------------------------------------------
         vmap sb "zdi sympy.pprint(<c-r>z)<esc>
         vmap sn "zdi print(<c-r>z)<esc> 
-        "-wrap <b></b> around selected text
         "vmap sb "zdi<b><c-r>z</b><esc>
-        "-wrap <?=   ?> around visually selected text
         "vmap st "zdi<?= <c-r>z ?><esc> 
-        "------------------------------------------------------------------------------------------
-        nnoremap <BS> X
-        "---it2018---------------------------------------------------------------------------------
-        noremap j gj
-        noremap k gk
-        noremap gj j
-        noremap gk k
-        "------------------------------------------------------------------------------------------
-        cnoremap <C-A> <Home>
-        cnoremap <C-E> <End>
-        cnoremap <C-d> <Del>
-        "------------------------------------------------------------------------------------------
-        nnoremap <c-o> <c-o>zz
-        nnoremap <c-i> <c-i>zz
-        "------------------------------------------------------------------------------------------
-        "Yank to end of line
-        nnoremap Y y$
-        "------------------------------------------------------------------------------------------
-        nnoremap H mzJ`z
-        "------------------------------------------------------------------------------------------
-        "---Reselect-last-pasted txt---------------------------------------------------------------
-        nnoremap gv `[v`]
-        "------------------------------------------------------------------------------------------
-        "noremap \\ #*
-        "------------------------------------------------------------------------------------------
-        "??? make it so that if I acidentally pres ^W or ^U in insert mode,
-        " then <ESC>u wil undo just the ^W/^U, and not the whole insert
-        " This is docmented in :help ins-special-special, a few pages down
-"------------------------------------------------------------------------------------------
-        inoremap <C-W> <C-G>u<C-W>
-        inoremap <C-U> <C-G>u<C-U>
-        "------------------------------------------------------------------------------------------
-        vmap     dg  :diffget<CR>
-        vmap     dp  :diffput<CR>
-        nnoremap do  :diffoff!<cr>
         "------------------------------------------------------------------------------------------
         "??? inoremap <C-_> <space><bs><esc>:call InsertCloseTag()<cr>a
         "--------------------------------------------------------------------------
-        "Clear hlsearch and set nopaste
-        nnoremap <silent> <Esc><Esc> :<C-u>set nopaste<CR>:nohlsearch<CR>
-        "--------------------------------------------------------------------------
-        nmap <silent> n nzz
-        nmap <silent> N Nzz
-        nmap <silent> g* g*zz
-        nmap <silent> g# g#zz
-        "----------------------------------------------------------------------------------
-        "---Super-useful!FromMichaelNaumann------------------------------------------------
-        vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-        vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-        "----------------------------------------------------------------------------------
-        noremap <S-j> :PreviewScroll -1<cr>
-        noremap <S-l> :PreviewScroll +1<cr>
-        "------------------------------------------------------------------------------------------ 
-        fun! ScrollOtherWindow(dir)
-                if a:dir == "down"
-                        let move = "\<C-E>"
-                elseif a:dir == "up"
-                        let move = "\<C-Y>"
-                endif
-                exec "normal \<C-W>p" . move . "\<C-W>p"
-        endfun
-        nmap <silent> <C-M-Down> :call ScrollOtherWindow("down")<CR>
-        nmap <silent> <C-M-Up> :call ScrollOtherWindow("up")<CR>
 
         "===MMM===KKK==============================================================================
         " map <F2> :exec "!xterm -e 'pydoc ".expand("<cword>")."'"<CR><CR>
@@ -1426,54 +1180,6 @@ call plug#end()
         " Python Debugging
         nnoremap <Leader>p Oimport pdb; pdb.set_trace()
         nnoremap <Leader>P Oprint("variable=%s" % variable)<Esc>
-        "==========================================================================================
-        nnoremap <Leader>0 :set number!<return>
-        "---------------------------------------------------------------
-        nnoremap <Leader>1 :SideSearch <C-r><C-w><CR> | wincmd p
-        "---------------------------------------------------------------
-        nnoremap <Leader>2 <Esc>:FzfHelptags <CR>
-        "---------------------------------------------------------------
-        nnoremap <Leader>3 :NV <C-r><C-w><CR> | wincmd p
-        "---------------------------------------------------------------
-        "nnoremap <Leader>2 <Esc>:helpgrep <C-r><C-w><CR>
-        "==========================================================================================
-        nnoremap <Leader>4 :PymodeDoc <cword> .<cr>
-        "---------------------------------------------------------------
-        nnoremap <Leader>5 :Pydoc <cword> .<cr>
-        "==========================================================================================
-        nnoremap <Leader>6 :Rg <cword> .<cr>
-        "---------------------------------------------------------------
-        nnoremap <Leader>7 :Ag <cword> .<cr>
-        "---------------------------------------------------------------
-        nnoremap <Leader>8 <Plug>AgRawSearch <cword> .<cr>
-        "---------------------------------------------------------------
-        nnoremap <Leader>/ <Plug>AgRawSearch
-        "==========================================================================================
-        " bind K to grep word under cursor
-        nnoremap <Leader>l :lgrep  <cword> .<cr>
-        "---------------------------------------------------------------
-        nnoremap <Leader>g :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-        "---------------------------------------------------------------
-        nnoremap <Leader>a :Ack <cword> .<cr>
-        "---------------------------------------------------------------
-        nnoremap T :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-        "==========================================================================================
-        function! s:VSetSearch()
-                let temp = @@
-                norm! gvy
-                let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-                let @@ = temp
-        endfunction
-        vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
-        vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
-        "================================================================="
-        "  s - open entry in a new horizontal window                      "
-        "  v - open entry in a new vertical window                        "
-        "  t - open entry in a new tab                                    "
-        "  o - open entry and come back                                   "
-        "  O - open entry and close the location/quickfix window          "
-        "  p - open entry in a preview window                             "
-        "-----------------------------------------------------------------"
 
         "---------------------------------------------------------------
         nmap ]c <Plug>GitGutterNextHunk
@@ -1482,21 +1188,7 @@ call plug#end()
         nmap hp <Plug>GitGutterPreviewHunk
         nmap hs <Plug>GitGutterStageHunk
         nmap hu <Plug>GitGutterUndoHunk
-        "---------------------------------------------------------------
-        inoremap <expr><C-g>     deoplete#undo_completion()
-        inoremap <expr><C-l>     deoplete#refresh()
-        inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
 
-        "==========================================================================================
-        "===:Ex-TRIGER Execute VIM colon command under cursor======================================
-        nnoremap <C-z> yy:<C-r>"<cr>
-        "==========================================================================================
-        "===copyLastChangedLineHe==================================================================
-        nnoremap ;p :'.t.<cr>
-        vnoremap ;p :'.t.<cr>
-        "==========================================================================================
-        "Jump backwards to previous function, assumes code indented (useful when inside function)
-        nnoremap ;f ?^func\\|^[a-zA-Z].*func<CR>,/
         "==========================================================================================
         nnoremap ;h :CommandTHelp<cr>
         nnoremap ;b :CommandTBuffer<cr>
@@ -1549,14 +1241,6 @@ command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-
                 endif
                 echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
         endfunc
-
-
-        "----------------------------------------------------------------------------------
-        "cabbrev S2 call S2round('"', '"')<CR>
-        " :'<,'>call S2round('"', '"')<CR>
-        "command! -complete=file -nargs=+ SS execute 'S2round <args>'
-        "----------------------------------------------------------------------------------
-
 
         "----------------------------------------------------------------------------------
         function! ShowFuncKeys(bang)

@@ -16,7 +16,7 @@
 #rm kong18/18-*
 #NW=$(date +"%m-%d-%Y")
 
-TAG="Sround2"
+TAG="MinitTrim3"
 NOW=$(date +"%m-%d-%Y-%T")
 NW=$(date +"%m-%d-%Y-%H-%M-%S")
 cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW$TAG"

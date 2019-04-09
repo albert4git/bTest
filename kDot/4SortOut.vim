@@ -1,4 +1,26 @@
 
+"now _F will display which function you are currently in.
+map _F ma[[k"xyy`a:echo @x<CR>
+
+"nnoremap <Leader>2 <Esc>:helpgrep <C-r><C-w><CR>
+"----------------------------------------------------------------------------------
+"---VisualMode-Search--FromMichaelNaumann------------------------------------------
+"----------------------------------------------------------------------------------
+" vnoremap * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+" vnoremap # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+"---:VSResize to execute VSResize ex command on selected rang------
+nmap <A-C>r  <Plug>(Visual-Split-Resize)
+nmap <A-C>s <Plug>(Visual-Split-Split)
+"---UnderlineTheCurrentLine----------------------------------------------------------------
+nmap ,- :t.<CR>Vr-
+"------------------------------------------------------------------------------------------
+map <Leader>d :read !date --rfc-3339=date<CR>kJ$
+map <Leader>e :read !date -R<CR>kJ
+
+"------------------------------------------------------------------------------------------
+"Use this vmap to enclose a block with fold markers:
+vmap ;s mz:<esc>'<O// YYY<esc>'>o// YYY<esc>`z?YYY<cr>A<space>
+":onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
 "===============================================================================================================
 
 function! WrapWordWith()
