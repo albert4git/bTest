@@ -77,7 +77,8 @@
         set spellsuggest=best    " default and fast list.
         " set spelllang=de,tech_speak spell
         " set spellfile=~/.vim/spell/techspeak.utf-8.add
-        " set spellfile=~/.vim/spell/en.utf-8.add           " 'zg': add, 'zw': remove.
+        " set spellfile=~/.vim/spell/en.utf-8.add     
+        " 'zg': add, 'zw': remove.
         "------------------------------------------------------------------------------
         function! FixVimSpellcheck()
                 if &spell
@@ -108,6 +109,7 @@
         "------------------------------------------------------------------------------------------
         "- go to last edit position when opening files -
         au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 "-AAA14-Doc8------------------------------------------------------------------------------------------------{{{
         let wordUnderCursor = expand("<cword>")
         let currentLine   = getline(".")
@@ -1488,9 +1490,9 @@ call plug#end()
 "-6-}}}
 "-AAA7--Abbr------------------------------------------------------------------------------------------------{{{
         "-Command mode related ???
-        " cno $h e ~/
-        " cno $d e ~/Desktop/
-        " cno $c e <C-\>eCurrentFileDir("e")<cr>
+         cno $h e ~/
+         cno $d e ~/Desktop/
+         cno $c e <C-\>eCurrentFileDir("e")<cr>
         "------------------------------------------------------------------------------------------
         command! -bang E e<bang>
         command! -bang Q q<bang>

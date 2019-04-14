@@ -502,3 +502,4 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restar
 
+set nowrap

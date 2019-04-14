@@ -17,6 +17,9 @@
 #NW=$(date +"%m-%d-%Y")
 
 TAG="MinitTrim3"
+TAG="Trim3Dict"
+TAG="kBank21"
+TAG="SpellHe"
 NOW=$(date +"%m-%d-%Y-%T")
 NW=$(date +"%m-%d-%Y-%H-%M-%S")
 cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW$TAG"
@@ -29,6 +32,7 @@ cp -r ~/git/bTest/ /media/red/F1E8-C819/BBFBLOCK/"bTest$NW"
 
 
 ##########################################################################################
+rm ~/.tmuxinator/kBank21.yml
 rm ~/.tmuxinator/kBank20.yml
 rm ~/.tmuxinator/kBank19.yml
 rm ~/.zshrc
@@ -39,7 +43,9 @@ rm ~/.gitconfig
 rm ~/.gitignore
 rm ~/.vimrc
 rm ~/.config/nvim/init.vim
+rm ~/.config/vifm/vifmrc
 
+ln -s ~/git/bTest/kDot/kBank21.yml        ~/.tmuxinator/kBank21.yml
 ln -s ~/git/bTest/kDot/kBank20.yml        ~/.tmuxinator/kBank20.yml
 ln -s ~/git/bTest/kDot/kBank19.yml        ~/.tmuxinator/kBank19.yml
 ln -s ~/git/bTest/kDot/kZshrc19.sh        ~/.zshrc
@@ -50,6 +56,8 @@ ln -s ~/git/bTest/kDot/kGitconfig.vim     ~/.gitconfig
 ln -s ~/git/bTest/kDot/kGitignore         ~/.gitignore
 ln -b ~/git/bTest/kDot/inkPreRc19.vim     ~/.vimrc
 ln -b ~/git/bTest/kDot/kMinit.vim         ~/.config/nvim/init.vim
+
+ln -b ~/git/bTest/kDot/kVifmrc.vim        ~/.config/vifm/vifmrc
 #------------------------------------------------------------------------------------------
 
 

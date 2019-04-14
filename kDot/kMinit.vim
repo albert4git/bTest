@@ -4,45 +4,62 @@
 " Last Modified: 19 Feb 2019
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Mi 10 Apr 2019 12:16:59  CEST
+" Last Modified:      So 14 Apr 2019 07:28:53  CEST
 "===============================================================================================================
         set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
         "------------------------------------------------------------------------------------
         set runtimepath+=~/vim-amake
         "------------------------------------------------------------------------------------
         let $MYVIMRC='~/.config/nvim/init.vim'
-        set thesaurus=~/git/aTest/dotFiles/DICT/mthesaur.txt
-        let s:thesaurus_pat = "~/git/aTest/dotFiles/DICT/mthesaur.txt"
-        set dictionary+=/home/red/git/aTest/dotFiles/DICT/english-words.txt
-        "set dictionary="/usr/dict/words"     
-        "set shell=bash
-        set shell=/bin/bash
-        set nocompatible
+        "------------------------------------------------------------------------------------
+        let s:thesaurus_pat ="/home/red/git/bTest/DICT/mthesaur.txt"
+        let g:tq_mthesaur_file="/home/red/git/bTest/DICT/mthesaur.txt"
+        set thesaurus=/home/red/git/bTest/DICT/mthesaur.txt
+        set dictionary+=/home/red/git/bTest/DICT/english-words.txt
+        "------------------------------------------------------------------------------------
         filetype on
-        set helplang=en,de
         filetype plugin on
         filetype indent on
+        "------------------------------------------------------------------------------------
         let maplocalleader=','
         let mapleader=' '
+        "------------------------------------------------------------------------------------
+        set nocompatible
+        set helplang=en,de
         set encoding=utf-8
+        set shell=/bin/bash
         set shell=/bin/zsh
-        set tags+=.tags;
+        "set tags+=.tags;
+        set tags=.tags;
         set tags+=tags;
-
+        ":set tags=./tags,tags,/home/user/commontags
+        "------------------------------------------------------------------------------------
+        " set dictionary=/usr/share/dict/words
+        " set dictionary="/usr/dict/words"     
+        " set spellfile=~/.config/nvim/spell/en.utf-8.add
+        " set spelllang=de,tech_speak
+        " 'zg': add, 'zw': remove.
+        "------------------------------------------------------------------------------------------
+        set spelllang=en
+        set spelllang=fr
+        set spelllang=de
+        set spellsuggest=best
+        set spelllang=he
+        set spelllang=en
+        set spell
+        set nospell
         "------------------------------------------------------------------------------------------
         set makeprg=gcc\ -o\ %<\ % 
-        "------------------------------------------------------------------------------------------
-        "set grepprg=/bin/grep\ -nH
-        "let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
         set grepprg=rg\ --vimgrep
         let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
-        "let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
+        "------------------------------------------------------------------------------------------
+        "set grepprg=/bin/grep\ -nH
         "------------------------------------------------------------------------------------------
         augroup vimrc
                 autocmd!
         augroup END
         "------------------------------------------------------------------------------------------
-        "###Pymode???
+        "###-Pymode-???
         let g:pymode_python = 'python3'
         "------------------------------------------------------------------------------------------
         set background=dark
@@ -121,10 +138,8 @@
         silent! set updatetime=300 timeout timeoutlen=300 ttimeout ttimeoutlen=50 ttyfast lazyredraw
         silent! set noerrorbells visualbell t_vb=
         "------------------------------------------------------------------------------------------
-
         "-Always open read-only when a swap file is found
         autocmd! vimrc SwapExists * let v:swapchoice = 'o'
-
         "-Setting lazyredraw causes a problem on startup
         autocmd! vimrc VimEnter * redraw
         "-Enter-I-never-use the default behavior of <cr> and this saves me a keystroke...
@@ -182,10 +197,6 @@
         set cf         " Enable error files & error jumping.
         set nu
         "---------------------------------------------------------------------------------- 
-        inoremap <F1> <ESC>
-        nnoremap <F1> <ESC>
-        vnoremap <F1> <ESC>
-        "---------------------------------------------------------------------------------- 
 
 "-2Remap-}}}
 
@@ -219,7 +230,6 @@
         hi PmenuSbar      ctermfg=11 ctermbg=5 cterm=NONE
         hi PmenuThumb     ctermfg=12 ctermbg=2 cterm=NONE
         hi PmenuSel       ctermbg=10 ctermfg=1
-
         "------------------------------------------------------
         hi customPink     ctermbg=245 ctermfg=White
         hi lightGray      ctermbg=12
@@ -227,11 +237,9 @@
         "------------------------------------------------------
         highlight Visual cterm=bold ctermbg=2 ctermfg=NONE
         set cursorcolumn
-
         hi Pmenue                      ctermfg=11
         hi CursorColumn                ctermbg=16
-        set nuw =6
-
+        set nuw =4
         set list
         set listchars=tab:▸\
         "---???---------------------------------------------------------------------------- 
@@ -246,6 +254,7 @@
         call matchadd('customPink', '==')
         call matchadd('customPink', '###')
         call matchadd('customPink', ':::')
+        call matchadd('customPink', '::')
         call matchadd('customPink', '---')
         call matchadd('customPink', '--')
         "------------------------------------------------------
@@ -273,7 +282,7 @@
         hi! def link ObliqueLine         String
         let g:oblique#clear_highlight =0
 
-"-AAA16-Wildmenu---------------------------------------------------------------------------------------------{{{
+"-AAA16---Wildmenu------------------------------------------------------------------------------------------{{{
         " More useful command-line completion
         au! FocusLost * :silent! wall     "Save when losing focus
         set wildmenu
@@ -302,8 +311,10 @@
 "-16-}}}
 
 "---------------------------------------------------------------------------------------------------
-"::::::::::::::::::::::::::::::-PreNAVI-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::::::::::::::::::::::-START1-:::::::::-PreNAVI-::::::::::::::::::::::::::::::::::::::::::::::
 "---------------------------------------------------------------------------------------------------
+        "---Command mode related ???------------
+        "------------------------------------------------------------------------------------------
         nnoremap <BS> X
         "---it2018---------------------------------------------------------------------------------
         noremap j gj
@@ -343,7 +354,8 @@
         nmap  g# g#zz
 "---------------------------------------------------------------------------------------------------
 "::::::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"---------------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------------------------------
+
         nmap <tab>     :bn<cr>
         nmap <s-tab>   :bp<cr>
         "---------------------------------------------------
@@ -357,10 +369,6 @@
         nnoremap <S-left>  :vertical resize -3<cr>
         nnoremap <S-up>    :resize +3<cr>
         nnoremap <S-down>  :resize -3<cr>
-        "------------------------------------------------------------------------------------------
-        vmap     dg  :diffget<CR>
-        vmap     dp  :diffput<CR>
-        nnoremap do  :diffoff!<cr>
         "----------------------------------------------------------------------------------
         noremap <S-j> :PreviewScroll -1<cr>
         noremap <S-l> :PreviewScroll +1<cr>
@@ -413,9 +421,10 @@
         nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>
         "------------------------------------------------------------------------------------------
         "===openFileWithSameBasenameDifferentExtension=============================================        
-        nnoremap <expr> ,R  ":e ".expand("%:r")."."
+        "nnoremap <expr> ,R  ":e ".expand("%:r")."."
+
 "---------------------------------------------------------------------------------------------------
-"::::::::::::::::::::::::::::::-LINES1-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"::::::::::::::::<LocalLeader>,,::::-LINES1-::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "---------------------------------------------------------------------------------------------------
         nnoremap W gwip
         nnoremap ;t :set tw=70<cr>v<s-}>gq<end>
@@ -436,13 +445,37 @@
         nnoremap ,w :<C-r>=expand("<cword>")<CR>
         nnoremap ,z :<C-r>=getline(".")<CR>
         "---------------------------------------------------------------------------------- 
-        nnoremap ,, <Plug>(easymotion-overwin-w)
         "------------------------------------------------------------------
-        noremap  ,r :Ranger <CR>
+        nmap ,, <Plug>(easymotion-overwin-w)
+        "------------------------------------------------------------------
 
         "==========================================================================================
         "1y$  //yank current row to register 1
         "<C-r>a to paste from register a
+
+
+"==================================================================================================
+"::::::::::::::::::::::::::::::-DIFF-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"==================================================================================================
+        nmap ]c <Plug>GitGutterNextHunk
+        nmap [c <Plug>GitGutterPrevHunk
+        "---------------------------------------------------------------
+        nmap hp <Plug>GitGutterPreviewHunk
+        nmap hs <Plug>GitGutterStageHunk
+        nmap hu <Plug>GitGutterUndoHunk
+        "---------------------------------------------------------------
+        vmap     dg  :diffget<CR>
+        vmap     dp  :diffput<CR>
+        nnoremap do  :diffoff!<cr>
+        " augroup ft_fugitive
+        "         au!
+        "         nnoremap <leader>gd :Gdiff<cr>
+        "         nnoremap <leader>gs :Gstatus<cr>
+        "         nnoremap <leader>gw :Gwrite<cr>
+        "         nnoremap <leader>gl :Glog<cr>
+        "         au BufNewFile,BufRead .git/index setlocal nolist
+        " augroup END
+
 "==================================================================================================
 "::::::::::::::::::::::::::::::-MAGIC-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "==================================================================================================
@@ -450,19 +483,16 @@
         "==========================================================================================
         "===:Ex-TRIGER==MAGIC==Execute VIM colon command under cursor==============================
         nnoremap <C-z> yy:<C-r>"<cr>
-        "------------------------------------------------------------------------------------------
+        "==========================================================================================
         "---PlusMinus------------------------------------------------------------------------------
         nnoremap ( <c-x>:y x\|@x<cr>
         nnoremap ) <c-a>:y x\|@x<cr>
-
         "==========================================================================================
         "---FIREFOX--------------------------------------------------------------------------------
         nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
-
         "==========================================================================================
         "===Control-] pop open a window and show the tag there.====================================
-         nnoremap <A-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
-
+        nnoremap <A-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
         "==========================================================================================
         function! s:VSetSearch()
                 let temp = @@
@@ -473,6 +503,7 @@
         vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
         vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
         "==========================================================================================
+        "===YANK2==================================================================================
         nmap zp <Plug>yankstack_substitute_older_paste
         nmap zn <Plug>yankstack_substitute_newer_paste
         "==========================================================================================
@@ -498,6 +529,18 @@
         "==========================================================================================
 
 "==================================================================================================
+"::::::::::::::::::::::::::::-REPL-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"==================================================================================================
+                " cmdline mappings
+                let cmdline_map_start          = '<LocalLeader>s'
+                let cmdline_map_send           = '<Space>'
+                let cmdline_map_send_and_stay  = '<LocalLeader><Space>'
+                let cmdline_map_source_fun     = '<LocalLeader>f'
+                let cmdline_map_send_paragraph = '<LocalLeader>p'
+                let cmdline_map_send_block     = '<LocalLeader>b'
+                let cmdline_map_quit           = '<LocalLeader>q'
+
+"==================================================================================================
 "::::::::::::::::::::::::::::::-FZF-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "==================================================================================================
         let g:fzf_action = {
@@ -506,30 +549,33 @@
                         \ 'ctrl-x': ':Lynx',
                         \ 'ctrl-v': 'vsplit' }
         "------------------------------------------------------------------------------------------
-        imap <expr><C-j> fzf#vim#complete#word({'left': '18%'})
-        imap <C-l> <plug>(fzf-complete-line)
+        imap <expr><A-j> fzf#vim#complete#word({'left': '18%'})
+        imap <A-k> <plug>(fzf-complete-line)
         "------------------------------------------------------------------------------------------
         " KKK FZF Selecting Mappings
         nmap <leader><tab> <plug>(fzf-maps-n)
         xmap <leader><tab> <plug>(fzf-maps-x)
         omap <leader><tab> <plug>(fzf-maps-o)
         "---------------------------------------------------------------------------------- 
-        nnoremap <Leader>z :FZFTag<cr>
+        nnoremap <Leader>t :FZFTag<cr>
 
 "==================================================================================================
-"::::::::::::::::::::::::::::::-FZF-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"::::::::::::::::::::::::::::::-UNITE-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "==================================================================================================
         nnoremap <C-q> :Unite help buffer file_mru file file_rec bookmark <CR>
-        nnoremap <Leader>u :Unite help file_mru file buffer file_rec bookmark <CR>
+        nnoremap \\ :Unite help buffer file_mru file file_rec bookmark <CR>
         nnoremap <Leader>\ :Unite -silent -vertical -winwidth=40  -direction=botright -toggle outline<CR>
         nnoremap <Leader>h :UniteWithCursorWord -silent help<CR>
+        nnoremap <Leader>u :Unite help file_mru file buffer file_rec bookmark <CR>
         nnoremap <Leader>r :<C-u>Unite -buffer-name=register register<CR>
         nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
         nnoremap <Leader>j :<C-u>Unite -buffer-name=jump jump<CR>
         nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
         nnoremap <Leader>' :Unite bookmark <CR>
+        "------------------------------------------------------------------
+        noremap  ,r :Ranger <CR>
         "==========================================================================================
-        nnoremap <Leader>' <Plug>BookmarkShowAll
+        "nnoremap <Leader>' <Plug>BookmarkShowAll
 "==================================================================================================
 "::::::::::::::::::Leader:0,1,2,3,4,5,6,7,8,9::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "==================================================================================================
@@ -572,13 +618,17 @@
         "-----------------------------------------------------------------"
 
 "==================================================================================================
-"::::::::::::::::::F2, F3, F4, F5, F6, F7 ,F8 , F9 ::::::::::::::::::::::::::::::::::::::::::::::::
+"::::::::::::::::::F2, F3, F4, F5, F6, F7 ,F8 , F9:::::::::::::::::::::::::::::::::::::::::::::::::
 "==================================================================================================
+        inoremap <F1> <ESC>
+        nnoremap <F1> <ESC>
+        vnoremap <F1> <ESC>
+        "==========================================================================================
         nnoremap <F2> <Esc>:help <C-r><C-w><CR>
         "==========================================================================================
         "==HelpInHelpInHelp========================================================================
         map <F2> "zyw:exe  "h ".@z.""<CR>
-        "==MMM=====================================================================================
+        "==!!!MMM==================================================================================
         au! FileType vim,help nnoremap M :exec "helpgrep" expand("<cword>")<CR>
         "==========================================================================================
         nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
@@ -599,7 +649,7 @@
         nnoremap <Leader>b :cprev<cr>zvzz
         nnoremap <Leader>n :cnext<cr>zvzz
         "==========================================================================================
-        map <F10> <c-w>w
+        nmap <F10> <c-w>w
         "==========================================================================================
         nnoremap <F12> :TagbarToggle<CR>
         nnoremap TT :TagbarToggle<CR>
@@ -615,12 +665,172 @@
         "===Make zO recursively open whatever fold====
         nnoremap ;z :call FocusLine()<cr>
         nnoremap z0 zczO 
+        "------------------------------------------------------------------
         nnoremap z9 :call ShowFuncKeys(<q-bang>)<cr>
         nnoremap z8 :call <SID>SynStack()<CR>
 
-        "==========================================================================================
+        "---------------------------------------------------------------------------------- 
         " abc,def,ghi
-        " the, some , shrt
+        " the, most , short , long , big , bigly 
         " a,b,c
         "---------------------------------------------------------------------------------- 
+
+        nnoremap <unique> <Leader>z :ThesaurusQueryReplaceCurrentWord<CR>
+        vnoremap <unique> <Leader>x "ky:ThesaurusQueryReplace <C-r>k<CR>
+        nnoremap <LocalLeader>z :ThesaurusQueryReplaceCurrentWord<CR>
+        vnoremap <LocalLeader>x "ky:ThesaurusQueryReplace <C-r>k<CR>
+
+"==================================================================================================
+"::::::::::::::::::::::::::::::-STOP1-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"==================================================================================================
+" nnoremap <c-p> :Files<CR>
+" nnoremap <c-l> :Lines<CR>
+" nnoremap <c-c> :Commits<CR>
+" nnoremap <c-k> :Commands<CR>
+"---!!!???----------------------------------------------------------------------------------
+" <leader>gl to view history
+" ]q and [q to move between versions (unimpaired.vim)
+" <leader>gd to open diff
+" :q to end diff
+" <leader>ge to return to my working copy.
+"==================================================================================================
+" *[q*     |:cprevious|
+" *]q*     |:cnext|
+" *[Q*     |:cfirst|
+" *]Q*     |:clast|
+" *[l*     |:lprevious|
+" *]l*     |:lnext|
+" *[L*     |:lfirst|
+" *]L*     |:llast|
+" *[<C-L>* |:lpfile|
+" *]<C-L>* |:lnfile|
+"==================================================================================================
+"::::::::::::::::::::::::::::::-STOP2-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"==================================================================================================
+" ]p 	paste under the current indentation level
+"==============================================================================
+" zo / zO Open
+" zc / zC Close
+" za / zA Toggle
+" zv      Open folds for this line
+" zM      Close all
+" zR      Open all
+" zm      Fold more (foldlevel += 1)
+" zr      Fold less (foldlevel -= 1)
+" zx      Update fol
+"==============================================================================
+" [m      previous method start
+" [M      previous method end
+"==============================================================================
+" [( [{   previous ( or { or <
+" ])      next
+"==============================================================================
+" :tag Classname  Jump to first definition of Classname
+" <C-]>           Jump to definition
+" g]              See all definitions
+" <C-T>           Go back to last tag
+" <C-O> <C-I>     Back/forward
+" :tselect Clasn  Find definitions of Classname
+" :tjump Clasn    Find definitions of Classname (auto-select 1st)
+"==============================================================================
+" <C-R><C-W>      insert current word into the command line
+" <C-R>"          paste from “ register
+" Calculator
+" <C-R>=128/2
+"==============================================================================
+" `^   Last position of cursor in insert mode
+" `.   Last change
+" ``   Last jum
+"==============================================================================
+" ma   Mark this cursor position as a
+" `a   Jump to the cursor position a
+" 'a   Jump to the beginning of the line with position 
+
+"==================================================================================================
+"::::::::::::::::::::::::::::::-STOP2-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"==================================================================================================
+" Text alignment
+" :center [width]
+" :right [width]
+" :left
+"==============================================================================
+" Text objects
+" p       Paragraph
+" w       Word
+" s       Sentence
+" [ ( { < A [], (), or {} block
+
+" ' " `   A quoted string
+
+" b       A block [(
+" B       A block in [{
+" t       ???
+"==============================================================================
+" Text objects let you operate (with an operator) in or around text blocks (objects).
+"----------------
+"-----v i p------
+"----------------
+" Operator [i]nside or [a]round
+" vip      Select paragraph
+" vipipip  Select more
+" yip      Yank inner paragraph
+" yap      Yank paragraph (including newline)
+" dip      Delete inner paragraph
+" cip      Change inner paragraph
+" ==============================================================================
+" e / ge  Previous/next end of word
+" 0       Start of line
+" ^       Start of line (after whitespace)
+" $       End of line
+" ==============================================================================
+" h j k l Arrow keys
+" <C-U> / <C-D>
+" ==============================================================================
+" CTRL-X  	Code text
+" ==============================================================================
+" Exiting insert mode
+" Esc / <C-[>     Exit insert mode
+" <C-C>           Exit 
+"==================================================================================================
+"::::::::::::::::::::::::::::::-STOP3-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"==================================================================================================
+" :onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+" :onoremap ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
+
+" The only difference from the previous mapping is the very end, where we select
+" the text to operate on:
+
+" inside heading: kvg_
+" around heading: g_vk0
+
+" g_: move to the last non-blank character in the line.
+" v: enter (characterwise) visual mode.
+" k: move up a line. This puts us on the line containing the heading's text.
+" 0: move to the first character of the line.
+
+"==============================================================================
+" execute "normal! gg/foo\<cr>dd"
+" execute "normal! mqA;\<esc>`q"
+
+"==================================================================================================
+"::::::::::::::::::::::::::::::-STOP4-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"==================================================================================================
+" let @a = "hello!"
+" echo @a
+" echo @"
+" echo @/
+"==============================================================================
+" nnoremap <Leader>x :w | !% python -m json.tools
+" Instead do that:
+"------------------
+" nnoremap <Leader>x :w <bar> !% python -m json.tools
+"==============================================================================
+" If you want your map to accept a range, then you have to specify the range
+" attribute when defining the function as shown below:
+
+" function! Myfunc() range
+"   echo 'range = ' . a:firstline . ',' . a:lastline
+" endfunction
+" :nnoremap _w :call Myfunc()<CR>
+"==============================================================================
 

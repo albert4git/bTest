@@ -46,7 +46,7 @@ export PATH=${PATH}:/home/red/Komodo-Edit-11/bin/
 #export GOPATH=/home/red/git/aTest/dotFiles/nVim/goLab
 export GOROOT=/usr/lib/go-1.10
 export GOPATH=/home/red/go
-
+#=============================================================
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 
@@ -58,19 +58,41 @@ export PATH=$JYTHON_HOME/bin:$PATH
 export PYTHONPATH=${PYTHONPATH}:/home/red/git/aTest/dotFiles/nVim/swamPython3/
 #=============================================================
 export LS_COLORS
+
+
+alias ....='cd ../../..'
+alias ...='cd ../..'
+alias ..='cd ..'
 alias hh='history'
-alias xx='exa -lT'
 alias so="source ~/.zshrc"
 alias nv='nvim'
 alias ni1='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
 alias ni2='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
-# alias deo='deonvim NONE -u ~/git/aTest/dotFiles/nVim/minit.vim'
+
+###############################################################
+### cd vim-master-82/src
+### --OR--
+### cd git/vim82/vim/src
+### ./configure --prefix =/home/red/82vim
+### make install
+### cd ~/nvim-linux64/bin
+### cp nvim deonvim
+### ./deonvim -u ~/git/aTest/dotFiles/nVim/minit.vim
+###############################################################
+
 alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
-# alias vi='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
-# alias vim='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
+alias kdeo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 
 
+###############################################################
+### dict -d fd-eng-spa "how"
+### apt-get install dict-gcide
+### apt-get install dict-wn
+### apt-get install dict-moby-thesaurus
+###############################################################
+
+# alias deo1='deonvim NONE -u ~/git/aTest/dotFiles/nVim/minit.vim'
 
 alias ni='nvim'
 alias lnv='nvim -c "normal '\''0"'
@@ -80,13 +102,12 @@ alias c='clear'
 alias pd='pwd'
 alias t='time'
 alias k='kill'
-alias lsc='ls --color=auto'
-alias l='ls -CF --color=auto'
-alias l='ls -CFlh --color=auto'
-alias lsa='ls -a --color=auto'
-alias lsl='ls -l --color=auto'
+alias l='exa -l'
 alias d='dirs -v | head -10'
 alias exat='exa -lT'
+alias xx='exa -lT'
+alias lst='exa -lT'
+
 #-Pretty print the path--------------------------------------------------------------------
 alias ips="ip a | grep 'inet ' | sed -e 's/^.*inet //g' -e 's/\/.*//g' | grep -v '127.0.0.1'"
 alias lss='LC_COLLATE=C ls -A --color -h --group-directories-first'
@@ -96,21 +117,23 @@ alias mpath='echo $PATH | tr -s ":" "\n"'
 
 #==========================================================================================
 function mkd() {
-    mkdir -p "$@" && cd "$_";
+        mkdir -p "$@" && cd "$_";
 }
 #==========================================================================================
 function tre() {
-    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+        tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
 #==========================================================================================
 fkill() {
-  pid=$(ps -ux | sed 1d | fzf -m | awk '{print $2}')
+        pid=$(ps -ux | sed 1d | fzf -m | awk '{print $2}')
 
-  if [ "x$pid" != "x" ]
-  then
-    kill -${1:-9} $pid
-  fi
+        if [ "x$pid" != "x" ]
+        then
+                kill -${1:-9} $pid
+        fi
 }
+
 #==========================================================================================
 #turn on tab completion and make it fancy
 autoload -U compinit
@@ -141,59 +164,57 @@ HISTSIZE=9000
 SAVEHIST=1717
 
 #==========================================================================================
-#==========================================================================================
 zplug "lib/completion",   from:oh-my-zsh
 zplug "lib/history",      from:oh-my-zsh
 zplug "lib/key-bindings", from:oh-my-zsh
 zplug "lib/termsupport", from:oh-my-zsh
+#=============================================================
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/history", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/z", from:oh-my-zsh
+
 #=============================================================
 #-???-source ~/.dotfiles/zsh/vi-mode.zsh
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 zplug 'zsh-users/zsh-history-substring-search', defer:3
+
 #=============================================================
-zplug 'modules/environment', from:prezto
-zplug 'modules/terminal', from:prezto
-zplug 'modules/directory', from:prezto
-zplug 'modules/utility', from:prezto
-zplug 'modules/history', from:prezto
-zplug 'modules/completion', from:prezto
-zplug 'zsh-users/zsh-completions', from:github
+###zplug 'modules/environment', from:prezto
+###zplug 'modules/terminal', from:prezto
+###zplug 'modules/directory', from:prezto
+###zplug 'modules/utility', from:prezto
+###zplug 'modules/completion', from:prezto
+###zplug 'modules/history', from:prezto
 #=============================================================
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/history", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/z", from:oh-my-zsh
+###zplug "lukechilds/zsh-better-npm-completion"
+###zplug "BuonOmo/yarn-completion"
+###zplug "hlissner/zsh-autopair"
+### zplug "MikeDacre/careful_rm"
 #=============================================================
-zplug "lukechilds/zsh-better-npm-completion"
-zplug "BuonOmo/yarn-completion"
-zplug "hlissner/zsh-autopair"
-zplug "MikeDacre/careful_rm"
-#=============================================================
+#==========================================================================================
+# warn when running command you have an alias for
+zplug "djui/alias-tips", from:github
+zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug 'zdharma/fast-syntax-highlighting', defer:2, hook-load:'FAST_HIGHLIGHT=()'
+zplug "unixorn/git-extra-commands", from:github
 #==========================================================================================
 DISABLE_AUTO_TITLE="true"
 # Grab binaries from GitHub Releases
 # and rename to use "file:" tag
-# zplug "junegunn/fzf-bin", \
-#     as:command, \
-#     from:gh-r, \
-#     file:fzf
 
-# warn when running command you have an alias for
-zplug "djui/alias-tips", from:github
 
-# git helper scripts
-zplug "unixorn/git-extra-commands", from:github
 
-# sysadmin helpers
-zplug "skx/sysadmin-util", from:github
+#==========================================================================================
+### # MMM git helper scripts
+### # sysadmin helpers
+### zplug "skx/sysadmin-util", from:github
+### # open branch/files in github
+### zplug "peterhurford/git-it-on.zsh", from:github
+#==========================================================================================
 
-# open branch/files in github
-zplug "peterhurford/git-it-on.zsh", from:github
-
-zplug "plugins/colored-man-pages", from:oh-my-zsh
 #==========================================================================================
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -202,32 +223,10 @@ if ! zplug check --verbose; then
         echo; zplug install
     fi
 fi
-
-# Then, source plugins and add commands to $PATH
+#==========================================================================================
 zplug load --verbose
 
 
-#==========================================================================================
-# zplug "themes/bira", from:oh-my-zsh, as:theme
-# zplug "dracula/zsh", as:theme
-# zplug "eendroroy/alien"
-# zplug "eendroroy/alien-minimal"
-# zplug "subnixr/minimal"
-# zplug "geometry-zsh/geometry"
-#=============================================================
-# MNML_USER_CHAR=$USER
-# MNML_INSERT_CHAR='do:'
-# zplug 'subnixr/minimal', use:minimal.zsh, as:theme
-# zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-# zplug "denysdovhan/spaceship-prompt", as:theme
-#==========================================================================================
-# zplug "themes/bira", from:oh-my-zsh, as:theme
-
-# ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
-# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!"
-# ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%}?"
-# ZSH_THEME_GIT_PROMPT_CLEAN=""
 #==========================================================================================
 # define RPS1 in order to avoid the annoying vim status
 # export RPS1=" "
@@ -239,6 +238,7 @@ zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
 SPACESHIP_CHAR_COLOR_SUCCESS="green"
 SPACESHIP_CHAR_COLOR_FAILURE="red"
 SPACESHIP_CHAR_COLOR_SECONDARY="yellow"
+
 #==========================================
 # SPACESHIP_BATTERY_SHOW="always"
 # SPACESHIP_USER_SHOW="true"
@@ -257,9 +257,7 @@ SPACESHIP_GIT_BRANCH_SUFFIX=":"
 SPACESHIP_GIT_STATUS_COLOR="cyan"
 SPACESHIP_GIT_STATUS_COLOR="red"
 SPACESHIP_DIR_COLOR="green"
-#======================================================
-# SPACESHIP_TIME_SHOW="true"
-# SPACESHIP_TIME_COLOR="yellow"
+
 #===============================================================
 SPACESHIP_PROMPT_ORDER=(
   vi_mode       # Vi-mode indicator (Disabled)
@@ -273,18 +271,15 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 
-  # host          # Hostname section
-  # user          # Username section
-  # battery       # Battery level and status
-  # time          # Time stamps section (Disabled)
-  # package     # Package version (Disabled)
+#===FIN==STOP==============================================================================
+zplug check || zplug install
+zplug load
 
 #==========================================================================================
-# https://github.com/olivierverdier/zsh-git-prompt
-# ZSH_GIT_PROMPT="$HOME/zsh-git-prompt/zshrc.sh"
-# CUSTOM_GIT="$HOME/dotfiles/scripts/custom_git.zsh"
-# [ -s $ZSH_GIT_PROMPT ] && source $ZSH_GIT_PROMPT
-# [ -s $CUSTOM_GIT ] && source $CUSTOM_GIT
+# zplug "junegunn/fzf-bin", \
+#     as:command, \
+#     from:gh-r, \
+#     file:fzf
 #==========================================================================================
 # # Setting ag as the default source for fzf - include hidden files
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
@@ -299,25 +294,8 @@ SPACESHIP_PROMPT_ORDER=(
 # export FZF_TMUX_HEIGHT=40%
 # Shell integration
 # [ -s ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 #==========================================================================================
-#==========================================================================================
-# cd ../.. = ...
-# cd ../../.. = ....
-# mkdir -p = md
-# rmdir = rd
-# git add = ga
-# git add --all = gaa
-# git branch = gb
-# git commit -m = gcmsg
-# git checkout = gco
-# git pull origin currentbranch = ggpull
-# git push origin currentbranch = ggpush
-# systemctl start = sc-start
-# systemctl stop = sc-stop
-# systemctl status = sc-status
-# systemctl enable = sc-enable
-#==========================================================================================
-#=Export paths================================================
 # export PATH=${PATH}:/bin
 # export PATH=${PATH}:/usr/bin
 # export PATH=${PATH}:/usr/local/bin
@@ -328,7 +306,6 @@ SPACESHIP_PROMPT_ORDER=(
 # export PATH=${PATH}:~/.composer/vendor/bin
 # export PATH=${PATH}:/home/vagrant/bin
 # export PATH=${PATH}:vendor/bin
-
 #===LOAD===PROFILE========================================================================
 #if [ -x /etc/profile ]; then
 #    setopt -G
@@ -360,10 +337,7 @@ SPACESHIP_PROMPT_ORDER=(
 # systemctl stop = sc-stop
 # systemctl status = sc-status
 # systemctl enable = sc-enable
-
+#==========================================================================================
 #=If you want to check out the whole list, again the=======================================
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 #==========================================================================================
-# finally install and load those plugins
-zplug check || zplug install
-zplug load

@@ -55,6 +55,11 @@ clear               # clears content on window (hide displayed lines)
 
 # 1.1. File Commands.
 
+clear               # clears content on window (hide displayed lines)
+uname -a                 # shows kernel information
+uptime                   # shows current uptime
+whoami                   # returns your username
+ls                            # lists your files
 
 ls                            # lists your files
 ls -l                         # lists your files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified
@@ -100,7 +105,10 @@ ssh user@host            # connects to host as user
 ssh -p <port> user@host  # connects to host on specified port as user
 ssh-copy-id user@host    # adds your ssh key to host for user to enable a keyed or passwordless login
 
+uname -a                 # shows kernel information
+uptime                   # shows current uptime
 whoami                   # returns your username
+
 passwd                   # lets you change your password
 quota -v                 # shows what your disk quota is
 date                     # shows the current date and time

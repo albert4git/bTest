@@ -1,0 +1,42 @@
+# Created:            Do 11 Apr 2019 11:52:32  CEST
+# Last Modified:      Fr 12 Apr 2019 04:33:28  CEST
+# ~/.tmuxinator/bank1.yml
+name: bank21B
+root: ~/git/bTest/
+
+windows:
+  - kDot:
+      layout: main-vertical
+      panes:
+        - Duo1:
+          - de kDot/k5DEO.vim
+        - Duo2:
+          - tig status
+
+  - DODO:
+      layout: main-vertical
+      panes:
+        - DODO10:
+          - de DODO10/cSwitch.c
+        - SideZSH:
+          - cd DODO10/
+          - tig status
+
+  - Plug:
+      layout: tiled
+      panes:
+        - P1:
+          - cd ~/.config/nvim/plugged/
+          - ls 
+        - P2:
+          - cd ~/.config/nvim/
+          - ls
+
+  - Zplug:
+      layout: tiled
+      panes:
+        - ohMyZ:
+          - cd ~/.zplug/repos/robbyrussell/oh-my-zsh/
+        - Zusers:
+          - cd ~/.zplug/repos/zsh-users/
+

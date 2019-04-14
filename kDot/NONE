@@ -1,3 +1,13 @@
+{
+5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+4DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+2DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+1DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+0DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+        }
+
+
 git config merge.tool vimdiff
 :call deoplete#sources#padawan#InstallServer()
 call deoplete#sources#padawan#InstallServer()
@@ -6,6 +16,10 @@ call deoplete#sources#padawan#InstallServer()
         Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
         i have to go over nTips
 
+
+        /home/red/git/bTest/DICT/
+
+        select
 
 
 function! ExampleFunction(arg1, arg2)
@@ -40,7 +54,6 @@ endfunction
 nnoremap <silent> <Leader>t :FZFTagA<cr>
 
 
-
 "--------------------------------------------------------------------------------- "
 function! JumpToInSplit(jumpcommand)
         execute "normal! \<c-w>v"
@@ -58,3 +71,11 @@ function! MS2UTC(ms)
     let seconds = strpart(a:ms, 0, strlen(a:ms) - 3)
     return substitute(system("date -ur " . seconds), "\n\n*", "", "")
 endfunction
+
+0DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+1DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+2DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+4DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
+{}

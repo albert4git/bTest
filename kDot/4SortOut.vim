@@ -1,3 +1,6 @@
+" Python Debugging
+nnoremap <Leader>p Oimport pdb; pdb.set_trace()
+nnoremap <Leader>P Oprint("variable=%s" % variable)<Esc>
 
 "now _F will display which function you are currently in.
 map _F ma[[k"xyy`a:echo @x<CR>

@@ -1,21 +1,10 @@
 "file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:32  CEST
-" Last Modified:      Mi 10 Apr 2019 12:18:29  CEST
+" Last Modified:      So 14 Apr 2019 01:17:59  CEST
 "===============================================================================================================
 "xdg-open
 "------------------------------------------------------------------------------------------
-"------------------------------------------------------------------------------------------
-"       *[q*     |:cprevious|
-"       *]q*     |:cnext|
-"       *[Q*     |:cfirst|
-"       *]Q*     |:clast|
-"       *[l*     |:lprevious|
-"       *]l*     |:lnext|
-"       *[L*     |:lfirst|
-"       *]L*     |:llast|
-"       *[<C-L>* |:lpfile|
-"       *]<C-L>* |:lnfile|
 "==========================================================================================
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
@@ -33,6 +22,9 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'roxma/vim-hug-neovim-rpc'
         Plug 'tomtom/tlib_vim'       
         Plug 'vifm/neovim-vifm'
+                ":let $MYVIFMRC=/path/to/custom/vifmrc
+                let $MYVIFMRC='~/.config/vifm/vifmrc'
+                let g:vifmSplitWidth = 88
         Plug 'vim-scripts/timestamp.vim'
         "=================================================================================
         " Plug 'deoplete-plugins/deoplete-zsh'
@@ -196,14 +188,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 Plug 'jreybert/vimagit'
                 "===========================================================================
                 Plug 'tpope/vim-fugitive'
-                " augroup ft_fugitive
-                "         au!
-                "         nnoremap <leader>gd :Gdiff<cr>
-                "         nnoremap <leader>gs :Gstatus<cr>
-                "         nnoremap <leader>gw :Gwrite<cr>
-                "         nnoremap <leader>gl :Glog<cr>
-                "         au BufNewFile,BufRead .git/index setlocal nolist
-                " augroup END
                 "==========================================================================
                 "   - :Git[!] [args]
                 "   - :Gstatus
@@ -245,26 +229,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'dhruvasagar/vim-zoom'
         Plug 'KnoP-01/tortus'
         Plug 'skywind3000/asyncrun.vim'
-        "--------------------------------------------------------------------------------- 
-        Plug 'gotcha/vimpdb'
-        Plug 'cpiger/NeoDebug'
-        "--------------------------------------------------------------------------------- 
-        " Plug 'vim-vdebug/vdebug'
-        " <F5>: start/run (to next breakpoint/end of script)
-        " <F2>: step over
-        " <F3>: step into
-        " <F4>: step out
-        " <F6>: stop debugging (kills script)
-        " <F7>: detach script from debugger
-        " <F9>: run to cursor
-        " <F10>: toggle line breakpoint
-        " <F11>: show context variables (e.g. after "eval")
-        " <F12>: evaluate variable under cursor
-        " :Breakpoint <type> <args>: set a breakpoint of any type (see :help VdebugBreakpoints)
-        " :VdebugEval <code>: evaluate some code and display the result
-        " <Leader>e: evaluate the expression under visual highlight and display the result
-        "--------------------------------------------------------------------------------- 
-        "Plug 'ashisha/image.vim'
         "--------------------------------------------------------------------------------- 
         Plug 'brooth/far.vim'
         "---???--------------------------------------------------------------------------- 
@@ -755,6 +719,100 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'itchyny/calendar.vim'
         " Plug 'vim-scripts/foo.vim'
         Plug 'matze/vim-move'
+        Plug 'ron89/thesaurus_query.vim'
+        "--------------------------------------------------------------------------------- 
+        Plug 'AndrewRadev/switch.vim'
+                let g:switch_mapping = "-"
+                let g:switch_custom_definitions =
+                                \ [
+                                        \ ['true', 'false'], ['True', 'False'], ['TRUE', 'FALSE'],
+                                        \ ['yes', 'no'], ['Yes', 'No'], ['YES', 'NO'],
+                                        \ ['on', 'off'], ['On', 'Off'], ['ON', 'OFF'],
+                                        \ ['up', 'down'], ['Up', 'Down'] ,['UP', 'DOWN'],
+                                        \ ['set', 'unset'],
+                                        \ ['is', 'isnot'] ,
+                                        \ ['==', '!='] , ['<', '>'], ['<=', '>='], ['=~', '!~'],
+                                        \ ['enable', 'disable'], ['Enable', 'Disable'],
+                                        \ ['enabled', 'disabled'], ['Enabled', 'Disabled'],
+                                        \ ['maximum', 'minimum'], ['Maximum', 'Minimum'],
+                                        \ ['maximal', 'minimal'], ['Maximal', 'Minimal'],
+                                        \ ['upper', 'lower'], ['Upper', 'Lower'],
+                                        \ ['top', 'bottom'], ['Top', 'Bottom'],
+                                        \ ['above', 'below'], ['Above', 'Below'],
+                                        \ ['forward', 'backward'], ['Forward', 'Backward'],
+                                        \ ['right', 'middle', 'left'], ['Right', 'Middle', 'Left'],
+                                        \ ['next', 'previous'], ['Next', 'Previous'],
+                                        \ ['first', 'last'], ['First', 'Last'],
+                                        \ ['before', 'after'], ['Before', 'After'],
+                                        \ ['more', 'less'], ['More', 'Less'],
+                                        \ ['fast', 'slow'], ['Fast', 'Slow'],
+                                        \ ['green', 'yellow', 'red'],
+                                        \ ['one', 'two', 'three']
+                                \ ]
+        "--------------------------------------------------------------------------------- 
+        Plug 'gotcha/vimpdb'
+        Plug 'cpiger/NeoDebug'
+        "--------------------------------------------------------------------------------- 
+        " Plug 'vim-vdebug/vdebug'
+        " <F5>: start/run (to next breakpoint/end of script)
+        " <F2>: step over
+        " <F3>: step into
+        " <F4>: step out
+        " <F6>: stop debugging (kills script)
+        " <F7>: detach script from debugger
+        " <F9>: run to cursor
+        " <F10>: toggle line breakpoint
+        " <F11>: show context variables (e.g. after "eval")
+        " <F12>: evaluate variable under cursor
+        " :Breakpoint <type> <args>: set a breakpoint of any type (see :help VdebugBreakpoints)
+        " :VdebugEval <code>: evaluate some code and display the result
+        " <Leader>e: evaluate the expression under visual highlight and display the result
+        "--------------------------------------------------------------------------------- 
+        Plug 'ashisha/image.vim'
+        Plug 'vimwiki/vimwiki'
+        "--------------------------------------------------------------------------------- 
+        "------------------------ START --REPL-------------------------------------------- 
+        "--------------------------------------------------------------------------------- 
+        Plug 'jalvesaq/vimcmdline'
+                " vimcmdline options
+                let cmdline_vsplit      = 1      " Split the window vertically
+                let cmdline_esc_term    = 1      " Remap <Esc> to :stopinsert in Neovim's terminal
+                let cmdline_in_buffer   = 1      " Start the interpreter in a Neovim's terminal
+                let cmdline_term_height = 15     " Initial height of interpreter window or pane
+                let cmdline_term_width  = 80     " Initial width of interpreter window or pane
+                let cmdline_tmp_dir     = '/tmp' " Temporary directory to save files
+                let cmdline_outhl       = 1      " Syntax highlight the output
+                let cmdline_auto_scroll = 1      " Keep the cursor at the end of terminal (nvim)
+                let cmdline_app         = {}
+                " let cmdline_app['python'] = 'ptipython3'
+                " let cmdline_app['ruby']   = 'pry'
+                " let cmdline_app['sh']     = 'bash'
+                if has('gui_running') || &termguicolors
+                        let cmdline_color_input    = '#9e9e9e'
+                        let cmdline_color_normal   = '#00afff'
+                elseif &t_Co == 256
+                        let cmdline_color_input    = 247
+                        let cmdline_color_normal   =  39
+                        let cmdline_color_number   =  51
+                        let cmdline_color_integer  =  51
+                        let cmdline_color_float    =  51
+                        let cmdline_color_complex  =  51
+                        let cmdline_color_negnum   = 183
+                        let cmdline_color_negfloat = 183
+                        let cmdline_color_date     =  43
+                        let cmdline_color_true     =  78
+                        let cmdline_color_false    = 203
+                        let cmdline_color_inf      =  39
+                        let cmdline_color_constant =  75
+                        let cmdline_color_string   =  79
+                        let cmdline_color_stderr   =  33
+                        let cmdline_color_error    =  15
+                        let cmdline_color_warn     =   1
+                        let cmdline_color_index    = 186
+                endif
+        "--------------------------------------------------------------------------------- 
+        "------------------------ END --REPL--------------------------------------------- 
+        "--------------------------------------------------------------------------------- 
 
 call plug#end()
 "---nPlugEnd---nPlugStop3------------}}}
@@ -986,9 +1044,9 @@ call plug#end()
         endfunction
         autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
-"===FZF=Ctrl=x==Lynx===============================================================================
+        "===FZF=Ctrl=x==Lynx==============================================================================
         let g:fzf_command_prefix = 'Fzf'
-        "===FzfSourceSink===============================================================================
+        "===FzfSourceSink================================================================================
         command! FZFTag if !empty(tagfiles()) | call fzf#run({
                                 \ 'source': "cat " . join(tagfiles()) . ' | grep -P "' . expand('%:t') . '"',
                                 \ 'sink': function('<sid>tag_handler'),
@@ -1130,10 +1188,6 @@ call plug#end()
         " double quote a word
         nnoremap q2 :silent! normal mpea"<esc>bi"<esc>`pl
 
-        "------------------------------------------------------------------------------------------
-        cabbrev SD call Sround("","")
-        cabbrev SD1 call Sround("{","}")
-        cabbrev SD2 call Sround("<b>","</b>")
 
         fun! Sround(s1, s2) range
                 exe "normal vgvmboma\<ESC>"
@@ -1177,18 +1231,9 @@ call plug#end()
         "command! -nargs=+ Pydoc silent! call system("tmux split-window Pydoc " . expand(<q-args>))
         "autocmd FileType python nnoremap <silent><buffer> M <Esc>:Pydoc <cword><CR>
         "==========================================================================================
-        " Python Debugging
-        nnoremap <Leader>p Oimport pdb; pdb.set_trace()
-        nnoremap <Leader>P Oprint("variable=%s" % variable)<Esc>
 
-        "---------------------------------------------------------------
-        nmap ]c <Plug>GitGutterNextHunk
-        nmap [c <Plug>GitGutterPrevHunk
-        "---------------------------------------------------------------
-        nmap hp <Plug>GitGutterPreviewHunk
-        nmap hs <Plug>GitGutterStageHunk
-        nmap hu <Plug>GitGutterUndoHunk
-
+        nnoremap ,h :CommandTHelp<cr>
+        nnoremap ,b :CommandTBuffer<cr>
         "==========================================================================================
         nnoremap ;h :CommandTHelp<cr>
         nnoremap ;b :CommandTBuffer<cr>
@@ -1220,7 +1265,7 @@ autocmd FileType cpp set keywordprg=cppman
 command! -nargs=+ Cppman silent! call system("tmux split-window cppman " . expand(<q-args>))
 autocmd FileType cpp nnoremap <buffer> M <Esc>:Cppman <cword><CR>
 
-"====BFind==========================================================================================
+"===!!!BFind========================================================================================
 command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 
@@ -1285,7 +1330,7 @@ command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-
 
 
 
-"---------------------}}}
+"---EndMyFunc------------------}}}
 
 
 "==========================================================================================
@@ -1308,14 +1353,10 @@ command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-
 " let g:neodbg_keymap_stop_debugging     = '<S-F5>'       " stop debugging (kill)
 " let g:neodbg_keymap_toggle_console_win = '<F6>'         " toggle console window
 " let g:neodbg_keymap_terminate_debugger = '<C-C>'        " terminate debugger
+
 "------------------------------------------------------------------------------------------
 "  nnoremap <c-p> :Files<CR>
 "  nnoremap <c-l> :Lines<CR>
 "  nnoremap <c-c> :Commits<CR>
 "  nnoremap <c-k> :Commands<CR>
 "---!!!------------------------------------------------------------------------------------
-" <leader>gl to view history
-" ]q and [q to move between versions (unimpaired.vim)
-" <leader>gd to open diff
-" :q to end diff
-" <leader>ge to return to my working copy.

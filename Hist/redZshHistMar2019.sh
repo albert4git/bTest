@@ -76,6 +76,11 @@
   175  cc
   176  nvim -u ~/git/aTest/dotFiles/nVim/minit.vim
   177  ./nvim -u ~/git/aTest/dotFiles/nVim/minit.vim
+
+
+  114  tmux kill-server
+  116  tmuxinator start kBank19
+  172  cd ~/nvim-linux64/bin
   178  cp nvim deonvim
   179  ./deonvim -u ~/git/aTest/dotFiles/nVim/minit.vim
   180  rm nvim
@@ -170,6 +175,14 @@
   270  ls share/vim/vim81/plugin
   271  vim
   272  ./vim testNewVim81.txt
+
+  273  cd vim-master-82/src
+  261  cd git/vim82/vim/src
+  262  ./configure --prefix =/home/red/82vim
+  275  make install
+  275  make install
+  263  deo minit.vim DEO2.vim lego-nini.vim logoTextObjct.vim nMakeInstallVim82.vim
+
   273  cd vim-master-82/src
   275  make install
   276  cd 82vim/bin

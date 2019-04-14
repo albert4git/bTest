@@ -1,6 +1,6 @@
+# Created:            Do 11 Apr 2019 11:52:32  CEST
+# Last Modified:      Fr 12 Apr 2019 12:02:19  CEST
 # ~/.tmuxinator/bank1.yml
-# - guard
-# - logs: tail -f log/development.log
 
 name: bank19A
 root: ~/git/aTest/dotFiles/nVim/
@@ -38,11 +38,13 @@ windows:
           - fish
         - Quadro3:
           - sh
+
   - One:
       layout: tiled
       panes:
         - BigZSH:
           - whoami
+
   - hrzntl:
       layout: main-horizontal
       panes:

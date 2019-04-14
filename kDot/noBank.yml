@@ -1,0 +1,29 @@
+
+  - HrznViFm:
+      layout: main-horizontal
+      panes:
+        - vifm
+        - exa 
+
+  - Tiled:
+      layout: tiled
+      panes:
+        - Q1:
+          - mysql -uroot -pmypass
+        - Q2:
+          - ipython
+        - Q3:
+          - tail /var/log/mysql/error.log
+
+
+  - Fish:
+      layout: tiled
+      panes:
+        - F1:
+          - exa -rT
+        - Q1:
+          - mysql -uroot -pmypass
+
+
+        - Prezto:
+          - cd ~/.zplug/repos/sorin-ionescu/prezto/
