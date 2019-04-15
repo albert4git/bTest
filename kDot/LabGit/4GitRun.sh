@@ -11,7 +11,10 @@
 #//FLAG-G
 
 git log --oneline 
-git log --oneline 
+
+git show-branch 
+
+git reflog 
 
 git log -5
 

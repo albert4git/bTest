@@ -20,6 +20,7 @@ TAG="MinitTrim3"
 TAG="Trim3Dict"
 TAG="kBank21"
 TAG="SpellHe"
+TAG="Bank22Py1"
 NOW=$(date +"%m-%d-%Y-%T")
 NW=$(date +"%m-%d-%Y-%H-%M-%S")
 cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW$TAG"

@@ -1,14 +1,15 @@
 "-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " File: minit.vim
-" Author: red
 " Last Modified: 19 Feb 2019
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      So 14 Apr 2019 07:28:53  CEST
+" Last Modified:      Mo 15 Apr 2019 12:56:38  CEST
+"===============================================================================================================
 "===============================================================================================================
         set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
         "------------------------------------------------------------------------------------
         set runtimepath+=~/vim-amake
+
         "------------------------------------------------------------------------------------
         let $MYVIMRC='~/.config/nvim/init.vim'
         "------------------------------------------------------------------------------------
@@ -310,6 +311,11 @@
         set wildignore+=lib
 "-16-}}}
 
+      nmap <Leader>c <Plug>CRV_CRefVimNormal
+      vmap <Leader>r <Plug>CRV_CRefVimVisual
+      map  <Leader>cw <Plug>CRV_CRefVimAsk
+      map  <Leader>cc <Plug>CRV_CRefVimInvoke
+
 "---------------------------------------------------------------------------------------------------
 ":::::::::::::::::::::::::::-START1-:::::::::-PreNAVI-::::::::::::::::::::::::::::::::::::::::::::::
 "---------------------------------------------------------------------------------------------------
@@ -567,8 +573,8 @@
         nnoremap <Leader>\ :Unite -silent -vertical -winwidth=40  -direction=botright -toggle outline<CR>
         nnoremap <Leader>h :UniteWithCursorWord -silent help<CR>
         nnoremap <Leader>u :Unite help file_mru file buffer file_rec bookmark <CR>
-        nnoremap <Leader>r :<C-u>Unite -buffer-name=register register<CR>
-        nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
+        " nnoremap <Leader>r :<C-u>Unite -buffer-name=register register<CR>
+        " nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
         nnoremap <Leader>j :<C-u>Unite -buffer-name=jump jump<CR>
         nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
         nnoremap <Leader>' :Unite bookmark <CR>

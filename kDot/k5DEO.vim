@@ -1,7 +1,7 @@
 "file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:32  CEST
-" Last Modified:      So 14 Apr 2019 01:17:59  CEST
+" Last Modified:      Mo 15 Apr 2019 12:51:45  CEST
 "===============================================================================================================
 "xdg-open
 "------------------------------------------------------------------------------------------
@@ -712,6 +712,9 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'eparreno/vim-l9'
         " Plug 'WolfgangMehner/c-support'
         " Plug 'vim-scripts/c.vim'
+        Plug 'vim-scripts/CRefVim'
+        Plug 'sheerun/vim-polyglot'
+
         "--------------------------------------------------------------------------------- 
         " Plug 'WolfgangMehner/bash-support'
         " Plug 'severin-lemaignan/vim-minimap'
@@ -750,8 +753,9 @@ call plug#begin('~/.config/nvim/plugged/')
                                         \ ['one', 'two', 'three']
                                 \ ]
         "--------------------------------------------------------------------------------- 
-        Plug 'gotcha/vimpdb'
-        Plug 'cpiger/NeoDebug'
+        " no Plug 'gotcha/vimpdb'
+        Plug 'SkyLeach/pudb.vim'
+        " no Plug 'cpiger/NeoDebug'
         "--------------------------------------------------------------------------------- 
         " Plug 'vim-vdebug/vdebug'
         " <F5>: start/run (to next breakpoint/end of script)
