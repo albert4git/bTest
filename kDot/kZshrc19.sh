@@ -69,6 +69,9 @@ alias nv='nvim'
 alias ni1='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
 alias ni2='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
 
+alias py='python'
+alias py3='python3'
+alias ca='ccat'
 ###############################################################
 ### cd vim-master-82/src
 ### --OR--
@@ -83,6 +86,8 @@ alias ni2='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
 alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias kdeo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
+alias deless='deonvim NONE -u ~/git/bTest/kDot/kLess.vim'
+
 
 
 ###############################################################

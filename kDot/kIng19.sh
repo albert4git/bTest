@@ -21,6 +21,10 @@ TAG="Trim3Dict"
 TAG="kBank21"
 TAG="SpellHe"
 TAG="Bank22Py1"
+TAG="PreLabPuDB"
+TAG="loggerP1"
+TAG="loggerP3insideFuncInc"
+TAG="loggerP4inFuncIncOK"
 NOW=$(date +"%m-%d-%Y-%T")
 NW=$(date +"%m-%d-%Y-%H-%M-%S")
 cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW$TAG"
