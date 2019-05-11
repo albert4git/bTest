@@ -1,7 +1,7 @@
 "file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:32  CEST
-" Last Modified:      Do 18 Apr 2019 07:00:47  CEST
+" Last Modified:      Mo 22 Apr 2019 09:32:31  CEST
 "===============================================================================================================
 "xdg-open
 "------------------------------------------------------------------------------------------
@@ -820,6 +820,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'huyz/less.vim'
         "Plug 'Dkendal/fzy-vim'
         Plug 'rkitover/vimpager'
+        Plug 'dbeniamine/cheat.sh-vim'
 
 call plug#end()
 "---nPlugEnd---nPlugStop3------------}}}

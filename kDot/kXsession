@@ -1,0 +1,10 @@
+#! /bin/bash
+
+firefox &
+xfce4-panel &
+blueman-applet &
+xfce4-terminal &
+nautilus &
+
+fvwm
+exec fvwm

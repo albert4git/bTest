@@ -7,8 +7,8 @@ set shiftwidth=4
 "packages
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-fugitive'
-Plug 'The-NERD-tree'
+"Plug 'tpope/vim-fugitive'
+"Plug 'The-NERD-tree'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -73,10 +73,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-z>"
 
 "colorscheme
 set background=dark
-colorscheme solarized
+colorscheme desert
 
 "NERDTree
-let NERDTreeShowHidden = 1
+"let NERDTreeShowHidden = 1
 
 "vim-autoformat settings
 noremap <F3> :Autoformat<CR>

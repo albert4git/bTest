@@ -1,5 +1,6 @@
 Definitely vifm, cmus, ncdu, htop, irssi, mtr, htop, ccat, …
-
+https://www.youtube.com/watch?v=Q2untPtY53Y&t=2546s
+https://www.youtube.com/watch?v=Oj03_8xFgwE&t=21s
 ==========================================================================================
 
 cd AwesomeProject
@@ -10,12 +11,10 @@ npm start
 apt install npm
 apt install npm --fix-missing
 
-
 npm install
 npm install -g create-react-app
 
 npm install --save react-native-sqlite-storage
-
 
 npm install -g expo-cli
 npm install -g yarn

@@ -3,7 +3,7 @@
 " Last Modified: 19 Feb 2019
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Do 18 Apr 2019 04:38:31  CEST
+" Last Modified:      Sa 11 Mai 2019 05:28:29  CEST
 "===============================================================================================================
 "===============================================================================================================
         set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -207,7 +207,7 @@
 
         hi pythonSelf  ctermfg=68 cterm=bold 
         "::::::CYAN::::::::::::::::-=2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        source ~/git/aTest/dotFiles/nVim/mix/n-badwolf.vim 
+        "source ~/git/aTest/dotFiles/nVim/mix/n-badwolf.vim 
         "colorscheme dracula
         colorscheme badwolf
         "-TOP----------------------------------------------------------------------------------------------------------
@@ -270,9 +270,9 @@
         "let g:nnv_search_paths = ['~/git/aTest/pyLabGitPdbPythonMode27']
         "let g:nnv_search_paths = ['/media/red/F1E8-C819/hTML-Zp-Link/2019CollectZip/']
         "------------------------------------------------------------------------------------------- 
-        let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
-        source ~/git/aTest/dotFiles/nVim/myPlug/NNV.vim
-        let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
+        " let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
+        " source ~/git/aTest/dotFiles/nVim/myPlug/NNV.vim
+        " let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
         ":::::::::::::::::::::::::::-=3=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         autocmd! User Oblique       normal! zz

@@ -25,6 +25,7 @@ TAG="PreLabPuDB"
 TAG="loggerP1"
 TAG="loggerP3insideFuncInc"
 TAG="loggerP4inFuncIncOK"
+TAG="-loggerP4-deLess-cProff-Py27"
 NOW=$(date +"%m-%d-%Y-%T")
 NW=$(date +"%m-%d-%Y-%H-%M-%S")
 cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW$TAG"
@@ -49,6 +50,12 @@ rm ~/.gitignore
 rm ~/.vimrc
 rm ~/.config/nvim/init.vim
 rm ~/.config/vifm/vifmrc
+
+rm ~/.xsession
+rm ~/.fvwm/config
+
+ln -s ~/git/bTest/kDot/kXsession         ~/.xsession
+ln -s ~/git/bTest/kDot/kConfigFVWM       ~/.fvwm/config
 
 ln -s ~/git/bTest/kDot/kBank21.yml        ~/.tmuxinator/kBank21.yml
 ln -s ~/git/bTest/kDot/kBank20.yml        ~/.tmuxinator/kBank20.yml

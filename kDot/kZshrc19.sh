@@ -1,5 +1,23 @@
 #=============================================================
 # i dont see Collor ?
+#
+#=============================================================
+#=============================================================
+# cprof
+#----------
+# python -m cProfile -o myscript.cprof myscript.py
+# ??? 
+# pyprof2calltree -k -i
+# python -m cProfile -s cumtime lwn2pocket.py
+# pyprof2calltree -i prof.out -o prof.calltree
+# kcachegrind prof.calltree # or qcachegrind prof.calltree
+#=============================================================
+#=============================================================
+# KCacheGrind
+# If you did any C programming and profiling these last years, you
+# may have used it as it is primarily designed as front-end for
+# Valgrind
+# line_profiler and the memory_profiler projects.
 #=============================================================
 export EDITOR="vim"
 export ZPLUG_HOME=$HOME/.zplug
@@ -65,9 +83,28 @@ alias ...='cd ../..'
 alias ..='cd ..'
 alias hh='history'
 alias so="source ~/.zshrc"
+###############################################################
 alias nv='nvim'
 alias ni1='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
 alias ni2='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
+###############################################################
+
+alias wi1='vim -U NONE -u ~/git/bTest/kDot/WIMRC/wimrc-deopl-tern-min.vim'
+alias wi2='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/xvim-Marius.vim'
+alias wi3='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/xvim-tinyX.vim'
+alias wi4='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wimrc-erik.vim'
+alias wi5='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wim-nakamura.vim'
+
+# tail -f InPlayLog20190419.log | perl -pe 's/DEBUG/\e[1;31;43m$&\e[0m/g' 
+# tail -f InPlayLog20190419.log | perl -pe 's/INFO/\e[1;30;43m$&\e[0m/g'
+
+alias grey-grep="GREP_COLOR='1;30' grep -E --color=always --line-buffered"
+alias red-grep="GREP_COLOR='1;31' grep -E --color=always --line-buffered"
+alias green-grep="GREP_COLOR='1;32' grep -E --color=always --line-buffered"
+alias yellow-grep="GREP_COLOR='1;33' grep -E --color=always --line-buffered"
+alias cyan-grep="GREP_COLOR='1;36' grep -E --color=always --line-buffered"
+
+# tail -f InPlayLog20190419.log | grey-grep ".*DEBUG*|$" | cyan-grep "INFO|$" | yellow-grep "WARN|$" | red-grep "[ERROR].*|[FATAL].*|$" | green-grep "***|$"
 
 alias py='python'
 alias py3='python3'
