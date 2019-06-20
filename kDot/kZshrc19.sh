@@ -58,6 +58,8 @@ LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;3
 export PATH=${PATH}:/home/red/nvim-linux64/bin/
 export PATH=${PATH}:/home/red/.fzf/bin/
 export PATH=${PATH}:/home/red/Komodo-Edit-11/bin/
+export PATH=${PATH}:/media/red/124Black/git/mySoft/
+export PATH=${PATH}:/media/red/124Black/git/mySoft/nvim64/bin/
 
 #GOPATH is the location of your work directory
 #For example my project directory is ~/Projects/Proj1
@@ -67,15 +69,18 @@ export GOPATH=/home/red/go
 #=============================================================
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-
 #=============================================================
 export JYTHON_HOME=/home/red/jython2.7.0
 export PATH=$JYTHON_HOME/bin:$PATH
 
 #=============================================================
-export PYTHONPATH=${PYTHONPATH}:/home/red/git/aTest/dotFiles/nVim/swamPython3/
+#PYTHONPATH=${PYTHONPATH}:/home/red/git/aTest/dotFiles/nVim/swamPython3/
+#============================================================
+alias pyconda='/media/red/124Black/3conda/bin/python3'
+#export PATH=/media/red/124Black/3conda/bin:$PATH
 #=============================================================
 export LS_COLORS
+#=============================================================
 
 
 alias ....='cd ../../..'
@@ -85,15 +90,16 @@ alias hh='history'
 alias so="source ~/.zshrc"
 ###############################################################
 alias nv='nvim'
-alias ni1='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
-alias ni2='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
-###############################################################
-
 alias wi1='vim -U NONE -u ~/git/bTest/kDot/WIMRC/wimrc-deopl-tern-min.vim'
-alias wi2='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/xvim-Marius.vim'
-alias wi3='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/xvim-tinyX.vim'
-alias wi4='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wimrc-erik.vim'
-alias wi5='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wim-nakamura.vim'
+
+###############################################################
+# alias ni1='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
+# alias ni2='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
+# alias wi2='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/xvim-Marius.vim'
+# alias wi3='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/xvim-tinyX.vim'
+# alias wi4='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wimrc-erik.vim'
+# alias wi5='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wim-nakamura.vim'
+###############################################################
 
 # tail -f InPlayLog20190419.log | perl -pe 's/DEBUG/\e[1;31;43m$&\e[0m/g' 
 # tail -f InPlayLog20190419.log | perl -pe 's/INFO/\e[1;30;43m$&\e[0m/g'
@@ -106,25 +112,21 @@ alias cyan-grep="GREP_COLOR='1;36' grep -E --color=always --line-buffered"
 
 # tail -f InPlayLog20190419.log | grey-grep ".*DEBUG*|$" | cyan-grep "INFO|$" | yellow-grep "WARN|$" | red-grep "[ERROR].*|[FATAL].*|$" | green-grep "***|$"
 
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias py='python'
 alias py3='python3'
 alias ca='ccat'
-###############################################################
-### cd vim-master-82/src
-### --OR--
-### cd git/vim82/vim/src
-### ./configure --prefix =/home/red/82vim
-### make install
-### cd ~/nvim-linux64/bin
-### cp nvim deonvim
-### ./deonvim -u ~/git/aTest/dotFiles/nVim/minit.vim
-###############################################################
 
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias kdeo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias deless='deonvim NONE -u ~/git/bTest/kDot/kLess.vim'
 
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias b5deo='deo64nvim NONE -u /media/red/124Black/git/bTest/kDot/bMinit.vim'
+alias b124='deo64nvim NONE -u /media/red/124Black/git/bTest/kDot/bMinit.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 ###############################################################
@@ -383,3 +385,50 @@ zplug load
 #=If you want to check out the whole list, again the=======================================
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 #==========================================================================================
+###############################################################
+### cd vim-master-82/src
+### --OR--
+### cd git/vim82/vim/src
+### ./configure --prefix =/home/red/82vim
+### ./configure --prefix =/media/red/124Black/git/mySoft
+./configure --prefix =/media/red/124Black/git/mySoft/vim81/
+./configure --prefix =/media/red/124Black/git/mySoft/vim81/
+
+### Unix: PUTTING vimrc IN /etc
+### Some Linux distributions prefer to put the global vimrc file in /etc, and the
+### Vim runtime files in /usr.  This can be done with:
+### 	./configure --prefix=/usr
+### 	make VIMRCLOC=/etc VIMRUNTIMEDIR=/usr/share/vim MAKE="make -e"
+
+# ./configure --prefix =/media/red/124Black/git/mySoft
+# ./configure --prefix =/media/red/124Black/git/mySoft/
+# make CMAKE_INSTALL_PREFIX=/media/red/124Black/git/mySoft/
+# make CMAKE_INSTALL_PREFIX=/media/red/124Black/git/mySoft/
+# make CMAKE_BUILD_TYPE=RelWithDebInfo USE_BUNDLED=OFF
+# To install to a non-default location:
+#     make CMAKE_INSTALL_PREFIX=/full/path/
+#     make install
+# To skip bundled (`third-party/*`) dependencies:
+# 1. Install the dependencies using a package manager.
+#    ```
+#    sudo apt install gperf luajit luarocks libuv1-dev libluajit-5.1-dev libunibilium-dev libmsgpack-dev libtermkey-dev libvterm-dev
+#    sudo luarocks build mpack
+#    sudo luarocks build lpeg
+#    sudo luarocks build inspect
+#    ```
+# 2. Build with `USE_BUNDLED=OFF`:
+#    ```
+#    make CMAKE_BUILD_TYPE=RelWithDebInfo USE_BUNDLED=OFF
+#    sudo make install
+### make install
+### cd ~/nvim-linux64/bin
+### cp nvim deonvim
+### ./deonvim -u ~/git/aTest/dotFiles/nVim/minit.vim
+#############################################################
+#" If installed using git
+#set rtp+=~/.fzf
+
+# tig on  master: 
+#  make install
+#    INSTALL  src/tig -> /home/red/bin
+#    INSTALL  tigrc -> /home/red/etc

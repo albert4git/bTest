@@ -16,6 +16,31 @@
 #rm kong18/18-*
 #NW=$(date +"%m-%d-%Y")
 
+##########################################################################################
+#rsync -r dir1/ dir2
+ -av ~/git/bTest/ /media/red/124Black/git/bTest/
+rsync -av ~/git/bTest/ /media/red/64black/git/bTest/
+
+##########################################################################################
+rsync -av  /media/red/124Black/git/ /media/red/64black/git/
+##########################################################################################
+rsync -av  /media/red/124Black/vVideo/ /media/red/pink/vVideo/
+##########################################################################################
+rsync -av  /media/red/124Black/git/ /media/red/pink/git/
+##########################################################################################
+
+#==============================================================
+#-Dry-Run
+rsync -anv ~/git/bTest/ /media/red/124Black/git/bTest/
+#==============================================================
+
+rsync -anv ~/.config/ /media/red/124Black/git/dotRedCong
+#rsync -anv dir1/ dir2
+rsync -anv ~/git/bTest/ /media/red/124Black/git/bTest
+rsync -av ~/git/bTest/ /media/red/124Black/git/bTest
+rsync -av ~/.config/ /media/red/124Black/git/dotRedConfig
+rsync -av ~/.vim/ /media/red/124Black/git/dotRedVim
+
 TAG="MinitTrim3"
 TAG="Trim3Dict"
 TAG="kBank21"
@@ -26,11 +51,14 @@ TAG="loggerP1"
 TAG="loggerP3insideFuncInc"
 TAG="loggerP4inFuncIncOK"
 TAG="-loggerP4-deLess-cProff-Py27"
+TAG="FVWM6Talle"
 NOW=$(date +"%m-%d-%Y-%T")
 NW=$(date +"%m-%d-%Y-%H-%M-%S")
-cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW$TAG"
+cp -r ~/git/bTest/ /media/red/yellow/BBBLock/"bTest$NW$TAG"
 pwd
 
+
+cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW$TAG"
 cp -r ~/git/bTest/ /media/red/0A942CAB942C9B69/BB9BLOCK/"bTest$NW"
 cp -r ~/git/bTest/ /media/red/F1E8-C819/BBFBLOCK/"bTest$NW"
 
@@ -44,7 +72,10 @@ rm ~/.tmuxinator/kBank19.yml
 rm ~/.zshrc
 rm ~/.tmux.conf 
 rm ~/.ctags
+
 rm ~/.bashrc
+pwd
+
 rm ~/.gitconfig
 rm ~/.gitignore
 rm ~/.vimrc
@@ -54,6 +85,7 @@ rm ~/.config/vifm/vifmrc
 rm ~/.xsession
 rm ~/.fvwm/config
 
+#------------------------------------------------------------------------------------------
 ln -s ~/git/bTest/kDot/kXsession         ~/.xsession
 ln -s ~/git/bTest/kDot/kConfigFVWM       ~/.fvwm/config
 
@@ -63,7 +95,9 @@ ln -s ~/git/bTest/kDot/kBank19.yml        ~/.tmuxinator/kBank19.yml
 ln -s ~/git/bTest/kDot/kZshrc19.sh        ~/.zshrc
 ln -s ~/git/bTest/kDot/kTmux19.conf       ~/.tmux.conf 
 ln -s ~/git/bTest/kDot/kCtags19           ~/.ctags
-ln -s ~/git/bTest/kDot/kBashColorRC19.sh  ~/.bashrc
+#ln -s ~/git/bTest/kDot/kBashColorRC19.sh  ~/.bashrc
+ln -s ~/git/bTest/kDot/kBashColor.sh      ~/.bashrc
+
 ln -s ~/git/bTest/kDot/kGitconfig.vim     ~/.gitconfig
 ln -s ~/git/bTest/kDot/kGitignore         ~/.gitignore
 ln -b ~/git/bTest/kDot/inkPreRc19.vim     ~/.vimrc

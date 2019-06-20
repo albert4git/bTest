@@ -3,10 +3,10 @@
 " Last Modified: 19 Feb 2019
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Sa 11 Mai 2019 05:28:29  CEST
+" Last Modified:      Mi 12 Jun 2019 11:21:31  CEST
 "===============================================================================================================
 "===============================================================================================================
-        set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
+        "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
         "------------------------------------------------------------------------------------
         set runtimepath+=~/vim-amake
 
@@ -201,13 +201,12 @@
 
 "-2Remap-}}}
 
-        "source ~/git/bTest/kDot/kDEO3.vim
         source ~/git/bTest/kDot/k5DEO.vim
         "source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
 
         hi pythonSelf  ctermfg=68 cterm=bold 
         "::::::CYAN::::::::::::::::-=2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "source ~/git/aTest/dotFiles/nVim/mix/n-badwolf.vim 
+        "source mix/n-badwolf.vim 
         "colorscheme dracula
         colorscheme badwolf
         "-TOP----------------------------------------------------------------------------------------------------------
