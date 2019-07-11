@@ -1,0 +1,965 @@
+#! /bin/sh
+#
+# b2Bash.sh
+# Copyright (C) 2019 red <red@red-Swift-SF113-31>
+#
+# Distributed under terms of the MIT license.
+#
+
+
+
+#===???=============================================================
+t="abc123"
+[[ "$t" == abc* ]]         # true (globbing)
+[[ "$t" == "abc*" ]]       # false (literal matching)
+[[ "$t" =~ [abc]+[123]+ ]] # true (regular expression)
+[[ "$t" =~ "abc*" ]]       # false (literal matching)
+#===???=============================================================
+"$t" == abc*          # true (globbing)
+"$t" == "abc*"        # false (literal matching)
+"$t" =~ [abc]+[123]+  # true (regular expression)
+"$t" =~ "abc*"        # false (literal matching)
+
+#===???=============================================================
+f="path1/path2/file.ext"  
+len="${#f}" # = 20 (string length) 
+echo len
+echo $f
+slice1="${f:6}" # = "path2/file.ext"
+echo $slice1
+
+# slicing: ${<var>:<start>} or ${<var>:<start>:<length>}
+slice1="${f:6}" # = "path2/file.ext"
+slice2="${f:6:5}" # = "path2"
+slice3="${f: -8}" # = "file.ext"(Note: space before "-")
+pos=6
+len=5
+slice4="${f:${pos}:${len}}" # = "path2"
+#==?==============================================================
+data="name,sex,rollno,location"
+#To read each of the item in a variable, we can use IFS.
+oldIFS=$IFS
+IFS=, now,
+for item in $data;
+do
+        echo Item: $item
+done
+
+echo Item: $item
+IFS=$oldIFS
+#==?==============================================================
+
+for ((ii=0; $ii<10; $ii++))
+{
+        echo $ii
+}
+
+#==?==============================================================
+x=0;
+until [ $x -eq 9 ]; 
+do let x++;
+echo $x;
+done
+#==?==============================================================
+str1="Not empty "
+str2=""
+if [[ -n $str1 ]] && [[ -z $str2 ]];
+then
+echo str1 is non-empty and str2 is empty string.
+fi
+#================================================================
+find . -print
+find . -regex ".*\(\.py\|\.sh\)$"
+find . ! -name "*.txt" -print
+
+find ~/ ! -name "*.phar" -print
+composer.phar
+
+find . -type d -print
+find . -type f -print
+find . -type l -print
+#Print all the files that were accessed within the last 7 days as follows:
+find . -type f -atime -7 -print
+
+#Print all the files that are having access time exactly 7 days old as follows:
+find . -type f -atime 7 -print
+#Print all the files that are having access time older than 7 days as follows:
+find . -type f -atime +1 -print
+#In order to print all the files that are having access time older than seven minutes, use the following command:
+find . -type f -amin +7 -print
+#files that are having a modification time greater than that of the modification time of a given file.txt file as follows:
+find . -type f -newer bASH19.sh -print
+find . -type f -newer file.txt -print
+
+# Files having size greater than 2 kilobytes
+find . -type f -size +2k
+# Files having size less than 2 kilobytes
+find . -type f -size -2k
+# Files having size 2 kilobytes
+find . -type f -size 2k
+b – 512 byte blocks
+c – bytes
+w – two byte words
+k – Kilobyte
+M – Megabyte
+G – Gigabyte
+#================================================================
+find . -type f -name "*.swp" -delete
+#================================================================
+# Print files having permission 644
+find . -type f -perm 644 -print
+#================================================================
+find . -type f -user red -print
+#================================================================
+# find . -type f –user root –exec chown slynux {} \;
+In this command, {} is a special string used with the –exec option. For each file match, {}
+will be replaced with the file name in place for –exec . For example, if the find command
+finds two files test1.txt and test2.txt with owner slynux, the find command will perform:
+#================================================================
+
+Another usage example is to concatenate all the C program files in a given directory and write
+it to a single file all_c_files.txt . We can use find to match all the C files recursively and
+use the cat command with the -exec flag as follows:
+
+find . -type f -name *.c -exec cat {} \;>all_c_files.txt
+
+
+find . -type f -amin +10 -name *.c -exec cp {} OLD \;
+find . -type f -name *.c -exec cp {} OLD \;
+ls -al OLD/
+
+find . -type f -size 2k
+find .  -name "*.vim"  -type f -size 2k
+mkdir OLD
+ls -al OLD/
+find . -type f -size 2k -name *.vim -exec cp {} OLD \;
+ls -al OLD/
+
+#===SUPER=============================================================
+rm OLD
+mkdir OLD
+ls -al OLD/
+find .  -name "*.vim"  -type f -size 2k -exec cp {} OLD \;
+ls -al OLD/
+#================================================================
+-exec with multiple commands
+We cannot use multiple commands along with the –exec parameter. It
+accepts only a single command, but we can use a trick. Write multiple
+commands in a shell script (for example, commands.sh) and use it
+with –exec as follows:
+–exec ./commands.sh {} \;
+#================================================================
+
+find . -type f -name "*.txt" -exec printf "Text file: %s\n" {} \;
+
+#================================================================
+The above command prints the name (path) of all the files that are not from the .git directories.
+find ~/git/bTest/ \( -name ".git" -prune \) -o \( -type f -print \)
+
+#===3Columns3Columns3Columns========================================================
+cat FILE1 | xargs -n 3
+
+echo "splitXsplitXsplitXsplit" | xargs -d X
+echo "splitXsplitXsplitXsplit" | xargs -d X -n 2
+
+#===Find-and-Remove===============================================
+###find . -type f -name "*.txt" -print0 | xargs -0 rm -f
+This removes all .txt files. xargs -0 interprets that the delimiting character is \0 .
+
+#===CountLinesC-Files===============================================
+find ~/git/bTest/DODO10/ -type f -name "*.c" -print0 | xargs -0 wc -l
+
+echo "HELLO WHO IS THIS" | tr 'A-Z' 'a-z'
+
+
+#===Encrypt-and-Decrypt===============================================
+echo 12345 | tr '0-9' '9876543210'
+echo 87654 | tr '9876543210' '0-9'
+
+echo "tr came, tr saw, tr conquered." | tr 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz' 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
+echo ge pnzr, ge fnj, ge pbadhrerq. | tr 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz' 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
+
+echo "Hello 123 world 456" | tr -d '0-9'
+echo hello 1 char 2 next 4 | tr -d -c '0-9 \n'
+#! /bin/sh
+#
+# b3Bash.sh
+# Copyright (C) 2019 red <red@red-Swift-SF113-31>
+#
+# Distributed under terms of the MIT license.
+#
+
+
+printf "%-5s %-10s %-4s\n" No Name Mark        
+printf "%-5s %-10s %-4.2f\n" 1 Sarath 80.3456
+printf "%-5s %-10s %-4.2f\n" 2 James 90.9989
+printf "%-5s %-10s %-4.2f\n" 3 Jeff 77.564
+
+echo -e "\e[1;31m This is red text \e[0m"
+echo -e "\e[1;42m Green Background \e[0m"
+
+cat /proc/$PID/environ
+cat /proc/12501/environ
+
+cat /proc/12501/environ | tr '\0' '\n'
+
+
+fruit=apple
+count=5
+echo "We have $count ${fruit}(s)"
+
+#====================================================
+#===LENGTH===========================================
+var=12345678901234567890
+echo ${#var}
+#====================================================
+echo $SHELL
+echo $0
+#====================================================
+if [ $UID -ne 0 ]; then
+        echo Non root user. Please run as root.
+else
+        echo "Root user"
+fi
+#====================================================
+cat ~/.bashrc | grep export
+#====================================================
+let no=10
+let no+=6
+let no-=6
+
+fruit=apple
+count=5
+echo "We have $count ${fruit}(s)"
+#====================================================
+no=10
+echo "no $no"
+result=$no 
+result=$(( no + 50 ))
+echo "$result"
+result=`expr 3 + 4`
+echo "$result"
+result=$(expr $no + 5)
+echo "$result"
+#====================================================
+echo "sqrt(100)" | bc #Square root
+echo "10^10" | bc #Square
+#====================================================
+cmd 2>stderr.txt 1>stdout.txt
+cmd 2>&1 output.txt
+or an alternate approach:
+cmd &> output.txt
+some_command 2> /dev/nul
+
+#====================================================
+
+#====================================================
+
+#====================================================
+
+#! /bin/sh
+#
+# bASH19.sh
+# Copyright (C) 2019 red <red@red-Swift-SF113-31>
+#
+# Distributed under terms of the MIT license.
+#######################################################
+ # Built-In Variables
+# For reference
+# $0   name of the script
+# $n   positional parameters to script/function
+# $$   PID of the script
+# $!    PID of the last command executed (and run in the background)
+# $?   exit status of the last command  (${PIPESTATUS} for pipelined commands)
+# $#   number of parameters to script/function
+# $@  all parameters to script/function (sees arguments as separate word)
+# $*    all parameters to script/function (sees arguments as single word)
+# Note
+# $*   is rarely the right choice.
+# $@ handles empty parameter list and white-space within parameters correctly
+# $@ should usually be quoted like so "$@"
+#######################################################
+
+
+echo {"one ","two ","red ","blue "}fish
+echo {{1,2,3}1,2,3}
+#cp /etc/httpd/conf/httpd.conf{,.bak}
+
+cp ~/git/bTest/aa.txt{,.bak}
+
+
+diff ~/git/bTest/aa.txt ~/git/bTest/bb.txt
+
+find /home/red/git/bTest/ -name README > outputFindFoo.txt 2>&1
+
+find /home/red/git/aTest/ -name README > outputFindFoo.txt 
+
+history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head
+
+
+whereis php
+which php
+
+file outputFindFoo.txt
+file bASH19.sh
+##########################################################################################
+
+egrep '(Lorem|dolor)' example.txt
+egrep -ri '(Lorem|dolor)' .
+grep -E '(Lorem|dolor)' example.txt
+nl -s". " example.txt 
+
+sort example.txt | uniq
+sort example.txt | uniq -c
+
+uname -a
+
+
+
+##########################################################################################
+echo "Hey what's the File/Directory name (using the absolute path)?"
+FILE="/home/red/git/bTest/"
+
+if [ -e "$FILE" ]; then
+        if [ -f "$FILE" ]; then
+                echo "$FILE is a regular file."
+        fi
+        if [ -d "$FILE" ]; then
+                echo "$FILE is a directory."
+        fi
+        if [ -r "$FILE" ]; then
+                echo "$FILE is readable."
+        fi
+        if [ -w "$FILE" ]; then
+                echo "$FILE is writable."
+        fi
+        if [ -x "$FILE" ]; then
+                echo "$FILE is executable/searchable."
+        fi
+else
+        echo "$FILE does not exist"
+        exit 1
+fi
+exit
+##########################################################################################
+n=4
+echo "$n"
+
+i=1
+while [ $i -ne 10 ]; do
+        i=$(expr $i + 1)
+        table=$(expr $i \* $n)
+        echo $table
+done
+##########################################################################################
+echo "Hello $USER"
+echo "Hey i am" $USER "and will be telling you about the current processes"
+echo "Running processes List"
+ps
+##########################################################################################
+NETSTAT=/bin/netstat
+LSPCI=/usr/bin/lspci
+OUTPUT="network.$(date +'%d-%m-%y').info.txt"
+
+write_header() {
+        echo "-------------------------------" >>$OUTPUT
+        echo "$@" >>$OUTPUT
+        echo "-------------------------------" >>$OUTPUT
+}
+
+write_header "Linux Distro"
+
+
+echo "* Hostname: $(hostname)" >$OUTPUT
+echo "* Run date and time: $(date)" >>$OUTPUT
+
+${LSPCI} -v >>$OUTPUT
+write_header "Linux Distro"
+echo "Linux kernel: $(uname -mrs)" >>$OUTPUT
+$NETSTAT -s >>$OUTPUT
+
+##########################################################################################
+du -sh "/home/red/git/bTest"
+du -sh "/home/red/git/aTest"
+exa -T
+NP="/home/red/git/bTest/"
+du -sh $NP
+#############################################
+OUTPUT="network.$(date +'%d-%m-%y').info.txt"
+echo $OUTPUT
+
+##########################################################################################
+mkdir target
+javac -cp "lib/sqlite-jdbc-3.20.0.jar" -d target src/SQLiteJDBCExample.java
+java -cp "lib/sqlite-jdbc-3.20.0.jar:target" SQLiteJDBCExample <arg>
+
+#! /bin/sh
+#
+# bBackUp1BASH.sh
+
+# Executing with cron
+
+# # m h dom mon dow   command
+
+#     m: minute the command executes on, between 0 and 59.
+#     h: hour the command executes on, between 0 and 23.
+#     dom: day of month the command executes on.
+#     mon: the month the command executes on, between 1 and 12.
+#     dow: the day of the week the command executes on, between 0 and 7. Sunday may be specified by using 0 or 7, both values are valid.
+#     command: the command to execute.
+
+# To add or change entries in a crontab file the crontab -e command should be used. Also, the contents of a crontab file can be viewed using the crontab -l command.
+# To execute the backup.sh script listed above using cron. Enter the following from a terminal prompt:
+# sudo crontab -e
+# Using sudo with the crontab -e command edits the root user's crontab. This is necessary if you are backing up directories only the root user has access to.
+# Add the following entry to the crontab file:
+
+# # m h dom mon dow   command
+# 0 0 * * * bash /usr/local/bin/backup.sh
+
+# The backup.sh script will now be executed every day at 12:00 am. 
+
+###########################################################################################
+
+#     To see a listing of the archive contents. From a terminal prompt type:
+#     tar -tzvf /mnt/backup/host-Monday.tgz
+#     To restore a file from the archive to a different directory enter:
+#     tar -xzvf /mnt/backup/host-Monday.tgz -C /tmp etc/hosts
+#     The -C option to tar redirects the extracted files to the specified directory. The above example will extract the /etc/hosts file to /tmp/etc/hosts. tar recreates the directory structure that it contains.
+#     Also, notice the leading "/" is left off the path of the file to restore.
+#     To restore all files in the archive enter the following:
+#     cd /
+#     sudo tar -xzvf /mnt/backup/host-Monday.tgz
+
+
+#!/bin/bash
+####################################
+#
+# Backup to NFS mount script.
+#
+####################################
+
+# What to backup. 
+backup_files="/home /var/spool/mail /etc /root /boot /opt"
+
+# Where to backup to.
+dest="/mnt/backup"
+
+# Create archive filename.
+day=$(date +%A)
+hostname=$(hostname -s)
+archive_file="$hostname-$day.tgz"
+
+# Print start status message.
+echo "Backing up $backup_files to $dest/$archive_file"
+date
+echo
+
+# Backup the files using tar.
+tar czf $dest/$archive_file $backup_files
+
+# Print end status message.
+echo
+echo "Backup finished"
+date
+
+# Long listing of files in $dest to check file sizes.
+ls -lh $dest
+#! /bin/sh
+#
+# bCheat1BASH.sh
+# Copyright (C) 2019 red <red@red-Swift-SF113-31>
+#
+# Distributed under terms of the MIT license.
+#
+
+
+# 0. Shortcuts.
+
+
+CTRL+A  # move to beginning of line
+CTRL+B  # moves backward one character
+CTRL+C  # halts the current command
+CTRL+D  # deletes one character backward or logs out of current session, similar to exit
+CTRL+E  # moves to end of line
+CTRL+F  # moves forward one character
+CTRL+G  # aborts the current editing command and ring the terminal bell
+CTRL+J  # same as RETURN
+CTRL+K  # deletes (kill) forward to end of line
+CTRL+L  # clears screen and redisplay the line
+CTRL+M  # same as RETURN
+CTRL+N  # next line in command history
+CTRL+O  # same as RETURN, then displays next line in history file
+CTRL+P  # previous line in command history
+CTRL+R  # searches backward
+CTRL+S  # searches forward
+CTRL+T  # transposes two characters
+CTRL+U  # kills backward from point to the beginning of line
+CTRL+V  # makes the next character typed verbatim
+CTRL+W  # kills the word behind the cursor
+CTRL+X  # lists the possible filename completefions of the current word
+CTRL+Y  # retrieves (yank) last item killed
+CTRL+Z  # stops the current command, resume with fg in the foreground or bg in the background
+
+DELETE  # deletes one character backward
+!!      # repeats the last command
+exit    # logs out of current session
+
+
+# 1. Bash Basics.
+
+
+export              # displays all environment variables
+
+echo $SHELL         # displays the shell you're using
+echo $BASH_VERSION  # displays bash version
+
+bash                # if you want to use bash (type exit to go back to your normal shell)
+whereis bash        # finds out where bash is on your system
+
+clear               # clears content on window (hide displayed lines)
+
+
+# 1.1. File Commands.
+
+clear               # clears content on window (hide displayed lines)
+uname -a                 # shows kernel information
+uptime                   # shows current uptime
+whoami                   # returns your username
+ls                            # lists your files
+
+ls                            # lists your files
+ls -l                         # lists your files in 'long format', which contains the exact size of the file, who owns the file and who has the right to look at it, and when it was last modified
+ls -a                         # lists all files, including hidden files
+ln -s <filename> <link>       # creates symbolic link to file
+touch <filename>              # creates or updates your file
+cat > <filename>              # places standard input into file
+more <filename>               # shows the first part of a file (move with space and type q to quit)
+head <filename>               # outputs the first 10 lines of file
+tail <filename>               # outputs the last 10 lines of file (useful with -f option)
+emacs <filename>              # lets you create and edit a file
+mv <filename1> <filename2>    # moves a file
+cp <filename1> <filename2>    # copies a file
+rm <filename>                 # removes a file
+diff <filename1> <filename2>  # compares files, and shows where they differ
+wc <filename>                 # tells you how many lines, words and characters there are in a file
+chmod -options <filename>     # lets you change the read, write, and execute permissions on your files
+gzip <filename>               # compresses files
+gunzip <filename>             # uncompresses files compressed by gzip
+gzcat <filename>              # lets you look at gzipped file without actually having to gunzip it
+lpr <filename>                # print the file
+lpq                           # check out the printer queue
+lprm <jobnumber>              # remove something from the printer queue
+genscript                     # converts plain text files into postscript for printing and gives you some options for formatting
+dvips <filename>              # print .dvi files (i.e. files produced by LaTeX)
+grep <pattern> <filenames>    # looks for the string in the files
+grep -r <pattern> <dir>       # search recursively for pattern in directory
+
+
+# 1.2. Directory Commands.
+
+
+mkdir <dirname>  # makes a new directory
+cd               # changes to home
+cd <dirname>     # changes directory
+pwd              # tells you where you currently are
+
+
+# 1.3. SSH, System Info & Network Commands.
+
+
+ssh user@host            # connects to host as user
+ssh -p <port> user@host  # connects to host on specified port as user
+ssh-copy-id user@host    # adds your ssh key to host for user to enable a keyed or passwordless login
+
+uname -a                 # shows kernel information
+uptime                   # shows current uptime
+whoami                   # returns your username
+
+passwd                   # lets you change your password
+quota -v                 # shows what your disk quota is
+date                     # shows the current date and time
+cal                      # shows the month's calendar
+uptime                   # shows current uptime
+w                        # displays whois online
+finger <user>            # displays information about user
+uname -a                 # shows kernel information
+man <command>            # shows the manual for specified command
+df                       # shows disk usage
+du <filename>            # shows the disk usage of the files and directories in filename (du -s give only a total)
+last <yourUsername>      # lists your last logins
+ps -u yourusername       # lists your processes
+kill <PID>               # kills (ends) the processes with the ID you gave
+killall <processname>    # kill all processes with the name
+top                      # displays your currently active processes
+bg                       # lists stopped or background jobs ; resume a stopped job in the background
+fg                       # brings the most recent job in the foreground
+fg <job>                 # brings job to the foreground
+
+ping <host>              # pings host and outputs results
+whois <domain>           # gets whois information for domain
+dig <domain>             # gets DNS information for domain
+dig -x <host>            # reverses lookup host
+wget <file>              # downloads file
+
+
+# 2. Basic Shell Programming.
+
+
+# 2.1. Variables.
+
+
+varname=value                # defines a variable
+varname=value command        # defines a variable to be in the environment of a particular subprocess
+echo $varname                # checks a variable's value
+echo $$                      # prints process ID of the current shell
+echo $!                      # prints process ID of the most recently invoked background job
+echo $?                      # displays the exit status of the last command
+export VARNAME=value         # defines an environment variable (will be available in subprocesses)
+
+array[0] = val               # several ways to define an array
+array[1] = val
+array[2] = val
+array=([2]=val [0]=val [1]=val)
+array(val val val)
+
+${array[i]}                  # displays array's value for this index. If no index is supplied, array element 0 is assumed
+${#array[i]}                 # to find out the length of any element in the array
+${#array[@]}                 # to find out how many values there are in the array
+
+declare -a                   # the variables are treaded as arrays
+declare -f                   # uses funtion names only
+declare -F                   # displays function names without definitions
+declare -i                   # the variables are treaded as integers
+declare -r                   # makes the variables read-only
+declare -x                   # marks the variables for export via the environment
+
+${varname:-word}             # if varname exists and isn't null, return its value; otherwise return word
+${varname:=word}             # if varname exists and isn't null, return its value; otherwise set it word and then return its value
+${varname:?message}          # if varname exists and isn't null, return its value; otherwise print varname, followed by message and abort the current command or script
+${varname:+word}             # if varname exists and isn't null, return word; otherwise return null
+${varname:offset:length}     # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
+
+${variable#pattern}          # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
+${variable##pattern}         # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
+${variable%pattern}          # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
+${variable%%pattern}         # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
+${variable/pattern/string}   # the longest match to pattern in variable is replaced by string. Only the first match is replaced
+${variable//pattern/string}  # the longest match to pattern in variable is replaced by string. All matches are replaced
+
+${#varname}                  # returns the length of the value of the variable as a character string
+
+*(patternlist)               # matches zero or more occurences of the given patterns
++(patternlist)               # matches one or more occurences of the given patterns
+?(patternlist)               # matches zero or one occurence of the given patterns
+@(patternlist)               # matches exactly one of the given patterns
+!(patternlist)               # matches anything except one of the given patterns
+
+$(UNIX command)              # command substitution: runs the command and returns standard output
+
+
+# 2.2. Functions.
+# The function refers to passed arguments by position (as if they were positional parameters), that is, $1, $2, and so forth.
+# $@ is equal to "$1" "$2"... "$N", where N is the number of positional parameters. $# holds the number of positional parameters.
+
+
+functname() {
+  shell commands
+}
+
+unset -f functname  # deletes a function definition
+declare -f          # displays all defined functions in your login session
+
+
+# 2.3. Flow Control.
+
+
+statement1 && statement2  # and operator
+statement1 || statement2  # or operator
+
+-a                        # and operator inside a test conditional expression
+-o                        # or operator inside a test conditional expression
+
+str1=str2                 # str1 matches str2
+str1!=str2                # str1 does not match str2
+str1<str2                 # str1 is less than str2
+str1>str2                 # str1 is greater than str2
+-n str1                   # str1 is not null (has length greater than 0)
+-z str1                   # str1 is null (has length 0)
+
+-a file                   # file exists
+-d file                   # file exists and is a directory
+-e file                   # file exists; same -a
+-f file                   # file exists and is a regular file (i.e., not a directory or other special type of file)
+-r file                   # you have read permission
+-r file                   # file exists and is not empty
+-w file                   # your have write permission
+-x file                   # you have execute permission on file, or directory search permission if it is a directory
+-N file                   # file was modified since it was last read
+-O file                   # you own file
+-G file                   # file's group ID matches yours (or one of yours, if you are in multiple groups)
+file1 -nt file2           # file1 is newer than file2
+file1 -ot file2           # file1 is older than file2
+
+-lt                       # less than
+-le                       # less than or equal
+-eq                       # equal
+-ge                       # greater than or equal
+-gt                       # greater than
+-ne                       # not equal
+
+if condition
+then
+  statements
+[elif condition
+  then statements...]
+[else
+  statements]
+fi
+
+for x := 1 to 10 do
+begin
+  statements
+end
+
+for name [in list]
+do
+  statements that can use $name
+done
+
+for (( initialisation ; ending condition ; update ))
+do
+  statements...
+done
+
+case expression in
+  pattern1 )
+    statements ;;
+  pattern2 )
+    statements ;;
+  ...
+esac
+
+select name [in list]
+do
+  statements that can use $name
+done
+
+while condition; do
+  statements
+done
+
+until condition; do
+  statements
+done
+
+
+# 3. Command-Line Processing Cycle.
+
+
+# The default order for command lookup is functions, followed by built-ins, with scripts and executables last.
+# There are three built-ins that you can use to override this order: `command`, `builtin` and `enable`.
+
+command  # removes alias and function lookup. Only built-ins and commands found in the search path are executed
+builtin  # looks up only built-in commands, ignoring functions and commands found in PATH
+enable   # enables and disables shell built-ins
+
+eval     # takes arguments and run them through the command-line processing steps all over again
+
+
+# 4. Input/Output Redirectors.
+
+
+cmd1|cmd2  # pipe; takes standard output of cmd1 as standard input to cmd2
+> file     # directs standard output to file
+< file     # takes standard input from file
+>> file    # directs standard output to file; append to file if it already exists
+>|file     # forces standard output to file even if noclobber is set
+n>|file    # forces output to file from file descriptor n even if noclobber is set
+<> file    # uses file as both standard input and standard output
+n<>file    # uses file as both input and output for file descriptor n
+<<label    # here-document
+n>file     # directs file descriptor n to file
+n<file     # takes file descriptor n from file
+n>>file    # directs file description n to file; append to file if it already exists
+n>&        # duplicates standard output to file descriptor n
+n<&        # duplicates standard input from file descriptor n
+n>&m       # file descriptor n is made to be a copy of the output file descriptor
+n<&m       # file descriptor n is made to be a copy of the input file descriptor
+&>file     # directs standard output and standard error to file
+<&-        # closes the standard input
+>&-        # closes the standard output
+n>&-       # closes the ouput from file descriptor n
+n<&-       # closes the input from file descripor n
+
+
+# 5. Process Handling.
+
+
+# To suspend a job, type CTRL+Z while it is running. You can also suspend a job with CTRL+Y.
+# This is slightly different from CTRL+Z in that the process is only stopped when it attempts to read input from terminal.
+# Of course, to interupt a job, type CTRL+C.
+
+myCommand &  # runs job in the background and prompts back the shell
+
+jobs         # lists all jobs (use with -l to see associated PID)
+
+fg           # brings a background job into the foreground
+fg %+        # brings most recently invoked background job
+fg %-        # brings second most recently invoked background job
+fg %N        # brings job number N
+fg %string   # brings job whose command begins with string
+fg %?string  # brings job whose command contains string
+
+kill -l      # returns a list of all signals on the system, by name and number
+kill PID     # terminates process with specified PID
+
+ps           # prints a line of information about the current running login shell and any processes running under it
+ps -a        # selects all processes with a tty except session leaders
+
+trap cmd sig1 sig2  # executes a command when a signal is received by the script
+trap "" sig1 sig2   # ignores that signals
+trap - sig1 sig2    # resets the action taken when the signal is received to the default
+
+disown <PID|JID>    # removes the process from the list of jobs
+
+wait                # waits until all background jobs have finished
+
+
+# 6. Tips and Tricks.
+
+
+# set an alias
+cd; nano .bash_profile
+> alias gentlenode='ssh admin@gentlenode.com -p 3404'  # add your alias in .bash_profile
+
+# to quickly go to a specific directory
+cd; nano .bashrc
+> shopt -s cdable_vars
+> export websites="/Users/mac/Documents/websites"
+
+source .bashrc
+cd websites
+
+
+# 7. Debugging Shell Programs.
+
+
+bash -n scriptname  # don't run commands; check for syntax errors only
+set -o noexec       # alternative (set option in script)
+
+bash -v scriptname  # echo commands before running them
+set -o verbose      # alternative (set option in script)
+
+bash -x scriptname  # echo commands after command-line processing
+set -o xtrace       # alternative (set option in script)
+
+trap 'echo $varname' EXIT  # useful when you want to print out the values of variables at the point that your script exits
+
+function errtrap {
+  es=$?
+  echo "ERROR line $1: Command exited with status $es."
+}
+
+trap 'errtrap $LINENO' ERR  # is run whenever a command in the surrounding script or function exists with non-zero status 
+
+function dbgtrap {
+  echo "badvar is $badvar"
+}
+
+trap dbgtrap DEBUG  # causes the trap code to be executed before every statement in a function or script
+# ...section of code in which the problem occurs...
+trap - DEBUG  # turn off the DEBUG trap
+
+function returntrap {
+  echo "A return occured"
+}
+
+trap returntrap RETURN # is executed each time a shell function or a script execute
+#! /bin/sh
+#
+# bOooBash.sh
+# Copyright (C) 2019 red <red@red-Swift-SF113-31>
+#
+# Distributed under terms of the MIT license.
+#
+
+
+#!/bin/bash
+#let script exit if a command fails
+set -o errexit 
+
+#let script exit if an unsed variable is used
+set -o nounset
+
+echo "Names without double quotes" 
+
+
+names="Tecmint FOSSMint Linusay"
+for name in $names; do
+        echo "$name"
+done
+
+echo "Names with double quotes" 
+
+for name in "$names"; do
+        echo "$name"
+done
+
+
+exit 0
+
+#================================================================
+echo "4 * 0.56" | bc
+no=54;
+result=`echo "$no * 1.5" | bc`
+echo $result
+#=========tee > stdin ===========================================
+ls | tee FILE1 FILE2
+#================================================================
+cat FILE1
+#================================================================
+echo who is this | tee -
+#================================================================
+array_var[0]="test1"
+array_var[1]="test2"
+array_var[2]="test3"
+array_var[3]="test4"
+array_var[4]="test5"
+array_var[5]="test6"
+
+echo ${#array_var[*]}
+echo who is this | tee -
+echo ${array_var[@]}
+#================================================================
+#================================================================
+date
+date +%s
+date --date "Jan 20 2001" +%A
+date --date "Jan 20 1999" +%A
+date --date "May 07 1979" +%A
+#================================================================
+
+fArgs()
+{
+echo $1; #Accessing arg1 and arg2
+echo $2; #Accessing arg1 and arg2
+echo "$@"; # Printing all arguments as list at once
+echo "$*"; # Similar to $@, but arguments taken as single entity
+return 0; # Return value
+}
+
+
+fArgs "aa", "bb"
+
+#================================================================
+#===SUBSHEL=()=======================================================
+pwd;
+(cd /bin; ls);
+pwd;
+#=======================
+out=$(ls)
+out=$(cat FILE1)
+echo $out
+
+

@@ -1,0 +1,184 @@
+
+
+python -m pudb buggy.py
+
+python -m pudb buggy.py
+
+==========================================================================================
+if has("python3")
+    command! -nargs=1 Py py3 <args>
+else
+    command! -nargs=1 Py py <args>
+endif
+
+let g:_uspy=":py "   or ":py3 "
+
+and then throwing the << EOF syntax overboard and instead call each line of python via
+
+exec g:_uspy "print('Hello')"
+==========================================================================================
+" First time: try finding "pydoc".
+if !exists('g:pydoc_executable')
+if executable('pydoc')
+let g:pydoc_executable = 1
+else
+let g:pydoc_executable = 0
+endif
+endif
+==========================================================================================
+==========================================================================================
+
+
+Typing <C-w> deletes one block of an entered pattern before the cursor, like a
+directory name.
+
+with <C-s> (|g:fuf_keyPrevPattern|) and <C-^> (|g:fuf_keyNextPattern|), You
+can recall patterns which have been entered before from history.
+
+<CR>  (|g:fuf_keyOpen|)        - opens in a previous window.
+<C-j> (|g:fuf_keyOpenSplit|)   - opens in a split window.
+<C-k> (|g:fuf_keyOpenVsplit|)  - opens in a vertical-split window.
+<C-l> (|g:fuf_keyOpenTabpage|) - opens in a new tab page.
+
+|:FufBuffer|       - Buffer mode (|fuf-buffer-mode|)
+|:FufFile|         - File mode (|fuf-file-mode|)
+|:FufCoverageFile| - Coverage-File mode (|fuf-coveragefile-mode|)
+|:FufDir|          - Directory mode (|fuf-dir-mode|)
+|:FufMruFile|      - MRU-File mode (|fuf-mrufile-mode|)
+|:FufMruCmd|       - MRU-Command mode (|fuf-mrucmd-mode|)
+|:FufBookmarkFile| - Bookmark-File mode (|fuf-bookmarkfile-mode|)
+|:FufBookmarkDir|  - Bookmark-Dir mode (|fuf-bookmarkdir-mode|)
+|:FufTag|          - Tag mode (|fuf-tag-mode|)
+|:FufBufferTag|    - Buffer-Tag mode (|fuf-buffertag-mode|)
+|:FufTaggedFile|   - Tagged-File mode (|fuf-taggedfile-mode|)
+|:FufJumpList|     - Jump-List mode (|fuf-jumplist-mode|)
+|:FufChangeList|   - Change-List mode (|fuf-changelist-mode|)
+|:FufQuickfix|     - Quickfix mode (|fuf-quickfix-mode|)
+|:FufLine|         - Line mode (|fuf-line-mode|)
+|:FufHelp|         - Help mode (|fuf-help-mode|)
+
+=====================================================================================
+
+if has('nvim')
+  " Terminal mode:
+  tnoremap <M-h> <c-\><c-n><c-w>h
+  tnoremap <M-j> <c-\><c-n><c-w>j
+  tnoremap <M-k> <c-\><c-n><c-w>k
+  tnoremap <M-l> <c-\><c-n><c-w>l
+  " Insert mode:
+  inoremap <M-h> <Esc><c-w>h
+  inoremap <M-j> <Esc><c-w>j
+  inoremap <M-k> <Esc><c-w>k
+  inoremap <M-l> <Esc><c-w>l
+  " Visual mode:
+  vnoremap <M-h> <Esc><c-w>h
+  vnoremap <M-j> <Esc><c-w>j
+  vnoremap <M-k> <Esc><c-w>k
+  vnoremap <M-l> <Esc><c-w>l
+  " Normal mode:
+  nnoremap <M-h> <c-w>h
+  nnoremap <M-j> <c-w>j
+  nnoremap <M-k> <c-w>k
+  nnoremap <M-l> <c-w>l
+endif
+
+
+=====================================================================================
+
+To map <Esc> to exit terminal-mode:
+    :tnoremap <Esc> <C-\><C-n>
+
+To simulate |i_CTRL-R| in terminal-mode:
+    :tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+
+To use `ALT+{h,j,k,l}` to navigate windows from any mode:
+    :tnoremap <A-h> <C-\><C-N><C-w>h
+    :tnoremap <A-j> <C-\><C-N><C-w>j
+    :tnoremap <A-k> <C-\><C-N><C-w>k
+    :tnoremap <A-l> <C-\><C-N><C-w>l
+    :inoremap <A-h> <C-\><C-N><C-w>h
+    :inoremap <A-j> <C-\><C-N><C-w>j
+    :inoremap <A-k> <C-\><C-N><C-w>k
+    :inoremap <A-l> <C-\><C-N><C-w>l
+    :nnoremap <A-h> <C-w>h
+    :nnoremap <A-j> <C-w>j
+    :nnoremap <A-k> <C-w>k
+    :nnoremap <A-l> <C-w>l
+
+
+=====================================================================================
+It's not supposed to close the terminal.
+
+    :terminal opens a terminal buffer in normal mode.
+    i switches to terminal mode.
+    ctrl+\, ctrl+n leaves terminal mode again.
+    Then you close the window like any other Vim window.
+
+=====================================================================================
+" Window split settings
+highlight TermCursor ctermfg=red guifg=red
+set splitbelow
+set splitright
+
+" Terminal settings
+tnoremap <Leader><ESC> <C-\><C-n>
+
+" Window navigation function
+" Make ctrl-h/j/k/l move between windows and auto-insert in terminals
+func! s:mapMoveToWindowInDirection(direction)
+    func! s:maybeInsertMode(direction)
+        stopinsert
+        execute "wincmd" a:direction
+
+        if &buftype == 'terminal'
+            startinsert!
+        endif
+    endfunc
+
+    execute "tnoremap" "<silent>" "<C-" . a:direction . ">"
+                \ "<C-\\><C-n>"
+                \ ":call <SID>maybeInsertMode(\"" . a:direction . "\")<CR>"
+    execute "nnoremap" "<silent>" "<C-" . a:direction . ">"
+                \ ":call <SID>maybeInsertMode(\"" . a:direction . "\")<CR>"
+endfunc
+for dir in ["h", "j", "l", "k"]
+    call s:mapMoveToWindowInDirection(dir)
+endfor
+
+
+"=============================================PPXX==============================================================
+snippet crcs "createClass" b
+var ${1:`!p snip.rv = ''.join(x.title() for x in re.sub('\.js$', '', snip.basename or 'ModuleName').split('_'))`} = React.createClass({
+	/**
+	 * @return {Object}
+	 */
+	render: function() {
+		return (
+			$0
+		);
+	}
+});
+
+module.exports = $1;
+endsnippet
+
+"=============================================PPXX==============================================================
+snippet reqq "require" b
+var `!p
+def formatVariableName(path):
+	lastPart = path.split('/')[-1]
+	if lastPart == 'underscore':
+		return '_'
+	elif lastPart == 'jquery':
+		return '$'
+	else:
+		return re.sub(r'[_\-]', '', lastPart.title())
+snip.rv = formatVariableName(t[1])
+` = require('${1}');$0
+endsnippet
+
+
+
+"=============================================PPXX==============================================================
+g:neosnippet#snippets_directory
+let g:neosnippet#snippets_directory='~/path/to/above/snippets/'

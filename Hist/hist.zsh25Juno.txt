@@ -1,0 +1,1638 @@
+    1  vi .zshrc
+    2  cd .oh-my-zsh
+    3  cd themes
+    4  ni .zsh-theme
+    5  mkdir zSH
+    6  ni oh-my-zsh.info
+    7  cd .oh-my-zsh/plugins
+    8  echo ("hello word")
+    9  echo ("hello word");
+   10  echo "hello word"
+   11  echo "hello word \n"
+   12  echo "hell word \n"
+   13  echo "oh my plugin \n \n"
+   14  echo "tahshe"
+   15  cd git/aTest/
+   16  echo "tashe"
+   17  battery_level_gauge
+   19  top 
+   20  hsi man
+   21  t
+   22  ccat oh-my-zsh.vim
+   23  nvim ninitOkt18.vim
+   24  ni antigenPlusOMZ.conf
+   25  cd ../nVim
+   26  ni ninitOkt18.vim
+   27  nu completZSH.vim
+   28  ni completZSH.vim
+   29  fzf -g cuku$
+   30  fzf -q cuku$
+   31  fzf -q vim$
+   32  git clone https://github.com/zdharma/fast-syntax-highlighting.git \\n  ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+   33  echo "epafania"
+   34  echo "epafania \n"
+   35  while {(echo "grep")}\n
+   36  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+   37  mv .zshrc zshrcOMZ
+   38  lear
+   39  ni zshrcOMZ
+   40  echo "koshkina"
+   41  nvim .zshrc
+   42  mkdir fiSH
+   43  ni config01.fish
+   44  nvim config01.fish
+   45  top -v
+   46  ni .zsh_history
+   47  cd git/aTest/dotFiles
+   48  cd pyLabGitPdbPythonMode27
+   49  dirs -v:
+   50  cd git/aTest/dataPull
+   51  cd ../git
+   52  /g/a/
+   53  cd dotFiles/zSH
+   54  git add johanZshrc
+   55  git add 0*
+   56  git commit --all
+   57  d
+   58  hsi
+   59  r
+   60  r dir
+   61  dirs
+   62  r pw
+   63  print -l bakBukLocal/**/*
+   64  lsa bakBukLocal/**/*
+   65  print -l bakBukLocal/**/*(/)
+   66  ls -l bakBukLocal/**/*(/)
+   67  lsl dotFiles/**/*(Lk+2)
+   68  lsl dotFiles/**/*(Lk+9)
+   69  cp -r .zplug zplug0402
+   70  ni .zshrc
+   71  lsl dotFiles/**/*(Lk+99)
+   72  lsl **/*(Lk+99)
+   73  ls **/*(Lk+99)
+   74  ls -l bakBukLocal/**/*
+   75  ls -l **/*
+   76  ls -l **/*.md
+   77  ls -l *
+   78  ls -l **
+   79  cd ~/git/aTest/dotFiles
+   80  cd ~/
+   81  tree zsh_demo
+   82  tree -su zsh_demo
+   83  tree -s zsh_demo
+   84  tree -tsu zsh_demo
+   85  tree -tsu zsh_demo/**(/)
+   86  tree -tsu zsh_demo/*
+   87  tree -tsu zsh_demo/**/*
+   88  tree -tsu zsh_demo/**
+   89  ls zsh_demo/*
+   90  ls zsh_demo/**
+   91  git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9k
+   92  ls -l zsh_demo/**/*(L0)
+   93  ls -l zsh_demo/**/*(om[1,3])
+   94  ls -l zsh_demo/**/*.
+   95  ls -l zsh_demo/**/*(Lm-2)
+   96  print -l zsh_demo/*/*(e:'[[ ! -e $REPLY/malta ]]':)
+   97  print -l zsh_demo/*/*(e:'[[  -e $REPLY/malta ]]':)
+   98  print -l zsh_demo/**/*(e:'[[  -e $REPLY/malta ]]':)
+   99  print -l zsh_demo/**/*.txt(e:'[[  -e $REPLY/malta ]]':)
+  100  print -l zsh_demo/**/*.(e:'[[  -e $REPLY/malta ]]':)
+  101  ls print -l zsh_demo/**/*.txt(e:'[[  -e $REPLY/malta ]]':)
+  102  ls zsh_demo
+  103  ls -l zsh_demo/**/*.txt(e:'[[  -e $REPLY/malta ]]':)
+  104  ls -l zsh_demo/**/*(e:'[[  -e $REPLY/malta ]]':)
+  105  ls zsh_demo/**/*
+  106  ls zsh_demo/**/*.txt
+  107  ls print -l zsh_demo/**/*(e:'[[  -e $REPLY/malta ]]':)
+  108  print -l zsh_demo/data/europe/poland/*.txt(:t)
+  109  print -l zsh_demo/data/europe/poland/*.txt(:t:r)
+  110  print -l zsh_demo/data/europe/poland/*.txt(:e)
+  111  print -l zsh_demo/data/europe/poland/*.txt(:h)
+  112  print -l zsh_demo/data/europe/poland/*.txt(:h:h)
+  113  print -l zsh_demo/data/europe/poland/*.txt(:h:h:h)
+  114  print -l zsh_demo/data/europe/poland/*.txt(:h:h:h:h)
+  115  du -sk .
+  116  ./**
+  117  du -sk ./**
+  118  du -sk ./**(/)
+  119  du -sk ./**/*(/)
+  120  du -sk ./**/**(/)
+  121  vi
+  122  ni
+  123  dirs -p
+  124  cd ~1
+  125  cd ~2
+  126  cd ~+1
+  127  cd ~/Documents/LanCore
+  128  cd ~+2
+  129  ls -d **
+  130  ls -d **(/)
+  131  ls -d ./**(/)
+  132  ls -d ./**/*(/)
+  133  ls -d ./**/*
+  134  my_file=(zsh_demo/data/europe/poland/*.txt([1]))
+  135  print -l $my_file
+  136  print -l $my_file(:h)
+  137  for file in zsh_demo/data/**/income.txt ; do\n output_dir=${file:h:s/data/calculations/}\n country=${output_dir:t}\n output_file="${output_dir}/${country}_max_income.txt"\n echo "The max salary is $RANDOM dollars" >| $output_file\ndone
+  138  grep "" zsh_demo/calculations/**/*_max_income.txt
+  139  echo
+  140  ex
+  141  echo ${my_variable:s/bc/BC/ \n}
+  142  echo ${my_variable:s/bc/BC/}
+  143  my_variable="path/abcd"
+  144  echo ${my_variable:s_/_._}
+  145  my_variable="aaa"
+  146  echo ${my_variable:gs/a/A/}
+  147  dirs -v
+  148  cd ~/git/aTest/dotFiles/zSH/poligon
+  149  # Let's say somebody gave you these updated files\n# and told you to replace the old ones\necho $RANDOM > zsh_demo/africa_malawi_population_2014.txt\necho $RANDOM > zsh_demo/asia_nepal_income_2014.txt\necho $RANDOM > zsh_demo/europe_malta_literacy_2014.txt\n
+  150  echo $RANDOM >| zsh_demo/africa_malawi_population_2014.txt\n
+  151  echo $RANDOM >| zsh_demo/asia_nepal_income_2014.txt\n
+  152  echo $RANDOM >| zsh_demo/europe_malta_literacy_2014.txt\n
+  153  for file in zsh_demo/*.txt; do\n file_info=(${(s._.)file:t})\n continent=$file_info[1]\n country=$file_info[2]\n data=$file_info[3]\n\n mv -f $file zsh_demo/data/${continent}/${country}/${data}.txt\ndone
+  154  grep "" zsh_demo/**/*(.mm-5)
+  155  grep "" zsh_demo/**/*(.mm-5) | fzf
+  156  echo $file
+  157  my_array=(a b c d)
+  158  echo ${(j.-.)my_array}
+  159  ls -h
+  160  echo ${(j_._)my_array}
+  161  ls zsh_demo/data/asia/laos/population.txt
+  162  ls -l zsh_demo/data/asia/laos/population.txt
+  163  echo a b c
+  164  print -1 a b c
+  165  print -l print -l a b c
+  166  print -l a b c
+  167  ls ~/git/aTest/dotFiles
+  168  ls -l ~/git/aTest/dotFiles
+  169  ls zsh_demo/data/europe/malta/literacy.txt
+  170  awk '$1 > 3' zsh_demo/data/europe/malta/literacy.txt
+  171  cp zshUsersZshAutosugestionBinKey.vim tZshUsersZshAutosugestionBinKey.vim
+  172  mv zwishenCode.vim tZwishenCode.vim
+  173  rm zshUsersZshAutosugestionBinKey.vim
+  174  04zshrc
+  175  ni 04zshrc
+  176  mv zplugReadMe.md tZplugReadMe.md
+  177  ni zshrcFeb2019
+  178  cd zSH
+  179  cd ../zSH
+  180  
+  181  cd git/4exa
+  182  cd aTest
+  183  cd dotFiles
+  184  cd nVim
+  185  his
+  186  echo "krasnopol"
+  187  lss
+  188  cd /home/red/git/aTest/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  189  exa
+  190  lsc
+  191  ls plugins
+  192  tmux kill-session
+  193  mux start kBank21
+  194  cd DODO10/
+  195  cd ~/.config/nvim/plugged/
+  196  cd /home/red/git/bTest
+  197  cd ~/.config/nvim/
+  198  de DODO10/cSwitch.c
+  199  cd ~/.zplug/repos/robbyrussell/oh-my-zsh/
+  200  cd ~/.zplug/repos/zsh-users/
+  201  de kDot/k5DEO.vim
+  202  cd .config/nvim/spell
+  203  curl -O "http://ftp.vim.org/pub/vim/runtime/spell/en.utf-8.spl\nls\nla
+  204  curl -O "http://ftp.vim.org/pub/vim/runtime/spell/en.utf-8.spl .
+  205  dict -D
+  206  exal -l
+  207  fc
+  208  cp ~/Music/*.spl
+  209  cp ~/Music/*.spl .
+  210  cp ~/Music/*.sug .
+  211  vi de.utf-8.sug
+  212  vi de.utf-8.spl
+  213  exa -l
+  214  ls -lh
+  215  cd ~/.vim/spell
+  216  deo kMinit.vim k5DEO.vim
+  217  cd ~/Videos/Lex/asccalc-master
+  218  cd simple-lexical-analyzer-master
+  219  flex -o file.c file.l
+  220  ^[[200~function! ExampleFunction(arg1, arg2)
+  221  python << endPython
+  222  tmux ls
+  223  tmux a -t bank21B
+  224  cd DODO10
+  225  cd ../kDot
+  226  cd BASH
+  227  de bCheat1BASH.sh b2Bash.sh bOooBash.sh
+  228  cd ~/.local/share/nvim/site/
+  229  ls autoload
+  230  cd spell
+  231  git show-branch
+  232  git reflog
+  233  tig reflog
+  234  hh | grep tig
+  235  ps aux | grep videos
+  236  deo kMinit.vim
+  237  cd ~/git/aTest/dotFiles/nVim
+  238  de nMakeInstallVim82.vim nMake.vim
+  239  v
+  240  ls OLD
+  241  lsl
+  242  xx
+  243  git mv BASH/ LabBASH
+  244  git mkdir LabVim
+  245  mkdir LabVimL
+  246  mkdir LabPy
+  247  mkdir LabSciPy
+  248  mkdir LabC
+  249  mkdir LabCPP
+  250  mkdir LabPuDB
+  251  git mv 0vimL0scrap.vim LabVimL
+  252  mkdir LabGit
+  253  ls myPlug
+  254  git mv myPlug/ LabVimPlug
+  255  git mv TIPS/ LabTIPS
+  256  git mv inkWim/ LabInkWim
+  257  cd DICT
+  258  cp -r ~/.config/nvim/spell .
+  259  ls spell
+  260  mv spell deoSpell
+  261  cat 4GitRun.sh
+  262  mkdir LabGO
+  263  mkdir LabJAVA
+  264  ls P2Patch
+  265  ls PPatch
+  266  ls RubySolar
+  267  git mv 4GitRun.sh LabGit
+  268  cat mopOptic.vim
+  269  q
+  270  git add
+  271  cat zbuf.vim
+  272  git log --oneline
+  273  cd LabGit
+  274  de 4GitRun.sh
+  275  git --shortstat
+  276  git diff --shortstat
+  277  git diff --shortstat HEAD~2
+  278  git diff --stat HEAD~2
+  279  git diff --stat HEAD^
+  280  git diff --stat HEAD~1
+  281  git log --shortstat
+  282  git diff --stat HEAD~5
+  283  git diff --stat HEAD~5 k5DEO.vim
+  284  git diff --stat HEAD~5 *.txt
+  285  gst
+  286  tig status
+  287  kdeo kMinit.vim
+  288  cd git/aTest/dotFiles/nVim
+  289  cd pdbA
+  290  cp 50calculator.py ~/git/bTest/kDot/LabPuDB
+  291  cp absMin.py ~/git/bTest/kDot/LabPuDB
+  292  mv 50calculator.py 50calc.py
+  293  de 50calc.py
+  294  cp 50calc.py 50calculator.py
+  295  cd Videos/Lex/asccalc-master
+  296  ./asccalc
+  297  kdeo kMinit.vim kBank21.yml
+  298  de fibonacci.py
+  299  python3 fibonacci_doctest.py
+  300  de fibonacci*
+  301  python3 fibonacci_unittest.py
+  302  python3 fibonacci_unittest2.py
+  303  python3 upperCase.py
+  304  cd LabC
+  305  ls *.c
+  306  ls cEX1
+  307  cd cEX1
+  308  de 5clockMe.c clac5e.c
+  309  cp ../../DODO10/cStrgCp.c .
+  310  de cStrgCp.c
+  311  cd ../LabPuDB
+  312  mv 50* ../LabPy
+  313  cat absMin.py
+  314  mv absMin.py ../LabPy
+  315  mkdir fib* PyFib
+  316  mv fib* PyFib
+  317  cat upperCase.py
+  318  cat absMax.py
+  319  cat abs.py
+  320  de abs.py
+  321  mv upperCase.py upperCaseTest.py
+  322  cd LabPuDB
+  323  de primes.py test_primes.py
+  324  python3 run_primes.py
+  325  ls PyFib
+  326  mkdir PrimesLogAndConf
+  327  cp primes.py Primes
+  328  cp run_primes.py PrimesLogAndConf
+  329  cp test_primes.py PrimesLogAndConf
+  330  mv PrimesLogAndConf LogAndConfPrimes
+  331  de Makefile
+  332  ls Primes
+  333  rm -r Primes
+  334  cp primes.py LogAndConfPrimes
+  335  ccat check1_primes.log
+  336  cd LogAndConfPrimes
+  337  ccar D:\\Logs\\PyLogs\\20190417000733.log
+  338  ccat D:\\Logs\\PyLogs\\20190417000733.log
+  339  rm *000*
+  340  rm *00*
+  341  ccat InPlayLog20190417011823.log
+  342  ccat InPlayLog20190417023759.log
+  343  ccat InPlayLog20190417023029.log
+  344  ccat InPlayLog20190417024144.log
+  345  ccat InPlayLog20190417024504.log
+  346  ccat InPlayLog20190417024725.log
+  347  ccat InPlayLog20190417025310.log
+  348  ccat InPlayLog20190417030424.log
+  349  ccat InPlayLog20190417031100.log
+  350  de InPlayLog20190417.log
+  351  tail InPlayLog20190417.log
+  352  ccat test_primes.py
+  353  python test_primes.py
+  354  python test_primes.py | ccat
+  355  py test_primes.py
+  356  ca InPlayLog20190417.log
+  357  watch "tail -f | ccat" InPlayLog20190417.log
+  358  watch "tail -f" InPlayLog20190417.log
+  359  watch "less +F" InPlayLog20190417.log
+  360  less +F InPlayLog20190417.log
+  361  ccat test_primes.py | less -R
+  362  ccat InPlayLog20190417.log | less +F
+  363  watch "ccat" InPlayLog20190417.log
+  364  ccat InPlayLog20190417.log
+  365  cd ../LabPy
+  366  python lena1.py
+  367  python3 lena1.py
+  368  cd -2
+  369  ls p*
+  370  rm *0.log
+  371  rm *2.log
+  372  rm *4.log
+  373  rm *5.log
+  374  rm *6.log
+  375  rm *8.log
+  376  rm *9.log
+  377  rm *3.log
+  378  cp -r LogAndConfPrimes PuLogAndConfPrimes
+  379  python -m pudb run_primes.py
+  380  ccat InPlayLog20190418.log
+  381  python -m pudb primes.py
+  382  python -m pudb primes.py run_primes.py
+  383  python -m pudb run_primes.py primes.py
+  384  cd pudb
+  385  ccat pudb.cfg
+  386  ccat saved-breakpoints-2.7
+  387  mkdir PhiPoly
+  388  cd PhiPoly
+  389  de
+  390  de run_PhiPoly.py PhiPoly.py
+  391  cd ../PhiPoly
+  392  python run_PhiPoly.py
+  393  cd ../PuLogAndConfPrimes
+  394  python run_primes.py
+  395  n
+  396  pudb run_primes.py
+  397  cd git/bTest/kDot/LabPuDB
+  398  de run_primes.py
+  399  de primes.py run_primes.py
+  400  less +F InPlayLog20190418.log
+  401  cd .config/nvim/plugged
+  402  ls less.vim
+  403  de less.vim/README.mkd
+  404  cd git/bTest/kDot/LabPuDB/PuLogAndConfPrimes
+  405  $VIMRUNTIME/macros/less.sh
+  406  ./home/red/82vim/share/vim/vim81/macros/less.sh
+  407  cd /home/red/82vim/share/vim/vim81/macros/
+  408  ch +x less.sh
+  409  chmod +x less.sh
+  410  ./less.sh
+  411  ./less.sh README.txt
+  412  ./home/red/82vim/share/vim/vim81/macros/less.sh InPlayLog20190417.log\n
+  413  cp /home/red/82vim/share/vim/vim81/macros/less.sh .\n
+  414  ./less.sh InPlayLog20190418.log
+  415  ./less.sh +F InPlayLog20190418.log
+  416  watch ccat InPlayLog20190417.log
+  417  ca InPlayLog20190418.log
+  418  de InPlayLog20190418.log
+  419  cd less.vim
+  420  de less.vim
+  421  deless InPlayLog20190418.log
+  422  ps aux
+  423  top
+  424  top | ./txts -n ps
+  425  top | ./txts -n ifconfig
+  427  ./txts -h
+  428  ./txts --version
+  429  deo README.md
+  430  cd ~/Music/TxtStyle-master
+  431  ./txts -n first example.log
+  432  ./txts -n example example.log
+  433  ./txts -n ps example.log
+  434  ./txts -n tail example.log
+  435  ./txts -n java example.log
+  436  ./txts -n exm example.log
+  437  ./txts -n ifconfig example.log
+  438  ./txts -n calendar example.log
+  439  sudo python2 setup.py install
+  440  txts -n java example.log
+  441  txts -n alf example.log
+  442  tail -f example.log | txts -n java
+  443  tail -f example.log | txts -n example
+  444  tail -f InPlayLog20190419.log | txts -n alf
+  445  less +F InPlayLog20190419.log | txts -n ps
+  446  less +f *.log | txts -n ps
+  447  tail -f InPlayLog20190419.log | txts -n example
+  448  cd ../colortail-master
+  449  ./configure.in
+  450  colortail InPlayLog20190419.log
+  451  tail InPlayLog20190419.log
+  452  colortail -k *.log
+  453  colortail -k InPlayLog20190419.log
+  454  tail InPlayLog20190419.log | txts -n calendar
+  455  tail -f InPlayLog20190419.log | txts -n calendar
+  456  tail -f InPlayLog20190419.log | txts -n ps
+  457  deless InPlayLog20190419.log | txts -n calendar
+  458  cat InPlayLog20190419.log | txts -n calendar
+  459  tail -f InPlayLog20190419.log | ccze
+  460  tail -f -n 15 InPlayLog20190419.log | ccze
+  461  less +F InPlayLog20190419.log | ccze
+  462  ccze -m ansi < InPlayLog20190419.log | deless
+  463  ccze -m ansi < InPlayLog20190419.log | less
+  464  ccze -m ansi < InPlayLog20190419.log | less -r
+  465  livepython run_primes.py
+  466  deless InPlayLog20190419.log
+  467  rm kLess3Y.vim
+  468  rm *.jpg
+  469  rm *.png
+  470  cd kDot/LabPy
+  471  rm lena*
+  472  git add .
+  473  deo angularJS.vim
+  474  du | ccze
+  475  du . | ccze
+  476  du -h
+  477  du -h | ccze
+  478  ls WIMRC
+  479  de kZshrc19.sh WIMRC/wimrc-tech-php.vim
+  480  wi1
+  481  ls ../
+  482  cd ~/git/aTest/dotFiles/
+  483  ls inkWim
+  484  cd inkWim
+  485  de xvim-*
+  486  cd ~/.vim/
+  487  ls plugin
+  488  ls plugged
+  489  mkdir bundle
+  490  ls bundle
+  491  wi2
+  492  wi3
+  493  de demian-wimrc.vim wim-nakamura.vim wimrc-erik.vim
+  494  wi4
+  495  wi5
+  496  cd ~/git/bTest/kDot
+  497  cd ~/.config
+  498  ls Zeal
+  499  ls livepython
+  500  de livepython/Preferences
+  501  cd /usr/local/lib/node_modules
+  502  ls create-react-app
+  503  ls create-react-app/node_modules
+  504  ls expo-cli
+  505  ls expo-cli/node_modules
+  506  ls pkg
+  507  ls pkg/node_modules
+  508  ls tern
+  509  ls tern/node_modules
+  510  ls yarn/
+  511  mkdir LabJS
+  512  cd LabJS
+  513  de qStart.js
+  514  node qStart.js
+  515  cd ../../../jsReact
+  516  ls hello-world
+  517  ls 2run
+  518  ls 2run/AwesomeProject
+  519  de src/App.js
+  520  ls 2run/AwesomeProject/
+  521  cd 2run/AwesomeProject/
+  522  cd ....
+  523  cd bTest/kDot/LabPuDB
+  524  cd PuLogAndConfPrimes
+  525  tail -f InPlayLog20190419.log | perl -pe 's/DEBUG/\e[1;31;43m$&\e[0m/g'
+  526  ptail
+  527  tail -f InPlayLog20190419.log | perl -pe 's/DEBUG/\e[1;31;43m$&\e[0m/g' | perl -pe 's/INFO/\e[1;30;43m$&\e[0m/g'\n
+  528  tail -f InPlayLog20190419.log | perl -pe 's/INFO/\e[1;30;43m$&\e[0m/g'\n
+  529  ptail= 'tail -f InPlayLog20190419.log | grey-grep ".*DEBUG*|$" | cyan-grep "INFO|$" | yellow-grep "WARN|$" | red-grep "[ERROR].*|[FATAL].*|$" | green-grep "***|$"'\n
+  530  tail -f InPlayLog20190419.log | grey-grep ".*DEBUG*|$" | cyan-grep "INFO|$" | yellow-grep "WARN|$" | red-grep "[ERROR].*|[FATAL].*|$" | green-grep "***|$"\n
+  531  de ~/.txts.conf
+  532  tail -f example.log | txts -n cy1
+  533  tail -f example.log | grep --color=always -E "$|REGEXP"
+  534  tail -f -n 50 /var/log/apache2/error.log | color -l [error\]","\[notice\]"\ntail -f -n 50 example.log | color -l "\[error\]","\[notice\]"\ntail -f -n 50 example.log | color -l "\[error\]","\[notice\]"\nclear
+  535  tail -f -n 50 example.log | color -l "\[error\]","\[notice\]"
+  536  python -m cProfile run_primes.py
+  537  python -m cProfile -o proff.cprof run_primes.py
+  538  ccat proff.cprof
+  539  pyprof2calltree -k -i proff.cprof
+  540  python -m cProfile -s cumtime run_primes.py
+  541  de ptest.py
+  542  python -m cProfile ptest.py
+  543  python -m cProfile -o output.txt ptest.py
+  544  ipython
+  545  de Proff.py
+  546  python Proff.py
+  547  new fact.py
+  548  de fact.py
+  549  python -m cProfile fact.py
+  550  mv fact.py Fact.py
+  551  python -m cProfile Fact.py
+  552  de Proff2.py
+  553  py Proff2.py
+  554  py3 Proff2.py
+  555  py3 Proff2.py | cat >>| op2.log
+  556  py Proff2.py | cat >>| op2.log
+  557  ca op2.log
+  558  de op2.log
+  559  py3 Proff3.py
+  560  ca run_primes.py
+  561  ca test_primes.py
+  562  cat Proff.py
+  563  hh | vim -
+  564  zeal
+  565  ranger
+  566  cd calculator-master
+  567  npm c
+  568  npm
+  569  npm -h
+  570  npm help
+  571  cd Realtime-calendar-master
+  572  cd client
+  573  npm install -g bower
+  574  cd git/jsReact/digital-clock-js-master
+  575  cd ../react-clockwall-master
+  576  cd ../clock-component-master
+  577  cd polymer
+  578  bower install
+  579  node server.js
+  580  cd ~/snap
+  581  snap install vidcutter
+  582  cd '/media/red/pink/Bald'
+  583  cd /media/red/pink
+  584  ls -l
+  585  ffmpeg -i concat:"*.mp4" output.mp4
+  586  ls -d $PWD
+  587  ls -d -1 $PWD
+  588  l | cat >>| in.txt
+  589  ffmpeg -f concat -i in.txt output.mp4
+  590  ffmpeg -i concat:"1.mp4|2.mp4" output12.mp4
+  591  ffmpeg -i concat:"5.mp4|6.mp4" o56.mp4
+  592  ffmpeg -i concat:"4.mp4|6.mp4" o56.mp4
+  593  ffmpeg -i concat:"4.mp4|6.mp4" o46.mp4
+  594  ffmpeg -i concat:"o12.mp4|46.mp4" oo1246.mp4
+  595  ffmpeg -i concat:"o12.mp4|o46.mp4" oo1246.mp4
+  596  cd ~/Pictures
+  597  cd Bald
+  599  vi Install-Linux-tar.txt
+  600  cd /media/red/A5A1-FBC4/sK1
+  601  cd Pictures/Bald
+  602  deo in.txt
+  603  ffmpeg -f concat -safe 0 -i in.txt -c copy out.mp4\n
+  604  de in.txt
+  605  ffmpeg -f concat -safe 0 -i in.txt -c copy cout.mp4\n
+  606  cd git/android-studio
+  607  cd ~/git/jsReact
+  608  cd digital-clock-js-master
+  609  cp -r digital-clock-js-master digital-clock-js
+  610  cd digital-clock-js
+  611  de app.js
+  612  cp -r react-clockwall-master react-clockwall
+  613  { id: 'clock3', town: 'Paris', timezone: 'Europe/Paris', locale: 'fr' },
+  614  de index.html
+  615  de src/Index.js
+  616  cd ../4run
+  617  ls app
+  618  ls app/css
+  619  cat react-native-motivation-app-master
+  620  cat react-native-motivation-app-master/README.md
+  621  ls express-mysql-example-master
+  622  cd express-mysql-example-master
+  623  hh | grep npm
+  624  mpm run
+  625  ls node_modules
+  626  ls desktop-clock-master
+  627  py clock.py
+  628  py3 clock.py
+  629  caut requirements.txt
+  630  cat requirements.txt
+  631  ls clock
+  632  de clock.py
+  633  gcc -o terminal_clock terminal_clock.c\n
+  634  ./terminal_clock
+  635  de terminal_clock.c
+  636  cd ../opengl-clock-master
+  637  chmod +x compile.sh
+  638  cat compile.sh
+  639  gcc -o clo clock.cpp\n
+  640  gcc -L/usr/lib -o clo clock.cpp -lglut -lGL -lGLU
+  641  cd bash-pro-master
+  642  mv .bash_profile bash_pro.sh
+  643  de bash_pro.sh
+  644  sudo adduser $USER kvm
+  645  cd git/jsReact/
+  646  cd 4run
+  647  cd local-sqlite-example
+  648  npm run
+  649  npm install react-clock
+  650  cd react-native-motivation-app-master/
+  651  mpm run website
+  652  npm run playlist
+  653  npm run website
+  654  ls website
+  655  cd js-budget-setup-master
+  656  npm install cli-table
+  657  mkdir POCsqlite
+  658  cd POCsqlite
+  659  git clone https://github.com/romwaldtff/NodeJS-REST-API-SQLite.git
+  660  cd NodeJS-REST-API-SQLite
+  661  node index.js
+  662  kdeo kMinit.vim k5DEO.vim
+  663  mkdir CHEATSH
+  664  cd CHEATSH
+  665  curl cheat.sh/tar
+  666  curl cht.sh/curl
+  667  curl cheat.sh/tar | cat >>| CHEET.vim
+  668  cat CHEET.vim
+  669  curl cheat.sh/rsync | cat >>| CHEET.vim
+  670  curl cheat.sh/curl | cat >>| CHEET.vim
+  671  curl cheat.sh/vim | cat >>| CHEET.vim
+  672  curl cheat.sh/find | cat >>| CHEET.vim
+  673  curl cheat.sh/awk | cat >>| CHEET.vim
+  674  curl cheat.sh/gzip | cat >>| CHEET.vim
+  675  curl cheat.sh/crontab | cat >>| CHEET.vim
+  676  curl cheat.sh/ps | cat >>| CHEET.vim
+  677  curl cheat.sh/df | cat >>| CHEET.vim
+  678  curl cheat.sh/tail | cat >>| CHEET.vim
+  679  curl cheat.sh/apt | cat >>| CHEET.vim
+  680  curl cheat.sh/apt-get | cat >>| CHEET.vim
+  681  curl cheat.sh/wget | cat >>| CHEET.vim
+  682  ccat CHEET.vim
+  683  curl cheat.sh/apt-get
+  684  curl cheat.sh/apt
+  685  curl cheat.sh/vim
+  686  curl cheat.sh/find
+  687  curl cheat.sh/grep
+  688  curl cheat.sh/exa
+  689  curl cheat.sh/df
+  690  curl cheat.sh/mv
+  692  curl cheat.sh/rsync
+  693  curl cheat.sh/wget
+  694  curl cheat.sh/git
+  695  curl cheat.sh/npm
+  696  curl cheat.sh/dict
+  697  curl cheat.sh/sed
+  698  curl cheat.sh/python/lambda
+  699  curl cheat.sh/python/~io
+  700  curl cheat.sh/python/:learn
+  701  curl cheat.sh/zsh
+  702  curl cheat.sh/bash
+  703  curl cheat.sh/go
+  704  curl cheat.sh/go/:learn
+  705  curl cheat.sh/cpp
+  706  curl cheat.sh/cpp/:learn
+  707  curl cheat.sh/c/:learn
+  708  curl cheat.sh/c/
+  709  curl cheat.sh/perl
+  710  curl cheat.sh/perl/:learn
+  711  curl cheat.sh/php/:learn
+  712  curl cheat.sh/mysql/:learn
+  713  curl cheat.sh/mysql/
+  714  curl cheat.sh/sqlite/
+  715  curl cheat.sh/sqlite3/
+  716  curl cheat.sh/gcc
+  717  curl cheat.sh/locate
+  718  curl cheat.sh/android
+  719  curl cheat.sh/java/:learn
+  720  curl cheat.sh/java/:learn \n// Single-line comments start with //\n\n/*\nMulti-line comments look like this.\n*/\n\n/**\n * JavaDoc comments look like this. Used to describe the Class or various\n * attributes of a Class.\n * Main attributes:\n *\n * @author         Name (and contact information such as email) of author(s).\n * @version     Current version of the program.\n * @since        When this part of the program was first added.\n * @param         For describing the different parameters for a method.\n * @return        For describing what the method returns.\n * @deprecated  For showing the code is outdated or shouldn't be used.\n * @see         Links to another part of documentation.\n*/\n\n// Import ArrayList class inside of the java.util package\nimport java.util.ArrayList;\n// Import all classes inside of java.security package\nimport java.security.*;\n\npublic class LearnJava {\n\n    // In order to run a java program, it must have a main method as an entry\n    // point.\n    public static void main(String[] args) {\n\n    ///////////////////////////////////////\n    // Input/Output\n    ///////////////////////////////////////\n\n        /*\n        * Output\n        */\n\n        // Use System.out.println() to print lines.\n        System.out.println("Hello World!");\n        System.out.println(\n            "Integer: " + 10 +\n            " Double: " + 3.14 +\n            " Boolean: " + true);\n\n        // To print without a newline, use System.out.print().\n        System.out.print("Hello ");\n        System.out.print("World");\n\n        // Use System.out.printf() for easy formatted printing.\n        System.out.printf("pi = %.5f", Math.PI); // => pi = 3.14159\n\n        /*\n         * Input\n         */\n\n        // use Scanner to read input\n        // must import java.util.Scanner;\n        Scanner scanner = new Scanner(System.in);\n\n        // read string input\n        String name = scanner.next();\n\n        // read byte input\n        byte numByte = scanner.nextByte();\n\n        // read int input\n        int numInt = scanner.nextInt();\n\n        // read long input\n        float numFloat = scanner.nextFloat();\n\n        // read double input\n        double numDouble = scanner.nextDouble();\n\n        // read boolean input\n        boolean bool = scanner.nextBoolean();\n\n        ///////////////////////////////////////\n        // Variables\n        ///////////////////////////////////////\n\n        /*\n        *  Variable Declaration\n        */\n        // Declare a variable using <type> <name>\n        int fooInt;\n        // Declare multiple variables of the same\n        // type <type> <name1>, <name2>, <name3>\n        int fooInt1, fooInt2, fooInt3;\n\n        /*\n        *  Variable Initialization\n        */\n\n        // Initialize a variable using <type> <name> = <val>\n        int barInt = 1;\n        // Initialize multiple variables of same type with same\n        // value <type> <name1>, <name2>, <name3>\n        // <name1> = <name2> = <name3> = <val>\n        int barInt1, barInt2, barInt3;\n        barInt1 = barInt2 = barInt3 = 1;\n\n        /*\n        *  Variable types\n        */\n        // Byte - 8-bit signed two's complement integer\n        // (-128 <= byte <= 127)\n        byte fooByte = 100;\n\n        // If you would like to interpret a byte as an unsigned integer\n        // then this simple operation can help\n        int unsignedIntLessThan256 = 0xff & fooByte;\n        // this contrasts a cast which can be negative.\n        int signedInt = (int) fooByte;\n\n        // Short - 16-bit signed two's complement integer\n        // (-32,768 <= short <= 32,767)\n        short fooShort = 10000;\n\n        // Integer - 32-bit signed two's complement integer\n        // (-2,147,483,648 <= int <= 2,147,483,647)\n        int bazInt = 1;\n\n        // Long - 64-bit signed two's complement integer\n        // (-9,223,372,036,854,775,808 <= long <= 9,223,372,036,854,775,807)\n        long fooLong = 100000L;\n        // L is used to denote that this variable value is of type Long;\n        // anything without is treated as integer by default.\n\n        // Note: byte, short, int and long are signed. They can have positive and negative values.\n        // There are no unsigned variants.\n        // char, however, is 16-bit unsigned.\n\n        // Float - Single-precision 32-bit IEEE 754 Floating Point\n        // 2^-149 <= float <= (2-2^-23) * 2^127\n        float fooFloat = 234.5f;\n        // f or F is used to denote that this variable value is of type float;\n        // otherwise it is treated as double.\n\n        // Double - Double-precision 64-bit IEEE 754 Floating Point\n        // 2^-1074 <= x <= (2-2^-52) * 2^1023\n        double fooDouble = 123.4;\n\n        // Boolean - true & false\n        boolean fooBoolean = true;\n        boolean barBoolean = false;\n\n        // Char - A single 16-bit Unicode character\n        char fooChar = 'A';\n\n        // final variables can't be reassigned,\n        final int HOURS_I_WORK_PER_WEEK = 9001;\n        // but they can be initialized later.\n        final double E;\n        E = 2.71828;\n\n        // BigInteger - Immutable arbitrary-precision integers\n        //\n        // BigInteger is a data type that allows programmers to manipulate\n        // integers longer than 64-bits. Integers are stored as an array of\n        // of bytes and are manipulated using functions built into BigInteger\n        //\n        // BigInteger can be initialized using an array of bytes or a string.\n        BigInteger fooBigInteger = new BigInteger(fooByteArray);\n\n        // BigDecimal - Immutable, arbitrary-precision signed decimal number\n        //\n        // A BigDecimal takes two parts: an arbitrary precision integer\n        // unscaled value and a 32-bit integer scale\n        //\n        // BigDecimal allows the programmer complete control over decimal\n        // rounding. It is recommended to use BigDecimal with currency values\n        // and where exact decimal precision is required.\n        //\n        // BigDecimal can be initialized with an int, long, double or String\n        // or by initializing the unscaled value (BigInteger) and scale (int).\n        BigDecimal fooBigDecimal = new BigDecimal(fooBigInteger, fooInt);\n\n        // Be wary of the constructor that takes a float or double as\n        // the inaccuracy of the float/double will be copied in BigDecimal.\n        // Prefer the String constructor when you need an exact value.\n        BigDecimal tenCents = new BigDecimal("0.1");\n\n        // Strings\n        String fooString = "My String Is Here!";\n\n        // \n is an escaped character that starts a new line\n        String barString = "Printing on a new line?\nNo Problem!";\n        // \t is an escaped character that adds a tab character\n        String bazString = "Do you want to add a tab?\tNo Problem!";\n        System.out.println(fooString);\n        System.out.println(barString);\n        System.out.println(bazString);\n\n        // String Building\n        // #1 - with plus operator\n        // That's the basic way to do it (optimized under the hood)\n        String plusConcatenated = "Strings can " + "be concatenated " + "via + operator.";\n        System.out.println(plusConcatenated);\n        // Output: Strings can be concatenated via + operator.\n\n        // #2 - with StringBuilder\n        // This way doesn't create any intermediate strings. It just stores the string pieces, and ties them together\n        // when toString() is called.\n        // Hint: This class is not thread safe. A thread-safe alternative (with some impact on performance) is StringBuffer.\n        StringBuilder builderConcatenated = new StringBuilder();\n        builderConcatenated.append("You ");\n        builderConcatenated.append("can use ");\n        builderConcatenated.append("the StringBuilder class.");\n        System.out.println(builderConcatenated.toString()); // only now is the string built\n        // Output: You can use the StringBuilder class.\n\n        // StringBuilder is efficient when the fully constructed String is not required until the end of some processing.\n        StringBuilder stringBuilder = new StringBuilder();\n        String inefficientString = "";\n        for (int i = 0 ; i < 10; i++) {\n            stringBuilder.append(i).append(" ");\n            inefficientString += i + " ";\n        }\n        System.out.println(inefficientString);\n        System.out.println(stringBuilder.toString());\n        // inefficientString requires a lot more work to produce, as it generates a String on every loop iteration.\n        // Simple concatenation with + is compiled to a StringBuilder and toString()\n        // Avoid string concatenation in loops.\n\n        // #3 - with String formatter\n        // Another alternative way to create strings. Fast and readable.\n        String.format("%s may prefer %s.", "Or you", "String.format()");\n        // Output: Or you may prefer String.format().\n\n        // Arrays\n        // The array size must be decided upon instantiation\n        // The following formats work for declaring an array\n        // <datatype>[] <var name> = new <datatype>[<array size>];\n        // <datatype> <var name>[] = new <datatype>[<array size>];\n        int[] intArray = new int[10];\n        String[] stringArray = new String[1];\n        boolean boolArray[] = new boolean[100];\n\n        // Another way to declare & initialize an array\n        int[] y = {9000, 1000, 1337};\n        String names[] = {"Bob", "John", "Fred", "Juan Pedro"};\n        boolean bools[] = {true, false, false};\n\n        // Indexing an array - Accessing an element\n        System.out.println("intArray @ 0: " + intArray[0]);\n\n        // Arrays are zero-indexed and mutable.\n        intArray[1] = 1;\n        System.out.println("intArray @ 1: " + intArray[1]); // => 1\n\n        // Other data types worth checking out\n        // ArrayLists - Like arrays except more functionality is offered, and\n        //              the size is mutable.\n        // LinkedLists - Implementation of doubly-linked list. All of the\n        //               operations perform as could be expected for a\n        //               doubly-linked list.\n        // Maps - A mapping of key Objects to value Objects. Map is\n        //        an interface and therefore cannot be instantiated.\n        //        The type of keys and values contained in a Map must\n        //        be specified upon instantiation of the implementing\n        //        class. Each key may map to only one corresponding value,\n        //        and each key may appear only once (no duplicates).\n        // HashMaps - This class uses a hashtable to implement the Map\n        //            interface. This allows the execution time of basic\n        //            operations, such as get and insert element, to remain\n        //            constant-amortized even for large sets.\n        // TreeMap - A Map that is sorted by its keys. Each modification \n        //           maintains the sorting defined by either a Comparator\n        //           supplied at instantiation, or comparisons of each Object\n        //           if they implement the Comparable interface.\n        //           Failure of keys to implement Comparable combined with failure to\n        //           supply a Comparator will throw ClassCastExceptions.\n        //           Insertion and removal operations take O(log(n)) time\n        //           so avoid using this data structure unless you are taking\n        //           advantage of the sorting.\n\n        ///////////////////////////////////////\n        // Operators\n        ///////////////////////////////////////\n        System.out.println("\n->Operators");\n\n        int i1 = 1, i2 = 2; // Shorthand for multiple declarations\n\n        // Arithmetic is straightforward\n        System.out.println("1+2 = " + (i1 + i2)); // => 3\n        System.out.println("2-1 = " + (i2 - i1)); // => 1\n        System.out.println("2*1 = " + (i2 * i1)); // => 2\n        System.out.println("1/2 = " + (i1 / i2)); // => 0 (int/int returns int)\n        System.out.println("1/2.0 = " + (i1 / (double)i2)); // => 0.5\n\n        // Modulo\n        System.out.println("11%3 = "+(11 % 3)); // => 2\n\n        // Comparison operators\n        System.out.println("3 == 2? " + (3 == 2)); // => false\n        System.out.println("3 != 2? " + (3 != 2)); // => true\n        System.out.println("3 > 2? " + (3 > 2)); // => true\n        System.out.println("3 < 2? " + (3 < 2)); // => false\n        System.out.println("2 <= 2? " + (2 <= 2)); // => true\n        System.out.println("2 >= 2? " + (2 >= 2)); // => true\n\n        // Boolean operators\n        System.out.println("3 > 2 && 2 > 3? " + ((3 > 2) && (2 > 3))); // => false\n        System.out.println("3 > 2 || 2 > 3? " + ((3 > 2) || (2 > 3))); // => true\n        System.out.println("!(3 == 2)? " + (!(3 == 2))); // => true\n\n        // Bitwise operators!\n        /*\n        ~      Unary bitwise complement\n        <<     Signed left shift\n        >>     Signed/Arithmetic right shift\n        >>>    Unsigned/Logical right shift\n        &      Bitwise AND\n        ^      Bitwise exclusive OR\n        |      Bitwise inclusive OR\n        */\n\n        // Increment operators\n        int i = 0;\n        System.out.println("\n->Inc/Dec-rementation");\n        // The ++ and -- operators increment and decrement by 1 respectively.\n        // If they are placed before the variable, they increment then return;\n        // after the variable they return then increment.\n        System.out.println(i++); // i = 1, prints 0 (post-increment)\n        System.out.println(++i); // i = 2, prints 2 (pre-increment)\n        System.out.println(i--); // i = 1, prints 2 (post-decrement)\n        System.out.println(--i); // i = 0, prints 0 (pre-decrement)\n\n        ///////////////////////////////////////\n        // Control Structures\n        ///////////////////////////////////////\n        System.out.println("\n->Control Structures");\n\n        // If statements are c-like\n        int j = 10;\n        if (j == 10) {\n            System.out.println("I get printed");\n        } else if (j > 10) {\n            System.out.println("I don't");\n        } else {\n            System.out.println("I also don't");\n        }\n\n        // While loop\n        int fooWhile = 0;\n        while(fooWhile < 100) {\n            System.out.println(fooWhile);\n            // Increment the counter\n            // Iterated 100 times, fooWhile 0,1,2...99\n            fooWhile++;\n        }\n        System.out.println("fooWhile Value: " + fooWhile);\n\n        // Do While Loop\n        int fooDoWhile = 0;\n        do {\n            System.out.println(fooDoWhile);\n            // Increment the counter\n            // Iterated 99 times, fooDoWhile 0->99\n            fooDoWhile++;\n        } while(fooDoWhile < 100);\n        System.out.println("fooDoWhile Value: " + fooDoWhile);\n\n        // For Loop\n        // for loop structure => for(<start_statement>; <conditional>; <step>)\n        for (int fooFor = 0; fooFor < 10; fooFor++) {\n            System.out.println(fooFor);\n            // Iterated 10 times, fooFor 0->9\n        }\n        System.out.println("fooFor Value: " + fooFor);\n\n        // Nested For Loop Exit with Label\n        outer:\n        for (int i = 0; i < 10; i++) {\n          for (int j = 0; j < 10; j++) {\n            if (i == 5 && j ==5) {\n              break outer;\n              // breaks out of outer loop instead of only the inner one\n            }\n          }\n        }\n\n        // For Each Loop\n        // The for loop is also able to iterate over arrays as well as objects\n        // that implement the Iterable interface.\n        int[] fooList = {1, 2, 3, 4, 5, 6, 7, 8, 9};\n        // for each loop structure => for (<object> : <iterable>)\n        // reads as: for each element in the iterable\n        // note: the object type must match the element type of the iterable.\n        for (int bar : fooList) {\n            System.out.println(bar);\n            //Iterates 9 times and prints 1-9 on new lines\n        }\n\n        // Switch Case\n        // A switch works with the byte, short, char, and int data types.\n        // It also works with enumerated types (discussed in Enum Types), the\n        // String class, and a few special classes that wrap primitive types:\n        // Character, Byte, Short, and Integer.\n        // Starting in Java 7 and above, we can also use the String type.\n        // Note: Do remember that, not adding "break" at end any particular case ends up in\n        // executing the very next case(given it satisfies the condition provided) as well.\n        int month = 3;\n        String monthString;\n        switch (month) {\n            case 1: monthString = "January";\n                    break;\n            case 2: monthString = "February";\n                    break;\n            case 3: monthString = "March";\n                    break;\n            default: monthString = "Some other month";\n                     break;\n        }\n        System.out.println("Switch Case Result: " + monthString);\n\n\n        // Try-with-resources (Java 7+)\n        // Try-catch-finally statements work as expected in Java but in Java 7+\n        // the try-with-resources statement is also available. Try-with-resources\n        // simplifies try-catch-finally statements by closing resources\n        // automatically.\n\n        // In order to use a try-with-resources, include an instance of a class\n        // in the try statement. The class must implement java.lang.AutoCloseable.\n        try (BufferedReader br = new BufferedReader(new FileReader("foo.txt"))) {\n            // You can attempt to do something that could throw an exception.\n            System.out.println(br.readLine());\n            // In Java 7, the resource will always be closed, even if it throws\n            // an Exception.\n        } catch (Exception ex) {\n            //The resource will be closed before the catch statement executes.\n            System.out.println("readLine() failed.");\n        }\n        // No need for a finally statement in this case, the BufferedReader is\n        // already closed. This can be used to avoid certain edge cases where\n        // a finally statement might not be called.\n        // To learn more:\n        // https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html\n\n\n        // Conditional Shorthand\n        // You can use the '?' operator for quick assignments or logic forks.\n        // Reads as "If (statement) is true, use <first value>, otherwise, use\n        // <second value>"\n        int foo = 5;\n        String bar = (foo < 10) ? "A" : "B";\n        System.out.println("bar : " + bar); // Prints "bar : A", because the \n        // statement is true.\n        // Or simply\n        System.out.println("bar : " + (foo < 10 ? "A" : "B"));\n        \n\n        ////////////////////////////////////////\n        // Converting Data Types\n        ////////////////////////////////////////\n\n        // Converting data\n\n        // Convert String To Integer\n        Integer.parseInt("123");//returns an integer version of "123"\n\n        // Convert Integer To String\n        Integer.toString(123);//returns a string version of 123\n\n        // For other conversions check out the following classes:\n        // Double\n        // Long\n        // String\n\n        ///////////////////////////////////////\n        // Classes And Functions\n        ///////////////////////////////////////\n\n        System.out.println("\n->Classes & Functions");\n\n        // (definition of the Bicycle class follows)\n\n        // Use new to instantiate a class\n        Bicycle trek = new Bicycle();\n\n        // Call object methods\n        trek.speedUp(3); // You should always use setter and getter methods\n        trek.setCadence(100);\n\n        // toString returns this Object's string representation.\n        System.out.println("trek info: " + trek.toString());\n\n        // Double Brace Initialization\n        // The Java Language has no syntax for how to create static Collections\n        // in an easy way. Usually you end up in the following way:\n        private static final Set<String> COUNTRIES = new HashSet<String>();\n        static {\n           COUNTRIES.add("DENMARK");\n           COUNTRIES.add("SWEDEN");\n           COUNTRIES.add("FINLAND");\n        }\n\n        // But there's a nifty way to achieve the same thing in an\n        // easier way, by using something that is called Double Brace\n        // Initialization.\n        private static final Set<String> COUNTRIES = new HashSet<String>() {{\n            add("DENMARK");\n            add("SWEDEN");\n            add("FINLAND");\n        }}\n\n        // The first brace is creating a new AnonymousInnerClass and the\n        // second one declares an instance initializer block. This block\n        // is called when the anonymous inner class is created.\n        // This does not only work for Collections, it works for all\n        // non-final classes.\n\n    } // End main method\n} // End LearnJava class\n\n// You can include other, non-public outer-level classes in a .java file,\n// but it is not good practice. Instead split classes into separate files.\n\n// Class Declaration Syntax:\n// <public/private/protected> class <class name> {\n//    // data fields, constructors, functions all inside.\n//    // functions are called as methods in Java.\n// }\n\nclass Bicycle {\n\n    // Bicycle's Fields/Variables\n    public int cadence; // Public: Can be accessed from anywhere\n    private int speed;  // Private: Only accessible from within the class\n    protected int gear; // Protected: Accessible from the class and subclasses\n    String name; // default: Only accessible from within this package\n    static String className; // Static class variable\n\n    // Static block\n    // Java has no implementation of static constructors, but\n    // has a static block that can be used to initialize class variables\n    // (static variables).\n    // This block will be called when the class is loaded.\n    static {\n        className = "Bicycle";\n    }\n\n    // Constructors are a way of creating classes\n    // This is a constructor\n    public Bicycle() {\n        // You can also call another constructor:\n        // this(1, 50, 5, "Bontrager");\n        gear = 1;\n        cadence = 50;\n        speed = 5;\n        name = "Bontrager";\n    }\n    // This is a constructor that takes arguments\n    public Bicycle(int startCadence, int startSpeed, int startGear,\n        String name) {\n        this.gear = startGear;\n        this.cadence = startCadence;\n        this.speed = startSpeed;\n        this.name = name;\n    }\n\n    // Method Syntax:\n    // <public/private/protected> <return type> <function name>(<args>)\n\n    // Java classes often implement getters and setters for their fields\n\n    // Method declaration syntax:\n    // <access modifier> <return type> <method name>(<args>)\n    public int getCadence() {\n        return cadence;\n    }\n\n    // void methods require no return statement\n    public void setCadence(int newValue) {\n        cadence = newValue;\n    }\n    public void setGear(int newValue) {\n        gear = newValue;\n    }\n    public void speedUp(int increment) {\n        speed += increment;\n    }\n    public void slowDown(int decrement) {\n        speed -= decrement;\n    }\n    public void setName(String newName) {\n        name = newName;\n    }\n    public String getName() {\n        return name;\n    }\n\n    //Method to display the attribute values of this Object.\n    @Override // Inherited from the Object class.\n    public String toString() {\n        return "gear: " + gear + " cadence: " + cadence + " speed: " + speed +\n            " name: " + name;\n    }\n} // end class Bicycle\n\n// PennyFarthing is a subclass of Bicycle\nclass PennyFarthing extends Bicycle {\n    // (Penny Farthings are those bicycles with the big front wheel.\n    // They have no gears.)\n\n    public PennyFarthing(int startCadence, int startSpeed) {\n        // Call the parent constructor with super\n        super(startCadence, startSpeed, 0, "PennyFarthing");\n    }\n\n    // You should mark a method you're overriding with an @annotation.\n    // To learn more about what annotations are and their purpose check this\n    // out: http://docs.oracle.com/javase/tutorial/java/annotations/\n    @Override\n    public void setGear(int gear) {\n        this.gear = 0;\n    }\n}\n\n// Object casting\n// Since the PennyFarthing class is extending the Bicycle class, we can say\n// a PennyFarthing is a Bicycle and write :\n// Bicycle bicycle = new PennyFarthing();\n// This is called object casting where an object is taken for another one. There\n// are lots of details and deals with some more intermediate concepts here:\n// https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html\n\n// Interfaces\n// Interface declaration syntax\n// <access-level> interface <interface-name> extends <super-interfaces> {\n//     // Constants\n//     // Method declarations\n// }\n\n// Example - Food:\npublic interface Edible {\n    public void eat(); // Any class that implements this interface, must\n                       // implement this method.\n}\n\npublic interface Digestible {\n    public void digest();\n    // Since Java 8, interfaces can have default method.\n    public default void defaultMethod() {\n        System.out.println("Hi from default method ...");\n    }\n}\n\n// We can now create a class that implements both of these interfaces.\npublic class Fruit implements Edible, Digestible {\n    @Override\n    public void eat() {\n        // ...\n    }\n\n    @Override\n    public void digest() {\n        // ...\n    }\n}\n\n// In Java, you can extend only one class, but you can implement many\n// interfaces. For example:\npublic class ExampleClass extends ExampleClassParent implements InterfaceOne,\n    InterfaceTwo {\n    @Override\n    public void InterfaceOneMethod() {\n    }\n\n    @Override\n    public void InterfaceTwoMethod() {\n    }\n\n}\n\n// Abstract Classes\n\n// Abstract Class declaration syntax\n// <access-level> abstract class <abstract-class-name> extends\n// <super-abstract-classes> {\n//     // Constants and variables\n//     // Method declarations\n// }\n\n// Abstract Classes cannot be instantiated.\n// Abstract classes may define abstract methods.\n// Abstract methods have no body and are marked abstract\n// Non-abstract child classes must @Override all abstract methods\n// from their super-classes.\n// Abstract classes can be useful when combining repetitive logic\n// with customised behavior, but as Abstract classes require\n// inheritance, they violate "Composition over inheritance"\n// so consider other approaches using composition.\n// https://en.wikipedia.org/wiki/Composition_over_inheritance\n\npublic abstract class Animal\n{\n    private int age;\n\n    public abstract void makeSound();\n\n    // Method can have a body\n    public void eat()\n    {\n        System.out.println("I am an animal and I am Eating.");\n        // Note: We can access private variable here.\n        age = 30;\n    }\n\n    public void printAge()\n    {\n        System.out.println(age);\n    }\n\n    // Abstract classes can have main method.\n    public static void main(String[] args)\n    {\n        System.out.println("I am abstract");\n    }\n}\n\nclass Dog extends Animal\n{\n    // Note still have to override the abstract methods in the\n    // abstract class.\n    @Override\n    public void makeSound()\n    {\n        System.out.println("Bark");\n        // age = 30;    ==> ERROR!    age is private to Animal\n    }\n\n    // NOTE: You will get an error if you used the\n    // @Override annotation here, since java doesn't allow\n    // overriding of static methods.\n    // What is happening here is called METHOD HIDING.\n    // Check out this SO post: http://stackoverflow.com/questions/16313649/\n    public static void main(String[] args)\n    {\n        Dog pluto = new Dog();\n        pluto.makeSound();\n        pluto.eat();\n        pluto.printAge();\n    }\n}\n\n// Final Classes\n\n// Final Class declaration syntax\n// <access-level> final <final-class-name> {\n//     // Constants and variables\n//     // Method declarations\n// }\n\n// Final classes are classes that cannot be inherited from and are therefore a\n// final child. In a way, final classes are the opposite of abstract classes\n// because abstract classes must be extended, but final classes cannot be\n// extended.\npublic final class SaberToothedCat extends Animal\n{\n    // Note still have to override the abstract methods in the\n    // abstract class.\n    @Override\n    public void makeSound()\n    {\n        System.out.println("Roar");\n    }\n}\n\n// Final Methods\npublic abstract class Mammal()\n{\n    // Final Method Syntax:\n    // <access modifier> final <return type> <function name>(<args>)\n\n    // Final methods, like, final classes cannot be overridden by a child\n    // class, and are therefore the final implementation of the method.\n    public final boolean isWarmBlooded()\n    {\n        return true;\n    }\n}\n\n// Enum Type\n//\n// An enum type is a special data type that enables for a variable to be a set\n// of predefined constants. The variable must be equal to one of the values\n// that have been predefined for it. Because they are constants, the names of\n// an enum type's fields are in uppercase letters. In the Java programming\n// language, you define an enum type by using the enum keyword. For example,\n// you would specify a days-of-the-week enum type as:\npublic enum Day {\n    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,\n    THURSDAY, FRIDAY, SATURDAY\n}\n\n// We can use our enum Day like that:\npublic class EnumTest {\n    // Variable Enum\n    Day day;\n\n    public EnumTest(Day day) {\n        this.day = day;\n    }\n\n    public void tellItLikeItIs() {\n        switch (day) {\n            case MONDAY:\n                System.out.println("Mondays are bad.");\n                break;\n            case FRIDAY:\n                System.out.println("Fridays are better.");\n                break;\n            case SATURDAY:\n            case SUNDAY:\n                System.out.println("Weekends are best.");\n                break;\n            default:\n                System.out.println("Midweek days are so-so.");\n                break;\n        }\n    }\n\n    public static void main(String[] args) {\n        EnumTest firstDay = new EnumTest(Day.MONDAY);\n        firstDay.tellItLikeItIs(); // => Mondays are bad.\n        EnumTest thirdDay = new EnumTest(Day.WEDNESDAY);\n        thirdDay.tellItLikeItIs(); // => Midweek days are so-so.\n    }\n}\n\n// Enum types are much more powerful than we show above.\n// The enum body can include methods and other fields.\n// You can see more at https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html\n\n// Getting Started with Lambda Expressions\n//\n// New to Java version 8 are lambda expressions. Lambdas are more commonly found\n// in functional programming languages, which means they are methods which can\n// be created without belonging to a class, passed around as if it were itself\n// an object, and executed on demand.\n//\n// Final note, lambdas must implement a functional interface. A functional\n// interface is one which has only a single abstract method declared. It can\n// have any number of default methods. Lambda expressions can be used as an\n// instance of that functional interface. Any interface meeting the requirements\n// is treated as a functional interface. You can read more about interfaces\n// above.\n//\nimport java.util.Map;\nimport java.util.HashMap;\nimport java.util.function.*;\nimport java.security.SecureRandom;\n\npublic class Lambdas {\n    public static void main(String[] args) {\n        // Lambda declaration syntax:\n\t// <zero or more parameters> -> <expression body or statement block>\n\n        // We will use this hashmap in our examples below.\n        Map<String, String> planets = new HashMap<>();\n            planets.put("Mercury", "87.969");\n            planets.put("Venus", "224.7");\n            planets.put("Earth", "365.2564");\n            planets.put("Mars", "687");\n            planets.put("Jupiter", "4,332.59");\n            planets.put("Saturn", "10,759");\n            planets.put("Uranus", "30,688.5");\n            planets.put("Neptune", "60,182");\n\n        // Lambda with zero parameters using the Supplier functional interface\n        // from java.util.function.Supplier. The actual lambda expression is\n        // what comes after numPlanets =.\n        Supplier<String> numPlanets = () -> Integer.toString(planets.size());\n        System.out.format("Number of Planets: %s\n\n", numPlanets.get());\n\n        // Lambda with one parameter and using the Consumer functional interface\n        // from java.util.function.Consumer. This is because planets is a Map,\n        // which implements both Collection and Iterable. The forEach used here,\n        // found in Iterable, applies the lambda expression to each member of\n        // the Collection. The default implementation of forEach behaves as if:\n        /*\n            for (T t : this)\n                action.accept(t);\n        */\n\n        // The actual lambda expression is the parameter passed to forEach.\n        planets.keySet().forEach((p) -> System.out.format("%s\n", p));\n\n        // If you are only passing a single argument, then the above can also be\n        // written as (note absent parentheses around p):\n        planets.keySet().forEach(p -> System.out.format("%s\n", p));\n\n        // Tracing the above, we see that planets is a HashMap, keySet() returns\n        // a Set of its keys, forEach applies each element as the lambda \n        // expression of: (parameter p) -> System.out.format("%s\n", p). Each\n        // time, the element is said to be "consumed" and the statement(s)\n        // referred to in the lambda body is applied. Remember the lambda body\n        // is what comes after the ->.\n\n        // The above without use of lambdas would look more traditionally like:\n        for (String planet : planets.keySet()) {\n            System.out.format("%s\n", planet);\n        }\n\n        // This example differs from the above in that a different forEach\n        // implementation is used: the forEach found in the HashMap class\n        // implementing the Map interface. This forEach accepts a BiConsumer,\n        // which generically speaking is a fancy way of saying it handles\n        // the Set of each Key -> Value pairs. This default implementation\n        // behaves as if:\n        /*\n            for (Map.Entry<K, V> entry : map.entrySet())\n                action.accept(entry.getKey(), entry.getValue());\n        */\n\n        // The actual lambda expression is the parameter passed to forEach.\n        String orbits = "%s orbits the Sun in %s Earth days.\n";\n        planets.forEach((K, V) -> System.out.format(orbits, K, V));\n\n        // The above without use of lambdas would look more traditionally like:\n        for (String planet : planets.keySet()) {\n            System.out.format(orbits, planet, planets.get(planet));\n        }\n\n        // Or, if following more closely the specification provided by the\n        // default implementation:\n        for (Map.Entry<String, String> planet : planets.entrySet()) {\n            System.out.format(orbits, planet.getKey(), planet.getValue());\n        }\n\n        // These examples cover only the very basic use of lambdas. It might not\n        // seem like much or even very useful, but remember that a lambda can be\n        // created as an object that can later be passed as parameters to other\n        // methods.\n    }\n}\n
+  721  curl cheat.sh/ruby/:learn
+  722  curl cheat.sh/haskel/:learn
+  723  curl cheat.sh/haskel/
+  724  curl cheat.sh/haskel/92
+  725  curl cheat.sh/js
+  726  curl cheat.sh/js/:learn
+  727  curl cheat.sh/algebra
+  728  curl cheat.sh/grunt
+  729  curl cheat.sh/xml
+  730  curl cheat.sh/rspec
+  731  curl cheat.sh/node
+  732  curl cheat.sh/tmux
+  733  curl cheat.sh/cython
+  734  curl cheat.sh/ipython
+  735  de CHEET.vim
+  736  curl cheat.sh/elixir
+  737  curl cheat.sh/elixir/:learn
+  738  curl cheat.sh/css/:learn
+  739  curl cheat.sh/css
+  740  curl cheat.sh/html
+  741  curl cheat.sh/tcl
+  742  curl cheat.sh/tcl/
+  743  curl cheat.sh/tcl/100
+  744  curl cheat.sh/tree
+  745  curl cheat.sh/awk
+  746  curl cheat.sh/linux
+  747  curl cheat.sh/ls
+  748  curl cheat.sh/gz
+  749  curl cheat.sh/python
+  750  curl cheat.sh/:list
+  751  curl cheat.sh/apache
+  752  curl cheat.sh/apt-cache
+  753  curl cheat.sh/ip
+  754  curl cheat.sh/ln
+  755  curl cheat.sh/cat
+  756  curl cheat.sh/tail
+  757  curl cheat.sh/less
+  758  curl cheat.sh/fopen
+  759  curl cheat.sh/flopen
+  760  js
+  761  curl cheat.sh/lsof
+  762  suo su
+  763  cp -r jsReact /media/red/A5A1-FBC4
+  764  kdeo kBank22Py1.yml
+  765  ls LabPuDB
+  766  cd LabPuDB/PuLogAndConfPrimes
+  768  cd C09F-10DF
+  769  cp -r 2019PyLink ../C09F-10DF
+  770  cp -r BBBLOCK ../C09F-10DF
+  771  cp -r git ../C09F-10DF
+  772  cd ../pink
+  773  cp -r jsReact ../C09F-10DF
+  774  rm -r jsReact
+  775  cd /media/red/C09F-10DF
+  776  cd nodeJS
+  777  guil build
+  778  guilp build
+  779  npm install -g gulp\n
+  780  npm install -g gulp\nsudo su
+  781  gulp --version
+  782  cd Documents
+  783  gulp build
+  784  cd ntetris
+  785  npm install -g ntetris\n
+  786  cd node-calendar
+  787  npm install node-calendar\n
+  788  cd /media/red/C09F-10DF/nodeJS
+  789  cd react-clock
+  790  yarn add react-clock
+  791  cd react-clockwall-master
+  792  yarn install -g gulp
+  793  yarn global add gulp
+  794  yarn install
+  795  yarn run build
+  796  yarn run watch
+  797  yarn add npm-run-all\n
+  798  yarn start\n
+  799  npm run build
+  800  cd git/aTest
+  801  rm -r aTest
+  802  cd /media/red/C09F-10DF/android-studio
+  803  chmod +x studio.sh
+  804  cd /media/red/pink/android-studio
+  805  cd /media/red/pink/jsReact
+  806  ls ntetris-master
+  807  cat ntetris-master/README.md
+  808  cd 4run/react-tetris-master
+  809  cd react-todo-master
+  810  ls timer-master
+  811  cat timer-master/README.md
+  812  ccat timer-master/README.md
+  813  cd /media/red/64black/android-studio
+  814  cd /media/red/pink/jsReact/react-clockwall
+  815  cd /media/red/64black/POC/react-clockwall
+  816  cd /media/red/64black/POC/react-todo
+  817  cd react-tetris-master
+  818  ls src/website
+  819  ls src/shared
+  820  ls sample
+  821  ls sample/parcel
+  822  cd sample/parcel/
+  823  cd /media/red/64black/POC/react-clock/
+  824  cd parcel
+  825  de angularJS.vim
+  826  cat README.md
+  827  cd ../
+  828  cd /media/red/64black/POC/
+  829  cd /media/red/64black/POC/AwesomeProject
+  830  rm -r PinkUkr
+  831  rm -r BBBLOCK
+  832  mkdir BBBLOCK
+  833  cd POC
+  834  history | github
+  835  history | grep github
+  836  git clone https://github.com/mike-plummer/angular-react-vue-stopwatch.git
+  837  git clone git@github.com:leota/electron-angular4-sqlite3.git
+  838  git clone https://github.com/leota/electron-angular4-sqlite3.git
+  839  cd ../64black
+  840  git clone https://github.com/Mindinventory/Angular6-Example-Website.git
+  841  git clone https://github.com/pamtbaau/angular7-electron3-sqlite3-bootstrap4-webpack4.git
+  842  npm instal
+  843  npm run ng
+  844  npm install -g @angular/cli ng
+  845  sudo npm install -g @angular/cli ng
+  846  npm run build:once
+  847  git clone https://github.com/electron/electron-quick-start
+  848  npm install && npm start
+  849  git clone https://github.com/contentful/the-example-app.nodejs.git
+  850  git clone https://github.com/clocklimited/BasicExpressSite
+  851  git clone https://github.com/catamphetamine/react-website-basic-example
+  852  de my.vim
+  853  git clone https://github.com/gothinkster/node-express-realworld-example-app
+  854  git clone https://github.com/kennashka/calculator
+  855  cd Music
+  856  rm *.tar.gz
+  857  cd /media/red/pink/android-studio/bin
+  858  cd /media/red/64black/android-studio/bin
+  859  cd android-studio-ide-183.5452501-linux
+  860  mv android-studio ..
+  861  rm -r android-studio-ide-183.5452501-linux
+  863  cd android-studio/bin
+  865  cd java-eclipse2/eclipse
+  866  sudo apt-get install gdebi
+  867  cd /media/red/64black
+  869  de Readme.txt
+  870  cd ../git/bTest
+  871  mkdir FVWM
+  872  cp /usr/lib/X11/fvwm/system.fvwmrc .
+  873  hyper
+  874  ls ../kDot/LabGO
+  875  ls kDot/LabJAVA
+  876  git clone https://github.com/liuxueyang/fvwm-config.git
+  877  mv fvwm-config fvwm-config1
+  878  git clone https://github.com/110101011/fvwm-config.git
+  879  mv fvwm-config fvwm-config2
+  880  git clone https://github.com/phleagol/fvwm_2018.git
+  881  git clone https://github.com/yaoguai/fvwm-min.git
+  882  git clone https://github.com/tcsh-org/tcsh.git
+  883  git clone https://github.com/vim/vim.git
+  884  git clone https://github.com/neovim/neovim.git
+  885  git clone https://github.com/fish-shell/fish-shell.git
+  886  git clone https://github.com/zsh-users/zsh.git
+  887  git clone https://github.com/bminor/bash.git
+  888  git clone https://github.com/ogham/exa.git
+  889  git clone https://github.com/ar-/incron.git
+  890  git clone https://github.com/BurntSushi/ripgrep.git
+  891  git clone git://github.com/wting/autojump.git
+  892  git clone https://github.com/sharkdp/fd.git
+  893  git clone https://github.com/tmm1/pstree.git
+  894  go get github.com/elves/elvish
+  895  go get github.com/michaelmacinnis/oh
+  896  git clone https://github.com/junegunn/fzf.git
+  897  git clone https://github.com/rupa/z.git
+  898  fd
+  899  kill 23869
+  900  make config
+  901  ./install-sh
+  902  de install-sh
+  903  cd fd
+  904  cd incron
+  905  make -j8 && sudo make install\n
+  906  de out-ist.vim
+  907  man incron
+  908  cd..
+  909  ccat README.md
+  910  git clone https://github.com/neurobin/shc.git
+  911  git clone https://github.com/PeterDaveHello/ColorEchoForShell.git
+  912  git clone https://github.com/MirBSD/mksh.git
+  913  git clone https://www.github.com/tgsachse/shellcuts.git
+  914  git clone https://github.com/kusabashira/cdf.git
+  915  cd cdf
+  916  git clone https://github.com/dpremy/dot-ksh.git
+  917  git clone https://github.com/mirabilos/shellsnippets.git
+  918  git clone https://github.com/loop333/oracle_scripts.git
+  919  git clone https://github.com/arismelachroinos/lscript.git
+  920  git clone https://github.com/lamerman/shellpy.git
+  921  git clone https://github.com/PatrickNicholas/LL-Script.git
+  922  git clone https://github.com/chinaran/color-compile.git
+  923  git clone https://github.com/breakdance/breakdance.git
+  924  git clone https://github.com/sebaste/dotfiles.git
+  925  git clone https://github.com/jarun/googler.git
+  926  git clone https://github.com/kdabir/has.git
+  927  mkdir dot-bot
+  928  cd dot-bot
+  929  git clone https://github.com/thoughtbot/dotfiles.git
+  930  mkdir dot-paul
+  931  cd dot-paul
+  932  git clone https://github.com/paulirish/dotfiles
+  933  git clone https://github.com/supercrabtree/k.git
+  934  git clone https://github.com/tmrts/boilr.git
+  935  git clone https://github.com/jarun/Buku.git
+  936  git clone https://github.com/jarun/pdd.git
+  937  cd /media/red/64black/PBin
+  938  git clone https://github.com/GNOME/gparted.git
+  939  git clone https://github.com/emacs-mirror/emacs
+  940  git clone https://github.com/jonas/tig.git
+  941  git clone https://github.com/strace/strace.git
+  942  git clone https://github.com/fwenzel/pdftk.git
+  943  git clone https://github.com/aircrack-ng/aircrack-ng.git
+  944  git clone https://github.com/monochromegane/the_platinum_searcher.git
+  945  git clone https://github.com/Mebus/cupp.git
+  946  git clone https://github.com/apache/crunch.git
+  947  git clone https://github.com/Kumaava/Facial_Emotion_classifier.git
+  948  git clone https://github.com/gtzinos/Image-Search-Engine
+  949  git clone https://github.com/sid0522/ImageComparison.git
+  950  git clone https://github.com/shiv-gpt/Computer-Vision.git
+  951  git clone https://github.com/janbella/opensift.git
+  952  mv Computer-Vision Computer-Vision1
+  953  git clone https://github.com/deepaksn99/Computer-Vision.git
+  954  df
+  955  df -h
+  956  git clone https://github.com/faif/python-patterns.git
+  957  git clone https://github.com/pytorch/pytorch.git
+  958  git clone https://github.com/Avik-Jain/100-Days-Of-ML-Code.git
+  959  git clone https://github.com/morparia-p/Image-Panorama.git
+  960  git clone https://github.com/gtzinos/Image-Search-Engine.git
+  961  git clone https://github.com/faturita/BidimensionalSignalProcessing.git
+  962  l .f
+  963  cd fvwm-min
+  964  l .fvwm
+  965  mv .fvwm fvwm-min
+  966  mkdir .fvwm
+  967  cp .Xdefaults XdefaultsONE
+  968  de XdefaultsONE
+  969  cd fvwm-config1
+  970  cp * ~/.fvwm
+  971  cp -r * ~/.fvwm
+  972  cd git/bTest/FVWM
+  973  mv .fvwm fvwm-ONE
+  974  cp -r fvwm-config2 ~/.fvwm
+  975  mv .fvwm fvwm-TWO
+  976  man fvwm
+  977  ls .fvwm
+  978  cp ../fvwm-min/config config-min
+  979  cp ../fvwm-ONE/config config-ONE
+  980  deo config
+  981  FvwmCommand Restart
+  982  mv config myconfig
+  983  ls /etc/shells
+  984  ls /etc/
+  985  ls /etc/vim
+  986  ls /etc/zsh
+  987  ls /etc/X11
+  988  ls /usr/share/fvwm
+  989  locate fvwm
+  990  cd /usr/bin/fvwm
+  991  ls /usr/bin/fvwm-config
+  992  cd /usr/bin/fvwm-config
+  993  vi /usr/bin/fvwm-menu-desktop
+  994  vi /usr/bin/fvwm-config
+  995  vi myconfig
+  996  sudo vi /usr/bin/fvwm-config
+  997  locate fvwm | vim -
+  998  de /usr/share/fvwm/default-config\n
+  999  ls /usr/share/fvwm/default-config\n
+ 1000  cd /usr/share/fvwm/default-config\n
+ 1001  cp config configDEF
+ 1002  vi config
+ 1003  conky
+ 1004  amixer
+ 1005  gnome-calendar
+ 1006  gnome-shell
+ 1007  gnome-commander
+ 1008  xfce4-panel
+ 1009  de config2DEF
+ 1010  ls /usr/bin/conky
+ 1012  mkdir AWESOME
+ 1013  cd AWESOME
+ 1014  git clone https://github.com/pettarin/awesome-config.git
+ 1015  mv awesome-config awesome-config1
+ 1016  git clone https://github.com/troglobit/awesome-config.git
+ 1017  mv awesome-config awesome-config2
+ 1018  git clone https://github.com/prikhi/awesome-config.git
+ 1019  mv awesome-config awesome-config3
+ 1020  g clone https://github.com/dynamotn/awesome-config.git
+ 1021  mv awesome-config awesome-config4
+ 1022  g clone https://github.com/tony/awesome-config.git
+ 1023  mv awesome-config awesome-configMin1
+ 1024  g clone https://github.com/worron/awesome-config.git
+ 1025  mv awesome-config awesome-configWorron
+ 1026  xbattbar
+ 1027  xapm
+ 1028  mkdir i3
+ 1029  g clone https://github.com/CSaratakij/i3wm-desktop-config.git
+ 1030  mv i3wm-desktop-config i3wm-desktop-config1
+ 1031  g clone https://github.com/sainathadapa/i3-wm-config.git
+ 1032  g lone https://github.com/addy-dclxvi/i3-starterpack.git
+ 1033  mv i3-wm-config i3-wm-config2
+ 1034  g clone https://github.com/addy-dclxvi/i3-starterpack.git
+ 1035  cd git/bTest/AWESOME
+ 1036  cd awesome-configWorron
+ 1037  firefox
+ 1038  ls FVWM
+ 1039  git clone https://github.com/worron/awesome-config.git ~/.config/awesome --recursive
+ 1040  mkdir FLUX
+ 1041  cd FLUX
+ 1042  git clone https://github.com/descara/fluxbox-config.git
+ 1043  mv fluxbox-config fluxbox-config1
+ 1044  g clone https://github.com/s3rvac/dotfiles.git
+ 1045  ls dotfiles
+ 1046  mv dotfiles s3dotfiles
+ 1047  g clone https://github.com/skybert/my-little-friends.git
+ 1048  mv my-little-friends git/bTest/FLUX
+ 1049  ls git/bTest/FVWM
+ 1050  g clone https://github.com/schw4b/.fluxbox.git
+ 1052  mv .fluxbox fluxbox-DOT
+ 1053  cd ../i3
+ 1054  cd i3-starterpack
+ 1055  sudo dry
+ 1056  su dry
+ 1057  cd i3-wm-config2
+ 1058  git clone --recursive git@github.com:sainathadapa/i3-wm-config.git ~/.i3
+ 1059  cd .config/i3
+ 1060  ls config
+ 1061  cat config
+ 1062  cp -r i3 i3One
+ 1063  cd i3
+ 1064  rm comfig
+ 1065  git clone https://github.com/helge000/i3-config.git
+ 1066  vm i3-config ..
+ 1067  mv i3-config ..
+ 1068  rm -r i3
+ 1069  mv i3-config i3
+ 1070  cd git/bTest/i3
+ 1071  git clone https://github.com/lleweldyn/i3-Desktop.git
+ 1072  cd ../FVWM
+ 1073  git clone https://github.com/Minda1975/FVWM-configuration.git
+ 1074  git clone https://github.com/deftsp/dotfvwm.git
+ 1075  de add-app.vim
+ 1076  cd git/bTest/FVWM/fvwm-config1
+ 1077  cp -r icons ~/.fvwm
+ 1078  cp -r images ~/.fvwm
+ 1079  cp config ~/.fvwm/config-01
+ 1080  file
+ 1081  xfce4-terminal
+ 1082  thunar
+ 1083  de config config-01
+ 1084  gnome-screenshot
+ 1085  gnome-terminal
+ 1086  cd images
+ 1087  cp wallpaper background
+ 1088  cp -r wallpaper background
+ 1089  mkdir bgicons
+ 1090  cp ~/git/bTest/FVWM/fvwm-config2/config config-02
+ 1091  de config config-01 config-02
+ 1092  cp ~/git/bTest/FVWM/fvwm-config2/conf.d conf02.d
+ 1093  cp -r ~/git/bTest/FVWM/fvwm-config2/conf.d conf02.d
+ 1094  ls conf02.d
+ 1095  cp ~/git/bTest/screen.png wallpaper
+ 1096  cp ~/git/bTest/screen.png background
+ 1097  cd images/wallpaper
+ 1098  cd background
+ 1099  nautilus-desktop
+ 1100  xfce4-sensors
+ 1101  xfce4-appfinder
+ 1102  xfce4-popup-applicationsmenu
+ 1103  xfce4-settings-manager
+ 1104  xfce4-taskmanager
+ 1105  cd git
+ 1106  imagej w3.png w4.png w5.jpg
+ 1107  cp ~/git/w* .
+ 1108  fvwm-menu-headlines
+ 1109  fvwm-menu-directory
+ 1110  mkdir upstart
+ 1111  firef.conf
+ 1112  de firef.conf
+ 1113  cd .config/
+ 1114  man xdotool
+ 1115  de examples.desktop
+ 1116  mkdir autostart
+ 1117  gnome-session
+ 1118  xde-sm
+ 1119  de .fvwm/config
+ 1120  nm-applet
+ 1121  cp config-ONE config
+ 1122  cp config-01 config
+ 1123  cp config-02 config
+ 1124  cp configDEF config
+ 1125  nautilus
+ 1126  cd git/bTest
+ 1127  cd FVWM
+ 1128  cd fvwm_2018
+ 1129  cat 01-General
+ 1130  cat 22-Root-Menu
+ 1131  cd dotfvwm
+ 1132  cat f.buttons
+ 1133  ls modules
+ 1134  ls modules/FvwmTransFocus
+ 1135  cs
+ 1136  ls scripts
+ 1137  cd FVWM-configuration
+ 1138  cp .fvwm dfvwm
+ 1139  cp -r .fvwm dfvwm
+ 1140  cd dfvwm
+ 1141  ls icons
+ 1142  ls buttons
+ 1143  cp -r .fvwm ab-tile1-fvwm
+ 1144  cp -r ab-tile1-fvwm git/bTest
+ 1145  cd git/
+ 1146  cp -r bTest /media/red/A5A1-FBC4/BBBLOCK
+ 1147  cp -r bTest/ab-tile1-fvwm /media/red/A5A1-FBC4/BBBLOCK
+ 1148  cp -r bTest/ab-tile1-fvwm /media/red/64black/
+ 1149  cp -r bTest/ /media/red/64black/
+ 1150  cd ~
+ 1151  cp -r dfvwm ~/.fvwm
+ 1152  clear
+ 1153  cp -r ab-tile1-fvwm .fvwm
+ 1154  mv config tile1-config
+ 1155  cd .fvwm/
+ 1156  de config config5DEF-LongBar
+ 1157  mv configDEF config
+ 1158  mv config4DEF2BarCS9 config
+ 1159  cp minYes1-config config
+ 1160  mv config5DEF-LongBar config
+ 1161  mv minYes2-config config
+ 1162  blueman-applet
+ 1163  de config tile1-config
+ 1164  cp -r ab2-tile1-fvwm .fvwm
+ 1165  cp -r .fvwm ab2-tile1-fvwm
+ 1166  rm -r .fvwm
+ 1167  cd git/nFVWM
+ 1168  ld fvwm-tiling-master
+ 1169  ls fvwm-tiling-master
+ 1170  cp -r fvwm-tiling-master ~/.fvwm
+ 1171  mv .fvwm fvwm-TiLE
+ 1172  mv ab2-tile1-fvwm .fvwm
+ 1173  kill 8167
+ 1174  de .Xdefaults
+ 1175  unity
+ 1176  kill 8142
+ 1177  xfce4-session
+ 1178  xsm
+ 1179  cd .config
+ 1180  cd autostart
+ 1181  lsa
+ 1182  de .xsession
+ 1183  mv config keyPre1Nop-config
+ 1184  cp key2-config config
+ 1185  cp tile1-config config
+ 1186  rm config
+ 1187  cp config-min config
+ 1188  cd ~/.fvwm
+ 1189  de temp
+ 1190  cd fvwm-TiLE
+ 1191  cd ab-tile1-fvwm
+ 1192  de config
+ 1193  de config tConfig
+ 1194  cp -r .fvwm ab4-tileBettr-fvwm
+ 1196  exit
+ 1197  de config config2DEF
+ 1198  cp ~/.fvwm/config kConfigFVWM
+ 1199  cp ~/.xsession kXsession
+ 1200  de CHEET-BASH.vim
+ 1201  cp -r .fvwm ab6-tileBettr-fvwm
+ 1202  zip -r ab6-tileBettr-fvwm.zip .fvwm
+ 1203  cp ab6-tileBettr-fvwm.zip git/bTest/
+ 1204  mv AWESOME ..
+ 1205  mv i3 ..
+ 1206  mv FVWM ..
+ 1207  mv ab-tile1-fvwm ..
+ 1209  git add k*
+ 1210  cd .fvwm
+ 1211  cp config congig6Tille
+ 1212  de kZshrc19.sh
+ 1213  deo
+ 1214  mkdir LabCHEET
+ 1215  mv CHEET* LabCHEET
+ 1216  git add LabCHEET/
+ 1217  cd LabCHEET
+ 1218  git add CHEET*
+ 1219  mv FLUX ..
+ 1220  git status
+ 1222  deo kIng19.sh
+ 1224  cd kDot
+ 1225  ls k
+ 1226  ls k*
+ 1227  reboot
+ 1228  cd ../..
+ 1229  cp -r .config /media/red/124Black/git/dotRedConfig
+ 1230  cp -r .vim /media/red/124Black/git/dotRedVim
+ 1231  ls .*
+ 1232  vim .viminfo
+ 1233  de cc.txt
+ 1234  whitch nvim
+ 1235  which nvim
+ 1236  which deo
+ 1237  cd ~/nvim-linux64/bin
+ 1238  ./deonvim
+ 1240  cp -r PBin ../124Black
+ 1241  cd ../124Black
+ 1242  cd fish-shell
+ 1243  rm -r build
+ 1244  mkdir build
+ 1245  cd build
+ 1246  cmake ..
+ 1247  htop
+ 1248  cd /media/red/124Black/PBin
+ 1249  cd neovim
+ 1250  cd ../124Black/PBin/neovim
+ 1251  ./configure --prefix =/media/red/124Black/git/mySoft\n
+ 1252  pwd\n
+ 1253  ./configure --prefix =/media/red/124Black/git/mySoft/\n
+ 1254  make CMAKE_INSTALL_PREFIX=/media/red/124Black/git/mySoft/\n
+ 1255  make CMAKE_INSTALL_PREFIX=/media/red/124Black/git/mySoft\n
+ 1256  mkdir nneo
+ 1257  make CMAKE_INSTALL_PREFIX=~/nneo\n
+ 1258  ls nneo
+ 1259  de src/INSTALL
+ 1260  pcd tcsh
+ 1261  cc
+ 1262  de BUILDING
+ 1263  cd tcsh
+ 1264  cd shc
+ 1265  ./configure
+ 1266  ./shc
+ 1267  chmod +x shc.1
+ 1268  ./shc.1
+ 1269  ./autogen.sh
+ 1270  ls fzf
+ 1271  cd fzf
+ 1272  de BUILD.md
+ 1273  ls src
+ 1274  cd tig
+ 1275  tig
+ 1276  ./tig
+ 1277  man vim
+ 1278  b5deo
+ 1279  b5deo new.vim
+ 1280  xclock
+ 1281  b5deo b5new.vim
+ 1282  cp fish ../../../git/mySoft
+ 1283  cd /media/red/124Black/git/dotRedConfig
+ 1284  cd nvim
+ 1285  cd undoDir
+ 1286  ls b*
+ 1287  ls %home%red%git%bTest%kDot%b5new.vim
+ 1288  history
+ 1289  cd Hist
+ 1290  history | cat redZshHistMai19.sh
+ 1291  history | cat >| redZshHistMai19.sh
+ 1292  de redZshHistMai19.sh
+ 1293  vim init.vim
+ 1294  fish
+ 1295  ./fish
+ 1296  b5deo mai19Soft.vim
+ 1298  b124 mai19Soft.vim
+ 1299  mkdir vim81
+ 1300  cd ../mySorce/vim-master-82
+ 1301  cd vim81
+ 1302  b124 INSTALL
+ 1303  cd vim82
+ 1304  cd vim
+ 1305  cd src
+ 1306  b124 config
+ 1307  ./configure --prefix =/media/red/124Black/git/mySoft/vim81/\n
+ 1308  cd 82vim
+ 1309  mv 82vim /media/red/124Black/git/mySoft
+ 1310  l 81vim
+ 1311  l 81vim/bin
+ 1312  l 82vim/bin
+ 1313  mv 81vim /media/red/124Black/git/mySoft
+ 1314  vim
+ 1315  b124 configure
+ 1317  ls bin
+ 1318  l bin
+ 1320  ./vim
+ 1321  mv mySorce nSorce
+ 1322  l .zplug
+ 1323  cp -r .zplug /media/red/124Black/git/redDotZplug
+ 1324  de .zsh_history .zhistory
+ 1325  cp .zsh_history /media/red/124Black/git/bTest/Hist/zhistoryMai19
+ 1326  cp .zsh_history /media/red/124Black/git/bTest/Hist/zsh-historyMai19
+ 1327  cp .zhistory /media/red/124Black/git/bTest/Hist/zhistoryMai19
+ 1328  cp .zhistory git/bTest/Hist/zhistoryMai19
+ 1329  cp .zsh_history git/bTest/Hist/zsh-historyMai19
+ 1330  mkdir CORPUSi
+ 1331  ....
+ 1332  cd PBin
+ 1333  cp -r fish-shell ../git/nSorce
+ 1334  cd exa
+ 1335  cd mySoft
+ 1336  mkdir exxa
+ 1337  make
+ 1338  cd bash
+ 1339  de NOTES
+ 1340  cd z
+ 1341  de README
+ 1342  z -l
+ 1343  vim --v
+ 1344  vim -v
+ 1345  de kVifmrc.vim
+ 1347  vlc
+ 1348  ls PBin
+ 1349  pd
+ 1353  cd Music/colortail-master
+ 1354  colortail -k config.log
+ 1355  cat config.log
+ 1356  colortail config.log
+ 1357  ccze config.log
+ 1358  ccat config.log
+ 1359  du
+ 1360  du .
+ 1361  ncdu
+ 1362  ncdu | ccze
+ 1363  ncdu .
+ 1364  fzf example.log
+ 1366  cd Music/TxtStyle-master
+ 1367  ail -f example.log | txts -n cy1\n
+ 1368  tail -f example.log | txts -n cy1\n
+ 1369  txts -n example example.log
+ 1370  man txts
+ 1371  ps aux | txts -n ps
+ 1372  ps aux | ./txts -n ps
+ 1373  ls txts
+ 1374  ls txtstyle
+ 1375  ls txtstyle/testdata
+ 1378  cd /media/red/A5A1-FBC4/
+ 1379  ll
+ 1380  ls -a
+ 1383  tree
+ 1384  cd /media/red/A5A1-FBC4
+ 1385  cd ../124Black/124git/bTest/
+ 1386  cd ../mySoft/cream-0.43
+ 1387  ./cream
+ 1388  ./cream creamrc
+ 1389  cd txtstyle/testdata
+ 1390  colortail test-log
+ 1391  colortail -k test-log
+ 1392  tail test-log
+ 1393  tail -f test-log
+ 1394  colortail -k conf.global test-log
+ 1395  cd .fvwm/images/wallpaper
+ 1397  cp -r .fvwm /media/red/124Black/dotRed-fvwm
+ 1398  cd ../POC
+ 1399  cd /media/red/124Black/POC
+ 1400  cd angular-react-vue-stopwatch
+ 1401  de b5new.vim
+ 1402  pw
+ 1403  cd Angular6-Example-Website
+ 1404  ng serve
+ 1405  cd angular7-electron3-sqlite3-bootstrap4-webpack4
+ 1406  cd AwesomeProject
+ 1407  npm App.js
+ 1408  npm app.js
+ 1409  cd BasicExpressSite
+ 1410  de readme.md
+ 1411  ../AwesomeProject
+ 1412  node App.js
+ 1413  cd calculator/
+ 1414  node app
+ 1415  node app.js
+ 1416  npm install
+ 1417  de clock_in_bash-master
+ 1418  cd clock_in_bash-master
+ 1419  ./clock.sh
+ 1420  cd desktop-clock-master
+ 1421  python clock.py
+ 1422  python2 clock.py
+ 1423  python3 clock.py
+ 1424  cd DigitalClock_cpp_qml-master
+ 1425  gcc -c main.cpp -o digclock
+ 1426  gcc main.cpp
+ 1427  cd electron-angular4-sqlite3
+ 1428  cd ../electron-angular4-sqlite3
+ 1429  npm run db
+ 1430  npm run rebuild
+ 1431  npm run electron
+ 1432  cd electron-quick-start
+ 1433  cd hello-world
+ 1434  mv hello-world hello-world-react
+ 1435  cd js-clock-master
+ 1436  node index.html
+ 1437  firefox index.html
+ 1438  cd Linux-Terminal-Clock-master
+ 1439  ./terminal_clock -C cyan
+ 1440  cd node-express-realworld-example-app
+ 1441  npm run dev
+ 1442  de opengl-clock-master
+ 1443  cd opengl-clock-master
+ 1444  ./compile.sh
+ 1445  cd react-clock-master
+ 1446  cd react-clockwall
+ 1447  npm run watch
+ 1448  cd react-tetris
+ 1449  cd react-todo
+ 1450  cd
+ 1452  cd -
+ 1453  cd react-website-basic-example
+ 1454  npm start
+ 1455  cd the-example-app.nodejs
+ 1456  npm run start:dev
+ 1457  cd /media/red/124Black/POC2Py
+ 1458  cd battery-monitor
+ 1459  cd Battmon
+ 1460  python battmon.py
+ 1461  python3 battmon.py
+ 1462  python2 battmon.py
+ 1463  cd PyProc
+ 1464  cd aler
+ 1465  cd PySNARP
+ 1466  cd pySimpleMonitorAlert
+ 1467  de README.rst
+ 1468  cd py-vox-rec
+ 1469  python2 py-corder-linux.py
+ 1470  python3 py-corder-linux.py
+ 1471  de PyMultiThrPrimeNu
+ 1472  ls Executable
+ 1473  ls Executable/Unix
+ 1474  ls Code\ Source
+ 1475  ls Code\ Source/Unix
+ 1476  cd Executable/Unix
+ 1477  ./exec
+ 1478  ...
+ 1479  cd pyParallel
+ 1480  de README.md
+ 1481  de test_python_parallel.py
+ 1482  py test_python_parallel.py
+ 1483  ./DocFetcher-GTK3.sh
+ 1484  cp test_python_parallel.py ../../git/CORP-Py
+ 1485  cd PyMultiThrPrimeNu
+ 1486  cd Code\ Source
+ 1487  cd Unix
+ 1488  de main.cpp
+ 1489  mv PyMultiThrPrimeNu cppMultiThrPrimeNu
+ 1490  mv cppMultiThrPrimeNu ../git/CORP-Cpp
+ 1492  cd ~/java-eclipse2
+ 1495  ./eclipse
+ 1505  cd /media/red/124Black/
+ 1508  cd MINORITY_REPORT_DISC_1
+ 1515  cd DocFetcher-1.1.22
+ 1519  cd '/media/red/124Black/PBin/dotfiles'
+ 1521  la
+ 1522  ls -al
+ 1527  rm -r *82
+ 1530  rm -ri vim82
+ 1531  rm -rf vim82
+ 1532  rm -rf *82
+ 1536  cd '/media/red/0A942CAB942C9B69/2019PyLink'
+ 1539  rm -rf 2019PyLink
+ 1540  rm -rf RED-DEO-03-Py-AWK
+ 1541  rm -rf BB9Block
+ 1543  cd '/media/red/124Black/2MIX/03. Methods in Molecular Biology'
+ 1545  rm *.part
+ 1552  ls snap
+ 1553  du snap
+ 1554  du -sh snap
+ 1556  bash
+ 1564  cd home
+ 1565  du -sh red
+ 1566  cd red
+ 1567  ls | du -sh
+ 1568  du -k .
+ 1569  du -k --max-depth=1
+ 1570  du -M --max-depth=1
+ 1571  du -s --max-depth=1
+ 1572  du -sh --max-depth=1
+ 1573  du -sh --max-depth=2
+ 1574  du -sh * | sort -h
+ 1579  cd android-studio
+ 1581  cd bin
+ 1583  ./studio.sh
+ 1584  cd PBin/neovim
+ 1588  cmake build -DCMAKE_INSTALL_PREFIX=/media/red/124Black/git/mySoft/ntvim
+ 1589  make CMAKE_INSTALL_PREFIX=/media/red/124Black/git/mySoft/ntvim
+ 1590  make install
+ 1591  make CMAKE_INSTALL_PREFIX=/home/red/nt2vim
+ 1592  cmake build -DCMAKE_INSTALL_PREFIX=/home/red/nt2vim
+ 1594  rm -r Avengers.3
+ 1599  rm red1307.tar.gz
+ 1602  rm -r android-studio-red19
+ 1603  rm -r eclipse
+ 1606  mkdir tmp
+ 1607  cd tmp
+ 1609  curl -O https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
+ 1613  bash Anaconda3-2019.03-Linux-x86_64.sh
+ 1614  anaconda search -t conda kivy
+ 1617  which -a python
+ 1623  de 2conda.vim
+ 1626  h
+ 1627  echo "A Foo and a Bar" | ./txts -r Foo -r Bar
+ 1631  python --version
+ 1632  python3 --version
+ 1636  pyconda --version
+ 1639  echo $PYTHONPATH
+ 1643  pyconda list
+ 1645  so
+ 1647  which conda
+ 1648  which py
+ 1649  which python
+ 1650  which python2
+ 1651  which python3
+ 1652  conda list
+ 1654  which pyconda
+ 1655  pyconda
+ 1656  cd /media/red/124Black/3conda/bin
+ 1658  ./conda list
+ 1660  cd /media/red
+ 1666  cd F1E8-C819
+ 1668  rm -r sper-bild
+ 1670  rm -r RED-Vim-MPI-Carabin32
+ 1671  rm -rf RED-Vim-MPI-Carabin32
+ 1673  rm -rf AndroidFromRed
+ 1675  rm -rf iMac2010
+ 1676  cd ../A5A1-FBC4
+ 1679  rm -rf jython2.7.0
+ 1680  rm -rf python-cheatsheet-melone
+ 1681  rm -rf BOX19
+ 1683  ls git
+ 1684  rm -rf git
+ 1686  rm -rf BBBLOCK
+ 1688  cd 124Black
+ 1691  cp -r 2MIX /media/red/INTENSO/125Black
+ 1692  man cp
+ 1693  cp -rv 3conda /media/red/INTENSO/125Black
+ 1697  cd /media/red/124Black
+ 1699  cp -rv git /media/red/INTENSO/125Black
+ 1702  cp -rv Doc* /media/red/INTENSO/125Black
+ 1705  cp -rv Calculus /media/red/INTENSO/125Black
+ 1707  cp -rv 2019PyLink /media/red/INTENSO/125Black
+ 1709  cp -rv Html-Documents /media/red/INTENSO/125Black
+ 1710  cp -rv Html-Vim-Destop2018 /media/red/INTENSO/125Black
+ 1712  cp -rv mussterbriefe /media/red/INTENSO/125Black
+ 1714  cp -rv P* /media/red/INTENSO/125Black
+ 1719  cp -rv tmp /media/red/INTENSO/125Black
+ 1720  cp -rv vRedVideo /media/red/INTENSO/125Black
+ 1722  cp -rv vVideo /media/red/INTENSO/125Black
+ 1725  cp -rv WM-By-Example /media/red/INTENSO/125Black
+ 1726  cp -rv DBScan /media/red/INTENSO/125Black
+ 1731  rm -r 2019PyLink
+ 1737  cd /media/red/
+ 1742  cd '/media/red/64black/git'
+ 1744  ls /media/red
+ 1745  de kIng19.sh
+ 1746  cd ~/git/
+ 1749  fzf -q example.log
+ 1753  cd ~/git/bTest/
+ 1756  git rm aa.txt_
+ 1757  git rm aa.txt_0
+ 1759  cd /media/red/124Black/git/bTest
+ 1762  de eclipse64Black.vim
+ 1765  de aa.txt
+ 1766  cd /media/red/pink/
+ 1769  rm -r math
+ 1770  rm -r mathe
+ 1773  rm -r Music
+ 1778  rm -r AlbertCV
+ 1780  cd /media/red/INTENSO
+ 1784  rm -r PinkDOCU
+ 1786  rm -r android-studio
+ 1793  rm -r FUN64
+ 1796  mv /media/red/124Black/vVideo .
+ 1797  mv /media/red/pink/PinkTALK .
+ 1798  cd 125Black
+ 1800  rm -r vVideo
+ 1802  pwd
+ 1803  kill 7408
+ 1804  ..
+ 1811  git commit -a
+ 1812  git push
+ 1813  cd ../124Black/
+ 1815  cd ..
+ 1816  cd /media/red/64black/
+ 1818  mkdir Fortran99cs
+ 1819  cd Fortran99cs
+ 1821  wget http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/6-Fortran/Progs/
+ 1823  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/6-Fortran/Progs/
+ 1825  ls www.mathcs.emory.edu
+ 1826  ls www.mathcs.emory.edu/\~cheung/Courses/561/Syllabus/6-Fortran/Progs/
+ 1827  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/6-Fortran/Progs-2/
+ 1828  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/6-Fortran/Docs/
+ 1829  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/6-Fortran/Polymorphism-F90/
+ 1830  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/170/Syllabus/13/
+ 1831  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/170/Syllabus/99
+ 1834  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/170/Syllabus/14
+ 1835  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/170/Syllabus/20
+ 1836  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/561/Projects/
+ 1837  cd /media/red/64black/Fortran99cs
+ 1839  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/554/Projects/
+ 1840  wget --recursive --no-parent http://www.mathcs.emory.edu/~cheung/Courses/170/Syllabus/15
+ 1842  cd /media/red/124Black/DocFetcher-1.1.22
+ 1844  ./DocFetcher-GTK2.sh
+ 1849  shutdown -r now
+ 1852  de kConfigFVWM
+ 1854  git add b*
+ 1855  cd git/bTest/kDot
+ 1858  de kMinit.vim
+ 1859  startx
+ 1860* sudo su
+ 1861  cd git/bTest/
+ 1863  de synaptic25juno.list
+ 1864  dpkg -l | vim -
+ 1866  de root.dpkg25juno.list dpkg25juno.list
+ 1867  pip freeze
+ 1868  pip freeze | vim -
+ 1869  pip3 freeze | vim -
+ 1870  vimdiff pip.freeze25juno.list pip.root.freeze25juno.list
+ 1872  l
+ 1873  mv pip* Hist
+ 1874  mv synaptic25juno.list Hist
+ 1875  mv root.dpkg25juno.list Hist
+ 1876  c
+ 1877  ls

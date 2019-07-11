@@ -1,0 +1,21 @@
+# ~/.tmuxinator/bank1.yml
+# - guard
+# - logs: tail -f log/development.log
+
+name: bank1
+root: ~/git/aTest/dotFiles/
+
+windows:
+  - io_things:
+      layout: tiled
+      panes:
+        - lsof
+        - iostat -w 10
+        - netstat
+        - vim
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - bash
+        - zsh

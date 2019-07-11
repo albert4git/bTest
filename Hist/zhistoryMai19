@@ -1,0 +1,1655 @@
+: 1549235601:0;cd dotFiles
+: 1549236348:0;ex
+: 1549236556:0;cd 
+: 1549236862:0;nvim .zshrc
+: 1549239031:0;curl -L https://get.oh-my.fish | fish
+: 1549239069:0;curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+: 1549417805:0;hsi
+: 1549417828:0;hsi top
+: 1549417834:0;hsi man
+: 1549417898:0;ls --color=auto
+: 1549418166:0;echo ("glubina \n")
+: 1549418192:0;echo "glubina \n"
+: 1549422214:0;ips
+: 1549422223:0;addr
+: 1549422237:0;path
+: 1549422312:0;cd poligon
+: 1549422351:0;mki newDirka
+: 1549422374:0;mkd altDirka
+: 1549422489:0;tre
+: 1549423640:0;gshow
+: 1549423651:0;gshow()\
+
+: 1549423720:0;fkill
+: 1549423767:0;lscan
+: 1549424770:0;lsc
+: 1549425164:0;ls -lh
+: 1549425347:0;lsl
+: 1549425352:0;lss
+: 1549540441:0;fdisk -l
+: 1549625528:0;cd aTest
+: 1549626380:0;v
+: 1549626399:0;e nGit.vim
+: 1549630005:0;ni
+: 1549630024:0;ni .zshrc
+: 1549630277:0;cd zSH
+: 1549631169:0;cd git/aTest/dotFiles
+: 1549644385:0;ni wimrc-zypern-deoplete.vim
+: 1549655029:0;cd git/aTest/dotFiles/zSH
+: 1549655168:0;ni zshrcFeb2019
+: 1549701884:0;ni nJava.vim
+: 1549741607:0;cd git/aTest/pyLabGitPdbPythonMode27/pdbPoligon/miniMate
+: 1549741670:0;ni FindMax.py
+: 1549741896:0;tmuxinator bank1
+: 1549741922:0;tmux -s bank1
+: 1549741953:0;tmux -f bank1
+: 1549742031:0;tmuxinator start bank1
+: 1549743955:0;ls zSH
+: 1549744039:0;cp zSH/zshrcFeb2019 nVim/kZshrc19
+: 1549744086:0;cp king.sh nVim/kIng19.sh
+: 1549744136:0;cp tMUX/tmux.conf nVim/kTmux.conf
+: 1549744187:0;cp tMUX/bank1.yml nVim/kBank1.yml
+: 1549744285:0;cp tMUX/ctagsDotRedHome inkVim/kCtags19
+: 1549744302:0;ni king.sh
+: 1549744416:0;cp king18/bashrc-alf-cc nVim/kBashColorRC19
+: 1549744562:0;mv kTmux.conf kTmux19.conf
+: 1549744594:0;mv kBank1.yml kBank19.yml
+: 1549744963:0;ls k
+: 1549745034:0;cp tMUX/ctagsDotRedHome nVim/kCtags19
+: 1549745046:0;ni kIng19.sh
+: 1549746900:0;tmux start
+: 1549746947:0;cd ~/git/aTest/dotFiles ls
+: 1549747345:0;cd ~/git/aTest/dotFiles
+: 1549751387:0;cp ../inkVim/vimrc-ink.vim vimrcInkOkt18.vim
+: 1549751394:0;ni vimrcInkOkt18.vim
+: 1549751524:0;ni trans
+: 1549751836:0;mc vimrcInkOkt18.vim inkVimRcOkt18.vim
+: 1549751859:0;mv vimrcInkOkt18.vim inkVimRcOkt18.vim
+: 1549752157:0;cp ../../pyLabGitPdbPythonMode27/pdbPoligon/miniMate .
+: 1549752170:0;cp -r ../../pyLabGitPdbPythonMode27/pdbPoligon/miniMate .
+: 1549752188:0;ls miniMate
+: 1549752270:0;mv miniMate nanoMathe
+: 1549752283:0;ls Berta
+: 1549752349:0;ni kIng19.sh kBank19.yml
+: 1549753264:0;nvim nanoMathe/FindMax.py
+: 1549753266:0;nvim ninitOkt18.vim
+: 1549754026:0;cd nanoMathe
+: 1549754103:0;python FindMax.py
+: 1549754283:0;mv nanoMathe pdbA
+: 1549755736:0;vim --serverlist
+: 1549755757:0;nvim --serverlist
+: 1549756569:0;ni ninitOkt18.vim kIng19.sh kBank19.yml
+: 1549758545:0;man sh
+: 1549758642:0;man ls
+: 1549761130:0;iostat -w 10
+: 1549761681:0;exa -l
+: 1549762243:0;nvim FindMax.py
+: 1549762453:0;ni ninitOkt18.vim kTmux19.conf kBank19.yml kBank20.yml
+: 1549763588:0;pbp FindMin.py
+: 1549763701:0;python -m pdbpp FindMin.py
+: 1549765261:0;python -m pdb FindMin.py
+: 1549766501:0;python -m pdb 3nPlus1.py
+: 1549839038:0;synaptic
+: 1549840835:0;tmuxinator start kBank2
+: 1549840842:0;tmuxinator start kBank20
+: 1549840857:0;uptime
+: 1549840857:0;netstat
+: 1549840857:0;ping localhost
+: 1549840857:0;cd /home/red/git/aTest/dotFiles
+: 1549840858:0;cd var
+: 1549840858:0;top
+: 1549840859:0;cd log
+: 1549841074:0;lsof
+: 1549841093:0;man lsof
+: 1549841829:0;nvim
+: 1549842478:0;zsh
+: 1549842727:0;ni ninitOkt18.vim kTmux19.conf kBank19.yml
+: 1549844262:0;tmux
+: 1549844274:0;tmuxinator start kBank19
+: 1549844306:0;cd /home/red/git/aTest/dotFiles/nVim
+: 1549844310:0;nvim pdbA/FindMax.py
+: 1549844332:0;whoami
+: 1549844333:0;nvim 50%
+: 1549844333:0;ustime
+: 1549844333:0;sh
+: 1549844357:0;mysql -u root -p
+: 1549844471:0;tail /var/log/syslog
+: 1549845862:0;tail /var/log/auth.log
+: 1549845906:0;tail /var/log/boot.log
+: 1549846032:0;tail /var/log/dpkg.log
+: 1549846087:0;sudo
+: 1549846253:0;h language
+: 1549846264:0;history | vim -
+: 1549847987:0;ni ninitOkt18.vim
+: 1549876553:0;cd ../../pyLabGitPdbPythonMode27/
+: 1549876570:0;ni 01sympyRu.py
+: 1549885284:0;mv startNinit19.vim start1ninit19.vim
+: 1549885319:0;ni ninitOkt18.vim start1ninit19.vim
+: 1549886678:0;ni2
+: 1549886861:0;ni2 start1ninit19.vim
+: 1549901453:0;vim ninitOkt18.vim start1ninit19.vim minit.vim
+: 1549902093:0;cp ninitOkt18.vim lego-nini.vim
+: 1549902166:0;mv start1ninit19.vim 1startNinit19.vim
+: 1549902184:0;vi minit.vim
+: 1549903206:0;ni 1startNinit19.vim
+: 1549908979:0;ni minit.vim
+: 1549916453:0;vi tags
+: 1549918524:0;cp ../../../pyLabGitPdbPythonMode27/00velocity_ex_08_01.py .
+: 1549918533:0;cp ../../../pyLabGitPdbPythonMode27/50calculator.py .
+: 1549918545:0;ctags *.py
+: 1549918683:0;ni tags
+: 1549919739:0;ni minit.vim 1startNinit19.vim lego-nini.vim
+: 1550004012:0;cd ~/.config/nvim/plugged
+: 1550004061:0;ni delimitMate/README.md
+: 1550008691:0;ni pydoc.vim/README
+: 1550010447:0;pydoc class
+: 1550015230:0;chmod u+x nvim.appimage && ./nvim.appimage
+: 1550015238:0;chmod u+x nvim.appimage
+: 1550015273:0;chmod u+x nvim
+: 1550015282:0;./nvim
+: 1550018561:0;kill 20297
+: 1550019451:0;man pyls
+: 1550019465:0;locate pyls
+: 1550021037:0;vlf
+: 1550021108:0;vlc
+: 1550021720:0;firefox
+: 1550021908:0;man snap
+: 1550268306:0;git add kIng19.sh kTmux19.conf kZshrc19 historyRedRoot.txt
+: 1550268336:0;git add * *.vim
+: 1550269490:0;git add *.yml
+: 1550280256:0;cd ~/nvim-linux64/bin
+: 1550280774:0;py
+: 1550280778:0;pyls
+: 1550311069:0;cc
+: 1550311156:0;nvim -u ~/git/aTest/dotFiles/nVim/minit.vim
+: 1550311404:0;./nvim -u ~/git/aTest/dotFiles/nVim/minit.vim
+: 1550312111:0;cp nvim deonvim
+: 1550312154:0;./deonvim -u ~/git/aTest/dotFiles/nVim/minit.vim
+: 1550312183:0;rm nvim
+: 1550312198:0;rm deoplete.log
+: 1550325738:0;cp -r nVim deo4mix74DeoVsYcmSnipUnite
+: 1550325761:0;cp -r deo4mix74DeoVsYcmSnipUnite /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1550328666:0;cd .fzf/bin/
+: 1550328687:0;.fzf -q vim$
+: 1550328707:0;ls fzf
+: 1550328718:0;vi fzf
+: 1550328784:0;whereis fzf
+: 1550328831:0;fzf -q vim$
+: 1550329513:0;ni 50calculator.py
+: 1550330786:0;ni1
+: 1550364705:0;cp -r nVim deo5mix75DeoVsYcmSnipUniteFZF
+: 1550364737:0;cp -r deo5mix75DeoVsYcmSnipUniteFZF /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1550522887:0;cp -r nVim deo6mix76DeoVsYcmSnipUniteFzfEchoDoc
+: 1550522923:0;cp -r deo6mix76DeoVsYcmSnipUniteFzfEchoDoc /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1550524760:0;mv taghl_config.txt marsh-taghl_config.txt
+: 1550527813:0;cp -r nVim deo7mix77DeoVsYcmSnipUniteFzfEchoDocHiTag
+: 1550527841:0;cp -r deo7mix77DeoVsYcmSnipUniteFzfEchoDocHiTag /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1550528348:0;ni minit.vim 1startNinit19.vim nProtoFzfDeoLsJediSnip.vim
+: 1550538355:0;cp -r nVim deo8mix78DeoVsYcmSnipUniteFzfEchoDocHiTag
+: 1550631912:0;deo minit.vim 1startNinit19.vim nProtoFzfDeoLsJediSnip.vim
+: 1550632193:0;ls logo
+: 1550632198:0;ls logo*
+: 1550632206:0;git mv legoCyan.vim logoCyan.vim
+: 1550632379:0;deo minit.vim 1startNinit19.vim nProtoFzfDeoLsJediSnip.vim lego-nini.vim
+: 1550667758:0;z
+: 1550669022:0;cp -r nVim deo9mix79DeoVsYcmSnipUniteFzfEchoDocHiTagGit
+: 1550669101:0;cp -r deo9mix79DeoVsYcmSnipUniteFzfEchoDocHiTagGit /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1550724748:0;ls err
+: 1550724756:0;ls *err*
+: 1550724807:0;rm 'Closes all but the current window'
+: 1550749325:0;deo minit.vim nProtoFzfDeoLsJediSnip.vim logo1.vim
+: 1550750715:0;deo minit.vim nProtoFzfDeoLsJediSnip.vim logo1.vim lego-nini.vim
+: 1550751365:0;cp -r nVim deo10mix80DeoVsYcmSnipUniteFzfEchoDocHiTagGitSS
+: 1550751448:0;cp -r deo10mix80DeoVsYcmSnipUniteFzfEchoDocHiTagGitSS /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1550796333:0;deo -v
+: 1550796375:0;deo -v | vim -
+: 1550796558:0;vim -v | vim -
+: 1550796626:0;vim -v | neo -
+: 1550796665:0;vim -v | deo -
+: 1550796754:0;vim --V
+: 1550934747:0;vi foo.vim/README
+: 1550934791:0;vi foo.vim/plugin/foo.vim
+: 1550935156:0;ctags *.vim
+: 1550935166:0;ni nFoo.vim
+: 1550955449:0;deo minit.vim nProtoFzfDeoLsJediSnip.vim lego-nini.vim
+: 1550979945:0;cp nProtoFzfDeoLsJediSnip.vim DEO2.vim
+: 1550980552:0;ne lista.nvim/README.md
+: 1550981222:0;deo python-support.nvim/README.md
+: 1550982589:0;deo vim-textobj-python/README.md
+: 1550983186:0;deo vim-zebra
+: 1550983249:0;deo minit.vim DEO2.vim lego-nini.vim
+: 1550984587:0;vi FuzzyFinder/README
+: 1550985057:0;vi bash-support/README.md
+: 1550985396:0;neo noPlug.vim
+: 1550987244:0;vi vim-imagine/README.md
+: 1550987686:0;deo noPlug.vim
+: 1550988708:0;vi notational-fzf-vim/README.md
+: 1551024285:0;cd git
+: 1551024297:0;mkdir vim82
+: 1551024303:0;cd vim82
+: 1551024316:0;git clone https://github.com/vim/vim.git
+: 1551024561:0;cd vim
+: 1551025694:0;kill 4980
+: 1551027701:0;deo README.txt
+: 1551027782:0;deo src/README.txt
+: 1551027989:0;vim -V
+: 1551028013:0;vim --v
+: 1551028018:0;vim -v
+: 1551028044:0;vim -Version
+: 1551028058:0;vim -h
+: 1551028203:0;vim --version
+: 1551028289:0;deo READMEdir/README_unix.txt
+: 1551028564:0;cd vim82/vim/src
+: 1551029170:0;deo INSTALL
+: 1551035185:0;ls /home/red/82vim
+: 1551035234:0;cd git/vim82/vim/src
+: 1551035241:0;./configure --prefix =/home/red/82vim
+: 1551035316:0;deo minit.vim DEO2.vim lego-nini.vim logoTextObjct.vim nMakeInstallVim82.vim
+: 1551036367:0;ne Makefile
+: 1551036599:0;cd 82vim
+: 1551036612:0;cd ~/82vim
+: 1551036632:0;ls share
+: 1551036640:0;ls share/vim
+: 1551036699:0;ls share/vim/vim81
+: 1551036718:0;ls share/vim/vim81/plugin
+: 1551037079:0;./vim testNewVim81.txt
+: 1551037554:0;cd vim-master-82/src
+: 1551038070:0;make install
+: 1551038091:0;cd 82vim/bin
+: 1551038105:0;./vim --version
+: 1551038138:0;./vim
+: 1551039309:0;python -V
+: 1551039321:0;python3 -V
+: 1551039340:0;python3 -h
+: 1551041666:0;deo lista.nvim/README.md
+: 1551045398:0;cd vim-gitgutter
+: 1551045415:0;rm README.mkd
+: 1551046289:0;deo minit.vim DEO2.vim lego-nini.vim logoTextObjct.vim
+: 1551046560:0;deo minit.vim DEO2.vim
+: 1551048770:0;deo minit.vim nProtoFzfDeoLsJediSnip.vim DEO2.vim
+: 1551048815:0;cp nProtoFzfDeoLsJediSnip.vim DEO3.vim
+: 1551048890:0;deo minit.vim DEO3.vim DEO2.vim
+: 1551054466:0;cd Music/Komodo-Edit-11.1.1-18206-linux-x86_64
+: 1551054481:0;./install.sh
+: 1551056661:0;pw
+: 1551056701:0;deo python-mode/readme.md
+: 1551111212:0;kill 20606
+: 1551131639:0;cp -r nVim deo11mix81DEO3
+: 1551180783:0;deo minit.vim DEO3.vim nAsyncRun.vim nAsync.vim
+: 1551182576:0;mv aSilverPyVim.py pSilverPyVim.py
+: 1551183335:0;ni nPyJedi.vim nPyPipExtra.vim nPythonSuport.vim nPy.vim
+: 1551183394:0;deo Py.vim nPyJedi.vim nPyPipExtra.vim nPythonSuport.vim
+: 1551183417:0;deo nPy.vim nPyJedi.vim nPyPipExtra.vim nPythonSuport.vim
+: 1551183508:0;deo minit.vim DEO3.vim nPyAgSearch.vim
+: 1551195608:0;deo minit.vim DEO3.vim pEvalCurrLine.py
+: 1551207553:0;cd '/media/red/F1E8-C819/hTML-Zp-Link/2019CollectZip/dotfiles-master-vimPlusPythons/zsh'
+: 1551207594:0;fzf silver
+: 1551219757:0;deo minit.vim DEO3.vim BOX.todo
+: 1551222586:0;fzf python3
+: 1551222598:0;fzf python3 *.vim
+: 1551226895:0;cd ~
+: 1551226901:0;neo
+: 1551227078:0;cd /media/red/F1E8-C819
+: 1551227084:0;cd hTML-Zp-Link
+: 1551227385:0;cd /
+: 1551227399:0;cd media/red/F1E8-C819/hTML-Zp-Link
+: 1551230236:0;cp -r nVim deo12mix82DEO3-endPython1pBOX
+: 1551230257:0;mv deo12mix82DEO3-endPython1pBOX /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1551230510:0;deo pBOX.vim
+: 1551236410:0;ls *.py
+: 1551236445:0;rm pEvalCurrLine.py
+: 1551236461:0;:wa
+: 1551236580:0;cp -r nVim deo13mix83DEO3-2pBOX
+: 1551236604:0;mv deo13mix83DEO3-2pBOX /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1551278110:0;cp -r nVim deo14mix84DEO3-3pBOX10
+: 1551278155:0;mv deo14mix84DEO3-3pBOX10 /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1551291300:0;ni absMax.py abs.py FindMax.py find_hcf.py
+: 1551293919:0;cd pyLabGitPdbPythonMode27
+: 1551301483:0;deo minit.vim DEO3.vim pBOX.vim pSYMPY01.py logoCyan.vim
+: 1551307828:0;deo 50calculator.py
+: 1551308371:0;cd dotFiles/nVim/swamPython3
+: 1551310389:0;echo $PATH
+: 1551310486:0;deo mypolygon.py
+: 1551365032:0;chmod u+x hello.go
+: 1551365036:0;./hello.go
+: 1551365076:0;de hello.go
+: 1551365099:0;ni hello.go
+: 1551365356:0;go run hello.go
+: 1551365432:0;deo minit.vim DEO3.vim pBOX.vim pSYMPY01.py hello.go
+: 1551365653:0;go run main.go
+: 1551367504:0;deo minit.vim DEO3.vim pBOX.vim pSYMPY01.py main.go
+: 1551398698:0;man pydbgp
+: 1551439774:0;mv mypolygon.py myPolyCtr.py
+: 1551439824:0;git add *.sh
+: 1551439835:0;git add *.lua
+: 1551439897:0;git add *.pl
+: 1551439932:0;git add hello.go
+: 1551440103:0;ls ftdetect
+: 1551440111:0;ls rplugin
+: 1551440121:0;ls rplugin/python/
+: 1551440127:0;ls rplugin/python3
+: 1551446999:0;deo testvimpyrc.vim
+: 1551447186:0;deo minit.vim DEO3.vim pBOX.vim pSYMPY01.py p3Simple.py
+: 1551457697:0;cp -r nVim deo15mix85DEO3-3pBOX11PyGo
+: 1551457819:0;deo minit.vim DEO3.vim pBOX.vim pSYMPY01.py tst.vim
+: 1551458629:0;ni vim_bridge/README.rst
+: 1551458781:0;ni gom/README.mkd
+: 1551459172:0;ni vim-zoom/README.md
+: 1551485703:0;mkdir goLang
+: 1551486048:0;deo minit.vim DEO3.vim pBOX.vim pSYMPY01.py goLang/epoch/main.go
+: 1551486097:0;deo minit.vim DEO3.vim pBOX.vim pSYMPY01.py goLang/epoch.go
+: 1551487169:0;cd goLang
+: 1551487182:0;rm -r epoch
+: 1551495043:0;mv goLang goLab
+: 1551495854:0;git add goLab/
+: 1551495873:0;git add *.go
+: 1551495904:0;ni nGO.vim
+: 1551496386:0;deo goBOX.todo
+: 1551499250:0;mkdir cLab
+: 1551499447:0;deo minit.vim DEO3.vim pBOX.vim pSYMPY01.py
+: 1551501864:0;gcc -c first.c
+: 1551501885:0;deo first.c
+: 1551502475:0;gcc -c first.c -o first.o
+: 1551502489:0;chmod u+x first.o
+: 1551502492:0;./first.o
+: 1551502557:0;g++ -o gunia first.o
+: 1551502564:0;./gunia
+: 1551502585:0;vi gunia
+: 1551528307:0;pVimPy.vim
+: 1551528313:0;deo pVimPy.vim
+: 1551528519:0;man go
+: 1551528828:0;go version
+: 1551530131:0;go env
+: 1551530743:0;which godef
+: 1551530749:0;which go
+: 1551530880:0;go get -u github.com/nsf/gocode
+: 1551530887:0;which gocode
+: 1551530930:0;go get -u github.com/jstemmer/gotags
+: 1551530937:0;go get -u code.google.com/p/rog-go/exp/cmd/godef
+: 1551531345:0;go get -u -v github.com/golang/lint/golint
+: 1551531427:0;go get -u -v golang.org/x/tools/cmd/guru
+: 1551531515:0;go get -u -v golang.org/x/tools/cmd/goimports
+: 1551531533:0;go get -u -v golang.org/x/tools/cmd/gorename
+: 1551532307:0;deo testThis.go
+: 1551532334:0;deo epoch.go
+: 1551532568:0;deo hello.go
+: 1551533649:0;deo DEO3.vim
+: 1551541296:0;git add goBOX.todo BOX.todo
+: 1551541472:0;deo DEO3.vim minit.vim
+: 1551548244:0;deo DEO3.vim minit.vim pSYMPY01.py
+: 1551550363:0;man fzf
+: 1551552948:0;cd ultisnips/
+: 1551552962:0;ls utils
+: 1551552973:0;ls test
+: 1551553860:0;cd vim-snippets
+: 1551553887:0;ls UltiSnips
+: 1551553893:0;ls snippets
+: 1551554005:0;vi UltiSnips/all.snippets
+: 1551557457:0;cd neosnippet-snippets
+: 1551557464:0;ls neosnippets
+: 1551557487:0;cd neosnippets
+: 1551557496:0;vim vim.snip
+: 1551563763:0;cp first.c noFirst.cpp
+: 1551563768:0;cp first.c noFirst.h
+: 1551563782:0;cp first.c noFirst.cc
+: 1551564329:0;deo ultiBOX.py
+: 1551564399:0;deo ultiBOX.vim
+: 1551564506:0;mv ultiBOX.vim nVim
+: 1551567914:0;cp -r nVim deo16mix86DEO3-UltiBigFont
+: 1551567987:0;cp -r deo16mix86DEO3-UltiBigFont /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1551573175:0;deo minit.vim DEO3.vim pSYMPY01.py
+: 1551616199:0;brexit.py
+: 1551616204:0;deo brexit.py
+: 1551636061:0;mkdir goLab
+: 1551636126:0;cd ~/git/aTest/dotFiles/nVim/
+: 1551636149:0;ni kZshrc19
+: 1551636201:0;mkdir go
+: 1551636298:0;rm -r goLab
+: 1551636828:0;cd ~/go
+: 1551636845:0;deo test.go
+: 1551658791:0;deo minit.vim DEO3.vim pSYMPY01.py pVimPy.vim pBOX.vim
+: 1551662913:0;cp -r nVim deo17mix87DEO3-RUBY01
+: 1551662951:0;mv deo17mix87DEO3-RUBY01 /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1551705665:0;ls myPy4Vim
+: 1551705703:0;cd pdbA
+: 1551705791:0;deo Robot.py
+: 1551712064:0;cd ~/git/aTest/dotFiles/nVim/pdbA
+: 1551726360:0;deo DateTime.py
+: 1551734640:0;cd Music/DocFetcher-1.1.22
+: 1551734708:0;deo Readme.txt
+: 1551734836:0;./DocFetcher-GTK3.sh
+: 1551735431:0;cd ~/Music/cream-0.43
+: 1551735475:0;ni docs/README.txt
+: 1551735581:0;./INSTALL.sh
+: 1551735608:0;chmod u+x cream
+: 1551735620:0;./cream
+: 1551738822:0;htop
+: 1551741822:0;cd ~/Music/LJArchive2017
+: 1551741925:0;cp 'Start Linux.sh' Linux.sh
+: 1551741941:0;chmod u+x Linux.sh
+: 1551741946:0;./Linux.sh
+: 1551742765:0;cd ~/Music/
+: 1551742783:0;ls -l | awk '$1 !~ /total/ { printf "%-32s %s\n",$9,$5 ; }'
+: 1551743047:0;deo AWK.sh
+: 1551744706:0;ls | xargs -n 2 echo ===
+: 1551744715:0;ls | xargs -n 2 echo
+: 1551744750:0;ls | xargs echo
+: 1551744759:0;ls | xargs -n 3 echo
+: 1551744766:0;ls | xargs -n 4 echo
+: 1551744776:0;ls | xargs -n 4 echo :::
+: 1551744784:0;ls | xargs -n 3 echo :::
+: 1551745147:0;ls | grep '^pope' | xargs -n 3 echo ::
+: 1551745155:0;ls | grep 'tpope' | xargs -n 3 echo ::
+: 1551745197:0;ls | grep 'master' | xargs -n 3 echo ::
+: 1551746347:0;df -k
+: 1551746363:0;df -kh
+: 1551746534:0;df -kh /dev/sd*
+: 1551746594:0;df -kh /
+: 1551748194:0;cd tpope-master
+: 1551748234:0;awk "{ print ; }" .zshrc
+: 1551748275:0;cp .vimrc pope-vimrc
+: 1551748302:0;cp .zshrc pope-ZSHrc
+: 1551748358:0;cp .gitconfig pope-gitconfig
+: 1551748373:0;deo pope-vimrc
+: 1551751295:0;cd ~/git/aTest/dotFiles/
+: 1551751341:0;cp -r nVim deo18mix88DEO3-AWK01
+: 1551751401:0;cp -r deo18mix88DEO3-AWK01 /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1551754836:0;mkdir awkLab
+: 1551754863:0;deo fruchte.txt
+: 1551754944:0;sed '/0\.[0-9][0-9]$/p' fruchte.txt
+: 1551808850:0;deo SedAWK.sh
+: 1551821077:0;cd git/aTest/dotFiles/nVim/
+: 1551821096:0;ni DEO3.vim ninitOkt18.vim
+: 1551958287:0;deo printargs.py
+: 1551958372:0;python3 printargs.py
+: 1551958426:0;python3 printargs.py hello world
+: 1551958687:0;python3 sortstdin.py < cities.txt
+: 1551958874:0;python3 crtPath.py
+: 1551959157:0;python3 date-date.py
+: 1551959286:0;python3 inter.py
+: 1551959646:0;python3 sub.py
+: 1552001198:0;deo tMath.py
+: 1552094468:0;deo laplace.py
+: 1552214164:0;deo cMath.py tMath.py
+: 1552214272:0;deo LEGB.py
+: 1552224715:0;mkdir gitConf
+: 1552224721:0;cd gitConf
+: 1552224757:0;deo blobGitConf
+: 1552227149:0;git add *.py
+: 1552227206:0;mv AWK.sh awkLab
+: 1552227224:0;ga awkLab/
+: 1552227229:0;cd awkLab
+: 1552227245:0;ga *.sh
+: 1552227250:0;ga *.txt
+: 1552227294:0;git add swamPython3/
+: 1552227311:0;ls cLab
+: 1552227326:0;ga cLab/
+: 1552227331:0;cd cLab
+: 1552227365:0;de testSnip.vim
+: 1552227370:0;deo testSnip.vim
+: 1552227415:0;git add *.c
+: 1552227423:0;git add *.cc
+: 1552227431:0;git add *.cpp
+: 1552227436:0;git add *.h
+: 1552227440:0;git add *.vim
+: 1552227463:0;git add rubyBOX.todo
+: 1552227474:0;ls goLab
+: 1552227497:0;ga *.todo
+: 1552227522:0;rm -r bin
+: 1552227542:0;rm -r src
+: 1552228136:0;cd ../../gitConf
+: 1552228154:0;deo helmGitConf
+: 1552228335:0;ga *Conf
+: 1552228411:0;ma rm
+: 1552228414:0;man rm
+: 1552228442:0;cd nVim
+: 1552228449:0;cd goLab
+: 1552228462:0;rm -fr src
+: 1552229198:0;snap list
+: 1552230643:0;zeal
+: 1552233847:0;pip3 install multiprocessing
+: 1552240552:0;deo thrOne.py
+: 1552243125:0;deo thr00.py
+: 1552246926:0;deo thr40Ping.py
+: 1552249751:0;deo sub.py
+: 1552252052:0;deo sym00Quadr.py
+: 1552263255:0;cd git/Jython
+: 1552263278:0;java -jar jython_installer-2.7.0.jar\
+
+: 1552263440:0;deo 00Jyton.py
+: 1552264218:0;mkdir cYthon
+: 1552264274:0;deo hello.pyx test.py setup.py
+: 1552264519:0;python test.py
+: 1552264535:0;python3 test.py
+: 1552268109:0;mkdir torch
+: 1552268136:0;deo 00testTorch.py
+: 1552268436:0;cp -r dotFiles 9Marz19dotFiles
+: 1552268471:0;cp -r 9Marz19dotFiles /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1552268764:0;cd nVim/pdbA
+: 1552268779:0;mkdir tensor
+: 1552270800:0;man jython
+: 1552270871:0;cython --version
+: 1552270880:0;man cython
+: 1552304983:0;mkdir floop
+: 1552305031:0;deo fastloop.pyx
+: 1552305444:0;firefox fastloop.html
+: 1552305816:0;./fastloop.so
+: 1552305839:0;deo fastloop.c
+: 1552345921:0;deo MemoryUvsMasU.vim
+: 1552391104:0;cd floop
+: 1552391133:0;deo rbf.py
+: 1552392290:0;cython fastloop.pyx -a
+: 1552392298:0;deo testFastLoop.py
+: 1552427237:0;mkdir fib
+: 1552427242:0;cd fib
+: 1552427266:0;deo fib.pyx
+: 1552427378:0;deo fib.pyx setup.py testFib.py
+: 1552428754:0;mkdir pythagor
+: 1552428797:0;deo pythagor.py
+: 1552429302:0;cp pythagor.py pythagor.pyx
+: 1552432913:0;deo main.py
+: 1552434010:0;mkdir nastyImg
+: 1552434015:0;cd nastyImg
+: 1552434126:0;deo nastyFild.py
+: 1552434167:0;python nastyFild.py
+: 1552434174:0;./nastyFild.py
+: 1552435775:0;mkdir mandel3
+: 1552435779:0;cd mandel3
+: 1552435921:0;deo mandel3cy.pyx setup.py appView.py
+: 1552436466:0;deo appNoWX.py
+: 1552436508:0;imagej mandelbrot.png
+: 1552436618:0;rm mandel3cy.pyx
+: 1552436680:0;deo mandelcy.pyx appNoWX.py setup.py
+: 1552436760:0;python setup.py build_ext --inplace
+: 1552436822:0;mv mandelbrot.png 1mandelbrot.png
+: 1552436852:0;python appNoWX.py
+: 1552436870:0;imagej mandelbrot.png 1mandelbrot.png
+: 1552437923:0;cython mandelcy.pyx -a
+: 1552438053:0;firefox mandelcy.html
+: 1552438775:0;lspci -v | vim -
+: 1552439175:0;lscpu
+: 1552502422:0;deo 01tensor.py
+: 1552514095:0;mv 00tensor.py tensor
+: 1552516547:0;cd tensor
+: 1552518711:0;history | grep jython
+: 1552518775:0;java -jar jython-installer-2.7.0.jar\
+
+: 1552518963:0;cd git/aTest/dotFiles/nVim/pdbA
+: 1552521476:0;ls javaBsp
+: 1552521492:0;ls javaJUnit
+: 1552521571:0;cp javaJUnit/HelloWorld.java dotFiles/nVim/pdbA
+: 1552522550:0;lc
+: 1552522590:0;rm 'HelloWorld*\
+ls
+: 1552522603:0;rm 'HelloWorld*'
+: 1552522627:0;rm *.class*
+: 1552522645:0;deo HelloWorld.java
+: 1552523527:0;jython 00Jyton.py a
+: 1552523794:0;jython --version
+: 1552523799:0;jython --h
+: 1552523804:0;jython -h
+: 1552523927:0;echo $PYTHONPATH
+: 1552523939:0;echo $JYTHONPATH
+: 1552524657:0;python
+: 1552524699:0;cython
+: 1552526610:0;deo vim-inkAutoGroupAutoCommand.vim vim-experemental.vim ex-2mashine.vim
+: 1552526932:0;whereis firefox
+: 1552527658:0;deo 00tensor.py
+: 1552528181:0;deo minit.vim DEO3.vim pBOX.vim
+: 1552529832:0;mkdir mysql
+: 1552529857:0;deo testMyCon.py
+: 1552562669:0;go get github.com/lib/pq
+: 1552588580:0;deo ruby1MySQL.rb
+: 1552606446:0;deo php1MyTest.php
+: 1552606774:0;php -v
+: 1552609694:0;mv cpp1MySQL.cpp c1MySQL.c
+: 1552609724:0;cp c1MySQL.c test.c
+: 1552610370:0;deo prepCppMySQL.vim
+: 1552610823:0;deo java1MySql.java
+: 1552613201:0;sqlitebrowser
+: 1552614527:0;deo python1TestLight.py
+: 1552614925:0;cd Jython
+: 1552614948:0;deo hello.py main.py
+: 1552615045:0;java -jar jython-standalone-2.7.0.jar main.py
+: 1552615300:0;deo 00Jyton.py 01JythonHello.py
+: 1552615392:0;java -jar jython-standalone-2.7.0.jar 00Jyton.py
+: 1552615414:0;java -jar jython-standalone-2.7.0.jar 01JythonHello.py
+: 1552617544:0;java -jar jython-installer-2.7.0.jar
+: 1552617667:0;jython
+: 1552625801:0;deo ruby2MySQL.rb
+: 1552627980:0;mkdir cppLight
+: 1552627985:0;cd cppLight
+: 1552628075:0;gcc test.c -l sqlite3
+: 1552628188:0;deo test.c testCreatePlus.c
+: 1552628627:0;deo testCreatePlus.c
+: 1552628638:0;gcc testCreatePlus.c -l sqlite3
+: 1552631062:0;mkdi goLite
+: 1552631066:0;mkdir goLite
+: 1552632101:0;cd go/
+: 1552632112:0;go get github.com/mattn/go-sqlite3
+: 1552632277:0;go install github.com/mattn/go-sqlite3
+: 1552632526:0;cp -r dotFiles dotFiles-SqLight1
+: 1552632553:0;mv dotFiles-SqLight1 /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1552644545:0;deo weka.vim
+: 1552651095:0;mv cppLight cppLite
+: 1552651146:0;ls *.rb
+: 1552681160:0;./mini.rb
+: 1552685810:0;mkdir RUBY
+: 1552685836:0;deo template.rb
+: 1552691487:0;deo profileIt.rb
+: 1552692859:0;ruby -e 'puts $:'
+: 1552695760:0;mv mini.rb RUBY
+: 1552695969:0;ls RUBY
+: 1552696248:0;cd torch
+: 1552696273:0;deo prepTorch.vim
+: 1552696970:0;cd RUBY
+: 1552696992:0;deo mini.rb
+: 1552698629:0;echo *
+: 1552700981:0;cd jYthon
+: 1552701012:0;deo 01JythonHello.py
+: 1552701776:0;cp -r Jython protoJyton
+: 1552701792:0;rm -r Jython
+: 1552702106:0;deo 02JythonHello.py
+: 1552703262:0;cd git/aTest/dotFiles/nVim/pdbA/jYthon
+: 1552703273:0;deo helloIJ.java
+: 1552708510:0;jython main.py
+: 1552709348:0;cd cppLite
+: 1552709358:0;h test.c
+: 1552709590:0;deo test.c
+: 1552709732:0;cd git/aTest/dotFiles/nVim/pdbA/mysql/cppLite
+: 1552709803:0;gcc test.c -l sqlite3\
+
+: 1552709838:0;gcc -o testDB test.c -l sqlite3\
+
+: 1552709848:0;./testDB
+: 1552710091:0;gcc -o 1col 1column.c -l sqlite3\
+
+: 1552763866:0;deo geakSQligt.c
+: 1552763982:0;cd git/aTest
+: 1552764031:0;ls 4c/gruss
+: 1552764049:0;cd 4c/gruss/HelloWorld
+: 1552764535:0;cd 4c
+: 1552764559:0;ls gruss
+: 1552764565:0;ls gruss/HelloWorld
+: 1552764572:0;ls gruss/HelloWorld/src
+: 1552764580:0;ls gruss/HelloWorld/inc
+: 1552764592:0;cd gruss/HelloWorld/inc
+: 1552764599:0;deo hello.h
+: 1552764706:0;deo mpipe.sh
+: 1552765497:0;c\
+
+: 1552765742:0;dei g++
+: 1552765747:0;deo g++
+: 1552765826:0;deo Makefile src/hello.cpp src/main.cpp
+: 1552765942:0;cd 4NeoCPP
+: 1552765955:0;cd gruss/HelloWorld
+: 1552766009:0;deo Makefile src/hello.cpp src/main.cpp 2014.txt 2014.inc
+: 1552769212:0;cd ../../..
+: 1552769227:0;cd 4NeoCPP/gruss/HelloWorld/bin
+: 1552770284:0;deo Makefile src/hello.cpp src/main.cpp 2014.txt
+: 1552771136:0;mkdir EX1
+: 1552771672:0;deo ex1.c
+: 1552772502:0;cd ../../
+: 1552772517:0;cd EX1
+: 1552772747:0;./ex1
+: 1552774512:0;deo bird.c
+: 1552774567:0;make bird
+: 1552774581:0;./bird
+: 1552774718:0;deo salary1.c
+: 1552774792:0;make salary1
+: 1552774800:0;./salary1
+: 1552775340:0;make sompleIf
+: 1552775563:0;make simpleIf
+: 1552775721:0;./simpleIf
+: 1552777351:0;./choiseIf
+: 1552777924:0;./calc5e
+: 1552778237:0;./simon
+: 1552779066:0;./gradeArr
+: 1552779459:0;./addressVar
+: 1552780777:0;deo ttt.c Makefile
+: 1552780802:0;./ttt
+: 1552781223:0;./strLengs
+: 1552781459:0;./strArr
+: 1552781646:0;./pointER
+: 1552782468:0;./point2dArr
+: 1552785533:0;./primeMaloc
+: 1552785874:0;deo primeMaloc.c
+: 1552786491:0;gcc -c sortString.c -o 1sort
+: 1552786512:0;chmod +x 1sort
+: 1552786592:0;make ex1
+: 1552786625:0;make sortString
+: 1552786652:0;./1sort
+: 1552789106:0;gcc -c globalVar361.c -o 1global
+: 1552789115:0;chmod +x 1global
+: 1552789120:0;./1global
+: 1552789203:0;./globalVar361
+: 1552789508:0;./program98A
+: 1552789517:0;./program98A hallo
+: 1552789525:0;./program98A hallo Linux
+: 1552789533:0;./program98A hallo Ubuntu Linux
+: 1552789563:0;./program98A hallo Ubuntu Linux 16 04 2018
+: 1552790422:0;./charPrint423
+: 1552790861:0;./timeMashine578
+: 1552791429:0;cp -r ../gruss/HelloWorld .
+: 1552791437:0;cd HelloWorld
+: 1552791462:0;rm 2014.txt~
+: 1552791496:0;deo src/hello.cpp src/main.cpp
+: 1552791787:0;sd src
+: 1552791911:0;deo pointFunc.o
+: 1552791931:0;./pointFunc.o
+: 1552791976:0;mv pointFunc.c pointFunc351Err.c
+: 1552792017:0;mv sortString.c sortString339Err.c
+: 1552792057:0;deo pipe.c
+: 1552792141:0;./npipe
+: 1552792151:0;deo pipeThread.c
+: 1552792260:0;./a.out
+: 1552792342:0;cp -r EX1 ../dotFiles/nVim/pdbA/cEX1
+: 1552792385:0;cd dotFiles/nVim/pdbA
+: 1552792408:0;ls mysql
+: 1552792920:0;cd cYthon
+: 1552792997:0;doe pythagor.pyx
+: 1552793003:0;deo pythagor.pyx
+: 1552793215:0;./tri.so
+: 1552793291:0;cython tri.pyx
+: 1552793332:0;./hello.so
+: 1552793354:0;cython hello.pyx
+: 1552793407:0;deo hello.pyx
+: 1552793464:0;history
+: 1552793615:0;cd pythagor
+: 1552793626:0;deo testPythagor.py
+: 1552831078:0;mkdir MAKE
+: 1552831085:0;cd MAKE
+: 1552836154:0;cd ~/git/aTest/dotFiles/nVim/pdbA/RUBY
+: 1552836170:0;deo helloFox.rb mini.rb
+: 1552838481:0;cd pdbA/cEX1
+: 1552838518:0;rm *.o
+: 1552838543:0;rm 1global 1sort
+: 1552838723:0;cd ../git
+: 1552838737:0;mkdir protoTorch
+: 1552838741:0;git clone --recursive https://github.com/pytorch/pytorch
+: 1552843782:0;deo minit.vim DEO3.vim
+: 1552846587:0;cp -r nVim mix90DEO3-C-hardWay
+: 1552846628:0;cp -r mix90DEO3-C-hardWay /media/red/A5A1-FBC4/RED-ViM-MPI-gz
+: 1552846786:0;ls goLite
+: 1552846796:0;ls cppLite
+: 1552847289:0;du RET
+: 1552847305:0;du -h
+: 1552847923:0;deo swapAliceBop.c
+: 1552848033:0;cd cEX1
+: 1552848045:0;./swapAliceBop
+: 1552849443:0;./2clockMe
+: 1552851299:0;./5clockMe
+: 1552851490:0;./4clockMe
+: 1552852507:0;./matrixMult
+: 1552853001:0;./matrix2Mult
+: 1552853600:0;./matrix3Mult
+: 1552854197:0;deo simple1.cpp
+: 1552854282:0;./simple1
+: 1552854530:0;./simple2IO
+: 1552854875:0;g++ -fopenmp -o omp1.ex omp1.cpp
+: 1552854904:0;export OMP NUM THREADS=2
+: 1552854919:0;time ./omp1.ex
+: 1552854938:0;./omp1.ex
+: 1552855118:0;g++ -fopenmp -o omp2.ex omp2.cpp
+: 1552855137:0;time ./omp2.ex
+: 1552855321:0;mpic++ -o mpi1.ex mpi1.cpp
+: 1552856010:0;./ritaStrkt
+: 1552856763:0;./demo1
+: 1552858626:0;cd ~/git/protoGoPyCpp/cpp-learning-master
+: 1552858660:0;rm cpp_calendar
+: 1552858719:0;./cpp_calendar
+: 1552860439:0;deo semaphor.cpp
+: 1552866019:0;komodo
+: 1552868758:0;cd '/media/red/A5A1-FBC4/2019PyLink/CPP-Link/CPP-master/Lesson9/Observer'
+: 1552868791:0;deo MyClock.cpp
+: 1552868873:0;deo DigitalClock.cpp
+: 1552868974:0;./DigitalClock.
+: 1552869012:0;cd Decorator
+: 1552869044:0;deo Window.cpp Window.h
+: 1552869746:0;deo Decorator*
+: 1552870128:0;cd '/home/red/git/protoJyton/weka-3-8-3'
+: 1552870142:0;java -jar weka.jar
+: 1552871290:0;orange
+: 1552871330:0;python3 -m Orange.canvas
+: 1552880275:0;cd mysql
+: 1552880304:0;cp -r cppLite DODO10
+: 1552880386:0;cp ../../cEX1/Makefile .
+: 1552880428:0;deo Makefile test.c testCreatePlus.c
+: 1552883282:0;cd mysql/DODO10
+: 1552884470:0;rm geakSQligt.c
+: 1552884544:0;rm test.db
+: 1552884592:0;./openDodo10
+: 1552886432:0;file openDodo10
+: 1552886714:0;nm openDodo10
+: 1552886727:0;ldd openDodo10
+: 1552887628:0;cd ~/git/aTest/dotFiles/nVim/pdbA/MAKE
+: 1552887642:0;deo makeSameln
+: 1552887864:0;rm testDB
+: 1552887886:0;./select2Dodo10
+: 1552888013:0;cp python2TestLight.py DODO10
+: 1552888054:0;cp ruby1SQLight.rb DODO10
+: 1552888171:0;cd goLite
+: 1552888194:0;cp main.go ../DODO10
+: 1552888268:0;deo python2TestLight.py
+: 1552891296:0;deo main.go
+: 1552891747:0;cp -r nVim mix91DEO3-C-SQLite-Py-Ru-Go
+: 1552955269:0;./a
+: 1552955457:0;rm hello.o hello
+: 1552955527:0;./helloEX
+: 1552955617:0;./hello1EX
+: 1552957508:0;./h1EX
+: 1552957512:0;./h2EX
+: 1552958552:0;cd helloMake
+: 1552960368:0;rm h1EX h2EX
+: 1552960376:0;s
+: 1552960456:0;make hello
+: 1552960467:0;./hello
+: 1552960513:0;make VOTE16
+: 1552960528:0;make preser
+: 1552963604:0;deo Makefile
+: 1552963888:0;make
+: 1552963905:0;make run
+: 1552963939:0;make all
+: 1552963962:0;make clean
+: 1552967764:0;cd ../..
+: 1552967782:0;ls -la
+: 1552967787:0;ls -laC
+: 1552967798:0;ls -lC
+: 1552967811:0;l -C
+: 1552968572:0;du -sh .
+: 1552968633:0;du -mh .
+: 1552968658:0;du -c .
+: 1552968755:0;du -h .
+: 1552968758:0;du --time
+: 1552968878:0;du -hcd
+: 1552968901:0;du -hcd 3
+: 1552968909:0;du -hcd 2
+: 1552968915:0;du -hcd 1
+: 1552971565:0;deo gitBOX
+: 1553066835:0;cd ~/
+: 1553067067:0;cp .gitconfig git/aTest/dotFiles/nVim/kGitconfig
+: 1553067100:0;cp .gitignore git/aTest/dotFiles/nVim/kGitignore
+: 1553068251:0;cp dotFiles/nVim/kGitignore .gitignore
+: 1553068275:0;vi .gitignore .gitconfig
+: 1553068397:0;mkdir bTest
+: 1553068416:0;git init
+: 1553068507:0;cp ../aTest/dotFiles/nVim/kGitignore .gitignore
+: 1553068578:0;cp -r ../aTest/dotFiles/nVim/pdbA/mysql/DODO DODO
+: 1553068601:0;cp -r ../aTest/dotFiles/nVim/pdbA/mysql/DODO10 .
+: 1553068639:0;ls DODO10/helloMake
+: 1553068668:0;rm -r helloMake
+: 1553107786:0;:qa
+: 1553108308:0;mkdir kDot
+: 1553108517:0;deo DEO3.vim ninitOkt18.vim
+: 1553108705:0;ls k*
+: 1553108850:0;cp k* ../../../bTest/kDot
+: 1553108884:0;cp ninitOkt18.vim ../../../bTest/kDot
+: 1553108896:0;cp DEO3.vim ../../../bTest/kDot
+: 1553108919:0;cp minit.vim ../../../bTest/kDot
+: 1553109016:0;mv ninitOkt18.vim kNinit18.vim
+: 1553109050:0;mv minit.vim kMinit.vim
+: 1553109069:0;mv DEO3.vim kDEO3.vim
+: 1553109090:0;g log --graph
+: 1553109106:0;g status
+: 1553109131:0;g status --graph
+: 1553109203:0;git status --graph
+: 1553109323:0;git-current-branch
+: 1553109334:0;git-attic
+: 1553109489:0;deo kBashColorRC19
+: 1553109823:0;deo tags
+: 1553109924:0;pd
+: 1553110005:0;deo kZshrc19
+: 1553110320:0;git-churn
+: 1553110393:0;git mv kBashColorRC19.sh kDot
+: 1553110410:0;git mv kZshrc19.sh kDot
+: 1553110819:0;gc
+: 1553110964:0;git log -3
+: 1553110973:0;git log -2
+: 1553111011:0;git tag v01
+: 1553111088:0;git diff first second
+: 1553111153:0;git diff --stat HEAD^^^
+: 1553111157:0;git diff --stat HEAD^^
+: 1553111160:0;git diff --stat HEAD^
+: 1553111163:0;git diff --stat HEAD
+: 1553111241:0;git diff --shortstat HEAD~5
+: 1553111245:0;git diff --shortstat HEAD~4
+: 1553111556:0;git diff --stat HEAD~6
+: 1553111564:0;git diff --stat HEAD~5
+: 1553111753:0;git difftool c3da079 kZwishen.vim
+: 1553112505:0;git add rootHistoryMar19.sh
+: 1553115261:0;cp DEO2.vim ../../../bTest/kDot/kDEO2.vim
+: 1553115436:0;cp nMinimumLangServ.vim nMinimumYcmJedi.vim BOX.todo pBOX.vim ../../../bTest/kDot/
+: 1553115835:0;mv nMinimumLangServ.vim dMinLangServ.vim
+: 1553115866:0;mv nMinimumYcmJedi.vim dMinYcmJedi.vim
+: 1553116064:0;deo kDEO2.vim
+: 1553116365:0;deo nMinimumClangDeo.vim
+: 1553116413:0;deo nMinimumDeoJedi*
+: 1553117482:0;deo inkVimRcOkt18.vim
+: 1553117610:0;cd git/aTest/dotFiles/
+: 1553117647:0;cd ~/git/aTest/dotFiles/inkVim
+: 1553117702:0;deo vimrc-ink.vim
+: 1553120137:0;cp inkPreRc19.vim vim-mopOptic.vim ~/git/bTest/kDot
+: 1553120207:0;mv vim-mopOptic.vim mopOptic.vim
+: 1553120441:0;git mv komodo.vim noKomodo.vim
+: 1553120521:0;mv dMinYcmJedi.vim minYcmJedi.vim
+: 1553120544:0;mv dMinLangServ.vim minLangServ.vim
+: 1553120720:0;cp nProtoFzfDeoLsJediSnip.vim ../../../bTest/kDot
+: 1553120837:0;mv nProtoFzfDeoLsJediSnip.vim minFzfDeoLsJediSnip.vim
+: 1553123050:0;texhash
+: 1553123197:0;exa -lT
+: 1553123309:0;git rm kBashColorRC19.sh
+: 1553123396:0;git log --graph
+: 1553124431:0;git checkout  � kIng19.sh
+: 1553124487:0;git reset -- kIng19.sh
+: 1553124516:0;git checkout -- kIng19.sh
+: 1553124589:0;git add kBashColor.sh
+: 1553124669:0;git ls-files -d
+: 1553124683:0;git ls-files --deleted
+: 1553124947:0;git add kIng19.sh
+: 1553125109:0;st
+: 1553125115:0;git st
+: 1553125351:0;git diff HEAD
+: 1553125388:0;git diff HEAD^^
+: 1553125393:0;git diff HEAD~2
+: 1553125423:0;git diff HEAD~1
+: 1553125452:0;git diff HEAD~3
+: 1553125530:0;git --stat
+: 1553125543:0;git diff --stat
+: 1553125646:0;git diff --stat HEAD~4
+: 1553125800:0;git-diff-last
+: 1553125813:0;git-diff-last kIng19.sh
+: 1553125908:0;git-diff-last 4Temp.vim
+: 1553126273:0;tst
+: 1553126465:0;deo myNo.log
+: 1553126641:0;git diff --stat HEAD~3
+: 1553126854:0;git tag v02
+: 1553127200:0;git stash pop
+: 1553128322:0;cp tags Tags
+: 1553128390:0;mv Tags 0tags
+: 1553128686:0;git rm --cached tags
+: 1553128813:0;git stash list
+: 1553128880:0;git diff --stat HEAD~2
+: 1553129030:0;git branch king19runner
+: 1553129055:0;h branch
+: 1553129065:0;h | branch
+: 1553129075:0;h | grep branch
+: 1553129692:0;git ls-tree
+: 1553129706:0;git ls-tree -d
+: 1553129716:0;git ls-tree -r
+: 1553129809:0;mkdir Hist
+: 1553129842:0;git add Hist
+: 1553129881:0;git diff --stat HEAD~0
+: 1553129887:0;git diff --stat HEAD~1
+: 1553130296:0;ls myPlug
+: 1553130365:0;cp -r myPlug ../../../bTest/kDot
+: 1553130434:0;cd kDot/myPlug
+: 1553130450:0;rm amake.vim
+: 1553131330:0;gsm
+: 1553131393:0;exat
+: 1553131568:0;hh git
+: 1553131575:0;hh 100
+: 1553131807:0;git mv redZshHistMar2019.sh Hist
+: 1553131824:0;git mv rootHistoryMar19.sh Hist
+: 1553132266:0;g tci -a
+: 1553132509:0;git checkout king19runner
+: 1553132878:0;vi kZshrc19.sh
+: 1553134571:0;clear
+: 1553134727:0;fzf
+: 1553134752:0;fzf python *.vim
+: 1553134764:0;fzf pyth
+: 1553134781:0;fzf *.sh
+: 1553136534:0;cd myPlug
+: 1553137373:0;exa
+: 1553137385:0;exa -
+: 1553137391:0;exa --h
+: 1553137412:0;man exa
+: 1553137722:0;exa -d
+: 1553137733:0;exa -r
+: 1553137743:0;exa -T
+: 1553138041:0;deo kZshrc19.sh
+: 1553138245:0;de kMinit.vim
+: 1553138306:0;vi 4Temp.vim
+: 1553138612:0;gco master
+: 1553138631:0;git merge king19runner
+: 1553139046:0;git mv kDEO2.vim mDEO2.vim
+: 1553139379:0;git difftool b881bb8 kZshrc19.sh
+: 1553139650:0;git branch
+: 1553139659:0;gb
+: 1553143761:0;de 4Temp.vim
+: 1553146984:0;deo 4Run.sh
+: 1553147021:0;deo 4Temp.vim
+: 1553147558:0;deo 4Temp.vim 4GitRun.sh
+: 1553150048:0;de 4GitRun.sh
+: 1553216079:0;git stash
+: 1553216098:0;de mgTester.txt
+: 1553216249:0;git commit
+: 1553216255:0;git commit a
+: 1553216443:0;git commit -a -m "Master mgTeste 2Commit"
+: 1553216605:0;git commit -a -m "King2 mgTeste 2Commit"
+: 1553217061:0;git mergetool -tool*vimdiff
+: 1553217074:0;git mergetool -tool vimdiff
+: 1553217335:0;git config global merge.tool vimdiff
+: 1553217927:0;git commit -a -m "King2 merge Master"
+: 1553218301:0;cd kDot/
+: 1553218434:0;deo gitConfigFileBSp.sh
+: 1553218748:0;deo kGitconfig.vim
+: 1553218790:0;[200~git config merge.tool vimdiff]
+: 1553218813:0;git config merge.tool vimdiff
+: 1553219791:0;git mergetool mgTester.txt
+: 1553220735:0;git commit mgTester.txt
+: 1553221141:0;deo *.orig
+: 1553222373:0;gst
+: 1553222456:0;rm *.orig
+: 1553223082:0;git ls-files
+: 1553223093:0;git ls-files -u
+: 1553223955:0;git log -- mgTester.txt
+: 1553223976:0;git log -- mg2Tester.txt
+: 1553224162:0;git log --since="since 1 day"
+: 1553224195:0;git log --since="since 1 day" -- mg2Tester.txt
+: 1553224421:0;git log --since="1 hours" -- mgTester.txt
+: 1553224434:0;git log --since="since 1 hours" -- mgTester.txt
+: 1553224440:0;git log --since="since 3 hours" -- mgTester.txt
+: 1553224451:0;git log --since="2 hours" -- mgTester.txt
+: 1553224462:0;git log --since="1 hour" -- mgTester.txt
+: 1553224563:0;g diff --stat
+: 1553224579:0;g diff --stat HEAD
+: 1553224585:0;g diff --stat HEAD~2
+: 1553224589:0;g diff --stat HEAD~5
+: 1553224608:0;g diff --stat HEAD~8
+: 1553224619:0;g diff --stat HEAD~1
+: 1553224622:0;g diff --stat HEAD~0
+: 1553224912:0;git log --shortstat
+: 1553224941:0;git log --color
+: 1553226316:0;git show-branch
+: 1553226384:0;git show-branch king2
+: 1553226938:0;vi
+: 1553226966:0;de kZshrc19.sh
+: 1553227167:0;cd red/git/bTest
+: 1553227263:0;deo mgTester.txt
+: 1553230287:0;gco king2
+: 1553230443:0;git merge master
+: 1553230462:0;git mergetool
+: 1553230675:0;gcm
+: 1553230691:0;git merge king2
+: 1553230700:0;deo aa.txt bb.txt
+: 1553234083:0;deo aa.txt bb.txt mgTester.txt
+: 1553296763:0;vim inkPreRc19.vim
+: 1553297279:0;git remote add origin https://github.com/albert4git/bTest.git
+: 1553312841:0;tig
+: 1553313102:0;tig -h
+: 1553313181:0;man tig
+: 1553314262:0;cd git/bTest/
+: 1553314386:0;git log --oneline
+: 1553314850:0;tig -- 4Notes.vim
+: 1553314954:0;git tag
+: 1553315009:0;git dif vo1..v02 | tig
+: 1553315038:0;git log | tig
+: 1553315047:0;tig log
+: 1553315811:0;tig king2
+: 1553315828:0;tig master
+: 1553316824:0;deo dodo10sel.php
+: 1553317490:0;php php10sel.php
+: 1553317704:0;deo testDO.pl
+: 1553317990:0;ls *.db
+: 1553370113:0;cd ../kDot
+: 1553371384:0;deo 4Notes.vim
+: 1553380838:0;deo connection.java
+: 1553381886:0;rm connection.class
+: 1553381921:0;java connection
+: 1553383840:0;ls *.class
+: 1553384000:0;javac JavaSQLiteExample2.java
+: 1553384052:0;javac JavaSQLiteExample.java
+: 1553384060:0;java JavaSQLiteExample
+: 1553388352:0;java hello1
+: 1553388364:0;java JavaSQLiteExample2
+: 1553388371:0;java JavaSQLiteExample1
+: 1553390380:0;mkdir jaVa
+: 1553390399:0;mv *.java jaVa
+: 1553390879:0;cp -r jaVa 4java
+: 1553390943:0;deo 4JavaNotes.vim
+: 1553391231:0;deo Makefile dodo2Select.c openDodo10.c dodo10CreateInsertSel.c openDodo10.c
+: 1553391423:0;ls jaVa
+: 1553392655:0;cd git/aTest/redVim
+: 1553392675:0;deo vimrc-Clean4-Tesaur-CtrlK-TAB-QRun-NeoC-TagBar-Cyan.vim
+: 1553392787:0;cd dotFiles/nVim
+: 1553394413:0;man clang
+: 1553394454:0;which clang
+: 1553395051:0;cp dodo2Select.c 2Sel.cpp
+: 1553397756:0;deo pythonDodo10.py
+: 1553399068:0;deo 4NotesDODO.vim
+: 1553430376:0;h | grep gcc
+: 1553430452:0;gcc -c dodo2Select.c -o dodo2Select.out
+: 1553430479:0;./dodo2Select
+: 1553430511:0;chmod +x dodo2Select.out
+: 1553430513:0;./dodo2Select.out
+: 1553433874:0;deo dodo2Select.c
+: 1553435673:0;deo ruby1SQLight.rb
+: 1553445151:0;deo tstRotate.js
+: 1553446020:0;deo 2Sel.cpp
+: 1553448135:0;cp hello1.java ../
+: 1553450860:0;deo hello1.java 2Sel.cpp ruby1SQLight.rb
+: 1553451666:0;deo kDEO3.vim
+: 1553451691:0;deo hello1.java 2Sel.cpp ruby1SQLight.rb php10sel.php
+: 1553454435:0;deo vimrc-tern.vim
+: 1553454589:0;git add vimrc-*
+: 1553455654:0;de kDEO3.vim
+: 1553456432:0;javadoc
+: 1553456462:0;wich javadoc
+: 1553456469:0;which javadoc
+: 1553456566:0;which firefox
+: 1553457058:0;cd vim-cppman
+: 1553457175:0;deo hello1.java 2Sel.cpp
+: 1553457456:0;de pdv/README.rst
+: 1553457654:0;de vim-markdown/README.md
+: 1553458134:0;deo hello1.java 2Sel.cpp pythonDodo10.py
+: 1553458760:0;de javadoc.vim/README.md
+: 1553458813:0;de javaDoc.vim/README
+: 1553459543:0;cp kDEO3.vim k4DEO.vim
+: 1553459567:0;deo kMinit.vim
+: 1553461276:0;man lcd
+: 1553461284:0;lcd
+: 1553465660:0;cd jaVa
+: 1553465741:0;[200~$java -classpath ".;sqlite-jdbc-3.7.2.jar" SQLiteJDBC]
+: 1553465770:0;java -classpath "sqlite-jdbc-3.27.2.1.jar" SQLiteJDBC
+: 1553465921:0;java -classpath "sqlite-jdbc-3.27.2.1.jar" c
+: 1553465991:0;java -classpath "sqlite-jdbc-3.27.2.1.jar" connection
+: 1553466050:0;java -classpath "sqlite-jdbc-3.27.2.1.jar" hello1
+: 1553466095:0;java -classpath ".;sqlite-jdbc-3.27.2.1.jar" hello1
+: 1553466100:0;java -classpath ".sqlite-jdbc-3.27.2.1.jar" hello1
+: 1553466142:0;java -classpath ".:sqlite-jdbc-3.27.2.1.jar" connection
+: 1553467283:0;vim
+: 1553469032:0;deo kMinit.vim k4DEO.vim
+: 1553471766:0;rm JavaSQL*
+: 1553473794:0;deo hello1.java
+: 1553474010:0;mv tstRotate.js jsRotate.js
+: 1553474062:0;mv tst2Rotate.html jsHtRotate.html
+: 1553474084:0;deo test*
+: 1553474274:0;deo php*
+: 1553474353:0;de *.sh
+: 1553474496:0;rm select2Dodo10 openDodo10 dodo10
+: 1553474516:0;rm dodo10CIS
+: 1553474556:0;mc
+: 1553474646:0;mv dodo10sel.php php4SQliDODO.php
+: 1553474660:0;rm *.out
+: 1553474680:0;rm -r jaVa
+: 1553474783:0;deo hello1.java *.c
+: 1553475501:0;cd ..ls
+: 1553475502:0;a
+: 1553475554:0;./doCheck
+: 1553475739:0;./doSel
+: 1553475743:0;q
+: 1553476243:0;./do2Sel
+: 1553476350:0;deo connection.java JavaSQLiteExample.java
+: 1553476637:0;java -classpath ".:sqlite-jdbc-3.27.2.1.jar" SQLiteJDBCc
+: 1553476650:0;rm *.class
+: 1553476681:0;deo ja*
+: 1553476857:0;cd 4java
+: 1553476929:0;java -classpath ".:sqlite-jdbc-3.27.2.1.jar" hello1
+: 1553476975:0;[200~java -classpath ".:sqlite-jdbc-3.27.2.1.jar" SQLiteJDBC]
+: 1553477084:0;java -classpath ".:sqlite-jdbc-3.27.2.1.jar" jaConSQLi
+: 1553477093:0;java -classpath ".:sqlite-jdbc-3.27.2.1.jar" jaConInSQLi
+: 1553477125:0;deo SQLiteJDBC.java
+: 1553477224:0;java -classpath ".:sqlite-jdbc-3.27.2.1.jar" SQLiteJDBC
+: 1553477280:0;cp SQLiteJDBC.* ../
+: 1553477295:0;cp sqlite-jdbc-3.27.2.1.jar ../
+: 1553477323:0;cp 4JavaNotes.sh ../
+: 1553477499:0;xx
+: 1553478207:0;mv 4java ../
+: 1553478725:0;ls 4java
+: 1553478760:0;mv 4java ../444java
+: 1553478903:0;rm 0tags
+: 1553478924:0;git rm mg*
+: 1553526264:0;git show
+: 1553526324:0;git show | tig
+: 1553526360:0;git show kIng19.sh | tig
+: 1553526372:0;git show kIng19.sh
+: 1553526428:0;git diff --base kIng19.sh
+: 1553526574:0;git show HEAD^:kIng19.sh
+: 1553526593:0;git show HEAD^
+: 1553526606:0;git diff HEAD^:kIng19.sh
+: 1553526621:0;git diff HEAD^
+: 1553526670:0;git diff HEAD^ king2
+: 1553526682:0;git diff HEAD king2
+: 1553526725:0;git diff HEAD:kDEO3.vim king2
+: 1553526909:0;git diff --base kIng19.sh | tig
+: 1553559257:0;mkdir RubySolar
+: 1553559264:0;cd RubySolar
+: 1553559340:0;deo ruTstSolar.rb
+: 1553559582:0;solargraph config
+: 1553560604:0;ls fzf.vim
+: 1553560648:0;deo mdTST.md
+: 1553560668:0;deo README.md
+: 1553561366:0;deo run.sh cSwitch.c
+: 1553561562:0;./ddSwitch
+: 1553562413:0;cd ../bTest/RubySolar
+: 1553562425:0;vi README.md
+: 1553563303:0;cd sqlite-jdbc-tutorial-master
+: 1553563312:0;mkdir target
+: 1553563349:0;ls target
+: 1553563363:0;cd target
+: 1553563373:0;java SQLiteJDBCExample
+: 1553563399:0;deo 4JavaNotes.sh
+: 1553563438:0;java -classpath ".:sqlite-jdbc-3.27.2.1.jar" SQLiteJDBC\
+
+: 1553563488:0;cd ../sqlite-jdbc-tutorial-master/lib
+: 1553563540:0;java -classpath ".:../lib/sqlite-jdbc-3.20.0.jar" SQLiteJDBC\
+
+: 1553563571:0;java -classpath ".:../lib/sqlite-jdbc-3.20.0.jar" SQLiteJDBCExample\
+
+: 1553563602:0;java -classpath ".:../lib/sqlite-jdbc-3.20.0.jar" SQLiteJDBCExample enroll\
+
+: 1553563824:0;cd BashSimple
+: 1553563861:0;deo addition.sh affect.sh archive-and-encrypt.sh armstrong.sh
+: 1553564895:0;history | javac
+: 1553564903:0;history | grep javac
+: 1553564911:0;h
+: 1553564992:0;history | grep "java"
+: 1553565005:0;history | grep "java -cp"
+: 1553571000:0;cp aa.txt aa.txt.bac
+: 1553572061:0;de bASH19.sh
+: 1553600743:0;deo kIng19.sh
+: 1553691396:0;git push
+: 1553742098:0;ls bash
+: 1553742194:0;ls BashSimple
+: 1553742215:0;ls DODO10
+: 1553742291:0;de b2Bash.sh bASH19.sh
+: 1553744115:0;mkdir PPatch
+: 1553744124:0;cd PPatch
+: 1553744359:0;deo cc.txt
+: 1553744412:0;diff cc.txt dd.txt
+: 1553744558:0;deo logPatchDay.sh
+: 1553744749:0;diff -Naur cc.txt dd.txt>|myfixes.patch
+: 1553744905:0;cd -r PPatch P2Patch
+: 1553744911:0;cp -r PPatch P2Patch
+: 1553745133:0;cd P2Patch
+: 1553745183:0;patch -p1 < ../myfixes.patch
+: 1553745201:0;patch -p1 < myfixes.patch
+: 1553745508:0;patch -p1 --dry-run < myfixes.patch
+: 1553745550:0;patch --dry-run dd.txt < myfixes.patch
+: 1553746407:0;cp ../PPatch/cc.txt cc2.txt
+: 1553746411:0;cp ../PPatch/cc.txt cc3.txt
+: 1553746415:0;cp ../PPatch/cc.txt cc4.txt
+: 1553746439:0;patch --dry-run cc.txt < myfixes.patch
+: 1553746459:0;ca cc2.txt
+: 1553747648:0;cat cc2.txt
+: 1553747680:0;patch cc.txt < myfixes.patch
+: 1553747708:0;patch -R cc.txt < myfixes.patch
+: 1553747714:0;cat cc.txt
+: 1553947416:0;apt-get install cppman
+: 1553947512:0;deo k4DEO.vim
+: 1553947748:0;ll
+: 1553948082:0;cd .config/nvim/plugged
+: 1553948774:0;cd vim-agriculture
+: 1553948790:0;mv README.md cpREADME.md
+: 1553948970:0;de vim-cppman/
+: 1553956445:0;node app.js
+: 1553959292:0;composer global require mkusher/padawan\
+
+: 1553960829:0;ls c
+: 1553960994:0;fzf php
+: 1553961600:0;cd bin
+: 1553962809:0;ls snap
+: 1553962895:0;ls snap/intellij-idea-community
+: 1553962904:0;ls snap/firefox
+: 1553962909:0;ls snap/firefox/common
+: 1553962919:0;ls snap/firefox/172
+: 1553962923:0;ls snap/firefox/179
+: 1553962951:0;deo
+: 1553963236:0;deo php4SQliDODO.php
+: 1553963516:0;deo hello.cpp
+: 1553964353:0;cd home/red
+: 1553964374:0;locate padawan
+: 1553964484:0;which padawan
+: 1553966592:0;composer global require mkusher/padawan
+: 1553966666:0;cd .config/composer
+: 1553966679:0;lc vendor
+: 1553966971:0;ls vendor
+: 1553968167:0;which composer
+: 1553972461:0;deo php1SQli.php
+: 1553974018:0;cd .config/nvim/plugged/tern_for_vim
+: 1553974154:0;npm install
+: 1553976851:0;de php4SQliDODO.php
+: 1553977503:0;man tern
+: 1554010589:0;ls /usr/local/bin/
+: 1554017645:0;look the DEO3.vim
+: 1554017653:0;look the kDEO3.vim
+: 1554017663:0;look Plug kDEO3.vim
+: 1554017671:0;look Plug k4DEO.vim
+: 1554017683:0;look "" k4DEO.vim
+: 1554022846:0;cd ../DODO10
+: 1554022866:0;hsHello.hs
+: 1554022871:0;de hsHello.hs
+: 1554023557:0;deo hsHello.hs
+: 1554024369:0;de k4DEO.vim
+: 1554027885:0;cp k4DEO.vim k5DEO.vim
+: 1554028428:0;de app.js
+: 1554028493:0;deo hello.cpp cDodoCIS.c
+: 1554029917:0;deo perl1SQLi.pl sh1SQLi.sh hsHello.hs main.go ruby1SQLight.rb
+: 1554031185:0;de pythonDodo10.py
+: 1554032325:0;de pythonDodo10.py hello.cpp
+: 1554033434:0;deo perl1SQLi.pl
+: 1554035643:0;mkdir jsReact
+: 1554035683:0;mv jsReact ../
+: 1554035782:0;cd jsReact
+: 1554035797:0;create-react-app hello-world
+: 1554036693:0;which ternjs
+: 1554036697:0;which tern
+: 1554036710:0;ls hello-world
+: 1554036758:0;ls hello-world/node_modules/\
+c
+: 1554036762:0;ls hello-world/public/
+: 1554036776:0;cd hello-world/public
+: 1554036783:0;deo index.html
+: 1554036861:0;cd src
+: 1554037343:0;cd ~/.config/nvim/plugged/tern_for_vim
+: 1554037442:0;de git/bTest/DODO10
+: 1554037454:0;cd git/bTest/DODO10
+: 1554037463:0;de ternTry2Install.vim
+: 1554037586:0;de App.js
+: 1554038611:0;cd git/jsReact
+: 1554038619:0;cd hello-world
+: 1554039721:0;node --version
+: 1554039732:0;node -V
+: 1554039737:0;node -v
+: 1554040218:0;ReactHowtoAndroid.txt
+: 1554040224:0;de ReactHowtoAndroid.txt
+: 1554042325:0;yarn add react-scripts react-dom react-native-web react-art react-router-native react-router-dom
+: 1554042802:0;yarn
+: 1554046947:0;de jsRotate.js
+: 1554051439:0;de vimrc-*
+: 1554051638:0;rm '[quickrun output]'
+: 1554051682:0;mkdir wimrc
+: 1554051694:0;mv wimrc-* wimrc
+: 1554051713:0;deo vimrc-*
+: 1554052507:0;de App.js serviceWorker.js
+: 1554053958:0;cd go
+: 1554056195:0;de app.js jsRotate.js main.go php4SQliDODO.php hello.cpp jaHelloCl.java run.sh
+: 1554059795:0;cd ../git/bTest/kDot
+: 1554059823:0;de .vim-bookmarks
+: 1554060362:0;cd ~/.config/nvim/plugged/
+: 1554060397:0;cd vim-brightest
+: 1554060510:0;de ruby1SQLight.rb
+: 1554114708:0;de hello.cpp
+: 1554115583:0;cd c.vim
+: 1554141876:0;cd AwesomeProject
+: 1554142007:0;expo init AwesomeProject
+: 1554142252:0;angularJS.vim
+: 1554145081:0;bleachbit
+: 1554145826:0;h 100 | vim -
+: 1554145927:0;ls src
+: 1554146044:0;react-native run-android
+: 1554146207:0;de de cSwitch.c
+: 1554226253:0;de README
+: 1554226582:0;cd .config/nvim/plugged/c-support
+: 1554245295:0;de vim-pseudocl/README.md
+: 1554245629:0;de csapprox/doc/CSApprox.txt
+: 1554317424:0;de k5DEO.vim kMinit.vim k4DEO.vim
+: 1554398673:0;python -m pydoc
+: 1554398687:0;python -m pydoc func
+: 1554398694:0;python -m pydoc include
+: 1554398703:0;python -m pydoc for
+: 1554399975:0;de pythonDodo10.py cSwitch.c supportC.vim
+: 1554402984:0;de pythonDodo10.py cSwitch.c
+: 1554438233:0;de ranger.vim/README.md
+: 1554439034:0;man ranger
+: 1554454413:0;cp ~/git/aTest/dotFiles/nVim/logoTextObjct.vim .
+: 1554454494:0;cp ~/git/aTest/dotFiles/nVim/logo* .
+: 1554472519:0;ls OLD
+: 1554472533:0;ls wimrc
+: 1554473489:0;ls b*
+: 1554473512:0;mkdir BASH
+: 1554473536:0;git add
+: 1554473751:0;git mv b* BASH
+: 1554473775:0;ls BASH
+: 1554473803:0;git mv bASH19.sh BASH
+: 1554473819:0;git mv b2Bash.sh BASH
+: 1554473833:0;git mv bBackUp1BASH.sh BASH
+: 1554473860:0;git mv bCheat1BASH.sh BASH
+: 1554473873:0;git mv bOooBash.sh BASH
+: 1554473966:0;git mv FILE1 BASH
+: 1554473970:0;git mv FILE2 BASH
+: 1554473999:0;git mv wimrc/ WIMRC
+: 1554474038:0;cat example.txt
+: 1554474089:0;git mv network.26-03-19.info.txt BASH
+: 1554474108:0;cat outputFindFoo.txt
+: 1554474129:0;git mv outputFindFoo.txt BASH
+: 1554474146:0;cat noKomodo.vim
+: 1554474194:0;git mv noKomodo.vim BASH
+: 1554474235:0;git mv example.txt BASH
+: 1554474255:0;cat all_c_files.txt
+: 1554474271:0;git mv all_c_files.txt BASH
+: 1554474363:0;cat vimrc-tern.vim
+: 1554475131:0;de k5DEO.vim kDEO3.vim inkPreRc19.vim
+: 1554486353:0;ls *.md
+: 1554486463:0;ls P2Patch
+: 1554486473:0;ls PPatch
+: 1554486501:0;ls RubySolar
+: 1554486517:0;de RubySolar/README.md
+: 1554486714:0;mv RubySolar/README.md DODO10
+: 1554486730:0;cp README.md README.txt
+: 1554486739:0;de README.md
+: 1554488809:0;cp -r ~/git/aTest/dotFiles/inkWim .
+: 1554488819:0;ls inkWim
+: 1554488843:0;cd inkVim
+: 1554488850:0;cd inkWim
+: 1554490921:0;de wimrc-QRun-NeoC-TagBar-Cyan.vim wimConf500.vim vanila-rc.vim
+: 1554495519:0;de ../k5DEO.vim wimConf500.vim vanila-rc.vim
+: 1554497825:0;de wimrc-QRun-NeoC-TagBar-Cyan.vim wimConf500.vim vanila-rc.vim ../k5DEO.vim
+: 1554498663:0;de ../k5DEO.vim wimrc-avesome.vim vim-ScratchInk.vim
+: 1554546866:0;h 100
+: 1554546886:0;h | vim
+: 1554546961:0;h | ls
+: 1554546968:0;h | grep ls
+: 1554546976:0;h | grep vim
+: 1554546993:0;h | grep chmod
+: 1554547027:0;cd git/bTest
+: 1554547079:0;de kMinit.vim k5DEO.vim
+: 1554549329:0;vimdiff kDEO3.vim kDEO3.vim
+: 1554549363:0;vimdiff kDEO3.vim k5DEO.vim
+: 1554549940:0;cd .
+: 1554549956:0;cd bTest
+: 1554549964:0;git branch king2
+: 1554550187:0;git checkout king2
+: 1554550236:0;ls kDot
+: 1554551826:0;man ncdu
+: 1554551858:0;ncdu
+: 1554551910:0;man mtr
+: 1554553856:0;cd bTest/DODO10
+: 1554553870:0;ccat openDodo10
+: 1554553880:0;ccat openDodo10.c
+: 1554553902:0;ccat pythonDodo10.py
+: 1554555101:0;cd ../kDot/
+: 1554555141:0;git checkout master
+: 1554556069:0;mkdir VIFM
+: 1554556076:0;cd VIFM
+: 1554556087:0;git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors
+: 1554556160:0;cd ~/.config/vifm
+: 1554556167:0;ls colors
+: 1554556388:0;cd colors
+: 1554556456:0;cd ~/git/VIFM/vifm-colors-master/
+: 1554556491:0;cp *.vim ~/.config/vifm/colors
+: 1554556505:0;cp *.vifm ~/.config/vifm/colors
+: 1554558475:0;de angularJS.vim
+: 1554558530:0;cd 2run/AwesomeProject
+: 1554558546:0;npm start
+: 1554559090:0;expo start
+: 1554561683:0;trans hallo
+: 1554561923:0;dict "how are you?"
+: 1554562193:0;dict -d fd-eng-sp "how are you?"
+: 1554562217:0;dict -d fd-eng-spa "how are you?"
+: 1554562235:0;dict -d fd-eng-spa "hello Miss"
+: 1554562240:0;dict -d fd-eng-spa "hello"
+: 1554562248:0;dict -d fd-eng-spa "pc"
+: 1554562256:0;dict -d fd-eng-spa "sun"
+: 1554562271:0;dict -d fd-eng-de "how are you?"
+: 1554562305:0;dict -d fd-eng-deu "how are you?"
+: 1554562317:0;dict -d fd-eng-deu "how are you? today i am fine"
+: 1554562324:0;dict -d fd-eng-deu "how are you? today"
+: 1554562332:0;dict -d fd-eng-deu "how are you now"
+: 1554562340:0;dict -d fd-eng-deu "how are you"
+: 1554562679:0;deepl translate -t 'FR' "como esta"
+: 1554562744:0;bash
+: 1554564500:0;sudo su
+: 1554564747:0;deepl translate -h
+: 1554564936:0;echo "what are you doing" | translate-bin -s google -f en -t fr
+: 1554565117:0;trans நன௃�றி
+: 1554566869:0;echo 'How do you do?' | deepl translate -t 'DE'
+: 1554566897:0;deepl translate -t 'EN' "how are you"
+: 1554567296:0;dict -d fd-eng-deu "how"
+: 1554567312:0;dict -d fd-eng-fra "how"
+: 1554571279:0;so
+: 1554571348:0;dict -d moby-thesaurus "how"
+: 1554571358:0;dict -d moby-thesaurus "hello"
+: 1554571377:0;dict -d moby-thesaurus "wave"
+: 1554571405:0;dict -d moby-thesaurus "apple"
+: 1554571423:0;dict -d moby-thesaurus "show"
+: 1554571443:0;dict -d moby-thesaurus "address"
+: 1554571468:0;dict -D
+: 1554572637:0;de k5DEO.vim inkPreRc19.vim
+: 1554574372:0;man date
+: 1554590926:0;cd ~/git/aTest/dotFiles/nVim
+: 1554591063:0;de nTabularize.vim nTips.vim nTipsDoc.vim
+: 1554591863:0;cd ~/git/bTest/DODO10
+: 1554592467:0;mkdir TIPS
+: 1554592497:0;cp ~/git/aTest/dotFiles/nVim/nTips* .
+: 1554592529:0;cd
+: 1554592536:0;cd -
+: 1554592620:0;de
+: 1554643091:0;git push -u origin master
+: 1554659747:0;de cSwitch.c
+: 1554660743:0;de cSwitch.c supportC.vim
+: 1554660915:0;de k5DEO.vim timeTest.txt
+: 1554663928:0;de nTipsDoc.vim nTipsCPP.vim nTipsBUFF.vim
+: 1554664716:0;de nTipsCalender.vim nTipsCompl.vim nTipsFUNC.vim
+: 1554676312:0;vi k5DEO.vim
+: 1554676439:0;cat k5DEO.vim
+: 1554676540:0;git status .
+: 1554676596:0;git log k5DEO.vim
+: 1554676870:0;git checkout -- k5DEO.vim
+: 1554680668:0;mv Tbuf Tbuf.vim
+: 1554686717:0;git rm 'cat >> Tbuf'
+: 1554742203:0;de TIPS/nTipsTemp.vim k5DEO.vim
+: 1554745007:0;de TIPS/nTipsSRound.vim k5DEO.vim
+: 1554752019:0;de k5DEO.vim pBOX.vim
+: 1554757380:0;de k5DEO.vim
+: 1554765146:0;cd git/aTest/dotFiles/nVim
+: 1554765420:0;cp nCheet* ~/git/bTest/kDot/TIPS
+: 1554765451:0;cp nDoc* ~/git/bTest/kDot/TIPS
+: 1554765474:0;cp nFuf.vim ~/git/bTest/kDot/TIPS
+: 1554765502:0;cp nG* ~/git/bTest/kDot/TIPS
+: 1554765546:0;cp gitBOX ~/git/bTest/kDot/TIPS
+: 1554765560:0;cp goBOX.todo ~/git/bTest/kDot/TIPS
+: 1554765586:0;cp nTabularize.vim ~/git/bTest/kDot/TIPS
+: 1554765647:0;cp nPy* ~/git/bTest/kDot/TIPS
+: 1554765725:0;cp nTMUX.vim ~/git/bTest/kDot/TIPS
+: 1554765745:0;cp nU* ~/git/bTest/kDot/TIPS
+: 1554765808:0;cp nZ* ~/git/bTest/kDot/TIPS
+: 1554765864:0;cp pWrapWordWith.py ~/git/bTest/kDot/TIPS
+: 1554765882:0;cp rubyBOX.todo ~/git/bTest/kDot/TIPS
+: 1554766130:0;git mv timeStmpTest.txt stmpTest.txt
+: 1554766144:0;git rm timeTest.txt
+: 1554766225:0;git mv Tbuf.vim zbuf.vim
+: 1554767090:0;cp lTest.lua ~/git/bTest/DODO10
+: 1554767119:0;ccat test.py
+: 1554767134:0;ccat tst.vim
+: 1554767345:0;ccat lTest.lua
+: 1554767390:0;ccat 0vimL0scrap.vim
+: 1554767444:0;cp 0vimL0scrap.vim ~/git/bTest/kDot
+: 1554767494:0;cp myfig* ~/git/bTest/DODO10
+: 1554770712:0;deo k5DEO.vim
+: 1554770884:0;cp usr_43VimL.vim ~/git/bTest/kDot/TIPS
+: 1554770908:0;cp 0vimL0scrap.vim ~/git/bTest/kDot/TIPS
+: 1554770931:0;cp scratchIt.vim ~/git/bTest/kDot/TIPS
+: 1554770974:0;ccat xvim-start.vim
+: 1554771255:0;cp xvim-start.vim ~/git/bTest/kDot/TIPS
+: 1554771323:0;cp pSYMPY01.py ~/git/bTest/DODO10
+: 1554771365:0;ccat perlTry.pl
+: 1554771381:0;cp perlTry.pl ~/git/bTest/DODO10
+: 1554771458:0;cp nVim* ~/git/bTest/kDot/TIPS
+: 1554771644:0;de MemoryUvsMasU.vim mDarkSameln.vim
+: 1554771842:0;de pSilverPyVim.py pSimple.py
+: 1554771920:0;cp pSimple.py ~/git/bTest/DODO10
+: 1554771960:0;cp n3Neo.vim ~/git/bTest/kDot/TIPS
+: 1554771987:0;cp nMake* ~/git/bTest/kDot/TIPS
+: 1554772104:0;ls WIMRC
+: 1554843071:0;de k5DEO.vim kMinit.vim
+: 1554845348:0;cd TIPS
+: 1554845356:0;de nUNite.vim
+: 1554845388:0;git rm nUNITE.vim
+: 1554848471:0;git add .
+: 1554848478:0;git commit -a
+: 1554850422:0;deo kMinit.vim k5DEO.vim 4SortOut.vim
+: 1554920562:0;cd neovim-vifm
+: 1554920576:0;vim README.rst
+: 1554925341:0;l
+: 1554925365:0;vifm Zeal
+: 1554925380:0;vifm Zeal yelp
+: 1554926366:0;cd vifm
+: 1554926380:0;de vifmrc
+: 1554926851:0;mv vifmrc ~/git/bTest/kDot
+: 1554926896:0;mv vifmrc kVifmrc.vim
+: 1554930225:0;de kIng19.sh
+: 1554932080:0;cd ..
+: 1554932107:0;ls spell
+: 1554932132:0;cd spell
+: 1554932144:0;de en*
+: 1554933524:0;cd ~/.vim/spell
+: 1554933623:0;cd /usr/share/vim/vim80/spell
+: 1554933698:0;de en.utf-8.spl
+: 1554934653:0;cp -r ~/git/aTest/dotFiles/DICT .
+: 1554934662:0;ls DICT
+: 1554934679:0;deo kMinit.vim k5DEO.vim logoABB.vim
+: 1554935046:0;cd ~/git/bTest/kDot
+: 1554935467:0;exit
+: 1555016477:0;deo kMinit.vim k5DEO.vim
+: 1555021197:0;h | grep cd
+: 1555021223:0;h | grep tig
+: 1555021234:0;help | grep tig
+: 1555021241:0;history | grep tig
+: 1555021878:0;cd DODO10
+: 1555021879:0;deo kDot/k5DEO.vim 50%
+: 1555023134:0;cd kDot
+: 1555023137:0;deo kMinit.vim k5DEO.vim kBank21.yml
+: 1555023295:0;tmuxinator start kBank21
+: 1555023466:0;deo 50%
+: 1555024360:0;git status
+: 1555025369:0;mux start bank21
+: 1555025381:0;mux start bank21.yml
+: 1555025845:0;tail /var/log/mysql
+: 1555025846:0;mysql -u root -p mypass
+: 1555025847:0;git log
+: 1555025849:0;ipython
+: 1555025852:0;vifm
+: 1555027255:0;exa -rT
+: 1555029986:0;tail /var/log/mysql/error.log
+: 1555030093:0;hh
+: 1555031643:0;cd git/bTest/kDot
+: 1555031811:0;deo kBank21.yml
+: 1555031990:0;mux start kBank21
+: 1555032353:0;deo kDot/k5DEO.vim
+: 1555032355:0;mysql -uroot -pmypass
+: 1555032359:0;cd ~/.config/nvim/
+: 1555032360:0;cd ~/.config/nvim/plugin
+: 1555032361:0;fish
+: 1555032361:0;cd DODO10/
+: 1555032361:0;cd /home/red/git/bTest
+: 1555032367:0;tig status
+: 1555032368:0;deo DODO10/cSwitch.c
+: 1555033328:0;...
+: 1555033334:0;pwd
+: 1555033349:0;history | grep zplug
+: 1555033370:0;la
+: 1555033420:0;cd .zplug
+: 1555033436:0;ls bin
+: 1555033450:0;ls doc
+: 1555033467:0;ls repos
+: 1555033501:0;ls repos/junegunn/fzf-bin/
+: 1555033839:0;cd '/home/red/bZplug0402/repos/robbyrussell/oh-my-zsh/plugins/battery'
+: 1555035479:0;c
+: 1555035481:0;ls
+: 1555035745:0;deo kBank21.yml kZshrc19.sh
+: 1555036536:0;tmux kill-server
+: 1555078281:0;deo kMinit.vim
+: 1555083200:0;so
+: 1555083233:0;deo kMinit.vim
+: 1555083362:0;so

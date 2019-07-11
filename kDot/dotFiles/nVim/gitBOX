@@ -1,0 +1,95 @@
+$ git remote add origin git@github.com:username/new_repo
+$ git push -u origin master
+
+Actually, the first line of the instructions will say
+
+$ git remote add origin https://github.com/username/new_repo
+
+But I use git@github.com:username/new_repo rather than https://github.com/username/new_repo, as the former is for use with ssh (if you set up ssh as I mentioned in “Your first time”, then you won’t have to type your password every time you push things to github). If you use the latter construction, you’ll have to type your github password every time you push to github.
+
+git log --pretty=format:"%h %s" 1.0..HEA
+git log -1 HEAD^^^
+HEAD^~2
+HEAD~1^^
+HEAD~3
+
+===================================================================================================
+===================================================================================================
+
+Let's create pretend repo to understand how converting to git-lfs works
+
+git init .
+touch README.md
+git add README.md
+git commit -m "initial"
+git tag one
+echo hi > plain.txt
+ls > foo.bin
+git add plain.txt foo.bin
+git commit -m "Add some files"
+git tag two
+echo bye > plain.txt
+ls > bar.bin
+ls > foo.bin
+git add plain.txt foo.bin bar.bin
+git commit -m "Update and add another file"
+git tag three
+echo bye >> plain.txt
+ls > foo.bin
+git add plain.txt foo.bin
+git commit -m "Update some more"
+git tag four
+
+Now lets decide we want *.bin files to be turned into lfs objects.
+
+git lfs track '*.bin'
+git add .gitattributes
+git commit -m "Track .bin files"
+git tag not_working
+===================================================================================================
+===================================================================================================
+
+
+color.ui
+
+Git automatically colors most of its output, but there’s a master switch if you don’t like this behavior. To turn off all Git’s colored terminal output, do this:
+
+$ git config --global color.ui false
+
+The default setting is auto, which colors output when it’s going straight to a terminal, but omits the color-control codes when the output is redirected to a pipe or a file.
+
+You can also set it to always to ignore the difference between terminals and pipes. You’ll rarely want this; in most scenarios, if you want color codes in your redirected output, you can instead pass a --color flag to the Git command to force it to use color codes. The default setting is almost always what you’ll want.
+color.*
+
+If you want to be more specific about which commands are colored and how, Git provides verb-specific coloring settings. Each of these can be set to true, false, or always:
+
+color.branch
+color.diff
+color.interactive
+color.status
+
+In addition, each of these has subsettings you can use to set specific colors for parts of the output, if you want to override each color. For example, to set the meta information in your diff output to blue foreground, black background, and bold text, you can run
+
+$ git config --global color.diff.meta "blue black bold"
+
+
+===================================================================================================
+===================================================================================================
+
+
+or you can edit your ~/.gitconfig file to add these lines:
+
+[merge]
+  tool = extMerge
+[mergetool "extMerge"]
+  cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  trustExitCode = false
+[diff]
+  external = extDiff
+
+After all this is set, if you run diff commands such as this:
+
+$ git diff 32d1776b1^ 32d1776b1
+
+===================================================================================================
+===================================================================================================

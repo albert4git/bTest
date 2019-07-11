@@ -1,0 +1,7 @@
+gcc test.c -l sqlite3
+gcc -o testDB test.c -l sqlite3
+$./a.out
+Opened database successfully
+
+gcc -o version version.c -lsqlite3 -std=c99
+

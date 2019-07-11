@@ -1,0 +1,40 @@
+Agile is mainstream, while Bash has no support for it (lacking in unit testing
+capabilities, libraries, OO, modularity, linting, introspection, logging,
+metaprograming; almost impossible to refactor without breaking something)
+
+python -m Orange.canvas
+
+A's
+cursor.execute("INSERT INTO atest (ID, r1, r2, r3) VALUES (4, 10, 11, 12))
+cursor.execute("INSERT INTO atest (ID, r1, r2, r3) VALUES ('4', '10', '11', '12')")
+cursor.execute("INSERT INTO atest (`ID`, `r1`, `r2`, `r3`) VALUES ('4', '10', '11', '12'))
+
+The MySQLdb driver for DB-API provides an
+insert_id( ) cursor method for getting
+sequence values. Use it with the cursor object through which you execute a query that
+generates an
+AUTO_INCREMENT value:
+cursor = conn.cursor ( )
+cursor.execute ("""
+INSERT INTO insect (name,date,origin)
+VALUES('moth','2001-09-14','windowsill')
+""")
+
+seq = cursor.insert_id ( )
+
+cursor.execute("INSERT INTO atest (ID, r1, r2, r3) VALUES ('4', '10', '11', '12')")
+seq = cursor.insert_id ( )
+
+
+cursor = conn.cursor ( )
+cursor.execute ("""
+UPDATE booksales SET copies = LAST_INSERT_ID(copies+1)
+WHERE title = 'Bulldozer'
+""")
+
+import cymysql
+conn = cymysql.connect(host='127.0.0.1', user='root', passwd='', db='database_name')
+cur = conn.cursor()
+cur.execute('select foo, bar from baz')
+for r in cur.fetchall():
+   print(r[0], r[1])

@@ -18,28 +18,19 @@
 
 ##########################################################################################
 #rsync -r dir1/ dir2
- -av ~/git/bTest/ /media/red/124Black/git/bTest/
-rsync -av ~/git/bTest/ /media/red/64black/git/bTest/
 
-##########################################################################################
-rsync -av  /media/red/124Black/git/ /media/red/64black/git/
-##########################################################################################
-rsync -av  /media/red/124Black/vVideo/ /media/red/pink/vVideo/
-##########################################################################################
-rsync -av  /media/red/124Black/git/ /media/red/pink/git/
-##########################################################################################
+
+
+
 
 #==============================================================
-#-Dry-Run
-rsync -anv ~/git/bTest/ /media/red/124Black/git/bTest/
-#==============================================================
-
-rsync -anv ~/.config/ /media/red/124Black/git/dotRedCong
 #rsync -anv dir1/ dir2
-rsync -anv ~/git/bTest/ /media/red/124Black/git/bTest
-rsync -av ~/git/bTest/ /media/red/124Black/git/bTest
-rsync -av ~/.config/ /media/red/124Black/git/dotRedConfig
-rsync -av ~/.vim/ /media/red/124Black/git/dotRedVim
+# rsync -anv ~/.config/ /media/red/124Black/git/dotRedCong
+# rsync -anv ~/git/bTest/ /media/red/124Black/git/bTest
+# rsync -av ~/git/bTest/ /media/red/124Black/git/bTest
+# rsync -av ~/.config/ /media/red/124Black/git/dotRedConfig
+# rsync -av ~/.vim/ /media/red/124Black/git/dotRedVim
+#==============================================================
 
 TAG="MinitTrim3"
 TAG="Trim3Dict"
@@ -57,10 +48,12 @@ NW=$(date +"%m-%d-%Y-%H-%M-%S")
 cp -r ~/git/bTest/ /media/red/yellow/BBBLock/"bTest$NW$TAG"
 pwd
 
-
+#==============================================================
 cp -r ~/git/bTest/ /media/red/A5A1-FBC4/BBBLOCK/"bTest$NW$TAG"
 cp -r ~/git/bTest/ /media/red/0A942CAB942C9B69/BB9BLOCK/"bTest$NW"
 cp -r ~/git/bTest/ /media/red/F1E8-C819/BBFBLOCK/"bTest$NW"
+
+#==============================================================
 
 #cp ~/.profile kong18/"18-profile.$NW"
 
@@ -86,8 +79,10 @@ rm ~/.xsession
 rm ~/.fvwm/config
 
 #------------------------------------------------------------------------------------------
+rm ~/.fvwm/config
+ln -s ~/git/bTest/kDot/kConfigFVWM.sh      ~/.fvwm/config
+#------------------------------------------------------------------
 ln -s ~/git/bTest/kDot/kXsession         ~/.xsession
-ln -s ~/git/bTest/kDot/kConfigFVWM       ~/.fvwm/config
 
 ln -s ~/git/bTest/kDot/kBank21.yml        ~/.tmuxinator/kBank21.yml
 ln -s ~/git/bTest/kDot/kBank20.yml        ~/.tmuxinator/kBank20.yml
@@ -162,3 +157,44 @@ ln -b ~/git/bTest/kDot/kVifmrc.vim        ~/.config/vifm/vifmrc
 #ln -b king18/18-gitconfig.AB     ~/.gitconfig
 #ln -b king18/18-gitignore.AB     ~/.gitignore
 #ls -a ~/
+
+#################################################################################
+#################################################################################
+# rsync -av ~/git/bTest/ /media/red/64black/git/bTest/
+# rsync -av  /media/red/124Black/git/ /media/red/64black/git/
+#################################################################################
+
+#################################################################################
+###---------------------------------------------------------------------------###
+#################################################################################
+
+#---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
+#---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
+
+#!!!===1.)===-Dry--Run-========================================================
+rsync -anv ~/git/bTest/ /media/red/124Black/git/124Test/
+#!!!===2.)=====================================================================
+rsync -avz --delete ~/git/bTest/ /media/red/124Black/git/124Test/
+#!!!===3.)=====================================================================
+rsync -avz --delete ~/git/bTest/ /media/red/pink/125Black/git/pinkTest/
+
+grep CRON /var/log/syslog
+#---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
+#---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
+
+#################################################################################
+###---------------------------------------------------------------------------###
+#---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
+
+tar --listed-incremental=/media/backup/snapshot.file -cJpf /media/backup/home-backup-`date +%d-%m-%Y`.tar.xz /home/user/{Documents,Downloads,Pictures,Music,.config,.Xresources,.xinitrc,.i3,.mozilla,.zshrc}
+#---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
+
+tar --listed-incremental=/media/red/124Black/SNAR/snapshot.file -cJpf /media/red/124Black/SNAR/home-backup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/Downloads
+tar --listed-incremental=/media/red/124Black/SNAR/bTestSnap.file -cJpf /media/red/124Black/SNAR/bTestBackup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/git/bTest/
+
+#---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
+
+tar --listed-incremental=/dev/null -xvf home-backup-08-01-07-07-2019.tar.xz
+tar --listed-incremental=/dev/null -xvf home-backup-* -C ../TMP/
+
+#---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!

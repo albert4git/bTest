@@ -218,10 +218,10 @@ AddToFunc Resize-or-Raise
 # Global Behavior Commands                                                    #
 ###############################################################################
 
-ClickTime 750
-DeskTopSize 3x3
-EdgeResistance 250
-EdgeScroll 0 0
+# ClickTime 750
+# DeskTopSize 3x3
+# EdgeResistance 250
+# EdgeScroll 0 0
 
 
 ###############################################################################
@@ -263,36 +263,43 @@ Style Fvwm* Sticky
 Style Fvwm* !Title
 Style Fvwm* WindowListSkip
 
-###############################################################################
-# Module: FvwmPager                                                           #
-###############################################################################
-Style FvwmPager BackColor #FF2211
-Style FvwmPager BorderWidth 1
-Style FvwmPager FixedPosition
-Style FvwmPager FixedSize
-Style FvwmPager HandleWidth 1
-Style FvwmPager HilightBack #11FF11
-# Style FvwmPager StaysOnTop
-
-*FvwmPager: Back #666666
-*FvwmPager: Fore #444444
-*FvwmPager: Font none
-*FvwmPager: Balloons All
-*FvwmPager: BalloonBack #ffffff
-*FvwmPager: BalloonBorderColor #000000
-*FvwmPager: BalloonBorderWidth 1
-*FvwmPager: BalloonFont xft:Sans:Normal:size=8:antialias=True
-*FvwmPager: BalloonFore #000000
-*FvwmPager: BalloonYOffset +2
-#*SensorDock: Geometry 140x300-1750+825
-*FvwmPager: Geometry 50x100-10+800
-*FvwmPager: Geometry 50x100-1700+1
-*FvwmPager: Geometry 50x100+800+800
-*FvwmPager: Geometry 60x120-500+500
-*FvwmPager: Geometry 50x100-1700+100
-
-*FvwmPager: Hilight #111111
-*FvwmPager: SmallFont 5x8
+##################################################################################
+#### Module: FvwmPager                                                           #
+##################################################################################
+###Style FvwmPager BackColor #FF2211
+###Style FvwmPager BorderWidth 1
+###Style FvwmPager FixedPosition
+###Style FvwmPager FixedSize
+###Style FvwmPager HandleWidth 1
+###Style FvwmPager HilightBack #11FF11
+###Style FvwmPager StaysOnTop
+#### Style FvwmPager StaysOnTop
+###*FvwmPager: Back #666666
+###*FvwmPager: Fore #444444
+###*FvwmPager: Font none
+###*FvwmPager: Balloons All
+###*FvwmPager: BalloonBack #ffffff
+###*FvwmPager: BalloonBorderColor #000000
+###*FvwmPager: BalloonBorderWidth 1
+###*FvwmPager: BalloonFont xft:Sans:Normal:size=8:antialias=True
+###*FvwmPager: BalloonFore #000000
+###*FvwmPager: BalloonYOffset +2
+####*SensorDock: Geometry 140x300-1750+825
+#### *FvwmPager: Geometry 50x100-10+800
+#### *FvwmPager: Geometry 50x100-1700+1
+#### *FvwmPager: Geometry 50x100+800+800
+#### *FvwmPager: Geometry 60x120-500+500
+#### *FvwmPager: Geometry 50x100-1700+100
+#### links oben noSw *FvwmPager: Geometry 50x100+500+200
+#### tomuch oben *FvwmPager: Geometry 50x100-10-50
+####links mite oben *FvwmPager: Geometry 50x100+100+200
+#### Sw-Ok-FFox-noOk *FvwmPager: Geometry 50x100-1700+100
+#### SENSOR Sw-Ok-FFox-noOk *SensorDock: Geometry 140x300-1750+825
+#### Sw-Ok-FFox-noOk *FvwmPager: Geometry 50x100-1700+1
+###*FvwmPager: Hilight #111111
+###*FvwmPager: SmallFont 5x8
+###*FvwmPager: Geometry 50x100-1700+100
+#######################################################################################
 
 #######################################################################################
 DestroyModuleConfig SimpleButtons: *
@@ -470,9 +477,9 @@ DestroyModuleConfig RightPanel:*
 *RightPanel: (10x20, Frame 0)
 
 *RightPanel: (25x20, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 13, Frame 0)
-*RightPanel: (25x20, Id desk1, Title "A", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 13, Frame 0)
-*RightPanel: (25x20, Id desk2, Title "B", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 13, Frame 0)
-*RightPanel: (25x20, Id desk3, Title "C", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 13, Frame 0)
+*RightPanel: (25x20, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 13, Frame 0)
+*RightPanel: (25x20, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 13, Frame 0)
+*RightPanel: (25x20, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 13, Frame 0)
 *RightPanel: (10x20, Frame 0)
 *RightPanel: (5x80, Frame 0)
 *RightPanel: (110x80, Swallow FvwmPager 'Module FvwmPager *', Frame 0)

@@ -19,7 +19,6 @@
 # Valgrind
 # line_profiler and the memory_profiler projects.
 #=============================================================
-export EDITOR="vim"
 export ZPLUG_HOME=$HOME/.zplug
 # zplug initialization
 [[ ! -f $ZPLUG_HOME/init.zsh ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
@@ -30,7 +29,6 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # export MANPATH="$MANPATH:$HOME/.config/local/share/man"
 # export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.config/local/lib"
 #=============================================================
-setopt vi
 setopt histignorealldups
 setopt autocd
 setopt autopushd pushdminus pushdsilent pushdtohome pushdignoredups
@@ -51,6 +49,8 @@ setopt autolist
 setopt auto_resume
 unset beep
 set nobeep
+setopt vi
+set editing-mode vi
 #=============================================================
 # Dircolors
 LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
@@ -81,7 +81,18 @@ alias pyconda='/media/red/124Black/3conda/bin/python3'
 #=============================================================
 export LS_COLORS
 #=============================================================
-
+#export GREP_OPTIONS='--color=auto'
+alias grep= 'grep--color=auto'
+# Add some colour to LESS/MAN pages
+###-DEPRICATED-
+# export LESS_TERMCAP_mb=$'\E[01;31m'
+# export LESS_TERMCAP_md=$'\E[01;33m'
+# export LESS_TERMCAP_me=$'\E[0m'
+# export LESS_TERMCAP_se=$'\E[0m' 
+# export LESS_TERMCAP_so=$'\E[01;42;30m'
+# export LESS_TERMCAP_ue=$'\E[0m'
+# export LESS_TERMCAP_us=$'\E[01;36m'
+#=============================================================
 
 alias ....='cd ../../..'
 alias ...='cd ../..'
@@ -121,13 +132,136 @@ alias ca='ccat'
 alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias kdeo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
+alias fde='de $(fzf --height 40%)'
 alias deless='deonvim NONE -u ~/git/bTest/kDot/kLess.vim'
+#export EDITOR="vim"
+export EDITOR="deonvim NONE -u ~/git/bTest/kDot/kMinit.vim"
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias b5deo='deo64nvim NONE -u /media/red/124Black/git/bTest/kDot/bMinit.vim'
 alias b124='deo64nvim NONE -u /media/red/124Black/git/bTest/kDot/bMinit.vim'
-#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+###########################################################################################
+# Setup fzf
+#--------------
+if [[ ! "$PATH" == */home/red/.fzf/bin* ]]; then
+  export PATH="$PATH:/home/red/.fzf/bin"
+fi
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/home/red/.fzf/shell/completion.zsh" 2> /dev/null
 
+# Key bindings
+#---------------
+source "/home/red/.fzf/shell/key-bindings.zsh"
+###########################################################################################
+#export FZF_DEFAULT_OPTS='--height=70% --preview="ccat {}" --preview-window=right:60%:wrap'
+export FZF_DEFAULT_OPTS='--height=70% --preview="ccat {}" --preview-window=up:3:wrap'
+#---------------------
+#export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color light --margin 1,1 --preview-window=right:50%:wrap --bind 'F2:toggle-preview'"
+#export FZF_DEFAULT_OPTS="--inline-info --color=light,bg+:2,info:27,fg:32 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
+#export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color light --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
+#export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color light --margin 1,1 --preview-window=right:50%:wrap --bind 'F2:toggle-preview'"
+#export FZF_DEFAULT_OPTS="--inline-info --color=light,bg+:2,info:27,fg:32 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
+#---------------------
+#---------------------
+#--PINK fg:5------
+#---------------------
+export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:5,fg+:7,hl:1,hl+:32,prompt:1,spinner:2,pointer:5 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
+#---------------------
+#--CYAN fg:80----
+#---------------------
+export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:80,fg+:7,hl:1,hl+:32,prompt:1,spinner:2,pointer:5 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
+#---------------------
+#--CYAN fg:80----
+#---------------------
+export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:80,fg+:7,hl:1,hl+:32,prompt:1,spinner:2,pointer:1,header:2,marker:5,info:1 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
+#---------------------
+#---------------------
+#---------------------
+
+#--bind "F2:toggle-preview"
+#export FZF_DEFAULT_OPTS='--no-height --no-reverse'
+#export FZF_TMUX=1
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='rg --files'
+#==============================================================
+#export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'
+#export FZF_ALT_C_COMMAND="cd ~/; bfs -type d -nohidden | sed s/^\./~/"  
+#export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
+#export FZF_COMPLETION_TRIGGER='~~'
+#--!!! BINGO A-C !!!--
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+#==============================================================
+
+#export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+###############################################################
+#alias ffl='fzf --preview="less -f {}|ccze"'
+alias fff='fzf --preview="head -$LINES {}"'
+alias ffc='fzf --preview="ccat --color=always {}"'
+# Press F1 to open the file with less without leaving fzf
+# Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
+alias ff1='fff --bind "f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
+alias ff2='fff --bind "f1:execute(deonvim NONE -u ~/git/bTest/kDot/kMinit.vim {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
+alias ff3='fff --bind "f1:execute(vi {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
+alias ffv='vim $(fzf)'
+alias ffe='de $(fff)'
+#==============================================================
+ffd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf --preview 'tree -C {} | head -200' ) &&
+  cd "$dir"
+}
+#==============================================================
+
+fft() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf --preview 'tree -C {} | head -200') && cd "$dir"
+}
+#==============================================================
+ffa() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+#==============================================================
+# fh - repeat history
+ffh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+#==============================================================
+# fshow - git commit browser
+ffgshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+#==============================================================
+ffglog() {  
+  hash=$(git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |  fzf | awk '{print $1}')
+  echo $hash | xclip
+  echo $hash
+}
+###############################################################
+# fkill - kill processes - list only the ones you can kill. Modified the earlier script.
+fkill() {
+    local pid 
+    if [ "$UID" != "0" ]; then
+        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+    else
+        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    fi  
+
+    if [ "x$pid" != "x" ]
+    then
+        echo $pid | xargs kill -${1:-9}
+    fi  
+}
 
 ###############################################################
 ### dict -d fd-eng-spa "how"
@@ -205,7 +339,7 @@ ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 #==========================================================================================
 #HISTFILE=~/.histfile
 HISTSIZE=9000
-SAVEHIST=1717
+SAVEHIST=9000
 
 #==========================================================================================
 zplug "lib/completion",   from:oh-my-zsh
@@ -268,7 +402,6 @@ if ! zplug check --verbose; then
     fi
 fi
 #==========================================================================================
-zplug load --verbose
 
 
 #==========================================================================================
@@ -277,37 +410,81 @@ zplug load --verbose
 # zplug 'plugins/vi-mode', from:oh-my-zsh
 #==========================================================================================
 zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
+
 #======================================================
 # red:dirty, white:ahead, and green:clean.
 SPACESHIP_CHAR_COLOR_SUCCESS="green"
 SPACESHIP_CHAR_COLOR_FAILURE="red"
 SPACESHIP_CHAR_COLOR_SECONDARY="yellow"
 
-#==========================================
-# SPACESHIP_BATTERY_SHOW="always"
-# SPACESHIP_USER_SHOW="true"
-# SPACESHIP_USER_SHOW="always"
-# SPACESHIP_USER_PREFIX="user:"
-# SPACESHIP_USER_COLOR="red"
+SPACESHIP_DIR_SHOW="true"
+SPACESHIP_DIR_COLOR="green"
+SPACESHIP_DIR_TRUNC=7 
+
+#======================================================================
+# SPACESHIP_DIR_SHOW true Show directory section
+# SPACESHIP_DIR_PREFIX in· Prefix before current directory
+# SPACESHIP_DIR_SUFFIX $SPACESHIP_PROMPT_DEFAULT_SUFFIX Suffix after
+# current directory
+# SPACESHIP_DIR_TRUNC 3 Number of folders of cwd to show in prompt, 0 to
+# show all
+# SPACESHIP_DIR_TRUNC_PREFIX Prefix before cwd when it's truncated. For
+# example …/ or .../, empty to disable
+# SPACESHIP_DIR_TRUNC_REPO true While in git repo, show only root
+# directory and folders inside it
+# SPACESHIP_DIR_COLOR cyan Color of directory section
+# SPACESHIP_DIR_LOCK_SYMBOL 
+# write-protected (requires powerline patched font)
+# SPACESHIP_DIR_LOCK_COLOR red Color for the lock symbol
+#======================================================================
+
+SPACESHIP_BATTERY_SHOW="true"
+SPACESHIP_BATTERY_SHOW="always"
+SPACESHIP_BATTERY_COLOR="red"
+
+SPACESHIP_USER_SHOW="true"
+SPACESHIP_USER_SHOW="always"
+SPACESHIP_USER_PREFIX="user:"
+SPACESHIP_USER_COLOR="red"
+
 #======================================================
-# spaceship_vi_mode_enable="true"
-# SPACESHIP_VI_MODE_SHOW="true"
-# SPACESHIP_VI_MODE_COLOR="cyan"
-# SPACESHIP_VI_MODE_INSERT="InMODE"
-# SPACESHIP_VI_MODE_NORMAL="NMODE"
+spaceship_vi_mode_enable="true"
+SPACESHIP_VI_MODE_SHOW="true"
+#======================================================
+SPACESHIP_VI_MODE_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
+SPACESHIP_VI_MODE_NORMAL="[n]"
+SPACESHIP_VI_MODE_INSERT="[i]"
+SPACESHIP_VI_MODE_COLOR="yellow"
+
+#======================================================
+SPACESHIP_TIME_SHOW="true" 
+SPACESHIP_TIME_PREFIX="at:"
+SPACESHIP_TIME_COLOR="blue"
+# SPACESHIP_TIME_FORMAT false Custom date formatting [67]ZSH date formats
+# SPACESHIP_TIME_12HR false Format time using 12-hour clock (am/pm)
 #======================================================
 SPACESHIP_GIT_STATUS_SHOW="true"
-SPACESHIP_GIT_BRANCH_SUFFIX=":"
+SPACESHIP_GIT_BRANCH_SUFFIX=":::"
 SPACESHIP_GIT_STATUS_COLOR="cyan"
 SPACESHIP_GIT_STATUS_COLOR="red"
-SPACESHIP_DIR_COLOR="green"
 
 #===============================================================
 SPACESHIP_PROMPT_ORDER=(
+  time
+  user
+  battery
   vi_mode       # Vi-mode indicator (Disabled)
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
+  package
+  node
   pyenv         # Pyenv section
+  conda
+  venv
+  docker
+  julia
+  golang
+  ruby
   exec_time     # Execution time
   line_sep      # Line break
   jobs          # Background jobs indicator
@@ -315,10 +492,15 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 
+
+
+
 #===FIN==STOP==============================================================================
 zplug check || zplug install
-zplug load
+#zplug load
+zplug load --verbose
 
+set -o vi
 #==========================================================================================
 # zplug "junegunn/fzf-bin", \
 #     as:command, \
@@ -391,8 +573,8 @@ zplug load
 ### cd git/vim82/vim/src
 ### ./configure --prefix =/home/red/82vim
 ### ./configure --prefix =/media/red/124Black/git/mySoft
-./configure --prefix =/media/red/124Black/git/mySoft/vim81/
-./configure --prefix =/media/red/124Black/git/mySoft/vim81/
+# ./configure --prefix =/media/red/124Black/git/mySoft/vim81/
+# ./configure --prefix =/media/red/124Black/git/mySoft/vim81/
 
 ### Unix: PUTTING vimrc IN /etc
 ### Some Linux distributions prefer to put the global vimrc file in /etc, and the

@@ -1,0 +1,5 @@
+CREATE TABLE `dodoTest` (
+	`ID`	INTEGER,
+	`r1`	INTEGER,
+	`r2`	INTEGER
+);

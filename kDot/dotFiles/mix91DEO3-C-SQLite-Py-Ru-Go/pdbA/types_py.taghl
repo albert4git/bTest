@@ -1,0 +1,5 @@
+syn keyword CTagsMember clearText appendToDisplay createWidgets replaceText __init__ calculateExpression
+syn keyword CTagsGlobalVariable f app v t calculator a x
+syn keyword CTagsFunction find_max find_hcf absMax findMin main n31 find_lcm absMin absVal
+syn keyword CTagsClass Application
+

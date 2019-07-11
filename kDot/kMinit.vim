@@ -3,7 +3,7 @@
 " Last Modified: 19 Feb 2019
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Mi 12 Jun 2019 11:21:31  CEST
+" Last Modified:      Sa 06 Jul 2019 03:37:24  CEST
 "===============================================================================================================
 "===============================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -273,6 +273,9 @@
         " source ~/git/aTest/dotFiles/nVim/myPlug/NNV.vim
         " let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
         ":::::::::::::::::::::::::::-=3=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        " NNNVVVV
+         let g:nnv_search_paths = ['/media/red/124Black/']
+        source ~/git/bTest/kDot/LabVimPlug/NNV.vim
 
         autocmd! User Oblique       normal! zz
         autocmd! User ObliqueStar   normal! zz

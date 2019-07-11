@@ -1,0 +1,2621 @@
+: 1549217210:0;vi .zshrc
+: 1549218631:0;cd .oh-my-zsh
+: 1549218640:0;cd themes
+: 1549218795:0;ni .zsh-theme
+: 1549220589:0;mkdir zSH
+: 1549220616:0;ni oh-my-zsh.info
+: 1549221840:0;cd .oh-my-zsh/plugins
+: 1549221946:0;echo ("hello word")
+: 1549221953:0;echo ("hello word");
+: 1549222078:0;echo "hello word"
+: 1549222115:0;echo "hello word \n"
+: 1549222511:0;echo "hell word \n"
+: 1549222581:0;echo "oh my plugin \n \n"
+: 1549222814:0;echo "tahshe"
+: 1549222839:0;cd git/aTest/
+: 1549223323:0;echo "tashe"
+: 1549223372:0;battery_level_gauge
+: 1549223607:0;man cp
+: 1549223758:0;top 
+: 1549224597:0;hsi man
+: 1549224734:0;t
+: 1549224992:0;ccat oh-my-zsh.vim
+: 1549227940:0;nvim ninitOkt18.vim
+: 1549228050:0;ni antigenPlusOMZ.conf
+: 1549228181:0;cd ../nVim
+: 1549228186:0;ni ninitOkt18.vim
+: 1549228507:0;nu completZSH.vim
+: 1549228514:0;ni completZSH.vim
+: 1549229644:0;fzf -g cuku$
+: 1549229649:0;fzf -q cuku$
+: 1549229671:0;fzf -q vim$
+: 1549230394:0;git clone https://github.com/zdharma/fast-syntax-highlighting.git \\
+  ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+: 1549230528:0;echo "epafania"
+: 1549230535:0;echo "epafania \n"
+: 1549230774:0;while {(echo "grep")}\
+
+: 1549231723:0;curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+: 1549231813:0;mv .zshrc zshrcOMZ
+: 1549233122:0;lear
+: 1549233216:0;ni zshrcOMZ
+: 1549234480:0;echo "koshkina"
+: 1549234879:0;nvim .zshrc
+: 1549238808:0;mkdir fiSH
+: 1549238833:0;ni config01.fish
+: 1549238840:0;nvim config01.fish
+: 1549249807:0;top -v
+: 1549250247:0;ni .zsh_history
+: 1549280007:0;cd git/aTest/dotFiles
+: 1549280082:0;cd pyLabGitPdbPythonMode27
+: 1549280100:0;dirs -v:
+: 1549280181:0;cd git/aTest/dataPull
+: 1549280361:0;cd ../git
+: 1549280462:0;/g/a/
+: 1549280861:0;cd dotFiles/zSH
+: 1549280914:0;git add johanZshrc
+: 1549281003:0;git add 0*
+: 1549281011:0;git commit --all
+: 1549281608:0;d
+: 1549281914:0;hsi
+: 1549282098:0;r
+: 1549282126:0;r dir
+: 1549282126:0;dirs
+: 1549282139:0;r pw
+: 1549282502:0;print -l bakBukLocal/**/*
+: 1549282574:0;lsa bakBukLocal/**/*
+: 1549282848:0;print -l bakBukLocal/**/*(/)
+: 1549282915:0;ls -l bakBukLocal/**/*(/)
+: 1549283126:0;lsl dotFiles/**/*(Lk+2)
+: 1549283140:0;lsl dotFiles/**/*(Lk+9)
+: 1549312973:0;cp -r .zplug zplug0402
+: 1549313100:0;ni .zshrc
+: 1549314622:0;lsl dotFiles/**/*(Lk+99)
+: 1549314639:0;lsl **/*(Lk+99)
+: 1549314699:0;ls **/*(Lk+99)
+: 1549315376:0;ls -l bakBukLocal/**/*
+: 1549315698:0;ls -l **/*
+: 1549319628:0;ls -l **/*.md
+: 1549319650:0;ls -l *
+: 1549319671:0;ls -l **
+: 1549320124:0;cd ~/git/aTest/dotFiles
+: 1549320676:0;cd ~/
+: 1549323390:0;tree zsh_demo
+: 1549323477:0;tree -su zsh_demo
+: 1549323524:0;tree -s zsh_demo
+: 1549323909:0;tree -tsu zsh_demo
+: 1549323918:0;tree -tsu zsh_demo/**(/)
+: 1549323939:0;tree -tsu zsh_demo/*
+: 1549323974:0;tree -tsu zsh_demo/**/*
+: 1549324002:0;tree -tsu zsh_demo/**
+: 1549324333:0;ls zsh_demo/*
+: 1549324355:0;ls zsh_demo/**
+: 1549326333:0;git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9k
+: 1549326361:0;ls -l zsh_demo/**/*(L0)
+: 1549327236:0;ls -l zsh_demo/**/*(om[1,3])
+: 1549327371:0;ls -l zsh_demo/**/*.
+: 1549327389:0;ls -l zsh_demo/**/*(Lm-2)
+: 1549328165:0;print -l zsh_demo/*/*(e:'[[ ! -e $REPLY/malta ]]':)
+: 1549328332:0;print -l zsh_demo/*/*(e:'[[  -e $REPLY/malta ]]':)
+: 1549328371:0;print -l zsh_demo/**/*(e:'[[  -e $REPLY/malta ]]':)
+: 1549328389:0;print -l zsh_demo/**/*.txt(e:'[[  -e $REPLY/malta ]]':)
+: 1549328398:0;print -l zsh_demo/**/*.(e:'[[  -e $REPLY/malta ]]':)
+: 1549328418:0;ls print -l zsh_demo/**/*.txt(e:'[[  -e $REPLY/malta ]]':)
+: 1549328446:0;ls zsh_demo
+: 1549328487:0;ls -l zsh_demo/**/*.txt(e:'[[  -e $REPLY/malta ]]':)
+: 1549328494:0;ls -l zsh_demo/**/*(e:'[[  -e $REPLY/malta ]]':)
+: 1549328569:0;ls zsh_demo/**/*
+: 1549328581:0;ls zsh_demo/**/*.txt
+: 1549328730:0;ls print -l zsh_demo/**/*(e:'[[  -e $REPLY/malta ]]':)
+: 1549328814:0;print -l zsh_demo/data/europe/poland/*.txt(:t)
+: 1549328822:0;print -l zsh_demo/data/europe/poland/*.txt(:t:r)
+: 1549328831:0;print -l zsh_demo/data/europe/poland/*.txt(:e)
+: 1549328895:0;print -l zsh_demo/data/europe/poland/*.txt(:h)
+: 1549328901:0;print -l zsh_demo/data/europe/poland/*.txt(:h:h)
+: 1549328919:0;print -l zsh_demo/data/europe/poland/*.txt(:h:h:h)
+: 1549328929:0;print -l zsh_demo/data/europe/poland/*.txt(:h:h:h:h)
+: 1549332527:0;du -sk .
+: 1549332543:0;./**
+: 1549332556:0;du -sk ./**
+: 1549332579:0;du -sk ./**(/)
+: 1549332599:0;du -sk ./**/*(/)
+: 1549332611:0;du -sk ./**/**(/)
+: 1549333020:0;vi
+: 1549333036:0;ni
+: 1549334002:0;dirs -p
+: 1549334483:0;cd ~1
+: 1549334500:0;cd ~2
+: 1549334600:0;cd ~+1
+: 1549334634:0;cd ~/Documents/LanCore
+: 1549334663:0;cd ~+2
+: 1549334908:0;ls -d **
+: 1549334928:0;ls -d **(/)
+: 1549334940:0;ls -d ./**(/)
+: 1549334951:0;ls -d ./**/*(/)
+: 1549335260:0;ls -d ./**/*
+: 1549335453:0;my_file=(zsh_demo/data/europe/poland/*.txt([1]))
+: 1549335468:0;print -l $my_file
+: 1549335495:0;print -l $my_file(:h)
+: 1549335572:0;for file in zsh_demo/data/**/income.txt ; do\
+ output_dir=${file:h:s/data/calculations/}\
+ country=${output_dir:t}\
+ output_file="${output_dir}/${country}_max_income.txt"\
+ echo "The max salary is $RANDOM dollars" >| $output_file\
+done
+: 1549335588:0;grep "" zsh_demo/calculations/**/*_max_income.txt
+: 1549336148:0;echo
+: 1549336315:0;ex
+: 1549336373:0;echo ${my_variable:s/bc/BC/ \n}
+: 1549336386:0;echo ${my_variable:s/bc/BC/}
+: 1549336447:0;my_variable="path/abcd"
+: 1549336452:0;echo ${my_variable:s_/_._}
+: 1549336473:0;my_variable="aaa"
+: 1549336488:0;echo ${my_variable:gs/a/A/}
+: 1549336604:0;dirs -v
+: 1549336626:0;cd ~/git/aTest/dotFiles/zSH/poligon
+: 1549337171:0;# Let's say somebody gave you these updated files\
+# and told you to replace the old ones\
+echo $RANDOM > zsh_demo/africa_malawi_population_2014.txt\
+echo $RANDOM > zsh_demo/asia_nepal_income_2014.txt\
+echo $RANDOM > zsh_demo/europe_malta_literacy_2014.txt\
+
+: 1549337191:0;echo $RANDOM >| zsh_demo/africa_malawi_population_2014.txt\
+
+: 1549337198:0;echo $RANDOM >| zsh_demo/asia_nepal_income_2014.txt\
+
+: 1549337206:0;echo $RANDOM >| zsh_demo/europe_malta_literacy_2014.txt\
+
+: 1549337222:0;for file in zsh_demo/*.txt; do\
+ file_info=(${(s._.)file:t})\
+ continent=$file_info[1]\
+ country=$file_info[2]\
+ data=$file_info[3]\
+\
+ mv -f $file zsh_demo/data/${continent}/${country}/${data}.txt\
+done
+: 1549337240:0;grep "" zsh_demo/**/*(.mm-5)
+: 1549337266:0;grep "" zsh_demo/**/*(.mm-5) | fzf
+: 1549337295:0;echo $file
+: 1549337327:0;my_array=(a b c d)
+: 1549337334:0;echo ${(j.-.)my_array}
+: 1549337419:0;ls -h
+: 1549337445:0;echo ${(j_._)my_array}
+: 1549337482:0;ls zsh_demo/data/asia/laos/population.txt
+: 1549337512:0;ls -l zsh_demo/data/asia/laos/population.txt
+: 1549337729:0;echo a b c
+: 1549337797:0;print -1 a b c
+: 1549337830:0;print -l print -l a b c
+: 1549338006:0;print -l a b c
+: 1549338255:0;ls ~/git/aTest/dotFiles
+: 1549338300:0;ls -l ~/git/aTest/dotFiles
+: 1549338768:0;ls zsh_demo/data/europe/malta/literacy.txt
+: 1549338814:0;awk '$1 > 3' zsh_demo/data/europe/malta/literacy.txt
+: 1549366751:0;cp zshUsersZshAutosugestionBinKey.vim tZshUsersZshAutosugestionBinKey.vim
+: 1549366771:0;mv zwishenCode.vim tZwishenCode.vim
+: 1549366811:0;rm zshUsersZshAutosugestionBinKey.vim
+: 1549377356:0;04zshrc
+: 1549377361:0;ni 04zshrc
+: 1549390907:0;mv zplugReadMe.md tZplugReadMe.md
+: 1549390911:0;ni zshrcFeb2019
+: 1549390981:0;cd zSH
+: 1549392074:0;cd ../zSH
+: 1549415770:0;
+: 1549415123:0;cd git/4exa
+: 1549415141:0;cd aTest
+: 1549415179:0;cd dotFiles
+: 1549416392:0;cd nVim
+: 1549417670:0;his
+: 1549418222:0;echo "krasnopol"
+: 1549424652:0;lss
+: 1549427042:0;cd /home/red/git/aTest/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+: 1549747350:0;bash
+: 1555036572:0;exa
+: 1555036618:0;ll
+: 1555036787:0;lsc
+: 1555037024:0;ls plugins
+: 1555037512:0;tmux kill-session
+: 1555037529:0;mux start kBank21
+: 1555037589:0;cd DODO10/
+: 1555037590:0;cd ~/.config/nvim/plugged/
+: 1555037591:0;cd /home/red/git/bTest
+: 1555037591:0;cd ~/.config/nvim/
+: 1555037591:0;de DODO10/cSwitch.c
+: 1555037591:0;cd ~/.zplug/repos/robbyrussell/oh-my-zsh/
+: 1555037592:0;cd ~/.zplug/repos/zsh-users/
+: 1555037592:0;de kDot/k5DEO.vim
+: 1555080424:0;cd .config/nvim/spell
+: 1555080444:0;curl -O "http://ftp.vim.org/pub/vim/runtime/spell/en.utf-8.spl\
+ls\
+la
+: 1555080466:0;curl -O "http://ftp.vim.org/pub/vim/runtime/spell/en.utf-8.spl .
+: 1555081136:0;dict -D
+: 1555100934:0;exal -l
+: 1555100939:0;fc
+: 1555106275:0;cp ~/Music/*.spl
+: 1555106280:0;cp ~/Music/*.spl .
+: 1555106314:0;cp ~/Music/*.sug .
+: 1555107361:0;vi de.utf-8.sug
+: 1555107375:0;vi de.utf-8.spl
+: 1555107555:0;exa -l
+: 1555107606:0;ls -lh
+: 1555107677:0;cd ~/.vim/spell
+: 1555107730:0;deo kMinit.vim k5DEO.vim
+: 1555116603:0;cd ~/Videos/Lex/asccalc-master
+: 1555116702:0;cd simple-lexical-analyzer-master
+: 1555116712:0;flex -o file.c file.l
+: 1555120907:0;[200~function! ExampleFunction(arg1, arg2)
+: 1555120919:0;python << endPython
+: 1555121111:0;tmux ls
+: 1555121158:0;tmux a -t bank21B
+: 1555193183:0;cd DODO10
+: 1555193373:0;cd ../kDot
+: 1555193381:0;cd BASH
+: 1555193427:0;de bCheat1BASH.sh b2Bash.sh bOooBash.sh
+: 1555209824:0;cd ~/.local/share/nvim/site/
+: 1555209828:0;ls autoload
+: 1555209856:0;cd spell
+: 1555216496:0;git show-branch
+: 1555254262:0;git reflog
+: 1555254297:0;tig reflog
+: 1555254325:0;hh | grep tig
+: 1555254437:0;ps aux | grep videos
+: 1555254764:0;deo kMinit.vim
+: 1555257863:0;cd ~/git/aTest/dotFiles/nVim
+: 1555257890:0;de nMakeInstallVim82.vim nMake.vim
+: 1555259662:0;v
+: 1555259683:0;ls OLD
+: 1555259709:0;lsl
+: 1555259722:0;xx
+: 1555259880:0;git mv BASH/ LabBASH
+: 1555259926:0;git mkdir LabVim
+: 1555259985:0;mkdir LabVimL
+: 1555260004:0;mkdir LabPy
+: 1555260037:0;mkdir LabSciPy
+: 1555260069:0;mkdir LabC
+: 1555260075:0;mkdir LabCPP
+: 1555260238:0;mkdir LabPuDB
+: 1555260362:0;git mv 0vimL0scrap.vim LabVimL
+: 1555260391:0;mkdir LabGit
+: 1555260412:0;ls myPlug
+: 1555260478:0;git mv myPlug/ LabVimPlug
+: 1555260685:0;git mv TIPS/ LabTIPS
+: 1555260730:0;git mv inkWim/ LabInkWim
+: 1555260744:0;cd DICT
+: 1555260806:0;cp -r ~/.config/nvim/spell .
+: 1555260813:0;ls spell
+: 1555260868:0;mv spell deoSpell
+: 1555260936:0;cat 4GitRun.sh
+: 1555261307:0;mkdir LabGO
+: 1555261653:0;mkdir LabJAVA
+: 1555261807:0;ls P2Patch
+: 1555261823:0;ls PPatch
+: 1555261830:0;ls RubySolar
+: 1555261891:0;git mv 4GitRun.sh LabGit
+: 1555261946:0;cat mopOptic.vim
+: 1555261956:0;q
+: 1555262001:0;git add
+: 1555263994:0;cat zbuf.vim
+: 1555264997:0;git log --oneline
+: 1555265340:0;cd LabGit
+: 1555265354:0;de 4GitRun.sh
+: 1555265507:0;git --shortstat
+: 1555265542:0;git diff --shortstat
+: 1555265569:0;git diff --shortstat HEAD~2
+: 1555265585:0;git diff --stat HEAD~2
+: 1555265602:0;git diff --stat HEAD^
+: 1555265612:0;git diff --stat HEAD~1
+: 1555265650:0;git log --shortstat
+: 1555265708:0;git diff --stat HEAD~5
+: 1555265727:0;git diff --stat HEAD~5 k5DEO.vim
+: 1555265748:0;git diff --stat HEAD~5 *.txt
+: 1555268404:0;gst
+: 1555268439:0;tig status
+: 1555268533:0;kdeo kMinit.vim
+: 1555276393:0;cd git/aTest/dotFiles/nVim
+: 1555276407:0;cd pdbA
+: 1555276483:0;cp 50calculator.py ~/git/bTest/kDot/LabPuDB
+: 1555276523:0;cp absMin.py ~/git/bTest/kDot/LabPuDB
+: 1555276913:0;mv 50calculator.py 50calc.py
+: 1555276936:0;de 50calc.py
+: 1555276968:0;cp 50calc.py 50calculator.py
+: 1555277949:0;cd Videos/Lex/asccalc-master
+: 1555278037:0;./asccalc
+: 1555278620:0;kdeo kMinit.vim kBank21.yml
+: 1555287870:0;de fibonacci.py
+: 1555288113:0;python3 fibonacci_doctest.py
+: 1555289779:0;de fibonacci*
+: 1555289882:0;python3 fibonacci_unittest.py
+: 1555290042:0;python3 fibonacci_unittest2.py
+: 1555290556:0;python3 upperCase.py
+: 1555325115:0;cd LabC
+: 1555325147:0;ls *.c
+: 1555325160:0;ls cEX1
+: 1555325210:0;cd cEX1
+: 1555325241:0;de 5clockMe.c clac5e.c
+: 1555325317:0;cp ../../DODO10/cStrgCp.c .
+: 1555325328:0;de cStrgCp.c
+: 1555361771:0;cd ../LabPuDB
+: 1555361828:0;mv 50* ../LabPy
+: 1555361846:0;cat absMin.py
+: 1555361880:0;mv absMin.py ../LabPy
+: 1555361937:0;mkdir fib* PyFib
+: 1555361963:0;mv fib* PyFib
+: 1555361992:0;cat upperCase.py
+: 1555362108:0;cat absMax.py
+: 1555362142:0;cat abs.py
+: 1555362167:0;de abs.py
+: 1555368677:0;mv upperCase.py upperCaseTest.py
+: 1555369209:0;cd LabPuDB
+: 1555369226:0;de primes.py test_primes.py
+: 1555449958:0;python3 run_primes.py
+: 1555449982:0;ls PyFib
+: 1555450066:0;mkdir PrimesLogAndConf
+: 1555450117:0;cp primes.py Primes
+: 1555450141:0;cp run_primes.py PrimesLogAndConf
+: 1555450163:0;cp test_primes.py PrimesLogAndConf
+: 1555451059:0;mv PrimesLogAndConf LogAndConfPrimes
+: 1555451183:0;de Makefile
+: 1555451388:0;ls Primes
+: 1555451404:0;rm -r Primes
+: 1555451421:0;cp primes.py LogAndConfPrimes
+: 1555454444:0;ccat check1_primes.log
+: 1555456364:0;cd LogAndConfPrimes
+: 1555456409:0;ccar D:\\Logs\\PyLogs\\20190417000733.log
+: 1555456418:0;ccat D:\\Logs\\PyLogs\\20190417000733.log
+: 1555459740:0;rm *000*
+: 1555459748:0;rm *00*
+: 1555461037:0;ccat InPlayLog20190417011823.log
+: 1555461510:0;ccat InPlayLog20190417023759.log
+: 1555461534:0;ccat InPlayLog20190417023029.log
+: 1555461721:0;ccat InPlayLog20190417024144.log
+: 1555461925:0;ccat InPlayLog20190417024504.log
+: 1555462059:0;ccat InPlayLog20190417024725.log
+: 1555462643:0;ccat InPlayLog20190417025310.log
+: 1555463082:0;ccat InPlayLog20190417030424.log
+: 1555463483:0;ccat InPlayLog20190417031100.log
+: 1555468947:0;de InPlayLog20190417.log
+: 1555469550:0;tail InPlayLog20190417.log
+: 1555470593:0;ccat test_primes.py
+: 1555470653:0;python test_primes.py
+: 1555470767:0;python test_primes.py | ccat
+: 1555470885:0;py test_primes.py
+: 1555470977:0;ca InPlayLog20190417.log
+: 1555471486:0;watch "tail -f | ccat" InPlayLog20190417.log
+: 1555471536:0;watch "tail -f" InPlayLog20190417.log
+: 1555471732:0;watch "less +F" InPlayLog20190417.log
+: 1555471784:0;less +F InPlayLog20190417.log
+: 1555473133:0;ccat test_primes.py | less -R
+: 1555473178:0;ccat InPlayLog20190417.log | less +F
+: 1555473217:0;watch "ccat" InPlayLog20190417.log
+: 1555473243:0;ccat InPlayLog20190417.log
+: 1555540814:0;cd ../LabPy
+: 1555540827:0;python lena1.py
+: 1555540842:0;python3 lena1.py
+: 1555540940:0;cd -2
+: 1555555823:0;ls p*
+: 1555556313:0;rm *0.log
+: 1555556318:0;rm *2.log
+: 1555556322:0;rm *4.log
+: 1555556325:0;rm *5.log
+: 1555556329:0;rm *6.log
+: 1555556332:0;rm *8.log
+: 1555556336:0;rm *9.log
+: 1555556347:0;rm *3.log
+: 1555556391:0;cp -r LogAndConfPrimes PuLogAndConfPrimes
+: 1555556475:0;python -m pudb run_primes.py
+: 1555557524:0;ccat InPlayLog20190418.log
+: 1555557629:0;python -m pudb primes.py
+: 1555557819:0;python -m pudb primes.py run_primes.py
+: 1555557840:0;python -m pudb run_primes.py primes.py
+: 1555559373:0;cd pudb
+: 1555559397:0;ccat pudb.cfg
+: 1555559431:0;ccat saved-breakpoints-2.7
+: 1555559789:0;mkdir PhiPoly
+: 1555559794:0;cd PhiPoly
+: 1555559797:0;de
+: 1555559957:0;de run_PhiPoly.py PhiPoly.py
+: 1555560156:0;cd ../PhiPoly
+: 1555560170:0;python run_PhiPoly.py
+: 1555561375:0;cd ../PuLogAndConfPrimes
+: 1555561649:0;python run_primes.py
+: 1555561747:0;n
+: 1555561775:0;pudb run_primes.py
+: 1555597021:0;cd git/bTest/kDot/LabPuDB
+: 1555598310:0;de run_primes.py
+: 1555598577:0;de primes.py run_primes.py
+: 1555599075:0;less +F InPlayLog20190418.log
+: 1555599437:0;cd .config/nvim/plugged
+: 1555599448:0;ls less.vim
+: 1555599459:0;de less.vim/README.mkd
+: 1555599896:0;cd git/bTest/kDot/LabPuDB/PuLogAndConfPrimes
+: 1555599912:0;$VIMRUNTIME/macros/less.sh
+: 1555600445:0;./home/red/82vim/share/vim/vim81/macros/less.sh
+: 1555600456:0;cd /home/red/82vim/share/vim/vim81/macros/
+: 1555600479:0;ch +x less.sh
+: 1555600486:0;chmod +x less.sh
+: 1555600495:0;./less.sh
+: 1555600509:0;./less.sh README.txt
+: 1555600898:0;./home/red/82vim/share/vim/vim81/macros/less.sh InPlayLog20190417.log\
+
+: 1555600980:0;cp /home/red/82vim/share/vim/vim81/macros/less.sh .\
+
+: 1555601001:0;./less.sh InPlayLog20190418.log
+: 1555601110:0;./less.sh +F InPlayLog20190418.log
+: 1555601181:0;watch ccat InPlayLog20190417.log
+: 1555601194:0;ca InPlayLog20190418.log
+: 1555601223:0;de InPlayLog20190418.log
+: 1555601306:0;cd less.vim
+: 1555601319:0;de less.vim
+: 1555601598:0;deless InPlayLog20190418.log
+: 1555649648:0;ps aux | ./txts -n ps
+: 1555649681:0;ps aux
+: 1555649966:0;top
+: 1555649985:0;top | ./txts -n ps
+: 1555650102:0;top | ./txts -n ifconfig
+: 1555650209:0;echo "A Foo and a Bar" | ./txts -r Foo -r Bar
+: 1555650301:0;ls txtstyle
+: 1555650461:0;./txts -h
+: 1555650502:0;./txts --version
+: 1555650543:0;deo README.md
+: 1555651191:0;cd ~/Music/TxtStyle-master
+: 1555651222:0;./txts -n first example.log
+: 1555651436:0;./txts -n example example.log
+: 1555651445:0;./txts -n ps example.log
+: 1555651458:0;./txts -n tail example.log
+: 1555651628:0;./txts -n java example.log
+: 1555651694:0;./txts -n exm example.log
+: 1555651726:0;./txts -n ifconfig example.log
+: 1555651749:0;./txts -n calendar example.log
+: 1555651933:0;sudo python2 setup.py install
+: 1555651983:0;txts -n java example.log
+: 1555651994:0;txts -n alf example.log
+: 1555652007:0;txts -n example example.log
+: 1555652096:0;tail -f example.log | txts -n java
+: 1555652115:0;tail -f example.log | txts -n example
+: 1555652282:0;tail -f InPlayLog20190419.log | txts -n alf
+: 1555652676:0;less +F InPlayLog20190419.log | txts -n ps
+: 1555652704:0;less +f *.log | txts -n ps
+: 1555652725:0;tail -f InPlayLog20190419.log | txts -n example
+: 1555653564:0;cd ../colortail-master
+: 1555653603:0;./configure.in
+: 1555653992:0;colortail InPlayLog20190419.log
+: 1555654015:0;tail InPlayLog20190419.log
+: 1555654562:0;colortail -k *.log
+: 1555654583:0;colortail -k InPlayLog20190419.log
+: 1555655607:0;tail InPlayLog20190419.log | txts -n calendar
+: 1555655616:0;tail -f InPlayLog20190419.log | txts -n calendar
+: 1555656321:0;tail -f InPlayLog20190419.log | txts -n ps
+: 1555656342:0;deless InPlayLog20190419.log | txts -n calendar
+: 1555656377:0;cat InPlayLog20190419.log | txts -n calendar
+: 1555659324:0;tail -f InPlayLog20190419.log | ccze
+: 1555659443:0;tail -f -n 15 InPlayLog20190419.log | ccze
+: 1555659510:0;less +F InPlayLog20190419.log | ccze
+: 1555659731:0;ccze -m ansi < InPlayLog20190419.log | deless
+: 1555659754:0;ccze -m ansi < InPlayLog20190419.log | less
+: 1555659760:0;ccze -m ansi < InPlayLog20190419.log | less -r
+: 1555661824:0;vim
+: 1555665496:0;livepython run_primes.py
+: 1555665675:0;deless InPlayLog20190419.log
+: 1555673701:0;rm kLess3Y.vim
+: 1555673820:0;rm *.jpg
+: 1555673825:0;rm *.png
+: 1555673851:0;cd kDot/LabPy
+: 1555673863:0;rm lena*
+: 1555673913:0;git add .
+: 1555674757:0;deo angularJS.vim
+: 1555674945:0;ncdu | ccze
+: 1555675010:0;du | ccze
+: 1555675016:0;du . | ccze
+: 1555675083:0;du
+: 1555675114:0;du -h
+: 1555675123:0;du -h | ccze
+: 1555675234:0;ls WIMRC
+: 1555675264:0;de kZshrc19.sh WIMRC/wimrc-tech-php.vim
+: 1555677447:0;wi1
+: 1555678279:0;ls ../
+: 1555678323:0;cd ~/git/aTest/dotFiles/
+: 1555678335:0;ls inkWim
+: 1555678343:0;cd inkWim
+: 1555678394:0;de xvim-*
+: 1555678600:0;cd ~/.vim/
+: 1555678617:0;ls plugin
+: 1555678624:0;ls plugged
+: 1555678687:0;mkdir bundle
+: 1555678915:0;ls bundle
+: 1555679627:0;wi2
+: 1555680077:0;wi3
+: 1555680193:0;de demian-wimrc.vim wim-nakamura.vim wimrc-erik.vim
+: 1555680419:0;wi4
+: 1555680440:0;wi5
+: 1555682905:0;cd ~/git/bTest/kDot
+: 1555684211:0;ncdu
+: 1555684392:0;cd ~/.config
+: 1555684460:0;ls Zeal
+: 1555684588:0;ls livepython
+: 1555684607:0;de livepython/Preferences
+: 1555684795:0;cd /usr/local/lib/node_modules
+: 1555684831:0;ls create-react-app
+: 1555684838:0;ls create-react-app/node_modules
+: 1555685026:0;ls expo-cli
+: 1555685036:0;ls expo-cli/node_modules
+: 1555685323:0;ls pkg
+: 1555685331:0;ls pkg/node_modules
+: 1555685422:0;ls tern
+: 1555685432:0;ls tern/node_modules
+: 1555685461:0;ls yarn/
+: 1555685701:0;mkdir LabJS
+: 1555685709:0;cd LabJS
+: 1555685736:0;de qStart.js
+: 1555685964:0;node qStart.js
+: 1555722186:0;cd ../../../jsReact
+: 1555722477:0;ls hello-world
+: 1555722508:0;ls 2run
+: 1555722515:0;ls 2run/AwesomeProject
+: 1555723006:0;de src/App.js
+: 1555723216:0;ls 2run/AwesomeProject/
+: 1555723237:0;cd 2run/AwesomeProject/
+: 1555723974:0;cd ....
+: 1555723979:0;....
+: 1555724018:0;cd bTest/kDot/LabPuDB
+: 1555724028:0;cd PuLogAndConfPrimes
+: 1555724073:0;tail -f InPlayLog20190419.log | perl -pe 's/DEBUG/\e[1;31;43m$&\e[0m/g'
+: 1555724583:0;ptail
+: 1555724722:0;tail -f InPlayLog20190419.log | perl -pe 's/DEBUG/\e[1;31;43m$&\e[0m/g' | perl -pe 's/INFO/\e[1;30;43m$&\e[0m/g'\
+
+: 1555724750:0;tail -f InPlayLog20190419.log | perl -pe 's/INFO/\e[1;30;43m$&\e[0m/g'\
+
+: 1555724868:0;ptail= 'tail -f InPlayLog20190419.log | grey-grep ".*DEBUG*|$" | cyan-grep "INFO|$" | yellow-grep "WARN|$" | red-grep "[ERROR].*|[FATAL].*|$" | green-grep "***|$"'\
+
+: 1555724905:0;tail -f InPlayLog20190419.log | grey-grep ".*DEBUG*|$" | cyan-grep "INFO|$" | yellow-grep "WARN|$" | red-grep "[ERROR].*|[FATAL].*|$" | green-grep "***|$"\
+
+: 1555725378:0;de ~/.txts.conf
+: 1555725602:0;tail -f example.log | txts -n cy1
+: 1555726149:0;tail -f example.log | grep --color=always -E "$|REGEXP"
+: 1555726547:0;tail -f -n 50 /var/log/apache2/error.log | color -l [error\]","\[notice\]"\
+tail -f -n 50 example.log | color -l "\[error\]","\[notice\]"\
+tail -f -n 50 example.log | color -l "\[error\]","\[notice\]"\
+clear
+: 1555726589:0;tail -f -n 50 example.log | color -l "\[error\]","\[notice\]"
+: 1555729427:0;python -m cProfile run_primes.py
+: 1555729481:0;python -m cProfile -o proff.cprof run_primes.py
+: 1555729496:0;ccat proff.cprof
+: 1555729549:0;pyprof2calltree -k -i proff.cprof
+: 1555729731:0;python -m cProfile -s cumtime run_primes.py
+: 1555730364:0;de ptest.py
+: 1555730402:0;python -m cProfile ptest.py
+: 1555730467:0;python -m cProfile -o output.txt ptest.py
+: 1555730491:0;ipython
+: 1555731488:0;de Proff.py
+: 1555731787:0;python Proff.py
+: 1555732028:0;new fact.py
+: 1555732034:0;de fact.py
+: 1555732143:0;python -m cProfile fact.py
+: 1555732467:0;mv fact.py Fact.py
+: 1555732480:0;python -m cProfile Fact.py
+: 1555732692:0;de Proff2.py
+: 1555732734:0;py Proff2.py
+: 1555732836:0;py3 Proff2.py
+: 1555737026:0;py3 Proff2.py | cat >>| op2.log
+: 1555737033:0;py Proff2.py | cat >>| op2.log
+: 1555737041:0;ca op2.log
+: 1555737065:0;de op2.log
+: 1555737260:0;py3 Proff3.py
+: 1555739541:0;ca run_primes.py
+: 1555739801:0;ca test_primes.py
+: 1555740002:0;cat Proff.py
+: 1555740363:0;hh | vim -
+: 1555740796:0;zeal
+: 1555741012:0;ranger
+: 1555827525:0;cd calculator-master
+: 1555832716:0;npm c
+: 1555832730:0;npm
+: 1555832741:0;npm -h
+: 1555832751:0;npm help
+: 1555832794:0;cd Realtime-calendar-master
+: 1555832927:0;cd client
+: 1555833547:0;npm install -g bower
+: 1555834489:0;cd git/jsReact/digital-clock-js-master
+: 1555834653:0;cd ../react-clockwall-master
+: 1555835819:0;cd ../clock-component-master
+: 1555835997:0;cd polymer
+: 1555836003:0;bower install
+: 1555836038:0;node server.js
+: 1555836689:0;cd ~/snap
+: 1555836695:0;snap install vidcutter
+: 1555843952:0;cd '/media/red/pink/Bald'
+: 1555844002:0;cd /media/red/pink
+: 1555844035:0;ls -l
+: 1555844121:0;ffmpeg -i concat:"*.mp4" output.mp4
+: 1555845268:0;ls -d $PWD
+: 1555845291:0;ls -d -1 $PWD
+: 1555845398:0;l | cat >>| in.txt
+: 1555845528:0;ffmpeg -f concat -i in.txt output.mp4
+: 1555845655:0;ffmpeg -i concat:"1.mp4|2.mp4" output12.mp4
+: 1555845793:0;ffmpeg -i concat:"5.mp4|6.mp4" o56.mp4
+: 1555845886:0;ffmpeg -i concat:"4.mp4|6.mp4" o56.mp4
+: 1555845897:0;ffmpeg -i concat:"4.mp4|6.mp4" o46.mp4
+: 1555848338:0;ffmpeg -i concat:"o12.mp4|46.mp4" oo1246.mp4
+: 1555848350:0;ffmpeg -i concat:"o12.mp4|o46.mp4" oo1246.mp4
+: 1555849987:0;cd ~/Pictures
+: 1555849994:0;cd Bald
+: 1555855234:0;cd ~/git/
+: 1555855335:0;vi Install-Linux-tar.txt
+: 1555870523:0;cd /media/red/A5A1-FBC4/sK1
+: 1555870579:0;cd Pictures/Bald
+: 1555870621:0;deo in.txt
+: 1555871398:0;ffmpeg -f concat -safe 0 -i in.txt -c copy out.mp4\
+
+: 1555871958:0;de in.txt
+: 1555872069:0;ffmpeg -f concat -safe 0 -i in.txt -c copy cout.mp4\
+
+: 1555873334:0;cd git/android-studio
+: 1555873344:0;ls bin
+: 1555880087:0;cd ~/git/jsReact
+: 1555880136:0;cd digital-clock-js-master
+: 1555880189:0;cp -r digital-clock-js-master digital-clock-js
+: 1555880233:0;cd digital-clock-js
+: 1555880240:0;de app.js
+: 1555880376:0;cp -r react-clockwall-master react-clockwall
+: 1555880419:0;cd react-clockwall
+: 1555882297:0;{ id: 'clock3', town: 'Paris', timezone: 'Europe/Paris', locale: 'fr' },
+: 1555882362:0;de index.html
+: 1555883636:0;de src/Index.js
+: 1555885109:0;cd ../4run
+: 1555885120:0;cd js-clock-master
+: 1555886313:0;ls app
+: 1555886350:0;ls app/css
+: 1555887413:0;cat react-native-motivation-app-master
+: 1555887418:0;cat react-native-motivation-app-master/README.md
+: 1555887536:0;cd
+: 1555887571:0;ls express-mysql-example-master
+: 1555887592:0;cd express-mysql-example-master
+: 1555887681:0;npm app.js
+: 1555887692:0;hh | grep npm
+: 1555887709:0;mpm run
+: 1555887771:0;ls node_modules
+: 1555887844:0;ls desktop-clock-master
+: 1555887859:0;cd desktop-clock-master
+: 1555887865:0;py clock.py
+: 1555887874:0;py3 clock.py
+: 1555887959:0;caut requirements.txt
+: 1555887965:0;cat requirements.txt
+: 1555887981:0;ls clock
+: 1555887995:0;de clock.py
+: 1555921371:0;cd Linux-Terminal-Clock-master
+: 1555921417:0;gcc -o terminal_clock terminal_clock.c\
+
+: 1555921426:0;./terminal_clock
+: 1555921463:0;./terminal_clock -C cyan
+: 1555921611:0;de terminal_clock.c
+: 1555922218:0;cd ../opengl-clock-master
+: 1555922222:0;chmod +x compile.sh
+: 1555922230:0;cat compile.sh
+: 1555922244:0;./compile.sh
+: 1555922321:0;gcc -o clo clock.cpp\
+
+: 1555922380:0;gcc -L/usr/lib -o clo clock.cpp -lglut -lGL -lGLU
+: 1555922684:0;cd bash-pro-master
+: 1555922715:0;mv .bash_profile bash_pro.sh
+: 1555922721:0;de bash_pro.sh
+: 1555936840:0;sudo adduser $USER kvm
+: 1555944706:0;cd git/jsReact/
+: 1555944721:0;cd 4run
+: 1555944739:0;cd local-sqlite-example
+: 1555944872:0;npm run
+: 1555944966:0;npm install react-clock
+: 1555947116:0;cd react-native-motivation-app-master/
+: 1555947726:0;mpm run website
+: 1555947788:0;npm run playlist
+: 1555947801:0;npm run website
+: 1555947875:0;ls website
+: 1555950484:0;cd js-budget-setup-master
+: 1555956209:0;npm install cli-table
+: 1555956541:0;mkdir POCsqlite
+: 1555956549:0;cd POCsqlite
+: 1555956555:0;git clone https://github.com/romwaldtff/NodeJS-REST-API-SQLite.git
+: 1555956566:0;cd NodeJS-REST-API-SQLite
+: 1555956769:0;node index.js
+: 1555961486:0;kdeo kMinit.vim k5DEO.vim
+: 1555961845:0;mkdir CHEATSH
+: 1555961850:0;cd CHEATSH
+: 1555961857:0;curl cheat.sh/tar
+: 1555961914:0;curl cht.sh/curl
+: 1555961955:0;curl cheat.sh/tar | cat >>| CHEET.vim
+: 1555961963:0;cat CHEET.vim
+: 1555962025:0;curl cheat.sh/rsync | cat >>| CHEET.vim
+: 1555962040:0;curl cheat.sh/curl | cat >>| CHEET.vim
+: 1555962068:0;curl cheat.sh/vim | cat >>| CHEET.vim
+: 1555962168:0;curl cheat.sh/find | cat >>| CHEET.vim
+: 1555962179:0;curl cheat.sh/awk | cat >>| CHEET.vim
+: 1555962207:0;curl cheat.sh/gzip | cat >>| CHEET.vim
+: 1555962239:0;curl cheat.sh/crontab | cat >>| CHEET.vim
+: 1555962261:0;curl cheat.sh/ps | cat >>| CHEET.vim
+: 1555962289:0;curl cheat.sh/df | cat >>| CHEET.vim
+: 1555962343:0;curl cheat.sh/tail | cat >>| CHEET.vim
+: 1555962365:0;curl cheat.sh/apt | cat >>| CHEET.vim
+: 1555962371:0;curl cheat.sh/apt-get | cat >>| CHEET.vim
+: 1555962388:0;curl cheat.sh/wget | cat >>| CHEET.vim
+: 1555962451:0;ccat CHEET.vim
+: 1555962556:0;curl cheat.sh/apt-get
+: 1555962643:0;curl cheat.sh/apt
+: 1555962667:0;curl cheat.sh/vim
+: 1555962690:0;curl cheat.sh/find
+: 1555962719:0;curl cheat.sh/grep
+: 1555962741:0;curl cheat.sh/exa
+: 1555962821:0;curl cheat.sh/df
+: 1555962863:0;curl cheat.sh/mv
+: 1555962884:0;h
+: 1555962895:0;curl cheat.sh/rsync
+: 1555962938:0;curl cheat.sh/wget
+: 1555962984:0;curl cheat.sh/git
+: 1555963113:0;curl cheat.sh/npm
+: 1555963149:0;curl cheat.sh/dict
+: 1555963203:0;curl cheat.sh/sed
+: 1555963343:0;curl cheat.sh/python/lambda
+: 1555963437:0;curl cheat.sh/python/~io
+: 1555963456:0;curl cheat.sh/python/:learn
+: 1555963558:0;curl cheat.sh/zsh
+: 1555963616:0;curl cheat.sh/bash
+: 1555963674:0;curl cheat.sh/go
+: 1555963703:0;curl cheat.sh/go/:learn
+: 1555963759:0;curl cheat.sh/cpp
+: 1555963776:0;curl cheat.sh/cpp/:learn
+: 1555963878:0;curl cheat.sh/c/:learn
+: 1555963951:0;curl cheat.sh/c/
+: 1555963974:0;curl cheat.sh/perl
+: 1555963985:0;curl cheat.sh/perl/:learn
+: 1555964042:0;curl cheat.sh/php/:learn
+: 1555964132:0;curl cheat.sh/mysql/:learn
+: 1555964139:0;curl cheat.sh/mysql/
+: 1555964195:0;curl cheat.sh/sqlite/
+: 1555964204:0;curl cheat.sh/sqlite3/
+: 1555964263:0;curl cheat.sh/gcc
+: 1555964409:0;curl cheat.sh/locate
+: 1555964512:0;curl cheat.sh/android
+: 1555964529:0;curl cheat.sh/java/:learn
+: 1555964620:0;curl cheat.sh/java/:learn \
+// Single-line comments start with //\
+\
+/*\
+Multi-line comments look like this.\
+*/\
+\
+/**\
+ * JavaDoc comments look like this. Used to describe the Class or various\
+ * attributes of a Class.\
+ * Main attributes:\
+ *\
+ * @author         Name (and contact information such as email) of author(s).\
+ * @version     Current version of the program.\
+ * @since        When this part of the program was first added.\
+ * @param         For describing the different parameters for a method.\
+ * @return        For describing what the method returns.\
+ * @deprecated  For showing the code is outdated or shouldn't be used.\
+ * @see         Links to another part of documentation.\
+*/\
+\
+// Import ArrayList class inside of the java.util package\
+import java.util.ArrayList;\
+// Import all classes inside of java.security package\
+import java.security.*;\
+\
+public class LearnJava {\
+\
+    // In order to run a java program, it must have a main method as an entry\
+    // point.\
+    public static void main(String[] args) {\
+\
+    ///////////////////////////////////////\
+    // Input/Output\
+    ///////////////////////////////////////\
+\
+        /*\
+        * Output\
+        */\
+\
+        // Use System.out.println() to print lines.\
+        System.out.println("Hello World!");\
+        System.out.println(\
+            "Integer: " + 10 +\
+            " Double: " + 3.14 +\
+            " Boolean: " + true);\
+\
+        // To print without a newline, use System.out.print().\
+        System.out.print("Hello ");\
+        System.out.print("World");\
+\
+        // Use System.out.printf() for easy formatted printing.\
+        System.out.printf("pi = %.5f", Math.PI); // => pi = 3.14159\
+\
+        /*\
+         * Input\
+         */\
+\
+        // use Scanner to read input\
+        // must import java.util.Scanner;\
+        Scanner scanner = new Scanner(System.in);\
+\
+        // read string input\
+        String name = scanner.next();\
+\
+        // read byte input\
+        byte numByte = scanner.nextByte();\
+\
+        // read int input\
+        int numInt = scanner.nextInt();\
+\
+        // read long input\
+        float numFloat = scanner.nextFloat();\
+\
+        // read double input\
+        double numDouble = scanner.nextDouble();\
+\
+        // read boolean input\
+        boolean bool = scanner.nextBoolean();\
+\
+        ///////////////////////////////////////\
+        // Variables\
+        ///////////////////////////////////////\
+\
+        /*\
+        *  Variable Declaration\
+        */\
+        // Declare a variable using <type> <name>\
+        int fooInt;\
+        // Declare multiple variables of the same\
+        // type <type> <name1>, <name2>, <name3>\
+        int fooInt1, fooInt2, fooInt3;\
+\
+        /*\
+        *  Variable Initialization\
+        */\
+\
+        // Initialize a variable using <type> <name> = <val>\
+        int barInt = 1;\
+        // Initialize multiple variables of same type with same\
+        // value <type> <name1>, <name2>, <name3>\
+        // <name1> = <name2> = <name3> = <val>\
+        int barInt1, barInt2, barInt3;\
+        barInt1 = barInt2 = barInt3 = 1;\
+\
+        /*\
+        *  Variable types\
+        */\
+        // Byte - 8-bit signed two's complement integer\
+        // (-128 <= byte <= 127)\
+        byte fooByte = 100;\
+\
+        // If you would like to interpret a byte as an unsigned integer\
+        // then this simple operation can help\
+        int unsignedIntLessThan256 = 0xff & fooByte;\
+        // this contrasts a cast which can be negative.\
+        int signedInt = (int) fooByte;\
+\
+        // Short - 16-bit signed two's complement integer\
+        // (-32,768 <= short <= 32,767)\
+        short fooShort = 10000;\
+\
+        // Integer - 32-bit signed two's complement integer\
+        // (-2,147,483,648 <= int <= 2,147,483,647)\
+        int bazInt = 1;\
+\
+        // Long - 64-bit signed two's complement integer\
+        // (-9,223,372,036,854,775,808 <= long <= 9,223,372,036,854,775,807)\
+        long fooLong = 100000L;\
+        // L is used to denote that this variable value is of type Long;\
+        // anything without is treated as integer by default.\
+\
+        // Note: byte, short, int and long are signed. They can have positive and negative values.\
+        // There are no unsigned variants.\
+        // char, however, is 16-bit unsigned.\
+\
+        // Float - Single-precision 32-bit IEEE 754 Floating Point\
+        // 2^-149 <= float <= (2-2^-23) * 2^127\
+        float fooFloat = 234.5f;\
+        // f or F is used to denote that this variable value is of type float;\
+        // otherwise it is treated as double.\
+\
+        // Double - Double-precision 64-bit IEEE 754 Floating Point\
+        // 2^-1074 <= x <= (2-2^-52) * 2^1023\
+        double fooDouble = 123.4;\
+\
+        // Boolean - true & false\
+        boolean fooBoolean = true;\
+        boolean barBoolean = false;\
+\
+        // Char - A single 16-bit Unicode character\
+        char fooChar = 'A';\
+\
+        // final variables can't be reassigned,\
+        final int HOURS_I_WORK_PER_WEEK = 9001;\
+        // but they can be initialized later.\
+        final double E;\
+        E = 2.71828;\
+\
+        // BigInteger - Immutable arbitrary-precision integers\
+        //\
+        // BigInteger is a data type that allows programmers to manipulate\
+        // integers longer than 64-bits. Integers are stored as an array of\
+        // of bytes and are manipulated using functions built into BigInteger\
+        //\
+        // BigInteger can be initialized using an array of bytes or a string.\
+        BigInteger fooBigInteger = new BigInteger(fooByteArray);\
+\
+        // BigDecimal - Immutable, arbitrary-precision signed decimal number\
+        //\
+        // A BigDecimal takes two parts: an arbitrary precision integer\
+        // unscaled value and a 32-bit integer scale\
+        //\
+        // BigDecimal allows the programmer complete control over decimal\
+        // rounding. It is recommended to use BigDecimal with currency values\
+        // and where exact decimal precision is required.\
+        //\
+        // BigDecimal can be initialized with an int, long, double or String\
+        // or by initializing the unscaled value (BigInteger) and scale (int).\
+        BigDecimal fooBigDecimal = new BigDecimal(fooBigInteger, fooInt);\
+\
+        // Be wary of the constructor that takes a float or double as\
+        // the inaccuracy of the float/double will be copied in BigDecimal.\
+        // Prefer the String constructor when you need an exact value.\
+        BigDecimal tenCents = new BigDecimal("0.1");\
+\
+        // Strings\
+        String fooString = "My String Is Here!";\
+\
+        // \n is an escaped character that starts a new line\
+        String barString = "Printing on a new line?\nNo Problem!";\
+        // \t is an escaped character that adds a tab character\
+        String bazString = "Do you want to add a tab?\tNo Problem!";\
+        System.out.println(fooString);\
+        System.out.println(barString);\
+        System.out.println(bazString);\
+\
+        // String Building\
+        // #1 - with plus operator\
+        // That's the basic way to do it (optimized under the hood)\
+        String plusConcatenated = "Strings can " + "be concatenated " + "via + operator.";\
+        System.out.println(plusConcatenated);\
+        // Output: Strings can be concatenated via + operator.\
+\
+        // #2 - with StringBuilder\
+        // This way doesn't create any intermediate strings. It just stores the string pieces, and ties them together\
+        // when toString() is called.\
+        // Hint: This class is not thread safe. A thread-safe alternative (with some impact on performance) is StringBuffer.\
+        StringBuilder builderConcatenated = new StringBuilder();\
+        builderConcatenated.append("You ");\
+        builderConcatenated.append("can use ");\
+        builderConcatenated.append("the StringBuilder class.");\
+        System.out.println(builderConcatenated.toString()); // only now is the string built\
+        // Output: You can use the StringBuilder class.\
+\
+        // StringBuilder is efficient when the fully constructed String is not required until the end of some processing.\
+        StringBuilder stringBuilder = new StringBuilder();\
+        String inefficientString = "";\
+        for (int i = 0 ; i < 10; i++) {\
+            stringBuilder.append(i).append(" ");\
+            inefficientString += i + " ";\
+        }\
+        System.out.println(inefficientString);\
+        System.out.println(stringBuilder.toString());\
+        // inefficientString requires a lot more work to produce, as it generates a String on every loop iteration.\
+        // Simple concatenation with + is compiled to a StringBuilder and toString()\
+        // Avoid string concatenation in loops.\
+\
+        // #3 - with String formatter\
+        // Another alternative way to create strings. Fast and readable.\
+        String.format("%s may prefer %s.", "Or you", "String.format()");\
+        // Output: Or you may prefer String.format().\
+\
+        // Arrays\
+        // The array size must be decided upon instantiation\
+        // The following formats work for declaring an array\
+        // <datatype>[] <var name> = new <datatype>[<array size>];\
+        // <datatype> <var name>[] = new <datatype>[<array size>];\
+        int[] intArray = new int[10];\
+        String[] stringArray = new String[1];\
+        boolean boolArray[] = new boolean[100];\
+\
+        // Another way to declare & initialize an array\
+        int[] y = {9000, 1000, 1337};\
+        String names[] = {"Bob", "John", "Fred", "Juan Pedro"};\
+        boolean bools[] = {true, false, false};\
+\
+        // Indexing an array - Accessing an element\
+        System.out.println("intArray @ 0: " + intArray[0]);\
+\
+        // Arrays are zero-indexed and mutable.\
+        intArray[1] = 1;\
+        System.out.println("intArray @ 1: " + intArray[1]); // => 1\
+\
+        // Other data types worth checking out\
+        // ArrayLists - Like arrays except more functionality is offered, and\
+        //              the size is mutable.\
+        // LinkedLists - Implementation of doubly-linked list. All of the\
+        //               operations perform as could be expected for a\
+        //               doubly-linked list.\
+        // Maps - A mapping of key Objects to value Objects. Map is\
+        //        an interface and therefore cannot be instantiated.\
+        //        The type of keys and values contained in a Map must\
+        //        be specified upon instantiation of the implementing\
+        //        class. Each key may map to only one corresponding value,\
+        //        and each key may appear only once (no duplicates).\
+        // HashMaps - This class uses a hashtable to implement the Map\
+        //            interface. This allows the execution time of basic\
+        //            operations, such as get and insert element, to remain\
+        //            constant-amortized even for large sets.\
+        // TreeMap - A Map that is sorted by its keys. Each modification \
+        //           maintains the sorting defined by either a Comparator\
+        //           supplied at instantiation, or comparisons of each Object\
+        //           if they implement the Comparable interface.\
+        //           Failure of keys to implement Comparable combined with failure to\
+        //           supply a Comparator will throw ClassCastExceptions.\
+        //           Insertion and removal operations take O(log(n)) time\
+        //           so avoid using this data structure unless you are taking\
+        //           advantage of the sorting.\
+\
+        ///////////////////////////////////////\
+        // Operators\
+        ///////////////////////////////////////\
+        System.out.println("\n->Operators");\
+\
+        int i1 = 1, i2 = 2; // Shorthand for multiple declarations\
+\
+        // Arithmetic is straightforward\
+        System.out.println("1+2 = " + (i1 + i2)); // => 3\
+        System.out.println("2-1 = " + (i2 - i1)); // => 1\
+        System.out.println("2*1 = " + (i2 * i1)); // => 2\
+        System.out.println("1/2 = " + (i1 / i2)); // => 0 (int/int returns int)\
+        System.out.println("1/2.0 = " + (i1 / (double)i2)); // => 0.5\
+\
+        // Modulo\
+        System.out.println("11%3 = "+(11 % 3)); // => 2\
+\
+        // Comparison operators\
+        System.out.println("3 == 2? " + (3 == 2)); // => false\
+        System.out.println("3 != 2? " + (3 != 2)); // => true\
+        System.out.println("3 > 2? " + (3 > 2)); // => true\
+        System.out.println("3 < 2? " + (3 < 2)); // => false\
+        System.out.println("2 <= 2? " + (2 <= 2)); // => true\
+        System.out.println("2 >= 2? " + (2 >= 2)); // => true\
+\
+        // Boolean operators\
+        System.out.println("3 > 2 && 2 > 3? " + ((3 > 2) && (2 > 3))); // => false\
+        System.out.println("3 > 2 || 2 > 3? " + ((3 > 2) || (2 > 3))); // => true\
+        System.out.println("!(3 == 2)? " + (!(3 == 2))); // => true\
+\
+        // Bitwise operators!\
+        /*\
+        ~      Unary bitwise complement\
+        <<     Signed left shift\
+        >>     Signed/Arithmetic right shift\
+        >>>    Unsigned/Logical right shift\
+        &      Bitwise AND\
+        ^      Bitwise exclusive OR\
+        |      Bitwise inclusive OR\
+        */\
+\
+        // Increment operators\
+        int i = 0;\
+        System.out.println("\n->Inc/Dec-rementation");\
+        // The ++ and -- operators increment and decrement by 1 respectively.\
+        // If they are placed before the variable, they increment then return;\
+        // after the variable they return then increment.\
+        System.out.println(i++); // i = 1, prints 0 (post-increment)\
+        System.out.println(++i); // i = 2, prints 2 (pre-increment)\
+        System.out.println(i--); // i = 1, prints 2 (post-decrement)\
+        System.out.println(--i); // i = 0, prints 0 (pre-decrement)\
+\
+        ///////////////////////////////////////\
+        // Control Structures\
+        ///////////////////////////////////////\
+        System.out.println("\n->Control Structures");\
+\
+        // If statements are c-like\
+        int j = 10;\
+        if (j == 10) {\
+            System.out.println("I get printed");\
+        } else if (j > 10) {\
+            System.out.println("I don't");\
+        } else {\
+            System.out.println("I also don't");\
+        }\
+\
+        // While loop\
+        int fooWhile = 0;\
+        while(fooWhile < 100) {\
+            System.out.println(fooWhile);\
+            // Increment the counter\
+            // Iterated 100 times, fooWhile 0,1,2...99\
+            fooWhile++;\
+        }\
+        System.out.println("fooWhile Value: " + fooWhile);\
+\
+        // Do While Loop\
+        int fooDoWhile = 0;\
+        do {\
+            System.out.println(fooDoWhile);\
+            // Increment the counter\
+            // Iterated 99 times, fooDoWhile 0->99\
+            fooDoWhile++;\
+        } while(fooDoWhile < 100);\
+        System.out.println("fooDoWhile Value: " + fooDoWhile);\
+\
+        // For Loop\
+        // for loop structure => for(<start_statement>; <conditional>; <step>)\
+        for (int fooFor = 0; fooFor < 10; fooFor++) {\
+            System.out.println(fooFor);\
+            // Iterated 10 times, fooFor 0->9\
+        }\
+        System.out.println("fooFor Value: " + fooFor);\
+\
+        // Nested For Loop Exit with Label\
+        outer:\
+        for (int i = 0; i < 10; i++) {\
+          for (int j = 0; j < 10; j++) {\
+            if (i == 5 && j ==5) {\
+              break outer;\
+              // breaks out of outer loop instead of only the inner one\
+            }\
+          }\
+        }\
+\
+        // For Each Loop\
+        // The for loop is also able to iterate over arrays as well as objects\
+        // that implement the Iterable interface.\
+        int[] fooList = {1, 2, 3, 4, 5, 6, 7, 8, 9};\
+        // for each loop structure => for (<object> : <iterable>)\
+        // reads as: for each element in the iterable\
+        // note: the object type must match the element type of the iterable.\
+        for (int bar : fooList) {\
+            System.out.println(bar);\
+            //Iterates 9 times and prints 1-9 on new lines\
+        }\
+\
+        // Switch Case\
+        // A switch works with the byte, short, char, and int data types.\
+        // It also works with enumerated types (discussed in Enum Types), the\
+        // String class, and a few special classes that wrap primitive types:\
+        // Character, Byte, Short, and Integer.\
+        // Starting in Java 7 and above, we can also use the String type.\
+        // Note: Do remember that, not adding "break" at end any particular case ends up in\
+        // executing the very next case(given it satisfies the condition provided) as well.\
+        int month = 3;\
+        String monthString;\
+        switch (month) {\
+            case 1: monthString = "January";\
+                    break;\
+            case 2: monthString = "February";\
+                    break;\
+            case 3: monthString = "March";\
+                    break;\
+            default: monthString = "Some other month";\
+                     break;\
+        }\
+        System.out.println("Switch Case Result: " + monthString);\
+\
+\
+        // Try-with-resources (Java 7+)\
+        // Try-catch-finally statements work as expected in Java but in Java 7+\
+        // the try-with-resources statement is also available. Try-with-resources\
+        // simplifies try-catch-finally statements by closing resources\
+        // automatically.\
+\
+        // In order to use a try-with-resources, include an instance of a class\
+        // in the try statement. The class must implement java.lang.AutoCloseable.\
+        try (BufferedReader br = new BufferedReader(new FileReader("foo.txt"))) {\
+            // You can attempt to do something that could throw an exception.\
+            System.out.println(br.readLine());\
+            // In Java 7, the resource will always be closed, even if it throws\
+            // an Exception.\
+        } catch (Exception ex) {\
+            //The resource will be closed before the catch statement executes.\
+            System.out.println("readLine() failed.");\
+        }\
+        // No need for a finally statement in this case, the BufferedReader is\
+        // already closed. This can be used to avoid certain edge cases where\
+        // a finally statement might not be called.\
+        // To learn more:\
+        // https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html\
+\
+\
+        // Conditional Shorthand\
+        // You can use the '?' operator for quick assignments or logic forks.\
+        // Reads as "If (statement) is true, use <first value>, otherwise, use\
+        // <second value>"\
+        int foo = 5;\
+        String bar = (foo < 10) ? "A" : "B";\
+        System.out.println("bar : " + bar); // Prints "bar : A", because the \
+        // statement is true.\
+        // Or simply\
+        System.out.println("bar : " + (foo < 10 ? "A" : "B"));\
+        \
+\
+        ////////////////////////////////////////\
+        // Converting Data Types\
+        ////////////////////////////////////////\
+\
+        // Converting data\
+\
+        // Convert String To Integer\
+        Integer.parseInt("123");//returns an integer version of "123"\
+\
+        // Convert Integer To String\
+        Integer.toString(123);//returns a string version of 123\
+\
+        // For other conversions check out the following classes:\
+        // Double\
+        // Long\
+        // String\
+\
+        ///////////////////////////////////////\
+        // Classes And Functions\
+        ///////////////////////////////////////\
+\
+        System.out.println("\n->Classes & Functions");\
+\
+        // (definition of the Bicycle class follows)\
+\
+        // Use new to instantiate a class\
+        Bicycle trek = new Bicycle();\
+\
+        // Call object methods\
+        trek.speedUp(3); // You should always use setter and getter methods\
+        trek.setCadence(100);\
+\
+        // toString returns this Object's string representation.\
+        System.out.println("trek info: " + trek.toString());\
+\
+        // Double Brace Initialization\
+        // The Java Language has no syntax for how to create static Collections\
+        // in an easy way. Usually you end up in the following way:\
+        private static final Set<String> COUNTRIES = new HashSet<String>();\
+        static {\
+           COUNTRIES.add("DENMARK");\
+           COUNTRIES.add("SWEDEN");\
+           COUNTRIES.add("FINLAND");\
+        }\
+\
+        // But there's a nifty way to achieve the same thing in an\
+        // easier way, by using something that is called Double Brace\
+        // Initialization.\
+        private static final Set<String> COUNTRIES = new HashSet<String>() {{\
+            add("DENMARK");\
+            add("SWEDEN");\
+            add("FINLAND");\
+        }}\
+\
+        // The first brace is creating a new AnonymousInnerClass and the\
+        // second one declares an instance initializer block. This block\
+        // is called when the anonymous inner class is created.\
+        // This does not only work for Collections, it works for all\
+        // non-final classes.\
+\
+    } // End main method\
+} // End LearnJava class\
+\
+// You can include other, non-public outer-level classes in a .java file,\
+// but it is not good practice. Instead split classes into separate files.\
+\
+// Class Declaration Syntax:\
+// <public/private/protected> class <class name> {\
+//    // data fields, constructors, functions all inside.\
+//    // functions are called as methods in Java.\
+// }\
+\
+class Bicycle {\
+\
+    // Bicycle's Fields/Variables\
+    public int cadence; // Public: Can be accessed from anywhere\
+    private int speed;  // Private: Only accessible from within the class\
+    protected int gear; // Protected: Accessible from the class and subclasses\
+    String name; // default: Only accessible from within this package\
+    static String className; // Static class variable\
+\
+    // Static block\
+    // Java has no implementation of static constructors, but\
+    // has a static block that can be used to initialize class variables\
+    // (static variables).\
+    // This block will be called when the class is loaded.\
+    static {\
+        className = "Bicycle";\
+    }\
+\
+    // Constructors are a way of creating classes\
+    // This is a constructor\
+    public Bicycle() {\
+        // You can also call another constructor:\
+        // this(1, 50, 5, "Bontrager");\
+        gear = 1;\
+        cadence = 50;\
+        speed = 5;\
+        name = "Bontrager";\
+    }\
+    // This is a constructor that takes arguments\
+    public Bicycle(int startCadence, int startSpeed, int startGear,\
+        String name) {\
+        this.gear = startGear;\
+        this.cadence = startCadence;\
+        this.speed = startSpeed;\
+        this.name = name;\
+    }\
+\
+    // Method Syntax:\
+    // <public/private/protected> <return type> <function name>(<args>)\
+\
+    // Java classes often implement getters and setters for their fields\
+\
+    // Method declaration syntax:\
+    // <access modifier> <return type> <method name>(<args>)\
+    public int getCadence() {\
+        return cadence;\
+    }\
+\
+    // void methods require no return statement\
+    public void setCadence(int newValue) {\
+        cadence = newValue;\
+    }\
+    public void setGear(int newValue) {\
+        gear = newValue;\
+    }\
+    public void speedUp(int increment) {\
+        speed += increment;\
+    }\
+    public void slowDown(int decrement) {\
+        speed -= decrement;\
+    }\
+    public void setName(String newName) {\
+        name = newName;\
+    }\
+    public String getName() {\
+        return name;\
+    }\
+\
+    //Method to display the attribute values of this Object.\
+    @Override // Inherited from the Object class.\
+    public String toString() {\
+        return "gear: " + gear + " cadence: " + cadence + " speed: " + speed +\
+            " name: " + name;\
+    }\
+} // end class Bicycle\
+\
+// PennyFarthing is a subclass of Bicycle\
+class PennyFarthing extends Bicycle {\
+    // (Penny Farthings are those bicycles with the big front wheel.\
+    // They have no gears.)\
+\
+    public PennyFarthing(int startCadence, int startSpeed) {\
+        // Call the parent constructor with super\
+        super(startCadence, startSpeed, 0, "PennyFarthing");\
+    }\
+\
+    // You should mark a method you're overriding with an @annotation.\
+    // To learn more about what annotations are and their purpose check this\
+    // out: http://docs.oracle.com/javase/tutorial/java/annotations/\
+    @Override\
+    public void setGear(int gear) {\
+        this.gear = 0;\
+    }\
+}\
+\
+// Object casting\
+// Since the PennyFarthing class is extending the Bicycle class, we can say\
+// a PennyFarthing is a Bicycle and write :\
+// Bicycle bicycle = new PennyFarthing();\
+// This is called object casting where an object is taken for another one. There\
+// are lots of details and deals with some more intermediate concepts here:\
+// https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html\
+\
+// Interfaces\
+// Interface declaration syntax\
+// <access-level> interface <interface-name> extends <super-interfaces> {\
+//     // Constants\
+//     // Method declarations\
+// }\
+\
+// Example - Food:\
+public interface Edible {\
+    public void eat(); // Any class that implements this interface, must\
+                       // implement this method.\
+}\
+\
+public interface Digestible {\
+    public void digest();\
+    // Since Java 8, interfaces can have default method.\
+    public default void defaultMethod() {\
+        System.out.println("Hi from default method ...");\
+    }\
+}\
+\
+// We can now create a class that implements both of these interfaces.\
+public class Fruit implements Edible, Digestible {\
+    @Override\
+    public void eat() {\
+        // ...\
+    }\
+\
+    @Override\
+    public void digest() {\
+        // ...\
+    }\
+}\
+\
+// In Java, you can extend only one class, but you can implement many\
+// interfaces. For example:\
+public class ExampleClass extends ExampleClassParent implements InterfaceOne,\
+    InterfaceTwo {\
+    @Override\
+    public void InterfaceOneMethod() {\
+    }\
+\
+    @Override\
+    public void InterfaceTwoMethod() {\
+    }\
+\
+}\
+\
+// Abstract Classes\
+\
+// Abstract Class declaration syntax\
+// <access-level> abstract class <abstract-class-name> extends\
+// <super-abstract-classes> {\
+//     // Constants and variables\
+//     // Method declarations\
+// }\
+\
+// Abstract Classes cannot be instantiated.\
+// Abstract classes may define abstract methods.\
+// Abstract methods have no body and are marked abstract\
+// Non-abstract child classes must @Override all abstract methods\
+// from their super-classes.\
+// Abstract classes can be useful when combining repetitive logic\
+// with customised behavior, but as Abstract classes require\
+// inheritance, they violate "Composition over inheritance"\
+// so consider other approaches using composition.\
+// https://en.wikipedia.org/wiki/Composition_over_inheritance\
+\
+public abstract class Animal\
+{\
+    private int age;\
+\
+    public abstract void makeSound();\
+\
+    // Method can have a body\
+    public void eat()\
+    {\
+        System.out.println("I am an animal and I am Eating.");\
+        // Note: We can access private variable here.\
+        age = 30;\
+    }\
+\
+    public void printAge()\
+    {\
+        System.out.println(age);\
+    }\
+\
+    // Abstract classes can have main method.\
+    public static void main(String[] args)\
+    {\
+        System.out.println("I am abstract");\
+    }\
+}\
+\
+class Dog extends Animal\
+{\
+    // Note still have to override the abstract methods in the\
+    // abstract class.\
+    @Override\
+    public void makeSound()\
+    {\
+        System.out.println("Bark");\
+        // age = 30;    ==> ERROR!    age is private to Animal\
+    }\
+\
+    // NOTE: You will get an error if you used the\
+    // @Override annotation here, since java doesn't allow\
+    // overriding of static methods.\
+    // What is happening here is called METHOD HIDING.\
+    // Check out this SO post: http://stackoverflow.com/questions/16313649/\
+    public static void main(String[] args)\
+    {\
+        Dog pluto = new Dog();\
+        pluto.makeSound();\
+        pluto.eat();\
+        pluto.printAge();\
+    }\
+}\
+\
+// Final Classes\
+\
+// Final Class declaration syntax\
+// <access-level> final <final-class-name> {\
+//     // Constants and variables\
+//     // Method declarations\
+// }\
+\
+// Final classes are classes that cannot be inherited from and are therefore a\
+// final child. In a way, final classes are the opposite of abstract classes\
+// because abstract classes must be extended, but final classes cannot be\
+// extended.\
+public final class SaberToothedCat extends Animal\
+{\
+    // Note still have to override the abstract methods in the\
+    // abstract class.\
+    @Override\
+    public void makeSound()\
+    {\
+        System.out.println("Roar");\
+    }\
+}\
+\
+// Final Methods\
+public abstract class Mammal()\
+{\
+    // Final Method Syntax:\
+    // <access modifier> final <return type> <function name>(<args>)\
+\
+    // Final methods, like, final classes cannot be overridden by a child\
+    // class, and are therefore the final implementation of the method.\
+    public final boolean isWarmBlooded()\
+    {\
+        return true;\
+    }\
+}\
+\
+// Enum Type\
+//\
+// An enum type is a special data type that enables for a variable to be a set\
+// of predefined constants. The variable must be equal to one of the values\
+// that have been predefined for it. Because they are constants, the names of\
+// an enum type's fields are in uppercase letters. In the Java programming\
+// language, you define an enum type by using the enum keyword. For example,\
+// you would specify a days-of-the-week enum type as:\
+public enum Day {\
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,\
+    THURSDAY, FRIDAY, SATURDAY\
+}\
+\
+// We can use our enum Day like that:\
+public class EnumTest {\
+    // Variable Enum\
+    Day day;\
+\
+    public EnumTest(Day day) {\
+        this.day = day;\
+    }\
+\
+    public void tellItLikeItIs() {\
+        switch (day) {\
+            case MONDAY:\
+                System.out.println("Mondays are bad.");\
+                break;\
+            case FRIDAY:\
+                System.out.println("Fridays are better.");\
+                break;\
+            case SATURDAY:\
+            case SUNDAY:\
+                System.out.println("Weekends are best.");\
+                break;\
+            default:\
+                System.out.println("Midweek days are so-so.");\
+                break;\
+        }\
+    }\
+\
+    public static void main(String[] args) {\
+        EnumTest firstDay = new EnumTest(Day.MONDAY);\
+        firstDay.tellItLikeItIs(); // => Mondays are bad.\
+        EnumTest thirdDay = new EnumTest(Day.WEDNESDAY);\
+        thirdDay.tellItLikeItIs(); // => Midweek days are so-so.\
+    }\
+}\
+\
+// Enum types are much more powerful than we show above.\
+// The enum body can include methods and other fields.\
+// You can see more at https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html\
+\
+// Getting Started with Lambda Expressions\
+//\
+// New to Java version 8 are lambda expressions. Lambdas are more commonly found\
+// in functional programming languages, which means they are methods which can\
+// be created without belonging to a class, passed around as if it were itself\
+// an object, and executed on demand.\
+//\
+// Final note, lambdas must implement a functional interface. A functional\
+// interface is one which has only a single abstract method declared. It can\
+// have any number of default methods. Lambda expressions can be used as an\
+// instance of that functional interface. Any interface meeting the requirements\
+// is treated as a functional interface. You can read more about interfaces\
+// above.\
+//\
+import java.util.Map;\
+import java.util.HashMap;\
+import java.util.function.*;\
+import java.security.SecureRandom;\
+\
+public class Lambdas {\
+    public static void main(String[] args) {\
+        // Lambda declaration syntax:\
+	// <zero or more parameters> -> <expression body or statement block>\
+\
+        // We will use this hashmap in our examples below.\
+        Map<String, String> planets = new HashMap<>();\
+            planets.put("Mercury", "87.969");\
+            planets.put("Venus", "224.7");\
+            planets.put("Earth", "365.2564");\
+            planets.put("Mars", "687");\
+            planets.put("Jupiter", "4,332.59");\
+            planets.put("Saturn", "10,759");\
+            planets.put("Uranus", "30,688.5");\
+            planets.put("Neptune", "60,182");\
+\
+        // Lambda with zero parameters using the Supplier functional interface\
+        // from java.util.function.Supplier. The actual lambda expression is\
+        // what comes after numPlanets =.\
+        Supplier<String> numPlanets = () -> Integer.toString(planets.size());\
+        System.out.format("Number of Planets: %s\n\n", numPlanets.get());\
+\
+        // Lambda with one parameter and using the Consumer functional interface\
+        // from java.util.function.Consumer. This is because planets is a Map,\
+        // which implements both Collection and Iterable. The forEach used here,\
+        // found in Iterable, applies the lambda expression to each member of\
+        // the Collection. The default implementation of forEach behaves as if:\
+        /*\
+            for (T t : this)\
+                action.accept(t);\
+        */\
+\
+        // The actual lambda expression is the parameter passed to forEach.\
+        planets.keySet().forEach((p) -> System.out.format("%s\n", p));\
+\
+        // If you are only passing a single argument, then the above can also be\
+        // written as (note absent parentheses around p):\
+        planets.keySet().forEach(p -> System.out.format("%s\n", p));\
+\
+        // Tracing the above, we see that planets is a HashMap, keySet() returns\
+        // a Set of its keys, forEach applies each element as the lambda \
+        // expression of: (parameter p) -> System.out.format("%s\n", p). Each\
+        // time, the element is said to be "consumed" and the statement(s)\
+        // referred to in the lambda body is applied. Remember the lambda body\
+        // is what comes after the ->.\
+\
+        // The above without use of lambdas would look more traditionally like:\
+        for (String planet : planets.keySet()) {\
+            System.out.format("%s\n", planet);\
+        }\
+\
+        // This example differs from the above in that a different forEach\
+        // implementation is used: the forEach found in the HashMap class\
+        // implementing the Map interface. This forEach accepts a BiConsumer,\
+        // which generically speaking is a fancy way of saying it handles\
+        // the Set of each Key -> Value pairs. This default implementation\
+        // behaves as if:\
+        /*\
+            for (Map.Entry<K, V> entry : map.entrySet())\
+                action.accept(entry.getKey(), entry.getValue());\
+        */\
+\
+        // The actual lambda expression is the parameter passed to forEach.\
+        String orbits = "%s orbits the Sun in %s Earth days.\n";\
+        planets.forEach((K, V) -> System.out.format(orbits, K, V));\
+\
+        // The above without use of lambdas would look more traditionally like:\
+        for (String planet : planets.keySet()) {\
+            System.out.format(orbits, planet, planets.get(planet));\
+        }\
+\
+        // Or, if following more closely the specification provided by the\
+        // default implementation:\
+        for (Map.Entry<String, String> planet : planets.entrySet()) {\
+            System.out.format(orbits, planet.getKey(), planet.getValue());\
+        }\
+\
+        // These examples cover only the very basic use of lambdas. It might not\
+        // seem like much or even very useful, but remember that a lambda can be\
+        // created as an object that can later be passed as parameters to other\
+        // methods.\
+    }\
+}\
+
+: 1555964632:0;curl cheat.sh/ruby/:learn
+: 1555964716:0;curl cheat.sh/haskel/:learn
+: 1555964733:0;curl cheat.sh/haskel/
+: 1555964743:0;curl cheat.sh/haskel/92
+: 1555964798:0;curl cheat.sh/js
+: 1555964811:0;curl cheat.sh/js/:learn
+: 1555964869:0;curl cheat.sh/algebra
+: 1555965096:0;curl cheat.sh/grunt
+: 1555965113:0;curl cheat.sh/xml
+: 1555965152:0;curl cheat.sh/rspec
+: 1555965183:0;curl cheat.sh/node
+: 1555965268:0;curl cheat.sh/tmux
+: 1555965358:0;curl cheat.sh/cython
+: 1555965372:0;curl cheat.sh/ipython
+: 1555965442:0;de CHEET.vim
+: 1555965827:0;curl cheat.sh/elixir
+: 1555965838:0;curl cheat.sh/elixir/:learn
+: 1555966987:0;curl cheat.sh/css/:learn
+: 1555966994:0;curl cheat.sh/css
+: 1555967001:0;curl cheat.sh/html
+: 1555967013:0;curl cheat.sh/tcl
+: 1555967020:0;curl cheat.sh/tcl/
+: 1555967025:0;curl cheat.sh/tcl/100
+: 1555967129:0;history
+: 1555967179:0;curl cheat.sh/tree
+: 1555967193:0;curl cheat.sh/awk
+: 1555967358:0;curl cheat.sh/linux
+: 1555967368:0;curl cheat.sh/ls
+: 1555967426:0;curl cheat.sh/gz
+: 1555968589:0;curl cheat.sh/python
+: 1555968607:0;curl cheat.sh/:list
+: 1555968658:0;curl cheat.sh/apache
+: 1555968674:0;curl cheat.sh/apt-cache
+: 1555968780:0;curl cheat.sh/ip
+: 1555968862:0;curl cheat.sh/ln
+: 1555968898:0;curl cheat.sh/cat
+: 1555968934:0;curl cheat.sh/tail
+: 1555968961:0;curl cheat.sh/less
+: 1555969092:0;curl cheat.sh/fopen
+: 1555969111:0;curl cheat.sh/flopen
+: 1555970028:0;js
+: 1555971551:0;curl cheat.sh/lsof
+: 1555980403:0;suo su
+: 1556024151:0;cp -r jsReact /media/red/A5A1-FBC4
+: 1556230780:0;kdeo kBank22Py1.yml
+: 1556230985:0;ls LabPuDB
+: 1556231020:0;cd LabPuDB/PuLogAndConfPrimes
+: 1556294958:0;cd /media/red/
+: 1556294972:0;cd C09F-10DF
+: 1556295023:0;cp -r 2019PyLink ../C09F-10DF
+: 1556299230:0;cp -r BBBLOCK ../C09F-10DF
+: 1556301509:0;cp -r git ../C09F-10DF
+: 1556301871:0;cd ../pink
+: 1556302875:0;cp -r jsReact ../C09F-10DF
+: 1556303752:0;rm -r jsReact
+: 1556362483:0;cd /media/red/C09F-10DF
+: 1556362490:0;cd nodeJS
+: 1556362605:0;guil build
+: 1556362610:0;guilp build
+: 1556363270:0;npm install -g gulp\
+
+: 1556363515:0;npm install -g gulp\
+sudo su
+: 1556363711:0;gulp --version
+: 1556366048:0;cd Documents
+: 1556372393:0;gulp build
+: 1556372477:0;cd ntetris
+: 1556372517:0;npm install -g ntetris\
+
+: 1556372609:0;cd node-calendar
+: 1556372650:0;npm install node-calendar\
+
+: 1556373894:0;cd /media/red/C09F-10DF/nodeJS
+: 1556373916:0;cd react-clock
+: 1556374001:0;yarn add react-clock
+: 1556374122:0;cd react-clockwall-master
+: 1556375550:0;yarn install -g gulp
+: 1556375580:0;yarn global add gulp
+: 1556375667:0;cd react-tetris
+: 1556375852:0;yarn install
+: 1556376964:0;yarn run build
+: 1556377041:0;yarn run watch
+: 1556377111:0;yarn add npm-run-all\
+
+: 1556378532:0;yarn start\
+
+: 1556380089:0;npm run build
+: 1556381032:0;cd git/aTest
+: 1556381042:0;rm -r aTest
+: 1556383110:0;cd /media/red/C09F-10DF/android-studio
+: 1556383145:0;chmod +x studio.sh
+: 1556383203:0;cd /media/red/pink/android-studio
+: 1556390167:0;cd /media/red/pink/jsReact
+: 1556390187:0;ls ntetris-master
+: 1556390211:0;cat ntetris-master/README.md
+: 1556390231:0;cd 4run/react-tetris-master
+: 1556390413:0;cd react-todo-master
+: 1556390698:0;ls timer-master
+: 1556390749:0;cat timer-master/README.md
+: 1556390788:0;ccat timer-master/README.md
+: 1556397594:0;cd /media/red/64black/android-studio
+: 1556398423:0;cd /media/red/pink/jsReact/react-clockwall
+: 1556398874:0;cd /media/red/64black/POC/react-clockwall
+: 1556398883:0;npm run watch
+: 1556399061:0;cd /media/red/64black/POC/react-todo
+: 1556399841:0;cd react-tetris-master
+: 1556400038:0;cd react-clock-master
+: 1556400111:0;ls src
+: 1556400118:0;ls src/website
+: 1556400141:0;ls src/shared
+: 1556400162:0;ls sample
+: 1556400170:0;ls sample/parcel
+: 1556400182:0;cd sample/parcel/
+: 1556400190:0;firefox index.html
+: 1556400231:0;cd /media/red/64black/POC/react-clock/
+: 1556400247:0;cd parcel
+: 1556400705:0;de angularJS.vim
+: 1556400862:0;cd hello-world
+: 1556400872:0;cat README.md
+: 1556400975:0;cd ../..
+: 1556401144:0;cd ../
+: 1556401155:0;cd /media/red/64black/POC/
+: 1556401168:0;cd AwesomeProject
+: 1556402110:0;cd /media/red/64black/POC/AwesomeProject
+: 1556408579:0;cd /media/red/64black/
+: 1556408607:0;rm -r PinkUkr
+: 1556439547:0;cd /media/red/A5A1-FBC4
+: 1556439574:0;rm -r BBBLOCK
+: 1556439761:0;mkdir BBBLOCK
+: 1556456341:0;cd POC
+: 1556456368:0;history | github
+: 1556456375:0;history | grep github
+: 1556456389:0;git clone https://github.com/mike-plummer/angular-react-vue-stopwatch.git
+: 1556456406:0;cd angular-react-vue-stopwatch
+: 1556457583:0;git clone git@github.com:leota/electron-angular4-sqlite3.git
+: 1556457641:0;git clone https://github.com/leota/electron-angular4-sqlite3.git
+: 1556457860:0;cd ../64black
+: 1556457900:0;git clone https://github.com/Mindinventory/Angular6-Example-Website.git
+: 1556458905:0;cd Angular6-Example-Website
+: 1556459666:0;npm run db
+: 1556459767:0;npm run electron
+: 1556459953:0;git clone https://github.com/pamtbaau/angular7-electron3-sqlite3-bootstrap4-webpack4.git
+: 1556459966:0;cd angular7-electron3-sqlite3-bootstrap4-webpack4
+: 1556459984:0;npm instal
+: 1556460840:0;npm run ng
+: 1556460896:0;npm install -g @angular/cli ng
+: 1556461722:0;sudo npm install -g @angular/cli ng
+: 1556462271:0;ng serve
+: 1556463093:0;npm run build:once
+: 1556464138:0;git clone https://github.com/electron/electron-quick-start
+: 1556464153:0;cd electron-angular4-sqlite3
+: 1556464181:0;npm install && npm start
+: 1556464781:0;git clone https://github.com/contentful/the-example-app.nodejs.git
+: 1556465046:0;git clone https://github.com/clocklimited/BasicExpressSite
+: 1556465096:0;cd BasicExpressSite
+: 1556465129:0;cd the-example-app.nodejs
+: 1556466014:0;npm run start:dev
+: 1556466281:0;git clone https://github.com/catamphetamine/react-website-basic-example
+: 1556466345:0;cd react-website-basic-example
+: 1556467851:0;npm start
+: 1556468040:0;de my.vim
+: 1556474313:0;git clone https://github.com/gothinkster/node-express-realworld-example-app
+: 1556475060:0;npm run dev
+: 1556475812:0;cd node-express-realworld-example-app
+: 1556476409:0;git clone https://github.com/kennashka/calculator
+: 1556476474:0;cd calculator/
+: 1556476492:0;npm install
+: 1556478991:0;node app
+: 1556479009:0;node app.js
+: 1556575255:0;cd Music
+: 1556575272:0;rm *.tar.gz
+: 1556575729:0;cd /media/red/pink/android-studio/bin
+: 1556577379:0;cd /media/red/64black/android-studio/bin
+: 1556577598:0;cd android-studio-ide-183.5452501-linux
+: 1556577642:0;mv android-studio ..
+: 1556577659:0;rm -r android-studio-ide-183.5452501-linux
+: 1556577666:0;cd android-studio
+: 1556577674:0;cd bin
+: 1556581898:0;cd android-studio/bin
+: 1556581904:0;./studio.sh
+: 1556584179:0;cd java-eclipse2/eclipse
+: 1556584189:0;./eclipse
+: 1556585111:0;sudo apt-get install gdebi
+: 1556664001:0;ls -al
+: 1556667413:0;cd /media/red/64black
+: 1556667420:0;cd PBin
+: 1556667428:0;cd DocFetcher-1.1.22
+: 1556667448:0;de Readme.txt
+: 1556667505:0;./DocFetcher-GTK3.sh
+: 1556671977:0;cd ../git/bTest
+: 1556672006:0;mkdir FVWM
+: 1556672023:0;cp /usr/lib/X11/fvwm/system.fvwmrc .
+: 1556672628:0;hyper
+: 1556672902:0;ls ../kDot/LabGO
+: 1556672932:0;ls kDot/LabJAVA
+: 1556674134:0;git clone https://github.com/liuxueyang/fvwm-config.git
+: 1556674369:0;mv fvwm-config fvwm-config1
+: 1556674387:0;git clone https://github.com/110101011/fvwm-config.git
+: 1556674407:0;mv fvwm-config fvwm-config2
+: 1556674580:0;git clone https://github.com/phleagol/fvwm_2018.git
+: 1556677306:0;git clone https://github.com/yaoguai/fvwm-min.git
+: 1556677662:0;git clone https://github.com/tcsh-org/tcsh.git
+: 1556678343:0;git clone https://github.com/vim/vim.git
+: 1556678372:0;git clone https://github.com/neovim/neovim.git
+: 1556679028:0;git clone https://github.com/fish-shell/fish-shell.git
+: 1556679124:0;git clone https://github.com/zsh-users/zsh.git
+: 1556679349:0;git clone https://github.com/bminor/bash.git
+: 1556679499:0;git clone https://github.com/ogham/exa.git
+: 1556679804:0;git clone https://github.com/ar-/incron.git
+: 1556679862:0;git clone https://github.com/BurntSushi/ripgrep.git
+: 1556680039:0;git clone git://github.com/wting/autojump.git
+: 1556680196:0;git clone https://github.com/sharkdp/fd.git
+: 1556681016:0;git clone https://github.com/tmm1/pstree.git
+: 1556681030:0;go get github.com/elves/elvish
+: 1556681082:0;go get github.com/michaelmacinnis/oh
+: 1556681224:0;git clone https://github.com/junegunn/fzf.git
+: 1556681266:0;git clone https://github.com/rupa/z.git
+: 1556681623:0;fd
+: 1556682999:0;kill 23869
+: 1556743583:0;cd tcsh
+: 1556743677:0;make config
+: 1556743701:0;./install-sh
+: 1556743712:0;de install-sh
+: 1556743779:0;cd fd
+: 1556743877:0;cd z
+: 1556743902:0;cd incron
+: 1556743962:0;make -j8 && sudo make install\
+
+: 1556744020:0;de out-ist.vim
+: 1556744053:0;man incron
+: 1556744063:0;cd..
+: 1556744082:0;cd fish-shell
+: 1556744102:0;ccat README.md
+: 1556744150:0;mkdir build
+: 1556744158:0;cd build
+: 1556744178:0;cmake ..
+: 1556746666:0;git clone https://github.com/neurobin/shc.git
+: 1556746755:0;git clone https://github.com/PeterDaveHello/ColorEchoForShell.git
+: 1556746859:0;git clone https://github.com/MirBSD/mksh.git
+: 1556746990:0;git clone https://www.github.com/tgsachse/shellcuts.git
+: 1556747066:0;git clone https://github.com/kusabashira/cdf.git
+: 1556747092:0;cd cdf
+: 1556747154:0;git clone https://github.com/dpremy/dot-ksh.git
+: 1556747464:0;git clone https://github.com/mirabilos/shellsnippets.git
+: 1556747668:0;git clone https://github.com/loop333/oracle_scripts.git
+: 1556747982:0;git clone https://github.com/arismelachroinos/lscript.git
+: 1556748039:0;git clone https://github.com/lamerman/shellpy.git
+: 1556748232:0;git clone https://github.com/PatrickNicholas/LL-Script.git
+: 1556748278:0;git clone https://github.com/chinaran/color-compile.git
+: 1556748351:0;git clone https://github.com/breakdance/breakdance.git
+: 1556748447:0;git clone https://github.com/sebaste/dotfiles.git
+: 1556748635:0;git clone https://github.com/jarun/googler.git
+: 1556748696:0;git clone https://github.com/kdabir/has.git
+: 1556748809:0;mkdir dot-bot
+: 1556748816:0;cd dot-bot
+: 1556748827:0;git clone https://github.com/thoughtbot/dotfiles.git
+: 1556749032:0;mkdir dot-paul
+: 1556749037:0;cd dot-paul
+: 1556749057:0;git clone https://github.com/paulirish/dotfiles
+: 1556749208:0;git clone https://github.com/supercrabtree/k.git
+: 1556749942:0;git clone https://github.com/tmrts/boilr.git
+: 1556750153:0;git clone https://github.com/jarun/Buku.git
+: 1556751422:0;git clone https://github.com/jarun/pdd.git
+: 1556798223:0;cd /media/red/64black/PBin
+: 1556798232:0;git clone https://github.com/GNOME/gparted.git
+: 1556798290:0;git clone https://github.com/emacs-mirror/emacs
+: 1556798321:0;git clone https://github.com/jonas/tig.git
+: 1556798429:0;git clone https://github.com/strace/strace.git
+: 1556798549:0;git clone https://github.com/fwenzel/pdftk.git
+: 1556798636:0;git clone https://github.com/aircrack-ng/aircrack-ng.git
+: 1556798943:0;git clone https://github.com/monochromegane/the_platinum_searcher.git
+: 1556798996:0;git clone https://github.com/Mebus/cupp.git
+: 1556799024:0;git clone https://github.com/apache/crunch.git
+: 1556799148:0;git clone https://github.com/Kumaava/Facial_Emotion_classifier.git
+: 1556799203:0;git clone https://github.com/gtzinos/Image-Search-Engine
+: 1556799439:0;git clone https://github.com/sid0522/ImageComparison.git
+: 1556799487:0;git clone https://github.com/shiv-gpt/Computer-Vision.git
+: 1556799516:0;git clone https://github.com/janbella/opensift.git
+: 1556799596:0;mv Computer-Vision Computer-Vision1
+: 1556799600:0;git clone https://github.com/deepaksn99/Computer-Vision.git
+: 1556799961:0;df
+: 1556799978:0;df -h
+: 1556800550:0;git clone https://github.com/faif/python-patterns.git
+: 1556800657:0;git clone https://github.com/pytorch/pytorch.git
+: 1556800790:0;git clone https://github.com/Avik-Jain/100-Days-Of-ML-Code.git
+: 1556800872:0;git clone https://github.com/morparia-p/Image-Panorama.git
+: 1556801139:0;git clone https://github.com/gtzinos/Image-Search-Engine.git
+: 1556801339:0;git clone https://github.com/faturita/BidimensionalSignalProcessing.git
+: 1556824291:0;l .f
+: 1556824358:0;cd fvwm-min
+: 1556824372:0;make
+: 1556824379:0;make install
+: 1556824390:0;l .fvwm
+: 1556825341:0;mv .fvwm fvwm-min
+: 1556825354:0;mkdir .fvwm
+: 1556825515:0;cp .Xdefaults XdefaultsONE
+: 1556825551:0;de XdefaultsONE
+: 1556825706:0;cd fvwm-config1
+: 1556825733:0;cp * ~/.fvwm
+: 1556825739:0;cp -r * ~/.fvwm
+: 1556826152:0;cd git/bTest/FVWM
+: 1556826166:0;mv .fvwm fvwm-ONE
+: 1556826350:0;cp -r fvwm-config2 ~/.fvwm
+: 1556826501:0;mv .fvwm fvwm-TWO
+: 1556826658:0;man fvwm
+: 1556827585:0;ls .fvwm
+: 1556827634:0;cp ../fvwm-min/config config-min
+: 1556827688:0;cp ../fvwm-ONE/config config-ONE
+: 1556828260:0;deo config
+: 1556828711:0;FvwmCommand Restart
+: 1556829055:0;mv config myconfig
+: 1556830159:0;ls /etc/shells
+: 1556830169:0;ls /etc/
+: 1556830236:0;ls /etc/vim
+: 1556830244:0;ls /etc/zsh
+: 1556830274:0;ls /etc/X11
+: 1556833347:0;ls /usr/share/fvwm
+: 1556833425:0;locate fvwm
+: 1556833521:0;cd /usr/bin/fvwm
+: 1556833562:0;ls /usr/bin/fvwm-config
+: 1556833574:0;cd /usr/bin/fvwm-config
+: 1556833746:0;vi /usr/bin/fvwm-menu-desktop
+: 1556833997:0;vi /usr/bin/fvwm-config
+: 1556834057:0;vi myconfig
+: 1556834121:0;sudo vi /usr/bin/fvwm-config
+: 1556834227:0;locate fvwm | vim -
+: 1556834281:0;de /usr/share/fvwm/default-config\
+
+: 1556834320:0;ls /usr/share/fvwm/default-config\
+
+: 1556834329:0;cd /usr/share/fvwm/default-config\
+
+: 1556834427:0;cd -
+: 1556834749:0;cp config configDEF
+: 1556834781:0;vi config
+: 1556840283:0;conky
+: 1556841713:0;amixer
+: 1556841822:0;gnome-calendar
+: 1556841890:0;gnome-shell
+: 1556841922:0;gnome-commander
+: 1556848552:0;xfce4-panel
+: 1556879787:0;de config2DEF
+: 1556880599:0;ls /usr/bin/conky
+: 1556881563:0;cd git/bTest/
+: 1556881570:0;mkdir AWESOME
+: 1556881573:0;cd AWESOME
+: 1556881583:0;git clone https://github.com/pettarin/awesome-config.git
+: 1556881636:0;mv awesome-config awesome-config1
+: 1556881646:0;git clone https://github.com/troglobit/awesome-config.git
+: 1556881654:0;mv awesome-config awesome-config2
+: 1556881691:0;git clone https://github.com/prikhi/awesome-config.git
+: 1556881741:0;mv awesome-config awesome-config3
+: 1556881750:0;g clone https://github.com/dynamotn/awesome-config.git
+: 1556881771:0;mv awesome-config awesome-config4
+: 1556881842:0;g clone https://github.com/tony/awesome-config.git
+: 1556882124:0;mv awesome-config awesome-configMin1
+: 1556882198:0;g clone https://github.com/worron/awesome-config.git
+: 1556882233:0;mv awesome-config awesome-configWorron
+: 1556884500:0;xbattbar
+: 1556884582:0;so
+: 1556885541:0;xapm
+: 1556885886:0;mkdir i3
+: 1556885897:0;g clone https://github.com/CSaratakij/i3wm-desktop-config.git
+: 1556885938:0;mv i3wm-desktop-config i3wm-desktop-config1
+: 1556885956:0;g clone https://github.com/sainathadapa/i3-wm-config.git
+: 1556885998:0;g lone https://github.com/addy-dclxvi/i3-starterpack.git
+: 1556886022:0;mv i3-wm-config i3-wm-config2
+: 1556886032:0;g clone https://github.com/addy-dclxvi/i3-starterpack.git
+: 1556967362:0;cd git/bTest/AWESOME
+: 1556967376:0;cd awesome-configWorron
+: 1556967760:0;firefox
+: 1556967898:0;ls FVWM
+: 1556968100:0;git clone https://github.com/worron/awesome-config.git ~/.config/awesome --recursive
+: 1556968137:0;mkdir FLUX
+: 1556968142:0;cd FLUX
+: 1556968152:0;git clone https://github.com/descara/fluxbox-config.git
+: 1556968302:0;mv fluxbox-config fluxbox-config1
+: 1556968322:0;g clone https://github.com/s3rvac/dotfiles.git
+: 1556968336:0;ls dotfiles
+: 1556968365:0;mv dotfiles s3dotfiles
+: 1556968578:0;g clone https://github.com/skybert/my-little-friends.git
+: 1556968669:0;mv my-little-friends git/bTest/FLUX
+: 1556968733:0;ls git/bTest/FVWM
+: 1556969076:0;g clone https://github.com/schw4b/.fluxbox.git
+: 1556969099:0;la
+: 1556969124:0;mv .fluxbox fluxbox-DOT
+: 1556969153:0;cd ../i3
+: 1556969168:0;cd i3-starterpack
+: 1556969813:0;sudo dry
+: 1556969846:0;su dry
+: 1556969930:0;cd i3-wm-config2
+: 1556969988:0;git clone --recursive git@github.com:sainathadapa/i3-wm-config.git ~/.i3
+: 1556970339:0;cd .config/i3
+: 1556970351:0;ls config
+: 1556970356:0;cat config
+: 1556970390:0;cp -r i3 i3One
+: 1556970403:0;cd i3
+: 1556970411:0;rm comfig
+: 1556970433:0;git clone https://github.com/helge000/i3-config.git
+: 1556970463:0;vm i3-config ..
+: 1556970470:0;mv i3-config ..
+: 1556970493:0;rm -r i3
+: 1556970505:0;mv i3-config i3
+: 1556972138:0;cd git/bTest/i3
+: 1556972158:0;git clone https://github.com/lleweldyn/i3-Desktop.git
+: 1556972323:0;cd ../FVWM
+: 1556972346:0;git clone https://github.com/Minda1975/FVWM-configuration.git
+: 1556972521:0;git clone https://github.com/deftsp/dotfvwm.git
+: 1556972573:0;de add-app.vim
+: 1556996414:0;cd git/bTest/FVWM/fvwm-config1
+: 1556996444:0;cp -r icons ~/.fvwm
+: 1556996452:0;cp -r images ~/.fvwm
+: 1556997059:0;cp config ~/.fvwm/config-01
+: 1556998067:0;file
+: 1556998246:0;xfce4-terminal
+: 1556999039:0;thunar
+: 1557001491:0;de config config-01
+: 1557001812:0;gnome-screenshot
+: 1557001828:0;gnome-terminal
+: 1557004711:0;cd images
+: 1557004758:0;cp wallpaper background
+: 1557004764:0;cp -r wallpaper background
+: 1557004790:0;mkdir bgicons
+: 1557005827:0;cp ~/git/bTest/FVWM/fvwm-config2/config config-02
+: 1557005847:0;de config config-01 config-02
+: 1557005953:0;cp ~/git/bTest/FVWM/fvwm-config2/conf.d conf02.d
+: 1557005972:0;cp -r ~/git/bTest/FVWM/fvwm-config2/conf.d conf02.d
+: 1557005982:0;ls conf02.d
+: 1557006425:0;cp ~/git/bTest/screen.png wallpaper
+: 1557006435:0;cp ~/git/bTest/screen.png background
+: 1557007971:0;cd images/wallpaper
+: 1557008013:0;cd background
+: 1557008646:0;nautilus-desktop
+: 1557008700:0;xfce4-sensors
+: 1557008824:0;xfce4-appfinder
+: 1557008945:0;xfce4-popup-applicationsmenu
+: 1557008985:0;xfce4-settings-manager
+: 1557009046:0;xfce4-taskmanager
+: 1557010630:0;cd git
+: 1557010665:0;imagej w3.png w4.png w5.jpg
+: 1557010951:0;cp ~/git/w* .
+: 1557013200:0;fvwm-menu-headlines
+: 1557013218:0;fvwm-menu-directory
+: 1557015111:0;mkdir upstart
+: 1557015134:0;firef.conf
+: 1557015143:0;de firef.conf
+: 1557015401:0;cd .config/
+: 1557015567:0;man xdotool
+: 1557016210:0;de examples.desktop
+: 1557016350:0;mkdir autostart
+: 1557051459:0;gnome-session
+: 1557054796:0;xde-sm
+: 1557057054:0;de .fvwm/config
+: 1557090867:0;nm-applet
+: 1557094963:0;cp config-ONE config
+: 1557095526:0;cp config-01 config
+: 1557095714:0;cp config-02 config
+: 1557095810:0;cp configDEF config
+: 1557099072:0;nautilus
+: 1557102917:0;cd git/bTest
+: 1557102933:0;cd FVWM
+: 1557103072:0;cd fvwm_2018
+: 1557103100:0;de README.md
+: 1557103187:0;cat 01-General
+: 1557103213:0;cat 22-Root-Menu
+: 1557103275:0;cd dotfvwm
+: 1557103331:0;cat f.buttons
+: 1557103354:0;ls modules
+: 1557103359:0;ls modules/FvwmTransFocus
+: 1557103382:0;cs
+: 1557103400:0;ls scripts
+: 1557103437:0;cd FVWM-configuration
+: 1557103505:0;cp .fvwm dfvwm
+: 1557103510:0;cp -r .fvwm dfvwm
+: 1557103514:0;cd dfvwm
+: 1557103937:0;ls icons
+: 1557103955:0;ls buttons
+: 1557104103:0;cp -r .fvwm ab-tile1-fvwm
+: 1557104133:0;cp -r ab-tile1-fvwm git/bTest
+: 1557105575:0;cd git/
+: 1557105614:0;cp -r bTest /media/red/A5A1-FBC4/BBBLOCK
+: 1557106620:0;cp -r bTest/ab-tile1-fvwm /media/red/A5A1-FBC4/BBBLOCK
+: 1557106700:0;cp -r bTest/ab-tile1-fvwm /media/red/64black/
+: 1557106754:0;cp -r bTest/ /media/red/64black/
+: 1557106913:0;cd ~
+: 1557107030:0;cp -r dfvwm ~/.fvwm
+: 1557112903:0;clear
+: 1557113015:0;cp -r ab-tile1-fvwm .fvwm
+: 1557113632:0;mv config tile1-config
+: 1557115101:0;cd .fvwm/
+: 1557115104:0;de config config5DEF-LongBar
+: 1557115263:0;cd .fvwm/images/wallpaper
+: 1557119225:0;mv configDEF config
+: 1557119306:0;mv config4DEF2BarCS9 config
+: 1557119553:0;cp minYes1-config config
+: 1557139678:0;mv config5DEF-LongBar config
+: 1557139798:0;mv minYes2-config config
+: 1557139949:0;blueman-applet
+: 1557140867:0;de config tile1-config
+: 1557170703:0;cp -r ab2-tile1-fvwm .fvwm
+: 1557170732:0;cp -r .fvwm ab2-tile1-fvwm
+: 1557170792:0;rm -r .fvwm
+: 1557170857:0;cd git/nFVWM
+: 1557170875:0;ld fvwm-tiling-master
+: 1557170883:0;ls fvwm-tiling-master
+: 1557170952:0;cp -r fvwm-tiling-master ~/.fvwm
+: 1557177618:0;mv .fvwm fvwm-TiLE
+: 1557177656:0;mv ab2-tile1-fvwm .fvwm
+: 1557183912:0;kill 8167
+: 1557349957:0;de .Xdefaults
+: 1557351846:0;sudo su
+: 1557352343:0;unity
+: 1557355053:0;kill 8142
+: 1557355713:0;xfce4-session
+: 1557356106:0;xsm
+: 1557357964:0;history | vim -
+: 1557359630:0;cd .config
+: 1557359662:0;cd autostart
+: 1557359673:0;lsa
+: 1557359676:0;ls -a
+: 1557359957:0;de .xsession
+: 1557428089:0;mv config keyPre1Nop-config
+: 1557428106:0;cp key2-config config
+: 1557429119:0;cp tile1-config config
+: 1557429837:0;rm config
+: 1557429880:0;cp config-min config
+: 1557430718:0;cd ~/.fvwm
+: 1557430739:0;de temp
+: 1557434847:0;cd fvwm-TiLE
+: 1557434942:0;..
+: 1557434969:0;cd ab-tile1-fvwm
+: 1557434972:0;de config
+: 1557437199:0;de config tConfig
+: 1557440563:0;cp -r .fvwm ab4-tileBettr-fvwm
+: 1557441316:0;shutdown -r now
+: 1557536371:0;exit
+: 1557537105:0;startx
+: 1557537183:0;de config config2DEF
+: 1557541022:0;cd git/bTest/kDot
+: 1557541245:0;cp ~/.fvwm/config kConfigFVWM
+: 1557541309:0;cp ~/.xsession kXsession
+: 1557541969:0;de CHEET-BASH.vim
+: 1557542836:0;cp -r .fvwm ab6-tileBettr-fvwm
+: 1557542921:0;zip -r ab6-tileBettr-fvwm.zip .fvwm
+: 1557542989:0;cp ab6-tileBettr-fvwm.zip git/bTest/
+: 1557543047:0;mv AWESOME ..
+: 1557543058:0;mv i3 ..
+: 1557543071:0;mv FVWM ..
+: 1557543100:0;mv ab-tile1-fvwm ..
+: 1557543137:0;de eclipse64Black.vim
+: 1557543239:0;git add k*
+: 1557543259:0;de kIng19.sh
+: 1557543449:0;pwd
+: 1557543462:0;cd .fvwm
+: 1557543491:0;cp config congig6Tille
+: 1557544055:0;l
+: 1557545097:0;de kZshrc19.sh
+: 1557545328:0;deo
+: 1557545437:0;mkdir LabCHEET
+: 1557545454:0;mv CHEET* LabCHEET
+: 1557545468:0;git add LabCHEET/
+: 1557545476:0;cd LabCHEET
+: 1557545492:0;git add CHEET*
+: 1557545515:0;mv FLUX ..
+: 1557545518:0;ls
+: 1557545548:0;git status
+: 1557545579:0;git commit -a
+: 1557545650:0;deo kIng19.sh
+: 1557832339:0;cd ..
+: 1557832345:0;git push
+: 1557838425:0;cd kDot
+: 1557838430:0;ls k
+: 1557838434:0;ls k*
+: 1557838480:0;de kConfigFVWM
+: 1557864214:0;c
+: 1557864254:0;reboot
+: 1557864509:0;startx
+: 1557864590:0;cd git/bTest/kDot
+: 1557864592:0;c
+: 1557864594:0;l
+: 1557864599:0;de kConfigFVWM
+: 1557865158:0;c
+: 1557894226:0;de kConfigFVWM
+: 1557956690:0;cd git/bTest/kDot
+: 1557956692:0;c
+: 1557956702:0;de kConfigFVWM
+: 1557957844:0;c
+: 1557957859:0;cd ../..
+: 1557957862:0;..
+: 1557957960:0;cp -r .config /media/red/124Black/git/dotRedConfig
+: 1557958188:0;cp -r .vim /media/red/124Black/git/dotRedVim
+: 1557958220:0;c
+: 1557958232:0;ls .*
+: 1557958297:0;vim .viminfo
+: 1557959301:0;de kIng19.sh
+: 1557959438:0;cd ..
+: 1557959441:0;c
+: 1557959442:0;l
+: 1557959462:0;de cc.txt
+: 1557961696:0;whitch nvim
+: 1557961706:0;which nvim
+: 1557961726:0;which deo
+: 1557961846:0;cd ~/nvim-linux64/bin
+: 1557961848:0;c
+: 1557961850:0;ls
+: 1557961862:0;./deonvim
+: 1557962643:0;cd ..
+: 1557962649:0;c
+: 1557962662:0;cd /media/red/64black/
+: 1557962686:0;cp -r PBin ../124Black
+: 1557962730:0;cd ../124Black
+: 1557962732:0;c
+: 1557962733:0;ls
+: 1557962742:0;cd PBin
+: 1557962744:0;ls
+: 1557962750:0;fish
+: 1557962770:0;cd fish-shell
+: 1557962774:0;c
+: 1557962775:0;ls
+: 1557962782:0;de README.md
+: 1557962842:0;cd build
+: 1557962844:0;l
+: 1557962867:0;cmake ..
+: 1557962888:0;cd ..
+: 1557962896:0;rm -r build
+: 1557962937:0;mkdir build
+: 1557962943:0;cd build
+: 1557962955:0;c
+: 1557963074:0;cmake ..
+: 1557963142:0;make
+: 1557963189:0;htop
+: 1557963648:0;cd /media/red/124Black/PBin
+: 1557963650:0;c
+: 1557963664:0;l
+: 1557963676:0;cd neovim
+: 1557963681:0;ls
+: 1557963690:0;cd src
+: 1557963692:0;ls
+: 1557963703:0;cd ..
+: 1557963708:0;de README.md
+: 1557963806:0;make install
+: 1557963841:0;l
+: 1557963850:0;./fish
+: 1557963873:0;ls
+: 1557969214:0;cd ../124Black/PBin/neovim
+: 1557969215:0;ls
+: 1557969224:0;cd src
+: 1557969226:0;ls
+: 1557969276:0;./configure --prefix =/media/red/124Black/git/mySoft\
+
+: 1557969326:0;c
+: 1557969335:0;./configure --prefix =/media/red/124Black/git/mySoft\
+
+: 1557969415:0;pwd\
+
+: 1557969423:0;./configure --prefix =/media/red/124Black/git/mySoft/\
+
+: 1557969453:0;c
+: 1557969454:0;ls
+: 1557969458:0;cd ..
+: 1557969462:0;ls
+: 1557969482:0;de README.md
+: 1557969656:0;ls
+: 1557969665:0;make CMAKE_INSTALL_PREFIX=/media/red/124Black/git/mySoft/\
+
+: 1557969687:0;make install
+: 1557969705:0;ls
+: 1557969714:0;cd src
+: 1557969718:0;make CMAKE_INSTALL_PREFIX=/media/red/124Black/git/mySoft/\
+
+: 1557969723:0;cd ..
+: 1557969725:0;c
+: 1557969732:0;make CMAKE_INSTALL_PREFIX=/media/red/124Black/git/mySoft\
+
+: 1557969756:0;pwd
+: 1557969781:0;mkdir nneo
+: 1557969796:0;make CMAKE_INSTALL_PREFIX=~/nneo\
+
+: 1557969810:0;ls nneo
+: 1557969879:0;c
+: 1557969880:0;l
+: 1557969908:0;c
+: 1557969910:0;ls
+: 1557969923:0;de README.md
+: 1557970212:0;c
+: 1557970215:0;..
+: 1557970217:0;l
+: 1557970229:0;cd vim
+: 1557970237:0;cd ..
+: 1557970241:0;cd vim
+: 1557970246:0;l
+: 1557970268:0;de README.md
+: 1557970451:0;l
+: 1557970483:0;de src/INSTALL
+: 1557970598:0;cd ..
+: 1557970610:0;c
+: 1557970611:0;ls
+: 1557970633:0;pcd tcsh
+: 1557970637:0;cd tcsh
+: 1557970639:0;c
+: 1557970641:0;ls
+: 1557970649:0;de README.md
+: 1557970682:0;cc
+: 1557970684:0;c
+: 1557970686:0;ls
+: 1557970705:0;de BUILDING
+: 1557970768:0;cd tcsh
+: 1557970778:0;./configure
+: 1557970813:0;make
+: 1557970850:0;c
+: 1557970905:0;pwd
+: 1557970916:0;l
+: 1557971057:0;cd ..
+: 1557971060:0;l
+: 1557971096:0;cd shc
+: 1557971099:0;l
+: 1557971109:0;de README.md
+: 1557971158:0;./configure
+: 1557971170:0;make
+: 1557971205:0;make install
+: 1557971244:0;./shc.1
+: 1557971249:0;./shc
+: 1557971253:0;l
+: 1557971265:0;./shc.1
+: 1557971280:0;chmod +x shc.1
+: 1557971283:0;./shc.1
+: 1557971294:0;c
+: 1557971296:0;l
+: 1557971309:0;./autogen.sh
+: 1557971765:0;cd ..
+: 1557971766:0;c
+: 1557971768:0;ls
+: 1557971802:0;ls fzf
+: 1557971813:0;cd fzf
+: 1557971816:0;de README.md
+: 1557972005:0;l
+: 1557972023:0;c
+: 1557972024:0;ls
+: 1557972026:0;c
+: 1557972027:0;l
+: 1557972039:0;de BUILD.md
+: 1557972080:0;make
+: 1557972093:0;c
+: 1557972095:0;ls
+: 1557972103:0;ls bin
+: 1557972111:0;ls src
+: 1557972152:0;make
+: 1557972283:0;cd ..
+: 1557972286:0;l
+: 1557972300:0;cd tig
+: 1557972301:0;ls
+: 1557972317:0;make
+: 1557972352:0;ls
+: 1557972366:0;make install
+: 1557972398:0;tig
+: 1557972579:0;cd bin
+: 1557972580:0;l
+: 1557972588:0;c
+: 1557972591:0;ls
+: 1557972596:0;./tig
+: 1558003679:0;man vim
+: 1558004874:0;b5deo
+: 1558005917:0;b5deo new.vim
+: 1558021971:0;xclock
+: 1558032210:0;sudo su
+: 1558032509:0;b5deo b5new.vim
+: 1558032716:0;c
+: 1558032817:0;b5deo b5new.vim
+: 1558032872:0;pwd
+: 1558032886:0;l
+: 1558032916:0;cp fish ../../../git/mySoft
+: 1558032929:0;c
+: 1558032931:0;ls
+: 1558033116:0;pwd
+: 1558033146:0;cd /media/red/124Black/git/dotRedConfig
+: 1558033148:0;c
+: 1558033150:0;ls
+: 1558033165:0;cd nvim
+: 1558033167:0;ls
+: 1558033177:0;cd undoDir
+: 1558033179:0;l
+: 1558033193:0;ls b*
+: 1558033201:0;ls %home%red%git%bTest%kDot%b5new.vim
+: 1558055199:0;history
+: 1558055250:0;c
+: 1558055258:0;ls
+: 1558055483:0;cd Hist
+: 1558055484:0;ls
+: 1558055546:0;history | cat redZshHistMai19.sh
+: 1558055555:0;history | cat >| redZshHistMai19.sh
+: 1558055577:0;de redZshHistMai19.sh
+: 1558055597:0;sudo su
+: 1558055975:0;pwd
+: 1558055990:0;cd ..
+: 1558055992:0;ls
+: 1558056007:0;c
+: 1558056009:0;l
+: 1558056033:0;vim init.vim
+: 1558056075:0;c
+: 1558056079:0;l
+: 1558059244:0;so
+: 1558059261:0;c
+: 1558059263:0;ls
+: 1558059420:0;pwd
+: 1558059423:0;l
+: 1558059468:0;..
+: 1558059471:0;ls
+: 1558059486:0;cd mySoft
+: 1558059490:0;ls
+: 1558059521:0;b5deo mai19Soft.vim
+: 1558060746:0;c
+: 1558060747:0;ls
+: 1558060762:0;b5deo mai19Soft.vim
+: 1558060930:0;fish
+: 1558061061:0;so
+: 1558061083:0;fish
+: 1558061117:0;pwd
+: 1558061128:0;..
+: 1558061134:0;cd mySoft
+: 1558061136:0;ls
+: 1558061142:0;./fish
+: 1558061939:0;b5deo mai19Soft.vim
+: 1558062080:0;so
+: 1558062129:0;b124 mai19Soft.vim
+: 1558062184:0;c
+: 1558062186:0;l
+: 1558063984:0;so
+: 1558064018:0;b124 mai19Soft.vim
+: 1558066572:0;c
+: 1558066574:0;l
+: 1558066594:0;mkdir vim81
+: 1558066618:0;cd ../mySorce/vim-master-82
+: 1558066620:0;ls
+: 1558066625:0;c
+: 1558066627:0;l
+: 1558066634:0;cd src
+: 1558066637:0;ls
+: 1558066690:0;b124 INSTALL
+: 1558066906:0;./configure --prefix =/media/red/124Black/git/mySoft/vim81/\
+
+: 1558066921:0;ls
+: 1558066946:0;make
+: 1558066966:0;make install
+: 1558066994:0;cd vim81
+: 1558066996:0;ls
+: 1558067045:0;b124 INSTALL
+: 1558067153:0;cd ..
+: 1558067159:0;l
+: 1558067166:0;cd vim82
+: 1558067168:0;ls
+: 1558067175:0;cd vim
+: 1558067183:0;l
+: 1558067194:0;cd src
+: 1558067197:0;ls
+: 1558067213:0;b124 config
+: 1558067235:0;b124 configure
+: 1558067320:0;c
+: 1558067331:0;./configure --prefix =/media/red/124Black/git/mySoft/vim81/\
+
+: 1558067335:0;make
+: 1558067351:0;make install
+: 1558067368:0;l
+: 1558067381:0;cd ..
+: 1558067625:0;pwd
+: 1558067644:0;cd 82vim
+: 1558067645:0;ls
+: 1558067650:0;ls bin
+: 1558067675:0;ls
+: 1558067702:0;l
+: 1558067707:0;cd ..
+: 1558067760:0;mv 82vim /media/red/124Black/git/mySoft
+: 1558067780:0;l 81vim
+: 1558067793:0;l 81vim/bin
+: 1558067814:0;l 82vim/bin
+: 1558067839:0;vim
+: 1558067857:0;mv 81vim /media/red/124Black/git/mySoft
+: 1558067861:0;vim
+: 1558067882:0;b124 configure
+: 1558068090:0;make
+: 1558068099:0;make install
+: 1558068111:0;l
+: 1558068116:0;ls bin
+: 1558068121:0;l bin
+: 1558068145:0;cd bin
+: 1558068154:0;./vim
+: 1558068186:0;c
+: 1558068201:0;..
+: 1558068234:0;mv mySorce nSorce
+: 1558068237:0;c
+: 1558068239:0;ls
+: 1558068266:0;c
+: 1558068268:0;l
+: 1558068977:0;c
+: 1558068978:0;l
+: 1558069001:0;l .zplug
+: 1558069148:0;cp -r .zplug /media/red/124Black/git/redDotZplug
+: 1558069191:0;de .zsh_history .zhistory
+: 1558069321:0;cp .zhistory /media/red/124Black/git/bTest/Hist/zhistoryMai19
+: 1558069349:0;cp .zsh_history /media/red/124Black/git/bTest/Hist/zhistoryMai19
+: 1558069366:0;cp .zsh_history /media/red/124Black/git/bTest/Hist/zsh-historyMai19
+: 1558069369:0;cp .zhistory /media/red/124Black/git/bTest/Hist/zhistoryMai19
+: 1558069393:0;cp .zhistory git/bTest/Hist/zhistoryMai19
+: 1558069405:0;cp .zsh_history git/bTest/Hist/zsh-historyMai19
