@@ -157,31 +157,29 @@ source "/home/red/.fzf/shell/key-bindings.zsh"
 #export FZF_DEFAULT_OPTS='--height=70% --preview="ccat {}" --preview-window=right:60%:wrap'
 export FZF_DEFAULT_OPTS='--height=70% --preview="ccat {}" --preview-window=up:3:wrap'
 #---------------------
+#export FZF_TMUX=1
+#---------------------
 #export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color light --margin 1,1 --preview-window=right:50%:wrap --bind 'F2:toggle-preview'"
 #export FZF_DEFAULT_OPTS="--inline-info --color=light,bg+:2,info:27,fg:32 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
 #export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color light --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
 #export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --color light --margin 1,1 --preview-window=right:50%:wrap --bind 'F2:toggle-preview'"
 #export FZF_DEFAULT_OPTS="--inline-info --color=light,bg+:2,info:27,fg:32 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
-#---------------------
-#---------------------
-#--PINK fg:5------
-#---------------------
+#--------------------#
+#--PINK fg:5---------#
+#--------------------#
 export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:5,fg+:7,hl:1,hl+:32,prompt:1,spinner:2,pointer:5 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
 #---------------------
 #--CYAN fg:80----
 #---------------------
+
 export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:80,fg+:7,hl:1,hl+:32,prompt:1,spinner:2,pointer:5 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
 #---------------------
-#--CYAN fg:80----
+#--WHITE CYAN RED ----
 #---------------------
 export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:80,fg+:7,hl:1,hl+:32,prompt:1,spinner:2,pointer:1,header:2,marker:5,info:1 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
 #---------------------
-#---------------------
-#---------------------
 
 #--bind "F2:toggle-preview"
-#export FZF_DEFAULT_OPTS='--no-height --no-reverse'
-#export FZF_TMUX=1
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_COMMAND='rg --files'
 #==============================================================
@@ -214,7 +212,6 @@ ffd() {
   cd "$dir"
 }
 #==============================================================
-
 fft() {
   local dir
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf --preview 'tree -C {} | head -200') && cd "$dir"
