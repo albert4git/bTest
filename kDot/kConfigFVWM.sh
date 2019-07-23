@@ -214,14 +214,6 @@ AddToFunc Resize-or-Raise
 + I Raise
 + M Resize
 
-###############################################################################
-# Global Behavior Commands                                                    #
-###############################################################################
-
-ClickTime 750
-# DeskTopSize 3x3
-EdgeResistance 250
-EdgeScroll 0 0
 
 
 ###############################################################################
@@ -266,7 +258,7 @@ Style Fvwm* WindowListSkip
 
 #######################################################################################
 DestroyModuleConfig SimpleButtons: *
-*SimpleButtons: Geometry 560x60+780-50
+*SimpleButtons: Geometry 960x60+780-50
 *SimpleButtons: Colorset 11
 *Simplebuttons: Frame 0
 *SimpleButtons: Rows 1
@@ -287,11 +279,27 @@ DestroyModuleConfig SimpleButtons: *
 *SimpleButtons: (1x1, Icon 48x48/Thunar.png, \
               Action(Mouse 1) "Exec exec thunar")
 
-*SimpleButtons: (1x1, Icon 48x48/x.png, \
+*SimpleButtons: (1x1, Icon 48x48/terminal.png, \
               Action(Mouse 1) "Exec exec tilix")
 
 *SimpleButtons: (1x1, Icon 48x48/x.png, \
               Action(Mouse 1) "Exec exec sakura")
+
+*SimpleButtons: (1x1, Icon 48x48/terminal.png, \
+              Action(Mouse 1) "Exec exec termit")
+
+*SimpleButtons: (1x1, Icon 48x48/x.png, \
+              Action(Mouse 1) "Exec exec hyper")
+
+*SimpleButtons: (1x1, Icon 48x48/terminal.png, \
+              Action(Mouse 1) "Exec exec gnome-terminal")
+
+*SimpleButtons: (1x1, Icon 48x48/x.png, \
+              Action(Mouse 1) "Exec exec yakuake")
+
+*SimpleButtons: (1x1, Icon 48x48/terminal.png, \
+              Action(Mouse 1) "Exec exec guake")
+
 
 *SimpleButtons: (1x1, Icon 48x48/tux.png, \
               Action(Mouse 1) "Exec exec xfce4-appfinder")
@@ -396,8 +404,16 @@ DesktopName 2 Desk2
 DesktopName 3 Desk3
 DesktopSize 3x3
 
-#################################################################################
+###############################################################################
+# Global Behavior Commands                                                    #
+###############################################################################
+# FROM L. 216
+#####################
+ClickTime 750
+EdgeResistance 250
+EdgeScroll 0 0
 
+#################################################################################
 # EwmhBaseStruts [left] [right] [top] [bottom]
 # Reserves space along the edge(s) of the Screen that will not
 # be covered when maximizing or placing windows.
@@ -568,68 +584,62 @@ Colorset 12 fg #2d2d2d, bg #ffffff, hi, sh, Plain, NoShape
 Colorset 13 fg #ffffff, bg #006c6c, hi, sh, Plain, NoShape
 Colorset 14 fg #555555, bg #003c3c, hi #aaaaaa, sh #999999, Plain, NoShape
 
-###############################################################################
-### FFF ###
-###############################################################################
-### Ctrl+Alt virtual desktop navigation
-Key Up   A  M           Scroll -100000 0
-Key Down A  M         Scroll  100000 0
-############################################################################
-### Ctrl+Alt virtual desktop navigation
-Key Up   A CM           Scroll -100000 0
-Key Down A CM         Scroll  100000 0
-############################################################################
-Key Left       A    M    PrevWindow 
-Key Right      A    M    NextWindow 
-############################################################################
-Key F5     A    M    ToggleTiling 
-Key Space  A    M    ToggleTiling 
-############################################################################
-Key s      A    CM   SwapWindowsDir SouthEast SouthWest 
-Key s      A    M    SwapWindowsDir NorthEast NorthWest 
-############################################################################
+###########################################################################
+###############GLYPHOSAT###################################################
+###########################################################################
+Key Super_L   A  M           Scroll  100000 0
+###--------------------------------------------
+Key Super_L   A  C           Scroll -100000 0
+###--------------------------------------------
+Key Super_L   A  S           GotoPage 1 1
 
-# Key Super_R A A SwapWindowsDir SouthEast SouthWest 
-# Key Super_R A M SwapWindowsDir SouthEast SouthWest 
-
-############################################################################
-
-
-###############################################################################
-### Ctrl+Alt program shortcuts
-Key C A SM            Close
-Key C A CM            Close
-
-Key R A CM            Restart
-Key T A CM            Exec exec x-terminal-emulator || xterm
-############################################################################
-Silent Key 1 A M GotoPage 0 0
-Silent Key 2 A M GotoPage 1 0
-Silent Key 3 A M GotoPage 1 1
-Silent Key 4 A M GotoPage 1 2
-############################################################################
+###--------------------------------------------
+Key    Down     A M  GotoPage +0p +1p
+Key    Up       A M  GotoPage +0p -1p
+###--------------------------------------------
+Key    Left     A M  GotoPage -1p +0p
+Key    Right    A M  GotoPage +1p +0p
+###--------------------------------------------
+Silent Key 1 A CM GotoDesk 0 0
+Silent Key 2 A CM GotoDesk 0 1
+Silent Key 3 A CM GotoDesk 0 2
+Silent Key 4 A CM GotoDesk 0 3
+###########################################################################
 Silent Key F1 A M TileRight 
 Silent Key F2 A M TileLeft 
 Silent Key F3 A M TileTop
 Silent Key F4 A M TileBottom
-############################################################################
-Silent Key 1 A C GotoDesk 0 0
-Silent Key 2 A C GotoDesk 0 1
-Silent Key 3 A C GotoDesk 0 2
-Silent Key 4 A C GotoDesk 0 3
-Silent Key Super_R A A Exec exec $[infostore.terminal]
-#######################################
-Key F6     A    M    SetCurrentMaster 
+###########################################################################
+Key Space      A    M   SwapWindowsDir SouthEast SouthWest 
+Key Space      A    CM    ToggleTiling 
+###########################################################################
+
 Key Return A    CM   SetCurrentMaster 
-Key Return A    SM   SetCurrentMaster  # alternate shortcut when running under vmware
-#######################################
+Key Return A    SM   SetCurrentMaster 
+# alternate shortcut when running under vmware
+###########################################################################
 Key T      A    M    Toggle-Title
 Key S      A    M    Stick
 Key X      A    M    Iconify true
-Key R      A    SM   RefreshWindow
+#=======================================
+# Key R      A    SM   RefreshWindow
+##############################################################################
+### FFF WIN WINDOW WINDOWS KEY###
+###########################################################################
+Key Left       A    CM    PrevWindow 
+Key Right      A    CM    NextWindow 
+###########################################################################
+### Ctrl+Alt program shortcuts
+Key C A SM            Close
+Key C A CM            Close
+###########################################################################
+Key R A CM            Restart
+Key T A CM            Exec exec x-terminal-emulator || xterm
 
-#######################################
-### FFF ###
+###########################################################################
+###############END###FIN###################################################
+##################FFF######################################################
+###########################################################################
 
 DestroyFunc 	LeftClick 
 AddToFunc   	LeftClick

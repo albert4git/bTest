@@ -249,6 +249,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'abudden/EasyColour'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'garbas/vim-snipmate'
+    "--------------------------------------------------------------------------------- 
+        Plug 'ryanoasis/vim-devicons'
+        Plug 'Shougo/denite.nvim'
+        Plug 'mhinz/vim-startify'
+        Plug 'wellle/targets.vim'
+        Plug 'janko/vim-test'
+
+
 call plug#end()
 "---inkEnvStart------------------------------------------------------------------------------------
         set nobackup

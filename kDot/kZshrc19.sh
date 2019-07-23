@@ -1,3 +1,11 @@
+#---START--START----
+#-----NAUTILUS-----1
+#-----NAUTILUS-----2
+#-----NAUTILUS-----3
+#-----NAUTILUS-----4
+#-----NAUTILUS-----5
+#--FIN--FIN--FIN--FI
+
 #=============================================================
 # i dont see Collor ?
 #
@@ -60,6 +68,8 @@ export PATH=${PATH}:/home/red/.fzf/bin/
 export PATH=${PATH}:/home/red/Komodo-Edit-11/bin/
 export PATH=${PATH}:/media/red/124Black/git/mySoft/
 export PATH=${PATH}:/media/red/124Black/git/mySoft/nvim64/bin/
+export PATH=${PATH}:/home/red/bin/better-ls-master/
+export PATH=${PATH}:/home/red/bin/devicons-shell/
 
 #GOPATH is the location of your work directory
 #For example my project directory is ~/Projects/Proj1
@@ -132,6 +142,15 @@ alias ca='ccat'
 alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias kdeo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias d2='deonvim NONE -u ~/git/bTest/kDot/k2MinFF.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias d7='deonvim NONE -u ~/git/bTest/kDot/kFF7Min.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias vif='vim $(fzf)'
+alias def='deo $(fzf)'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 alias fde='de $(fzf --height 40%)'
 alias deless='deonvim NONE -u ~/git/bTest/kDot/kLess.vim'
 #export EDITOR="vim"
@@ -140,6 +159,10 @@ export EDITOR="deonvim NONE -u ~/git/bTest/kDot/kMinit.vim"
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias b5deo='deo64nvim NONE -u /media/red/124Black/git/bTest/kDot/bMinit.vim'
 alias b124='deo64nvim NONE -u /media/red/124Black/git/bTest/kDot/bMinit.vim'
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 ###########################################################################################
 # Setup fzf
 #--------------
@@ -173,8 +196,7 @@ export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:5,fg+:7,hl:1,hl+:32,promp
 #---------------------
 
 export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:80,fg+:7,hl:1,hl+:32,prompt:1,spinner:2,pointer:5 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
-#---------------------
-#--WHITE CYAN RED ----
+
 #---------------------
 export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:80,fg+:7,hl:1,hl+:32,prompt:1,spinner:2,pointer:1,header:2,marker:5,info:1 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
 #---------------------
@@ -204,6 +226,11 @@ alias ff2='fff --bind "f1:execute(deonvim NONE -u ~/git/bTest/kDot/kMinit.vim {}
 alias ff3='fff --bind "f1:execute(vi {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
 alias ffv='vim $(fzf)'
 alias ffe='de $(fff)'
+#==============================================================
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
 #==============================================================
 ffd() {
   local dir
@@ -289,7 +316,7 @@ alias lss='LC_COLLATE=C ls -A --color -h --group-directories-first'
 alias addr="ip -o a | cut -d ' ' -f2,7"
 alias mpath='echo $PATH | tr -s ":" "\n"'
 
-
+alias ggt="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 #==========================================================================================
 function mkd() {
         mkdir -p "$@" && cd "$_";
@@ -498,6 +525,31 @@ zplug check || zplug install
 zplug load --verbose
 
 set -o vi
+
+#==========================================================================================
+# export PATH="~/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
+export PYENV_ROOT="$HOME"/.pyenv
+export PATH="$PYENV_ROOT"/bin:"$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+#==========================================================================================
+
+
+# go to a path relative to the top directory
+# of the current git worktree.
+function gcd() {
+  topdir=$(git rev-parse --show-toplevel)
+  if [[ $? -ne 0 ]]; then
+    return 1
+  fi
+  cd "${topdir}/${1}"
+}
+
+
 #==========================================================================================
 # zplug "junegunn/fzf-bin", \
 #     as:command, \
@@ -611,3 +663,4 @@ set -o vi
 #  make install
 #    INSTALL  src/tig -> /home/red/bin
 #    INSTALL  tigrc -> /home/red/etc
+source ~/.config/up/up.sh

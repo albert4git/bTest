@@ -1,7 +1,7 @@
 "file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:32  CEST
-" Last Modified:      So 21 Jul 2019 05:14:38  CEST
+" Last Modified:      Mo 22 Jul 2019 02:23:01  CEST
 "===============================================================================================================
 "xdg-open
 "------------------------------------------------------------------------------------------
@@ -380,10 +380,11 @@ call plug#begin('~/.config/nvim/plugged/')
 "===:NV=notational=FZF=============================================================================
         Plug 'alok/notational-fzf-vim'
                 let g:nv_search_paths = ['~/' ]
-                let g:nv_search_paths = ['/media/red/A5A1-FBC4/' ]
-                let g:nv_search_paths = ['/media/red/' ]
-                let g:nv_search_paths = ['/media/red/F1E8-C819/hTML-Zp-Link/' ]
-                let g:nv_search_paths = ['~/git/', '~/git/aTest/pyLabGitPdbPythonMode27' ]
+                let g:nv_search_paths = ['/media/red/A5A1-FBC4/']
+                let g:nv_search_paths = ['/media/red/']
+                let g:nv_search_paths = ['/media/red/F1E8-C819/hTML-Zp-Link/']
+                let g:nv_search_paths = ['~/git/bTest/pyLabGitPdbPythonMode27']
+                let g:nv_search_paths = ['~/git/']
                 "let g:nv_search_paths = ['~/git/aTest/dotFiles/', '~/git/aTest/pyLabGitPdbPythonMode27' ]
         "----------------------------------------------------------------------
         Plug 'Shougo/neomru.vim'
@@ -513,6 +514,23 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "----------------------------------------------------------------------------------
          Plug 'scrooloose/nerdtree'
+         Plug 'Xuyuanp/nerdtree-git-plugin'
+                let g:NERDTreeIndicatorMapCustom = {
+                \ "Modified"  : "✹",
+                \ "Staged"    : "✚",
+                \ "Untracked" : "✭",
+                \ "Renamed"   : "➜",
+                \ "Unmerged"  : "═",
+                \ "Deleted"   : "✖",
+                \ "Dirty"     : "✗",
+                \ "Clean"     : "✔︎",
+                \ 'Ignored'   : '☒',
+                \ "Unknown"   : "?"
+                \ }
+
+        " (a heavy feature may cost much more time)
+        let g:NERDTreeShowIgnoredStatus = 1
+        "------------------------------------------------------
                  let NERDTreeShowBookmarks=1
                  let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
                  let NERDTreeChDirMode=0
@@ -536,6 +554,31 @@ call plug#begin('~/.config/nvim/plugged/')
                  let g:NERDDefaultAlign = 'left'
                  let g:NERDCommentEmptyLines = 1
                  let g:NERDTrimTrailingWhitespace = 1
+
+                 " NERDTrees File highlighting
+                 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+                         exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+                         exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+                 endfunction
+
+                call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+                call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+                call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+                call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+                call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+                call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+                call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+                call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
+                call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
+                call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
+                call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
+                call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
 
         Plug 'mtth/scratch.vim'
         Plug 'francoiscabrol/ranger.vim'
@@ -821,18 +864,105 @@ call plug#begin('~/.config/nvim/plugged/')
         "Plug 'Dkendal/fzy-vim'
         Plug 'rkitover/vimpager'
         Plug 'dbeniamine/cheat.sh-vim'
-        Plug 'runfalk/vim-fzf-extended'
         "--------------------------------------------------------------------------------- 
+        Plug 'runfalk/vim-fzf-extended'
         Plug 'ryanoasis/vim-devicons'
+        Plug 'mhinz/vim-startify'
+        "--------------------------------------------------------------------------------- 
+        Plug 'wellle/targets.vim'
+        Plug 'janko/vim-test'
         Plug 'Shougo/denite.nvim'
         Plug 'chemzqm/denite-git'
 
-        Plug 'mhinz/vim-startify'
-        Plug 'wellle/targets.vim'
-        Plug 'janko/vim-test'
-
 call plug#end()
 "---nPlugEnd---nPlugStop3------------}}}
+
+        " loading the plugin
+        let g:webdevicons_enable = 1
+        " adding the flags to NERDTree
+        let g:webdevicons_enable_nerdtree = 1
+        " adding the custom source to unite
+        let g:webdevicons_enable_unite = 1
+        " adding the column to vimfiler
+        let g:webdevicons_enable_vimfiler = 1
+        " adding to vim-airline's tabline
+        let g:webdevicons_enable_airline_tabline = 1
+        " adding to vim-airline's statusline
+        let g:webdevicons_enable_airline_statusline = 1
+        " ctrlp glyphs
+        let g:webdevicons_enable_ctrlp = 1
+        " adding to vim-startify screen
+        let g:webdevicons_enable_startify = 1
+        " adding to flagship's statusline
+        let g:webdevicons_enable_flagship_statusline = 1
+        " turn on/off file node glyph decorations (not particularly useful)
+        let g:WebDevIconsUnicodeDecorateFileNodes = 1
+        " use double-width(1) or single-width(0) glyphs
+        " only manipulates padding, has no effect on terminal or set(guifont) font
+        let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+        " whether or not to show the nerdtree brackets around flags
+        let g:webdevicons_conceal_nerdtree_brackets = 1
+        " the amount of space to use after the glyph character (default ' ')
+        let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+        " Force extra padding in NERDTree so that the filetype icons line up vertically
+        let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+        " Adding the custom source to denite
+        let g:webdevicons_enable_denite = 1
+
+        " change the default character when no match found
+        let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = 'ƛ'
+        " set a byte character marker (BOM) utf-8 symbol when retrieving file encoding
+        " disabled by default with no value
+        let g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol = ''
+        " enable folder/directory glyph flag (disabled by default with 0)
+        let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+        " enable open and close folder/directory glyph flags (disabled by default with 0)
+        let g:DevIconsEnableFoldersOpenClose = 1
+        " enable pattern matching glyphs on folder/directory (enabled by default with 1)
+        let g:DevIconsEnableFolderPatternMatching = 1
+        " enable file extension pattern matching glyphs on folder/directory (disabled by default with 0)
+        let g:DevIconsEnableFolderExtensionPatternMatching = 0
+
+        " enable custom folder/directory glyph exact matching
+        " (enabled by default when g:WebDevIconsUnicodeDecorateFolderNodes is set to 1)
+        let WebDevIconsUnicodeDecorateFolderNodesExactMatches = 1
+        " change the default folder/directory glyph/icon
+        let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = 'ƛ'
+        " change the default open folder/directory glyph/icon (default is '')
+        let g:DevIconsDefaultFolderOpenSymbol = 'ƛ'
+        " change the default dictionary mappings for file extension matches
+        let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
+        let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = 'ƛ'
+        " change the default dictionary mappings for exact file node matches
+        let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {} " needed
+        let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['MyReallyCoolFile.okay'] = 'ƛ'
+        " add or override pattern matches for filetypes
+        " these take precedence over the file extensions
+        let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {} " needed
+        let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*jquery.*\.js$'] = 'ƛ'
+        " add or override individual additional filetypes
+        let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
+        let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
+
+
+
+        " Define mappings
+        autocmd FileType denite call s:denite_my_settings()
+        function! s:denite_my_settings() abort
+                nnoremap <silent><buffer><expr> <CR>
+                                        \ denite#do_map('do_action')
+                nnoremap <silent><buffer><expr> d
+                                        \ denite#do_map('do_action', 'delete')
+                nnoremap <silent><buffer><expr> p
+                                        \ denite#do_map('do_action', 'preview')
+                nnoremap <silent><buffer><expr> q
+                                        \ denite#do_map('quit')
+                nnoremap <silent><buffer><expr> i
+                                        \ denite#do_map('open_filter_buffer')
+                nnoremap <silent><buffer><expr> <Space>
+                                        \ denite#do_map('toggle_select').'j'
+        endfunction
+
 
         ":TERMINAL
         tnoremap <Esc> <C-\><C-n>
@@ -1084,7 +1214,42 @@ call plug#end()
                 endif
         endfunction
 
+"==========================================================================================
+"==========================================================================================
+        " Files + devicons
+        command! FzfDev call Fzf_dev()
 
+        function! Fzf_dev()
+                function! s:files()
+                        let files = split(system($FZF_DEFAULT_COMMAND), '\n')
+                        return s:prepend_icon(files)
+                endfunction
+
+                function! s:prepend_icon(candidates)
+                        let result = []
+                        for candidate in a:candidates
+                                let filename = fnamemodify(candidate, ':p:t')
+                                let icon = WebDevIconsGetFileTypeSymbol(filename, isdirectory(filename))
+                                call add(result, printf("%s %s", icon, candidate))
+                        endfor
+
+                        return result
+                endfunction
+
+                function! s:edit_file(item)
+                        let parts = split(a:item, ' ')
+                        let file_path = get(parts, 1, '')
+                        execute 'silent e' file_path
+                endfunction
+
+                call fzf#run({
+                                        \ 'source': <sid>files(),
+                                        \ 'sink':   function('s:edit_file'),
+                                        \ 'options': '-m -x +s',
+                                        \ 'down':    '40%' })
+        endfunction
+
+        "==========================================================================================
         "==========================================================================================
         "-[Buffers] Jump to the existing window if possible
         let g:fzf_buffers_jump = 1

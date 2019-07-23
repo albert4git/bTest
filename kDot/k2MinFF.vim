@@ -3,7 +3,7 @@
 " Last Modified: 19 Feb 2019
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Mo 22 Jul 2019 05:40:21  CEST
+" Last Modified:      Di 23 Jul 2019 11:43:16  CEST
 "===============================================================================================================
 "===============================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -30,8 +30,6 @@
         set encoding=utf-8
         set encoding=UTF-8
         set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 14
-        set guifont=Font\ Awesome\ 14
-        set guifont=Font\ Awesome\ 5
         set shell=/bin/bash
         set shell=/bin/zsh
         "set tags+=.tags;
@@ -205,14 +203,17 @@
 
 "-2Remap-}}}
 
-        source ~/git/bTest/kDot/k5DEO.vim
+        "---------------------------------------------------------------------------------- 
+        source ~/git/bTest/kDot/minFzfDeoLsJediSnip.vim
+        "source ~/git/bTest/kDot/kFF7DEO.vim
         "source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
+        "---------------------------------------------------------------------------------- 
 
         hi pythonSelf  ctermfg=68 cterm=bold 
         "::::::CYAN::::::::::::::::-=2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "source mix/n-badwolf.vim 
+        source mix/n-badwolf.vim 
         "colorscheme dracula
-        colorscheme badwolf
+        "colorscheme badwolf
         "-TOP----------------------------------------------------------------------------------------------------------
         highlight DiffAdd           cterm=bold ctermbg=22
         highlight DiffDelete        cterm=bold ctermbg=3
@@ -226,9 +227,10 @@
         "hi signcolumn     ctermbg=10
         hi signcolumn     ctermbg=23
         "hi LineNr         ctermbg=199 ctermfg=16 
-        hi LineNr         ctermbg=22 ctermfg=15 
+        hi LineNr         ctermbg=17 ctermfg=15 
         hi CursorLine     ctermbg=8
         set colorcolumn=92,100,112,120
+        hi ColorColumn    ctermbg=240
         set pumheight=12
         " Popup menu hightLight Group
         hi Pmenu          ctermfg=1 ctermbg=255
@@ -278,7 +280,7 @@
         " let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
         ":::::::::::::::::::::::::::-=3=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " NNNVVVV
-         " let g:nnv_search_paths = ['/media/red/124Black/']
+        " let g:nnv_search_paths = ['/media/red/124Black/']
         " source ~/git/bTest/kDot/LabVimPlug/NNV.vim
 
         autocmd! User Oblique       normal! zz
@@ -318,10 +320,10 @@
         set wildignore+=lib
 "-16-}}}
 
-      nmap <Leader>c <Plug>CRV_CRefVimNormal
-      vmap <Leader>r <Plug>CRV_CRefVimVisual
-      map  <Leader>cw <Plug>CRV_CRefVimAsk
-      map  <Leader>cc <Plug>CRV_CRefVimInvoke
+      " nmap <Leader>c <Plug>CRV_CRefVimNormal
+      " vmap <Leader>r <Plug>CRV_CRefVimVisual
+      " map  <Leader>cw <Plug>CRV_CRefVimAsk
+      " map  <Leader>cc <Plug>CRV_CRefVimInvoke
 
 "---------------------------------------------------------------------------------------------------
 ":::::::::::::::::::::::::::-START1-:::::::::-PreNAVI-::::::::::::::::::::::::::::::::::::::::::::::
@@ -367,7 +369,7 @@
         nmap  g# g#zz
 "---------------------------------------------------------------------------------------------------
 "::::::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"--------------------------------------------------------------------------------------------------
+"---------------------------------------------------------------------------------------------------
 
         nmap <tab>     :bn<cr>
         nmap <s-tab>   :bp<cr>
@@ -453,6 +455,7 @@
         nnoremap ;f ?^func\\|^[a-zA-Z].*func<CR>,/
         "==========================================================================================
         nnoremap ;d mayiw`a:exe ":Capture !dict -P - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
+
         nnoremap ,d mayiw`a:exe ":Capture !dict -d fd-eng-deu - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
         "==========================================================================================
         "Transport Down Ex: Pull word under cursor into :Ex LHS of a subs ztitute (replace)
@@ -530,19 +533,13 @@
         smap <C-k>    <Plug>(neosnippet_expand_or_jump)
         xmap <C-k>    <Plug>(neosnippet_expand_target)
         nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
-
-
         "---------------------------------------------------------------
-        function! UltiSnipsCallUnite()
-                Unite -start-insert -winheight=100 -immediately -no-empty ultisnips
-                return ''
-        endfunction
-        inoremap <F4> <C-R>=(pumvisible()? "\<LT>C-E>":"")<CR><C-R>=UltiSnipsCallUnite()<CR>
-        "let g:UltiSnipsExpandTrigger="<tab>"
-        let g:UltiSnipsExpandTrigger="<C-q>"
-        let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-        let g:UltiSnipsJumpForwardTrigger="<C-q>"
-        "==========================================================================================
+        " imap <C-s>    <Plug>(neosnippet_start_unite_snippet)
+        " imap <C-b>    <Plug>(neosnippet_expand_or_jump)
+        " smap <C-b>    <Plug>(neosnippet_expand_or_jump)
+        " xmap <C-b>    <Plug>(neosnippet_expand_target)
+        " nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
+        "---------------------------------------------------------------
 
 "==================================================================================================
 "::::::::::::::::::::::::::::-REPL-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -578,8 +575,7 @@
 "==================================================================================================
 "::::::::::::::::::::::::::::::-UNITE-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "==================================================================================================
-        nnoremap <C-p> :<C-u>FZF<CR>
-        "nnoremap <C-p> :Unite help buffer file_mru file file_rec bookmark <CR>
+        nnoremap <C-p> :Unite help buffer file_mru file file_rec bookmark <CR>
         nnoremap \\ :Unite help buffer file_mru file file_rec bookmark <CR>
         nnoremap <Leader>\ :Unite -silent -vertical -winwidth=40  -direction=botright -toggle outline<CR>
         nnoremap <Leader>h :UniteWithCursorWord -silent help<CR>
@@ -596,7 +592,6 @@
 "==================================================================================================
 "::::::::::::::::::Leader:0,1,2,3,4,5,6,7,8,9::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "==================================================================================================
-        "==========================================================================================
         nnoremap <Leader>0 :set number!<return>
         "---------------------------------------------------------------
         nnoremap <Leader>1 :SideSearch <C-r><C-w><CR> | wincmd p
@@ -618,9 +613,7 @@
         nnoremap <Leader>/ <Plug>AgRawSearch
         "==========================================================================================
         " bind K to grep word under cursor
-        nnoremap <Leader>l :lgrep  <cword> .<cr>
-        "---------------------------------------------------------------
-        nnoremap <Leader>g :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+        nnoremap <Leader>g :Rg  <cword> .<cr>
         "---------------------------------------------------------------
         nnoremap <Leader>a :Ack <cword> .<cr>
         "---------------------------------------------------------------
@@ -633,7 +626,17 @@
         "  O - open entry and close the location/quickfix window          "
         "  p - open entry in a preview window                             "
         "-----------------------------------------------------------------"
-
+        "-----------------------------------------------------------------"
+        " :Keep                                                           "
+        " :Reject                                                         "
+        " :Restore                                                        "
+        " :Doline s/^/--                                                  "
+        " :SaveList                                                       "
+        " :SaveList curlist                                               "
+        " :SaveListAdd curlist                                            "
+        " :LoadList curlist                                               "
+        " :ListLists                                                      "
+        "================================================================="
 "==================================================================================================
 "::::::::::::::::::F2, F3, F4, F5, F6, F7 ,F8 , F9:::::::::::::::::::::::::::::::::::::::::::::::::
 "==================================================================================================
@@ -642,6 +645,8 @@
         vnoremap <F1> <ESC>
         "==========================================================================================
         nnoremap <F2> <Esc>:help <C-r><C-w><CR>
+        "==========================================================================================
+        nnoremap <C-F2> <Esc>:helpgrep <C-r><C-w><CR>
         "==========================================================================================
         "==HelpInHelpInHelp========================================================================
         map <F2> "zyw:exe  "h ".@z.""<CR>
@@ -724,6 +729,39 @@
         "nnoremap <LocalLeader>z :ThesaurusQueryReplaceCurrentWord<CR>
         "vnoremap <LocalLeader>x "ky:ThesaurusQueryReplace <C-r>k<CR>
         "---------------------------------------------------------------------------------- 
+
+
+" nnoremap <leader>f :Denite -direction=dynamicbottom -auto-preview file_rec<CR>
+" nnoremap <leader>b :Denite -direction=dynamicbottom -auto-preview buffer<CR>
+" call denite#custom#var('file/rec', 'command', ['ag', '--follow', '-g', '--nogroup', '--nocolor', '-u', ''])
+" call denite#custom#var('grep', 'command', ['ag'])
+" call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+" call denite#custom#var('grep', 'recursive_opts', [])
+" call denite#custom#var('grep', 'pattern_opt', [])
+" call denite#custom#var('grep', 'separator', ['--'])
+" call denite#custom#var('grep', 'final_opts', [])
+
+"==================================================================================================
+
+nmap <Leader>s :FFFiletypes<CR>
+nmap <Leader>m :FFMaps<CR>
+nmap <Leader>: :FFHistory:<CR>
+nmap <Leader>/ :FFHistory/<CR>
+nmap <Leader>C :FFCommands<CR>
+nmap <Leader>H :FFHelptags!<CR>
+nmap <Leader>a :FFAg<Space>
+nmap <Leader>l :FFBLines<CR>
+nmap <Leader>L :FFLines<CR>
+nmap <Leader>k :FFMarks<CR>
+nmap <Leader>t :FFBTags<CR>
+nmap <Leader>T :FFTags<CR>
+nmap <Leader>b :FFBuffers<CR>
+nmap <Leader>h :FFHistory<CR>
+nmap <Leader>f :FFGFiles<CR>
+nmap <Leader>F :FFFiles<CR>
+
+"==================================================================================================
+
 
 "==================================================================================================
 "::::::::::::::::::::::::::::::-STOP1-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

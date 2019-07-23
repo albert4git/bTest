@@ -96,3 +96,10 @@ ln -b ~/git/bTest/kDot/inkPreRc19.vim     ~/.vimrc
 #ln -b king18/18-gitconfig.AB     ~/.gitconfig
 #ln -b king18/18-gitignore.AB     ~/.gitignore
 #ls -a ~/
+
+# Load pyenv automatically by adding
+# the following to ~/.bashrc:
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

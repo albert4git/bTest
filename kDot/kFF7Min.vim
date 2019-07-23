@@ -3,7 +3,7 @@
 " Last Modified: 19 Feb 2019
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Mo 22 Jul 2019 05:40:21  CEST
+" Last Modified:      Mo 22 Jul 2019 09:04:53  CEST
 "===============================================================================================================
 "===============================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -30,8 +30,6 @@
         set encoding=utf-8
         set encoding=UTF-8
         set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 14
-        set guifont=Font\ Awesome\ 14
-        set guifont=Font\ Awesome\ 5
         set shell=/bin/bash
         set shell=/bin/zsh
         "set tags+=.tags;
@@ -205,7 +203,7 @@
 
 "-2Remap-}}}
 
-        source ~/git/bTest/kDot/k5DEO.vim
+        source ~/git/bTest/kDot/kFF7DEO.vim
         "source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
 
         hi pythonSelf  ctermfg=68 cterm=bold 
@@ -278,7 +276,7 @@
         " let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
         ":::::::::::::::::::::::::::-=3=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " NNNVVVV
-         " let g:nnv_search_paths = ['/media/red/124Black/']
+        " let g:nnv_search_paths = ['/media/red/124Black/']
         " source ~/git/bTest/kDot/LabVimPlug/NNV.vim
 
         autocmd! User Oblique       normal! zz
@@ -453,6 +451,7 @@
         nnoremap ;f ?^func\\|^[a-zA-Z].*func<CR>,/
         "==========================================================================================
         nnoremap ;d mayiw`a:exe ":Capture !dict -P - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
+
         nnoremap ,d mayiw`a:exe ":Capture !dict -d fd-eng-deu - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
         "==========================================================================================
         "Transport Down Ex: Pull word under cursor into :Ex LHS of a subs ztitute (replace)
@@ -578,8 +577,7 @@
 "==================================================================================================
 "::::::::::::::::::::::::::::::-UNITE-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "==================================================================================================
-        nnoremap <C-p> :<C-u>FZF<CR>
-        "nnoremap <C-p> :Unite help buffer file_mru file file_rec bookmark <CR>
+        nnoremap <C-p> :Unite help buffer file_mru file file_rec bookmark <CR>
         nnoremap \\ :Unite help buffer file_mru file file_rec bookmark <CR>
         nnoremap <Leader>\ :Unite -silent -vertical -winwidth=40  -direction=botright -toggle outline<CR>
         nnoremap <Leader>h :UniteWithCursorWord -silent help<CR>
@@ -724,6 +722,40 @@
         "nnoremap <LocalLeader>z :ThesaurusQueryReplaceCurrentWord<CR>
         "vnoremap <LocalLeader>x "ky:ThesaurusQueryReplace <C-r>k<CR>
         "---------------------------------------------------------------------------------- 
+
+
+nnoremap <leader>f :Denite -direction=dynamicbottom -auto-preview file_rec<CR>
+nnoremap <leader>b :Denite -direction=dynamicbottom -auto-preview buffer<CR>
+
+call denite#custom#var('file/rec', 'command', ['ag', '--follow', '-g', '--nogroup', '--nocolor', '-u', ''])
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+
+"==================================================================================================
+
+nmap <Leader>s :FFFiletypes<CR>
+nmap <Leader>m :FFMaps<CR>
+nmap <Leader>: :FFHistory:<CR>
+nmap <Leader>/ :FFHistory/<CR>
+nmap <Leader>C :FFCommands<CR>
+nmap <Leader>H :FFHelptags!<CR>
+nmap <Leader>a :FFAg<Space>
+nmap <Leader>l :FFBLines<CR>
+nmap <Leader>L :FFLines<CR>
+nmap <Leader>k :FFMarks<CR>
+nmap <Leader>t :FFBTags<CR>
+nmap <Leader>T :FFTags<CR>
+nmap <Leader>b :FFBuffers<CR>
+nmap <Leader>h :FFHistory<CR>
+nmap <Leader>f :FFGFiles<CR>
+nmap <Leader>F :FFFiles<CR>
+
+"==================================================================================================
+
 
 "==================================================================================================
 "::::::::::::::::::::::::::::::-STOP1-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

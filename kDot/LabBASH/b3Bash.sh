@@ -426,6 +426,7 @@ du -c .
 du -hc ..
 du -c *.txt
 du -sh ..
+ls -al
 
 #List 10 lagest files 
 du -ak .. | sort -nrk 1 | head
