@@ -782,7 +782,6 @@ nnoremap zO zczO
 
 
 
-
 function! FocusLine()
     let oldscrolloff = &scrolloff
     set scrolloff=0

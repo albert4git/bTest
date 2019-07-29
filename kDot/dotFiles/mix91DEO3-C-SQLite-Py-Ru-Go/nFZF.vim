@@ -53,6 +53,8 @@ this is a lot slower than fzf!
 
 Once you have the list, you can just use fzf again:
 
+let l:filelist = split(system(find . -type f -printf '%T@ %p\n' | 
+                              \ sort -k 1 -n | sed 's/^[^ ]* //'), 'n')
 call fzf#run({'source': l:filelist, 'sink': 'e', 'down': '40%'})
 
 So i think this could maybe work fine for small projects, but if you have a bigger project it is way to slow, also if you use something like rails which rebuilds your assets quite often, you will have to filter the result.

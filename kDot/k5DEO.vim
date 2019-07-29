@@ -11,6 +11,8 @@ let g:python3_host_prog = '/usr/bin/python3'
 "let g:deoplete#sources#jedi#extra_path = $PYTHONPATH
 "==========================================================================================
 
+" <bang>0 ? fzf#vim#with_preview('up:60%')
+" with_preview
 "-AAA---UnPlug---nPlugStart---------------------------------------------------------------------------------{{{
 call plug#begin('~/.config/nvim/plugged/')
 
@@ -1282,9 +1284,6 @@ call plug#end()
 autocmd FileType cpp set keywordprg=cppman
 command! -nargs=+ Cppman silent! call system("tmux split-window cppman " . expand(<q-args>))
 autocmd FileType cpp nnoremap <buffer> M <Esc>:Cppman <cword><CR>
-
-"===!!!BFind========================================================================================
-command! -bang -nargs=* BFind call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 
 

@@ -352,6 +352,8 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'junegunn/fzf'
         Plug 'junegunn/fzf.vim'
         Plug 'pbogut/fzf-mru.vim'
+           let g:fzf_mru_relative = 1
+           " FZFMru --prompt "Sup? " -q "notmuch"
         Plug 'cskeeters/unite-fzf'
         " nmap <Leader>f :GFiles<CR>
         " nmap <Leader>F :Files<CR>

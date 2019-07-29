@@ -76,7 +76,7 @@ module.exports = {
                 selectionColor: 'rgba(248,28,229,0.3)',
 
                 // border color (window, tabs)
-                borderColor: '#3F3',
+                borderColor: '#F33',
 
                 // custom CSS to embed in the main window
                 css: '',
@@ -165,20 +165,26 @@ module.exports = {
         //   `@company/project`
         //   `project#1.0.1`
         //plugins: ["hypergoogle", "hypertheme", "hyperterm-crosshair", "hyper-vertical-tabs" , "hyperline", "hyperdocs", "hyper-search", "hyper-material-theme"],
-        plugins: ["hypergoogle", "hypertheme", "hyperterm-crosshair",  "hyperline", "hyperdocs", "hyper-search", "hyper-material-theme"],
+        // plugins: ["hypergoogle", "hypertheme", "hyperterm-crosshair",  "hyperline", "hyperdocs", "hyper-search", "hyper-material-theme"],
+        plugins: [
+                "hypergoogle",
+                "hypertheme",
+                "hyperterm-crosshair",
+                "hyperline",
+                "hyperdocs",
+                "hyper-search",
+        ],
 
         // in development, you can create a directory under
         // `~/.hyper_plugins/local/` and include it here
         // to load it and avoid it being `npm install`ed
         localPlugins: [],
 
-
         // hyperterm-crosshair settings
         hypertermCrosshair: {
                 // You can use any valid CSS color string
                 color: 'rgba(119, 172, 217, 0.2)',
         },
-
 
         hyperline: {                                                                 
                 plugins: [                                                                 
@@ -191,25 +197,25 @@ module.exports = {
                 inputBorderRadius: 2,
         },
 
-        MaterialTheme: {
-                // Set the theme variant,
-                // OPTIONS: 'Darker', 'Palenight', 'Ocean', ''
-                theme: 'Darker',
+        // MaterialTheme: {
+        //         // Set the theme variant,
+        //         // OPTIONS: 'Darker', 'Palenight', 'Ocean', ''
+        //         theme: 'Darker',
 
-                // [Optional] Set the rgba() app background opacity, useful when enableVibrance is true
-                // OPTIONS: From 0.1 to 1
-                backgroundOpacity: '1',
+        //         // [Optional] Set the rgba() app background opacity, useful when enableVibrance is true
+        //         // OPTIONS: From 0.1 to 1
+        //         backgroundOpacity: '1',
 
-                // [Optional] Set the accent color for the current active tab
-                accentColor: '#64FFDA',
-                accentColor: '#FF3333',
-                accentColor: '#33FF33',
+        //         // [Optional] Set the accent color for the current active tab
+        //         accentColor: '#64FFDA',
+        //         accentColor: '#FF3333',
+        //         accentColor: '#33FF33',
 
-                // [Optional] Mac Only. Need restart. Enable the vibrance and blurred background
-                // OPTIONS: 'dark', 'ultra-dark', 'bright'
-                // NOTE: The backgroundOpacity should be between 0.1 and 0.9 to see the effect.
-                vibrancy: 'dark',
-        },
+        //         // [Optional] Mac Only. Need restart. Enable the vibrance and blurred background
+        //         // OPTIONS: 'dark', 'ultra-dark', 'bright'
+        //         // NOTE: The backgroundOpacity should be between 0.1 and 0.9 to see the effect.
+        //         vibrancy: 'dark',
+        // },
 
         keymaps: {
                 // Example

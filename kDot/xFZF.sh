@@ -1,10 +1,51 @@
 #! /bin/sh
-#
 # xFZF.sh
-# Copyright (C) 2019 red <red@red-Swift-SF113-31>
-#
-# Distributed under terms of the MIT license.
-#
+
+###GIT###GIT###GIT### IT###GIT###GIT###
+###Nr1.
+git log --pretty=oneline | fzf
+
+###Nr2.
+git show $(git log --pretty=oneline | fzf | cut -d=' ' -f1)
+
+###Nr3.
+tig show $(git log --pretty=oneline | fzf | cut -d=' ' -f1)
+
+###Nr3.
+git checkout $(git recent | fzf)
+
+###Nr3.
+You want to edit some non committed file you are working on. I execute this:
+
+vim $(git status -s | fzf -m)
+d2 $(git status -s | fzf -m)
+
+###Nr3.
+Another useful command. You want to edit some files that were changed in some specific commit and you want to select it. I execute this:
+
+git pamvimlog
+
+
+
+
+# Feed the output of fd into fzf
+fd --type f | fzf
+
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+
+# Now fzf (w/o pipe) will use fd instead of find
+fzf
+
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+If you want the command to follow symbolic links, and don't want it to exclude hidden files, use the following command:
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
+
+
 nmap <Leader>s :Filetypes<CR>
 nmap <Leader>M :Maps<CR>
 nmap <Leader>: :History:<CR>
@@ -33,9 +74,11 @@ call fzf#run({
     \})
 endfunction
 
-
-
-If I want a custom Ag command, which would only "grep" the contents of one particular folder, and would then pass the selection to a custom command, what is the best solution to this task? Is there any way to do this by extending fzf#vim#ag function like it is shown in README, for example?
+If I want a custom Ag command, which would only "grep" the contents of one
+particular folder, and would then pass the selection to a custom
+command, what is the best solution to this task? Is there any way to do
+this by extending fzf#vim#ag function like it is shown in README, for
+example?
 
 As of now, I came up with this:
 
@@ -277,3 +320,52 @@ zle     -N   fzf-history-widget
 bindkey '^R' fzf-history-widget
 
 fi
+
+#=============================================================================================================
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export BAT_THEME="TwoDark"
+export FZF_COMPLETION_OPTS="--preview '(bat --color=always {} || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_T_OPTS="$FZF_COMPLETION_OPTS"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!node_modules/*"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+
+#=============================================================================================================
+pet is a simple command-line snippet manager (inspired by memo). I always forget commands that I rarely use. Moreover, it is difficult to search them from shell history. There are many similar commands, but they are all different.
+
+$ awk -F, 'NR <=2 {print $0}; NR >= 5 && NR <= 10 {print $0}' company.csv (What I am looking for)
+$ awk -F, '$0 !~ "DNS|Protocol" {print $0}' packet.csv
+$ awk -F, '{print $0} {if((NR-1) % 5 == 0) {print "----------"}}' test.csv
+
+In the above case, I search by awk from shell history, but many commands hit.
+
+Even if I register an alias, I forget the name of alias (because I rarely use that command).
+
+So I made it possible to register snippets with description and search them easily.
+
+
+
+Run pet configure
+
+[General]
+  snippetfile = "path/to/snippet" # specify snippet directory
+  editor = "vim"                  # your favorite text editor
+  column = 40                     # column size for list command
+  selectcmd = "fzf"               # selector command for edit command (fzf or peco)
+  backend = "gist"                # specify backend service to sync snippets (gist or gitlab, default: gist)
+  sortby  = "description"         # specify how snippets get sorted (recency (default), -recency, description, -description, command, -command, output, -output)
+
+[Gist]
+  file_name = "pet-snippet.toml"  # specify gist file name
+  access_token = ""               # your access token
+  gist_id = ""                    # Gist ID
+  public = false                  # public or priate
+  auto_sync = false               # sync automatically when editing snippets
+
+[GitLab]
+  file_name = "pet-snippet.toml"  # specify GitLab Snippets file name
+  access_token = "XXXXXXXXXXXXX"  # your access token
+  id = ""                         # GitLab Snippets ID
+  visibility = "private"          # public or internal or private
+  auto_sync = false               # sync automatically when editing snippets
+

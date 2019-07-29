@@ -78,6 +78,10 @@ rm ~/.config/vifm/vifmrc
 rm ~/.xsession
 rm ~/.fvwm/config
 
+
+#------------------------------------------------------------------------------------------
+rm ~/.config/pet/snippet.toml
+ln -s ~/git/bTest/kDot/kPetSnippet.toml ~/.config/pet/snippet.toml
 #------------------------------------------------------------------------------------------
 rm ~/.hyper.js
 ln -s ~/git/bTest/kDot/kHyper.js         ~/.hyper.js

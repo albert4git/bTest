@@ -36,6 +36,9 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'aghareza/vim-gitgrep'
         "-------------------------------------------------------------------------- 
         Plug 'tpope/vim-fugitive'
+        "--------------------------------------------------------------------------------- 
+        Plug 'romainl/vim-qf'
+        Plug 'yssl/QFEnter'
         "--------------------------------------------------------------------------
         Plug 'junegunn/gv.vim'
                 " o or <cr> on a commit to display the content of it
@@ -142,6 +145,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'skywind3000/vim-preview'
                 "VSSplit
         "---------------------------------------------------------------------------------- 
+        Plug 'flazz/vim-colorschemes'
         Plug 'rafi/awesome-vim-colorschemes'
         "---------------------------------------------------------------------------------- 
         Plug 'kshenoy/vim-signature'
@@ -167,13 +171,10 @@ call plug#begin('~/.config/nvim/plugged/')
                     let g:indentLine_first_char='.'
                     let g:indentLine_first_char='|'
                     let g:indentLine_showFirstIndentLevel=1
-                        let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']
+                    let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']
         "---------------------------------------------------------------------------------- 
                     " let g:indentLine_faster = 1
                     " let g:indentLine_char = '.'
-                    " let g:indentLine_char = '|'
-                    " let g:indentLine_char = '¦'
-                    " let g:indentLine_char = '┊'
                     " let g:indentLine_first_char='¦'
         "---------------------------------------------------------------------------------- 
         " Plug 'nathanaelkane/vim-indent-guides'
@@ -207,23 +208,8 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'junegunn/fzf'
         Plug 'junegunn/fzf.vim'
         Plug 'pbogut/fzf-mru.vim'
-                " nmap <Leader>f :GFiles<CR>
-                " nmap <Leader>F :Files<CR>
-                " nmap <Leader>t :BTags<CR>
-                " nmap <Leader>T :Tags<CR>
-                " nmap <Leader>m :Methods<CR>
-                " nmap <Leader>b :Buffers<CR>
-                " nmap <Leader>l :BLines<CR>
-                " nmap <Leader>L :Lines<CR>
-                " nmap <Leader>h :History<CR>
-                " nmap <Leader>H :GHistory<CR>
-                " nmap <Leader>: :History:<CR>
-                " nmap <Leader>M :Maps<CR>
-                " nmap <Leader>C :Commands<CR>
-                " nmap <Leader>' :Marks<CR>
-                " nmap <Leader>s :Filetypes<CR>
-                " nmap <Leader>S :Snippets<CR>
-                " nmap <Leader><Leader>h :Helptags!<CR>
+           let g:fzf_mru_relative = 1
+           " FZFMru --prompt "Sup? " -q "notmuch"
         "------------------------------------------------------------------------------------------
         Plug 'ddrscott/vim-side-search'
         " How should we execute the search?
@@ -236,12 +222,6 @@ call plug#begin('~/.config/nvim/plugged/')
         let g:side_search_splitter = 'vnew'
         " I like 40% splits, change it if you don't
         let g:side_search_split_pct = 0.4
-        " SideSearch current word and return to original window
-        nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
-        " Create an shorter `SS` command
-        command! -complete=file -nargs=+ SS execute 'SideSearch <args>'
-        " or command abbreviation
-        cabbrev SS SideSearch
         "------------------------------------------------------------------------------------------
         "USA FIRST
         Plug 'alok/notational-fzf-vim'
@@ -277,35 +257,20 @@ call plug#begin('~/.config/nvim/plugged/')
                 " Create an shorter `SS` command
                 command! -complete=file -nargs=+ SS execute 'SideSearch <args>'
                 " or command abbreviation
-                cabbrev SS SideSearch
         "----------------------------------------------------------------------------------
         Plug 'exvim/ex-matchit'
         "----------------------------------------------------------------------------------
         Plug 'ervandew/supertab'
         "---------------------------------------------------------------------------------- 
         Plug 'MarcWeber/vim-addon-mw-utils'
-        "Plug 'garbas/vim-snipmate'
-        "Plug 'honza/vim-snippets'
-        "Plug 'SirVer/ultisnips'
-        ""===PLAY1==BliZZ===+=(C-q)=================================================================
-                function! UltiSnipsCallUnite()
-                        Unite -start-insert -winheight=100 -immediately -no-empty ultisnips
-                        return ''
-                endfunction
-        "------------------------------Ulti-Expander-Unite-----------------------------------------
-                inoremap <F3> <C-R>=(pumvisible()? "\<LT>C-E>":"")<CR><C-R>=UltiSnipsCallUnite()<CR>
-                let g:UltiSnipsExpandTrigger="<tab>"
-                let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-                let g:UltiSnipsJumpForwardTrigger="<C-q>"
+        "===PLAY2==BLiZZ==(C-s)+(C-b)==============================================================
         Plug 'Shougo/neosnippet.vim'
         Plug 'Shougo/neosnippet-snippets'
-        "===PLAY2==BLiZZ==(C-s)+(C-b)==============================================================
                 imap <C-s>    <Plug>(neosnippet_start_unite_snippet)
                 imap <C-b>    <Plug>(neosnippet_expand_or_jump)
                 smap <C-b>    <Plug>(neosnippet_expand_or_jump)
                 xmap <C-b>    <Plug>(neosnippet_expand_target)
                 nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
-        "------------------------------------------------------------------------------------------ 
         "------------------------------------------------------------------------------------------ 
         " :Tmux
         Plug 'tpope/vim-tbone'
@@ -359,10 +324,8 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'haya14busa/incsearch.vim'
         Plug 'vim-scripts/SearchComplete'
-        "---------------------------------------------------------------------------------- 
 
-
-        "-AAA3----------------------------------------------------------------------------------------------{{{
+        "-AAA3----------------------------------------------------------------------------------{{{
          Plug 'scrooloose/nerdtree'
          Plug 'Xuyuanp/nerdtree-git-plugin'
                 let g:NERDTreeIndicatorMapCustom = {
@@ -478,7 +441,6 @@ call plug#begin('~/.config/nvim/plugged/')
                         " Alternative: autocmd FileType python AutoFormatBuffer autopep8
                 augroup END
         "---------------------------------------------------------------------------------- 
-        "================================================================================== 
         Plug 'godlygeek/tabular'
                 " Tabularize {
                 nmap <Leader>a& :Tabularize /&<CR>
@@ -520,16 +482,17 @@ call plug#begin('~/.config/nvim/plugged/')
         "source ~/git/aTest/dotFiles/nVim/logoAsyncPy.vim
         "==================================================================================
 
-        "--------------------------------------------------------------------------------- 
         Plug 'runfalk/vim-fzf-extended'
         Plug 'ryanoasis/vim-devicons'
         Plug 'mhinz/vim-startify'
         Plug 'tiagoinacio/fzf-bookmark.vim'
         Plug 'blueyed/vim-diminactive'
+        " Plug ''
+
 call plug#end()
 "---nPlugEnd-nPlugStop3}----------------}}
-        " hi ColorColumn    ctermbg=240
 
+        " hi ColorColumn    ctermbg=240
         let DimInactiveSyntaxOn = 1
         let g:diminactive_use_syntax = 1
         let g:diminactive_enable_focus = 1
@@ -739,91 +702,7 @@ call plug#end()
         call deoplete#custom#source('syntax',        'mark', '♯')
         call deoplete#custom#source('member',        'mark', '.')
 
-        "==========================================================================================
-        " In Neovim, you can set up fzf window using a Vim command
-        let g:fzf_layout = { 'window': 'enew' }
-        let g:fzf_layout = { 'window': '-tabnew' }
-        let g:fzf_layout = { 'window': '10split enew' }
-        "let g:fzf_history_dir = '~/.local/share/fzf-history'
-        "----------------------------------------------------------------------------------
-        let g:fzf_colors =
-                        \ { 'fg':      ['fg', 'Comment'],
-                        \ 'bg':      ['bg', 'Normal'],
-                        \ 'hl':      ['fg', 'Comment'],
-                        \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-                        \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn', 'Normal'],
-                        \ 'hl+':     ['fg', 'Statement'],
-                        \ 'info':    ['fg', 'PreProc'],
-                        \ 'border':  ['fg', 'Ignore'],
-                        \ 'prompt':  ['fg', 'Conditional'],
-                        \ 'pointer': ['fg', 'Exception'],
-                        \ 'marker':  ['fg', 'Keyword'],
-                        \ 'spinner': ['fg', 'Comment'],
-                        \ 'header':  ['fg', 'Comment'] }
 
-        "==========================================================================================
-        function! s:fzf_statusline()
-                highlight fzf1 ctermfg=161 ctermbg=2
-                highlight fzf2 ctermfg=23 ctermbg=9
-                highlight fzf3 ctermfg=237 ctermbg=13
-                setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
-        endfunction
-        autocmd! User FzfStatusLine call <SID>fzf_statusline()
-        "==========================================================================================
-        let g:fzf_command_prefix = 'Fzf'
-        let g:fzf_action = {
-                        \ 'ctrl-x': ':Lynx',
-                        \ 'ctrl-v': 'vsplit' }
-
-        "==========================================================================================
-        " Selecting Mappings
-        nmap <leader><tab> <plug>(fzf-maps-n)
-        xmap <leader><tab> <plug>(fzf-maps-x)
-        omap <leader><tab> <plug>(fzf-maps-o)
-        "==========================================================================================
-        imap <expr><C-j> fzf#vim#complete#word({'left': '18%'})
-        imap <C-q> <plug>(fzf-complete-line)
-
-       "==========================================================================================
-        command! FZFTag if !empty(tagfiles()) | call fzf#run({
-                                \ 'source': "cat " . join(tagfiles()) . ' | grep -P "' . expand('%:t') . '"',
-                                \ 'sink': function('<sid>tag_handler'),
-                                \ 'options': '+m --with-nth=1',
-                                \ 'down': '50%'
-                                \ }) | else | echo 'No tags' | endif
-        "==========================================================================================
-        function! s:tag_handler(tag)
-                if !empty(a:tag)
-                        let token = split(split(a:tag, '\t')[2],';"')[0]
-                        let m = &magic
-                        setlocal nomagic
-                        execute token
-                        if m
-                                setlocal magic
-                        endif
-                endif
-        endfunction
-        nnoremap <silent> <Leader>t :FZFTag<cr>
-
-
-        "==========================================================================================
-        function! FzfSpellSink(word)
-                exe 'normal! "_ciw'.a:word
-        endfunction
-        function! FzfSpell()
-                let suggestions = spellsuggest(expand("<cword>"))
-                return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
-        endfunction
-        nnoremap z= :call FzfSpell()<CR>
-        "==========================================================================================
-        "-[Buffers] Jump to the existing window if possible
-        let g:fzf_buffers_jump = 1
-        "-[[B]Commits] Customize the options used by 'git log':
-        let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-        "-[Tags] Command to generate tags file
-        let g:fzf_tags_command = 'ctags -R'
-        "-[Commands] --expect expression for directly executing the command
-        let g:fzf_commands_expect = 'alt-enter,ctrl-x'
         "---!!!-???-----------------------------------------------------------
         let generate_tags=1
         "==========================================================================================
@@ -834,39 +713,4 @@ call plug#end()
         call unite#filters#sorter_default#use(['sorter_rank'])
         call unite#filters#matcher_default#use(['matcher_fuzzy'])
         call unite#filters#matcher_default#use(['matcher_fzf'])
-
-        "==========================================================================================
-        command! LocationToggle call LocationToggle()
-        function! LocationToggle()
-                if exists("w:is_location_window")
-                        unlet w:is_location_window
-                        exec "q"
-                else
-                        lopen
-                        let w:is_location_window = 1
-                endif
-        endfunction
-
-        "==========================================================================================
-        function! ToggleQuickFix()
-                if exists("g:qwindow")
-                        cclose
-                        execute "wincmd p"
-                        unlet g:qwindow
-                else
-                        try
-                                copen
-                                execute "wincmd J"
-                                let g:qwindow = 1
-                        catch
-                                echo "Error!"
-                        endtry
-                endif
-        endfunction
-
-        "-Open-Quickfix-window-automatically-----------------------------------------------
-        autocmd QuickFixCmdPost grep cwindow
-        autocmd! vimrc QuickfixCmdPost [^l]* nested copen | wincmd p
-        autocmd! vimrc QuickfixCmdPost l* nested lopen | wincmd p
-        "===PLAY4===SUCHE========************======================================================
-        "==========================================================================================
+       command! ShowFunc call ShowFunc()
