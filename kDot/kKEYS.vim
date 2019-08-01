@@ -1,15 +1,15 @@
 ==============================================================================
 ]p 	paste under the current indentation level
 ==============================================================================
-zo / zO 	Open
-zc / zC 	Close
-za / zA 	Toggle
-zv      	Open folds for this line
-zM      	Close all
-zR      	Open all
-zm      	Fold more (foldlevel += 1)
-zr      	Fold less (foldlevel -= 1)
-zx      	Update fol
+        zo / zO 	Open
+        zc / zC 	Close
+        za / zA 	Toggle
+        zv      	Open folds for this line
+        zM      	Close all
+        zR      	Open all
+        zm      	Fold more (foldlevel += 1)
+        zr      	Fold less (foldlevel -= 1)
+        zx      	Update fol
 ==============================================================================
 [m      	previous method start
 [M      	previous method end
@@ -26,7 +26,7 @@ g]              	See all definitions
 :tjump Clasn    	Find definitions of Classname (auto-select 1st)
 ==============================================================================
 <C-R><C-W>      	insert current word into the command line
-<C-R>"          	paste from “ register
+<C-R>"          	paste from  register
 Calculator
 <C-R>=128/2
 ==============================================================================
@@ -70,6 +70,12 @@ yip      	Yank inner paragraph
 yap      	Yank paragraph (including newline)
 dip      	Delete inner paragraph
 cip      	Change inner paragraph
+
+  { sin ( cosin ( x2 ) ) }
+  { sin ( cosin ( <b>'x2'</b> ) ) }
+
+   sympy.pprint(sb) 
+   print(sn) 
 ==============================================================================
 
 e / ge  	Previous/next end of word
@@ -87,7 +93,7 @@ Esc / <C-[>     	Exit insert mode
 <C-C>           	Exit 
 ==============================================================================
 SANDWICH        ??
-
+vaa / via - sd/sr/sa
 ==============================================================================
 :onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
 :onoremap ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>

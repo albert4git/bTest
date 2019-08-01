@@ -2,10 +2,8 @@ https://github.com/ryanoasis/nerd-fonts.git
 
 
 
-
-
 {
-ff
+        ff
 # 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
 # 4DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
 2DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 5DEO 
@@ -72,7 +70,7 @@ It allows you to replace parts of your system under test with mock objects and m
 
 For example, you can monkey-patch a method:
 
-from mock import MagicMock
+from mock import Magi mock
 thing = ProductionClass()
 thing.method = MagicMock(return_value=3)
 thing.method(3, 4, 5, key='value')

@@ -34,8 +34,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 endif
         "-------------------------------------------------------------------------- 
         Plug 'aghareza/vim-gitgrep'
-        "-------------------------------------------------------------------------- 
-        Plug 'tpope/vim-fugitive'
         "--------------------------------------------------------------------------------- 
         Plug 'romainl/vim-qf'
         Plug 'yssl/QFEnter'
@@ -204,12 +202,18 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'Chun-Yang/vim-action-ag'
         Plug 'rking/ag.vim'
         "----------------------------------------------------------------------------------
-        Plug 'cskeeters/unite-fzf'
+        " But if you want to install fzf as well using vim-plug:
+        " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+        " Plug 'junegunn/fzf.vim'
+
         Plug 'junegunn/fzf'
         Plug 'junegunn/fzf.vim'
         Plug 'pbogut/fzf-mru.vim'
            let g:fzf_mru_relative = 1
            " FZFMru --prompt "Sup? " -q "notmuch"
+
+        "------------------------------------------------------------------------------------------
+        Plug 'cskeeters/unite-fzf'
         "------------------------------------------------------------------------------------------
         Plug 'ddrscott/vim-side-search'
         " How should we execute the search?
@@ -264,27 +268,106 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'MarcWeber/vim-addon-mw-utils'
         "===PLAY2==BLiZZ==(C-s)+(C-b)==============================================================
+        Plug 'garbas/vim-snipmate'
+        Plug 'honza/vim-snippets'
+        Plug 'SirVer/ultisnips'
         Plug 'Shougo/neosnippet.vim'
         Plug 'Shougo/neosnippet-snippets'
-                imap <C-s>    <Plug>(neosnippet_start_unite_snippet)
-                imap <C-b>    <Plug>(neosnippet_expand_or_jump)
-                smap <C-b>    <Plug>(neosnippet_expand_or_jump)
-                xmap <C-b>    <Plug>(neosnippet_expand_target)
-                nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
         "------------------------------------------------------------------------------------------ 
         " :Tmux
         Plug 'tpope/vim-tbone'
         Plug 'tmux-plugins/vim-tmux'
         "------------------------------------------------------------------------------------------ 
         Plug 'xolox/vim-misc'
+        "-------------------------------------------------------------------------- 
+        Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-commentary'
         Plug 'tpope/vim-repeat'
+        Plug 'tpope/vim-unimpaired'
+        Plug 'tpope/vim-eunuch'
+        "#??? Plug 'tpope/vim-surround'
+        "-------------------------------------------------------------------------- 
+        Plug 'terryma/vim-expand-region'
+                 "-Default-settings. 
+                 let g:expand_region_text_objects = {
+                                         \ 'iw'  :0,
+                                         \ 'iW'  :0,
+                                         \ 'i"'  :0,
+                                         \ 'i''' :1,
+                                         \ 'ib'  :1,
+                                         \ 'i)'  :1,
+                                         \ 'iB'  :1, 
+                                         \ 'i}'  :1, 
+                                         \ 'i]'  :1,
+                                         \ 'if'  :1,
+                                         \ 'io'  :1,
+                                         \ 'ip'  :1,
+                                         \ 'ih'  :1
+                                         \ }
+        "----------------------------------------------------------------------------------
+
+        Plug 'machakann/vim-sandwich'
+                " sd,sr, sa{motion/textobject}{addition}(normal and visual mode)
+                " let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+                " Sandwiched text could be resolved into two parts, {surrounding} and {surrounded text}.
+                " sa add surroundings: mapped to the key sequence sa
+                " sd Delete surroundings: mapped to the key sequence sd
+                " sr Replace surroundings: mapped to the key sequence sr
+                " ib Search and select a sandwiched text automatically: mapped to the key sequence ib and ab
+                " is Search and select a sandwiched text with query: mapped to the key sequence is and as
+                " da" will delete a quoted sympy.pprint(string.) 
+                "(<b>'Sbandawitch'</b>) 
+                nmap s <Nop>
+                xmap s <Nop>
+        "-------------------------------------------------------------
+                let g:textobj_sandwich_no_default_key_mappings = 1
+                omap ia <Plug>(textobj-sandwich-auto-i)
+                xmap ia <Plug>(textobj-sandwich-auto-i)
+                omap aa <Plug>(textobj-sandwich-auto-a)
+                xmap aa <Plug>(textobj-sandwich-auto-a)
+        "--------------------------------------------------------------
+        "[ {(hello) ( noch ) ('Mal') ("tomos") } tormos]
+
+        "---------------SYMPY-SANDWICH-----------------------------------------------------
+                vmap sb "zdi sympy.pprint(<c-r>z)<esc>
+                vmap sn "zdi print(<c-r>z)<esc> 
+                "-wrap <b></b> around selected text
+                vmap se "zdi<b><c-r>z</b><esc>
+                "-wrap <?=   ?> around visually selected text
+                "vmap st "zdi<?= <c-r>z ?><esc> 
+        "----------------------------------------------------------------------------------
+        "---NoAutoClose-YCM----------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        Plug 'jiangmiao/auto-pairs'
+                "   <M-o> : neline with indentation
+                "   <M-a> : jump to of line
+                "   <M-n> : jump to next pairs
+                "   <M-e> : jump to end of pairs.
+                "   Ctrl-V ) : insert ) without trigger the plugin.
+                let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
+                let g:AutoPairsShortcutToggle = '<M-p>'
+                let g:AutoPairsShortcutFastWrap = '<M-e>'
+                let g:AutoPairsShortcutJump = '<M-n>'
+                let g:AutoPairsShortcutBackInsert = '<M-b>'
+                let g:AutoPairsShortcuts = 1
+                let g:AutoPairsMapBS = 1
+                let g:AutoPairsMapCR = 0 " insert a new indented line if cursor in pairs.
+                " error in vimwiki <CR> Enter. but use upper inoremap can solve.
+                let g:AutoPairsMapSpace = 0
+                " error in abbreviations <space> auto expand.
+                let g:AutoPairsCenterLine = 1
+                let g:AutoPairsFlyMode = 1
+                let g:AutoPairsMapCR=0
+                let g:AutoPairsMapCh=1
+                let g:AutoPairsDelete = '<M-5>'
+        "---------------------------------------------------------------------------------
+
+        " { sin ( cosin ( <b>'x2'</b> ) ) }
+        "-------------------------------------------------------------------------- 
         Plug 'ivyl/vim-bling'
                 let g:bling_time = 42
                 let g:bling_color_fg = 'green'
                 let g:bling_color_cterm = 'reverse'
-        Plug 'tpope/vim-unimpaired'
-        Plug 'tpope/vim-eunuch'
         "----------------------------------------------------------------------------------
         " :Delete: Delete a buffer and the file on disk simultaneously.
         " :Unlink: Like :Delete, but keeps the now empty buffer.
@@ -399,11 +482,8 @@ call plug#begin('~/.config/nvim/plugged/')
          Plug 'henrik/vim-qargs'
          "-----------------------------------------------------------
          Plug 'AndrewRadev/undoquit.vim'
-                 let g:undoquit_mapping = ';q' 
                  "---c-w+u------ 
          Plug 'maxbrunsfeld/vim-yankstack'
-                 nmap zp <Plug>yankstack_substitute_older_paste
-                 nmap zn <Plug>yankstack_substitute_newer_paste
         "----------------------------------------------------------------------------------
         Plug 'easymotion/vim-easymotion'
                 let g:EasyMotion_smartcase = 1
@@ -412,8 +492,8 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'wellle/visual-split.vim'
                 " :VSSplit, :VSSplitAbove or :VSSplitBelow to create the split
                 " :VSResize to execute the VSResize ex command on the selected range
-                nmap <C-W>r  <Plug>(Visual-Split-Resize)
-                nmap <C-W>s <Plug>(Visual-Split-Split)
+                " nmap <C-W>r  <Plug>(Visual-Split-Resize)
+                " nmap <C-W>s <Plug>(Visual-Split-Split)
         "---AAA-nnn-----------------------------------------------------}}}
 
         "==================================================================================
@@ -490,7 +570,106 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug ''
 
 call plug#end()
-"---nPlugEnd-nPlugStop3}----------------}}
+"---nPlugEnd-nPlugStop3----------------}}}
+
+
+        "===VIM-SARTIFY-1==================================================================
+        let g:startify_enable_special      = 0
+        let g:startify_files_number        = 8
+        let g:startify_relative_path       = 1
+        let g:startify_change_to_dir       = 1
+        let g:startify_update_oldfiles     = 1
+        let g:startify_session_autoload    = 1
+        let g:startify_session_persistence = 1
+
+        let g:startify_skiplist = [
+                \ 'COMMIT_EDITMSG',
+                \ 'bundle/.*/doc',
+                \ '/data/repo/neovim/runtime/doc',
+                \ '/Users/mhi/local/vim/share/vim/vim74/doc',
+                \ ]
+
+        let g:startify_bookmarks = ['~/.vimrc','~/.zshrc','~/nfo/commands.txt',]
+        let g:startify_bookmarks = [
+                \ 
+                \ '~/git/bTest/kDot/kIng19.sh',
+                \ '~/git/bTest/kDot/k2MinFF.vim',
+                \ '~/git/bTest/kDot/k2MinFzfDeoLs.vim',
+                \ '~/git/bTest/kDot/kZshrc19.sh',
+                \ '~/git/bTest/kDot/kBank21.yml',
+                \ ]
+
+        let g:startify_custom_footer =
+               \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
+
+        "===VIM-SARTIFY-1==================================================================
+
+
+
+        function! s:list_commits()
+                let git = 'git -C ~/git/bTest/'
+                let commits = systemlist(git .' log --oneline | head -n10')
+                let git = 'G'. git[1:]
+                return map(commits, '{"line": matchstr(v:val, "\\s\\zs.*"), "cmd": "'. git .' show ". matchstr(v:val, "^\\x\\+") }')
+        endfunction
+
+
+        let g:startify_commands = [
+                                \ ':help reference',
+                                \ ['Vim Reference', 'h ref'],
+                                \ {'h': 'h ref'},
+                                \ {'m': ['My magical function', 'call Magic()']},
+                                \ ]
+
+
+        " \ ['   Commands'], 'commands',
+        " \ ['   Sessions'], 'sessions',
+        "====== \ { 'header': ['   MRU '. getcwd()], 'type': 'dir' }, ==============================
+
+        let g:startify_lists = [
+                                \ { 'header': ['   Sessions'],       'type': 'sessions' },
+                                \ { 'header': ['   Bookmarks'],      'type': 'bookmarks' },
+                                \ { 'header': ['   MRU'],            'type': 'files' },
+                                \ { 'header': ['   Commits'],        'type': function('s:list_commits') },
+                                \ ]
+
+        let g:startify_session_dir = '~/git/bTest/kDot/zSS'
+        let g:startify_session_sort = 1
+        let g:startify_session_number = 5
+        " let g:startify_session_before_save = [
+        "                         \ 'echo "Cleaning up before saving.."',
+        "                         \ 'call NERDTreeCloseAll()',
+        "                         \ ]
+
+
+        let g:startify_commands = [
+                                \ ':help reference',
+                                \ ['Vim Reference', 'h ref'],
+                                \ {'h': 'h ref'},
+                                \ {'m': ['My magical function', 'call Magic()']},
+                                \ ]
+
+
+        highlight StartifyBracket ctermfg=14
+        highlight StartifyFooter  ctermfg=10
+        highlight StartifyHeader  ctermfg=14
+        highlight StartifyNumber  ctermfg=9
+        highlight StartifyPath    ctermfg=245
+        highlight StartifySlash   ctermfg=240
+        highlight StartifySpecial ctermfg=240
+
+
+        autocmd!  VimEnter * execute ":Startify"
+
+        "===VIM-SARTIFY-2==================================================================
+        let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
+
+        if exists('*WebDevIconsGetFileTypeSymbol')  " support for vim-devicons
+                let entry_format .= ". WebDevIconsGetFileTypeSymbol(entry_path) .' '.  entry_path"
+        else
+                let entry_format .= '. entry_path'
+        endif
+        "==================================================================================
 
         " hi ColorColumn    ctermbg=240
         let DimInactiveSyntaxOn = 1
@@ -622,18 +801,6 @@ call plug#end()
         "-------------------------------------------------------------------------------- 
         autocmd! FileType python setlocal completeopt-=preview
         "--------------------------------------------------------------------------------
-        silent! set complete& completeopt=menu infercase noshowfulltag
-        "set shortmess+=c
-        "suppress intro message because the above makes it look bad
-        set shortmess+=I
-        "--------------------------------------------------------------------------------
-        " automatically open and close the popup menu / preview window
-        au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-        set pumheight=12
-        hi Pmenu  ctermfg=1 ctermbg=255
-        hi PmenuSbar   ctermfg=11 ctermbg=5 cterm=NONE
-        hi PmenuThumb  ctermfg=12 ctermbg=2 cterm=NONE
-        "--------------------------------------------------------------------------------
         autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
         autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
         autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -657,16 +824,6 @@ call plug#end()
         "set completeopt=menuone,menu,longest,preview
         set omnifunc=syntaxcomplete#Complete
         set completeopt=menu
-        "===PLAY8=========(C-o)====================================================================
-        inoremap <silent> <C-o> <C-x><C-o>
-        "inoremap <silent> <C-k> <C-x><C-k>
-        inoremap <silent> <C-d> <C-x><C-d>
-        inoremap <silent> <C-f> <C-x><C-f>
-        inoremap <silent> <C-l> <C-x><C-l>
-        inoremap <silent> <C-]> <C-x><C-]>
-        "inoremap <silent> <C-u> <C-x><C-u>
-        "===PLAY15=================================================================================
-        nnoremap ;d mayiw`a:exe "!dict -P - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
         "--------------------------------------------------------------------------------
         call deoplete#custom#source('neosnippet',    'rank', 690)
         call deoplete#custom#source('ultisnips',     'rank', 680)
@@ -713,4 +870,4 @@ call plug#end()
         call unite#filters#sorter_default#use(['sorter_rank'])
         call unite#filters#matcher_default#use(['matcher_fuzzy'])
         call unite#filters#matcher_default#use(['matcher_fzf'])
-       command! ShowFunc call ShowFunc()
+        command! ShowFunc call ShowFunc()

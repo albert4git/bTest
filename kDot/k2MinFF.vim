@@ -3,28 +3,28 @@
 " Last Modified: 19 Feb 2019
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      So 28 Jul 2019 06:42:49  CEST
+" Last Modified:      Do 01 Aug 2019 01:47:17  CEST
 "===============================================================================================================
 "===============================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
-        "------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         set runtimepath+=~/vim-amake
 
-        "------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         let $MYVIMRC='~/.config/nvim/init.vim'
-        "------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         let s:thesaurus_pat ="/home/red/git/bTest/DICT/mthesaur.txt"
         let g:tq_mthesaur_file="/home/red/git/bTest/DICT/mthesaur.txt"
         set thesaurus=/home/red/git/bTest/DICT/mthesaur.txt
         set dictionary+=/home/red/git/bTest/DICT/english-words.txt
-        "------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         filetype on
         filetype plugin on
         filetype indent on
-        "------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         let maplocalleader=','
         let mapleader=' '
-        "------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         set nocompatible
         set helplang=en,de
         set encoding=utf-8
@@ -36,39 +36,39 @@
         set tags=.tags;
         set tags+=tags;
         ":set tags=./tags,tags,/home/user/commontags
-        "------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         " set dictionary=/usr/share/dict/words
         " set dictionary="/usr/dict/words"     
         " set spellfile=~/.config/nvim/spell/en.utf-8.add
         " set spelllang=de,tech_speak
         " 'zg': add, 'zw': remove.
-        "------------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         set spelllang=en
         set spelllang=fr
         set spelllang=de
         set spellsuggest=best
         set spelllang=he
         set spelllang=en
-        set nospell
         set spell
-        "------------------------------------------------------------------------------------------
+        set nospell
+        "----------------------------------------------------------------------------------
         set makeprg=gcc\ -o\ %<\ % 
         set grepprg=rg\ --vimgrep
         let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
-        "------------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         "set grepprg=/bin/grep\ -nH
-        "------------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         augroup vimrc
                 autocmd!
         augroup END
-        "------------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         "###-Pymode-???
         let g:pymode_python = 'python3'
-        "------------------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         set background=dark
         syntax on
         syntax enable
-"===============================================================================================================
+        "==================================================================================
 
 "-AAA4-undo-------------------------------------------------------------------------------------------------{{{
         set noswapfile
@@ -203,25 +203,25 @@
 
 "-2Remap-}}}
 
-        "---------------------------------------------------------------------------------- 
-        source ~/git/bTest/kDot/k2MinFzfDeoLs.vim
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+         source ~/git/bTest/kDot/k2MinFzfDeoLs.vim
         "source ~/git/bTest/kDot/minFzfDeoLsJediSnip.vim
         "source ~/git/bTest/kDot/kFF7DEO.vim
         "source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
         "---------------------------------------------------------------------------------- 
 
         hi pythonSelf  ctermfg=68 cterm=bold 
-        "::::::CYAN::::::::::::::::-=2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+        "::::::CYAN::::::::::::::::-=2=-:::::::::::::::::::::::::::::::::::::::::::::::::::
         "source mix/n-badwolf.vim 
-        "colorscheme dracula
-        " colorscheme molokai
+        "colorscheme molokai
         colorscheme badwolf
-        "-TOP----------------------------------------------------------------------------------------------------------
+        "-TOP------------------------------------------------------------------------------
         highlight DiffAdd           cterm=bold ctermbg=22
         highlight DiffDelete        cterm=bold ctermbg=3
         highlight DiffChange        cterm=bold ctermbg=11
         highlight DiffChange        cterm=bold ctermbg=52
-        "-TOP----------------------------------------------------------------------------------------------------------
+        "-TOP------------------------------------------------------------------------------
         hi Normal         ctermbg=235
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
@@ -239,6 +239,16 @@
         hi PmenuSbar      ctermfg=11 ctermbg=5 cterm=NONE
         hi PmenuThumb     ctermfg=12 ctermbg=2 cterm=NONE
         hi PmenuSel       ctermbg=10 ctermfg=1
+
+                "--------------------------------------------------------------------------------
+                silent! set complete& completeopt=menu infercase noshowfulltag
+                "set shortmess+=c
+                "suppress intro message because the above makes it look bad
+                set shortmess+=I
+                "--------------------------------------------------------------------------------
+                " automatically open and close the popup menu / preview window
+                au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+
         "------------------------------------------------------
         hi customPink     ctermbg=245 ctermfg=White
         hi lightGray      ctermbg=12
@@ -251,7 +261,7 @@
         set nuw =4
         set list
         set listchars=tab:▸\
-        "---???---------------------------------------------------------------------------- 
+        "---???------------------------------------------------
         call matchadd('darkGray', 'NEXT')
         call matchadd('darkGray', '!!!')
         call matchadd('darkGray', '???')
@@ -270,20 +280,20 @@
         "------------------------------------------------------
         "------------------------------------------------------
         "hi Comment        ctermbg=14
-        "------------------------------------------------------------------------------------------- 
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "source ~/git/aTest/dotFiles/nVim/logoCyan.vim
-        "------------------------------------------------------------------------------------------- 
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "source ~/git/aTest/dotFiles/nVim/myPlug/nHydra.vim 
         "let g:nnv_search_paths = ['~/git/aTest/pyLabGitPdbPythonMode27']
         "let g:nnv_search_paths = ['/media/red/F1E8-C819/hTML-Zp-Link/2019CollectZip/']
-        "------------------------------------------------------------------------------------------- 
-        " let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
-        " source ~/git/aTest/dotFiles/nVim/myPlug/NNV.vim
-        " let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
-        ":::::::::::::::::::::::::::-=3=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        " NNNVVVV
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
+        "source ~/git/aTest/dotFiles/nVim/myPlug/NNV.vim
+        "let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " let g:nnv_search_paths = ['/media/red/124Black/']
         " source ~/git/bTest/kDot/LabVimPlug/NNV.vim
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         autocmd! User Oblique       normal! zz
         autocmd! User ObliqueStar   normal! zz
@@ -330,7 +340,6 @@
 "---------------------------------------------------------------------------------------------------
 ":::::::::::::::::::::::::::-START1-:::::::::-PreNAVI-::::::::::::::::::::::::::::::::::::::::::::::
 "---------------------------------------------------------------------------------------------------
-        "---Command mode related ???------------
         "------------------------------------------------------------------------------------------
         nnoremap <BS> X
         "---it2018---------------------------------------------------------------------------------
@@ -378,6 +387,11 @@
         "---------------------------------------------------
         nnoremap <C-j> :bn<cr>
         nnoremap <C-k> :bp<cr>
+
+        map <C-J> <C-W>j<C-W>_
+        map <C-K> <C-W>k<C-W>_
+        map <C-=> <C-W>=
+
         "---------------------------------------------------
         "nnoremap <S-j> :bn<cr>
         "nnoremap <S-k> :bp<cr>
@@ -439,19 +453,22 @@
         "==========================================================================================
         nnoremap ll :execute "leftabove vsplit" bufname('#')<cr>
         nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>
+
         "------------------------------------------------------------------------------------------
         "===openFileWithSameBasenameDifferentExtension=============================================        
         "nnoremap <expr> ,R  ":e ".expand("%:r")."."
 
-"---------------------------------------------------------------------------------------------------
-"::::::::::::::::<LocalLeader>,,::::-LINES1-::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"---------------------------------------------------------------------------------------------------
+        "------------------------------------------------------------------------------------------
+        ":::::::::::::::<LocalLeader>,,::::-LINES1-::::::::::::::::::::::::::::::::::::::::::::::::
+        "------------------------------------------------------------------------------------------
+
         nnoremap W gwip
         nnoremap ;t :set tw=70<cr>v<s-}>gq<end>
         noremap  ;a =ip
-        "------------------------------------------------------------------------------------------
+
         "==========================================================================================
         "===copyLastChangedLineHE==================================================================
+        "==========================================================================================
         nnoremap ;p :'.t.<cr>
         vnoremap ;p :'.t.<cr>
         "==========================================================================================
@@ -463,8 +480,8 @@
         nnoremap ,d mayiw`a:exe ":Capture !dict -d fd-eng-deu - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
         "==========================================================================================
         "Transport Down Ex: Pull word under cursor into :Ex LHS of a subs ztitute (replace)
-        nnoremap ,w :<C-r>=expand("<cword>")<CR>
-        nnoremap ,z :<C-r>=getline(".")<CR>
+        nnoremap ;w :<C-r>=expand("<cword>")<CR>
+        nnoremap ;z :<C-r>=getline(".")<CR>
         "---------------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
         nmap ,, <Plug>(easymotion-overwin-w)
@@ -484,6 +501,7 @@
         vmap     dg  :diffget<CR>
         vmap     dp  :diffput<CR>
         nnoremap do  :diffoff!<cr>
+        "------------------------------------------------------------------
         " augroup ft_fugitive
         "         au!
         "         nnoremap <leader>gd :Gdiff<cr>
@@ -492,14 +510,17 @@
         "         nnoremap <leader>gl :Glog<cr>
         "         au BufNewFile,BufRead .git/index setlocal nolist
         " augroup END
+        "------------------------------------------------------------------
 
         "::::::::::::::::::::::::::::::-MAGIC-:::::::::::::::::::::::::::::::::::::::::::::::::::::
         vmap <A-c> :w !cat >> ./zbuf<CR>
         "==========================================================================================
         "===:Ex-TRIGER==MAGIC==Execute VIM colon command under cursor==:ls=========================
+        "==========================================================================================
         nnoremap <C-z> yy:<C-r>"<cr>
         "==========================================================================================
         "---PlusMinus------------------------------------------------------------------------------
+        "==========================================================================================
         nnoremap ( <c-x>:y x\|@x<cr>
         nnoremap ) <c-a>:y x\|@x<cr>
         "==========================================================================================
@@ -532,15 +553,28 @@
         nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
         "---------------------------------------------------------------
         " imap <C-b>    <Plug>(neosnippet_expand_or_jump)
+
+        "==========================================================================================
+        function! UltiSnipsCallUnite()
+                Unite -start-insert -winheight=100 -immediately -no-empty ultisnips
+                return ''
+        endfunction
+        inoremap <F4> <C-R>=(pumvisible()? "\<LT>C-E>":"")<CR><C-R>=UltiSnipsCallUnite()<CR>
+        "let g:UltiSnipsExpandTrigger="<tab>"
+        let g:UltiSnipsExpandTrigger="<C-k>"
+        let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+        let g:UltiSnipsJumpForwardTrigger="<tab>"
+        "==========================================================================================
+
+
         "::::::::::::::::::::::::::::-REPL-::::::::::::::::::::::::::::::::::::::::::::::::
-                " cmdline mappings
-                let cmdline_map_start          = '<LocalLeader>s'
-                let cmdline_map_send           = '<Space>'
-                let cmdline_map_send_and_stay  = '<LocalLeader><Space>'
-                let cmdline_map_source_fun     = '<LocalLeader>f'
-                let cmdline_map_send_paragraph = '<LocalLeader>p'
-                let cmdline_map_send_block     = '<LocalLeader>b'
-                let cmdline_map_quit           = '<LocalLeader>q'
+        let cmdline_map_start          = '<LocalLeader>s'
+        let cmdline_map_send           = '<Space>'
+        let cmdline_map_send_and_stay  = '<LocalLeader><Space>'
+        let cmdline_map_source_fun     = '<LocalLeader>f'
+        let cmdline_map_send_paragraph = '<LocalLeader>p'
+        let cmdline_map_send_block     = '<LocalLeader>b'
+        let cmdline_map_quit           = '<LocalLeader>q'
 
 
 "==================================================================================================
@@ -557,10 +591,12 @@
         "---------------------------------------------------------------
         nnoremap <Leader>4 <Plug>AgRawSearch
         "---------------------------------------------------------------
-        nnoremap <Leader>/ :NV <C-r><C-w><CR> | wincmd p
-        nnoremap <Leader>s :SideSearch <C-r><C-w><CR> | wincmd p
-        nnoremap <Leader>a :Ack <cword> .<cr>
-        nnoremap <Leader>g :FFRg  <cword> .<cr>
+        nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
+        nnoremap ff :NV <C-r><C-w><CR> | wincmd p
+        nnoremap FF :ZRg <C-r><C-w><CR> | wincmd p
+        nnoremap AA :ZAg <C-r><C-w><CR> | wincmd p
+        nnoremap GG :ZGit <C-r><C-w><CR> | wincmd p
+        nnoremap <Leader>a :Ack <C-r><C-w><CR> | wincmd p
         "---------------------------------------------------------------
         " bind K to grep word under cursor
         "---------------------------------------------------------------
@@ -581,24 +617,24 @@
         nnoremap <F1> <ESC>
         vnoremap <F1> <ESC>
         "==========================================================================================
-        nnoremap <F2> <Esc>:help <C-r><C-w><CR>
-        "==========================================================================================
         "==========================================================================================
         "==HelpInHelpInHelp========================================================================
-        map <F2> "zyw:exe  "h ".@z.""<CR>
+        "==========================================================================================
+        nmap <F2> <Esc>:helpgrep <C-r><C-w><CR>
+        nmap <F2> "zyw:exe  "h ".@z.""<CR>
+        nmap <F2> <Esc>:help <C-r><C-w><CR>
         "==MMM====================================================================================
         au! FileType vim,help nnoremap M :exec "helpgrep" expand("<cword>")<CR>
         "==========================================================================================
         nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
         inoremap <F3> <esc>:NERDTreeToggle<cr>
         "==========================================================================================
-        nnoremap <F4> :w<CR>:!python %<CR>
-        nnoremap <F4> <Esc>:helpgrep <C-r><C-w><CR>
+        nnoremap <F4> <esc>:Startify<cr>
         "==========================================================================================
-        " Quick run via <F5>
+        nnoremap <F5> :w<CR>:!python %<CR>
+        "==========================================================================================
         nnoremap <F5> :call <SID>compile_and_run()<CR>
         "==========================================================================================
-
         function! s:compile_and_run()
             exec 'w'
             if &filetype == 'c'
@@ -614,19 +650,15 @@
             endif
         endfunction
 
-        " Deprecated:
-        " augroup SPACEVIM_ASYNCRUN
-        "     autocmd!
-        "    " Automatically open the quickfix window
-        "     autocmd User AsyncRunStart call asyncrun#quickfix_toggle(15, 1)
-        " augroup END
-        "
-        " asyncrun now has an option for opening quickfix automatically
         let g:asyncrun_open = 15
 
         "==========================================================================================
         nnoremap <F6> :ScratchPreview<CR>
         nnoremap <F7> :Scratch<CR>
+        "==========================================================================================
+        nmap <F6> cc
+        nmap <F7>  gcl
+        nmap cc  gcl
         "==========================================================================================
         nnoremap <F8> :LocationToggle<cr>
         nnoremap <LocalLeader>n :lnext<cr>zvzz
@@ -640,23 +672,30 @@
         "==========================================================================================
         nnoremap <F12> :TagbarToggle<CR>
         nnoremap TT :TagbarToggle<CR>
-        "==========================================================================================
 
-        nmap <F6> cc
-        nmap <F7>  gcl
-        nmap cc  gcl
-"==================================================================================================
-"::::::::::::::::::::::::::::::-UNFUC-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"==================================================================================================
+        "===PLAY8=========(C-o)====================================================================
+        inoremap <silent> <C-o> <C-x><C-o>
+        "inoremap <silent> <C-k> <C-x><C-k>
+        inoremap <silent> <C-d> <C-x><C-d>
+        inoremap <silent> <C-f> <C-x><C-f>
+        inoremap <silent> <C-l> <C-x><C-l>
+        inoremap <silent> <C-]> <C-x><C-]>
+        "inoremap <silent> <C-u> <C-x><C-u>
+
+        "==========================================================================================
+        "::::::::::::::::::::::::::::::-UNFUC-:::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "==========================================================================================
         nnoremap fu :syntax sync fromstart<cr>:redraw!<cr>
         nnoremap zu :<c-u>update<cr>
         let g:undoquit_mapping = ';q' 
-        "------------------------------------------------------------------
+
+        "=============================================
         "===Make zO recursively open whatever fold====
-        nnoremap ;z :call FocusLine()<cr>
+        "=============================================
+        nnoremap ,z :call FocusLine()<cr>
         nnoremap z0 zczO 
+
         "------------------------------------------------------------------
-        nnoremap z9 :call ShowFuncKeys(<q-bang>)<cr>
         nnoremap z8 :call <SID>SynStack()<CR>
 
         "---------------------------------------------------------------------------------- 
@@ -700,12 +739,12 @@
                 endif
         endfunction
 
-        "-Open-Quickfix-window-automatically-----------------------------------------------
+        "---Open-Quickfix-window-automatically---------------------------------------------
         autocmd QuickFixCmdPost grep cwindow
         autocmd! vimrc QuickfixCmdPost [^l]* nested copen | wincmd p
         autocmd! vimrc QuickfixCmdPost l* nested lopen | wincmd p
 
-        "==========================================================================================
+        "==================================================================================
         " Focus the current line.  Basically:
         function! FocusLine()
                 let oldscrolloff = &scrolloff
@@ -714,7 +753,7 @@
                 let &scrolloff = oldscrolloff
         endfunction
 
-        "----------------------------------------------------------------------------------
+        "==================================================================================
         function! <SID>SynStack()
                 if !exists("*synstack")
                         return
@@ -722,7 +761,7 @@
                 echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
         endfunc
 
-        "----------------------------------------------------------------------------------
+        "==================================================================================
         function! ShowFuncKeys(bang)
                 for i in range(1,12)
                         redir! => map
@@ -736,7 +775,7 @@
         "com! -bang ShowFuncKeys :call ShowFuncKeys(<q-bang>)
         command! ShowFuncKeys call ShowFuncKeys(<q-bang>)
 
-        "----------------------------------------------------------------------------------
+        "==================================================================================
         function! ShowFunc()
                 let gf_s = &grepformat
                 let gp_s = &grepprg
@@ -764,36 +803,36 @@
         "let g:fzf_history_dir = '~/.local/share/fzf-history'
         "==========================================================================================
         let g:fzf_colors =
-                        \ { 'fg':      ['fg', 'Comment'],
-                        \ 'bg':      ['bg', 'Normal'],
-                        \ 'hl':      ['fg', 'Comment'],
-                        \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-                        \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn', 'Normal'],
-                        \ 'hl+':     ['fg', 'Statement'],
-                        \ 'info':    ['fg', 'PreProc'],
-                        \ 'border':  ['fg', 'Ignore'],
-                        \ 'prompt':  ['fg', 'Conditional'],
-                        \ 'pointer': ['fg', 'Exception'],
-                        \ 'marker':  ['fg', 'Keyword'],
-                        \ 'spinner': ['fg', 'Comment'],
-                        \ 'header':  ['fg', 'Comment'] }
+                                \ { 'fg':      ['fg', 'Comment'],
+                                \ 'bg':      ['bg', 'Normal'],
+                                \ 'hl':      ['fg', 'Comment'],
+                                \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+                                \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn', 'Normal'],
+                                \ 'hl+':     ['fg', 'Statement'],
+                                \ 'info':    ['fg', 'PreProc'],
+                                \ 'border':  ['fg', 'Ignore'],
+                                \ 'prompt':  ['fg', 'Conditional'],
+                                \ 'pointer': ['fg', 'Exception'],
+                                \ 'marker':  ['fg', 'Keyword'],
+                                \ 'spinner': ['fg', 'Comment'],
+                                \ 'header':  ['fg', 'Comment'] }
         "==========================================================================================
         let g:fzf_command_prefix = 'FF'
         let g:fzf_action = {
-                        \ 'ctrl-t': 'tab split',
-                        \ 'ctrl-s': 'split',
-                        \ 'ctrl-x': ':Lynx',
-                        \ 'ctrl-v': 'vsplit' }
+                                \ 'ctrl-t': 'tab split',
+                                \ 'ctrl-s': 'split',
+                                \ 'ctrl-x': ':Lynx',
+                                \ 'ctrl-v': 'vsplit' }
         "==========================================================================================
-       function! s:fzf_statusline()
-               " Override statusline as you like
-               highlight fzf1 ctermfg=11 ctermbg=9
-               highlight fzf2 ctermfg=11 ctermbg=9
-               highlight fzf3 ctermfg=11 ctermbg=9
-               setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
-       endfunction
-       autocmd! User FzfStatusLine call <SID>fzf_statusline()
-       "========================================================
+        function! s:fzf_statusline()
+                " Override statusline as you like
+                highlight fzf1 ctermfg=11 ctermbg=9
+                highlight fzf2 ctermfg=11 ctermbg=9
+                highlight fzf3 ctermfg=11 ctermbg=9
+                setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+        endfunction
+        autocmd! User FzfStatusLine call <SID>fzf_statusline()
+        "========================================================
         "==========================================================================================
         "-[Buffers] Jump to the existing window if possible
         let g:fzf_buffers_jump = 1
@@ -810,15 +849,15 @@
         endfunction
         function! FzfSpell()
                 let suggestions = spellsuggest(expand("<cword>"))
-                return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
+                return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'left': 30 })
         endfunction
 
-       "========================================================================================================
+        "========================================================================================================
         command! ZTag if !empty(tagfiles()) | call fzf#run({
                                 \ 'source': "cat " . join(tagfiles()) . ' | grep -P "' . expand('%:t') . '"',
                                 \ 'sink': function('<sid>tag_handler'),
                                 \ 'options': '+m --with-nth=1',
-                                \ 'down': '50%'
+                                \ 'right': '25%'
                                 \ }) | else | echo 'No tags' | endif
         "==================================================================================
         function! s:tag_handler(tag)
@@ -832,15 +871,11 @@
                         endif
                 endif
         endfunction
-       "===???FZF???============================================================================================
-       "========================================================
+        "==================================================================================
 
-       "========================================================
-       nnoremap <silent> <Leader>t :ZTag<cr>
-       nnoremap z= :call FzfSpell()<CR>
 
-       "========================================================
-       " KKK FZF Selecting Mappings
+        "========================================================
+        " KKK FZF Selecting Mappings
         nmap <leader><tab> <plug>(fzf-maps-n)
         xmap <leader><tab> <plug>(fzf-maps-x)
         omap <leader><tab> <plug>(fzf-maps-o)
@@ -853,7 +888,7 @@
         inoremap <expr> <c-x><c-k> fzf#vim#complete('cat /usr/share/dict/words')
         imap <c-k> <plug>(fzf-complete-word)
         imap <c-j> <plug>(fzf-complete-file-ag)
-        imap <expr><A-j> fzf#vim#complete#word({'left': '18%'})
+        imap <expr><A-j> fzf#vim#complete#word({'left': '20%'})
         imap <c-l> <plug>(fzf-complete-line)
 
        "===NEXT================================================
@@ -866,7 +901,8 @@
        "========================================================
 
        "========================================================
-       " or command abbreviation
+       "==NEXT==================================================
+       "========================================================
        cabbrev SS  SideSearch
        cabbrev ZA  FFMarks
        cabbrev ZM  FZFMru
@@ -874,52 +910,33 @@
        cabbrev ZH  FFHelptags
        cabbrev ZL  FFLines
        cabbrev ZBL FFBLines
+       cabbrev ZT  ZTag
+       cabbrev ZF  ZFiles
+       cabbrev ZS  ZSnippets
+       nmap == :call FzfSpell()<CR>
 
+       "============================================================================================
+       "============================================================================================
        nnoremap <Leader>j :<C-u>Unite -buffer-name=jump jump<CR>
        nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
-       "===YANK2==================================================================================
-       nmap zp <Plug>yankstack_substitute_older_paste
-       nmap zn <Plug>yankstack_substitute_newer_paste
+       nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
+       nnoremap \\ :<C-u>Unite -buffer-name=register register<CR>
+       "============================================================================================
+       "============================================================================================
 
-       "===!!!FZF!!!============================================================================================
 
        "============================================================================================
-        " C-c and C-v - Copy/Paste to global clipboard
-        vmap <C-c> "+yi
-        imap <C-v> <esc>"+gpi
-       "============================================================================================
        "=========
-       function! s:escape(path)
-               return substitute(a:path, ' ', '\\ ', 'g')
-       endfunction
-
-       function! AgHandler(line)
-               let parts = split(a:line, ':')
-               let [fn, lno] = parts[0 : 1]
-               execute 'e '. s:escape(fn)
-               execute lno
-               normal! zz
-       endfunction
-
-       command! -nargs=+ Fag call fzf#run({
-                               \ 'source': 'ag "<args>"',
-                               \ 'sink': function('AgHandler'),
-                               \ 'options': '+m',
-                               \ 'tmux_height': '60%'
-                               \ })
-       "=========
-       "============================================================================================
-       "=========
-       " MAO 
+       "MAO 
        "nmap <C-p> :FZF<cr>
-       "FZF - bind file fuzzy search to C-p
-        nnoremap <C-p> :<C-u>FZF<CR>
-       " mao
+       "nnoremap <C-p> :<C-u>FZF<CR>
+       "mao
        "=========
        "============================================================================================
        "=========
 
        command! -bang -nargs=* ZFind call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+       command! -bang -nargs=* ZFi call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
        "=========
        "============================================================================================
@@ -945,23 +962,29 @@
                                \ 'sink': 'colo', 'left': '25%'})
 
 
-       "========================================================================================================
-       "================
        "=========
+       "========================================================================================================
+       "=========
+
        let g:pathToTemplates='~/bakBuk/'
+
        function! PutSink(file)
                execute ':r '.g:pathToTemplates.a:file
        endfunction
+
        command! ZPut call fzf#run({
                                \  'source': 'ls '.g:pathToTemplates,
                                \  'sink':    function('PutSink')})
 
-       "============================================================================================
-
-        command! ZLibList call fzf#run({'source': 'find ~/git/ ~/Documents/ -type f', 'sink':  'edit'})
        "=========
-       "================
+       "============================================================================================
+       "=========
+
+       command! ZLibList call fzf#run({'source': 'find ~/git/ ~/Documents/ -type f', 'sink':  'edit'})
+
+       "=========
        "========================================================================================================
+       "=========
 
        function! s:plug_help_sink(line)
                let dir = g:plugs[a:line].dir
@@ -982,17 +1005,12 @@
                                \'right': '30%'
                                \}))
 
-       command! -bang -nargs=? Zbb call fzf#run({
-                               \'source': 'ag "<args>"',
-                               \'sink': function('Sink'),
-                               \'right': '30%'})
        "=========
-       "================
        "============================================================================================
+       "=========
 
-
-       "============================================================================================
        command! ZDeviList call ZDeviList()
+       command! ZDevi call ZDeviList()
        " Files + devicons
        function! ZDeviList()
                function! s:files()
@@ -1023,12 +1041,23 @@
                                        \ 'options': '-m -x +s',
                                        \ 'down':    '40%' })
        endfunction
+
        "============================================================================================
        " Any command that lists files can be used as the source
        " call fzf#run(fzf#wrap({'source': 'ls'}))
        " call fzf#run(fzf#wrap({'source': 'git ls-files'}))
 
 
-
+       "========================================================
+       "===YANK2================================================
+       "========================================================
+       nmap zp <Plug>yankstack_substitute_older_paste
+       nmap zn <Plug>yankstack_substitute_newer_paste
+       " C-c and C-v - Copy/Paste to global clipboard
+       vmap <C-c> "+yi
+       imap <C-v> <esc>"+gpi
+       nmap WW ]p
+       "========================================================
        "============================================================================================
+
 

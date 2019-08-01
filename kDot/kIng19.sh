@@ -198,6 +198,8 @@ tar --listed-incremental=/media/backup/snapshot.file -cJpf /media/backup/home-ba
 #---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
 
 tar --listed-incremental=/media/red/124Black/SNAR/snapshot.file -cJpf /media/red/124Black/SNAR/home-backup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/Downloads
+# NEXT ??? single liner ???
+# NEXT ??? single liner !!!YES
 tar --listed-incremental=/media/red/124Black/SNAR/bTestSnap.file -cJpf /media/red/124Black/SNAR/bTestBackup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/git/bTest/
 
 #---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!

@@ -532,7 +532,7 @@
         nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
 
 
-        "---------------------------------------------------------------
+        "==========================================================================================
         function! UltiSnipsCallUnite()
                 Unite -start-insert -winheight=100 -immediately -no-empty ultisnips
                 return ''

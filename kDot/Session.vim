@@ -7,12 +7,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +45 NONE
-badd +619 kConfigFVWM.sh
+badd +20 NONE
+badd +601 kConfigFVWM.sh
 badd +16 kMinit.vim
 badd +3 k5DEO.vim
 badd +27 4Temp.vim
-badd +10 timeTest.txt
+badd +1 timeTest.txt
 badd +2 logoTextObjct.vim
 badd +3 logoGit.vim
 badd +588 b5DEO.vim
@@ -20,7 +20,7 @@ badd +1 xFZF.sh
 argglobal
 silent! argdel *
 $argadd NONE
-edit kConfigFVWM.sh
+edit 4Temp.vim
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -36,11 +36,11 @@ setlocal fdl=0
 setlocal fml=6
 setlocal fdn=20
 setlocal nofen
-let s:l = 609 - ((9 * winheight(0) + 17) / 35)
+let s:l = 29 - ((17 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-609
+29
 normal! 0
 lcd ~/git/bTest/kDot
 tabnext 1

@@ -143,7 +143,7 @@ alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias kdeo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-alias d2='deonvim NONE -u ~/git/bTest/kDot/k2MinFF.vim'
+alias d2='deonvim  -u ~/git/bTest/kDot/k2MinFF.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias d7='deonvim NONE -u ~/git/bTest/kDot/kFF7Min.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

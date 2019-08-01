@@ -1,0 +1,9 @@
+[[snippets]]
+  description = "1git-command"
+  command = "git status"
+  output = ""
+
+[[snippets]]
+  description = "exa-Tree"
+  command = "exa --long --tree --level=3"
+  output = ""
