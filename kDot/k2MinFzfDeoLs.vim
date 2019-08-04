@@ -1,3 +1,9 @@
+"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
+" File: k2MinFzfDeoLs.vim
+"==================================================================================================
+" Created:            Di 09 Apr 2019 12:46:44  CEST
+" Last Modified:      Do 01 Aug 2019 01:47:17  CEST
+"==================================================================================================
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 "let g:deoplete#sources#jedi#extra_path = $PYTHONPATH
@@ -256,18 +262,12 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:side_search_splitter = 'vnew'
                 " I like 40% splits, change it if you don't
                 let g:side_search_split_pct = 0.4
-                " SideSearch current word and return to original window
-                nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
-                " Create an shorter `SS` command
-                command! -complete=file -nargs=+ SS execute 'SideSearch <args>'
-                " or command abbreviation
         "----------------------------------------------------------------------------------
         Plug 'exvim/ex-matchit'
         "----------------------------------------------------------------------------------
         Plug 'ervandew/supertab'
         "---------------------------------------------------------------------------------- 
         Plug 'MarcWeber/vim-addon-mw-utils'
-        "===PLAY2==BLiZZ==(C-s)+(C-b)==============================================================
         Plug 'garbas/vim-snipmate'
         Plug 'honza/vim-snippets'
         Plug 'SirVer/ultisnips'
@@ -279,6 +279,31 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'tmux-plugins/vim-tmux'
         "------------------------------------------------------------------------------------------ 
         Plug 'xolox/vim-misc'
+        "-------------------------------------------------------------------------- 
+        Plug 'jreybert/vimagit'
+        "===========================================================================
+        Plug 'junegunn/gv.vim'
+        "   - o or <cr> on a commit to display the content of it
+        "   - o or <cr> on commits to display the diff in the range
+        "   - O opens a new tab instead
+        "   - gb for :Gbrowse
+        "   - ]] and [[ to move between commits
+        "   - . to start command-line with :Git [CURSOR] SHA à la fugitive
+        "   - q to close
+        "==========================================================================
+        "   - :Git[!] [args]
+        "   - :Gstatus
+        "   - :Gcommit [args]
+        "   - :Gedit/:Gsplit/:Gvsplit/:Gtabedit/:Gpedit [revision]
+        "   - :Gwrite/:Gwq {path}
+        "   - :Gmove {destination}
+        "   - :Gremove
+        "   - :{range}Gread [revision]/[args]
+        "   - :Gdiff/:Gsdiff/:Gvdiff [revision]
+        "   - :Ggrep/:Glgrep [args] -- :grep/:lgrep with git-grep as 'grepprg'
+        "   - :Glog [args] -- load all previous revisions of current file into quickfix
+        "   - :[range]Gblame {flags}
+        "   - :[range]Gbrowse {revision}
         "-------------------------------------------------------------------------- 
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-commentary'
@@ -362,25 +387,12 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:AutoPairsDelete = '<M-5>'
         "---------------------------------------------------------------------------------
 
-        " { sin ( cosin ( <b>'x2'</b> ) ) }
+         "{ sin ( cosin ( <b>'x2'</b> ) ) }
         "-------------------------------------------------------------------------- 
         Plug 'ivyl/vim-bling'
                 let g:bling_time = 42
                 let g:bling_color_fg = 'green'
                 let g:bling_color_cterm = 'reverse'
-        "----------------------------------------------------------------------------------
-        " :Delete: Delete a buffer and the file on disk simultaneously.
-        " :Unlink: Like :Delete, but keeps the now empty buffer.
-        " :Move: Rename a buffer and the file on disk simultaneously.
-        " :Rename: Like :Move, but relative to the current file's containing directory.
-        " :Chmod: Change the permissions of the current file.
-        " :Mkdir: Create a directory, defaulting to the parent of the current file.
-        " :Cfind: Run find and load the results into the quickfix list.
-        " :Clocate: Run locate and load the results into the quickfix list.
-        " :Lfind/:Llocate: Like above, but use the location list.
-        " :Wall: Write every open window. Handy for kicking off tools like guard.
-        " :SudoWrite: Write a privileged file with sudo.
-        " :SudoEdit: Edit a privileged file with sudo.
         "------------------------------------------------------------------------------------------
         Plug 'majutsushi/tagbar'
                 highlight TagbarHighlight   ctermfg=051 ctermbg=9 cterm=bold
@@ -560,6 +572,43 @@ call plug#begin('~/.config/nvim/plugged/')
         "source ~/git/aTest/dotFiles/nVim/logoMako.vim
         "source ~/git/aTest/dotFiles/nVim/logoQF.vim
         "source ~/git/aTest/dotFiles/nVim/logoAsyncPy.vim
+
+        "===BOOKMARK========================================================================
+        Plug 'MattesGroeger/vim-bookmarks'
+                let g:bookmark_no_default_key_mappings = 1
+                function! BookmarkMapKeys()
+                        nmap mm :BookmarkToggle<CR>
+                        nmap ma :BookmarkShowAll<CR>
+                        nmap mi :BookmarkAnnotate<CR>
+                        nmap mn :BookmarkNext<CR>
+                        nmap mp :BookmarkPrev<CR>
+                        nmap mc :BookmarkClear<CR>
+                        nmap mx :BookmarkClearAll<CR>
+                        nmap mkk :BookmarkMoveUp
+                        nmap mjj :BookmarkMoveDown
+                endfunction
+                "------------------------------------------------------
+                autocmd! BufEnter * :call BookmarkMapKeys()
+                highlight BookmarkSign ctermbg=10 ctermfg=1
+                highlight BookmarkLine ctermbg=10 ctermfg=1
+                highlight BookmarkAnnotationLine ctermbg=9 ctermfg=1
+                highlight BookmarkAnnotationSign ctermbg=9 ctermfg=1
+                "------------------------------------------------------
+                let g:bookmark_auto_close = 1
+                let g:bookmark_highlight_lines = 1          
+                let g:bookmark_show_warning = 0           
+                let g:bookmark_show_toggle_warning = 0      
+                let g:bookmark_sign = '♥'
+                let g:bookmark_highlight_lines = 1
+                let g:bookmark_save_per_working_dir = 1
+                let g:bookmark_auto_save = 1
+                let g:bookmark_save_per_working_dir = 1  
+                "------------------------------------------------------
+                "let g:bookmark_manage_per_buffer = 1`        
+                "let g:bookmark_auto_save_file = '/bookmarks'`
+
+
+
         "==================================================================================
 
         Plug 'runfalk/vim-fzf-extended'
@@ -605,7 +654,6 @@ call plug#end()
         "===VIM-SARTIFY-1==================================================================
 
 
-
         function! s:list_commits()
                 let git = 'git -C ~/git/bTest/'
                 let commits = systemlist(git .' log --oneline | head -n10')
@@ -623,7 +671,6 @@ call plug#end()
 
 
         " \ ['   Commands'], 'commands',
-        " \ ['   Sessions'], 'sessions',
         "====== \ { 'header': ['   MRU '. getcwd()], 'type': 'dir' }, ==============================
 
         let g:startify_lists = [
@@ -657,7 +704,6 @@ call plug#end()
         highlight StartifyPath    ctermfg=245
         highlight StartifySlash   ctermfg=240
         highlight StartifySpecial ctermfg=240
-
 
         autocmd!  VimEnter * execute ":Startify"
 
@@ -742,9 +788,9 @@ call plug#end()
         let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
         let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
 
-        "----------------------------------------------------------------------------------
         "==================================================================================
         "----------------------------------------------------------------------------------
+        "==================================================================================
         let g:jedi#use_splits_not_buffers = "left"
         let g:jedi#popup_on_dot = 0
         "----------------------------------------------------------------------- 
@@ -795,9 +841,9 @@ call plug#end()
         let g:deoplete#sources#jedi#short_types = 1
         "-------------------------------------------------------------------------------- 
         " Plugin key-mappings.
-        inoremap <expr><C-g>     deoplete#undo_completion()
-        inoremap <expr><C-l>     deoplete#refresh()
-        inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
+        " inoremap <expr><C-g>     deoplete#undo_completion()
+        " inoremap <expr><C-l>     deoplete#refresh()
+        " inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
         "-------------------------------------------------------------------------------- 
         autocmd! FileType python setlocal completeopt-=preview
         "--------------------------------------------------------------------------------

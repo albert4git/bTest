@@ -62,6 +62,19 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 "==================================================================================================
 
+        "----------------------------------------------------------------------------------
+        " :Delete: Delete a buffer and the file on disk simultaneously.
+        " :Unlink: Like :Delete, but keeps the now empty buffer.
+        " :Move: Rename a buffer and the file on disk simultaneously.
+        " :Rename: Like :Move, but relative to the current file's containing directory.
+        " :Chmod: Change the permissions of the current file.
+        " :Mkdir: Create a directory, defaulting to the parent of the current file.
+        " :Cfind: Run find and load the results into the quickfix list.
+        " :Clocate: Run locate and load the results into the quickfix list.
+        " :Lfind/:Llocate: Like above, but use the location list.
+        " :Wall: Write every open window. Handy for kicking off tools like guard.
+        " :SudoWrite: Write a privileged file with sudo.
+        " :SudoEdit: Edit a privileged file with sudo.
 "-----------------------------------------------------------------"
 " :Keep                                                           "
 " :Reject                                                         "
@@ -92,6 +105,16 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 " nmap <Leader>S :Snippets<CR>
 " nmap <Leader><Leader>h :Helptags!<CR>
 
+        "---------------------------------------------------------------
+        "nnoremap T :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+        "================================================================="
+        "  s - open entry in a new horizontal window                      "
+        "  v - open entry in a new vertical window                        "
+        "  t - open entry in a new tab                                    "
+        "  o - open entry and come back                                   "
+        "  O - open entry and close the location/quickfix window          "
+        "  p - open entry in a preview window                             "
+        "================================================================="
 "==================================================================================================
 " nmap <Leader>s :FFFiletypes<CR>
 " nmap <Leader>m :FFMaps<CR>

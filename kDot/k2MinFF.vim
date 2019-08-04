@@ -1,14 +1,13 @@
-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
-" File: minit.vim
-" Last Modified: 19 Feb 2019
-"===============================================================================================================
+"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
+" File: k2MinFF.vim
+"==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
 " Last Modified:      Do 01 Aug 2019 01:47:17  CEST
-"===============================================================================================================
-"===============================================================================================================
+"==================================================================================================
+"==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
         "----------------------------------------------------------------------------------
-        set runtimepath+=~/vim-amake
+        " set runtimepath+=~/vim-amake
 
         "----------------------------------------------------------------------------------
         let $MYVIMRC='~/.config/nvim/init.vim'
@@ -27,9 +26,8 @@
         "----------------------------------------------------------------------------------
         set nocompatible
         set helplang=en,de
-        set encoding=utf-8
         set encoding=UTF-8
-        set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 14
+        " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 14
         set shell=/bin/bash
         set shell=/bin/zsh
         "set tags+=.tags;
@@ -215,6 +213,10 @@
         "::::::CYAN::::::::::::::::-=2=-:::::::::::::::::::::::::::::::::::::::::::::::::::
         "source mix/n-badwolf.vim 
         "colorscheme molokai
+        " colorscheme badwolf
+        " source ~/git/bTest/kDot/mix/n-badwolf.vim
+        " colorscheme candycode
+        colorscheme desert
         colorscheme badwolf
         "-TOP------------------------------------------------------------------------------
         highlight DiffAdd           cterm=bold ctermbg=22
@@ -226,13 +228,13 @@
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
         set signcolumn=yes
-        "hi signcolumn     ctermbg=10
         hi signcolumn     ctermbg=23
         "hi LineNr         ctermbg=199 ctermfg=16 
         hi LineNr         ctermbg=17 ctermfg=15 
         hi CursorLine     ctermbg=8
         set colorcolumn=92,100,112,120
         hi ColorColumn    ctermbg=240
+        hi ColorColumn    ctermbg=14
         set pumheight=12
         " Popup menu hightLight Group
         hi Pmenu          ctermfg=1 ctermbg=255
@@ -279,20 +281,14 @@
         call matchadd('customPink', '--')
         "------------------------------------------------------
         "------------------------------------------------------
-        "hi Comment        ctermbg=14
+        hi Comment        ctermfg=241
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "source ~/git/aTest/dotFiles/nVim/logoCyan.vim
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "source ~/git/aTest/dotFiles/nVim/myPlug/nHydra.vim 
-        "let g:nnv_search_paths = ['~/git/aTest/pyLabGitPdbPythonMode27']
-        "let g:nnv_search_paths = ['/media/red/F1E8-C819/hTML-Zp-Link/2019CollectZip/']
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
         "source ~/git/aTest/dotFiles/nVim/myPlug/NNV.vim
         "let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        " let g:nnv_search_paths = ['/media/red/124Black/']
-        " source ~/git/bTest/kDot/LabVimPlug/NNV.vim
+        "let g:nnv_search_paths = ['/media/red/124Black/']
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         autocmd! User Oblique       normal! zz
@@ -340,7 +336,6 @@
 "---------------------------------------------------------------------------------------------------
 ":::::::::::::::::::::::::::-START1-:::::::::-PreNAVI-::::::::::::::::::::::::::::::::::::::::::::::
 "---------------------------------------------------------------------------------------------------
-        "------------------------------------------------------------------------------------------
         nnoremap <BS> X
         "---it2018---------------------------------------------------------------------------------
         noremap j gj
@@ -452,6 +447,7 @@
         nnoremap hh <c-w>w
         "==========================================================================================
         nnoremap ll :execute "leftabove vsplit" bufname('#')<cr>
+        nnoremap VV :execute "leftabove vsplit" bufname('#')<cr>
         nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>
 
         "------------------------------------------------------------------------------------------
@@ -512,12 +508,16 @@
         " augroup END
         "------------------------------------------------------------------
 
-        "::::::::::::::::::::::::::::::-MAGIC-:::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "==========================================================================================
+        "::::::::::::::::::::::::::::::--MAGIC--:::::::::::::::::::::::::::::::::::::::::::::::::::
+        "==========================================================================================
+
         vmap <A-c> :w !cat >> ./zbuf<CR>
         "==========================================================================================
-        "===:Ex-TRIGER==MAGIC==Execute VIM colon command under cursor==:ls=========================
+        "==:Ex-TRIGER==MAGIC==Execute VIM colon command under cursor==:ls==========================
         "==========================================================================================
-        nnoremap <C-z> yy:<C-r>"<cr>
+        " nnoremap <C-z> yy:<C-r>"<cr>
+        nnoremap ;x yy:<C-r>"<cr>
         "==========================================================================================
         "---PlusMinus------------------------------------------------------------------------------
         "==========================================================================================
@@ -525,7 +525,7 @@
         nnoremap ) <c-a>:y x\|@x<cr>
         "==========================================================================================
         "---FIREFOX----www.web.de------------------------------------------------------------------
-        "------------------------------------------------------------------------------------------
+        "==========================================================================================
         nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
         "------------------------------------------------------------------------------------------
         "===Control-] pop open a window and show the tag there.====================================
@@ -565,9 +565,8 @@
         let g:UltiSnipsJumpBackwardTrigger="<C-b>"
         let g:UltiSnipsJumpForwardTrigger="<tab>"
         "==========================================================================================
-
-
-        "::::::::::::::::::::::::::::-REPL-::::::::::::::::::::::::::::::::::::::::::::::::
+        "::::::::::::::::::::::::::::-REPL-::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "==========================================================================================
         let cmdline_map_start          = '<LocalLeader>s'
         let cmdline_map_send           = '<Space>'
         let cmdline_map_send_and_stay  = '<LocalLeader><Space>'
@@ -577,41 +576,9 @@
         let cmdline_map_quit           = '<LocalLeader>q'
 
 
-"==================================================================================================
-"::::::::::::::::::Leader:0,1,2,3,4,5,6,7,8,9::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"==================================================================================================
-        nnoremap <Leader>0 :set number!<return>
-        "---------------------------------------------------------------
-        nnoremap <Leader>1 :SideSearch <C-r><C-w><CR> | wincmd p
-        command! -complete=file -nargs=+ SIS execute 'SideSearch <args>'
-        "---------------------------------------------------------------
-        nnoremap <Leader>2 :PymodeDoc <cword> .<cr>
-        "---------------------------------------------------------------
-        nnoremap <Leader>3 :Pydoc <cword> .<cr>
-        "---------------------------------------------------------------
-        nnoremap <Leader>4 <Plug>AgRawSearch
-        "---------------------------------------------------------------
-        nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
-        nnoremap ff :NV <C-r><C-w><CR> | wincmd p
-        nnoremap FF :ZRg <C-r><C-w><CR> | wincmd p
-        nnoremap AA :ZAg <C-r><C-w><CR> | wincmd p
-        nnoremap GG :ZGit <C-r><C-w><CR> | wincmd p
-        nnoremap <Leader>a :Ack <C-r><C-w><CR> | wincmd p
-        "---------------------------------------------------------------
-        " bind K to grep word under cursor
-        "---------------------------------------------------------------
-        "nnoremap T :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-        "================================================================="
-        "  s - open entry in a new horizontal window                      "
-        "  v - open entry in a new vertical window                        "
-        "  t - open entry in a new tab                                    "
-        "  o - open entry and come back                                   "
-        "  O - open entry and close the location/quickfix window          "
-        "  p - open entry in a preview window                             "
-        "================================================================="
 
 "==================================================================================================
-"::::::::::::::::::F2, F3, F4, F5, F6, F7 ,F8 , F9:::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::::::::::::F2, F3, F4, F5, F6, F7 ,F8 , F9::::::::::::::::::::::::::::::::::::::::::::::::::
 "==================================================================================================
         inoremap <F1> <ESC>
         nnoremap <F1> <ESC>
@@ -652,12 +619,40 @@
 
         let g:asyncrun_open = 15
 
-        "==========================================================================================
-        nnoremap <F6> :ScratchPreview<CR>
-        nnoremap <F7> :Scratch<CR>
-        "==========================================================================================
-        nmap <F6> cc
-        nmap <F7>  gcl
+"==================================================================================================
+"::::::::::::::::--Leader:0,1,2,3,4,5,6,7,8,9--::::::::::::::::::::::::::::::::::::::::::::::::::::
+"==================================================================================================
+        nnoremap <Leader>0 :set number!<return>
+        "---------------------------------------------------------------
+        nnoremap <Leader>1 :SideSearch <C-r><C-w><CR> | wincmd p
+        command! -complete=file -nargs=+ SIS execute 'SideSearch <args>'
+        "---------------------------------------------------------------
+        nnoremap <Leader>2 :PymodeDoc <cword> .<cr>
+        "---------------------------------------------------------------
+        nnoremap <Leader>3 :Pydoc <cword> .<cr>
+        "---------------------------------------------------------------
+        nnoremap <Leader>4 <Plug>AgRawSearch
+        "---------------------------------------------------------------
+        nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
+        nnoremap ff :NV <C-r><C-w><CR> | wincmd p
+        nnoremap FF :ZRg <C-r><C-w><CR> | wincmd p
+        nnoremap AA :ZAg <C-r><C-w><CR> | wincmd p
+        nnoremap GG :ZGit <C-r><C-w><CR> | wincmd p
+        nnoremap <Leader>a :Ack <C-r><C-w><CR> | wincmd p
+        "---------------------------------------------------------------
+        nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
+        nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
+        nnoremap \\ :<C-u>Unite -buffer-name=register register<CR>
+        "---------------------------------------------------------------
+        nnoremap <F6> :FFLines <C-r><C-w><CR> | wincmd p
+        nnoremap <F7> :FFBLines <C-r><C-w><CR> | wincmd p
+
+        ""==========================================================================================
+        "nnoremap <F6> :ScratchPreview<CR>
+        "nnoremap <F7> :Scratch<CR>
+        ""==========================================================================================
+        "nmap <F6> cc
+        "nmap <F7>  gcl
         nmap cc  gcl
         "==========================================================================================
         nnoremap <F8> :LocationToggle<cr>
@@ -739,7 +734,9 @@
                 endif
         endfunction
 
+        "==================================================================================
         "---Open-Quickfix-window-automatically---------------------------------------------
+        "==================================================================================
         autocmd QuickFixCmdPost grep cwindow
         autocmd! vimrc QuickfixCmdPost [^l]* nested copen | wincmd p
         autocmd! vimrc QuickfixCmdPost l* nested lopen | wincmd p
@@ -772,9 +769,8 @@
                         endif
                 endfor
         endfunction
-        "com! -bang ShowFuncKeys :call ShowFuncKeys(<q-bang>)
-        command! ShowFuncKeys call ShowFuncKeys(<q-bang>)
 
+        command! ShowFuncKeys call ShowFuncKeys(<q-bang>)
         "==================================================================================
         function! ShowFunc()
                 let gf_s = &grepformat
@@ -793,7 +789,7 @@
  
 
         "==========================================================================================
-        "::::::::::::::::::::::::::::::-FZF-:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "::::::::::::::::::::::::::::::---FZF---:::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
         " In Neovim, you can set up fzf window using a Vim command
         let g:fzf_layout = { 'window': 'enew' }
@@ -825,7 +821,6 @@
                                 \ 'ctrl-v': 'vsplit' }
         "==========================================================================================
         function! s:fzf_statusline()
-                " Override statusline as you like
                 highlight fzf1 ctermfg=11 ctermbg=9
                 highlight fzf2 ctermfg=11 ctermbg=9
                 highlight fzf3 ctermfg=11 ctermbg=9
@@ -887,10 +882,9 @@
        "Replace the default dictionary completion with fzf-based fuzzy completion
         inoremap <expr> <c-x><c-k> fzf#vim#complete('cat /usr/share/dict/words')
         imap <c-k> <plug>(fzf-complete-word)
+        imap <expr><A-k> fzf#vim#complete#word({'left': '20%'})
         imap <c-j> <plug>(fzf-complete-file-ag)
-        imap <expr><A-j> fzf#vim#complete#word({'left': '20%'})
         imap <c-l> <plug>(fzf-complete-line)
-
        "===NEXT================================================
         " Global line completion (not just open buffers. ripgrep required.)
         inoremap <expr> <c-q> fzf#vim#complete(fzf#wrap({
@@ -914,16 +908,6 @@
        cabbrev ZF  ZFiles
        cabbrev ZS  ZSnippets
        nmap == :call FzfSpell()<CR>
-
-       "============================================================================================
-       "============================================================================================
-       nnoremap <Leader>j :<C-u>Unite -buffer-name=jump jump<CR>
-       nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
-       nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
-       nnoremap \\ :<C-u>Unite -buffer-name=register register<CR>
-       "============================================================================================
-       "============================================================================================
-
 
        "============================================================================================
        "=========
@@ -977,7 +961,7 @@
                                \  'sink':    function('PutSink')})
 
        "=========
-       "============================================================================================
+       "====================================================================================
        "=========
 
        command! ZLibList call fzf#run({'source': 'find ~/git/ ~/Documents/ -type f', 'sink':  'edit'})
@@ -1046,7 +1030,7 @@
        " Any command that lists files can be used as the source
        " call fzf#run(fzf#wrap({'source': 'ls'}))
        " call fzf#run(fzf#wrap({'source': 'git ls-files'}))
-
+       "============================================================================================
 
        "========================================================
        "===YANK2================================================
@@ -1057,7 +1041,5 @@
        vmap <C-c> "+yi
        imap <C-v> <esc>"+gpi
        nmap WW ]p
-       "========================================================
        "============================================================================================
-
 
