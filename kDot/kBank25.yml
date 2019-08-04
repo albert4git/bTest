@@ -1,0 +1,28 @@
+# Created:            Do 11 Apr 2019 11:52:32  CEST
+# Last Modified:      Fr 02 Aug 2019 08:00:02  CEST
+# ~/.tmuxinator/kBank25.yml
+
+name: bank25
+root: ~/git/bTest/kDot
+
+windows:
+
+  - TiG:
+      layout: main-vertical
+      panes:
+        - T1:
+          - tig status
+
+  - kDot:
+      layout: main-vertical
+      panes:
+        - d2:
+          - d2 kMinit.vim k5DEO.vim 
+
+  - Plug:
+      layout: tiled
+      panes:
+        - P1:
+          - cd ~/.config/nvim/plugged/
+          - ls 
+
