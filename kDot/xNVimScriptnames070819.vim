@@ -1,0 +1,341 @@
+  1: ~/git/bTest/kDot/k2MinFF.vim
+  2: ~/nvim-linux64/share/nvim/runtime/filetype.vim
+  3: ~/nvim-linux64/share/nvim/runtime/ftplugin.vim
+  4: ~/nvim-linux64/share/nvim/runtime/indent.vim
+  5: ~/nvim-linux64/share/nvim/runtime/syntax/syntax.vim
+  6: ~/nvim-linux64/share/nvim/runtime/syntax/synload.vim
+  7: ~/nvim-linux64/share/nvim/runtime/syntax/syncolor.vim
+  8: ~/nvim-linux64/share/nvim/runtime/syntax/nosyntax.vim
+  9: ~/git/bTest/kDot/k2MinFzfDeoLs.vim
+ 10: ~/.local/share/nvim/site/autoload/plug.vim
+ 11: ~/nvim-linux64/share/nvim/runtime/ftoff.vim
+ 12: ~/.config/nvim/plugged/vim-side-search/ftdetect/ag.vim
+ 13: ~/.config/nvim/plugged/ultisnips/ftdetect/snippets.vim
+ 14: ~/.config/nvim/plugged/neosnippet.vim/ftdetect/neosnippet.vim
+ 15: ~/.config/nvim/plugged/vim-tmux/ftdetect/tmux.vim
+ 16: ~/.config/nvim/plugged/vim-fugitive/ftdetect/fugitive.vim
+ 17: ~/.config/nvim/plugged/vim-spark/ftdetect/spark.vim
+ 18: ~/.config/nvim/plugged/deoplete.nvim/autoload/deoplete/custom.vim
+ 19: ~/.config/nvim/plugged/deoplete.nvim/autoload/deoplete/init.vim
+ 20: ~/.config/nvim/plugged/deoplete.nvim/autoload/deoplete/util.vim
+ 21: ~/.config/nvim/plugged/unite.vim/autoload/unite/custom.vim
+ 22: ~/.config/nvim/plugged/unite.vim/autoload/unite/filters/sorter_default.vim
+ 23: ~/.config/nvim/plugged/unite.vim/autoload/unite/filters/matcher_default.vim
+ 24: ~/.config/nvim/plugged/unite.vim/autoload/unite/util.vim
+ 25: ~/.config/nvim/plugged/unite.vim/autoload/vital/unite.vim
+ 26: ~/.config/nvim/plugged/unite.vim/autoload/vital/_unite/Prelude.vim
+ 27: ~/.config/nvim/plugged/vim-colorschemes/colors/desert.vim
+ 28: ~/.config/nvim/plugged/vim-colorschemes/colors/badwolf.vim
+ 29: ~/.config/nvim/plugged/helper.vim/plugin/helper.vim
+ 30: ~/.config/nvim/plugged/treemenu.vim/plugin/treemenu.vim
+ 31: ~/.config/nvim/plugged/tlib_vim/plugin/02tlib.vim
+ 32: ~/.config/nvim/plugged/vim-gitgutter/plugin/gitgutter.vim
+ 33: ~/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+ 34: ~/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+ 35: ~/.config/nvim/plugged/vim-gitgrep/plugin/gitgrep.vim
+ 36: ~/.config/nvim/plugged/vim-qf/plugin/qf.vim
+ 37: ~/.config/nvim/plugged/QFEnter/plugin/QFEnter.vim
+ 38: ~/.config/nvim/plugged/gv.vim/plugin/gv.vim
+ 39: ~/.config/nvim/plugged/vim-extradite/plugin/extradite.vim
+ 40: ~/.config/nvim/plugged/far.vim/plugin/far.vim
+ 41: ~/.config/nvim/plugged/vim-brightest/plugin/brightest.vim
+ 42: ~/.config/nvim/plugged/TagHighlight/plugin/TagHighlight.vim
+ 43: ~/.config/nvim/plugged/TagHighlight/autoload/TagHighlight/LoadDataFile.vim
+ 44: ~/.config/nvim/plugged/echodoc.vim/plugin/echodoc.vim
+ 45: ~/.config/nvim/plugged/python-support.nvim/plugin/python_support.vim
+ 46: ~/.config/nvim/plugged/vim-dokumentary/plugin/dokumentary.vim
+ 47: ~/.config/nvim/plugged/vim-pyref/plugin/pyref.vim
+ 48: ~/.config/nvim/plugged/vim-misc/autoload/xolox/misc.vim
+ 49: ~/.config/nvim/plugged/capture.vim/plugin/capture.vim
+ 50: ~/.config/nvim/plugged/vim-quickrun/plugin/quickrun.vim
+ 51: ~/.config/nvim/plugged/vim-airline/plugin/airline.vim
+ 52: ~/.config/nvim/plugged/vim-airline/autoload/airline/init.vim
+ 53: ~/.config/nvim/plugged/vim-airline/autoload/airline/parts.vim
+ 54: ~/.config/nvim/plugged/vim-airline/autoload/airline/util.vim
+ 55: ~/.config/nvim/plugged/vim-airline-themes/plugin/airline-themes.vim
+ 56: ~/.config/nvim/plugged/vim-preview/plugin/preview.vim
+ 57: ~/.config/nvim/plugged/vim-signature/plugin/signature.vim
+ 58: ~/.config/nvim/plugged/vim-signature/autoload/signature/utils.vim
+ 59: ~/.config/nvim/plugged/vim-highlightedyank/plugin/highlightedyank.vim
+ 60: ~/.config/nvim/plugged/deoplete.nvim/plugin/deoplete.vim
+ 61: ~/.config/nvim/plugged/deoplete.nvim/autoload/deoplete.vim
+ 62: ~/.config/nvim/plugged/jedi-vim/plugin/jedi.vim
+ 63: ~/.config/nvim/plugged/LanguageClient-neovim/plugin/LanguageClient.vim
+ 64: ~/.config/nvim/plugged/Lynx-Offline-Documentation-Browser/plugin/lynx.vim
+ 65: ~/.config/nvim/plugged/vim-agriculture/plugin/agriculture.vim
+ 66: ~/.config/nvim/plugged/ack.vim/plugin/ack.vim
+ 67: ~/.config/nvim/plugged/vim-ripgrep/plugin/vim-ripgrep.vim
+ 68: ~/.config/nvim/plugged/vim-action-ag/plugin/vim-action-ag.vim
+ 69: ~/.config/nvim/plugged/ag.vim/plugin/ag.vim
+ 70: ~/.config/nvim/plugged/fzf/plugin/fzf.vim
+ 71: ~/.config/nvim/plugged/fzf.vim/plugin/fzf.vim
+ 72: ~/.config/nvim/plugged/fzf-mru.vim/plugin/fzf_mru.vim
+ 73: ~/.config/nvim/plugged/fzf-mru.vim/autoload/fzf_mru/mrufiles.vim
+ 74: ~/.config/nvim/plugged/vim-side-search/plugin/side-search.vim
+ 75: ~/.config/nvim/plugged/notational-fzf-vim/plugin/notational_fzf.vim
+ 76: ~/.config/nvim/plugged/neomru.vim/plugin/neomru.vim
+ 77: ~/.config/nvim/plugged/ctrlp.vim/plugin/ctrlp.vim
+ 78: ~/.config/nvim/plugged/ctrlp.vim/autoload/ctrlp/mrufiles.vim
+ 79: ~/.config/nvim/plugged/command-t/plugin/command-t.vim
+ 80: ~/.config/nvim/plugged/command-t/autoload/commandt/mirkwood.vim
+ 81: ~/.config/nvim/plugged/unite.vim/plugin/unite/bookmark.vim
+ 82: ~/.config/nvim/plugged/unite.vim/plugin/unite/buffer.vim
+ 83: ~/.config/nvim/plugged/unite.vim/plugin/unite/window.vim
+ 84: ~/.config/nvim/plugged/unite.vim/plugin/unite.vim
+ 85: ~/.config/nvim/plugged/vim-fastunite/plugin/fastunite.vim
+ 86: ~/nvim-linux64/share/nvim/runtime/autoload/provider/python.vim
+ 87: ~/nvim-linux64/share/nvim/runtime/autoload/provider/pythonx.vim
+ 88: ~/nvim-linux64/share/nvim/runtime/autoload/remote/host.vim
+ 89: ~/.config/nvim/plugged/ex-matchit/plugin/matchit.vim
+ 90: ~/.config/nvim/plugged/supertab/plugin/supertab.vim
+ 91: ~/.config/nvim/plugged/vim-snipmate/plugin/snipMate.vim
+ 92: ~/.config/nvim/plugged/vim-addon-mw-utils/autoload/funcref.vim
+ 93: ~/.config/nvim/plugged/vim-snippets/plugin/vimsnippets.vim
+ 94: ~/.config/nvim/plugged/ultisnips/plugin/UltiSnips.vim
+ 95: ~/nvim-linux64/share/nvim/runtime/autoload/provider/python3.vim
+ 96: ~/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim
+ 97: ~/.config/nvim/plugged/neosnippet.vim/plugin/neosnippet.vim
+ 98: ~/.config/nvim/plugged/vim-tbone/plugin/tbone.vim
+ 99: ~/.config/nvim/plugged/vim-misc/plugin/xolox/misc.vim
+100: ~/.config/nvim/plugged/vimagit/plugin/magit.vim
+101: ~/.config/nvim/plugged/vimagit/common/magit_common.vim
+102: ~/.config/nvim/plugged/vim-fugitive/plugin/fugitive.vim
+103: ~/.config/nvim/plugged/vim-commentary/plugin/commentary.vim
+104: ~/.config/nvim/plugged/vim-unimpaired/plugin/unimpaired.vim
+105: ~/.config/nvim/plugged/vim-eunuch/plugin/eunuch.vim
+106: ~/.config/nvim/plugged/vim-expand-region/plugin/expand_region.vim
+107: ~/.config/nvim/plugged/vim-expand-region/autoload/expand_region.vim
+108: ~/.config/nvim/plugged/vim-sandwich/plugin/operator/sandwich.vim
+109: ~/.config/nvim/plugged/vim-sandwich/plugin/sandwich.vim
+110: ~/.config/nvim/plugged/vim-sandwich/plugin/textobj/sandwich.vim
+111: ~/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim
+112: ~/.config/nvim/plugged/vim-bling/plugin/bling.vim
+113: ~/.config/nvim/plugged/tagbar/plugin/tagbar.vim
+114: ~/.config/nvim/plugged/tagselect/plugin/tagselect.vim
+115: ~/.config/nvim/plugged/genutils/plugin/genutils.vim
+116: ~/.config/nvim/plugged/vim-gutentags/plugin/gutentags.vim
+117: ~/.config/nvim/plugged/ale/plugin/ale.vim
+118: ~/.config/nvim/plugged/ale/autoload/ale/events.vim
+119: ~/.config/nvim/plugged/xterm-color-table.vim/plugin/xterm-color-table.vim
+120: ~/.config/nvim/plugged/incsearch.vim/plugin/incsearch.vim
+121: ~/.config/nvim/plugged/SearchComplete/plugin/SearchComplete.vim
+122: ~/.config/nvim/plugged/nerdtree/plugin/NERD_tree.vim
+123: ~/.config/nvim/plugged/nerdtree/autoload/nerdtree.vim
+124: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/path.vim
+125: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/menu_controller.vim
+126: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/menu_item.vim
+127: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/key_map.vim
+128: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/bookmark.vim
+129: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/tree_file_node.vim
+130: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/tree_dir_node.vim
+131: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/opener.vim
+132: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/creator.vim
+133: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/flag_set.vim
+134: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/nerdtree.vim
+135: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/ui.vim
+136: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/event.vim
+137: ~/.config/nvim/plugged/nerdtree/lib/nerdtree/notifier.vim
+138: ~/.config/nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim
+139: ~/.config/nvim/plugged/nerdtree/nerdtree_plugin/exec_menuitem.vim
+140: ~/.config/nvim/plugged/nerdtree/nerdtree_plugin/fs_menu.vim
+141: ~/nvim-linux64/share/nvim/runtime/autoload/provider/clipboard.vim
+142: ~/.config/nvim/plugged/nerdtree/nerdtree_plugin/vcs.vim
+143: ~/.config/nvim/plugged/nerdtree-git-plugin/nerdtree_plugin/git_status.vim
+144: ~/.config/nvim/plugged/vim-devicons/nerdtree_plugin/webdevicons.vim
+145: ~/.config/nvim/plugged/scratch.vim/plugin/scratch.vim
+146: ~/.config/nvim/plugged/ranger.vim/plugin/ranger.vim
+147: ~/.config/nvim/plugged/vim-qargs/plugin/qargs.vim
+148: ~/.config/nvim/plugged/undoquit.vim/plugin/undoquit.vim
+149: ~/.config/nvim/plugged/vim-yankstack/plugin/yankstack.vim
+150: ~/.config/nvim/plugged/vim-yankstack/autoload/yankstack.vim
+151: ~/.config/nvim/plugged/vim-easymotion/plugin/EasyMotion.vim
+152: ~/.config/nvim/plugged/visual-split.vim/plugin/visual-split.vim
+153: ~/.config/nvim/plugged/vim-glaive/plugin/commands.vim
+154: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/plugin.vim
+155: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba.vim
+156: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/path.vim
+157: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/ensure.vim
+158: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/log.vim
+159: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/enum.vim
+160: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/value.vim
+161: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/json.vim
+162: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/string.vim
+163: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/rtp.vim
+164: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/error.vim
+165: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/reflist.vim
+166: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/setting.vim
+167: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/flags.vim
+168: ~/.config/nvim/plugged/vim-syncopate/plugin/commands.vim
+169: ~/.config/nvim/plugged/vim-syncopate/instant/flags.vim
+170: ~/.config/nvim/plugged/vim-syncopate/plugin/mappings.vim
+171: ~/.config/nvim/plugged/vim-codefmt/plugin/autocmds.vim
+172: ~/.config/nvim/plugged/vim-codefmt/instant/flags.vim
+173: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/function.vim
+174: ~/.config/nvim/plugged/vim-codefmt/plugin/commands.vim
+175: ~/.config/nvim/plugged/vim-codefmt/plugin/mappings.vim
+176: ~/.config/nvim/plugged/vim-codefmt/plugin/register.vim
+177: ~/.config/nvim/plugged/vim-maktaba/autoload/maktaba/extension.vim
+178: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/prettier.vim
+179: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt.vim
+180: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/jsbeautify.vim
+181: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/clangformat.vim
+182: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/gofmt.vim
+183: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/dartfmt.vim
+184: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/yapf.vim
+185: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/autopep8.vim
+186: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/gn.vim
+187: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/buildifier.vim
+188: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/googlejava.vim
+189: ~/.config/nvim/plugged/vim-codefmt/autoload/codefmt/shfmt.vim
+190: ~/.config/nvim/plugged/tabular/plugin/Tabular.vim
+191: ~/.config/nvim/plugged/vim-table-mode/plugin/table-mode.vim
+192: ~/.config/nvim/plugged/vim-bookmarks/plugin/bookmark.vim
+193: ~/.config/nvim/plugged/vim-fzf-extended/plugin/fzfe.vim
+194: ~/.config/nvim/plugged/vim-devicons/plugin/webdevicons.vim
+195: ~/.config/nvim/plugged/vim-airline/autoload/airline.vim
+196: ~/.config/nvim/plugged/vim-devicons/autoload/devicons/plugins/unite.vim
+197: ~/.config/nvim/plugged/unite.vim/autoload/unite.vim
+198: ~/.config/nvim/plugged/unite.vim/autoload/unite/variables.vim
+199: ~/.config/nvim/plugged/vim-devicons/autoload/devicons/plugins/ctrlp.vim
+200: ~/.config/nvim/plugged/vim-startify/plugin/startify.vim
+201: ~/.config/nvim/plugged/fzf-bookmark.vim/plugin/fzf-bookmark.vim
+202: ~/.config/nvim/plugged/vim-diminactive/plugin/diminactive.vim
+203: ~/.config/nvim/plugged/timestamp.vim/plugin/timestamp.vim
+204: ~/.config/nvim/plugged/Emmet.vim/plugin/emmet.vim
+205: ~/.config/nvim/plugged/vim-zoom/plugin/zoom.vim
+206: ~/nvim-linux64/share/nvim/runtime/plugin/gzip.vim
+207: ~/nvim-linux64/share/nvim/runtime/plugin/health.vim
+208: ~/nvim-linux64/share/nvim/runtime/plugin/man.vim
+209: ~/nvim-linux64/share/nvim/runtime/plugin/matchit.vim
+210: ~/nvim-linux64/share/nvim/runtime/plugin/matchparen.vim
+211: ~/nvim-linux64/share/nvim/runtime/plugin/netrwPlugin.vim
+212: ~/nvim-linux64/share/nvim/runtime/plugin/rplugin.vim
+213: ~/.local/share/nvim/rplugin.vim
+214: ~/nvim-linux64/share/nvim/runtime/autoload/remote/define.vim
+215: ~/nvim-linux64/share/nvim/runtime/plugin/shada.vim
+216: ~/nvim-linux64/share/nvim/runtime/plugin/spellfile.vim
+217: ~/nvim-linux64/share/nvim/runtime/plugin/tarPlugin.vim
+218: ~/nvim-linux64/share/nvim/runtime/plugin/tohtml.vim
+219: ~/nvim-linux64/share/nvim/runtime/plugin/tutor.vim
+220: ~/nvim-linux64/share/nvim/runtime/plugin/zipPlugin.vim
+221: ~/.config/nvim/plugged/vim-signature/after/plugin/signature.vim
+222: ~/.config/nvim/plugged/indentLine/after/plugin/indentLine.vim
+223: ~/.config/nvim/plugged/vim-snipmate/after/plugin/snipMate.vim
+224: ~/.config/nvim/plugged/ultisnips/after/plugin/UltiSnips_after.vim
+225: ~/.config/nvim/plugged/tabular/after/plugin/TabularMaps.vim
+226: ~/.config/nvim/plugged/tabular/autoload/tabular.vim
+227: ~/nvim-linux64/share/nvim/runtime/ftplugin/vim.vim
+228: ~/.config/nvim/plugged/vim-sandwich/after/ftplugin/vim/sandwich.vim
+229: ~/nvim-linux64/share/nvim/runtime/indent/vim.vim
+230: ~/nvim-linux64/share/nvim/runtime/syntax/vim.vim
+231: ~/nvim-linux64/share/nvim/runtime/syntax/vim/generated.vim
+232: ~/.config/nvim/plugged/TagHighlight/autoload/TagHighlight/ReadTypes.vim
+233: ~/.config/nvim/plugged/TagHighlight/autoload/TagHighlight/Option.vim
+234: ~/.config/nvim/plugged/TagHighlight/autoload/TagHighlight/Debug.vim
+235: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions.vim
+236: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/quickfix.vim
+237: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/unite.vim
+238: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/netrw.vim
+239: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/term.vim
+240: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/ctrlp.vim
+241: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/commandt.vim
+242: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/hunks.vim
+243: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/vimagit.vim
+244: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tagbar.vim
+245: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/bookmark.vim
+246: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/csv.vim
+247: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/branch.vim
+248: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/fugitiveline.vim
+249: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/ale.vim
+250: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/languageclient.vim
+251: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/whitespace.vim
+252: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/po.vim
+253: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/wordcount.vim
+254: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline.vim
+255: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/autoshow.vim
+256: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/tabs.vim
+257: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim
+258: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/gutentags.vim
+259: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/keymap.vim
+260: ~/.config/nvim/plugged/vim-airline/autoload/airline/section.vim
+261: ~/.config/nvim/plugged/vim-airline/autoload/airline/highlighter.vim
+262: ~/.config/nvim/plugged/vim-airline-themes/autoload/airline/themes/light.vim
+263: ~/.config/nvim/plugged/vim-airline/autoload/airline/themes.vim
+264: ~/.config/nvim/plugged/vim-airline/autoload/airline/builder.vim
+265: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/default.vim
+266: ~/.config/nvim/plugged/LanguageClient-neovim/autoload/LanguageClient.vim
+267: ~/.config/nvim/plugged/LanguageClient-neovim/autoload/LSP.vim
+268: ~/.config/nvim/plugged/vim-fugitive/autoload/fugitive.vim
+269: ~/.config/nvim/plugged/vim-gutentags/autoload/gutentags.vim
+270: ~/.config/nvim/plugged/vim-gutentags/autoload/gutentags/ctags.vim
+271: ~/.config/nvim/plugged/neomru.vim/autoload/neomru.vim
+272: ~/.config/nvim/plugged/unite.vim/autoload/unite/sources/buffer/variables.vim
+273: ~/.config/nvim/plugged/ale/autoload/ale.vim
+274: ~/.config/nvim/plugged/ale/autoload/ale/util.vim
+275: ~/.config/nvim/plugged/ale/autoload/ale/linter.vim
+276: ~/.config/nvim/plugged/ale/ale_linters/vim/ale_custom_linting_rules.vim
+277: ~/.config/nvim/plugged/ale/ale_linters/vim/vint.vim
+278: ~/.config/nvim/plugged/ale/autoload/ale/engine.vim
+279: ~/.config/nvim/plugged/ale/autoload/ale/command.vim
+280: ~/.config/nvim/plugged/ale/autoload/ale/history.vim
+281: ~/.config/nvim/plugged/ale/autoload/ale/sign.vim
+282: ~/.config/nvim/plugged/ale/autoload/ale/list.vim
+283: ~/.config/nvim/plugged/ale/autoload/ale/highlight.vim
+284: ~/.config/nvim/plugged/ale/autoload/ale/cursor.vim
+285: ~/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter.vim
+286: ~/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/async.vim
+287: ~/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/debug.vim
+288: ~/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/diff.vim
+289: ~/.config/nvim/plugged/vim-signature/autoload/signature/sign.vim
+290: ~/.config/nvim/plugged/vim-signature/autoload/signature/mark.vim
+291: ~/.config/nvim/plugged/fzf-mru.vim/autoload/fzf_mru/utils.vim
+292: ~/.config/nvim/plugged/ctrlp.vim/autoload/ctrlp/utils.vim
+293: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/buflist.vim
+294: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/ctrlspace.vim
+295: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/builder.vim
+296: ~/.config/nvim/plugged/vim-devicons/autoload/airline/extensions/tabline/formatters/webdevicons.vim
+297: ~/.config/nvim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/default.vim
+298: ~/.config/nvim/plugged/vim-airline/autoload/airline/async.vim
+299: ~/.config/nvim/plugged/vim-bookmarks/autoload/bm.vim
+300: ~/.config/nvim/plugged/tagbar/autoload/tagbar.vim
+301: ~/.config/nvim/plugged/tagbar/autoload/tagbar/debug.vim
+302: ~/.config/nvim/plugged/tagbar/autoload/tagbar/types/ctags.vim
+303: ~/.config/nvim/plugged/tagbar/autoload/tagbar/prototypes/typeinfo.vim
+304: ~/.config/nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim
+305: ~/.config/nvim/plugged/tagbar/autoload/tagbar/prototypes/normaltag.vim
+306: ~/.config/nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim
+307: ~/.config/nvim/plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim
+308: ~/.config/nvim/plugged/tagbar/autoload/tagbar/sorting.vim
+309: ~/.config/nvim/plugged/tagbar/autoload/tagbar/state.vim
+310: ~/.config/nvim/plugged/ale/autoload/ale/statusline.vim
+311: ~/.config/nvim/plugged/vim-startify/autoload/startify.vim
+312: ~/.config/nvim/plugged/vim-startify/autoload/startify/fortune.vim
+313: ~/.config/nvim/plugged/vim-startify/syntax/startify.vim
+314: ~/.config/nvim/plugged/vim-qf/autoload/qf.vim
+315: ~/nvim-linux64/share/nvim/runtime/autoload/provider.vim
+316: ~/.config/nvim/plugged/far.vim/autoload/far/tools.vim
+317: ~/.config/nvim/plugged/deoplete.nvim/autoload/deoplete/mapping.vim
+318: ~/.config/nvim/plugged/deoplete.nvim/autoload/deoplete/handler.vim
+319: ~/.config/nvim/plugged/vim-brightest/autoload/brightest.vim
+320: ~/.config/nvim/plugged/vim-brightest/autoload/vital.vim
+321: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest.vim
+322: ~/.config/nvim/plugged/vim-brightest/autoload/vital/brightest.vim
+323: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Data/String.vim
+324: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Data/List.vim
+325: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Coaster/Buffer.vim
+326: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Coaster/Search.vim
+327: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Coaster/Buffer/Object.vim
+328: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Coaster/Highlight.vim
+329: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Coaster/Window.vim
+330: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Vim/Buffer.vim
+331: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Prelude.vim
+332: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Vim/Guard.vim
+333: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Data/Dict.vim
+334: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Gift.vim
+335: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Gift/Window.vim
+336: ~/.config/nvim/plugged/vim-brightest/autoload/vital/_brightest/Gift/Tabpage.vim
+337: ~/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/hunk.vim
+338: ~/.config/nvim/plugged/vim-gitgutter/autoload/gitgutter/sign.vim
+339: ~/.config/nvim/plugged/vim-misc/autoload/xolox/misc/cursorhold.vim
+340: ~/.config/nvim/plugged/vim-bookmarks/autoload/bm_sign.vim
+341: ~/.config/nvim/plugged/capture.vim/autoload/capture.vim

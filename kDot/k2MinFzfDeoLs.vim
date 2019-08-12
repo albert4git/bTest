@@ -1,8 +1,10 @@
+" tmf: $0,0=$1,2 = $1,1 * $1,1 
 "-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Do 01 Aug 2019 01:47:17  CEST
+" Last Modified:      Do 08 Aug 2019 03:00:38  CEST
+"==================================================================================================
 "==================================================================================================
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
@@ -59,11 +61,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:extradite_showhash = 1 "show abbre commit hashes.
         "-6-}}}
 
-        "------TESTING------------------------------------------------------------------ 
-        " Plug 'vim-scripts/CRefVim'
-        " Plug 'vim-scripts/FuzzyFinder'
-        " Plug 'alvan/vim-closetag'
-        " Plug 'WolfgangMehner/bash-support'
         "---------------------------------------------------------------------------------- 
         Plug 'brooth/far.vim'
         "---------------------------------------------------------------------------------- 
@@ -534,24 +531,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 augroup END
         "---------------------------------------------------------------------------------- 
         Plug 'godlygeek/tabular'
-                " Tabularize {
-                nmap <Leader>a& :Tabularize /&<CR>
-                vmap <Leader>a& :Tabularize /&<CR>
-                nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-                vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-                nmap <Leader>a=> :Tabularize /=><CR>
-                vmap <Leader>a=> :Tabularize /=><CR>
-                nmap <Leader>a: :Tabularize /:<CR>
-                vmap <Leader>a: :Tabularize /:<CR>
-                nmap <Leader>a:: :Tabularize /:\zs<CR>
-                vmap <Leader>a:: :Tabularize /:\zs<CR>
-                nmap <Leader>a, :Tabularize /,<CR>
-                vmap <Leader>a, :Tabularize /,<CR>
-                nmap <Leader>a,, :Tabularize /,\zs<CR>
-                vmap <Leader>a,, :Tabularize /,\zs<CR>
-                nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-                vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-                " }
+
         "--------------------------------------------------------------------------------- 
                 " abc,def,ghi , some , shrt 
                 " a,b,c
@@ -565,6 +545,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 " +=======+=========+========+
                 " | isr   | student | id     |
                 " +-------+---------+--------+
+
+
         "==================================================================================
         "source ~/git/aTest/dotFiles/nVim/logoTextObjct.vim
         "source ~/git/aTest/dotFiles/nVim/logoHtml.vim
@@ -617,6 +599,74 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'tiagoinacio/fzf-bookmark.vim'
         Plug 'blueyed/vim-diminactive'
         " Plug ''
+        Plug 'vim-scripts/timestamp.vim'
+
+        "------TESTING------------------------------------------------------------------ 
+        " Plug 'vim-scripts/CRefVim'
+        " Plug 'vim-scripts/FuzzyFinder'
+        " Plug 'alvan/vim-closetag'
+        " Plug 'WolfgangMehner/bash-support'
+        "---------------------------------------------------------------------------------- 
+        " Plug 'vim-scripts/FuzzyFinder'
+
+
+        Plug 'tylerhunt/vim-spark'
+        "Plug 'sjl/vim-sparkup'
+        Plug 'vim-scripts/Emmet.vim'
+        let g:user_emmet_settings = {
+                                \  'indentation' : '  ',
+                                \  'perl' : {
+                                \    'aliases' : {
+                                \      'req' : 'require '
+                                \    },
+                                \    'snippets' : {
+                                \      'use' : "use strict\nuse warnings\n\n",
+                                \      'warn' : "warn \"|\";",
+                                \    }
+                                \  }
+                                \}
+
+        let g:user_emmet_expandabbr_key = '<c-\>'
+        let g:use_emmet_complete_tag = 1
+        "---------------------------------------------------------------------------------- 
+        " div>p#foo
+        " div>p#foo$*2
+        " div>p#foo$*2>div.baran
+        "---------------------------------------------------------------------------------- 
+
+        "---------------------------------------------------------------------------------- 
+        Plug 'vim-scripts/TagHighlight'
+        " TagHighlight highlight names of class, variable, types in code.
+        " Usage: :UpdateTypesFile
+                if !exists('g:TagHighlightSettings')
+                        let g:TagHighlightSettings = {}
+                endif
+                let g:TagHighlightSettings['TagFileName'] = 'tags'
+                let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'
+                let g:TagHighlightSettings['CtagsVariant'] = 'exuberant'
+                let g:TagHighlightSettings['CtagsArguments'] = []
+                let g:TagHighlightSettings['CtagsExtraArguments'] = []
+                let g:TagHighlightSettings['ForcePythonVariant'] = 'if_pyth3'
+                let g:TagHighlightSettings['PythonVariantPriority'] = [
+                                        \ "if_pyth3", "if_pyth", "python", "compiled",
+                                        \ ]
+        "--------------------------------------------------------------------------------- 
+        Plug 'dhruvasagar/vim-zoom'
+                set statusline+=%{zoom#statusline()}
+        "--------------------------------------------------------------------------------- 
+        Plug 'Shougo/echodoc.vim'
+                set cmdheight=2
+                let g:echodoc_enable_at_startup = 1
+                " let g:echodoc#enable_at_startup = 1
+                let g:echodoc#type = 'virtual'
+                
+                " " Or, you could use neovim's floating text feature.
+                " let g:echodoc#enable_at_startup = 1
+                " let g:echodoc#type = 'floating'
+                " " To use a custom highlight for the float window,
+                " " change Pmenu to your highlight group
+                " highlight link EchoDocFloat Pmenu
+        "--------------------------------------------------------------------------------- 
 
 call plug#end()
 "---nPlugEnd-nPlugStop3----------------}}}

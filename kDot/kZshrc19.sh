@@ -216,22 +216,38 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #==============================================================
 
 #export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+
+
+
+###############################################################
+#======================-ReFZF-=================================
 ###############################################################
 #alias ffl='fzf --preview="less -f {}|ccze"'
 alias fff='fzf --preview="head -$LINES {}"'
 alias ffc='fzf --preview="ccat --color=always {}"'
 # Press F1 to open the file with less without leaving fzf
 # Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
+
 alias ff1='fff --bind "f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
-alias ff2='fff --bind "f1:execute(deonvim NONE -u ~/git/bTest/kDot/kMinit.vim {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
+#==============================================================
 alias ff3='fff --bind "f1:execute(vi {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
-alias ffv='vim $(fzf)'
-alias ffe='de $(fff)'
+#==============================================================
+alias ff4='fff --bind "f1:execute(deonvim NONE -u ~/git/bTest/kDot/kMinit.vim {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
+
+
+#==============================================================
+alias ffv='vim $(ffc)'
+alias ffe='de $(ffc)'
+alias ff2='d2 $(ffc)'
+###############################################################
+###############################################################
 #==============================================================
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
+
+
 #==============================================================
 ffd() {
   local dir
@@ -288,6 +304,40 @@ fkill() {
     fi  
 }
 
+extract1 () {
+        if [ -f $1 ] ; then
+                case $1 in
+                        *.tar.bz2) tar xvjf $1 ;;
+                        *.tar.gz) tar xvzf $1 ;;
+                        *.bz2)
+                                bunzip2 $1 ;;
+                        *.rar)
+                                unrar x $1
+                                ;;
+                        *.gz)
+                                gunzip $1
+                                ;;
+                        *.tar)
+                                tar xvf $1 ;;
+                        *.tbz2)
+                                tar xvjf $1 ;;
+                        *.tgz)
+                                tar xvzf $1 ;;
+                        *.zip)
+                                unzip $1
+                                ;;
+                        *.Z)
+                                uncompress $1 ;;
+                        *.7z)
+                                7z x $1
+                                ;;
+                        *)
+                                echo "don't know how to extract '$1'..." ;;
+                esac
+        else
+                echo "'$1' is not a valid file!"
+        fi
+}
 ###############################################################
 ### dict -d fd-eng-spa "how"
 ### apt-get install dict-gcide

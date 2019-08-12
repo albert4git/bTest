@@ -22,3 +22,26 @@
 
         "876: selecting blocks of paragraphs.
         :map <C-S-v> (V)
+
+
+block block 
+block block block block 
+block block block block block block 
+block block block block block block 
+
+
+zbuf.vim
+args
+/home/red/git/bTest/kDot/zbuf.vim
+
+zsh:1: permission denied: /home/red/git/bTest/kDot
+
+zsh:1: permission denied: /home/red/git/bTest/kDot
+
+
+zsh:1: permission denied: /home/red/git/bTest/kDot
+
+
+
+
+

@@ -1,8 +1,10 @@
 "-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " File: k2MinFF.vim
 "==================================================================================================
+"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Do 05 Aug 2019 01:47:17  CEST
+" Last Modified:      So 11 Aug 2019 03:46:46  CEST
+"==================================================================================================
 "==================================================================================================
 "==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -188,7 +190,6 @@
         "------------------------------------------------------------------------------------------
         set diffopt+=vertical 
         "???2019
-        set iskeyword+=.
         "------------------------------------------------------------------------------------------
         "char = can be removed from the list of valid filename char. JAVA_HOME=/opt/java/jdk1.4
         set isfname-==
@@ -203,6 +204,7 @@
 
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
          source ~/git/bTest/kDot/k2MinFzfDeoLs.vim
+         source ~/git/bTest/kDot/logoABB.vim
         "source ~/git/bTest/kDot/minFzfDeoLsJediSnip.vim
         "source ~/git/bTest/kDot/kFF7DEO.vim
         "source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
@@ -224,6 +226,7 @@
         highlight DiffChange        cterm=bold ctermbg=11
         highlight DiffChange        cterm=bold ctermbg=52
         "-TOP------------------------------------------------------------------------------
+        hi Search         ctermbg=11
         hi Normal         ctermbg=235
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
@@ -231,8 +234,11 @@
         hi signcolumn     ctermbg=23
         "hi LineNr         ctermbg=199 ctermfg=16 
         hi LineNr         ctermbg=17 ctermfg=15 
+
         " hi CursorLine     ctermbg=8
         hi CursorLine     ctermbg=5
+        hi CursorLine     ctermbg=17
+
         set colorcolumn=92,100,112,120
         hi ColorColumn    ctermbg=240
         hi ColorColumn    ctermbg=14
@@ -1042,9 +1048,25 @@
        "========================================================
        nmap zp <Plug>yankstack_substitute_older_paste
        nmap zn <Plug>yankstack_substitute_newer_paste
+
        " C-c and C-v - Copy/Paste to global clipboard
-       vmap <C-c> "+yi
-       imap <C-v> <esc>"+gpi
-       nmap WW ]p
+       vmap <C-c> "+yi imap <C-v> <esc>"+gpi nmap WW ]p
        "============================================================================================
+       "function ! SetupCommandAlias(input, output) exec 'cabbrev <expr> '
+       ".a:input \ . ' ((getcmdtype() is# ":" && getcmdline() is# "' .a:input.
+       "'")' \ . '? ("' .a:output. '") : ("' .a:input. '"))' endfunction call
+       "SetupCommandAlias( "grep" , "GrepperGrep" )
+       "============================================================================================
+       "===???======================================================================================
+       ":command! Restart call jobsend(1, "\<C-c>npm run server\<CR>")
+       ":Restart
+       "============================================================================================
+        " I want this tip to inspire you. Perhaps you never thought of running a web
+        " server from inside your text editor. Does this give you ideas for other
+        " processes that you could control remotely?
+
+        " snippet si2nce
+        " @since ${0:#:version}
+
+
 

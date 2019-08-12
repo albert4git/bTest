@@ -186,6 +186,12 @@ rsync -avz --delete ~/git/bTest/ /media/red/124Black/git/124Test/
 #!!!===3.)=====================================================================
 rsync -avz --delete ~/git/bTest/ /media/red/pink/125Black/git/pinkTest/
 
+
+#!!!=== 4.) ==================================================================
+rsync -avz --delete ~/git/bTest/ /media/red/noX/124Black/git/124Test/
+
+
+
 grep CRON /var/log/syslog
 #---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
 #---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
@@ -201,6 +207,19 @@ tar --listed-incremental=/media/red/124Black/SNAR/snapshot.file -cJpf /media/red
 # NEXT ??? single liner ???
 # NEXT ??? single liner !!!YES
 tar --listed-incremental=/media/red/124Black/SNAR/bTestSnap.file -cJpf /media/red/124Black/SNAR/bTestBackup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/git/bTest/
+
+# NEXT ??? single liner !!!YES -- noX
+
+tar --listed-incremental=/media/red/noX/124Black/SNAR/bTestSnap.file -cJpf /media/red/noX/124Black/SNAR/bTestBackup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/git/bTest/
+
+# NEXT ??? single liner !!!YES -- noX RED
+
+sudo tar --listed-incremental=/media/red/noX/124Black/TaRed/bRedSnap.file -cJpf /media/red/noX/124Black/TaRed/RedBackup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/
+
+sudo tar --listed-incremental=/media/red/noX/124Black/TaRed/bRedSnap.file -cJpf /media/red/noX/124Black/TaRed/RedBackup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/
+sudo tar --listed-incremental=/media/red/noX/124Black/TaRed/bRedSnap.file -cJpf /media/red/noX/124Black/TaRed/RedBackup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/
+
+
 
 #---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
 

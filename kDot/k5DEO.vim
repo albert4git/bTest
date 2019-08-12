@@ -1,7 +1,7 @@
 "file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:32  CEST
-" Last Modified:      So 21 Jul 2019 05:14:38  CEST
+" Last Modified:      Mi 07 Aug 2019 06:27:42  CEST
 "===============================================================================================================
 "xdg-open
 "------------------------------------------------------------------------------------------
@@ -237,6 +237,8 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'osyo-manga/vim-brightest'
                 let g:brightest#highlight = { "group" : "Define" }
 "===TagHighlight=================================================================================== 
+
+        "--------------------------------------------------------------------------------- 
         Plug 'vim-scripts/TagHighlight'
         " TagHighlight highlight names of class, variable, types in code.
         " Usage: :UpdateTypesFile
@@ -253,6 +255,7 @@ call plug#begin('~/.config/nvim/plugged/')
                                         \ "if_pyth3", "if_pyth", "python", "compiled",
                                         \ ]
         "--------------------------------------------------------------------------------- 
+
         Plug 'Shougo/echodoc.vim'
                 set cmdheight=2
                 let g:echodoc_enable_at_startup = 1

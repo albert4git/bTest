@@ -1228,6 +1228,7 @@ call plug#begin()
         " autocmd Filetype java setlocal omnifunc=javacomplete#Complete
         " autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
         " endif
+
         Plug 'tylerhunt/vim-spark'
         "Plug 'sjl/vim-sparkup'
         Plug 'vim-scripts/Emmet.vim'
