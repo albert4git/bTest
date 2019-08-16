@@ -1,5 +1,6 @@
    <M-n>       *@:call AutoPairsJump()<CR>
    <M-p>       *@:call AutoPairsToggle()<CR>
+
 n  <Tab>         :bn<CR>
    <NL>          <C-W>j<C-W>_
 no <C-K>         <C-W>k<C-W>_
@@ -14,11 +15,13 @@ n  <C-W>g<C-]> * :Stjump <cword><CR>
 n  <C-W>g]     * :Stselect <cword><CR>
 n  <C-Z>       * yy:<C-R>"<CR>
 n  <Esc><Esc>  * :<C-U>set nopaste<CR>:nohlsearch<CR>
+
 n  <Space>fp   * :BMChangeDirectory<CR>
 n  <Space>fa   * :BMFiles<CR>
 n  <Space>fg   * :BMGitFiles<CR>
 n  <Space>tt     <Plug>(table-mode-tableize)
 n  <Space>tm   * :<C-U>call tablemode#Toggle()<CR>
+
    <Space>f      :Ranger<CR>
 n  <Space>u      [unite]
 n  <Space>t      <Plug>(CommandT)
@@ -27,6 +30,7 @@ n  <Space>gw   * :GitGrepWord<CR>
 n  <Space>c    * :<C-U>Unite -buffer-name=change change<CR>
 n  <Space>m    * :<C-U>Unite -buffer-name=jump jump<CR>
 n  <Space>j    * :<C-U>Unite -buffer-name=jump jump<CR>
+
 n  <Space><Tab>   <Plug>(fzf-maps-n)
 n  <Space>n    * :cnext<CR>zvzz
 n  <Space>b    * :cprev<CR>zvzz
@@ -46,6 +50,7 @@ n  <Space>a:     :Tabularize /:<CR>
 n  <Space>a=>    :Tabularize /=><CR>
 n  <Space>a=     :Tabularize /^[^=]*\zs=<CR>
 n  <Space>a&     :Tabularize /&<CR>
+
 n  <Space>ss   * :SideSearch <C-R><C-W><CR><Space>
 n  #           * #:call BlingHighight()<CR>
 n  %           * :<C-U>call <SNR>87_Match_wrapper('',1,'n') <CR>
@@ -69,6 +74,8 @@ n  ;d          * mayiw`a:exe ":Capture !dict -P - $(echo " . @" . "| recode lati
 n  ;f          * ?^func\|^[a-zA-Z].*func<CR>,/
 n  ;p          * :'.t.<CR>
    ;a          * =ip
+
+
 n  ;t          * :set tw=70<CR>v<S-}>gq<End>
 n  ;r          * :execute "rightbelow vsplit" bufname('#')<CR>
 n  ;v          * <C-W>v<C-W>l
@@ -92,6 +99,7 @@ n  D           * <SNR>146_yank_with_key("D")
 n  EE          * :source $MYVIMRC<CR>
 n  FF          * :ZRg <C-R><C-W><CR><Space>
 n  GG          * :ZGit <C-R><C-W><CR><Space>
+"--------------------------------------------------------------------------------- 
 n  H           * mzJ`z
    J           * :PreviewScroll -1<CR>
 n  K           * :call <SNR>44_dict(0)<CR>
@@ -102,6 +110,8 @@ n  Q           * @q
 n  S           * <SNR>146_yank_with_key("S")
 n  SS          * :SideSearch <C-R><C-W><CR><Space>
 n  TT          * :TagbarToggle<CR>
+
+
 n  WW            ]p
 n  W           * gwip
 n  X           * <SNR>146_yank_with_key("X")
@@ -256,6 +266,7 @@ n  gv          * `[v`]
    gk          * k
    gj          * j
 n  hh          * <C-W>w
+"--------------------------------------------------------------------------------- 
 n  hu            <Plug>GitGutterUndoHunk
 n  hs            <Plug>GitGutterStageHunk
 n  hp            <Plug>GitGutterPreviewHunk
@@ -279,9 +290,11 @@ n  qa          * :wa<CR> :bd<CR>
 n  q           * <Nop>
 n  srb           <Plug>(operator-sandwich-replace)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-auto-a)
 n  sdb           <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-auto-a)
+
 n  sr            <Plug>(operator-sandwich-replace)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-query-a)
 n  sd            <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)<Plug>(textobj-sandwich-query-a)
 n  sa            <Plug>(operator-sandwich-add)
+
 n  ss          * :wa<CR>
 n  s           * <SNR>146_yank_with_key("s")
 n  vv          * <C-W>v<C-W>l<CR><C-W>w<CR>

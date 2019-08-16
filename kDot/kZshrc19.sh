@@ -368,6 +368,7 @@ alias addr="ip -o a | cut -d ' ' -f2,7"
 alias mpath='echo $PATH | tr -s ":" "\n"'
 
 alias ggt="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gil="git log --oneline --graph"
 #==========================================================================================
 function mkd() {
         mkdir -p "$@" && cd "$_";

@@ -3,6 +3,9 @@ email = berman.albert@gmail.com
 name = Albert
 username = alf
 
+[github]
+user = albert4git
+token = token
 
 [alias]
 # aliases starting with !sh
@@ -12,6 +15,7 @@ tci = commit
 tcie = commit --allow-empty-message -m ''
 tdf = diff -C --color-words
 tfind = !sh -c 'git lg --grep="$@"'    # search for a string in the commit message log
+l = log --oneline --graph
 
 [core]
 editor = vim
@@ -54,6 +58,3 @@ tool = vimdiff
 [difftool]
 prompt = false
 
-[github]
-user = albert4git
-token = token

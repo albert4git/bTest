@@ -3,7 +3,7 @@
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Do 08 Aug 2019 03:00:38  CEST
+" Last Modified:      Fr 16 Aug 2019 12:23:33  CEST
 "==================================================================================================
 "==================================================================================================
 let g:python_host_prog = '/usr/bin/python2'
@@ -83,7 +83,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:TagHighlightSettings['PythonVariantPriority'] = [
                                         \ "if_pyth3", "if_pyth", "python", "compiled",
                                         \ ]
-        "---------------------------------------------------------------------------------- 
+        "---1812--------------------------------------------------------------------------- 
         Plug 'Shougo/echodoc.vim'
                 set cmdheight=2
                 let g:echodoc_enable_at_startup = 1
@@ -195,6 +195,23 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \ 'branch': 'next',
                                 \ 'do': 'bash install.sh',
                                 \ }
+
+        " TESTING doesn't the "on" setting work?
+        " Plug 'ternjs/tern_for_vim', {
+        " \    'do': 'npm install',
+        " \    'on': [
+        " \        'TernDef',
+        " \        'TernDefPreview',
+        " \        'TernDefSplit',
+        " \        'TernDefTab',
+        " \        'TernDoc',
+        " \        'TernDocBrowse',
+        " \        'TernRefs',
+        " \        'TernRename',
+        " \        'TernType'
+        " \    ]
+        " \}
+
         "---------------------------------------------------------------------------------- 
         Plug 'vim-scripts/Lynx-Offline-Documentation-Browser'
         "---------------------------------------------------------------------------------- 
@@ -241,6 +258,18 @@ call plug#begin('~/.config/nvim/plugged/')
         "--------------------------------------
         Plug 'kien/ctrlp.vim'
         Plug 'wincent/command-t'
+        "==================================================================================
+                let g:CommandTMaxFiles = 10000 " maximum number of files scan.
+                let g:CommandTMaxDepth = 15
+                let g:CommandTMaxCacheDirectories = 1 " 0: no limit.
+                let g:CommandTMaxHeight = 15 " 0: as much as available space.
+                let g:CommandTMinHeight = 0 " 0: single line.
+                let g:CommandTAlwaysShowDotFiles = 0 " only if entered string contains a dot
+                let g:CommandTNeverShowDotFiles  = 0
+                let g:CommandTScanDotDirectories = 0
+                let g:CommandTMatchWindowAtTop   = 0 " match window appear at bottom.
+                let g:CommandTMatchWindowReverse = 1 " let the best match at bottom.
+                let g:CommandTTageIncludeFilenames = 1 " include filenames when matches
         "--------------------------------------
         Plug 'Shougo/unite.vim' 
         Plug 'tsukkee/unite-tag'
@@ -634,6 +663,50 @@ call plug#begin('~/.config/nvim/plugged/')
         " div>p#foo$*2>div.baran
         "---------------------------------------------------------------------------------- 
 
+        "--------------------------------------------------------------------------------- 
+        "------------------------ START --REPL-------------------------------------------- 
+        "--------------------------------------------------------------------------------- 
+        Plug 'jalvesaq/vimcmdline'
+
+                " vimcmdline options
+                let cmdline_vsplit      = 1      " Split the window vertically
+                let cmdline_esc_term    = 1      " Remap <Esc> to :stopinsert in Neovim's terminal
+                let cmdline_in_buffer   = 1      " Start the interpreter in a Neovim's terminal
+                let cmdline_term_height = 15     " Initial height of interpreter window or pane
+                let cmdline_term_width  = 80     " Initial width of interpreter window or pane
+                let cmdline_tmp_dir     = '/tmp' " Temporary directory to save files
+                let cmdline_outhl       = 1      " Syntax highlight the output
+                let cmdline_auto_scroll = 1      " Keep the cursor at the end of terminal (nvim)
+                let cmdline_app         = {}
+                " let cmdline_app['python'] = 'ptipython3'
+                " let cmdline_app['ruby']   = 'pry'
+                " let cmdline_app['sh']     = 'bash'
+                if has('gui_running') || &termguicolors
+                        let cmdline_color_input    = '#9e9e9e'
+                        let cmdline_color_normal   = '#00afff'
+                elseif &t_Co == 256
+                        let cmdline_color_input    = 247
+                        let cmdline_color_normal   =  39
+                        let cmdline_color_number   =  51
+                        let cmdline_color_integer  =  51
+                        let cmdline_color_float    =  51
+                        let cmdline_color_complex  =  51
+                        let cmdline_color_negnum   = 183
+                        let cmdline_color_negfloat = 183
+                        let cmdline_color_date     =  43
+                        let cmdline_color_true     =  78
+                        let cmdline_color_false    = 203
+                        let cmdline_color_inf      =  39
+                        let cmdline_color_constant =  75
+                        let cmdline_color_string   =  79
+                        let cmdline_color_stderr   =  33
+                        let cmdline_color_error    =  15
+                        let cmdline_color_warn     =   1
+                        let cmdline_color_index    = 186
+                endif
+        "--------------------------------------------------------------------------------- 
+        "------------------------ END --REPL--------------------------------------------- 
+        "--------------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
         Plug 'vim-scripts/TagHighlight'
         " TagHighlight highlight names of class, variable, types in code.
@@ -851,8 +924,8 @@ call plug#end()
         let g:jedi#documentation_command = "M"
         let g:jedi#usages_command = "<leader>n"
         let g:jedi#rename_command = "<leader>r"
-        let g:jedi#completions_command = "<C-z>"
-        "let g:jedi#completions_command = "<C-Space>"
+        "let g:jedi#completions_command = "<C-z>"
+        let g:jedi#completions_command = "<C-Space>"
         let g:jedi#popup_on_dot = 1
         let g:jedi#completions_enabled = 1
         let g:jedi#popup_select_first = 1

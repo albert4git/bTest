@@ -16,7 +16,14 @@ echo join(split(&runtimepath, ','), "\n")
 echo join(split(&runtimepath, ','), "\n")
 
 
+===============================================================================================================
+git config --global alias.l "log --oneline --graph"
+git config --global alias.l "log --oneline --graph"
 
+Which would create a new git alias named l, that would allow you to run:
+git l instead of git log --oneline --graph.
+
+Note that you can also append other parameters after the alias (i.e. git l --author="Alex").
 
 ===============================================================================================================
     Move the patched font to a valid X font path. Valid font paths can be listed with xset q:
@@ -43,10 +50,13 @@ To install several fonts at once in Ubuntu, all you need to do is to create
 .fonts directory, if it doesn’t exist already, in your Home directory. And
 extract or copy paste all those TTF or OTF files in this directory.
 
-Have you tried installing fonts-font-awesome?
+Have you tried installing fanonts-font-awesome?
 
 Also what is in your /usr/share/fonts/ttf or /usr/share/fonts/truetype directories (do you see font-awesome there?)
 ===============================================================================================================
+
+
+
 vim -u ~/.vimrc.go
 git clone git@github.com:farazdagi/vim-go-ide.git ~/.vim_go_runtime
 sh ~/.vim_go_runtime/bin/install

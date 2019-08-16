@@ -1,7 +1,7 @@
 "file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:32  CEST
-" Last Modified:      Mi 07 Aug 2019 06:27:42  CEST
+" Last Modified:      Fr 16 Aug 2019 01:04:47  CEST
 "===============================================================================================================
 "xdg-open
 "------------------------------------------------------------------------------------------
@@ -793,9 +793,11 @@ call plug#begin('~/.config/nvim/plugged/')
                 let cmdline_outhl       = 1      " Syntax highlight the output
                 let cmdline_auto_scroll = 1      " Keep the cursor at the end of terminal (nvim)
                 let cmdline_app         = {}
+                "----------------------------------------------
                 " let cmdline_app['python'] = 'ptipython3'
                 " let cmdline_app['ruby']   = 'pry'
                 " let cmdline_app['sh']     = 'bash'
+                "----------------------------------------------
                 if has('gui_running') || &termguicolors
                         let cmdline_color_input    = '#9e9e9e'
                         let cmdline_color_normal   = '#00afff'
@@ -1255,11 +1257,12 @@ call plug#end()
         "autocmd FileType python nnoremap <silent><buffer> M <Esc>:Pydoc <cword><CR>
         "==========================================================================================
 
-        nnoremap ,h :CommandTHelp<cr>
-        nnoremap ,b :CommandTBuffer<cr>
         "==========================================================================================
+        nnoremap ,h :CommandTHelp<cr>
         nnoremap ;h :CommandTHelp<cr>
+        "==========================================================================================
         nnoremap ;b :CommandTBuffer<cr>
+        nnoremap ,b :CommandTBuffer<cr>
         let g:CommandTCancelMap=['<C-x>', '<C-c>']
         "==========================================================================================
         " <Leader>t provide fast, intuitive mechanism for opening files and buffers

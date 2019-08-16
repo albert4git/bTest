@@ -3,7 +3,7 @@
 "==================================================================================================
 "-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      So 11 Aug 2019 03:46:46  CEST
+" Last Modified:      Fr 16 Aug 2019 02:50:03  CEST
 "==================================================================================================
 "==================================================================================================
 "==================================================================================================
@@ -248,6 +248,8 @@
         hi PmenuSbar      ctermfg=11 ctermbg=5 cterm=NONE
         hi PmenuThumb     ctermfg=12 ctermbg=2 cterm=NONE
         hi PmenuSel       ctermbg=10 ctermfg=1
+        let g:CommandTHighlightColor = 9
+
 
                 "--------------------------------------------------------------------------------
                 silent! set complete& completeopt=menu infercase noshowfulltag
@@ -571,10 +573,11 @@
                 return ''
         endfunction
         inoremap <F4> <C-R>=(pumvisible()? "\<LT>C-E>":"")<CR><C-R>=UltiSnipsCallUnite()<CR>
-        "let g:UltiSnipsExpandTrigger="<tab>"
-        let g:UltiSnipsExpandTrigger="<C-k>"
+        "let g:UltiSnipsExpandTrigger="<C-k>"
+        let g:UltiSnipsExpandTrigger="<tab>"
         let g:UltiSnipsJumpBackwardTrigger="<C-b>"
-        let g:UltiSnipsJumpForwardTrigger="<tab>"
+        let g:UltiSnipsJumpForwardTrigger="<C-z>"
+
         "==========================================================================================
         "::::::::::::::::::::::::::::-REPL-::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
@@ -645,6 +648,15 @@
         nnoremap <Leader>4 <Plug>AgRawSearch
         "---------------------------------------------------------------
         nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
+        "------------------
+        " let g:pydoc_cmd = '/usr/bin/pydoc'
+        let g:pydoc_cmd = 'python -m pydoc'
+        nnoremap SS :Pydoc <C-r><C-w><CR> | wincmd p
+        "------------------
+        " :Pydoc foo.bar.baz (e.g. :Pydoc re.compile)
+        " Or search a word (uses pydoc -k) in the documentation by typing:
+        " :PydocSearch foobar (e.g. :PydocSearch socket)
+        "------------------
         nnoremap ff :NV <C-r><C-w><CR> | wincmd p
         nnoremap FF :ZRg <C-r><C-w><CR> | wincmd p
         nnoremap AA :ZAg <C-r><C-w><CR> | wincmd p
@@ -657,11 +669,13 @@
         "---------------------------------------------------------------
         nnoremap <F6> :FFLines <C-r><C-w><CR> | wincmd p
         nnoremap <F7> :FFBLines <C-r><C-w><CR> | wincmd p
-
-        ""==========================================================================================
+        "==========================================================================================
+        nnoremap ,h :CommandTHelp<cr>
+        nnoremap ;h :CommandTHelp<cr>
+        "==========================================================================================
         "nnoremap <F6> :ScratchPreview<CR>
         "nnoremap <F7> :Scratch<CR>
-        ""==========================================================================================
+        "==========================================================================================
         "nmap <F6> cc
         "nmap <F7>  gcl
         nmap cc  gcl
