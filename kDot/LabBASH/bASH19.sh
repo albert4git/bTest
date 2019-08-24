@@ -22,6 +22,7 @@
 #######################################################
 
 
+
 echo {"one ","two ","red ","blue "}fish
 echo {{1,2,3}1,2,3}
 #cp /etc/httpd/conf/httpd.conf{,.bak}

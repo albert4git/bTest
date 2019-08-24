@@ -1,3 +1,112 @@
+:help various-motions
+:help sign-support
+:help virtualedit
+:help map-alt-keys
+:help error-messages
+:help development
+:help tips
+:help 24.8
+:help 24.9
+:help usr_12.txt
+:help usr_26.txt
+:help usr_32.txt
+:help usr_42.txt
+
+
+#### 3. Use Quickfix
+* **Move your cursor inside Quickfix window to use these key bindings**
+
+| Key | Action | Note | 
+| --- | --- | --- | 
+| s | `:CodeQueryAgain Symbol` | |
+| x | `:CodeQueryAgain Text` | use `:Ack!` by default. #1 | 
+| c | `:CodeQueryAgain Call` | |
+| r | `:CodeQueryAgain Caller` | |
+| e | `:CodeQueryAgain Callee` | |
+| d | `:CodeQueryAgain Definition` | |
+| C | `:CodeQueryAgain Class` | |
+| M | `:CodeQueryAgain Member` | |
+| P | `:CodeQueryAgain Parent` | |
+| D | `:CodeQueryAgain Child` | |
+| m | `:CodeQueryMenu Unite Magic` | |
+| q | `:cclose` | |
+| \ | `:CodeQueryFilter` | |
+| p | `<CR><C-W>p` | Preview |
+| u | `:colder \| CodeQueryShowQF` | Older Quickfix Result | 
+| \<C-R> | `:cnewer \| CodeQueryShowQF` | Newer Quickfix Result | 
+" <>hall1
+" <>kosmos
+" <>chemie
+" <>boy
+
+<mods>  The command modifiers, if specified. Otherwise, expands to
+nothing. Supported modifiers are |:aboveleft|, |:belowright|,
+|:botright|, |:browse|, |:confirm|, |:hide|, |:keepalt|,
+|:keepjumps|, |:keepmarks|, |:keeppatterns|, |:leftabove|,
+|:lockmarks|, |:noswapfile| |:rightbelow|, |:silent|, |:tab|,
+|:topleft|, |:verbose|, and |:vertical|.
+Note that these are not yet supported: |:noautocmd|,
+|:sandbox| and |:unsilent|.
+Examples: >
+
+command! -nargs=+ -complete=file MyEdit
+                        \ for f in expand(<q-args>, 0, 1) |
+                        \ exe '<mods> split ' . f |
+                        \ endfor
+
+function! SpecialEdit(files, mods)
+        for f in expand(a:files, 0, 1)
+                exe a:mods . ' split ' . f
+        endfor
+endfunction
+command! -nargs=+ -complete=file Sedit
+                        \ call SpecialEdit(<q-args>, <q-mods>)
+
+"--------------------------------------------------------------------------------- 
+:inoremap <C-E> <C-X><C-E>
+:inoremap <C-Y> <C-X><C-Y>
+   
+"--------------------------------------------------------------------------------- 
+"--------------------------------------------------------------------------------- 
+
+Sometimes you want to write a mapping that makes a change somewhere in the
+file and restores the cursor position, without scrolling the text.  For
+example, to change the date mark in a file: >
+   :map <F2> msHmtgg/Last [cC]hange:\s*/e+1<CR>"_D"=strftime("%Y %b %d")<CR>p'tzt`s
+
+Breaking up saving the position:
+	ms	store cursor position in the 's' mark
+	H	go to the first line in the window
+	mt	store this position in the 't' mark
+
+Breaking up restoring the position:
+	't	go to the line previously at the top of the window
+	zt	scroll to move this line to the top of the window
+	`s	jump to the original position of the cursor
+"--------------------------------------------------------------------------------- 
+To count how often any pattern occurs in the current buffer use the substitute
+command and add the 'n' flag to avoid the substitution.  The reported number
+of substitutions is the number of items.  Examples: >
+
+	:%s/./&/gn		characters
+	:%s/\i\+/&/gn		words
+	:%s/^//n		lines
+	:%s/the/&/gn		"the" anywhere
+	:%s/\<the\>/&/gn	"the" as a word
+
+"--------------------------------------------------------------------------------- 
+	Create a file "subs.vim" containing substitute commands and a :update
+	command: >
+		:%s/Jones/Smith/g
+		:%s/Allen/Peter/g
+		:update
+<
+	Execute Vim on all files you want to change, and source the script for
+	each argument: >
+
+		vim *.let
+		argdo source subs.vim
+"--------------------------------------------------------------------------------- 
 
 
        "========================================================

@@ -3,7 +3,7 @@
 "==================================================================================================
 "-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Fr 16 Aug 2019 02:50:03  CEST
+" Last Modified:      So 25 Aug 2019 12:31:03  CEST
 "==================================================================================================
 "==================================================================================================
 "==================================================================================================
@@ -184,7 +184,7 @@
         augroup END
         "------------------------------------------------------------------------------------------
         augroup SourceVimrc
-                autocmd!
+               autocmd!
                 autocmd bufwritepost .vimrc source $MYVIMRC
         augroup END
         "------------------------------------------------------------------------------------------
@@ -211,13 +211,14 @@
         "---------------------------------------------------------------------------------- 
 
         hi pythonSelf  ctermfg=68 cterm=bold 
+        "-------------------------------Gold Stuck.chen--------------------------------""
 
         "::::::CYAN::::::::::::::::-=2=-:::::::::::::::::::::::::::::::::::::::::::::::::::
         "source mix/n-badwolf.vim 
         "colorscheme molokai
-        " colorscheme badwolf
-        " source ~/git/bTest/kDot/mix/n-badwolf.vim
-        " colorscheme candycode
+        "colorscheme badwolf
+        "source ~/git/bTest/kDot/mix/n-badwolf.vim
+        "colorscheme candycode
         colorscheme desert
         colorscheme badwolf
         "-TOP------------------------------------------------------------------------------
@@ -234,6 +235,9 @@
         hi signcolumn     ctermbg=23
         "hi LineNr         ctermbg=199 ctermfg=16 
         hi LineNr         ctermbg=17 ctermfg=15 
+
+        " :sign define piet text=>> texthl=Search
+        " :exe ":sign place 2 line=240 name=piet file=" . expand("%:p")
 
         " hi CursorLine     ctermbg=8
         hi CursorLine     ctermbg=5
@@ -289,14 +293,14 @@
         call matchadd('customPink', '---')
         call matchadd('customPink', '--')
         "------------------------------------------------------
-        "------------------------------------------------------
         hi Comment        ctermfg=241
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "source ~/git/aTest/dotFiles/nVim/logoCyan.vim
+        "source ~/git/bTest/kDot/myPlug/logoCyan.vim
+        source ~/git/bTest/kDot/myPlug/nHydra.vim
+        "------------------------------------------------------
+        source ~/git/bTest/kDot/myPlug/NNV.vim
+        " let g:nnv_search_paths = ['~/git/bTest/']
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "source ~/git/aTest/dotFiles/nVim/myPlug/nHydra.vim 
-        "source ~/git/aTest/dotFiles/nVim/myPlug/NNV.vim
-        "let g:nnv_search_paths = ['~/git/aTest/dotFiles/']
         "let g:nnv_search_paths = ['/media/red/124Black/']
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -386,15 +390,17 @@
 "::::::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "---------------------------------------------------------------------------------------------------
 
+        "------------------------
         nmap <tab>     :bn<cr>
         nmap <s-tab>   :bp<cr>
-        "---------------------------------------------------
-        nnoremap <C-j> :bn<cr>
-        nnoremap <C-k> :bp<cr>
-
-        map <C-J> <C-W>j<C-W>_
-        map <C-K> <C-W>k<C-W>_
-        map <C-=> <C-W>=
+        "------------------------
+        "nnoremap <C-j> :bn<cr>
+        "nnoremap <C-k> :bp<cr>
+        ""------------------------
+        "map <C-J> <C-W>j<C-W>_
+        "map <C-K> <C-W>k<C-W>_
+        "map <C-=> <C-W>=
+        "------------------------
 
         "---------------------------------------------------
         "nnoremap <S-j> :bn<cr>
@@ -485,8 +491,8 @@
         nnoremap ,d mayiw`a:exe ":Capture !dict -d fd-eng-deu - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
         "==========================================================================================
         "Transport Down Ex: Pull word under cursor into :Ex LHS of a subs ztitute (replace)
-        nnoremap ;w :<C-r>=expand("<cword>")<CR>
-        nnoremap ;z :<C-r>=getline(".")<CR>
+        nnoremap ,w :<C-r>=expand("<cword>")<CR>
+        nnoremap ;w :<C-r>=getline(".")<CR>
         "---------------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
         nmap ,, <Plug>(easymotion-overwin-w)
@@ -558,7 +564,7 @@
         inoremap <expr><C-g>     deoplete#undo_completion()
         inoremap <expr><C-l>     deoplete#refresh()
         inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
-        "---------------------------------------------------------------
+        "---TODO------------------------------------------------------------
         imap <C-s>    <Plug>(neosnippet_start_unite_snippet)
         imap <C-k>    <Plug>(neosnippet_expand_or_jump)
         smap <C-k>    <Plug>(neosnippet_expand_or_jump)
@@ -665,6 +671,40 @@
         "---------------------------------------------------------------
         nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
         nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
+        "---------------------------------------------------------------
+
+        "==================================================================================
+        "====
+
+                nnoremap <LocalLeader>c :CodeQueryMenu Unite Full<CR>
+                nnoremap <LocalLeader>; :CodeQueryMenu Unite Magic<CR>
+                " Or enable typing (to search menu items) by default
+                nnoremap <LocalLeader>\ :CodeQueryMenu Unite Magic<CR>A
+
+                " Trigger db building (in current filetype) when your query fails
+                let g:codequery_trigger_build_db_when_db_not_found = 1
+                " Custom your `CodeQuery Text` commands
+                let g:codequery_find_text_cmd = 'Ack!'
+                
+                let g:codequery_find_text_from_current_file_dir = 0
+                " 0 => search from project dir (git root directory -> then the directory containing xxx.db file)
+                " 1 => search from the directory containing current file
+                
+                " If you use ':CodeQuery Symbol' in a txt file, of course, it will fail due to wrong filetype.
+                " With the following option set to 1, ':CodeQuery Text' will be automatically sent when your query fails.
+                let g:codequery_auto_switch_to_find_text_for_wrong_filetype = 0
+
+                " Set tags option
+                set tags=./javascript_tags;/
+                set tags+=./python_tags;/
+                set tags+=./ruby_tags;/
+                set tags+=./go_tags;/
+                set tags+=./java_tags;/
+                set tags+=./c_tags;/
+
+        "====
+        "==================================================================================
+
         nnoremap \\ :<C-u>Unite -buffer-name=register register<CR>
         "---------------------------------------------------------------
         nnoremap <F6> :FFLines <C-r><C-w><CR> | wincmd p
@@ -702,6 +742,10 @@
         inoremap <silent> <C-]> <C-x><C-]>
         "inoremap <silent> <C-u> <C-x><C-u>
 
+        "------------------------------InsertMode Scroll-------------------------------""
+        :inoremap <C-E> <C-X><C-E>
+        :inoremap <C-Y> <C-X><C-Y>
+
         "==========================================================================================
         "::::::::::::::::::::::::::::::-UNFUC-:::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
@@ -728,8 +772,6 @@
         "nnoremap <LocalLeader>z :ThesaurusQueryReplaceCurrentWord<CR>
         "vnoremap <LocalLeader>x "ky:ThesaurusQueryReplace <C-r>k<CR>
         "---------------------------------------------------------------------------------- 
-
-
         "==========================================================================================
         command! LocationToggle call LocationToggle()
         function! LocationToggle()
@@ -920,7 +962,7 @@
        "========================================================
 
        "========================================================
-       "==NEXT==================================================
+       "========================NEXT============================
        "========================================================
        cabbrev SS  SideSearch
        cabbrev ZA  FFMarks
@@ -1082,5 +1124,46 @@
         " snippet si2nce
         " @since ${0:#:version}
 
+        " The GNU bison parser generator (similar to YACC) generates a couple of
+        " different types of errors. They start with the file name, then a colon. If
+        " available, the linenumber comes next, followed by a dot (period) and the
+        " column number. If appropriate, a dash and then another column number (giving a
+        " column range) follows, and then a colon, space, and the error message.
+
+        set errorformat+=%f:%l.%c-%*[0-9]:\ %m
+        set errorformat+=%f:%l.%c:\ %m
+        set errorformat+=%f:\ %m
+
+        "--------------------------------------------------------------------------------- 
+        " :MMake to perform a :make and to open any resulting quickfix window: 
+        " command -nargs=* MMake make <args>|cwindow 3
+
+
+        "--------------------------------------------------------------------------------- 
+        " create it with the shell command "
+        " mkid file1 file2 ..
+
+        map _u :call ID_search()<Bar>execute "/\\<" . g:word . "\\>"<CR>
+        map _n :n<Bar>execute "/\\<" . g:word . "\\>"<CR>
+
+        function! ID_search()
+                let g:word = expand("<cword>")
+                let x = system("lid --key=none ". g:word)
+                let x = substitute(x, "\n", " ", "g")
+                execute "next " . x
+        endfun
+
+        " To use it, place the cursor on a word, type "_u" and vim will load the file
+        " that contains the word.  Search for the next occurrence of the word in the
+        " same file with "n".  Go to the next file with "_n".
+
+        " This has been tested with id-utils-3.2 (which is the name of the id-tools
+        " archive file on your closest gnu-ftp-mirror).
+        "--------------------------------------------------------------------------------- 
+        " nmap gz <Plug>ZVOperator
+        " vmap <localleader>z <Plug>ZVVisSelection
+        nmap ;z <Plug>Zeavim
+        nmap <Leader>z <Plug>ZVKeyDocset
+        "--------------------------------------------------------------------------------- 
 
 

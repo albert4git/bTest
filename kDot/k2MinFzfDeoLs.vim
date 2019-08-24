@@ -3,7 +3,7 @@
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Fr 16 Aug 2019 12:23:33  CEST
+" Last Modified:      So 25 Aug 2019 12:04:24  CEST
 "==================================================================================================
 "==================================================================================================
 let g:python_host_prog = '/usr/bin/python2'
@@ -186,10 +186,55 @@ call plug#begin('~/.config/nvim/plugged/')
         "         let g:indent_guides_tab_guides = 1
         "         hi IndentGuidesOdd   ctermbg=22
         "         hi IndentGuidesEven  ctermbg=239
+
         "---------------------------------------------------------------------------------- 
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         Plug 'davidhalter/jedi-vim'
         Plug 'zchee/deoplete-jedi'
+        " let g:python_host_prog = '/full/path/to/neovim2/bin/python'
+        " let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
+        "---------------------------------------------------------------------------------- 
+
+
+        "---------------------------------------------------------------------------------- 
+        "---GLEB--------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------- 
+        Plug 'sukima/xmledit/'
+        autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
+        autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+        Plug 'sjl/gundo.vim'
+        Plug 'coderifous/textobj-word-column.vim'
+        "----vac----
+
+        Plug 'devjoe/vim-codequery'
+        Plug 'aperezdc/vim-template'
+
+        Plug 'vim-scripts/L9'
+        Plug 'vim-scripts/FuzzyFinder'
+        "---------------------------------------------------------------------------------- 
+        "Plug 'vim-scripts/tComment'
+        " As operator (the prefix can be customized via g:tcommentMapLeaderOp1 
+        " and g:tcommentMapLeaderOp2):
+        " gc{motion}   :: Toggle comments (for small comments within one line 
+        "                 the &filetype_inline style will be used, if 
+        "                 defined)
+        " gcc          :: Toggle comment for the current line
+        " gC{motion}   :: Comment region
+        " gCc          :: Comment the current line
+        " Primary key maps:
+        " <c-_><c-_>   :: :TComment
+        " <c-_><space> :: :TComment <QUERY COMMENT-BEGIN ?COMMENT-END>
+        " <c-_>b       :: :TCommentBlock
+        " <c-_>a       :: :TCommentAs <QUERY COMMENT TYPE>
+        " <c-_>n       :: :TCommentAs &filetype <QUERY COUNT>
+        " <c-_>s       :: :TCommentAs &filetype_<QUERY COMMENT SUBTYPE>
+        " <c-_>i       :: :TCommentInline
+        " <c-_>r       :: :TCommentRight
+        " <c-_>p       :: Comment the current inner paragraph
+
+        "---------------------------------------------------------------------------------- 
+        Plug 'tpope/vim-dispatch'
+
         "---------------------------------------------------------------------------------- 
         Plug 'autozimu/LanguageClient-neovim', {
                                 \ 'branch': 'next',
@@ -224,7 +269,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         " But if you want to install fzf as well using vim-plug:
         " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-        " Plug 'junegunn/fzf.vim'
 
         Plug 'junegunn/fzf'
         Plug 'junegunn/fzf.vim'
@@ -534,6 +578,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 " nmap <C-W>s <Plug>(Visual-Split-Split)
         "---AAA-nnn-----------------------------------------------------}}}
 
+
         "==================================================================================
         Plug 'nvie/vim-flake8'
         "---------------------------------------------------------------------------------- 
@@ -627,17 +672,10 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'mhinz/vim-startify'
         Plug 'tiagoinacio/fzf-bookmark.vim'
         Plug 'blueyed/vim-diminactive'
-        " Plug ''
         Plug 'vim-scripts/timestamp.vim'
 
-        "------TESTING------------------------------------------------------------------ 
-        " Plug 'vim-scripts/CRefVim'
-        " Plug 'vim-scripts/FuzzyFinder'
-        " Plug 'alvan/vim-closetag'
-        " Plug 'WolfgangMehner/bash-support'
+        Plug 'metakirby5/codi.vim'
         "---------------------------------------------------------------------------------- 
-        " Plug 'vim-scripts/FuzzyFinder'
-
 
         Plug 'tylerhunt/vim-spark'
         "Plug 'sjl/vim-sparkup'
@@ -661,8 +699,6 @@ call plug#begin('~/.config/nvim/plugged/')
         " div>p#foo
         " div>p#foo$*2
         " div>p#foo$*2>div.baran
-        "---------------------------------------------------------------------------------- 
-
         "--------------------------------------------------------------------------------- 
         "------------------------ START --REPL-------------------------------------------- 
         "--------------------------------------------------------------------------------- 
@@ -740,6 +776,62 @@ call plug#begin('~/.config/nvim/plugged/')
                 " " change Pmenu to your highlight group
                 " highlight link EchoDocFloat Pmenu
         "--------------------------------------------------------------------------------- 
+        Plug 'KabbAmine/zeavim.vim'
+        Plug 'junegunn/vim-pseudocl'
+        Plug 'junegunn/vim-oblique'
+        "--------------------------------------------------------------------------------- 
+        "         hi! def link ObliqueCurrentMatch Keyword
+        "         hi! def link ObliquePrompt       Structure
+        "         hi! def link ObliqueLine         String
+        "--------------------------------------------------------------------------------- 
+        Plug 'junegunn/vim-easy-align'
+                " Start interactive EasyAlign in visual mode (e.g. vipga)
+                xmap ga <Plug>(EasyAlign)
+                " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+                nmap ga <Plug>(EasyAlign)
+        "--------------------------------------------------------------------------------- 
+
+        Plug 'junegunn/goyo.vim'
+        Plug 'junegunn/seoul256.vim'
+        Plug 'junegunn/limelight.vim'
+        Plug 'ron89/thesaurus_query.vim'
+        Plug 'matze/vim-move'
+                let g:move_key_modifier = 'C'
+        Plug 'itchyny/calendar.vim'
+        "--------------------------------------------------------------------------------- 
+        " Plug 'junegunn/vader.vim'
+        " Plug 'janko-m/vim-test'
+        " let test#python#runner = 'pytest'
+        " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose' and Python's built-in 'unittest'
+        "--------------------------------------------------------------------------------- 
+
+        "-------------------------TESTING-------------------------------------------------
+        " Plug 'vim-scripts/CRefVim'
+        " Plug 'alvan/vim-closetag'
+        "---------------------------------------------------------------------------------- 
+
+        "-------------------------TRASH--------------------------------------------------- 
+        " Plug 'WolfgangMehner/bash-support'
+        "?pum? Plug 'tpope/vim-endwise'
+        " Plug 'tpope/vim-rsi'
+        "?rubi-test? Plug 'skalnik/vim-vroom'
+        "--------------------------------------------------------------------------------- 
+        " Plug 'vim-ruby/vim-ruby'
+        " Plug 'tpope/vim-rails'
+        " Plug 'tweekmonster/django-plus.vim'
+        "---------------------------------------------------------------------------------- 
+        " Plug 'sheerun/vim-polyglot'
+        " Plug 'kkoomen/vim-doge'
+        " Plug 'wellle/tmux-complete.vim'
+        " Plug 'tmhedberg/SimpylFold'
+        "Plug 'markonm/traces.vim'
+        "--NewNew---TODO------------------------------------------
+        "Plug 'haya14busa/vim-easyoperator-line'
+        "Plug 'easymotion/vim-easymotion'
+        "Plug 'unblevable/quick-scope'
+        "--------------------------------------------------------------------------------- 
+        " Plug 'vim-scripts/foo.vim'
+        "?pum? Plug 'tpope/vim-endwise'
 
 call plug#end()
 "---nPlugEnd-nPlugStop3----------------}}}

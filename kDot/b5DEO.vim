@@ -1,7 +1,7 @@
 "file:///home/red/Documents/GiT/My%20favorite%20command-line%20utilities%20%E2%80%93%20Hacker%20Noon.html
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:32  CEST
-" Last Modified:      Fr 17 Mai 2019 05:31:47  CEST
+" Last Modified:      Sa 24 Aug 2019 03:22:41  CEST
 "===============================================================================================================
 "xdg-open
 "------------------------------------------------------------------------------------------
@@ -716,6 +716,7 @@ call plug#begin('/media/red/124Black/git/dotRedConfig/nvim/plugged/')
         Plug 'vim-scripts/CRefVim'
         Plug 'sheerun/vim-polyglot'
 
+        " UKRLIFE
         "--------------------------------------------------------------------------------- 
         " Plug 'WolfgangMehner/bash-support'
         " Plug 'severin-lemaignan/vim-minimap'
