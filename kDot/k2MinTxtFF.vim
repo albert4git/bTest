@@ -12,6 +12,13 @@
 :help usr_32.txt
 :help usr_42.txt
 
+        " Plug 'unblevable/quick-scope'
+        " let g:qs_highlight_on_keys = ['f', 'F']
+        " augroup qs_colors
+        "         autocmd!
+        "         autocmd ColorScheme * highlight QuickScopePrimary  ctermfg=155 cterm=underline
+        "         autocmd ColorScheme * highlight QuickScopeSecondary  ctermfg=81 cterm=underline
+        " augroup END
 
 #### 3. Use Quickfix
 * **Move your cursor inside Quickfix window to use these key bindings**
@@ -324,3 +331,140 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
                                \ })
        "=========
        "============================================================================================
+
+"=================================================================================================
+"=================================================================================================
+Configure
+
+sample .vimrc:
+
+let g:project_use_nerdtree = 1
+set rtp+=~/.vim/bundle/vim-project/
+call project#rc("~/Code")
+
+Project  'scratch'
+
+Project  'dotfiles'
+File     'dotfiles/vimrc'                       , 'vimrc'
+File     'dotfiles/gvimrc'                      , 'gvimrc'
+File     'dotfiles/zshrc'                       , 'zshrc'
+
+Project  'gollum'
+File     'gollum/Todo.md'                       , 'todo'
+Callback 'gollum'                               , 'RemoveTextWidth'
+
+function! RemoveTextWidth(...) abort
+  setlocal textwidth=0
+endfunction
+
+Project  'octopress'
+Project  'gsource'
+Project  'markup'
+Project  'glib'
+Project  'reloadlive'
+Project  'flashcards'
+Project  'leitner'
+Callback 'leitner'                              , ['AddSpecToPath', 'RemoveTextWidth']
+
+function! AddSpecToPath(tile) abort
+  setlocal path+=spec
+endfunction
+
+Project  '~/.vim/bundle/vim-fenced-code-blocks' , 'fenced'
+Project  '~/.vim/bundle/vim-project'            , 'project'
+Project  '~/.vim/bundle/vim-bookmarks'          , 'bookmarks'
+Project  '~/.vim/bundle/ctrlp.vim'              , 'ctrlp'
+Project  '~/.vim/bundle/ctrlp-z'                , 'ctrlp-z'
+Project  '~/.vim/bundle/vim-eval'               , 'eval'
+
+Interactive
+
+From the cmdline mode.
+
+ProjectPath uses the cwd and the arguments are not quoted.
+
+:ProjectPath .
+:ProjectPath /etc myconfig
+"--------------------------------------------------------------------------------- 
+"--------------------------------------------------------------------------------- 
+
+" Autocmds {
+    autocmd FileType javascript noremap <buffer>  <Leader>js :call JsBeautify()<cr>
+    autocmd FileType html noremap <buffer> <Leader>js :call HtmlBeautify()<cr>
+    autocmd FileType css noremap <buffer> <Leader>js :call CSSBeautify()<cr>
+    autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+    autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+    autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+    autocmd FileType gitcommit setlocal colorcolumn=50
+
+    au BufNewFile,BufRead *.wsgi set filetype=python
+    augroup golang_au
+        autocmd!
+        " Display real tabs like 4 spaces, don't list trailing characters
+        au BufNewFile,BufReadPost *.go setl noexpandtab tabstop=4 nolist
+    augroup END
+    augroup javascript_au
+        autocmd!
+        " Add debugger key command for JS
+        au BufNewFile,BufReadPost *.js nnoremap <Leader>b :call InsertDebugLine("debugger;", line('.'))<return>
+    augroup END
+    augroup less_au
+        autocmd!
+        " Function to compile Less to CSS
+        function! LessToCss()
+            let current_file = shellescape(expand('%:p'))
+            let filename = shellescape(expand('%:r'))
+            let command = "silent !lessc " . current_file . " " . filename . ".css"
+            execute command
+        endfunction
+        " Auto-compile less files on save.
+        autocmd BufWritePost,FileWritePost *.less call LessToCss()
+    augroup END
+    augroup python_au
+        autocmd!
+        " Add remote debugger key command for Python
+        au BufNewFile,BufReadPost *.py nnoremap <Leader>rb :call InsertDebugLine("import rpdb; rpdb.set_trace()  # XXX BREAKPOINT", line('.'))<return>
+        au BufNewFile,BufReadPost *.py nnoremap <Leader>bb :call InsertDebugLine("import pudb; pudb.set_trace()  # XXX BREAKPOINT", line('.'))<return>
+    augroup END
+    augroup reopen_au
+        autocmd!
+        " Re-open VIM to the last spot you had open.
+        au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+            \| exe "normal! g'\"" | endif
+
+        " Jump to the top of git COMMIT_EDITMSG files.
+        au BufReadPost COMMIT_EDITMSG
+        \ exe "normal! gg"
+    augroup END
+    augroup unite_au
+        autocmd!
+        function! s:unite_settings()
+            " Put settings that execute inside the unite buffer here
+        endfunction
+        autocmd FileType unite call s:unite_settings()
+    augroup END
+" }
+"--------------------------------------------------------------------------------- 
+"--------------------------------------------------------------------------------- 
+
+python3 << EOF
+import vim
+import git
+def is_git_repo():
+	try:
+		_ = git.Repo('.', search_parent_directories=True).git_dir
+		return "1"
+	except:
+		return "0"
+vim.command("let g:pymode_rope = " + is_git_repo())
+EOF
+"--------------------------------------------------------------------------------- 
+"--------------------------------------------------------------------------------- 
+
+
+"--------------------------------------------------------------------------------- 
+"--------------------------------------------------------------------------------- 
+
+
+"--------------------------------------------------------------------------------- 
+"--------------------------------------------------------------------------------- 

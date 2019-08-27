@@ -1,11 +1,17 @@
 
 A little more advanced
 
-With the function above, you can open directives from the HTML. How nice would it be to open CSS files from the HTML as well?
+With the function above, you can open directives from the HTML. How nice would
+it be to open CSS files from the HTML as well?
 
-Taking the previous HTML example, when I’m in a line with class="timepicker" I want to open the BEM component named timepicker that, by convention, sits in stylesheets/components/timepicker.scss.
+Taking the previous HTML example, when I’m in a line with class="timepicker" I
+want to open the BEM component named timepicker that, by convention, sits in
+stylesheets/components/timepicker.scss.
 
-Building on the previous implementation, you first check if the current line contains class=", if not then look for the tag using the code from before. If it does match, you extract the component’s name from the class, turn it into snake case and open the file:
+Building on the previous implementation, you first check if the current line
+contains class=", if not then look for the tag using the code from before. If
+it does match, you extract the component’s name from the class, turn it into
+snake case and open the file:
 
 function! AngularTemplateToDirectiveOrCSS()
 ruby << EOF

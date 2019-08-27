@@ -1,5 +1,4 @@
-        Plug '
-        romainl/vim-qf'
+        Plug 'romainl/vim-qf'
         Plug 'yssl/QFEnter'
         Plug 'sk1418/QFGrep'
         Plug 'AndrewRadev/qftools.vim'

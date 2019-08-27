@@ -92,7 +92,7 @@ class Application(Frame):
             font=("Helvetica", 11),
             text="C",
             borderwidth=0,
-            command=lambda: self.clearText())
+            ocmmand=lambda: self.clearText())
         self.clearButton.grid(row=1, column=4, sticky="NWNESWSE")
 
         #This is the Second Row

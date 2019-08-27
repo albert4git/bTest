@@ -2422,7 +2422,6 @@ call plug#end()
         "python print_pyhel()
         function! InsertCountry()
                 python print("Hello from Python source code!")
-                python print_pyhel()
         endfunction
         command! -nargs=0 InsertCountry call InsertCountry()
 

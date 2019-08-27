@@ -1,6 +1,5 @@
 
         Plug 'lepture/vim-jinja'
-        Plug 'tylerhunt/vim-spark'
         "Plug 'sjl/vim-sparkup'
         Plug 'vim-scripts/Emmet.vim'
         let g:user_emmet_settings = {

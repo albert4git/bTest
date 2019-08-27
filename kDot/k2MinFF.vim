@@ -3,7 +3,7 @@
 "==================================================================================================
 "-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      So 25 Aug 2019 12:31:03  CEST
+" Last Modified:      Di 27 Aug 2019 11:02:43  CEST
 "==================================================================================================
 "==================================================================================================
 "==================================================================================================
@@ -54,6 +54,14 @@
         "----------------------------------------------------------------------------------
         set makeprg=gcc\ -o\ %<\ % 
         set grepprg=rg\ --vimgrep
+
+        "===============================================================================
+        if executable('ag')
+                set grepprg=ag\ --nogroup\ --nocolor\ --column\ --ignore-dir\ node_modules\ --ignore-dir\ bower_components
+                set grepformat=%f:%l:%c:%m
+        endif
+
+
         let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
         "----------------------------------------------------------------------------------
         "set grepprg=/bin/grep\ -nH
@@ -205,6 +213,7 @@
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
          source ~/git/bTest/kDot/k2MinFzfDeoLs.vim
          source ~/git/bTest/kDot/logoABB.vim
+         source ~/git/bTest/kDot/logoFunc.vim
         "source ~/git/bTest/kDot/minFzfDeoLsJediSnip.vim
         "source ~/git/bTest/kDot/kFF7DEO.vim
         "source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
@@ -226,6 +235,28 @@
         highlight DiffDelete        cterm=bold ctermbg=3
         highlight DiffChange        cterm=bold ctermbg=11
         highlight DiffChange        cterm=bold ctermbg=52
+
+        highlight Class cterm=bold ctermbg=88
+        highlight Function cterm=bold ctermbg=19
+        highlight LocalVariable cterm=bold ctermbg=14
+        highlight GlobalVariable cterm=bold ctermbg=207
+
+        " hi Enumerator guifg="c000c0"
+        " Class           : Class
+        " DefinedName     : Define
+        " Enumerator      : Enumerator
+        " Function        : Function or method
+        " EnumerationName : Enumeration name
+        " Member          : Member (of structure or class)
+        " Structure       : Structure Name
+        " Type            : Typedef
+        " Union           : Union Name
+        " GlobalConstant  : Global Constant
+        " GlobalVariable  : Global Variable
+        " LocalVariable   : Local Variable
+
+
+
         "-TOP------------------------------------------------------------------------------
         hi Search         ctermbg=11
         hi Normal         ctermbg=235
@@ -242,6 +273,7 @@
         " hi CursorLine     ctermbg=8
         hi CursorLine     ctermbg=5
         hi CursorLine     ctermbg=17
+        hi CursorLine     ctermbg=90
 
         set colorcolumn=92,100,112,120
         hi ColorColumn    ctermbg=240
@@ -298,7 +330,7 @@
         "source ~/git/bTest/kDot/myPlug/logoCyan.vim
         source ~/git/bTest/kDot/myPlug/nHydra.vim
         "------------------------------------------------------
-        source ~/git/bTest/kDot/myPlug/NNV.vim
+        " source ~/git/bTest/kDot/myPlug/NNV.vim
         " let g:nnv_search_paths = ['~/git/bTest/']
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "let g:nnv_search_paths = ['/media/red/124Black/']
@@ -498,6 +530,14 @@
         nmap ,, <Plug>(easymotion-overwin-w)
         nmap ;; <Plug>(easymotion-overwin-w)
         imap ;; <ESC>
+
+        let g:EasyOperator_line_do_mapping = 0
+        omap ;l  <Plug>(easyoperator-line-select)
+        xmap ;l  <Plug>(easyoperator-line-select)
+        nmap d;l <Plug>(easyoperator-line-delete)
+        nmap p;l <Plug>(easyoperator-line-yank)
+
+
         "------------------------------------------------------------------
         "1y$  //yank current row to register 1
         "<C-r>a to paste from register a
@@ -544,6 +584,7 @@
         nnoremap ) <c-a>:y x\|@x<cr>
         "==========================================================================================
         "---FIREFOX----www.web.de------------------------------------------------------------------
+        
         "==========================================================================================
         nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
         "------------------------------------------------------------------------------------------
@@ -570,6 +611,7 @@
         smap <C-k>    <Plug>(neosnippet_expand_or_jump)
         xmap <C-k>    <Plug>(neosnippet_expand_target)
         nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
+
         "---------------------------------------------------------------
         " imap <C-b>    <Plug>(neosnippet_expand_or_jump)
 
@@ -619,6 +661,16 @@
         nnoremap <F4> <esc>:Startify<cr>
         "==========================================================================================
         nnoremap <F5> :w<CR>:!python %<CR>
+
+        "==========================================================================================
+        ""Python runners
+        "autocmd! filetype python noremap <buffer> <F4> :w<CR>:!python %<CR>
+        "autocmd! filetype python inoremap <buffer> <C-F4> <Esc>:w<CR>:!python %<CR>
+        "autocmd! filetype python noremap <buffer> <S-F4> :w<CR>:!ipython %<CR>
+        "autocmd! filetype python inoremap <buffer> <S-F4> <Esc>:w<CR>:!ipython %<CR>
+        "noremap <buffer> <F4> :w<CR>:!python %<CR>
+        "noremap <buffer> <C-F4> :w<CR>:!clear;python %<CR>
+        "noremap <buffer> <S-F4> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
         "==========================================================================================
         nnoremap <F5> :call <SID>compile_and_run()<CR>
         "==========================================================================================
@@ -752,7 +804,7 @@
         nnoremap fu :syntax sync fromstart<cr>:redraw!<cr>
         nnoremap zu :<c-u>update<cr>
         let g:undoquit_mapping = ';q' 
-
+        nnoremap <Leader>q :Bdelete<CR> 
         "=============================================
         "===Make zO recursively open whatever fold====
         "=============================================
@@ -785,6 +837,7 @@
         endfunction
 
         "==========================================================================================
+        command! ToggleQuickFix call ToggleQuickFix()
         function! ToggleQuickFix()
                 if exists("g:qwindow")
                         cclose
@@ -839,6 +892,7 @@
 
         command! ShowFuncKeys call ShowFuncKeys(<q-bang>)
         "==================================================================================
+        command! ShowFunc call ShowFunc()
         function! ShowFunc()
                 let gf_s = &grepformat
                 let gp_s = &grepprg
@@ -1098,6 +1152,10 @@
        " call fzf#run(fzf#wrap({'source': 'ls'}))
        " call fzf#run(fzf#wrap({'source': 'git ls-files'}))
        "============================================================================================
+        "startput" will directly put the most recent item in the shared history:
+        "=============
+        "startput" will directly put the most recent item in the shared history:
+
 
        "========================================================
        "===YANK2================================================
@@ -1105,6 +1163,8 @@
        nmap zp <Plug>yankstack_substitute_older_paste
        nmap zn <Plug>yankstack_substitute_newer_paste
 
+       " map p <Plug>(miniyank-autoput)
+       " map P <Plug>(miniyank-autoPut)
        " C-c and C-v - Copy/Paste to global clipboard
        vmap <C-c> "+yi imap <C-v> <esc>"+gpi nmap WW ]p
        "============================================================================================
@@ -1138,7 +1198,6 @@
         " :MMake to perform a :make and to open any resulting quickfix window: 
         " command -nargs=* MMake make <args>|cwindow 3
 
-
         "--------------------------------------------------------------------------------- 
         " create it with the shell command "
         " mkid file1 file2 ..
@@ -1167,3 +1226,6 @@
         "--------------------------------------------------------------------------------- 
 
 
+"===============================================================================================================
+
+"===============================================================================================================

@@ -32,6 +32,7 @@ export ZPLUG_HOME=$HOME/.zplug
 [[ ! -f $ZPLUG_HOME/init.zsh ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
 source $ZPLUG_HOME/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+/bin/setfont /usr/share/consolefonts/Lat2-Terminus28x14.psf.gz 
 #=============================================================
 # export PATH="$PATH:$HOME/bin:$HOME/.config/local/bin"
 # export MANPATH="$MANPATH:$HOME/.config/local/share/man"
@@ -607,6 +608,36 @@ function prev() {
   PREV=$(fc -lrn | head -n 1)
   sh -c "pet new `printf %q "$PREV"`"
 }
+
+alternate () {
+  local alter words i j
+  i=1 
+  j=0 
+  words=("${(z)LBUFFER}") 
+  if [[ $words[$i] = git ]]
+  then
+    alter=(add branch checkout status commit merge) 
+  elif [[ $words[$i] = systemctl ]]
+  then
+    alter=(start enable status) 
+  else
+    return 0
+  fi
+  (( i++ ))
+  while [[ $words[$i] = -* ]]
+  do
+    (( i++ ))
+  done
+  j=${alter[(ie)$words[$i]]} 
+  if [[ $j -lt ${#alter} ]]
+  then
+    (( j++ ))
+  else
+    j=1 
+  fi
+  LBUFFER="$words[1,((i-1))] $alter[$j] $words[((i+1)),$#words]"
+}
+bindkey -M viins -- '\e\t' alternate
 #==========================================================================================
 # zplug "junegunn/fzf-bin", \
 #     as:command, \

@@ -3,7 +3,7 @@
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      So 25 Aug 2019 12:04:24  CEST
+" Last Modified:      Di 27 Aug 2019 04:37:33  CEST
 "==================================================================================================
 "==================================================================================================
 let g:python_host_prog = '/usr/bin/python2'
@@ -67,7 +67,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'osyo-manga/vim-brightest'
                 let g:brightest#highlight = { "group" : "Define" }
                 " JAPAN
-        "---------------------------------------------------------------------------------- 
+        "----BATMAN------------------------------------------------------------------------ 
         Plug 'vim-scripts/TagHighlight'
         " TagHighlight highlight names of class, variable, types in code.
         " Usage: :UpdateTypesFile
@@ -83,6 +83,9 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:TagHighlightSettings['PythonVariantPriority'] = [
                                         \ "if_pyth3", "if_pyth", "python", "compiled",
                                         \ ]
+
+
+
         "---1812--------------------------------------------------------------------------- 
         Plug 'Shougo/echodoc.vim'
                 set cmdheight=2
@@ -233,7 +236,11 @@ call plug#begin('~/.config/nvim/plugged/')
         " <c-_>p       :: Comment the current inner paragraph
 
         "---------------------------------------------------------------------------------- 
+        Plug 'neomake/neomake'
         Plug 'tpope/vim-dispatch'
+        let g:dispatch_compilers = {
+                                \ 'latex': 'tex',
+                                \ 'bundle exec': ''}
 
         "---------------------------------------------------------------------------------- 
         Plug 'autozimu/LanguageClient-neovim', {
@@ -344,7 +351,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'Shougo/neosnippet.vim'
         Plug 'Shougo/neosnippet-snippets'
         "------------------------------------------------------------------------------------------ 
-        " :Tmux
+        ":Tmux
         Plug 'tpope/vim-tbone'
         Plug 'tmux-plugins/vim-tmux'
         "------------------------------------------------------------------------------------------ 
@@ -361,6 +368,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "   - . to start command-line with :Git [CURSOR] SHA à la fugitive
         "   - q to close
         "==========================================================================
+        Plug 'tpope/vim-fugitive'
         "   - :Git[!] [args]
         "   - :Gstatus
         "   - :Gcommit [args]
@@ -375,7 +383,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "   - :[range]Gblame {flags}
         "   - :[range]Gbrowse {revision}
         "-------------------------------------------------------------------------- 
-        Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-commentary'
         Plug 'tpope/vim-repeat'
         Plug 'tpope/vim-unimpaired'
@@ -469,8 +476,9 @@ call plug#begin('~/.config/nvim/plugged/')
                 highlight TagListTagName    ctermfg=250
                 highlight TagbarFoldIcon    ctermfg=051 ctermbg=9 
                 highlight TagbarHelp        ctermfg=051 ctermbg=9
-        Plug 'vim-scripts/tagselect'
+        " Plug 'vim-scripts/tagselect'
         Plug 'ludovicchabant/vim-gutentags'
+        "Plug 'xolox/vim-easytags'
         Plug 'vim-scripts/genutils'
         "------------------------------------------------------------------------------------------
         Plug 'w0rp/ale'
@@ -663,17 +671,14 @@ call plug#begin('~/.config/nvim/plugged/')
                 "let g:bookmark_manage_per_buffer = 1`        
                 "let g:bookmark_auto_save_file = '/bookmarks'`
 
-
-
         "==================================================================================
-
+        Plug 'tiagoinacio/fzf-bookmark.vim'
         Plug 'runfalk/vim-fzf-extended'
         Plug 'ryanoasis/vim-devicons'
         Plug 'mhinz/vim-startify'
-        Plug 'tiagoinacio/fzf-bookmark.vim'
         Plug 'blueyed/vim-diminactive'
         Plug 'vim-scripts/timestamp.vim'
-
+        "---------------------------------------------------------------------------------- 
         Plug 'metakirby5/codi.vim'
         "---------------------------------------------------------------------------------- 
 
@@ -703,7 +708,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------ START --REPL-------------------------------------------- 
         "--------------------------------------------------------------------------------- 
         Plug 'jalvesaq/vimcmdline'
-
                 " vimcmdline options
                 let cmdline_vsplit      = 1      " Split the window vertically
                 let cmdline_esc_term    = 1      " Remap <Esc> to :stopinsert in Neovim's terminal
@@ -744,34 +748,33 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------ END --REPL--------------------------------------------- 
         "--------------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
-        Plug 'vim-scripts/TagHighlight'
-        " TagHighlight highlight names of class, variable, types in code.
-        " Usage: :UpdateTypesFile
-                if !exists('g:TagHighlightSettings')
-                        let g:TagHighlightSettings = {}
-                endif
-                let g:TagHighlightSettings['TagFileName'] = 'tags'
-                let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'
-                let g:TagHighlightSettings['CtagsVariant'] = 'exuberant'
-                let g:TagHighlightSettings['CtagsArguments'] = []
-                let g:TagHighlightSettings['CtagsExtraArguments'] = []
-                let g:TagHighlightSettings['ForcePythonVariant'] = 'if_pyth3'
-                let g:TagHighlightSettings['PythonVariantPriority'] = [
-                                        \ "if_pyth3", "if_pyth", "python", "compiled",
-                                        \ ]
+        " Plug 'vim-scripts/TagHighlight'
+        " " TagHighlight highlight names of class, variable, types in code.
+        " " Usage: :UpdateTypesFile
+        "         if !exists('g:TagHighlightSettings')
+        "                 let g:TagHighlightSettings = {}
+        "         endif
+        "         let g:TagHighlightSettings['TagFileName'] = 'tags'
+        "         let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'
+        "         let g:TagHighlightSettings['CtagsVariant'] = 'exuberant'
+        "         let g:TagHighlightSettings['CtagsArguments'] = []
+        "         let g:TagHighlightSettings['CtagsExtraArguments'] = []
+        "         let g:TagHighlightSettings['ForcePythonVariant'] = 'if_pyth3'
+        "         let g:TagHighlightSettings['PythonVariantPriority'] = [
+        "                                 \ "if_pyth3", "if_pyth", "python", "compiled",
+        "                                 \ ]
         "--------------------------------------------------------------------------------- 
-        Plug 'dhruvasagar/vim-zoom'
-                set statusline+=%{zoom#statusline()}
+        " Plug 'dhruvasagar/vim-zoom'
+        "         set statusline+=%{zoom#statusline()}
         "--------------------------------------------------------------------------------- 
         Plug 'Shougo/echodoc.vim'
                 set cmdheight=2
                 let g:echodoc_enable_at_startup = 1
-                " let g:echodoc#enable_at_startup = 1
                 let g:echodoc#type = 'virtual'
+                let g:echodoc#type = 'floating'
                 
                 " " Or, you could use neovim's floating text feature.
                 " let g:echodoc#enable_at_startup = 1
-                " let g:echodoc#type = 'floating'
                 " " To use a custom highlight for the float window,
                 " " change Pmenu to your highlight group
                 " highlight link EchoDocFloat Pmenu
@@ -791,6 +794,21 @@ call plug#begin('~/.config/nvim/plugged/')
                 nmap ga <Plug>(EasyAlign)
         "--------------------------------------------------------------------------------- 
 
+        "--------------------------------------------------------------------------------- 
+        " Plug 'SkyLeach/pudb.vim'
+        " if has('nvim')
+        "         let g:python_host_prog='~/.virtualenvs/neovim2/bin/python'
+        "         let g:python3_host_prog='~/.virtualenvs/neovim3/bin/python'
+        "         " set the virtual env python used to launch the debugger
+        "         let g:pudb_python='~/.virtualenvs/poweruser_tools/bin/python'
+        "         " set the entry point (script) to use for pudb
+        "         let g:pudb_entry_point='~/src/poweruser_tools/test/test_templates.py'
+        "         " Unicode symbols work fine (nvim, iterm, tmux, nyovim tested)
+        "         let g:pudb_breakpoint_symbol='☠'
+        " endif
+        "--------------------------------------------------------------------------------- 
+
+
         Plug 'junegunn/goyo.vim'
         Plug 'junegunn/seoul256.vim'
         Plug 'junegunn/limelight.vim'
@@ -798,40 +816,88 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'matze/vim-move'
                 let g:move_key_modifier = 'C'
         Plug 'itchyny/calendar.vim'
+        "--NewNew---TODO------------------------------------------
+        Plug 'haya14busa/vim-easyoperator-line'
+        " Plug 'bfredl/nvim-miniyank'
         "--------------------------------------------------------------------------------- 
-        " Plug 'junegunn/vader.vim'
-        " Plug 'janko-m/vim-test'
-        " let test#python#runner = 'pytest'
-        " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose' and Python's built-in 'unittest'
-        "--------------------------------------------------------------------------------- 
+        Plug 'unblevable/quick-scope'
+        augroup qs_colors
+                autocmd!
+                autocmd ColorScheme * highlight QuickScopePrimary  ctermfg=81 cterm=underline
+                autocmd ColorScheme * highlight QuickScopeSecondary  ctermfg=93 cterm=underline
+        augroup END
+        Plug 'moll/vim-bbye'
+        Plug 'wincent/ferret'
+        " Plug 'amiorin/vim-project'
+        " Plug 'lyuts/vim-rtags'
+        " Plug 'vim-scripts/Conque-Shell'
+        Plug 'vim-scripts/dbext.vim'
+        " Plug 'vim-scripts/spreadsheet.vim'
+
+
+        "---------------------------------------------------------------------------------- 
+        " Plug 'brookhong/cscope.vim'
+        "         nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
+        "         nnoremap <leader>f :call CscopeFindInteractive(expand('<cword>'))<CR>
+        "         nnoremap <leader>\ :call ToggleLocationList()<CR>
+        "         " s: Find this C symbol
+        "         nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+        "         " g: Find this definition
+        "         nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+        "         " d: Find functions called by this function
+        "         nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+        "         " c: Find functions calling this function
+        "         nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+        "         " t: Find this text string
+        "         nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
+        "         " e: Find this egrep pattern
+        "         nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
+        "         " f: Find this file
+        "         nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+        "         " i: Find files #including this file
+        "         nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+        "---------------------------------------------------------------------------------- 
 
         "-------------------------TESTING-------------------------------------------------
         " Plug 'vim-scripts/CRefVim'
         " Plug 'alvan/vim-closetag'
         "---------------------------------------------------------------------------------- 
+        " Plug 'junegunn/vader.vim'
+        " Plug 'janko-m/vim-test'
+        " let test#python#runner = 'pytest'
+        " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose' and Python's built-in 'unittest'
 
         "-------------------------TRASH--------------------------------------------------- 
         " Plug 'WolfgangMehner/bash-support'
-        "?pum? Plug 'tpope/vim-endwise'
         " Plug 'tpope/vim-rsi'
-        "?rubi-test? Plug 'skalnik/vim-vroom'
         "--------------------------------------------------------------------------------- 
-        " Plug 'vim-ruby/vim-ruby'
-        " Plug 'tpope/vim-rails'
-        " Plug 'tweekmonster/django-plus.vim'
-        "---------------------------------------------------------------------------------- 
-        " Plug 'sheerun/vim-polyglot'
-        " Plug 'kkoomen/vim-doge'
-        " Plug 'wellle/tmux-complete.vim'
-        " Plug 'tmhedberg/SimpylFold'
+        " Plug 'vim-ruby/vim-ruby
         "Plug 'markonm/traces.vim'
-        "--NewNew---TODO------------------------------------------
-        "Plug 'haya14busa/vim-easyoperator-line'
-        "Plug 'easymotion/vim-easymotion'
-        "Plug 'unblevable/quick-scope'
+        "---------------------------------------------------------------------------------- 
+        " Plug 'StanAngeloff/php.vim'
+        " Plug 'squizlabs/PHP_CodeSniffer'
+        " Plug 'LucHermitte/lh-cpp'
         "--------------------------------------------------------------------------------- 
         " Plug 'vim-scripts/foo.vim'
         "?pum? Plug 'tpope/vim-endwise'
+        "--------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------- 
+        " " assuming you're using vim-plug: https://github.com/junegunn/vim-plug
+        " Plug 'ncm2/ncm2'
+        " Plug 'roxma/nvim-yarp'
+
+        " " enable ncm2 for all buffers
+        " autocmd BufEnter * call ncm2#enable_for_buffer()
+
+        " " IMPORTANT: :help Ncm2PopupOpen for more information
+        " set completeopt=noinsert,menuone,noselect
+
+        " " NOTE: you need to install completion sources to get completions. Check
+        " " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+        " Plug 'ncm2/ncm2-bufword'
+        " Plug 'ncm2/ncm2-path'
+        "--------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------- 
 
 call plug#end()
 "---nPlugEnd-nPlugStop3----------------}}}
@@ -1131,4 +1197,3 @@ call plug#end()
         call unite#filters#sorter_default#use(['sorter_rank'])
         call unite#filters#matcher_default#use(['matcher_fuzzy'])
         call unite#filters#matcher_default#use(['matcher_fzf'])
-        command! ShowFunc call ShowFunc()
