@@ -447,24 +447,90 @@ ProjectPath uses the cwd and the arguments are not quoted.
 "--------------------------------------------------------------------------------- 
 "--------------------------------------------------------------------------------- 
 
+python3 << EOF import vim import git def is_git_repo(): try: _ = git.Repo('.',
+search_parent_directories=True).git_dir return "1" except: return "0"
+vim.command("let g:pymode_rope = " + is_git_repo()) EOF
+"---------------------------------------------------------------------------------
+"--------------------------------------------------------------------------------- 
+You should also install pynvim, which is the Python client and plugin host for
+Neovim. You can install it with pip:
+
+pip install pynvim
+
+Finally, you should set the variable g:python3_host_prog to the location of
+Python executable. If your Python executable path is ~/anaconda3/bin/python,
+you should add the following setting in your init.vim:
+
+let g:python3_host_prog=expand('~/anaconda3/bin/python')
+
+After that, open Neovim and run :checkhealth provider and make sure there is
+no error in the part about Python 3. A sample output is shown below:
+
+## Python 3 provider (optional)
+  - INFO: Using: g:python3_host_prog = "D:/Anaconda/python"
+  - INFO: Executable: D:\Anaconda\python
+  - INFO: Python version: 3.6.5
+  - INFO: pynvim version: 0.3.2
+  - OK: Latest pynvim is installed.
+
+"--------------------------------------------------------------------------------- 
+"--------------------------------------------------------------------------------- 
+" from
+" http://codeseekah.com/2012/03/04/vim-scripting-with-python-lookup-ip-country/
+
+python << en
+
+import vim, urllib
+
+def getCountryFromIP( ip ):
+  # use the minimal http://www.hostip.info/use.html API
+  return urllib.urlopen('http://api.hostip.info/country.php?ip='+ip).read()
+
+def getWordUnderCursor():
+  return vim.eval("expand('')")
+  
+def lookupIPUnderCursor():
+  ip = getWordUnderCursor()
+  print "Looking up " + ip + "..."
+  country = getCountryFromIP( ip )
+  vim.command( "redraw" ) # discard previous messages
+  print "Country: " + country
+en
+
+
+nmap  .IP :python lookupIPUnderCursor()
+
+"--------------------------------------------------------------------------------- 
+"--------------------------------------------------------------------------------- 
+"===============================================================================================================
+" generate a random integer from range [Low, High] using Python
+function! RandInt(Low, High) abort
 python3 << EOF
 import vim
-import git
-def is_git_repo():
-	try:
-		_ = git.Repo('.', search_parent_directories=True).git_dir
-		return "1"
-	except:
-		return "0"
-vim.command("let g:pymode_rope = " + is_git_repo())
+import random
+
+# using vim.eval to import variable outside Python script to python
+idx = random.randint(int(vim.eval('a:Low')), int(vim.eval('a:High')))
+
+# using vim.command to export variable inside Python script to vim script so
+# we can return its value in vim script
+vim.command("let index = {}".format(idx))
 EOF
-"--------------------------------------------------------------------------------- 
-"--------------------------------------------------------------------------------- 
+
+return index
+endfunction
+
+let s:candidate_airlinetheme = ['alduin', 'ayu_mirage', 'base16_flat',
+    \ 'monochrome', 'base16_grayscale', 'lucius', 'base16_tomorrow',
+    \ 'base16color', 'biogoo', 'distinguished', 'gruvbox', 'jellybeans',
+    \ 'luna', 'raven', 'seagull', 'solarized_flood', 'term', 'vice', 'zenburn']
+
+let s:idx = RandInt(0, len(s:candidate_airlinetheme)-1)
+let s:theme = s:candidate_airlinetheme[s:idx]
+let g:airline_theme=s:theme
 
 
-"--------------------------------------------------------------------------------- 
-"--------------------------------------------------------------------------------- 
-
-
-"--------------------------------------------------------------------------------- 
-"--------------------------------------------------------------------------------- 
+"===============================================================================================================
+:call Facebook()
+Now, the way you call the function is not so good. So we define a command:
+command! -nargs=0 Facebook call Facebook() 

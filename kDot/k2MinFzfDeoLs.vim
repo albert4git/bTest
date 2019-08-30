@@ -3,12 +3,16 @@
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Di 27 Aug 2019 04:37:33  CEST
+" Last Modified:      Fr 30 Aug 2019 03:52:30  CEST
 "==================================================================================================
 "==================================================================================================
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 "let g:deoplete#sources#jedi#extra_path = $PYTHONPATH
+
+" let g:python_host_prog = '/Users/davidbrewer/.pyenv/versions/neovim2/bin/python'
+" let g:python3_host_prog = '/Users/davidbrewer/.pyenv/versions/neovim3/bin/python'
+" let g:python3_host_prog=expand('~/anaconda3/bin/python')
 
 "-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
 call plug#begin('~/.config/nvim/plugged/')
@@ -833,10 +837,16 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'vim-scripts/Conque-Shell'
         Plug 'vim-scripts/dbext.vim'
         " Plug 'vim-scripts/spreadsheet.vim'
-
-
         "---------------------------------------------------------------------------------- 
-        " Plug 'brookhong/cscope.vim'
+        Plug 'kassio/neoterm'
+                au VimEnter,BufRead,BufNewFile *.jl set filetype=julia
+                au VimEnter,BufRead,BufNewFile *.idr set filetype=idris
+                au VimEnter,BufRead,BufNewFile *.lidr set filetype=lidris
+                au VimEnter,BufRead,BufNewFile *.lfe, set filetype=lfe
+
+                " <Plug>(neoterm-repl-send)
+        "---------------------------------------------------------------------------------- 
+        Plug 'brookhong/cscope.vim'
         "         nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
         "         nnoremap <leader>f :call CscopeFindInteractive(expand('<cword>'))<CR>
         "         nnoremap <leader>\ :call ToggleLocationList()<CR>
@@ -863,9 +873,31 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'alvan/vim-closetag'
         "---------------------------------------------------------------------------------- 
         " Plug 'junegunn/vader.vim'
-        " Plug 'janko-m/vim-test'
+        Plug 'janko-m/vim-test'
+                let test#strategy='neoterm'
         " let test#python#runner = 'pytest'
         " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose' and Python's built-in 'unittest'
+
+        "---------------------------------------------------------------------------------- 
+        " enable support for concealing some constructs with unicode glyphs.
+        " Plug 'hylang/vim-hy'
+        " let g:hy_enable_conceal = 1 
+        " If you do let g:hy_conceal_fancy=1, xi and #% are displayed as ξ
+
+        "---------------------------------------------------------------------------------- 
+        " Plug 'vim-scripts/utl.vim'
+        " - Open any URLs found in text with appropriate handler
+        " - Open files of any media type from within Vim (.pdf, .jpg, etc)
+        " - Small helper utilities via embedded Vimscript
+        " - Project management
+        " - Organizing ideas
+        " - Commenting source code
+        " - Personal Wiki
+        " - Editing HTML
+        " - Bookmark files, directories, URLs
+        "---------------------------------------------------------------------------------- 
+
+        "---------------------------------------------------------------------------------- 
 
         "-------------------------TRASH--------------------------------------------------- 
         " Plug 'WolfgangMehner/bash-support'

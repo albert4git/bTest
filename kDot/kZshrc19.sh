@@ -7,8 +7,6 @@
 #--FIN--FIN--FIN--FI
 
 #=============================================================
-# i dont see Collor ?
-#
 #=============================================================
 #=============================================================
 # cprof
@@ -609,35 +607,7 @@ function prev() {
   sh -c "pet new `printf %q "$PREV"`"
 }
 
-alternate () {
-  local alter words i j
-  i=1 
-  j=0 
-  words=("${(z)LBUFFER}") 
-  if [[ $words[$i] = git ]]
-  then
-    alter=(add branch checkout status commit merge) 
-  elif [[ $words[$i] = systemctl ]]
-  then
-    alter=(start enable status) 
-  else
-    return 0
-  fi
-  (( i++ ))
-  while [[ $words[$i] = -* ]]
-  do
-    (( i++ ))
-  done
-  j=${alter[(ie)$words[$i]]} 
-  if [[ $j -lt ${#alter} ]]
-  then
-    (( j++ ))
-  else
-    j=1 
-  fi
-  LBUFFER="$words[1,((i-1))] $alter[$j] $words[((i+1)),$#words]"
-}
-bindkey -M viins -- '\e\t' alternate
+#==========================================================================================
 #==========================================================================================
 # zplug "junegunn/fzf-bin", \
 #     as:command, \
@@ -669,12 +639,14 @@ bindkey -M viins -- '\e\t' alternate
 # export PATH=${PATH}:~/.composer/vendor/bin
 # export PATH=${PATH}:/home/vagrant/bin
 # export PATH=${PATH}:vendor/bin
+
 #===LOAD===PROFILE========================================================================
 #if [ -x /etc/profile ]; then
 #    setopt -G
 #    . /etc/profile
 #    setopt +G
 #fi
+
 #==========================================================================================
 # export PATH="${PATH}:${HOME}/bin:${HOME}/.cabal/bin"
 # export GOPATH="$HOME/go"
@@ -746,9 +718,9 @@ bindkey -M viins -- '\e\t' alternate
 #############################################################
 #" If installed using git
 #set rtp+=~/.fzf
-
 # tig on  master: 
 #  make install
 #    INSTALL  src/tig -> /home/red/bin
 #    INSTALL  tigrc -> /home/red/etc
+
 source ~/.config/up/up.sh

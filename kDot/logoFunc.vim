@@ -160,3 +160,7 @@ endfunction
 command! CColorizeSignColumn call ColorizeSignColumn()
 autocmd BufEnter * :call ColorizeSignColumn()
 "===============================================================================================================
+
+
+
+

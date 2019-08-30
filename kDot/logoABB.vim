@@ -7,12 +7,13 @@ ab fucntion function
 ab dupate update
 ab upate update
 ab udpate update
+ab teh the
+ab fro for
 
 iabbrev yyy "---------------------------------------------------------------------------------
 iabbrev yyy1 "---------------------------------------------------------------------------------------------
 iabbrev yyy2 "--------------------------------------------------------------------------------------------------{{{
 iabbrev yyy3 "....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10<esc>
-iabbrev AB Alf B.
 iabbrev a@    albert@sv.com
 iabbrev c@ Copyright 2018 Albert, all rights reserved.
 autocmd FileType vim :iabbrev <buffer> iff if ()<left>
@@ -24,12 +25,10 @@ iabbrev cdate  <c-r>=strftime("%c")<cr>
 cabbrev sta vertical sta
 cabbrev h vertical help
 "===================================================================================================
-:iab FF0 if ()<Left>
-:iab FF1 for (i = 0; i < ; ++i)
+:iab ff0 if ()<Left>
+:iab ff1 for (i = 0; i < ; ++i)
+"===================================================================================================
 
-
-:ab teh the
-:ab fro for
 iabbrev str START
 iabbrev strt START
 iabbrev stp STOP
@@ -54,7 +53,6 @@ endfunction
 call MakeSpacelessIabbrev('bb/',  'http://bitbucket.org/')
 call MakeSpacelessIabbrev('gh/',  'http://github.com/')
 call MakeSpacelessIabbrev('ghs/', 'http://github.com/sjl/')
-
 
 
 "---------------------------------------------------------------------------------- 
@@ -83,8 +81,12 @@ endfunction
 "============================================================
 "-------- BoxMyCenter("GoldShnitt")--------------------------
 "============================================================
+" call BoxMy("Gold Stuck.chen")
 
-command! BoxMyCenter call BoxMyCenter()
+
+cabbrev BoxM  call BoxMyCenter("")
+
+command! BoxMyC call BoxMyCenter()
 
 function! BoxMyCenter(...)
 
@@ -140,6 +142,14 @@ endfunction
 " We define <leader>b as a shortcut to create/delete a box.
 " nnoremap <leader>b :<c-u>call CommentBox()<cr>
 command! BoxC call BoxC()
+
+" ############################################################################## 
+" snow
+" ############################################################################## 
+" ############################################################################## 
+" snow2
+" ############################################################################## 
+
 
 function! BoxC()
 
@@ -249,20 +259,5 @@ endfunction
         :endfun
 "--------------------------------------------------------------------------------- 
 
-
-        command! -nargs=+ -complete=file MyEdit
-                                \ for f in expand(<q-args>, 0, 1) |
-                                \ exe '<mods> split ' . f |
-                                \ endfor
-"--------------------------------------------------------------------------------- 
-
-        function! SpecialEdit(files, mods)
-                for f in expand(a:files, 0, 1)
-                        exe a:mods . ' split ' . f
-                endfor
-        endfunction
-        command! -nargs=+ -complete=file Sedit
-                                \ call SpecialEdit(<q-args>, <q-mods>)
-"--------------------------------------------------------------------------------- 
 
 
