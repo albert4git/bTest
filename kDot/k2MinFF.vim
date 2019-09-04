@@ -3,7 +3,7 @@
 "==================================================================================================
 "-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Fr 30 Aug 2019 03:58:51  CEST
+" Last Modified:      So 01 Sep 2019 03:28:18  CEST
 "==================================================================================================
 "==================================================================================================
 "==================================================================================================
@@ -328,6 +328,7 @@
         call matchadd('customPink', '--')
         "------------------------------------------------------
         hi Comment        ctermfg=241
+        hi Comment        ctermfg=249
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "source ~/git/bTest/kDot/myPlug/logoCyan.vim
         source ~/git/bTest/kDot/myPlug/nHydra.vim
@@ -726,8 +727,8 @@
         "==================================================================================
         "====
 
-                nnoremap <LocalLeader>c :CodeQueryMenu Unite Full<CR>
-                nnoremap <LocalLeader>; :CodeQueryMenu Unite Magic<CR>
+                nnoremap <LocalLeader>; :CodeQueryMenu Unite Full<CR>
+                " nnoremap <LocalLeader>; :CodeQueryMenu Unite Magic<CR>
                 " Or enable typing (to search menu items) by default
                 nnoremap <LocalLeader>\ :CodeQueryMenu Unite Magic<CR>A
 
@@ -1236,11 +1237,9 @@ function! MyJumpTo()
         :exe "norm \<C-]>"
     endif
 endfunction
-
-"===============================================================================
-" Function Keymappings
 "===============================================================================
 nnoremap <Leader>5 :call MyJumpTo()<CR>
+
 "===============================================================================================================
 nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
 " f: Find this file

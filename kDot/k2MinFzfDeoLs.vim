@@ -2,8 +2,9 @@
 "-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
+"==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Fr 30 Aug 2019 03:52:30  CEST
+" Last Modified:      Mi 04 Sep 2019 09:33:46  CEST
 "==================================================================================================
 "==================================================================================================
 let g:python_host_prog = '/usr/bin/python2'
@@ -107,7 +108,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "-=TTT=-
         Plug 'xolox/vim-pyref'
                 let g:pyref_mapping = 'T'
-                let g:pyref_python = '/usr/share/doc/python3/html/'
+                " let g:pyref_python = '/usr/share/doc/python3/html/'
                 "let g:pyref_python = '/usr/share/doc/python/'
                 "let g:pyref_python = 'file:///usr/share/doc/python2.7/html/index.html'
                 "let g:pyref_python = $HOME . '/docs/python'
@@ -209,6 +210,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'sukima/xmledit/'
         autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
         autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+        "---------------------------------------------------------------------------------- 
         Plug 'sjl/gundo.vim'
         Plug 'coderifous/textobj-word-column.vim'
         "----vac----
@@ -240,6 +242,8 @@ call plug#begin('~/.config/nvim/plugged/')
         " <c-_>p       :: Comment the current inner paragraph
 
         "---------------------------------------------------------------------------------- 
+        Plug 'prabirshrestha/async.vim'
+        Plug 'skywind3000/asyncrun.vim'
         Plug 'neomake/neomake'
         Plug 'tpope/vim-dispatch'
         let g:dispatch_compilers = {
@@ -466,6 +470,15 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:AutoPairsMapCR=0
                 let g:AutoPairsMapCh=1
                 let g:AutoPairsDelete = '<M-5>'
+
+
+        " <CR> : Insert new indented line after return if cursor in blank brackets
+        "        or quotes.
+        " <BS> : Delete brackets in pair
+        " <M-p>: Toggle Autopairs (|g:AutoPairsShortcutToggle|)
+        " <M-e>: Fast Wrap (|g:AutoPairsShortcutFastWrap|)
+        " <M-n>: Jump to next closed pair (|g:AutoPairsShortcutJump|)
+        " <M-b>: BackInsert (|g:AutoPairsShortcutBackInsert|)
         "---------------------------------------------------------------------------------
 
          "{ sin ( cosin ( <b>'x2'</b> ) ) }
@@ -610,7 +623,7 @@ call plug#begin('~/.config/nvim/plugged/')
                         autocmd FileType dart AutoFormatBuffer dartfmt
                         autocmd FileType go AutoFormatBuffer gofmt
                         autocmd FileType gn AutoFormatBuffer gn
-                        autocmd FileType html,css,json AutoFormatBuffer js-beautify
+                        " autocmd FileType html,css,json AutoFormatBuffer js-beautify
                         autocmd FileType java AutoFormatBuffer google-java-format
                         autocmd FileType python AutoFormatBuffer yapf
                         " Alternative: autocmd FileType python AutoFormatBuffer autopep8
@@ -866,11 +879,13 @@ call plug#begin('~/.config/nvim/plugged/')
         "         nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
         "         " i: Find files #including this file
         "         nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
-        "---------------------------------------------------------------------------------- 
 
         "-------------------------TESTING-------------------------------------------------
         " Plug 'vim-scripts/CRefVim'
-        " Plug 'alvan/vim-closetag'
+        Plug 'alvan/vim-closetag'
+        let g:closetag_close_shortcut = '<leader>>'
+        let g:closetag_filetypes = 'html,xhtml,phtml'
+        let g:closetag_xhtml_filetypes = 'xhtml,jsx'
         "---------------------------------------------------------------------------------- 
         " Plug 'junegunn/vader.vim'
         Plug 'janko-m/vim-test'
@@ -878,13 +893,13 @@ call plug#begin('~/.config/nvim/plugged/')
         " let test#python#runner = 'pytest'
         " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose' and Python's built-in 'unittest'
 
-        "---------------------------------------------------------------------------------- 
+        "------------------TODO------------------------------------------------------------ 
         " enable support for concealing some constructs with unicode glyphs.
         " Plug 'hylang/vim-hy'
         " let g:hy_enable_conceal = 1 
         " If you do let g:hy_conceal_fancy=1, xi and #% are displayed as ξ
 
-        "---------------------------------------------------------------------------------- 
+        "------------------TODO------------------------------------------------------------ 
         " Plug 'vim-scripts/utl.vim'
         " - Open any URLs found in text with appropriate handler
         " - Open files of any media type from within Vim (.pdf, .jpg, etc)
@@ -897,6 +912,12 @@ call plug#begin('~/.config/nvim/plugged/')
         " - Bookmark files, directories, URLs
         "---------------------------------------------------------------------------------- 
 
+        "---------------------------NEW------------------------------------------------------ 
+        " Plug 'fcamel/gj'
+        " Plug 'yegappan/lid'
+        "---------------------------------------------------------------------------------- 
+        " Plug 'mhartington/nvim-typescript'
+        " autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
         "---------------------------------------------------------------------------------- 
 
         "-------------------------TRASH--------------------------------------------------- 

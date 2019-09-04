@@ -1,0 +1,5 @@
+syn keyword CTagsMember clearText replaceText appendToDisplay calculateExpression createWidgets __init__
+syn keyword CTagsGlobalVariable r y n z U ax fig im t f v circle x tol a calculator app b
+syn keyword CTagsFunction plot2d func
+syn keyword CTagsClass Application
+

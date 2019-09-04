@@ -19,10 +19,18 @@
 ##########################################################################################
 #rsync -r dir1/ dir2
 
+# List tar.gz contents short command
+tar -ztvf archive.tar.gz
+# List tar.gz contents short command
+tar -ztvf archive.tar.gz
+# List tar.bz2 contents short command
+tar -jtvf archive.tar.bz2
+# Task: Search for specific files
+tar -tvf projects.tar.bz2 '*.pl'
 
 
-
-
+diff <(tar -tvf 1.tar | awk '{printf "%10s %200s %10s\n",$3,$6,$1}'|sort -k2) 
+<(tar -tvf 2.tar|awk '{printf "%10s %200s %10s\n",$3,$6,$1}'|sort -k2)
 #==============================================================
 #rsync -anv dir1/ dir2
 # rsync -anv ~/.config/ /media/red/124Black/git/dotRedCong
@@ -196,6 +204,11 @@ rsync -avz --delete ~/.config/ /media/red/124Black/git/dotRedCong
 
 rsync -avz --delete ~/.config/nvim/plugged/zeavim.vim /media/red/124Black/git/dotRedCong/nvim/plugged/zeavim.vim
 
+###----DRY--------------------------------------------------------------------###
+rsync -anv --delete ~/.config/nvim/plugged/ /media/red/124Black/git/dotRedCong/nvim/plugged/
+###----PLUG---------------------------------------------------------------------###
+rsync -avz --delete ~/.config/nvim/plugged/ /media/red/124Black/git/dotRedCong/nvim/plugged/
+
 ls /media/red/124Black/git/dotRedCong/nvim/plugged/zeavim.vim
 
 
@@ -210,7 +223,7 @@ grep CRON /var/log/syslog
 tar --listed-incremental=/media/backup/snapshot.file -cJpf /media/backup/home-backup-`date +%d-%m-%Y`.tar.xz /home/user/{Documents,Downloads,Pictures,Music,.config,.Xresources,.xinitrc,.i3,.mozilla,.zshrc}
 #---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
 # 2. Downloads
-tar --listed-incremental=/media/red/124Black/SNAR/snapshot.file -cJpf /media/red/124Black/SNAR/home-backup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/Downloads
+tar --listed-incremental=/media/red/124Black/SNAR/snapshot.file -cJpf /media/red/124Black/SNAR/h:ome-backup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/Downloads
 # NEXT ??? single liner ???
 # NEXT ??? single liner !!!YES
 tar --listed-incremental=/media/red/124Black/SNAR/bTestSnap.file -cJpf /media/red/124Black/SNAR/bTestBackup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/git/bTest/

@@ -1,0 +1,2403 @@
+cscope 15 /home/red/git/bTest/kDot/xPyEnv38 -c 0000013826
+	@./ruScipySalynka.py
+
+6 from 
+	~sympy
+ import *
+
+10 print 
+	`limit
+ ( 
+	`sin
+ ( 
+x
+ ) / 
+x
+ , 
+x
+ , 0 )
+
+11 print 
+	`limit
+ ( 1 / 
+x
+ , 
+x
+ , 
+oo
+ )
+
+12 print 
+	`limit
+ ( 
+x
+ ** 
+x
+ , 
+x
+ , 0 )
+
+16 print 
+	`diff
+ ( 
+	`sin
+ ( 
+x
+ ) , 
+x
+ )
+
+17 print 
+	`diff
+ ( 
+	`sin
+ ( 2 * 
+x
+ ) , 
+x
+ )
+
+18 print 
+	`diff
+ ( 
+	`tan
+ ( 
+x
+ ) , 
+x
+ )
+
+19 print 
+	`limit
+ ( ( 
+	`tan
+ ( 
+x
+ + 
+y
+ ) - 
+	`tan
+ ( 
+x
+ ) ) / 
+y
+ , 
+y
+ , 0 )
+
+21 print 
+	`diff
+ ( 
+	`sin
+ ( 2 * 
+x
+ ) , 
+x
+ , 1 )
+
+22 print 
+	`diff
+ ( 
+	`sin
+ ( 2 * 
+x
+ ) , 
+x
+ , 2 )
+
+23 print 
+	`diff
+ ( 
+	`sin
+ ( 2 * 
+x
+ ) , 
+x
+ , 3 )
+
+24 print 
+	`integrate
+ ( 6 * 
+x
+ ** 5 , 
+x
+ )
+
+25 print 
+	`integrate
+ ( 
+	`sin
+ ( 
+x
+ ) , 
+x
+ )
+
+26 print 
+	`integrate
+ ( 
+	`log
+ ( 
+x
+ ) , 
+x
+ )
+
+27 print 
+	`integrate
+ ( 2 * 
+x
+ + 
+	`sinh
+ ( 
+x
+ ) , 
+x
+ )
+
+28 print 
+	`integrate
+ ( 
+	`exp
+ ( - 
+x
+ ** 2 ) * 
+	`erf
+ ( 
+x
+ ) , 
+x
+ )
+
+32 print 
+	`integrate
+ ( 
+x
+ ** 3 , ( 
+x
+ , - 1 , 1 ) )
+
+33 print 
+	`integrate
+ ( 
+	`sin
+ ( 
+x
+ ) , ( 
+x
+ , 0 , 
+pi
+ / 2 ) )
+
+34 print 
+	`integrate
+ ( 
+	`cos
+ ( 
+x
+ ) , ( 
+x
+ , - 
+pi
+ / 2 , 
+pi
+ / 2 ) )
+
+38 print 
+	`integrate
+ ( 
+	`exp
+ ( - 
+x
+ ) , ( 
+x
+ , 0 , 
+oo
+ ) )
+
+39 print 
+	`integrate
+ ( 
+	`exp
+ ( - 
+x
+ ** 2 ) , ( 
+x
+ , - 
+oo
+ , 
+oo
+ ) )
+
+40 print 
+	`solve
+ ( 
+x
+ ** 4 - 1 , 
+x
+ )
+
+41 print 
+	`solve
+ ( [ 
+x
+ + 5 * 
+y
+ - 2 , - 3 * 
+x
+ + 6 * 
+y
+ - 15 ] , [ 
+x
+ , 
+y
+ ] )
+
+42 
+	=f
+ = 
+x
+ ** 4 - 3 * 
+x
+ ** 2 + 1
+
+43 print 
+f
+
+44 print 
+	`factor
+ ( 
+f
+ )
+
+45 print 
+	`factor
+ ( 
+f
+ , 
+modulus
+ = 5 )
+
+46 print 
+	`satisfiable
+ ( 
+x
+ & 
+y
+ )
+
+49 import 
+	~numpy
+
+50 import 
+	~pylab
+
+52 
+	=mu
+ , 
+	=sigma
+ = 2 , 0.5
+
+53 
+	=v
+ = 
+numpy
+ . 
+random
+ . 
+	`normal
+ ( 
+mu
+ , 
+sigma
+ , 10000 )
+
+55 
+pylab
+ . 
+	`hist
+ ( 
+v
+ , 
+bins
+ = 50 , 
+normed
+ = 1 )
+
+56 
+pylab
+ . 
+	`show
+ ( )
+
+58 ( 
+	=n
+ , 
+	=bins
+ ) = 
+numpy
+ . 
+	`histogram
+ ( 
+v
+ , 
+bins
+ = 50 , 
+normed
+ = 1 )
+
+59 
+pylab
+ . 
+	`plot
+ ( 
+bins
+ , 
+n
+ )
+
+60 
+pylab
+ . 
+	`show
+ ( )
+
+63 from 
+	~pylab
+ import *
+
+66 def 
+	$plot2d
+ ( 
+xmin
+ , 
+xmax
+ , 
+func
+ ) :
+
+67 
+	=x
+ = 
+np
+ . 
+	`linspace
+ ( 
+xmin
+ , 
+xmax
+ , 
+num
+ = 50 )
+
+68 
+	=y
+ = 
+	`func
+ ( 
+x
+ )
+
+69 
+	`plot
+ ( 
+x
+ , 
+y
+ )
+
+70 
+	`show
+ ( ) 
+	}
+
+73 def 
+	$func
+ ( 
+x
+ ) :
+
+74 
+	=y
+ = 
+x
+ ** 2
+
+75 return 
+y
+ 
+	}
+
+78 
+	`plot2d
+ ( 0 , 10 , 
+func
+ )
+
+81 import 
+	~numpy
+ as 
+np
+
+82 import 
+	~matplotlib.pyplot
+ as 
+plt
+
+84 
+	=t
+ = 
+np
+ . 
+	`arange
+ ( 0. , 5. , 0.2 )
+
+86 
+plt
+ . 
+	`plot
+ ( 
+t
+ , 
+t
+ , 'r--' , 
+t
+ , 
+t
+ ** 2 , 'bs' , 
+t
+ , 
+t
+ ** 3 , 'g^' )
+
+87 
+plt
+ . 
+	`show
+ ( )
+
+
+	@./50calc.py
+
+1 from 
+	~tkinter
+ import *
+
+2 from 
+	~tkinter
+ import 
+messagebox
+
+4 
+	=calculator
+ = 
+	`Tk
+ ( )
+
+5 
+calculator
+ . 
+	`title
+ ( "CALCULATOR" )
+
+14 class 
+	cApplication
+ ( 
+Frame
+ ) :
+
+15 def 
+	$__init__
+ ( 
+self
+ , 
+master
+ , * 
+args
+ , ** 
+kwargs
+ ) :
+
+16 
+Frame
+ . 
+	`__init__
+ ( 
+self
+ , 
+master
+ , * 
+args
+ , ** 
+kwargs
+ )
+
+17 
+self
+ . 
+	`createWidgets
+ ( )
+
+18 
+self
+ . 
+	`createWidgets
+ ( ) 
+	}
+
+20 def 
+	$replaceText
+ ( 
+self
+ , 
+text
+ ) :
+
+21 
+self
+ . 
+display
+ . 
+	`delete
+ ( 0 , 
+END
+ )
+
+22 
+self
+ . 
+display
+ . 
+	`insert
+ ( 0 , 
+text
+ ) 
+	}
+
+24 def 
+	$appendToDisplay
+ ( 
+self
+ , 
+text
+ ) :
+
+25 
+self
+ . 
+	=entryText
+ = 
+self
+ . 
+display
+ . 
+	`get
+ ( )
+
+26 
+self
+ . 
+	=textLength
+ = 
+	`len
+ ( 
+self
+ . 
+entryText
+ )
+
+28 if 
+self
+ . 
+entryText
+ == "0" :
+
+29 
+self
+ . 
+	`replaceText
+ ( 
+text
+ )
+
+31 
+self
+ . 
+display
+ . 
+	`insert
+ ( 
+self
+ . 
+textLength
+ , 
+text
+ ) 
+	}
+
+33 def 
+	$calculateExpression
+ ( 
+self
+ ) :
+
+34 
+self
+ . 
+	=expression
+ = 
+self
+ . 
+display
+ . 
+	`get
+ ( )
+
+35 
+self
+ . 
+	=expression
+ = 
+self
+ . 
+expression
+ . 
+	`replace
+ ( "%" , "/ 100" )
+
+38 
+self
+ . 
+	=result
+ = 
+	`eval
+ ( 
+self
+ . 
+expression
+ )
+
+39 
+calculator
+ . 
+transient
+
+40 
+self
+ . 
+	`replaceText
+ ( 
+self
+ . 
+result
+ )
+
+42 
+messagebox
+ . 
+	`showinfo
+ ( "ERROR"
+
+43 , "Invalid input" , 
+icon
+ = "warning" , 
+parent
+ = 
+calculator
+ ) 
+	}
+
+45 def 
+	$clearText
+ ( 
+self
+ ) :
+
+46 
+self
+ . 
+	`replaceText
+ ( "0" ) 
+	}
+
+48 def 
+	$createWidgets
+ ( 
+self
+ ) :
+
+49 
+self
+ . 
+	=display
+ = 
+	`Entry
+ (
+
+50 
+self
+ ,
+
+51 
+font
+ = ( "Helvetica" , 16 ) ,
+
+52 
+borderwidth
+ = 0 ,
+
+53 
+relief
+ = 
+RAISED
+ ,
+
+54 
+justify
+ = 
+RIGHT
+ )
+
+55 
+self
+ . 
+display
+ . 
+	`insert
+ ( 0 , "0" )
+
+56 
+self
+ . 
+display
+ . 
+	`grid
+ ( 
+row
+ = 0 , 
+column
+ = 0 , 
+columnspan
+ = 5 )
+
+59 
+self
+ . 
+	=sevenButton
+ = 
+	`Button
+ (
+
+60 
+self
+ ,
+
+61 
+font
+ = ( "Helvetica" , 11 ) ,
+
+62 
+text
+ = "7" ,
+
+63 
+borderwidth
+ = 0 ,
+
+64 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "7" ) )
+
+66 
+self
+ . 
+sevenButton
+ . 
+	`grid
+ ( 
+row
+ = 1 , 
+column
+ = 0 , 
+sticky
+ = "NWNESWSE" )
+
+68 
+self
+ . 
+	=eightButton
+ = 
+	`Button
+ (
+
+69 
+self
+ ,
+
+70 
+font
+ = ( "Helvetica" , 11 ) ,
+
+71 
+text
+ = "8" ,
+
+72 
+borderwidth
+ = 0 ,
+
+73 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "8" ) )
+
+74 
+self
+ . 
+eightButton
+ . 
+	`grid
+ ( 
+row
+ = 1 , 
+column
+ = 1 , 
+sticky
+ = "NWNESWSE" )
+
+76 
+self
+ . 
+	=nineButton
+ = 
+	`Button
+ (
+
+77 
+self
+ ,
+
+78 
+font
+ = ( "Helvetica" , 11 ) ,
+
+79 
+text
+ = "9" ,
+
+80 
+borderwidth
+ = 0 ,
+
+81 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "9" ) )
+
+82 
+self
+ . 
+nineButton
+ . 
+	`grid
+ ( 
+row
+ = 1 , 
+column
+ = 2 , 
+sticky
+ = "NWNESWSE" )
+
+84 
+self
+ . 
+	=timesButton
+ = 
+	`Button
+ (
+
+85 
+self
+ ,
+
+86 
+font
+ = ( "Helvetica" , 11 ) ,
+
+87 
+text
+ = "*" ,
+
+88 
+borderwidth
+ = 0 ,
+
+89 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "*" ) )
+
+90 
+self
+ . 
+timesButton
+ . 
+	`grid
+ ( 
+row
+ = 1 , 
+column
+ = 3 , 
+sticky
+ = "NWNESWSE" )
+
+92 
+self
+ . 
+	=clearButton
+ = 
+	`Button
+ (
+
+93 
+self
+ ,
+
+94 
+font
+ = ( "Helvetica" , 11 ) ,
+
+95 
+text
+ = "C" ,
+
+96 
+borderwidth
+ = 0 ,
+
+97 
+command
+ = lambda : 
+self
+ . 
+	`clearText
+ ( ) )
+
+98 
+self
+ . 
+clearButton
+ . 
+	`grid
+ ( 
+row
+ = 1 , 
+column
+ = 4 , 
+sticky
+ = "NWNESWSE" )
+
+101 
+self
+ . 
+	=fourButton
+ = 
+	`Button
+ (
+
+102 
+self
+ ,
+
+103 
+font
+ = ( "Helvetica" , 11 ) ,
+
+104 
+text
+ = "4" ,
+
+105 
+borderwidth
+ = 0 ,
+
+106 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "4" ) )
+
+107 
+self
+ . 
+fourButton
+ . 
+	`grid
+ ( 
+row
+ = 2 , 
+column
+ = 0 , 
+sticky
+ = "NWNESWSE" )
+
+109 
+self
+ . 
+	=fiveButton
+ = 
+	`Button
+ (
+
+110 
+self
+ ,
+
+111 
+font
+ = ( "Helvetica" , 11 ) ,
+
+112 
+text
+ = "5" ,
+
+113 
+borderwidth
+ = 0 ,
+
+114 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "5" ) )
+
+115 
+self
+ . 
+fiveButton
+ . 
+	`grid
+ ( 
+row
+ = 2 , 
+column
+ = 1 , 
+sticky
+ = "NWNESWSE" )
+
+117 
+self
+ . 
+	=sixButton
+ = 
+	`Button
+ (
+
+118 
+self
+ ,
+
+119 
+font
+ = ( "Helvetica" , 11 ) ,
+
+120 
+text
+ = "6" ,
+
+121 
+borderwidth
+ = 0 ,
+
+122 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "6" ) )
+
+123 
+self
+ . 
+sixButton
+ . 
+	`grid
+ ( 
+row
+ = 2 , 
+column
+ = 2 , 
+sticky
+ = "NWNESWSE" )
+
+125 
+self
+ . 
+	=divideButton
+ = 
+	`Button
+ (
+
+126 
+self
+ ,
+
+127 
+font
+ = ( "Helvetica" , 11 ) ,
+
+128 
+text
+ = "/" ,
+
+129 
+borderwidth
+ = 0 ,
+
+130 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "/" ) )
+
+131 
+self
+ . 
+divideButton
+ . 
+	`grid
+ ( 
+row
+ = 2 , 
+column
+ = 3 , 
+sticky
+ = "NWNESWSE" )
+
+133 
+self
+ . 
+	=percentageButton
+ = 
+	`Button
+ (
+
+134 
+self
+ ,
+
+135 
+font
+ = ( "Helvetica" , 11 ) ,
+
+136 
+text
+ = "%" ,
+
+137 
+borderwidth
+ = 0 ,
+
+138 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "%" ) )
+
+139 
+self
+ . 
+percentageButton
+ . 
+	`grid
+ ( 
+row
+ = 2 , 
+column
+ = 4 , 
+sticky
+ = "NWNESWSE" )
+
+141 
+self
+ . 
+	=oneButton
+ = 
+	`Button
+ (
+
+142 
+self
+ ,
+
+143 
+font
+ = ( "Helvetica" , 11 ) ,
+
+144 
+text
+ = "1" ,
+
+145 
+borderwidth
+ = 0 ,
+
+146 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "1" ) )
+
+148 
+self
+ . 
+oneButton
+ . 
+	`grid
+ ( 
+row
+ = 3 , 
+column
+ = 0 , 
+sticky
+ = "NWNESWSE" )
+
+150 
+self
+ . 
+	=twoButton
+ = 
+	`Button
+ (
+
+151 
+self
+ ,
+
+152 
+font
+ = ( "Helvetica" , 11 ) ,
+
+153 
+text
+ = "2" ,
+
+154 
+borderwidth
+ = 0 ,
+
+155 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "2" ) )
+
+156 
+self
+ . 
+twoButton
+ . 
+	`grid
+ ( 
+row
+ = 3 , 
+column
+ = 1 , 
+sticky
+ = "NWNESWSE" )
+
+158 
+self
+ . 
+	=threeButton
+ = 
+	`Button
+ (
+
+159 
+self
+ ,
+
+160 
+font
+ = ( "Helvetica" , 11 ) ,
+
+161 
+text
+ = "3" ,
+
+162 
+borderwidth
+ = 0 ,
+
+163 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "3" ) )
+
+164 
+self
+ . 
+threeButton
+ . 
+	`grid
+ ( 
+row
+ = 3 , 
+column
+ = 2 , 
+sticky
+ = "NWNESWSE" )
+
+166 
+self
+ . 
+	=minusButton
+ = 
+	`Button
+ (
+
+167 
+self
+ ,
+
+168 
+font
+ = ( "Helvetica" , 11 ) ,
+
+169 
+text
+ = "-" ,
+
+170 
+borderwidth
+ = 0 ,
+
+171 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "-" ) )
+
+172 
+self
+ . 
+minusButton
+ . 
+	`grid
+ ( 
+row
+ = 3 , 
+column
+ = 3 , 
+sticky
+ = "NWNESWSE" )
+
+174 
+self
+ . 
+	=equalsButton
+ = 
+	`Button
+ (
+
+175 
+self
+ ,
+
+176 
+font
+ = ( "Helvetica" , 11 ) ,
+
+177 
+text
+ = "=" ,
+
+178 
+borderwidth
+ = 0 ,
+
+179 
+command
+ = lambda : 
+self
+ . 
+	`calculateExpression
+ ( ) )
+
+180 
+self
+ . 
+equalsButton
+ . 
+	`grid
+ ( 
+row
+ = 3 , 
+column
+ = 4 , 
+sticky
+ = "NWNESWSE" , 
+rowspan
+ = 2 )
+
+183 
+self
+ . 
+	=zeroButton
+ = 
+	`Button
+ (
+
+184 
+self
+ ,
+
+185 
+font
+ = ( "Helvetica" , 11 ) ,
+
+186 
+text
+ = "0" ,
+
+187 
+borderwidth
+ = 0 ,
+
+188 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "0" ) )
+
+189 
+self
+ . 
+zeroButton
+ . 
+	`grid
+ ( 
+row
+ = 4 , 
+column
+ = 0 , 
+columnspan
+ = 2 , 
+sticky
+ = "NWNESWSE" )
+
+191 
+self
+ . 
+	=dotButton
+ = 
+	`Button
+ (
+
+192 
+self
+ ,
+
+193 
+font
+ = ( "Helvetica" , 11 ) ,
+
+194 
+text
+ = "." ,
+
+195 
+borderwidth
+ = 0 ,
+
+196 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "." ) )
+
+197 
+self
+ . 
+dotButton
+ . 
+	`grid
+ ( 
+row
+ = 4 , 
+column
+ = 2 , 
+sticky
+ = "NWNESWSE" )
+
+199 
+self
+ . 
+	=plusButton
+ = 
+	`Button
+ (
+
+200 
+self
+ ,
+
+201 
+font
+ = ( "Helvetica" , 11 ) ,
+
+202 
+text
+ = "+" ,
+
+203 
+borderwidth
+ = 0 ,
+
+204 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "+" ) )
+
+205 
+self
+ . 
+plusButton
+ . 
+	`grid
+ ( 
+row
+ = 4 , 
+column
+ = 3 , 
+sticky
+ = "NWNESWSE" ) 
+	}
+
+208 
+	=app
+ = 
+	`Application
+ ( 
+calculator
+ ) . 
+	`grid
+ ( )
+
+209 
+calculator
+ . 
+	`mainloop
+ ( )
+
+
+	@./ruPyTest02.py
+
+12 from 
+	~scipy
+ import 
+linalg
+ as 
+la
+
+17 import 
+	~Image
+
+18 
+	=im
+ = 
+Image
+ . 
+	`open
+ ( "lena.ppm" )
+
+19 print 
+im
+ . 
+format
+ , 
+im
+ . 
+size
+ , 
+im
+ . 
+mode
+
+20 
+im
+ . 
+	`show
+ ( )
+
+23 from 
+	~sympy
+ import *
+
+24 from 
+	~pylab
+ import *
+
+25 import 
+	~numpy
+ as 
+np
+
+26 from 
+	~matplotlib
+ import 
+pyplot
+ as 
+plt
+
+27 from 
+	~mpl_toolkits.mplot3d
+ import 
+Axes3D
+
+28 
+	=n
+ = 100
+
+29 
+	=tol
+ = .0001
+
+30 
+	=U
+ = 
+np
+ . 
+	`ones
+ ( ( 
+n
+ , 
+n
+ ) )
+
+31 
+	=U
+ [ : , 0 ] = 100
+
+32 
+	=U
+ [ : , - 1 ] = 100
+
+33 
+	=U
+ [ 0 ] = 0
+
+34 
+	=U
+ [ - 1 ] = 0
+
+37 
+	`laplace
+ ( 
+U
+ , 
+tol
+ )
+
+38 
+	=x
+ = 
+np
+ . 
+	`linspace
+ ( 0 , 1 , 
+n
+ )
+
+39 
+	=y
+ = 
+np
+ . 
+	`linspace
+ ( 0 , 1 , 
+n
+ )
+
+40 
+	=X
+ , 
+	=Y
+ = 
+np
+ . 
+	`meshgrid
+ ( 
+x
+ , 
+y
+ )
+
+41 
+	=fig
+ = 
+plt
+ . 
+	`figure
+ ( )
+
+42 
+	=ax
+ = 
+fig
+ . 
+	`gca
+ ( 
+projection
+ = ' 3d ' )
+
+43 
+ax
+ . 
+	`plot_surface
+ ( 
+X
+ , 
+Y
+ , 
+U
+ , 
+rstride
+ = 5 )
+
+44 
+plt
+ . 
+	`show
+ ( )
+
+48 import 
+	~pylab
+ as 
+pl
+
+49 import 
+	~numpy
+ as 
+np
+
+50 
+pl
+ . 
+	`figure
+ ( 
+figsize
+ = ( 4 , 4 ) )
+
+51 
+pl
+ . 
+	`title
+ ( 'pylab.arrow, square ratio' )
+
+52 
+	=z
+ = 
+np
+ . 
+	`arange
+ ( 10 )
+
+53 
+pl
+ . 
+	`plot
+ ( 
+z
+ , 
+z
+ , 'ro' )
+
+54 
+pl
+ . 
+	`arrow
+ ( 2 , 2 , 3 , 4 , 
+head_width
+ = 0.5 , 
+head_length
+ = 1 )
+
+55 
+pl
+ . 
+	`show
+ ( )
+
+58 import 
+	~pylab
+ as 
+pl
+
+59 import 
+	~numpy
+ as 
+np
+
+60 
+	=x
+ = 
+np
+ . 
+	`arange
+ ( 0.1 , 1000 , 0.1 )
+
+61 
+	=y
+ = 
+np
+ . 
+	`log
+ ( 
+x
+ )
+
+62 
+pl
+ . 
+	`figure
+ ( 
+figsize
+ = ( 6 , 4 ) )
+
+63 
+pl
+ . 
+	`title
+ ( 'pylab.arrow, different axis scale' )
+
+64 
+pl
+ . 
+	`plot
+ ( 
+x
+ , 
+y
+ , 'b-' )
+
+65 
+pl
+ . 
+	`arrow
+ ( 400 , 2 , 200 , 3 , 
+head_width
+ = 0.5 , 
+head_length
+ = 1 )
+
+66 
+pl
+ . 
+	`arrow
+ ( 200 , 2 , 300 , 4 , 
+head_width
+ = 0.5 , 
+head_length
+ = 100 )
+
+67 
+pl
+ . 
+	`ylim
+ ( 
+ymin
+ = 0 )
+
+68 
+pl
+ . 
+	`show
+ ( )
+
+71 import 
+	~pylab
+ as 
+pl
+
+72 import 
+	~numpy
+ as 
+np
+
+73 
+	=x
+ = 
+np
+ . 
+	`arange
+ ( 0.1 , 1000 , 0.1 )
+
+74 
+	=y
+ = 
+np
+ . 
+	`log
+ ( 
+x
+ )
+
+75 
+pl
+ . 
+	`figure
+ ( 
+figsize
+ = ( 6 , 4 ) )
+
+76 
+pl
+ . 
+	`plot
+ ( 
+x
+ , 
+y
+ , 'b-' )
+
+77 
+pl
+ . 
+	`title
+ ( 'pylab.annotate example' )
+
+78 
+pl
+ . 
+	`annotate
+ ( 'Label' , 
+xy
+ = ( 500 , 
+np
+ . 
+	`log
+ ( 500 ) ) , 
+xytext
+ = ( 300 , 1 ) ,
+
+79 
+arrowprops
+ = 
+	`dict
+ ( 
+facecolor
+ = 'red' , 
+width
+ = 0.5 ,
+
+80 
+headwidth
+ = 10 , 
+shrink
+ = 0.05 ) ,
+
+81 
+ha
+ = 'center' , 
+va
+ = 'baseline' , 
+fontsize
+ = 'large' )
+
+82 
+pl
+ . 
+	`show
+ ( )
+
+85 import 
+	~sympy
+
+86 from 
+	~sympy
+ import *
+
+87 
+	=x
+ = 
+sympy
+ . 
+	`Symbol
+ ( 'x' )
+
+88 
+	=y
+ = 
+sympy
+ . 
+	`Symbol
+ ( 'y' )
+
+89 
+sympy
+ . 
+	`Plot
+ ( 
+x
+ ** 2 + 
+y
+ ** 2 )
+
+90 
+	`show
+ ( )
+
+
+	@./nu38Parots.py
+
+11 import 
+	~numpy
+ as 
+np
+
+13 
+	=a
+ = 
+np
+ . 
+	`array
+ ( [ 1 , 2 , 3 ] )
+
+14 print ( 
+	`type
+ ( 
+a
+ ) )
+
+15 print ( 
+a
+ . 
+shape
+ )
+
+16 print ( 
+a
+ [ 0 ] , 
+a
+ [ 1 ] , 
+a
+ [ 2 ] )
+
+17 
+	=a
+ [ 0 ] = 5
+
+18 print ( 
+a
+ )
+
+20 
+	=b
+ = 
+np
+ . 
+	`array
+ ( [ [ 1 , 2 , 3 ] , [ 4 , 5 , 6 ] ] )
+
+21 print ( 
+b
+ . 
+shape
+ )
+
+22 print ( 
+b
+ [ 0 , 0 ] , 
+b
+ [ 0 , 1 ] , 
+b
+ [ 1 , 0 ] )
+
+
+	@./probeTmp.py
+
+
+	@./ruGumiKIscip1.py
+
+14 
+	`f
+ ( 
+x
+ ) . 
+	`diff
+ ( 
+x
+ , 
+x
+ ) + 
+	`f
+ ( 
+x
+ )
+
+
+	@./ruSymPyTest03.py
+
+13 import 
+	~sympy
+
+14 
+	=x
+ = 
+sympy
+ . 
+	`Symbol
+ ( 'x' )
+
+15 
+	=y
+ = 
+sympy
+ . 
+	`Symbol
+ ( 'y' )
+
+17 
+	=z
+ = ( 
+x
+ + 
+y
+ ) ** 2
+
+19 
+sympy
+ . 
+	`pprint
+ ( 
+z
+ )
+
+20 
+sympy
+ . 
+	`pprint
+ ( 
+z
+ . 
+	`expand
+ ( ) )
+
+22 
+	=z
+ = 1 / ( ( 
+x
+ + 2 ) * ( 
+x
+ + 1 ) )
+
+24 
+sympy
+ . 
+	`pprint
+ ( 
+z
+ )
+
+25 
+sympy
+ . 
+	`pprint
+ ( 
+sympy
+ . 
+	`apart
+ ( 
+z
+ , 
+x
+ ) )
+
+28 import 
+	~sympy
+
+29 
+	=r
+ = 
+sympy
+ . 
+	`Symbol
+ ( 'r' )
+
+30 
+	=circle
+ = 
+sympy
+ . 
+	`Circle
+ ( 
+sympy
+ . 
+	`Point
+ ( 0 , 0 ) , 
+r
+ )
+
+31 
+sympy
+ . 
+	`pprint
+ ( 
+circle
+ . 
+area
+ )
+
+35 import 
+	~sympy
+
+37 
+	=x
+ = 
+sympy
+ . 
+	`Symbol
+ ( 'x' )
+
+38 
+	=y
+ = 
+sympy
+ . 
+	`Symbol
+ ( 'y' )
+
+39 
+sympy
+ . 
+	`var
+ ( 'x y' )
+
+41 print ( 
+x
+ + 
+x
+ + 
+y
+ * 
+y
+ + 1 )
+
+43 
+sympy
+ . 
+	`pprint
+ ( 
+x
+ + 
+x
+ + 
+y
+ * 
+y
+ + 1 )
+
+45 
+sympy
+ . 
+	`pprint
+ ( 
+sympy
+ . 
+	`Integral
+ ( 
+x
+ ** 2 , 
+x
+ ) )
+
+47 
+sympy
+ . 
+	`pprint
+ ( 
+sympy
+ . 
+	`chebyshevt
+ ( 4 , 
+x
+ ) )
+
+49 
+	=a
+ = 
+sympy
+ . 
+	`Rational
+ ( 1 , 2 )
+
+50 
+sympy
+ . 
+	`pprint
+ ( 
+a
+ )
+
+52 
+sympy
+ . 
+	`pprint
+ ( 
+a
+ + 1 )
+
+
+	@
+1
+.
+0
+7
+116
+./ruScipySalynka.py
+./50calc.py
+./ruPyTest02.py
+./nu38Parots.py
+./probeTmp.py
+./ruGumiKIscip1.py
+./ruSymPyTest03.py

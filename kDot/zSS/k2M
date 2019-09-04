@@ -7,7 +7,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +596 k2MinFF.vim
+badd +686 k2MinFF.vim
 badd +639 k2MinFzfDeoLs.vim
 badd +1 k2MinTxtFF.vim
 badd +499 dotFiles/inkWim/randomize1800.vim
@@ -28,8 +28,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 22 + 18) / 37)
-exe '2resize ' . ((&lines * 10 + 18) / 37)
+exe '1resize ' . ((&lines * 21 + 17) / 35)
+exe '2resize ' . ((&lines * 9 + 17) / 35)
 argglobal
 setlocal fdm=marker
 setlocal fde=0
@@ -39,7 +39,7 @@ setlocal fdl=0
 setlocal fml=6
 setlocal fdn=20
 setlocal nofen
-let s:l = 586 - ((6 * winheight(0) + 11) / 22)
+let s:l = 586 - ((6 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -59,8 +59,8 @@ setlocal fdn=20
 setlocal nofen
 lcd ~/git/bTest/kDot
 wincmd w
-exe '1resize ' . ((&lines * 22 + 18) / 37)
-exe '2resize ' . ((&lines * 10 + 18) / 37)
+exe '1resize ' . ((&lines * 21 + 17) / 35)
+exe '2resize ' . ((&lines * 9 + 17) / 35)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

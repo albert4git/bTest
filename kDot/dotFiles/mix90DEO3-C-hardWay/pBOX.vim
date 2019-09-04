@@ -434,6 +434,7 @@ nnoremap <silent> <C-l> :call <SID>NavigateTermSplits('l')<CR>
 "===============================================================================
 function! MyJumpTo()
     let filetype=&ft
+
     if filetype == "python"
         exe ":call jedi#goto_definitions()"
     else
