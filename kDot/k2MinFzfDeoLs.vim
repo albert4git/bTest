@@ -4,7 +4,7 @@
 "==================================================================================================
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Mi 04 Sep 2019 09:33:46  CEST
+" Last Modified:      Fr 13 Sep 2019 02:59:06  CEST
 "==================================================================================================
 "==================================================================================================
 let g:python_host_prog = '/usr/bin/python2'
@@ -137,7 +137,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 set showcmd                 "-Show partial commands in status line 
                 "--------------------------------------------------------------------------
                 let g:airline_section_c = '%{strftime("%Y %b %d %X")}'
-                let g:airline#extensions#tabline#enabled = 2
+                let g:airline#extensions#tabline#enabled = 1
                 let g:airline#extensions#tabline#buffer_min_count = 1
                 "-----------------------------------------------------------
                 let g:airline#extensions#syntastic#enabled = 1
@@ -257,20 +257,20 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \ }
 
         " TESTING doesn't the "on" setting work?
-        " Plug 'ternjs/tern_for_vim', {
-        " \    'do': 'npm install',
-        " \    'on': [
-        " \        'TernDef',
-        " \        'TernDefPreview',
-        " \        'TernDefSplit',
-        " \        'TernDefTab',
-        " \        'TernDoc',
-        " \        'TernDocBrowse',
-        " \        'TernRefs',
-        " \        'TernRename',
-        " \        'TernType'
-        " \    ]
-        " \}
+        Plug 'ternjs/tern_for_vim', {
+        \    'do': 'npm install',
+        \    'on': [
+        \        'TernDef',
+        \        'TernDefPreview',
+        \        'TernDefSplit',
+        \        'TernDefTab',
+        \        'TernDoc',
+        \        'TernDocBrowse',
+        \        'TernRefs',
+        \        'TernRename',
+        \        'TernType'
+        \    ]
+        \}
 
         "---------------------------------------------------------------------------------- 
         Plug 'vim-scripts/Lynx-Offline-Documentation-Browser'
@@ -535,6 +535,8 @@ call plug#begin('~/.config/nvim/plugged/')
                  let NERDTreeShowBookmarks=1
                  let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
                  let NERDTreeChDirMode=0
+                let NERDTreeMinimalUI = 1
+                let NERDTreeDirArrows = 1
                  let NERDTreeQuitOnOpen=1
                  let NERDTreeMouseMode=2
                  let NERDTreeShowHidden=1
@@ -789,15 +791,14 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:echodoc_enable_at_startup = 1
                 let g:echodoc#type = 'virtual'
                 let g:echodoc#type = 'floating'
+                " change Pmenu to your highlight group
+                highlight link EchoDocFloat Pmenu
                 
-                " " Or, you could use neovim's floating text feature.
-                " let g:echodoc#enable_at_startup = 1
-                " " To use a custom highlight for the float window,
-                " " change Pmenu to your highlight group
-                " highlight link EchoDocFloat Pmenu
         "--------------------------------------------------------------------------------- 
         Plug 'KabbAmine/zeavim.vim'
+        "------Advanced:------------------------------------------------------------------ 
         Plug 'junegunn/vim-pseudocl'
+        "---FUZZY-SEARCH------------------------------------------------------------------ 
         Plug 'junegunn/vim-oblique'
         "--------------------------------------------------------------------------------- 
         "         hi! def link ObliqueCurrentMatch Keyword
@@ -823,15 +824,41 @@ call plug#begin('~/.config/nvim/plugged/')
         "         " Unicode symbols work fine (nvim, iterm, tmux, nyovim tested)
         "         let g:pudb_breakpoint_symbol='☠'
         " endif
+        "--------------------TODO--------------------------------------------------------- 
+        "??was uber wie??
+        Plug 'google/vim-coverage'
         "--------------------------------------------------------------------------------- 
-
-
+        " Plug 'Konfekt/vim-alias'
+        "--------------------------------------------------------------------------------- 
+        Plug 'voldikss/vim-translate-me' 
+        Plug 'iamcco/dict.vim'
+                let g:api_key = "1932136763"
+                let g:keyfrom = "aioiyuuko"
+        "--------------------------------------------------------------------------------- 
+        Plug 'ron89/thesaurus_query.vim'
+        " let s:thesaurus_pat ="/home/red/git/bTest/DICT/mthesaur.txt"
+        " let g:tq_mthesaur_file="/home/red/git/bTest/DICT/mthesaur.txt"
+        " let g:tq_mthesaur_file="~/.config/nvim/thesaurus/mthesaur.txt"
+        " let g:tq_cilin_txt_file="~/.config/nvim/thesaurus/cilin.txt"
+        " let g:tq_enabled_backends=["woxikon_de","jeck_ru","openoffice_en","mthesaur_txt"]
+        " let g:tq_enabled_backends=["yarn_synsets", "openoffice_en", "mthesaur_txt"]
+        " let g:tq_enabled_backends=["cilin_txt",
+        "         \"openthesaurus_de",
+        "         \"yarn_synsets",
+        "         \"openoffice_en",
+        "         \"mthesaur_txt",
+        "         \"datamuse_com",]
+        "-----------------------------------------------------------------
+        " let g:tq_openoffice_en_file="~/Downloads/MyThes-1.0/th_en_US_new"
+        " set thesaurus=/home/red/git/bTest/DICT/mthesaur.txt
+        "---------------------------------------------------------------------------------- 
         Plug 'junegunn/goyo.vim'
         Plug 'junegunn/seoul256.vim'
         Plug 'junegunn/limelight.vim'
-        Plug 'ron89/thesaurus_query.vim'
+        "---TRANSPORTER--------------------------------------------------------------------
         Plug 'matze/vim-move'
                 let g:move_key_modifier = 'C'
+        "---------------------------------------------------------------------------------- 
         Plug 'itchyny/calendar.vim'
         "--NewNew---TODO------------------------------------------
         Plug 'haya14busa/vim-easyoperator-line'
@@ -843,43 +870,25 @@ call plug#begin('~/.config/nvim/plugged/')
                 autocmd ColorScheme * highlight QuickScopePrimary  ctermfg=81 cterm=underline
                 autocmd ColorScheme * highlight QuickScopeSecondary  ctermfg=93 cterm=underline
         augroup END
+        "--------------------Nice---------------------------------------------------------- 
         Plug 'moll/vim-bbye'
-        Plug 'wincent/ferret'
-        " Plug 'amiorin/vim-project'
+        "---------------------------------------------------------------------------------- 
+        ":Acks- Plug 'wincent/ferret'
         " Plug 'lyuts/vim-rtags'
         " Plug 'vim-scripts/Conque-Shell'
-        Plug 'vim-scripts/dbext.vim'
         " Plug 'vim-scripts/spreadsheet.vim'
+        "---------------------------------------------------------------------------------- 
+        "---:T---:Tnew---:Topen---:TREPL---------------------------------------------------
         "---------------------------------------------------------------------------------- 
         Plug 'kassio/neoterm'
                 au VimEnter,BufRead,BufNewFile *.jl set filetype=julia
                 au VimEnter,BufRead,BufNewFile *.idr set filetype=idris
                 au VimEnter,BufRead,BufNewFile *.lidr set filetype=lidris
                 au VimEnter,BufRead,BufNewFile *.lfe, set filetype=lfe
-
                 " <Plug>(neoterm-repl-send)
         "---------------------------------------------------------------------------------- 
         Plug 'brookhong/cscope.vim'
         "         nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
-        "         nnoremap <leader>f :call CscopeFindInteractive(expand('<cword>'))<CR>
-        "         nnoremap <leader>\ :call ToggleLocationList()<CR>
-        "         " s: Find this C symbol
-        "         nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
-        "         " g: Find this definition
-        "         nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
-        "         " d: Find functions called by this function
-        "         nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
-        "         " c: Find functions calling this function
-        "         nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
-        "         " t: Find this text string
-        "         nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
-        "         " e: Find this egrep pattern
-        "         nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
-        "         " f: Find this file
-        "         nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
-        "         " i: Find files #including this file
-        "         nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
-
         "-------------------------TESTING-------------------------------------------------
         " Plug 'vim-scripts/CRefVim'
         Plug 'alvan/vim-closetag'
@@ -893,6 +902,11 @@ call plug#begin('~/.config/nvim/plugged/')
         " let test#python#runner = 'pytest'
         " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose' and Python's built-in 'unittest'
 
+        "---------------------------------------------------------------------------------- 
+        Plug 'vifm/neovim-vifm'
+                ":let $MYVIFMRC=/path/to/custom/vifmrc
+                let $MYVIFMRC='~/.config/vifm/vifmrc'
+                let g:vifmSplitWidth = 88
         "------------------TODO------------------------------------------------------------ 
         " enable support for concealing some constructs with unicode glyphs.
         " Plug 'hylang/vim-hy'
@@ -900,7 +914,132 @@ call plug#begin('~/.config/nvim/plugged/')
         " If you do let g:hy_conceal_fancy=1, xi and #% are displayed as ξ
 
         "------------------TODO------------------------------------------------------------ 
-        " Plug 'vim-scripts/utl.vim'
+        "???err??? Plug 'mhartington/nvim-typescript'
+        " autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
+        "---------------------------------------------------------------------------------- 
+        Plug 'leafgarland/typescript-vim'
+        Plug 'peitalin/vim-jsx-typescript'
+                autocmd BufNewFile,BufRead *.tsx,*.jsx,*.ts,*.js set filetype=typescript.tsx
+                " dark red
+                hi tsxTagName guifg=#E06C75
+                " orange
+                hi tsxCloseString guifg=#F99575
+                hi tsxCloseTag guifg=#F99575
+                hi tsxAttributeBraces guifg=#F99575
+                hi tsxEqual guifg=#F99575
+                " yellow
+                hi tsxAttrib guifg=#F8BD7F cterm=italic
+        "------------------CAR-------------------------------------------------------------- 
+        Plug 'ivalkeen/nerdtree-execute'
+        Plug 'Linfee/nerdtree-open'
+        Plug 'cwfoo/vim-text-omnicomplete'
+        Plug 'lilydjwg/colorizer'
+        " g:colorizer_maxlines=1000
+        Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+        Plug 'tpope/vim-dadbod'
+        " Plug 'vpenkoff/vim-pg'  "postgres"
+        " Plug 'vim-scripts/dbext.vim'
+        " :'<,'>DBExecSQL    (or used the default map <Leader>se)
+        "----!!!---LGHistory--------------------------------------
+        Plug 'm42e/vim-lgh'
+        "----Nice---Tabs------
+        " Plug 'ap/vim-buftabline'
+        Plug 'xolox/vim-notes'
+        "------------------TODO------------------------------------------------------------ 
+        " Plug 'rakr/vim-one'
+        " Plug 'chriskempson/base16-vim'
+        " Plug 'KeitaNakamura/neodark.vim'
+        " Plug 'joshdick/onedark.vim'
+        " Plug 'ayu-theme/ayu-vim' " or other package manager
+        " colorscheme ayu
+        " set termguicolors     " enable true colors support
+        " let ayucolor="light"  " for light version of theme
+        " let ayucolor="mirage" " for mirage version of theme
+        " let ayucolor="dark"   " for dark version of theme
+        "------------------TODO------------------------------------------------------------ 
+        " Plug 'sheerun/vim-polyglot'
+
+        "------------------Nice------------------------------------------------------------ 
+        Plug 'vim-scripts/underlinetag'
+        augroup UnderlineTag
+                autocmd!
+                autocmd BufEnter *.py UnderlineTagOn
+        augroup END
+
+        "---Perfection - Continuity------
+        Plug 'terryma/vim-smooth-scroll'
+
+        "------------------TODO------------------------------------------------------------ 
+        Plug 'vim-scripts/utl.vim'
+        " [ open with \o ] {{{ open: URL, preview doc: markdown, TeX, etc.
+        " Utl {{{ :Utl to open links, files.
+        " nnoremap <leader>o :Utl<CR>
+        " nnoremap ;o :Utl<CR>
+        " Syntax: no need to escape 'spaces'.
+        " use '' contain filename(url) strings. e.g. = ":silent !evince '%p' &"
+        " <url:#r=here> id=here | <url:tn=some text> <url:filename.txt#line=-10>
+        " <url:fo obar.pdf> | <url:.t/emp> folder |
+        " <url:../plugin/utl.vim#tn=text>
+        " <url:file:///home/stb/.vim/plugin/utl.vim>
+        " <url:http://www.google.ocm> www.vm.oigr
+        " <url:man:ls> || <urlc:onfig:>
+        " download from [1] || [1] www.google.com
+        " It brings the benefits of URL-based hyperlinking to plain text,
+        " extending the URL syntax for plain text needs.
+        let g:utl_opt_verbose=0 " 0=no (default), 1=yes
+        let g:utl_opt_highlight_urls='yes' " 'yes' is default / 'no'
+
+        " reference utl_rc.vim
+        " HTTP
+        " %u, %p for Unix, %P for Windows.
+        if !exists("g:utl_cfg_hdl_scm_http_system")
+                if has("unix")
+                        " let g:utl_cfg_hdl_scm_http_system = 'silent !xdg-open %u' " for ubuntu system
+                        "let g:utl_cfg_hdl_scm_http_system = "!xterm -e lynx '%u#%f'" "	console browser
+                        " if browser is GUI, don't use "silent" => "silent !browser", will crash terminal vim screen
+                        " Check if an instance is already running, and if yes use it, else start firefox.
+                        " let g:utl_cfg_hdl_scm_http_system = "silent !firefox -remote 'ping()' && firefox -remote 'openURL( %u )' || firefox '%u#%f' &"
+                        " use lightweight browser like : luakit, jumanji, urbl etc.
+                        let g:utl_cfg_hdl_scm_http_system = "!firefox '%u#%f' &"
+                endif
+                let g:utl_cfg_hdl_scm_http=g:utl_cfg_hdl_scm_http_system
+        endif
+        " http wget:
+        let g:utl_cfg_hdl_scm_http__wget="call Utl_if_hdl_scm_http__wget('%u')"
+        " scp
+        if !exists("g:utl_cfg_hdl_scm_scp")
+                let g:utl_cfg_hdl_scm_scp = "silent %d %u"
+        endif
+        " mailto:
+        if !exists("g:utl_cfg_hdl_scm_mailto")
+                let g:utl_cfg_hdl_scm_mailto = "!urxvt -e mutt '%u'"
+        endif
+        " generic
+        if !exists("g:utl_cfg_hdl_mt_generic")
+                if has("unix")
+                        if $WINDOWMANAGER =~? 'kde'
+                                let g:utl_cfg_hdl_mt_generic = 'silent !konqueror "%p" &'
+                        else
+                                let g:utl_cfg_hdl_mt_generic = 'silent !urxvt -e sh -c ranger "%p"'
+                        endif
+                endif
+        endif
+        " directory
+        let g:utl_cfg_hdl_mt_text_directory__cmd = ':!urxvt -e sh -c ranger "%p"'
+        let g:utl_cfg_hdl_mt_text_directory__vim = 'VIM'   " Vim builtin file explorer
+        " let g:utl_cfg_hdl_mt_text_directory='VIM'
+        " let g:utl_cfg_hdl_mt_text_directory = ':silent !nautilus "%p" &'
+        let g:utl_cfg_hdl_mt_text_directory=g:utl_cfg_hdl_mt_text_directory__cmd
+        " application/pdf
+        let g:utl_cfg_hdl_mt_application_pdf = ":silent !evince '%p' &"
+        " TODO application/djvu
+        let g:utl_cfg_hdl_mt_application_djvu = ":silent !evince '%p' &"
+        " application/chm
+        " let g:utl_cfg_hdl_mt_application_chm = ":silent !chmsee '%p' &"
+        " application/doc
+        let g:utl_cfg_hdl_mt_application_msword = ":silent !libreoffice '%p' &"
+        " }}}
+
         " - Open any URLs found in text with appropriate handler
         " - Open files of any media type from within Vim (.pdf, .jpg, etc)
         " - Small helper utilities via embedded Vimscript
@@ -911,20 +1050,22 @@ call plug#begin('~/.config/nvim/plugged/')
         " - Editing HTML
         " - Bookmark files, directories, URLs
         "---------------------------------------------------------------------------------- 
+        Plug 'tpope/vim-abolish'        " Extended abbreviation/substition.
+        "---------------------------------------------------------------------------------- 
+        "Plug 'amiorin/vim-project'
+        "Plug 'tpope/vim-projectionist'
+        "Plug 'tpope/vim-rake'
+        "Plug 'vim-ruby/vim-ruby
+        "Plug 'tpope/vim-rails'
 
-        "---------------------------NEW------------------------------------------------------ 
+        "-------------------$mkid---idtools------------------------------------------------ 
         " Plug 'fcamel/gj'
         " Plug 'yegappan/lid'
         "---------------------------------------------------------------------------------- 
-        " Plug 'mhartington/nvim-typescript'
-        " autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
-        "---------------------------------------------------------------------------------- 
-
-        "-------------------------TRASH--------------------------------------------------- 
+        "--------------------------TRASH--------------------------------------------------- 
         " Plug 'WolfgangMehner/bash-support'
         " Plug 'tpope/vim-rsi'
-        "--------------------------------------------------------------------------------- 
-        " Plug 'vim-ruby/vim-ruby
+        "---------------------------------------------------------------------------------- 
         "Plug 'markonm/traces.vim'
         "---------------------------------------------------------------------------------- 
         " Plug 'StanAngeloff/php.vim'
@@ -935,7 +1076,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "?pum? Plug 'tpope/vim-endwise'
         "--------------------------------------------------------------------------------- 
         "--------------------------------------------------------------------------------- 
-        " " assuming you're using vim-plug: https://github.com/junegunn/vim-plug
         " Plug 'ncm2/ncm2'
         " Plug 'roxma/nvim-yarp'
 
@@ -986,7 +1126,6 @@ call plug#end()
                \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
 
         "===VIM-SARTIFY-1==================================================================
-
 
         function! s:list_commits()
                 let git = 'git -C ~/git/bTest/'
@@ -1039,7 +1178,7 @@ call plug#end()
         highlight StartifySlash   ctermfg=240
         highlight StartifySpecial ctermfg=240
 
-        autocmd!  VimEnter * execute ":Startify"
+        " autocmd!  VimEnter * execute ":Startify"
 
         "===VIM-SARTIFY-2==================================================================
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
@@ -1225,18 +1364,18 @@ call plug#end()
         call deoplete#custom#source('tmux-complete', 'rank', 300)
         call deoplete#custom#source('syntax',        'rank', 200)
         "--------------------------------------------------------------------------------
-        call deoplete#custom#source('LanguageClient','mark', 'ℰ')
+        call deoplete#custom#source('LanguageClient','mark', 'langC')
         call deoplete#custom#source('omni',          'mark', '⌾')
-        call deoplete#custom#source('flow',          'mark', '⌁')
-        call deoplete#custom#source('TernJS',        'mark', '⌁')
-        call deoplete#custom#source('go',            'mark', '⌁')
-        call deoplete#custom#source('jedi',          'mark', '⌁')
-        call deoplete#custom#source('vim',           'mark', '⌁')
-        call deoplete#custom#source('neosnippet',    'mark', '⌘')
+        call deoplete#custom#source('flow',          'mark', 'flow')
+        call deoplete#custom#source('TernJS',        'mark', 'tern')
+        call deoplete#custom#source('go',            'mark', 'go')
+        call deoplete#custom#source('jedi',          'mark', 'Jedi')
+        call deoplete#custom#source('vim',           'mark', 'vim')
+        call deoplete#custom#source('neosnippet',    'mark', 'neoSnp')
         call deoplete#custom#source('around',        'mark', '↻')
         call deoplete#custom#source('buffer',        'mark', 'ℬ')
         call deoplete#custom#source('tmux-complete', 'mark', '⊶')
-        call deoplete#custom#source('syntax',        'mark', '♯')
+        call deoplete#custom#source('syntax',        'mark', 'synt')
         call deoplete#custom#source('member',        'mark', '.')
 
 

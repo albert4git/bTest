@@ -67,6 +67,7 @@ export PATH=${PATH}:/home/red/.fzf/bin/
 export PATH=${PATH}:/home/red/Komodo-Edit-11/bin/
 export PATH=${PATH}:/media/red/124Black/git/mySoft/
 export PATH=${PATH}:/media/red/124Black/git/mySoft/nvim64/bin/
+export PATH=${PATH}:/home/red/bin/
 export PATH=${PATH}:/home/red/bin/better-ls-master/
 export PATH=${PATH}:/home/red/bin/devicons-shell/
 
@@ -724,3 +725,12 @@ function prev() {
 #    INSTALL  tigrc -> /home/red/etc
 
 source ~/.config/up/up.sh
+
+#-DUDA-bdm
+tar -P --listed-incremental=/media/red/124Black/TAR/TarTopX2Py/x2Snap.file -cJpf /media/red/124Black/TAR/TarTopX2Py/x2PyBack-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/x2PyCalc/ >> /dev/null 2>&1
+
+#----DotK-----------------------------------------------------------------------------
+tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kDot2Snap.file -cJpf /media/red/124Black/TAR/TarDotK/kDot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/
+#---------------------------------------------------------------------------------
+
+cd ~/git/bTest/kDot/

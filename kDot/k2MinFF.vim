@@ -3,7 +3,7 @@
 "==================================================================================================
 "-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      So 01 Sep 2019 03:28:18  CEST
+" Last Modified:      Fr 13 Sep 2019 12:26:06  CEST
 "==================================================================================================
 "==================================================================================================
 "==================================================================================================
@@ -16,9 +16,7 @@
         "----------------------------------------------------------------------------------
         let $MYVIMRC='~/.config/nvim/init.vim'
         "----------------------------------------------------------------------------------
-        let s:thesaurus_pat ="/home/red/git/bTest/DICT/mthesaur.txt"
-        let g:tq_mthesaur_file="/home/red/git/bTest/DICT/mthesaur.txt"
-        set thesaurus=/home/red/git/bTest/DICT/mthesaur.txt
+
         set dictionary+=/home/red/git/bTest/DICT/english-words.txt
         "----------------------------------------------------------------------------------
         filetype on
@@ -225,6 +223,7 @@
         "-------------------------------Gold Stuck.chen--------------------------------""
 
         "::::::CYAN::::::::::::::::-=2=-:::::::::::::::::::::::::::::::::::::::::::::::::::
+        set termguicolors     " enable true colors support
         "source mix/n-badwolf.vim 
         "colorscheme molokai
         "colorscheme badwolf
@@ -232,6 +231,11 @@
         "colorscheme candycode
         colorscheme desert
         colorscheme badwolf
+         " colorscheme ayu
+        " let ayucolor="dark"   " for dark version of theme
+        " let ayucolor="light"  " for light version of theme
+        " let ayucolor="mirage" " for mirage version of theme
+
         "-TOP------------------------------------------------------------------------------
         highlight DiffAdd           cterm=bold ctermbg=22
         highlight DiffDelete        cterm=bold ctermbg=3
@@ -242,6 +246,8 @@
         highlight Function cterm=bold ctermbg=19
         highlight LocalVariable cterm=bold ctermbg=14
         highlight GlobalVariable cterm=bold ctermbg=207
+
+        highlight UnderlineTag  cterm=underline  
 
         " hi Enumerator guifg="c000c0"
         " Class           : Class
@@ -259,15 +265,19 @@
 
 
 
-        "-TOP------------------------------------------------------------------------------
+        "-TOP---!!!---------------------------------------------------------------------------
         hi Search         ctermbg=11
         hi Normal         ctermbg=235
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
         set signcolumn=yes
-        hi signcolumn     ctermbg=23
+        hi signcolumn     ctermbg=23 guibg=14
+        highlight SignColumn     ctermbg=230       guibg=#00ff00
+
         "hi LineNr         ctermbg=199 ctermfg=16 
-        hi LineNr         ctermbg=17 ctermfg=15 
+        hi LineNr         ctermbg=17 ctermfg=15   guibg=#020202
+        hi LineNr         ctermbg=17 ctermfg=15   guibg=#10205f  guifg=#ffffff
+
 
         " :sign define piet text=>> texthl=Search
         " :exe ":sign place 2 line=240 name=piet file=" . expand("%:p")
@@ -275,11 +285,12 @@
         " hi CursorLine     ctermbg=8
         hi CursorLine     ctermbg=5
         hi CursorLine     ctermbg=17
-        hi CursorLine     ctermbg=90
+        hi CursorLine     ctermbg=90  guibg=#870087
+
 
         set colorcolumn=92,100,112,120
         hi ColorColumn    ctermbg=240
-        hi ColorColumn    ctermbg=14
+        hi ColorColumn    ctermbg=14   guibg=#005500
         set pumheight=12
         " Popup menu hightLight Group
         hi Pmenu          ctermfg=1 ctermbg=255
@@ -287,7 +298,6 @@
         hi PmenuThumb     ctermfg=12 ctermbg=2 cterm=NONE
         hi PmenuSel       ctermbg=10 ctermfg=1
         let g:CommandTHighlightColor = 9
-
 
                 "--------------------------------------------------------------------------------
                 silent! set complete& completeopt=menu infercase noshowfulltag
@@ -299,9 +309,10 @@
                 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
         "------------------------------------------------------
-        hi customPink     ctermbg=245 ctermfg=White
+        hi customPink     ctermbg=245 ctermfg=White  guibg=#ccbbcc
         hi lightGray      ctermbg=12
-        hi darkGray       ctermbg=211
+        hi darkGray       ctermbg=211 guibg=#ffbbff
+
         "------------------------------------------------------
         highlight Visual cterm=bold ctermbg=2 ctermfg=NONE
         set cursorcolumn
@@ -445,6 +456,17 @@
         nnoremap <S-left>  :vertical resize -3<cr>
         nnoremap <S-up>    :resize +3<cr>
         nnoremap <S-down>  :resize -3<cr>
+
+        "--???-----------------------------------------------------------------------------
+        noremap <silent> <S-up> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+        noremap <silent> <S-down> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+        "------------------SCROLL----------------------------------------------------------
+        noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+        noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+        noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+        noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+        "----------------------------------------------------------------------------------
+
         "----------------------------------------------------------------------------------
         noremap <S-j> :PreviewScroll -1<cr>
         noremap <S-l> :PreviewScroll +1<cr>
@@ -583,10 +605,12 @@
         nnoremap ( <c-x>:y x\|@x<cr>
         nnoremap ) <c-a>:y x\|@x<cr>
         "==========================================================================================
-        "---FIREFOX----www.web.de------------------------------------------------------------------
+        "---FIREFOX----www.ewb.de------------------------------------------------------------------
         
         "==========================================================================================
         nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
+        nnoremap <localleader>o :Utl<CR>
+        nnoremap ;o :Utl<CR>
         "------------------------------------------------------------------------------------------
         "===Control-] pop open a window and show the tag there.====================================
         "------------------------------------------------------------------------------------------
@@ -614,6 +638,7 @@
 
         "---------------------------------------------------------------
         " imap <C-b>    <Plug>(neosnippet_expand_or_jump)
+        "---------------------------------------------------------------
 
         "==========================================================================================
         function! UltiSnipsCallUnite()
@@ -1245,5 +1270,21 @@ nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
 " f: Find this file
 nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
 "===============================================================================================================
+" Search for visually highlighted text
+" :vmap ff y/<C-R>"<CR>
+"===============================================================================================================
 
+"===============================================================================================================
+" Since teaching a lesson on pytest in our 100 Days of Code course I discovered
+" coverage and made this alias in my .vimrc to simply check it with one
+" keystroke:
+" nmap ,t :w<CR>:!pytest -s --cov-report term-missing --cov='.'<CR>
+" You have to install this plugin for it to work:
+" # enable venv (TODO: switch to pipenv)
+" pip install pytest-cov
+"===============================================================================================================
+        nmap <silent> <Leader>d <Plug>DictSearch
+        nnoremap <Leader>t :!goldendict <C-r><C-w><CR>
+
+        nnoremap <Leader>s :ThesaurusQueryReplaceCurrentWord<CR>
 

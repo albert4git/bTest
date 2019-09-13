@@ -5,6 +5,11 @@
 #
 # Distributed under terms of the MIT license.
 #
+
+#-DUDA-
+tar --listed-incremental=/media/red/124Black/TAR/TarTopX2Py/x2Snap.file -cJpf /media/red/124Black/TAR/TarTopX2Py/x2PyBack-`date +%d-%m-%Y-%M-%H`.tar.xz /home/red/git/bTest/kDot/x2PyCalc/
+#-DUDA-
+
 rsync -a –link-dest=prevbackup src dst
 grep CRON /var/log/syslog
 git log –graph –oneline
@@ -54,6 +59,11 @@ tar --listed-incremental=/media/backup/snapshot.file -cJpf /media/backup/home-ba
 tar --listed-incremental=/media/red/124Black/SNAR/snapshot.file -cJpf /media/red/124Black/SNAR/home-backup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/Downloads
 tar --listed-incremental=/media/red/124Black/SNAR/bTestSnap.file -cJpf /media/red/124Black/SNAR/bTestBackup-`date +%M-%H-%d-%m-%Y`.tar.xz /home/red/git/bTest/
 
+#-DUDA-
+tar --listed-incremental=/media/red/124Black/TAR/TarTopX2Py/x2Snap.file -cJpf /media/red/124Black/TAR/TarTopX2Py/x2PyBack-`date +%d-%m-%Y-%M-%H`.tar.xz /home/red/git/bTest/kDot/x2PyCalc/
+#-DUDA-
+
+
 #---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!!!!---!!!
 
 tar --listed-incremental=/dev/null -xvf home-backup-08-01-07-07-2019.tar.xz
@@ -73,6 +83,7 @@ for i in bin boot etc home lib opt root sbin sys usr var ; do
 tar -clzf /mnt/backup/backup-$i-full.tgz “/$i“ 2>/dev/null
 done
 #################################################################################
+# -DUDA-
 Using this script, I can restore any file or directory using tar . For example,
 to restore the /home/nealk/book3 directory, I would use:
 cd /

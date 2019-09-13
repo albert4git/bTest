@@ -534,3 +534,79 @@ let g:airline_theme=s:theme
 :call Facebook()
 Now, the way you call the function is not so good. So we define a command:
 command! -nargs=0 Facebook call Facebook() 
+
+
+"===============================================================================================================
+ tpope/vim-dadbod
+"===============================================================================================================
+:DB postgresql:///foobar
+:DB redis:
+
+If additional arguments are provided, they are interpreted as a query string to pass to the database. Results are displayed in a preview window.
+
+:DB sqlite:myfile.sqlite3 select count(*) from widgets
+:DB redis:/// CLIENT LIST
+
+Give a range to run part or all of the current buffer as a query.
+
+:%DB mysql://root@localhost/bazquux
+
+Use < to pass in a filename.
+
+:DB mongodb:///test < big_query.js
+
+There's also a special assignment syntax for saving a URL to a Vim variable for later use.
+
+:DB g:prod = postgres://user:pass@db.example.com/production_database
+:DB g:prod drop table users
+
+A few additional URL like formats are accepted for interop:
+
+    :DB jdbc:sqlserver://...
+    :DB dbext:profile=profile_name
+    :DB dbext:type=PGSQL:host=...
+    :DB $DATABASE_URL (with optional dotenv.vim support)
+"===============================================================================================================
+"===============================================================================================================
+        " " <Leader>t 翻译光标下的文本，在命令行回显
+        " nmap <silent> <Leader>t <Plug>Translate
+        " vmap <silent> <Leader>t <Plug>TranslateV
+        " " Leader>w 翻译光标下的文本，在窗口中显示
+        " nmap <silent> <Leader>w <Plug>TranslateW
+        " vmap <silent> <Leader>w <Plug>TranslateWV
+        " " Leader>r 替换光标下的文本为翻译内容
+        " nmap <silent> <Leader>r <Plug>TranslateR
+        " vmap <silent> <Leader>r <Plug>TranslateRV
+        " " Babylon English Chinese S.bgl 
+
+        " 英 [yīng] (surname); England; English; a hero; brave; flower; leaf; petal
+        " 英国 [yīng guó] Britain; England; English
+        " 英文 [yīng wén] English (language)
+        " 英语 [yīng yǔ] English (language)
+        " 美国 [měi guó] America; American; USA; United States
+
+
+        if exists('s:loaded_vimafter')
+                silent doautocmd VimAfter VimEnter *
+        else
+                let s:loaded_vimafter = 1
+                augroup VimAfter
+                        autocmd!
+                        autocmd VimEnter * source ~/.vim/after/vimrc.vim
+                augroup END
+        endif
+
+        :Alias   -range   dg   <c-r>=&l:diff?"diffget":"dg"<cr>
+        :Alias   -buffer  spl  setlocal\ spell<bar>setlocal\ spelllang=en
+        :Alias            w!!  write\ !sudo\ tee\ >\ /dev/null\ %
+        :Alias            F    find\ *<c-r>=Eatchar("\ ")<cr>
+        :Alias            th   tab\ help
+        :Alias            sft  setfiletype
+        :Alias -range     il   ilist\ /\v/<left><c-r>=EatChar("\ ")<cr>
+        :Alias -range     dl   dlist\ //<left><c-r>=EatChar("\ ")<cr>
+        :Alias            g    Silent git
+        :Alias            gbl  Silent\ tig\ blame\ +<c-r>=line('.')<cr>\ --\ %<c-left><c-left><left>
+        :Alias -range     tl   !translate\ -no-warn\ -no-ansi\ -brief\ -to
+
+"===============================================================================================================
+"===============================================================================================================

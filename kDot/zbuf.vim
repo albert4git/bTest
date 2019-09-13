@@ -24,6 +24,11 @@
         :map <C-S-v> (V)
 
 
+" 英 [yīng] (surname); England; English; a hero; brave; flower; leaf; petal
+" 英国 [yīng guó] Britain; England; English
+" 英文 [yīng wén] English (language)
+" 英语 [yīng yǔ] English (language)
+
 block block 
 block block block block 
 block block block block block block 
