@@ -3,7 +3,7 @@
 "==================================================================================================
 "-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-DEO-FZF-NV-Unite"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"-"
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Fr 13 Sep 2019 12:26:06  CEST
+" Last Modified:      Fr 13 Sep 2019 09:15:12  CEST
 "==================================================================================================
 "==================================================================================================
 "==================================================================================================
@@ -219,7 +219,6 @@
         "source ~/git/aTest/dotFiles/nVim/nProtoFzfDeoLsJediSnip.vim
         "---------------------------------------------------------------------------------- 
 
-        hi pythonSelf  ctermfg=68 cterm=bold 
         "-------------------------------Gold Stuck.chen--------------------------------""
 
         "::::::CYAN::::::::::::::::-=2=-:::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -263,11 +262,11 @@
         " GlobalVariable  : Global Variable
         " LocalVariable   : Local Variable
 
-
-
         "-TOP---!!!---------------------------------------------------------------------------
-        hi Search         ctermbg=11
+        hi pythonSelf  ctermfg=68 cterm=bold 
+        hi Search         ctermbg=11 
         hi Normal         ctermbg=235
+        " guibg=#333333
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
         set signcolumn=yes
@@ -278,16 +277,16 @@
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#020202
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#10205f  guifg=#ffffff
 
-
         " :sign define piet text=>> texthl=Search
         " :exe ":sign place 2 line=240 name=piet file=" . expand("%:p")
 
-        " hi CursorLine     ctermbg=8
-        hi CursorLine     ctermbg=5
+        "--------------------------------------------------------------------------------
         hi CursorLine     ctermbg=17
         hi CursorLine     ctermbg=90  guibg=#870087
+        set cursorcolumn
+        hi CursorColumn   ctermbg=16 guibg=#870087 
 
-
+        "--------------------------------------------------------------------------------
         set colorcolumn=92,100,112,120
         hi ColorColumn    ctermbg=240
         hi ColorColumn    ctermbg=14   guibg=#005500
@@ -299,28 +298,27 @@
         hi PmenuSel       ctermbg=10 ctermfg=1
         let g:CommandTHighlightColor = 9
 
-                "--------------------------------------------------------------------------------
-                silent! set complete& completeopt=menu infercase noshowfulltag
-                "set shortmess+=c
-                "suppress intro message because the above makes it look bad
-                set shortmess+=I
-                "--------------------------------------------------------------------------------
-                " automatically open and close the popup menu / preview window
-                au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+        "--------------------------------------------------------------------------------
+        silent! set complete& completeopt=menu infercase noshowfulltag
+        "set shortmess+=c
+        "suppress intro message because the above makes it look bad
+        set shortmess+=I
+        "--------------------------------------------------------------------------------
+        " automatically open and close the popup menu / preview window
+        au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
         "------------------------------------------------------
         hi customPink     ctermbg=245 ctermfg=White  guibg=#ccbbcc
         hi lightGray      ctermbg=12
-        hi darkGray       ctermbg=211 guibg=#ffbbff
+        hi darkGray       ctermbg=211 guibg=#ffbbff  guifg=#000fff
 
         "------------------------------------------------------
         highlight Visual cterm=bold ctermbg=2 ctermfg=NONE
-        set cursorcolumn
-        hi Pmenue                      ctermfg=11
-        hi CursorColumn                ctermbg=16
+        hi Pmenue         ctermfg=11
         set nuw =4
         set list
         set listchars=tab:▸\
+
         "---???------------------------------------------------
         call matchadd('darkGray', 'NEXT')
         call matchadd('darkGray', '!!!')
@@ -344,9 +342,8 @@
         "source ~/git/bTest/kDot/myPlug/logoCyan.vim
         source ~/git/bTest/kDot/myPlug/nHydra.vim
         "------------------------------------------------------
-        " source ~/git/bTest/kDot/myPlug/NNV.vim
-        " let g:nnv_search_paths = ['~/git/bTest/']
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "source ~/git/bTest/kDot/myPlug/NNV.vim
+        "let g:nnv_search_paths = ['~/git/bTest/']
         "let g:nnv_search_paths = ['/media/red/124Black/']
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -733,7 +730,7 @@
         "------------------
         " let g:pydoc_cmd = '/usr/bin/pydoc'
         let g:pydoc_cmd = 'python -m pydoc'
-        nnoremap SS :Pydoc <C-r><C-w><CR> | wincmd p
+        nnoremap PP :Pydoc <C-r><C-w><CR> | wincmd p
         "------------------
         " :Pydoc foo.bar.baz (e.g. :Pydoc re.compile)
         " Or search a word (uses pydoc -k) in the documentation by typing:
@@ -820,7 +817,7 @@
 
         "------------------------------InsertMode Scroll-------------------------------""
         :inoremap <C-E> <C-X><C-E>
-        :inoremap <C-Y> <C-X><C-Y>
+        " :inoremap <C-Y> <C-X><C-Y>
 
         "==========================================================================================
         "::::::::::::::::::::::::::::::-UNFUC-:::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -1249,10 +1246,14 @@
         " vmap <localleader>z <Plug>ZVVisSelection
         nmap ;z <Plug>Zeavim
         nmap <Leader>z <Plug>ZVKeyDocset
-        "--------------------------------------------------------------------------------- 
-
 "===============================================================================================================
-
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+        command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+                                \ | wincmd p | diffthis
+endif
 "===============================================================================
 function! MyJumpTo()
     let filetype=&ft

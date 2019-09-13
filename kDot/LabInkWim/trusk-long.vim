@@ -702,6 +702,8 @@ if glob(s:VIMROOT."/bundle/") != ""
                     " JAVASCRIPT
                         "Plug 'JavaScript-Indent' " outdated compared to pangloss/vim-javascript (prefer that).
 
+                    let g:indentLine_color_term = 239
+                    Plug 'vim-scripts/SyntaxComplete'
                         " The following syntax plugins all work together. The order they are specified might affect the outcome a
                         " little (highlight colors could vary, etc, similar to cascading style sheets).
                         Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' } " works in tandem with pangloss/vim-javascript

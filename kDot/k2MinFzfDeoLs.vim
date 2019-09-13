@@ -4,7 +4,7 @@
 "==================================================================================================
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Fr 13 Sep 2019 02:59:06  CEST
+" Last Modified:      Fr 13 Sep 2019 09:51:30  CEST
 "==================================================================================================
 "==================================================================================================
 let g:python_host_prog = '/usr/bin/python2'
@@ -72,29 +72,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'osyo-manga/vim-brightest'
                 let g:brightest#highlight = { "group" : "Define" }
                 " JAPAN
-        "----BATMAN------------------------------------------------------------------------ 
-        Plug 'vim-scripts/TagHighlight'
-        " TagHighlight highlight names of class, variable, types in code.
-        " Usage: :UpdateTypesFile
-                if !exists('g:TagHighlightSettings')
-                        let g:TagHighlightSettings = {}
-                endif
-                let g:TagHighlightSettings['TagFileName'] = 'tags'
-                let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'
-                let g:TagHighlightSettings['CtagsVariant'] = 'exuberant'
-                let g:TagHighlightSettings['CtagsArguments'] = []
-                let g:TagHighlightSettings['CtagsExtraArguments'] = []
-                let g:TagHighlightSettings['ForcePythonVariant'] = 'if_pyth3'
-                let g:TagHighlightSettings['PythonVariantPriority'] = [
-                                        \ "if_pyth3", "if_pyth", "python", "compiled",
-                                        \ ]
 
-
-
-        "---1812--------------------------------------------------------------------------- 
-        Plug 'Shougo/echodoc.vim'
-                set cmdheight=2
-                let g:echodoc_enable_at_startup = 1
         Plug 'roxma/python-support.nvim'
                 let g:python_support_python2_require = 0
                 let g:python_support_python3_require = 0
@@ -106,27 +84,25 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:dokumentary_docprgs = {'c': 'cdoc {0}'}
         "--------------------------------------------------------------------------------- 
         "-=TTT=-
-        Plug 'xolox/vim-pyref'
-                let g:pyref_mapping = 'T'
-                " let g:pyref_python = '/usr/share/doc/python3/html/'
-                "let g:pyref_python = '/usr/share/doc/python/'
-                "let g:pyref_python = 'file:///usr/share/doc/python2.7/html/index.html'
-                "let g:pyref_python = $HOME . '/docs/python'
-                "let g:pyref_python = '/usr/bin/pydoc'
+        "Plug 'xolox/vim-pyref'
+        "let g:pyref_mapping = 'T'
+        "let g:pyref_python = '/usr/share/doc/python3/html/'
+        "let g:pyref_python = '/usr/share/doc/python/'
+        "let g:pyref_python = 'file:///usr/share/doc/python2.7/html/index.html'
+        "let g:pyref_python = $HOME . '/docs/python'
+        "let g:pyref_python = '/usr/bin/pydoc'
         "---------------------------------------------------------------------------------- 
         Plug 'fs111/pydoc.vim', {'external_commands': ['pydoc']}
-                let g:ref_pydoc_cmd = 'pydoc'
-                let g:ref_pydoc_complete_head = 1
-                " let g:pydoc_cmd = 'python -m pydoc'
-                " let g:pydoc_open_cmd = 'vsplit'
-                " " If you want pydoc to switch to an already open tab with pydoc page,
-                " let g:pydoc_use_drop=1
-                " " Pydoc files are open with 10 lines height, if you want to change this value
-                " " put this in your .vimrc:
-                " let g:pydoc_window_lines=15
-                " " let g:pydoc_window_lines=0.5
-                " let g:pydoc_cmd = '/usr/bin/pydoc'
-                " " let g:pydoc_highlight=0
+        let g:ref_pydoc_cmd = 'pydoc'
+        let g:ref_pydoc_complete_head = 1
+        " let g:pydoc_cmd = 'python -m pydoc'
+        " let g:pydoc_open_cmd = 'vsplit'
+        " " If you want pydoc to switch to an already open tab with pydoc page,
+        " let g:pydoc_use_drop=1
+        " let g:pydoc_window_lines=15
+        " " let g:pydoc_window_lines=0.5
+        " let g:pydoc_cmd = '/usr/bin/pydoc'
+        " " let g:pydoc_highlight=0
         "---------------------------------------------------------------------------------- 
         Plug 'tyru/capture.vim'
         Plug 'thinca/vim-quickrun'
@@ -155,15 +131,15 @@ call plug#begin('~/.config/nvim/plugged/')
                 "VSSplit
         "---------------------------------------------------------------------------------- 
         Plug 'flazz/vim-colorschemes'
-        Plug 'rafi/awesome-vim-colorschemes'
+        " Plug 'rafi/awesome-vim-colorschemes'
         "---------------------------------------------------------------------------------- 
         Plug 'kshenoy/vim-signature'
-                " :SignatureListMarkers         : List all markers
-                " :SignatureListMarkers 1       : List only the '!' marker
-                " :SignatureListMarkers @       : List only the '@' marker
-                " :SignatureListMarkers 0, 2    : List only ) marker with 2 lines of context
-                " :SignatureListMarkers '', 2   : List all markers with 2 lines of context
-                " :SignatureListMarkers '!@', 2 : List only the '!' and '@' markers and show
+        " :SignatureListMarkers         : List all markers
+        " :SignatureListMarkers 1       : List only the '!' marker
+        " :SignatureListMarkers @       : List only the '@' marker
+        " :SignatureListMarkers 0, 2    : List only ) marker with 2 lines of context
+        " :SignatureListMarkers '', 2   : List all markers with 2 lines of context
+        " :SignatureListMarkers '!@', 2 : List only the '!' and '@' markers and show
         "---------------------------------------------------------------------------------- 
         Plug 'machakann/vim-highlightedyank'
                 let g:highlightedyank_highlight_duration = -1
@@ -173,16 +149,16 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:indentLine_noConcealCursor='nc'
                 let g:indentLine_color_term = 10
                 "let g:indentLine_setConceal = 0
-                "let g:indentLine_bgcolor_term = 202
+                let g:indentLine_bgcolor_term = 202
                     let g:indentLine_faster = 1
                     let g:indentLine_char = '.'
                     let g:indentLine_char = '|'
                     let g:indentLine_first_char='.'
                     let g:indentLine_first_char='|'
+                    "let g:indentLine_first_char='¦'
                     let g:indentLine_showFirstIndentLevel=1
                     let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']
         "---------------------------------------------------------------------------------- 
-                    " let g:indentLine_faster = 1
                     " let g:indentLine_char = '.'
                     " let g:indentLine_first_char='¦'
         "---------------------------------------------------------------------------------- 
@@ -245,6 +221,38 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'prabirshrestha/async.vim'
         Plug 'skywind3000/asyncrun.vim'
         Plug 'neomake/neomake'
+                " Plug 'benekastah/neomake' " Makers for various file types. TODO: auto install tool (jshint, eslint).
+
+                    " --- jshint config
+                    "let g:neomake_javascript_enabled_makers = ['jshint']
+                    "let g:neomake_javascript_jshint_maker = {
+                        "\ 'args': ['--verbose'],
+                        "\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)'
+                        "\ }
+
+                    " --- eslint config
+                    let g:neomake_javascript_enabled_makers = ['eslint']
+
+                    " --- tslint config
+                    let g:neomake_typescript_enabled_makers = ['tslint']
+                    "let g:neomake_typescript_tslint_maker = {
+                        "\ 'args': ['--verbose'],
+                        "\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+                        "\ }
+
+
+                    let g:neomake_error_sign = {
+                        \ 'text': '✖',
+                        \ 'texthl': 'ErrorMsg',
+                        \ }
+                    let g:neomake_warning_sign = {
+                        \ 'text': '∇',
+                        \ 'texthl': 'WarningMsg',
+                        \ }
+
+                    autocmd FileType javascript :autocmd BufWritePost <buffer> :silent Neomake
+
+
         Plug 'tpope/vim-dispatch'
         let g:dispatch_compilers = {
                                 \ 'latex': 'tex',
@@ -285,7 +293,8 @@ call plug#begin('~/.config/nvim/plugged/')
         " But if you want to install fzf as well using vim-plug:
         " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-        Plug 'junegunn/fzf'
+        Plug 'junegunn/fzf', { 'do': './install --all' }
+        " Plug 'junegunn/fzf'
         Plug 'junegunn/fzf.vim'
         Plug 'pbogut/fzf-mru.vim'
            let g:fzf_mru_relative = 1
@@ -785,12 +794,17 @@ call plug#begin('~/.config/nvim/plugged/')
         "--------------------------------------------------------------------------------- 
         " Plug 'dhruvasagar/vim-zoom'
         "         set statusline+=%{zoom#statusline()}
+        "---1812--------------------------------------------------------------------------- 
+        " Plug 'Shougo/echodoc.vim'
+        "         set cmdheight=2
+        "         let g:echodoc_enable_at_startup = 1
         "--------------------------------------------------------------------------------- 
         Plug 'Shougo/echodoc.vim'
                 set cmdheight=2
+                " set noshowmode
                 let g:echodoc_enable_at_startup = 1
                 let g:echodoc#type = 'virtual'
-                let g:echodoc#type = 'floating'
+                " let g:echodoc#type = 'floating'
                 " change Pmenu to your highlight group
                 highlight link EchoDocFloat Pmenu
                 
@@ -1092,9 +1106,110 @@ call plug#begin('~/.config/nvim/plugged/')
         "--------------------------------------------------------------------------------- 
         "--------------------------------------------------------------------------------- 
 
+        "--------------------------------------------------------------------------------- 
+                "JS
+                Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' } " works in tandem with pangloss/vim-javascript
+                Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' } " supports latest language features.
+                Plug 'othree/yajs.vim', { 'for': 'javascript' } " JavaScript syntax plugin
+                Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " preferred, works in tandem with jelera/vim-javascript-syntax
+        "--------------------------------------------------------------------------------- 
+                " CSS1
+                Plug 'hail2u/vim-css3-syntax', { 'for': [ 'css', 'vue' ] } " better CSS3 support.
+                Plug 'wavded/vim-stylus', { 'for': [ 'stylus', 'vue' ] } " stylus css
+                Plug 'groenewege/vim-less', { 'for': [ 'less', 'vue' ] } " less css support
+                Plug 'tpope/vim-haml', { 'for': [ 'haml', 'sass', 'scss', 'vue' ] } " haml, sass, and scss support
+        "--------------------------------------------------------------------------------- 
+
+        "Plug 'drslump/vim-syntax-js' " replace various keywords in JavaScript with abbreviations and symbols
+                "set conceallevel=2
+                "set concealcursor=nc  " don't reveal the conceals unless on insert or visual modes
+                "let g:syntax_js=['function', 'return', 'semicolon', 'comma', 'this', 'proto', 'solarized'] " which conceals to enable
+        Plug 'moll/vim-node', { 'for': 'javascript' }
+        "Plug 'walm/jshint.vim' " prefer NeoMake with added jshint config.
+        Plug 'jamescarr/snipmate-nodejs', { 'for': 'javascript' } " requires garbas/vim-snipmate, dump the contents of snippets/javascript into the directory ~/.vim/snippets/javascript
+        "Plug 'myhere/vim-nodejs-complete' " use <c-x><c-o> to trigger completion.
+        "Plug 'ahayman/vim-nodejs-complete', { 'for': 'javascript' } " use <c-x><c-o> to trigger completion. Fork of myhere's version, more up to date.
+                " XXX ^ This causes some files to crash and never open.
+        Plug 'sidorares/node-vim-debugger', { 'for': 'javascript' }
+        "--------------------------------------------------------------------------------- 
+
+        " Use the same js beautifier from jsbeautifier.org
+        " Plug 'maksimr/vim-jsbeautify', { 'on': 'JsBeautify' }
+        Plug 'maksimr/vim-jsbeautify'
+                command JsBeautify call JsBeautify()
+
+        " Syntax highlight stuff inside JS template strings.
+        Plug 'Quramy/vim-js-pretty-template', { 'for': 'javascript' }
+
+        " JSX
+        "Plug 'jsx/jsx.vim', { 'for': 'javascript.jsx' }
+        Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+
+        " COFFEESCRIPT
+        Plug 'kchmck/vim-coffee-script', { 'for': [ 'coffee', 'vue' ] }
+
+        " TYPESCRIPT
+        Plug 'leafgarland/typescript-vim', { 'for': [ 'typescript', 'vue' ] }
+
+        " QML
+        Plug 'peterhoeg/vim-qml'
+        "Plug 'calincru/qml.vim'
+
+        "--------------------------------------------------------------------------------- 
+        Plug 'trusktr/vim-mustache-handlebars', { 'for': 'html.handlebars' } " SLOW
+                let g:mustache_abbreviations = 1
+        Plug 'digitaltoad/vim-jade', { 'for': [ 'jade', 'vue' ] }
+        Plug 'digitaltoad/vim-pug', { 'for': [ 'pug', 'vue' ] }
+        Plug 'tpope/vim-markdown', { 'for': [ 'markdown', 'vue' ] }
+        "--------------------------------------------------------------------------------- 
+        " smart <c-a> and <c-x> to toggle true/false, on/off, increment dates or weekday names, etc.
+        Plug 'nishigori/increment-activator'
+        Plug 'Konfekt/vim-CtrlXA' " alternative to increment-activator
+        " Shows the index of current the current search match out
+        " of the total matches when navigating with n and N, f.e.
+        " [3/12]
+        Plug 'google/vim-searchindex'
+        "--------------------------------------------------------------------------------- 
+
+        Plug 'w0ng/vim-hybrid'
+        Plug 'trusktr/seti.vim'
+        Plug 'jacoborus/tender.vim'
+        "--------------------------------------------------------------------------------- 
+        Plug 'wesQ3/vim-windowswap' " easily swap window splits.
+
+        " BOOKMARKS
+
+        "" show and navigate bookmarks in the gutter.
+        Plug 'kshenoy/vim-signature'
+                " Similar mappings as vim-bookmarks (non-recursive
+                " so it triggers vim-signature's mappings).
+                nmap mm m3
+                nmap mn ]-
+                nmap mp [-
+                let g:SignatureMap = {
+                \ 'GotoNextSpotAlpha'  :  "",
+                \ 'GotoPrevSpotAlpha'  :  "",
+                \ }
+
+
+        " GIT
+        Plug 'mhinz/vim-signify'
+        let g:signify_disable_by_default = 0
+        let g:signify_vcs_list = [ 'git' ]
+        let g:signify_realtime = 0
+        "let g:signify_update_on_bufenter = 1
+        "let g:signify_update_on_focusgained = 1
+        let g:signify_sign_change = '~'
+        nnoremap <leader>gg :SignifyToggle<cr>
+        nmap <leader>gj <plug>(signify-next-hunk)
+        nmap <leader>gk <plug>(signify-prev-hunk)
+        nmap <leader>gJ 9999<leader>gj
+        nmap <leader>gK 9999<leader>gk
+
+
 call plug#end()
 "---nPlugEnd-nPlugStop3----------------}}}
-
+" HappyEnd
 
         "===VIM-SARTIFY-1==================================================================
         let g:startify_enable_special      = 0
@@ -1146,11 +1261,19 @@ call plug#end()
         " \ ['   Commands'], 'commands',
         "====== \ { 'header': ['   MRU '. getcwd()], 'type': 'dir' }, ==============================
 
-        let g:startify_lists = [
-                                \ { 'header': ['   Sessions'],       'type': 'sessions' },
-                                \ { 'header': ['   Bookmarks'],      'type': 'bookmarks' },
-                                \ { 'header': ['   MRU'],            'type': 'files' },
-                                \ { 'header': ['   Commits'],        'type': function('s:list_commits') },
+        " let g:startify_lists = [
+        "                         \ { 'header': ['   Sessions'],       'type': 'sessions' },
+        "                         \ { 'header': ['   Bookmarks'],      'type': 'bookmarks' },
+        "                         \ { 'header': ['   MRU'],            'type': 'files' },
+        "                         \ { 'header': ['   Commits'],        'type': function('s:list_commits') },
+        "                         \ ]
+
+        let g:startify_list_order = [
+                                \ ['   Commands'], 'commands',
+                                \ ['   Sessions'], 'sessions',
+                                \ ['   MRU Files'], 'files',
+                                \ ['   MRU Files in Current Dir'], 'dir',
+                                \ ['   Bookmarks'], 'bookmarks',
                                 \ ]
 
         let g:startify_session_dir = '~/git/bTest/kDot/zSS'
