@@ -1,3 +1,12 @@
+
+UltiSnips requires py >= 2.7 or py3
+Error detected while processing function ColorizeSignColumn:
+line    8:
+E319: No "python" provider found. Run ":checkhealth provider"
+Error detected while processing CursorHold Autocommands for "*":
+E117: Unknown function: CocActionAsync
+
+
 :help various-motions
 :help sign-support
 :help virtualedit
@@ -822,26 +831,4 @@ vim.eval(str)						*python-eval*
 	    :py str = vim.eval("12+12")		# NB result is a string! Use
 						# string.atoi() to convert to
 						# a number.
-
-
-        "---------------------------------------------------------------------------------- 
-        "Plug 'vim-scripts/tComment'
-        " As operator (the prefix can be customized via g:tcommentMapLeaderOp1 
-        " and g:tcommentMapLeaderOp2):
-        " gc{motion}   :: Toggle comments (for small comments within one line 
-        "                 the &filetype_inline style will be used, if 
-        "                 defined)
-        " gcc          :: Toggle comment for the current line
-        " gC{motion}   :: Comment region
-        " gCc          :: Comment the current line
-        " Primary key maps:
-        " <c-_><c-_>   :: :TComment
-        " <c-_><space> :: :TComment <QUERY COMMENT-BEGIN ?COMMENT-END>
-        " <c-_>b       :: :TCommentBlock
-        " <c-_>a       :: :TCommentAs <QUERY COMMENT TYPE>
-        " <c-_>n       :: :TCommentAs &filetype <QUERY COUNT>
-        " <c-_>s       :: :TCommentAs &filetype_<QUERY COMMENT SUBTYPE>
-        " <c-_>i       :: :TCommentInline
-        " <c-_>r       :: :TCommentRight
-        " <c-_>p       :: Comment the current inner paragraph
 

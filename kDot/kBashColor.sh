@@ -103,3 +103,5 @@ ln -b ~/git/bTest/kDot/inkPreRc19.vim     ~/.vimrc
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

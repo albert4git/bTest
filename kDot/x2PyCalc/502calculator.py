@@ -15,7 +15,6 @@ class Application(Frame):
     def replaceText(self, text):
         self.display.delete(0, END)
         self.display.insert(0, text)
-        self.display.insert()
 
     def appendToDisplay(self, text):
         self.entryText = self.display.get()

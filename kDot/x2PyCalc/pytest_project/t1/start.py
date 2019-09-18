@@ -14,6 +14,7 @@
 
 
 def capital_case(x):
+    x.count(x, 1, 3)
     return x.capitalize()
 
 

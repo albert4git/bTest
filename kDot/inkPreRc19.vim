@@ -76,6 +76,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-unimpaired'  " Handy bracket mappings.
     "---PreTESTED--------------------------------------
     Plug 'mtth/scratch.vim'
+    "Plug 'vimim/vimim'
+    Plug 'vim-scripts/VimIM'
     "---TODO--------------------------------------------
     Plug 'tpope/vim-fugitive'
     Plug 'Shougo/neosnippet.vim'

@@ -2,9 +2,8 @@
 " tmf: $0,0=$1,2 = $1,1 * $1,1 
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
-"==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Di 17 Sep 2019 03:58:36  CEST
+" Last Modified:      Di 17 Sep 2019 12:37:05  CEST
 "==================================================================================================
 
 "-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
@@ -133,7 +132,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 if !exists('g:airline_symbols')
                         let g:airline_symbols = {}
                 endif
-
                 "--------------------------------------------------------------------------
                 hi statusline ctermbg=10 ctermfg=Black  cterm=bold
                 hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
@@ -208,13 +206,32 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'coderifous/textobj-word-column.vim'
         "----vac----
 
-        "---------------------------------------------------------------------------------- 
         Plug 'devjoe/vim-codequery'
         Plug 'aperezdc/vim-template'
 
-        "---------------------------------------------------------------------------------- 
         Plug 'vim-scripts/L9'
         Plug 'vim-scripts/FuzzyFinder'
+        "---------------------------------------------------------------------------------- 
+        "Plug 'vim-scripts/tComment'
+        " As operator (the prefix can be customized via g:tcommentMapLeaderOp1 
+        " and g:tcommentMapLeaderOp2):
+        " gc{motion}   :: Toggle comments (for small comments within one line 
+        "                 the &filetype_inline style will be used, if 
+        "                 defined)
+        " gcc          :: Toggle comment for the current line
+        " gC{motion}   :: Comment region
+        " gCc          :: Comment the current line
+        " Primary key maps:
+        " <c-_><c-_>   :: :TComment
+        " <c-_><space> :: :TComment <QUERY COMMENT-BEGIN ?COMMENT-END>
+        " <c-_>b       :: :TCommentBlock
+        " <c-_>a       :: :TCommentAs <QUERY COMMENT TYPE>
+        " <c-_>n       :: :TCommentAs &filetype <QUERY COUNT>
+        " <c-_>s       :: :TCommentAs &filetype_<QUERY COMMENT SUBTYPE>
+        " <c-_>i       :: :TCommentInline
+        " <c-_>r       :: :TCommentRight
+        " <c-_>p       :: Comment the current inner paragraph
+
         "---------------------------------------------------------------------------------- 
         Plug 'prabirshrestha/async.vim'
         Plug 'skywind3000/asyncrun.vim'
@@ -237,6 +254,7 @@ call plug#begin('~/.config/nvim/plugged/')
                         "\ 'args': ['--verbose'],
                         "\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
                         "\ }
+
 
                     let g:neomake_error_sign = {
                         \ 'text': '✖',
@@ -790,8 +808,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 set cmdheight=2
                 " set noshowmode
                 let g:echodoc_enable_at_startup = 1
-                let g:echodoc#type = 'virtual'
-                " let g:echodoc#type = 'floating'
+                "let g:echodoc#type = 'virtual'
+                let g:echodoc#type = 'floating'
                 " change Pmenu to your highlight group
                 highlight link EchoDocFloat Pmenu
                 
@@ -1102,18 +1120,14 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------------------------------------------------------------------------
         Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
         "------------------------------------------------------------------------------------------
-        " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        " Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
-        " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+        " Use release branch
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        " Or latest tag
+        Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+        " Or build from source code by use yarn: https://yarnpkg.com
+        Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
         "------------------------------------------------------------------------------------------
         Plug 'liuchengxu/vista.vim'
-        let g:vista_fzf_preview = ['right:50%']
-
-        "------------------------------------------------
-        let g:vista#renderer#icons = {
-                                \   "function": "\uf794",
-                                \   "variable": "\uf71b",
-                                \  }
         "------------------------------------------------------------------------------------------
         Plug 'prabirshrestha/vim-lsp'
         "------------------------------------------------------------------------------------------
@@ -1162,7 +1176,6 @@ call plug#begin('~/.config/nvim/plugged/')
                                         \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
                                         \ })
         endif
-
         "------------------------------------------------------------------------------------------
         if executable('java') && filereadable(expand('~/lsp/org.eclipse.lsp4xml-0.3.0-uber.jar'))
                 au User lsp_setup call lsp#register_server({
@@ -1180,6 +1193,8 @@ call plug#begin('~/.config/nvim/plugged/')
                                         \ })
         endif
         "------------------------------------------------------------------------------------------
+
+
         Plug 'w0rp/ale'
                 "Linting
                 let g:ale_sign_column_always = 1
@@ -1300,7 +1315,7 @@ call plug#end()
         let g:jedi#goto_command = "gt"
         let g:jedi#auto_close_doc = 0  " close preview window after completion
         "::::::::::::::::::::::-=<1>=-:::::::::::::::::::::::::::::::::::::::::::::::::::::
-        let g:deoplete#enable_at_startup = 1
+        let g:deoplete#enable_at_startup = 0
         call deoplete#custom#option('refresh_always', v:true)
         "call deoplete#custom#source('jedi', 'is_debug_enabled', 1)
         "call deoplete#enable_logging('DEBUG', 'deoplete.log')
@@ -1381,7 +1396,7 @@ call plug#end()
         call deoplete#custom#source('tmux-complete', 'rank', 300)
         call deoplete#custom#source('syntax',        'rank', 200)
         "--------------------------------------------------------------------------------
-        call deoplete#custom#source('LanguageClient','mark', 'langCl')
+        call deoplete#custom#source('LanguageClient','mark', 'langC')
         call deoplete#custom#source('omni',          'mark', 'omni')
         call deoplete#custom#source('flow',          'mark', 'flow')
         call deoplete#custom#source('TernJS',        'mark', 'tern')

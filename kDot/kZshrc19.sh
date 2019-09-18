@@ -146,6 +146,15 @@ alias kdeo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias d2='deonvim  -u ~/git/bTest/kDot/k2MinFF.vim'
 alias nd2='deonvim  -u ~/git/bTest/kDot/nd2MinFF.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias d50='nvim500  -u ~/git/bTest/kDot/k3MinFF.vim'
+alias d42='nvim402  -u ~/git/bTest/kDot/k3MinFF.vim'
+alias d41='nvim401  -u ~/git/bTest/kDot/k3MinFF.vim'
+alias d40='nvim400  -u ~/git/bTest/kDot/k3MinFF.vim'
+
+alias a41='401nv.app  -u ~/git/bTest/kDot/k3MinFF.vim'
+alias a42='402nv.app  -u ~/git/bTest/kDot/k3MinFF.vim'
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias d7='deonvim NONE -u ~/git/bTest/kDot/kFF7Min.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias vif='vim $(fzf)'

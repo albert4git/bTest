@@ -11,7 +11,7 @@ badd +20 NONE
 badd +601 kConfigFVWM.sh
 badd +16 kMinit.vim
 badd +3 k5DEO.vim
-badd +27 4Temp.vim
+badd +29 4Temp.vim
 badd +1 timeTest.txt
 badd +2 logoTextObjct.vim
 badd +3 logoGit.vim
@@ -36,7 +36,7 @@ setlocal fdl=0
 setlocal fml=6
 setlocal fdn=20
 setlocal nofen
-let s:l = 29 - ((17 * winheight(0) + 15) / 31)
+let s:l = 29 - ((15 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
