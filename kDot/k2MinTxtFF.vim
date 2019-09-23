@@ -1,3 +1,5 @@
+curl -L https://raw.githubusercontent.com/languagetool-org/languagetool/master/install.sh | sudo bash <options>
+
 :help various-motions
 :help sign-support
 :help virtualedit

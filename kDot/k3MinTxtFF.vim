@@ -1,4 +1,24 @@
 
+"===============================================================================================================
+" <Leader>dk <Plug>(textobj-diff-hunk-p)
+
+"===============================================================================================================
+" <Leader>dfJ	<Plug>(textobj-diff-file-N)
+" <Leader>dfK	<Plug>(textobj-diff-file-P)
+" <Leader>dfj	<Plug>(textobj-diff-file-n)
+" <Leader>dfk	<Plug>(textobj-diff-file-p)
+" <Lader>dJ	<Plug>(textobj-diff-hunk-N)
+" <Leader>dK	<Plug>(textobj-diff-hunk-P)
+" <Leader>dj	<Plug>(textobj-diff-hunk-n)
+" <Leader>dk	<Plug>(textobj-diff-hunk-p)
+"===============================================================================================================
+
+" let g:windowswap_map_keys = 0 "prevent default bindings
+" nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
+" nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
+" nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
+"===============================================================================================================
+
 UltiSnips requires py >= 2.7 or py3
 Error detected while processing function ColorizeSignColumn:
 line    8:
@@ -187,19 +207,20 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 "==================================================================================================
 
-        "----------------------------------------------------------------------------------
-        " :Delete: Delete a buffer and the file on disk simultaneously.
-        " :Unlink: Like :Delete, but keeps the now empty buffer.
-        " :Move: Rename a buffer and the file on disk simultaneously.
-        " :Rename: Like :Move, but relative to the current file's containing directory.
-        " :Chmod: Change the permissions of the current file.
-        " :Mkdir: Create a directory, defaulting to the parent of the current file.
-        " :Cfind: Run find and load the results into the quickfix list.
-        " :Clocate: Run locate and load the results into the quickfix list.
-        " :Lfind/:Llocate: Like above, but use the location list.
-        " :Wall: Write every open window. Handy for kicking off tools like guard.
-        " :SudoWrite: Write a privileged file with sudo.
-        " :SudoEdit: Edit a privileged file with sudo.
+"----------------------------------------------------------------------------------
+" :Delete: Delete a buffer and the file on disk simultaneously.
+" :Unlink: Like :Delete, but keeps the now empty buffer.
+" :Move: Rename a buffer and the file on disk simultaneously.
+" :Rename: Like :Move, but relative to the current file's containing directory.
+" :Chmod: Change the permissions of the current file.
+" :Mkdir: Create a directory, defaulting to the parent of the current file.
+" :Cfind: Run find and load the results into the quickfix list.
+" :Clocate: Run locate and load the results into the quickfix list.
+" :Lfind/:Llocate: Like above, but use the location list.
+" :Wall: Write every open window. Handy for kicking off tools like guard.
+" :SudoWrite: Write a privileged file with sudo.
+" :SudoEdit: Edit a privileged file with sudo.
+
 "-----------------------------------------------------------------"
 " :Keep                                                           "
 " :Reject                                                         "
@@ -210,8 +231,10 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 " :SaveListAdd curlist                                            "
 " :LoadList curlist                                               "
 " :ListLists                                                      "
+"-----------------------------------------------------------------"
 
 
+"-----------------------------------------------------------------"
 " nmap <Leader>f :GFiles<CR>
 " nmap <Leader>F :Files<CR>
 " nmap <Leader>t :BTags<CR>
@@ -230,16 +253,17 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 " nmap <Leader>S :Snippets<CR>
 " nmap <Leader><Leader>h :Helptags!<CR>
 
-        "---------------------------------------------------------------
-        "nnoremap T :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-        "================================================================="
-        "  s - open entry in a new horizontal window                      "
-        "  v - open entry in a new vertical window                        "
-        "  t - open entry in a new tab                                    "
-        "  o - open entry and come back                                   "
-        "  O - open entry and close the location/quickfix window          "
-        "  p - open entry in a preview window                             "
-        "================================================================="
+"---------------------------------------------------------------
+"nnoremap T :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+"================================================================="
+"  s - open entry in a new horizontal window                      "
+"  v - open entry in a new vertical window                        "
+"  t - open entry in a new tab                                    "
+"  o - open entry and come back                                   "
+"  O - open entry and close the location/quickfix window          "
+"  p - open entry in a preview window                             "
+"================================================================="
+
 "==================================================================================================
 " nmap <Leader>s :FFFiletypes<CR>
 " nmap <Leader>m :FFMaps<CR>
@@ -257,7 +281,6 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 " nmap <Leader>h :FFHistory<CR>
 " nmap <Leader>f :FFGFiles<CR>
 " nmap <Leader>F :FFFiles<CR>
-
 "==================================================================================================
 
 
@@ -289,57 +312,57 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 "==================================================================================================
 
-        "==================================================================================
-        "::::::::::::::::::::::::::::::-UNITE-:::::::::::::::::::::::::::::::::::::::::::::
-        "==================================================================================
-        nnoremap <C-p> :Unite help buffer file_mru file file_rec bookmark <CR>
-        nnoremap \\ :Unite help buffer file_mru file file_rec bookmark <CR>
-        nnoremap <Leader>\ :Unite -silent -vertical -winwidth=40  -direction=botright -toggle outline<CR>
-        nnoremap <Leader>h :UniteWithCursorWord -silent help<CR>
-        nnoremap <Leader>u :Unite help file_mru file buffer file_rec bookmark <CR>
-        " nnoremap <Leader>r :<C-u>Unite -buffer-name=register register<CR>
-        " nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
-        nnoremap <Leader>j :<C-u>Unite -buffer-name=jump jump<CR>
-        nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
-        nnoremap <Leader>' :Unite bookmark <CR>
-        "------------------------------------------------------------------
-        noremap  ,r :Ranger <CR>
-        "==========================================================================================
-        "nnoremap <Leader>' <Plug>BookmarkShowAll
+"==================================================================================
+"::::::::::::::::::::::::::::::-UNITE-:::::::::::::::::::::::::::::::::::::::::::::
+"==================================================================================
+nnoremap <C-p> :Unite help buffer file_mru file file_rec bookmark <CR>
+nnoremap \\ :Unite help buffer file_mru file file_rec bookmark <CR>
+nnoremap <Leader>\ :Unite -silent -vertical -winwidth=40  -direction=botright -toggle outline<CR>
+nnoremap <Leader>h :UniteWithCursorWord -silent help<CR>
+nnoremap <Leader>u :Unite help file_mru file buffer file_rec bookmark <CR>
+" nnoremap <Leader>r :<C-u>Unite -buffer-name=register register<CR>
+" nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
+nnoremap <Leader>j :<C-u>Unite -buffer-name=jump jump<CR>
+nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
+nnoremap <Leader>' :Unite bookmark <CR>
+"------------------------------------------------------------------
+noremap  ,r :Ranger <CR>
+"==========================================================================================
+"nnoremap <Leader>' <Plug>BookmarkShowAll
 
-       "============================================================================================
-        command! FZFLib call fzf#run({'source': 'find ~/git/bTest/  -type f', 'sink':  'edit'})
+"============================================================================================
+command! FZFLib call fzf#run({'source': 'find ~/git/bTest/  -type f', 'sink':  'edit'})
 
-       "============================================================================================
-        command! FZFLL call fzf#run({'source': split(system( "fd vim$")), 'sink': 'e', 'down': '40%'})
+"============================================================================================
+command! FZFLL call fzf#run({'source': split(system( "fd vim$")), 'sink': 'e', 'down': '40%'})
 
-       "============================================================================================
-        command! FZFLS call fzf#run({'source': 'git ls-files', 'sink': 'e', 'left': '40%'})
-       "============================================================================================
+"============================================================================================
+command! FZFLS call fzf#run({'source': 'git ls-files', 'sink': 'e', 'left': '40%'})
+"============================================================================================
 
 
-       "============================================================================================
-       "=========
-       function! s:escape(path)
-               return substitute(a:path, ' ', '\\ ', 'g')
-       endfunction
+"============================================================================================
+"=========
+function! s:escape(path)
+        return substitute(a:path, ' ', '\\ ', 'g')
+endfunction
 
-       function! AgHandler(line)
-               let parts = split(a:line, ':')
-               let [fn, lno] = parts[0 : 1]
-               execute 'e '. s:escape(fn)
-               execute lno
-               normal! zz
-       endfunction
+function! AgHandler(line)
+        let parts = split(a:line, ':')
+        let [fn, lno] = parts[0 : 1]
+        execute 'e '. s:escape(fn)
+        execute lno
+        normal! zz
+endfunction
 
-       command! -nargs=+ Fag call fzf#run({
-                               \ 'source': 'ag "<args>"',
-                               \ 'sink': function('AgHandler'),
-                               \ 'options': '+m',
-                               \ 'tmux_height': '60%'
-                               \ })
-       "=========
-       "============================================================================================
+command! -nargs=+ Fag call fzf#run({
+                        \ 'source': 'ag "<args>"',
+                        \ 'sink': function('AgHandler'),
+                        \ 'options': '+m',
+                        \ 'tmux_height': '60%'
+                        \ })
+"=========
+"============================================================================================
 
 "=================================================================================================
 "=================================================================================================
@@ -719,32 +742,53 @@ Notice, only StarDict-3.0.0 and above version support these dictionaries.
 You can convert any babylon .bgl file to StarDict format by the PyGlossary tool, just visit
 
 
-        "--------------------------------------------------------------------------------- 
-        Plug 'ncm2/ncm2'
-        " enable ncm2 for all buffers
-        " autocmd BufEnter * call ncm2#enable_for_buffer()
-        "ttt  IMPORTANT: :help Ncm2PopupOpen for more information
-        " set completeopt=noinsert,menuone,noselect
-        "  NOTE: you need to install completion sources to get completions. Check
-        "  our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-        Plug 'ncm2/ncm2-bufword'
-        Plug 'ncm2/ncm2-path'
-        "--------------------------------------------------------------------------------- 
-        " BOOKMARKS
-        " show and navigate bookmarks in the gutter.
-        Plug 'kshenoy/vim-signature'
-                " Similar mappings as vim-bookmarks (non-recursive
-                " so it triggers vim-signature's mappings).
-                nmap mm m3
-                nmap mn ]-
-                nmap mp [-
-                let g:SignatureMap = {
-                \ 'GotoNextSpotAlpha'  :  "",
-                \ 'GotoPrevSpotAlpha'  :  "",
-                \ }
+"--------------------------------------------------------------------------------- 
+Plug 'ncm2/ncm2'
+" enable ncm2 for all buffers
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+"ttt  IMPORTANT: :help Ncm2PopupOpen for more information
+" set completeopt=noinsert,menuone,noselect
+"  NOTE: you need to install completion sources to get completions. Check
+"  our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+"--------------------------------------------------------------------------------- 
+" BOOKMARKS
+" show and navigate bookmarks in the gutter.
+Plug 'kshenoy/vim-signature'
+        " Similar mappings as vim-bookmarks (non-recursive
+        " so it triggers vim-signature's mappings).
+        nmap mm m3
+        nmap mn ]-
+        nmap mp [-
+        let g:SignatureMap = {
+        \ 'GotoNextSpotAlpha'  :  "",
+        \ 'GotoPrevSpotAlpha'  :  "",
+        \ }
 
-"===============================================================================================================
-"===============================================================================================================
+"==========================================================================================
+
+        "--------------------------------------------------------------------------------- 
+        " Plug 'vim-scripts/TagHighlight'
+        " " TagHighlight highlight names of class, variable, types in code.
+        " " Usage: :UpdateTypesFile
+        "         if !exists('g:TagHighlightSettings')
+        "                 let g:TagHighlightSettings = {}
+        "         endif
+        "         let g:TagHighlightSettings['TagFileName'] = 'tags'
+        "         let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'
+        "         let g:TagHighlightSettings['CtagsVariant'] = 'exuberant'
+        "         let g:TagHighlightSettings['CtagsArguments'] = []
+        "         let g:TagHighlightSettings['CtagsExtraArguments'] = []
+        "         let g:TagHighlightSettings['ForcePythonVariant'] = 'if_pyth3'
+        "         let g:TagHighlightSettings['PythonVariantPriority'] = [
+        "                                 \ "if_pyth3", "if_pyth", "python", "compiled",
+        "                                 \ ]
+        "--------------------------------------------------------------------------------- 
+        " Plug 'dhruvasagar/vim-zoom'
+        "         set statusline+=%{zoom#statusline()}
+
+"==========================================================================================
     " suppress the annoying 'match x of y', 'The only match' and 'Pattern not
     " found' messages
     set shortmess+=c

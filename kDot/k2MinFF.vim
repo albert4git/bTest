@@ -2,7 +2,7 @@
 " File: k2MinFF.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Di 17 Sep 2019 03:58:35  CEST
+" Last Modified:      So 22 Sep 2019 10:22:15  CEST
 "==================================================================================================
 "==================================================================================================
 "==================================================================================================
@@ -273,7 +273,7 @@
         "-TOP---!!!---------------------------------------------------------------------------
         hi pythonSelf  ctermfg=68 cterm=bold 
         hi Search         ctermbg=11 
-        hi Normal         ctermbg=235
+        " hi Normal         ctermbg=235
         " guibg=#333333
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
@@ -1411,11 +1411,58 @@ cabbrev ZS  ZSnippets
 nmap == :call FzfSpell()<CR>
 
 
-"===============================================================================================================
+"===Vista===================================================================================================
 
 function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
 set statusline+=%{NearestMethodOrFunction()}
+"===============================================================================================================
+nmap <silent> <C-.> <Plug>(coc-definition)
+nmap <silent> <C-,> <Plug>(coc-references)
+nn <silent> K :call CocActionAsync('doHover')<cr>
+" Was macht das?
+au CursorHold * sil call CocActionAsync('highlight')
+au CursorHoldI * sil call CocActionAsync('showSignatureHelp')
+"===============================================================================================================
 
+Shortcut format function call, removing parentheses
+      \ noremap <silent> <Space>f( :call Format_funcall_drop_parens()<CR>
+
+Shortcut convert double to single quotes at cursor
+      \ nnoremap <silent> <Space>f' :call Format_quotes_singularize()<CR>
+
+Shortcut convert single to double quotes at cursor
+      \ nnoremap <silent> <Space>f" :call Format_quotes_pluralize()<CR>
+"===============================================================================================================
+"===============================================================================================================
+" remove parentheses around function call arguments
+function! Format_funcall_drop_parens() abort
+  let cursor = winsaveview()
+  execute 'normal '. s:delete_surround .'('
+  execute 'normal! i '
+  call winrestview(cursor)
+endfunction
+
+" convert from double quotes to single quotes
+function! Format_quotes_singularize() abort
+  let cursor = winsaveview()
+  execute 'normal '. s:change_surround ."\"'"
+  call winrestview(cursor)
+endfunction
+
+" convert from single quotes to double quotes
+function! Format_quotes_pluralize() abort
+  let cursor = winsaveview()
+  execute 'normal '. s:change_surround ."'\""
+  call winrestview(cursor)
+endfunction
+"===============================================================================================================
+
+"===============================================================================================================
+
+"===============================================================================================================
+
+"===============================================================================================================
+"===============================================================================================================

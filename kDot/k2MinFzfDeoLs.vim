@@ -4,7 +4,7 @@
 "==================================================================================================
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Di 17 Sep 2019 03:58:36  CEST
+" Last Modified:      So 22 Sep 2019 10:24:14  CEST
 "==================================================================================================
 
 "-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
@@ -916,11 +916,13 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "------------------TODO------------------------------------------------------------ 
         "???err??? Plug 'mhartington/nvim-typescript'
-        Plug 'mhartington/nvim-typescript'
+        " Plug 'mhartington/nvim-typescript'
         " autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
 
         "---------------------------------------------------------------------------------- 
         " TYPESCRIPT
+
+        Plug 'HerringtonDarkholme/yats.vim'
         Plug 'leafgarland/typescript-vim', { 'for': [ 'typescript', 'vue' ] }
         Plug 'peitalin/vim-jsx-typescript'
                 autocmd BufNewFile,BufRead *.tsx,*.jsx,*.ts,*.js set filetype=typescript.tsx
@@ -1059,7 +1061,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "Plug 'amiorin/vim-project'
         "Plug 'tpope/vim-projectionist'
         "Plug 'tpope/vim-rake'
-        "Plug 'vim-ruby/vim-ruby
+        Plug 'vim-ruby/vim-ruby
         "Plug 'tpope/vim-rails'
 
         "-------------------$mkid---idtools------------------------------------------------ 
@@ -1117,68 +1119,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------------------------------------------------------------------------
         Plug 'prabirshrestha/vim-lsp'
         "------------------------------------------------------------------------------------------
-        if executable('solargraph')
-                " gem install solargraph
-                au User lsp_setup call lsp#register_server({
-                                        \ 'name': 'solargraph',
-                                        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
-                                        \ 'initialization_options': {"diagnostics": "true"},
-                                        \ 'whitelist': ['ruby'],
-                                        \ })
-        endif
-        "------------------------------------------------------------------------------------------
-        " After vim-lsp, etc
-        Plug 'ryanolsonx/vim-lsp-javascript'
-        if executable('typescript-language-server')
-                au User lsp_setup call lsp#register_server({
-                                        \ 'name': 'javascript support using typescript-language-server',
-                                        \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-                                        \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
-                                        \ 'whitelist': ['javascript', 'javascript.jsx', 'javascriptreact']
-                                        \ })
-        endif
-        "------------------------------------------------------------------------------------------
-        if executable('css-languageserver')
-        au User lsp_setup call lsp#register_server({
-                \ 'name': 'css-languageserver',
-                \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
-                \ 'whitelist': ['css', 'less', 'sass'],
-                \ })
-        endif
-        "------------------------------------------------------------------------------------------
-        au User lsp_setup call lsp#register_server({                                    
-                                \ 'name': 'php-language-server',                                            
-                                \ 'cmd': {server_info->['php', expand('~/.vim/plugged/php-language-server/bin/php-language-server.php')]},
-                                \ 'whitelist': ['php'],                                                     
-                                \ })
-        "------------------------------------------------------------------------------------------
-        " After vim-lsp, etc
-        Plug 'ryanolsonx/vim-lsp-python'
-        if executable('pyls')
-                au User lsp_setup call lsp#register_server({
-                                        \ 'name': 'pyls',
-                                        \ 'cmd': {server_info->['pyls']},
-                                        \ 'whitelist': ['python'],
-                                        \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
-                                        \ })
-        endif
-
-        "------------------------------------------------------------------------------------------
-        if executable('java') && filereadable(expand('~/lsp/org.eclipse.lsp4xml-0.3.0-uber.jar'))
-                au User lsp_setup call lsp#register_server({
-                                        \ 'name': 'lsp4xml',
-                                        \ 'cmd': {server_info->[
-                                        \     'java',
-                                        \     '-noverify',
-                                        \     '-Xmx1G',
-                                        \     '-XX:+UseStringDeduplication',
-                                        \     '-Dfile.encoding=UTF-8',
-                                        \     '-jar',
-                                        \     expand('~/lsp/org.eclipse.lsp4xml-0.3.0-uber.jar')
-                                        \ ]},
-                                        \ 'whitelist': ['xml']
-                                        \ })
-        endif
         "------------------------------------------------------------------------------------------
         Plug 'w0rp/ale'
                 "Linting
@@ -1191,7 +1131,17 @@ call plug#begin('~/.config/nvim/plugged/')
                                         \   'python': ['flake8'],
                                         \}
 
+        "------------------------------------------------------------------------------------------
         " Plug 'jacobsimpson/nvim-example-python-plugin'
+        "------------------------------------------------------------------------------------------
+        Plug 'vigoux/LanguageTool.nvim'
+        let g:languagetool_server='$HOME/LanguageTool-4.6-stable/languagetool-server.jar'
+
+        hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
+        hi LanguageToolSpellingError guisp=red  gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=red  term=underline cterm=none
+
+        Plug 'elzr/vim-json' " For metadata.json
+        Plug 'mrk21/yaml-vim' " For hieradata
 call plug#end()
 "---nPlugEnd-nPlugStop3----------------}}}
 " HappyEnd

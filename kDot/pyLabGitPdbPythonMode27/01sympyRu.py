@@ -11,6 +11,7 @@
 
 #------------------------------------------------------------
 #--readthedocs--XXX0--SetUp-----------------------------------
+
 import sympy
 from sympy import *
 x = Symbol('x')
@@ -25,9 +26,10 @@ f = symbols('f', cls=Function)
 g = symbols('g', cls=Function)
 a = x + y
 b = y * z
-print("a={}. b={}.".format(a, b))
+# print("a={}. b={}.".format(a, b))
 print '-------------------------------------------------------'
 f = sympy.sin(x)**2 + sympy.cos(x)**2
+
 sympy.pprint(f)
 print '-------------------------------------------------------'
 sympy.pprint(f.simplify())

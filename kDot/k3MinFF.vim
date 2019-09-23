@@ -2,8 +2,9 @@
 " File: k3MinFF.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Di 17 Sep 2019 11:53:25  CEST
+" Last Modified:      Mo 23 Sep 2019 02:56:44  CEST
 "==================================================================================================
+" KRANKES:NETZ-2
 "==================================================================================================
 "==================================================================================================
 
@@ -15,11 +16,11 @@
         "----------------------------------------------------------------------------------
         let $MYVIMRC='~/.config/nvim/init.vim'
         "----------------------------------------------------------------------------------
-        let g:loaded_clipboard_provider = 1
+        " let g:loaded_clipboard_provider = 1
+
         "------------------------------------------------------------------------------------------
         let g:python_host_prog = '/usr/bin/python2'
         let g:python3_host_prog = '/usr/bin/python3'
-        "let g:deoplete#sources#jedi#extra_path = $PYTHONPATH
         "let g:python_host_prog = '/Users/davidbrewer/.pyenv/versions/neovim2/bin/python'
         "let g:python3_host_prog = '/Users/davidbrewer/.pyenv/versions/neovim3/bin/python'
         "let g:python3_host_prog=expand('~/anaconda3/bin/python')
@@ -152,6 +153,7 @@
         "------------------------------------------------------------------------------------------
         silent! set clipboard=unnamed
         silent! set clipboard+=unnamedplus
+
         "------------------------------------------------------------------------------------------
         "-Performance
         silent! set updatetime=300 timeout timeoutlen=300 ttimeout ttimeoutlen=50 ttyfast lazyredraw
@@ -219,7 +221,8 @@
 "-2Remap-}}}
 
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-         source ~/git/bTest/kDot/k2MinFzfDeoLs.vim
+         " source ~/git/bTest/kDot/k2MinFzfDeoLs.vim
+         source ~/git/bTest/kDot/k3MinFzfCocLs.vim
          source ~/git/bTest/kDot/logoABB.vim
          source ~/git/bTest/kDot/logoFunc.vim
         "source ~/git/bTest/kDot/minFzfDeoLsJediSnip.vim
@@ -238,7 +241,9 @@
         "colorscheme candycode
         colorscheme desert
         colorscheme badwolf
-         " colorscheme ayu
+        colorscheme delek
+        colorscheme pyte
+        colorscheme ayu
         " let ayucolor="dark"   " for dark version of theme
         " let ayucolor="light"  " for light version of theme
         " let ayucolor="mirage" " for mirage version of theme
@@ -258,6 +263,14 @@
 
         highlight UnderlineTag  cterm=underline  
 
+        "==================================================================================
+        " highlight link LspErrorText GruvboxRedSign 
+        " highlight clear LspWarningLine
+        " au CursorHold * sil call CocActionAsync('highlight')
+        " au CursorHoldI * sil call CocActionAsync('showSignatureHelp')
+        "==================================================================================
+
+        "==================================================================================
         " hi Enumerator guifg="c000c0"
         " Class           : Class
         " DefinedName     : Define
@@ -271,18 +284,20 @@
         " GlobalConstant  : Global Constant
         " GlobalVariable  : Global Variable
         " LocalVariable   : Local Variable
+        "==================================================================================
 
         "-TOP---!!!---------------------------------------------------------------------------
         hi pythonSelf  ctermfg=68 cterm=bold 
         hi Search         ctermbg=11 
-        hi Normal         ctermbg=235
+        hi Normal         ctermbg=234 guibg = #333233
         " guibg=#333333
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
 
-        " hi ColorColumn    ctermbg=22
-        " set signcolumn=yes
-        " hi signcolumn     ctermbg=23 guibg=14
-        " highlight SignColumn     ctermbg=230       guibg=#00ff00
+
+        hi ColorColumn    ctermbg=22
+        set signcolumn=yes
+        hi signcolumn     ctermbg=23 guibg=14
+        highlight SignColumn     ctermbg=230       guibg=#00ff00
 
         "hi LineNr         ctermbg=199 ctermfg=16 
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#020202
@@ -344,6 +359,7 @@
         call matchadd('darkGray', 'MMM')
         call matchadd('darkGray', 'TTT')
         call matchadd('darkGray', 'DDD')
+        call matchadd('darkGray', 'POC')
         call matchadd('customPink', '===')
         call matchadd('customPink', '==')
         call matchadd('customPink', '=')
@@ -643,10 +659,6 @@
         vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
         vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
         "==========================================================================================
-        "==========================================================================================
-        inoremap <expr><C-g>     deoplete#undo_completion()
-        inoremap <expr><C-l>     deoplete#refresh()
-        inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
         "---TODO------------------------------------------------------------
         imap <C-s>    <Plug>(neosnippet_start_unite_snippet)
         imap <C-k>    <Plug>(neosnippet_expand_or_jump)
@@ -1299,24 +1311,6 @@ nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
 
  nmap <Leader>s <Plug>(textobj-diff-hunk-n)
 
-" <Leader>dk <Plug>(textobj-diff-hunk-p)
-
-"===============================================================================================================
-" <Leader>dfJ	<Plug>(textobj-diff-file-N)
-" <Leader>dfK	<Plug>(textobj-diff-file-P)
-" <Leader>dfj	<Plug>(textobj-diff-file-n)
-" <Leader>dfk	<Plug>(textobj-diff-file-p)
-" <Lader>dJ	<Plug>(textobj-diff-hunk-N)
-" <Leader>dK	<Plug>(textobj-diff-hunk-P)
-" <Leader>dj	<Plug>(textobj-diff-hunk-n)
-" <Leader>dk	<Plug>(textobj-diff-hunk-p)
-"===============================================================================================================
-
-" let g:windowswap_map_keys = 0 "prevent default bindings
-" nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
-" nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
-" nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
-
 
 "===============================================================================================================
 "===VIM-SARTIFY-1===============================================================================================
@@ -1415,55 +1409,35 @@ cabbrev ZS  ZSnippets
 nmap == :call FzfSpell()<CR>
 
 "===============================================================================================================
-" Required for operations modifying multiple buffers like rename.
-set hidden
-
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-    \ }
-
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> M :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 "===============================================================================================================
-" if hidden is not set, TextEdit might fail.
-set hidden
-
+"=======================================================================
+"=======================================================================
+"===============================================================================================================
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
-
-" Better display for messages
 set cmdheight=2
-
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
-" always show signcolumns
-set signcolumn=yes
-
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-" err- inoremap <silent><expr> <TAB>
-" err-       \ pumvisible() ? "\<C-n>" :
-" err-       \ <SID>check_back_space() ? "\<TAB>" :
-" err-       \ coc#refresh()
-" err- inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+ inoremap <silent><expr> <TAB>
+       \ pumvisible() ? "\<C-n>" :
+       \ <SID>check_back_space() ? "\<TAB>" :
+       \ coc#refresh()
+ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+"===============================================================================================================
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -1481,6 +1455,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+"===============================================================================================================
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -1491,17 +1466,13 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
+"===============================================================================================================
 " Highlight symbol under cursor on CursorHold
 " Highlight symbol under cursor on CursorHold
 " err- autocmd CursorHold * silent call CocActionAsync('highlight')
-
+"===============================================================================================================
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
-
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -1511,58 +1482,40 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+"===============================================================================================================
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+"---POC--- Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
-
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>q  <Plug>(coc-fix-current)
+"===============================================================================================================
 
+"===============================================================================================================
 " Create mappings for function text object, requires document symbols feature of languageserver.
-
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-" Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
+"=???==========================================================================================================
+nmap <silent> <C-d> <Plug>(coc-definition)
+nmap <silent> <C-,> <Plug>(coc-references)
+nn <silent> K :call CocActionAsync('doHover')<cr>
 
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
 
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+"===============================================================================================================
 "===============================================================================================================
 
 "===============================================================================================================
+"===============================================================================================================
 
+"===============================================================================================================
+"===============================================================================================================
 
+"===============================================================================================================
+"===============================================================================================================

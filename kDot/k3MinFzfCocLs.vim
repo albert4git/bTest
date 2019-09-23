@@ -3,7 +3,7 @@
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Di 17 Sep 2019 12:37:05  CEST
+" Last Modified:      Mo 23 Sep 2019 02:38:42  CEST
 "==================================================================================================
 
 "-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
@@ -116,26 +116,47 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'tyru/capture.vim'
         Plug 'thinca/vim-quickrun'
-        Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes'
-                let g:airline_theme='light'
-                set showmode                "-Display the current mode
-                set showcmd                 "-Show partial commands in status line 
-                "--------------------------------------------------------------------------
-                let g:airline_section_c = '%{strftime("%Y %b %d %X")}'
-                let g:airline#extensions#tabline#enabled = 1
-                let g:airline#extensions#tabline#buffer_min_count = 1
-                "-----------------------------------------------------------
-                let g:airline#extensions#syntastic#enabled = 1
-                let g:airline#extensions#branch#enabled = 1
-                "-----------------------------------------------------------
-                if !exists('g:airline_symbols')
-                        let g:airline_symbols = {}
-                endif
-                "--------------------------------------------------------------------------
-                hi statusline ctermbg=10 ctermfg=Black  cterm=bold
-                hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
-
+        "---------------------------------------------------------------------------------- 
+        "Plug 'vim-airline/vim-airline'
+        "Plug 'vim-airline/vim-airline-themes'
+        "        let g:airline_theme='light'
+        "        set showmode                "-Display the current mode
+        "        set showcmd                 "-Show partial commands in status line 
+        "        "--------------------------------------------------------------------------
+        "        let g:airline_section_c = '%{strftime("%Y %b %d %X")}'
+        "        let g:airline#extensions#tabline#enabled = 1
+        "        let g:airline#extensions#tabline#buffer_min_count = 1
+        "        "-----------------------------------------------------------
+        "        let g:airline#extensions#syntastic#enabled = 1
+        "        let g:airline#extensions#branch#enabled = 1
+        "        "-----------------------------------------------------------
+        "        if !exists('g:airline_symbols')
+        "                let g:airline_symbols = {}
+        "        endif
+        "        "--------------------------------------------------------------------------
+        "        hi statusline ctermbg=10 ctermfg=Black  cterm=bold
+        "        hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
+        "---------------------------------------------------------------------------------- 
+        Plug 'itchyny/lightline.vim'
+        let g:lightline = {
+                                \ 'colorscheme': 'wombat',
+                                \ 'active': {
+                                \   'left': [ [ 'mode', 'paste' ],
+                                \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+                                \ },
+                                \ 'component': {
+                                \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+                                \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+                                \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+                                \ },
+                                \ 'component_visible_condition': {
+                                \   'readonly': '(&filetype!="help"&& &readonly)',
+                                \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+                                \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+                                \ },
+                                \ 'separator': { 'left': '⮀', 'right': '⮂' },
+                                \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+                                \ }
         "---------------------------------------------------------------------------------- 
         Plug 'skywind3000/vim-preview'
                 "VSSplit
@@ -187,9 +208,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "         hi IndentGuidesEven  ctermbg=239
 
         "---------------------------------------------------------------------------------- 
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-        Plug 'davidhalter/jedi-vim'
-        Plug 'zchee/deoplete-jedi'
+        " Plug 'davidhalter/jedi-vim'
         " let g:python_host_prog = '/full/path/to/neovim2/bin/python'
         " let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
         "---------------------------------------------------------------------------------- 
@@ -374,7 +393,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'exvim/ex-matchit'
         "----------------------------------------------------------------------------------
-        Plug 'ervandew/supertab'
+        " Plug 'ervandew/supertab'
         "---------------------------------------------------------------------------------- 
         Plug 'MarcWeber/vim-addon-mw-utils'
         Plug 'garbas/vim-snipmate'
@@ -644,7 +663,21 @@ call plug#begin('~/.config/nvim/plugged/')
                         autocmd FileType python AutoFormatBuffer yapf
                         " Alternative: autocmd FileType python AutoFormatBuffer autopep8
                 augroup END
-        "---------------------------------------------------------------------------------- 
+
+"---POC------------------------------------------------------------------------------- 
+  ""languageserver": {
+  "  "efm": {
+  "    "command": "efm-langserver",
+  "    "args": [],
+  "    // custom config path
+  "    // "args": ["-c", "/path/to/your/config.yaml"],
+  "    "filetypes": ["vim", "eruby", "markdown", "yaml"]
+  "  }
+  "},
+"---------------------------------------------------------------------------------- 
+
+
+        "--------------------------------------------------------------------------------- 
         Plug 'godlygeek/tabular'
 
         "--------------------------------------------------------------------------------- 
@@ -714,7 +747,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'metakirby5/codi.vim'
         "---------------------------------------------------------------------------------- 
-
         Plug 'tylerhunt/vim-spark'
         "Plug 'sjl/vim-sparkup'
         Plug 'vim-scripts/Emmet.vim'
@@ -777,29 +809,11 @@ call plug#begin('~/.config/nvim/plugged/')
                         let cmdline_color_warn     =   1
                         let cmdline_color_index    = 186
                 endif
-        "--------------------------------------------------------------------------------- 
-        "------------------------ END --REPL--------------------------------------------- 
-        "--------------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
-        " Plug 'vim-scripts/TagHighlight'
-        " " TagHighlight highlight names of class, variable, types in code.
-        " " Usage: :UpdateTypesFile
-        "         if !exists('g:TagHighlightSettings')
-        "                 let g:TagHighlightSettings = {}
-        "         endif
-        "         let g:TagHighlightSettings['TagFileName'] = 'tags'
-        "         let g:TagHighlightSettings['CtagsExecutable'] = 'ctags'
-        "         let g:TagHighlightSettings['CtagsVariant'] = 'exuberant'
-        "         let g:TagHighlightSettings['CtagsArguments'] = []
-        "         let g:TagHighlightSettings['CtagsExtraArguments'] = []
-        "         let g:TagHighlightSettings['ForcePythonVariant'] = 'if_pyth3'
-        "         let g:TagHighlightSettings['PythonVariantPriority'] = [
-        "                                 \ "if_pyth3", "if_pyth", "python", "compiled",
-        "                                 \ ]
-        "--------------------------------------------------------------------------------- 
-        " Plug 'dhruvasagar/vim-zoom'
-        "         set statusline+=%{zoom#statusline()}
+        "------------------------ END --REPL----------------------------------------------- 
+        "---------------------------------------------------------------------------------- 
         "---1812--------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------- 
         " Plug 'Shougo/echodoc.vim'
         "         set cmdheight=2
         "         let g:echodoc_enable_at_startup = 1
@@ -855,7 +869,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:keyfrom = "aioiyuuko"
         "--------------------------------------------------------------------------------- 
         Plug 'ron89/thesaurus_query.vim'
-        " let g:tq_openoffice_en_file="/home/red/git/bTest/kDot/DICT/MyThes/th_en_US_new"
         let g:tq_mthesaur_file="/home/red/git/bTest/kDot/DICT/mthesaurGu.txt"
         "------------------------------
         " let s:thesaurus_pat ="/home/red/git/bTest/kDot/DICT/mthesaurGu.txt"
@@ -881,6 +894,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'itchyny/calendar.vim'
         "--NewNew---TODO------------------------------------------
         Plug 'haya14busa/vim-easyoperator-line'
+        "---------------------------------------------------------
         " Plug 'bfredl/nvim-miniyank'
         "--------------------------------------------------------------------------------- 
         Plug 'unblevable/quick-scope'
@@ -934,7 +948,10 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "------------------TODO------------------------------------------------------------ 
         "???err??? Plug 'mhartington/nvim-typescript'
-        Plug 'mhartington/nvim-typescript'
+        " Plug 'mhartington/nvim-typescript'
+        Plug 'HerringtonDarkholme/yats.vim'
+        "---------------------------------------------------------
+        " Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
         " autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
 
         "---------------------------------------------------------------------------------- 
@@ -951,21 +968,40 @@ call plug#begin('~/.config/nvim/plugged/')
                 hi tsxEqual guifg=#F99575
                 " yellow
                 hi tsxAttrib guifg=#F8BD7F cterm=italic
+
+                function! CocCurrentFunction()
+                        return get(b:, 'coc_current_function', '')
+                endfunction
+
+                let g:lightline = {
+                                \ 'colorscheme': 'wombat',
+                                \ 'active': {
+                                \   'left': [ [ 'mode', 'paste' ],
+                                \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+                                \ },
+                                \ 'component_function': {
+                                \   'cocstatus': 'coc#status',
+                                \   'currentfunction': 'CocCurrentFunction'
+                                \ },
+                                \ }
+
         "------------------CAR-------------------------------------------------------------- 
-        Plug 'ivalkeen/nerdtree-execute'
-        Plug 'Linfee/nerdtree-open'
+        " Plug 'ivalkeen/nerdtree-execute'
+        " Plug 'Linfee/nerdtree-open'
+        "---------------------------------------------------------
         Plug 'cwfoo/vim-text-omnicomplete'
         Plug 'lilydjwg/colorizer'
         " g:colorizer_maxlines=1000
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-        Plug 'tpope/vim-dadbod'
+        "---------------------------------------------------------
+        " Plug 'tpope/vim-dadbod'
         " Plug 'vpenkoff/vim-pg'  "postgres"
         " Plug 'vim-scripts/dbext.vim'
         " :'<,'>DBExecSQL    (or used the default map <Leader>se)
         "----!!!---LGHistory--------------------------------------
         Plug 'm42e/vim-lgh'
         "----Nice---Tabs------
-        " Plug 'ap/vim-buftabline'
+        Plug 'ap/vim-buftabline'
         Plug 'xolox/vim-notes'
         "------------------TODO------------------------------------------------------------ 
         " Plug 'rakr/vim-one'
@@ -988,6 +1024,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 autocmd BufEnter *.py UnderlineTagOn
         augroup END
 
+        "---------------------------------------------------------
         "---Perfection - Continuity------
         Plug 'terryma/vim-smooth-scroll'
 
@@ -1072,13 +1109,14 @@ call plug#begin('~/.config/nvim/plugged/')
         " - Editing HTML
         " - Bookmark files, directories, URLs
         "---------------------------------------------------------------------------------- 
-        Plug 'tpope/vim-abolish'        " Extended abbreviation/substition.
+        " Plug 'tpope/vim-abolish'        " Extended abbreviation/substition.
         "---------------------------------------------------------------------------------- 
         "Plug 'amiorin/vim-project'
         "Plug 'tpope/vim-projectionist'
         "Plug 'tpope/vim-rake'
-        "Plug 'vim-ruby/vim-ruby
+        "Plug 'vim-ruby/vim-ruby'
         "Plug 'tpope/vim-rails'
+        "---------------------------------------------------------------------------------- 
 
         "-------------------$mkid---idtools------------------------------------------------ 
         " Plug 'fcamel/gj'
@@ -1088,7 +1126,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'WolfgangMehner/bash-support'
         " Plug 'tpope/vim-rsi'
         "---------------------------------------------------------------------------------- 
-        "Plug 'markonm/traces.vim'
+        " Plug 'markonm/traces.vim'
         "---------------------------------------------------------------------------------- 
         " Plug 'StanAngeloff/php.vim'
         " Plug 'squizlabs/PHP_CodeSniffer'
@@ -1101,112 +1139,55 @@ call plug#begin('~/.config/nvim/plugged/')
         "--------------------------------------------------------------------------------- 
         "--------------------------------------------------------------------------------- 
         " smart <c-a> and <c-x> to toggle true/false, on/off, increment dates or weekday names, etc.
-        Plug 'nishigori/increment-activator'
+        " Plug 'nishigori/increment-activator'
         "------------------------------------------------------------------------------------------
         "-------420--------------------------------------------------------------------------------
         "------------------------------------------------------------------------------------------
-        Plug 'tacahiroy/ctrlp-funky'
+        " Plug 'tacahiroy/ctrlp-funky'
         "------------------------------------------------------------------------------------------
-        Plug 'epheien/termdbg'
+        " Plug 'epheien/termdbg'
         "------------------------------------------------------------------------------------------
-        Plug 'guns/vim-sexp',    {'for': 'clojure'}
-        Plug 'liquidz/vim-iced', {'for': 'clojure'}
+        " Plug 'guns/vim-sexp',    {'for': 'clojure'}
+        " Plug 'liquidz/vim-iced', {'for': 'clojure'}
         "------------------------------------------------------------------------------------------
-        Plug 'dominikduda/vim_timebox'
+        " Plug 'dominikduda/vim_timebox'
         "------------------------------------------------------------------------------------------
-        Plug 'osyo-manga/vim-anzu'
+        " Plug 'osyo-manga/vim-anzu'
         "------------------------------------------------------------------------------------------
-        Plug 'sunaku/vim-shortcut'
+        " Plug 'sunaku/vim-shortcut'
         "------------------------------------------------------------------------------------------
-        Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+        " Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+        "------------------------------------------------------------------------------------------
+        " Plug 'liuchengxu/vista.vim'
         "------------------------------------------------------------------------------------------
         " Use release branch
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        " Or latest tag
-        Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
-        " Or build from source code by use yarn: https://yarnpkg.com
-        Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
         "------------------------------------------------------------------------------------------
-        Plug 'liuchengxu/vista.vim'
+        Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
         "------------------------------------------------------------------------------------------
-        Plug 'prabirshrestha/vim-lsp'
         "------------------------------------------------------------------------------------------
-        if executable('solargraph')
-                " gem install solargraph
-                au User lsp_setup call lsp#register_server({
-                                        \ 'name': 'solargraph',
-                                        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
-                                        \ 'initialization_options': {"diagnostics": "true"},
-                                        \ 'whitelist': ['ruby'],
-                                        \ })
-        endif
-        "------------------------------------------------------------------------------------------
-        " After vim-lsp, etc
-        Plug 'ryanolsonx/vim-lsp-javascript'
-        if executable('typescript-language-server')
-                au User lsp_setup call lsp#register_server({
-                                        \ 'name': 'javascript support using typescript-language-server',
-                                        \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-                                        \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
-                                        \ 'whitelist': ['javascript', 'javascript.jsx', 'javascriptreact']
-                                        \ })
-        endif
-        "------------------------------------------------------------------------------------------
-        if executable('css-languageserver')
-        au User lsp_setup call lsp#register_server({
-                \ 'name': 'css-languageserver',
-                \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
-                \ 'whitelist': ['css', 'less', 'sass'],
-                \ })
-        endif
-        "------------------------------------------------------------------------------------------
-        au User lsp_setup call lsp#register_server({                                    
-                                \ 'name': 'php-language-server',                                            
-                                \ 'cmd': {server_info->['php', expand('~/.vim/plugged/php-language-server/bin/php-language-server.php')]},
-                                \ 'whitelist': ['php'],                                                     
-                                \ })
-        "------------------------------------------------------------------------------------------
-        " After vim-lsp, etc
-        Plug 'ryanolsonx/vim-lsp-python'
-        if executable('pyls')
-                au User lsp_setup call lsp#register_server({
-                                        \ 'name': 'pyls',
-                                        \ 'cmd': {server_info->['pyls']},
-                                        \ 'whitelist': ['python'],
-                                        \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
-                                        \ })
-        endif
-        "------------------------------------------------------------------------------------------
-        if executable('java') && filereadable(expand('~/lsp/org.eclipse.lsp4xml-0.3.0-uber.jar'))
-                au User lsp_setup call lsp#register_server({
-                                        \ 'name': 'lsp4xml',
-                                        \ 'cmd': {server_info->[
-                                        \     'java',
-                                        \     '-noverify',
-                                        \     '-Xmx1G',
-                                        \     '-XX:+UseStringDeduplication',
-                                        \     '-Dfile.encoding=UTF-8',
-                                        \     '-jar',
-                                        \     expand('~/lsp/org.eclipse.lsp4xml-0.3.0-uber.jar')
-                                        \ ]},
-                                        \ 'whitelist': ['xml']
-                                        \ })
-        endif
-        "------------------------------------------------------------------------------------------
-
-
         Plug 'w0rp/ale'
                 "Linting
                 let g:ale_sign_column_always = 1
-                let g:ale_sign_error = '>>'
-                let g:ale_sign_warning = '--'
+                let g:ale_sign_error = 'rr'
+                let g:ale_sign_warning = 'ww'
                 let g:ale_linters = {
                                         \   'javascript': ['eslint'],
                                         \   'jsx': ['eslint'],
                                         \   'python': ['flake8'],
+                                        \   'vim': ['vint'],
                                         \}
-
+        "------------------------------------------------------------------------------------------
         " Plug 'jacobsimpson/nvim-example-python-plugin'
+        "------------------------------------------------------------------------------------------
+        Plug 'vigoux/LanguageTool.nvim'
+        let g:languagetool_server='$HOME/LanguageTool-4.6-stable/languagetool-server.jar'
+        hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
+        hi LanguageToolSpellingError guisp=red  gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=red  term=underline cterm=none
+        "------------------------------------------------------------------------------------------
+
+        Plug 'elzr/vim-json' " For metadata.json
+        Plug 'mrk21/yaml-vim' " For hieradata
 call plug#end()
 "---nPlugEnd-nPlugStop3----------------}}}
 " HappyEnd
@@ -1296,67 +1277,43 @@ call plug#end()
         "==================================================================================
         "----------------------------------------------------------------------------------
         "==================================================================================
-        let g:jedi#use_splits_not_buffers = "left"
-        let g:jedi#popup_on_dot = 0
-        "----------------------------------------------------------------------- 
-        let g:jedi#goto_command = "<leader>d"
-        let g:jedi#goto_assignments_command = "<leader>g"
-        let g:jedi#goto_definitions_command = ""
-        "--------------MMM--------------------------
-        let g:jedi#documentation_command = "M"
-        let g:jedi#usages_command = "<leader>n"
-        let g:jedi#rename_command = "<leader>r"
-        "let g:jedi#completions_command = "<C-z>"
-        let g:jedi#completions_command = "<C-Space>"
-        let g:jedi#popup_on_dot = 1
-        let g:jedi#completions_enabled = 1
-        let g:jedi#popup_select_first = 1
-        let g:jedi#show_call_signatures = "1"
-        let g:jedi#goto_command = "gt"
-        let g:jedi#auto_close_doc = 0  " close preview window after completion
-        "::::::::::::::::::::::-=<1>=-:::::::::::::::::::::::::::::::::::::::::::::::::::::
-        let g:deoplete#enable_at_startup = 0
-        call deoplete#custom#option('refresh_always', v:true)
-        "call deoplete#custom#source('jedi', 'is_debug_enabled', 1)
-        "call deoplete#enable_logging('DEBUG', 'deoplete.log')
-        "-------------------------------------------------------------------------------- 
-        let g:deoplete#enable_ignore_case = 1
-        let g:deoplete#enable_smart_case = 1
-        let g:deoplete#enable_camel_case = 1
-        let g:deoplete#enable_refresh_always = 1
-        let g:deoplete#max_abbr_width = 0
-        let g:deoplete#max_menu_width = 0
-        "--------------------------------------------------------------------------------
-        let g:deoplete#sources#ternjs#timeout = 3
-        let g:deoplete#sources#ternjs#types = 1
-        let g:deoplete#sources#ternjs#docs = 1
-        call deoplete#custom#source('_', 'min_pattern_length', 3)
-        "--------------------------------------------------------------------------------
-        let g:deoplete#skip_chars = ['(', ')', '<', '>']
-        let g:deoplete#tag#cache_limit_size = 800000
-        let g:deoplete#file#enable_buffer_path = 1
-        "-------------------------------------------------------------------------------- 
-        let g:LanguageClient_serverCommands = {
-                                \ 'python': ['/usr/local/bin/pyls'],
-                                \ }
+        "let g:jedi#use_splits_not_buffers = "left"
 
-        "-------------------------------------------------------------------------------- 
-        let g:deoplete#sources#jedi#statement_length = 30
-        let g:deoplete#sources#jedi#show_docstring = 1
-        let g:deoplete#sources#jedi#short_types = 1
-        "-------------------------------------------------------------------------------- 
-        " Plugin key-mappings.
-        " inoremap <expr><C-g>     deoplete#undo_completion()
-        " inoremap <expr><C-l>     deoplete#refresh()
-        " inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
+        "let g:jedi#popup_on_dot = 0
+        ""----------------------------------------------------------------------- 
+        "let g:jedi#goto_command = "<leader>d"
+        "let g:jedi#goto_assignments_command = "<leader>g"
+        "let g:jedi#goto_definitions_command = ""
+        ""--------------MMM--------------------------
+        "let g:jedi#documentation_command = "M"
+        "let g:jedi#usages_command = "<leader>n"
+        "let g:jedi#rename_command = "<leader>r"
+        ""let g:jedi#completions_command = "<C-z>"
+        "let g:jedi#completions_command = "<C-Space>"
+        "let g:jedi#popup_on_dot = 1
+        "let g:jedi#completions_enabled = 1
+        "let g:jedi#popup_select_first = 1
+        "let g:jedi#show_call_signatures = "1"
+        "let g:jedi#goto_command = "gt"
+        "let g:jedi#auto_close_doc = 0  " close preview window after completion
+        "::::::::::::::::::::::-=<1>=-:::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "---POC----------------------------------------------------------------------------- 
+        " let g:LanguageClient_serverCommands = {
+        "                         \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+        "                         \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+        "                         \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+        "                         \ 'python': ['/usr/local/bin/pyls'],
+        "                         \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+        "                         \ }
         "-------------------------------------------------------------------------------- 
         autocmd! FileType python setlocal completeopt-=preview
         "--------------------------------------------------------------------------------
         autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
         autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
         autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd! FileType python setlocal omnifunc=jedi#completions
+        " autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
+        " autocmd! FileType python setlocal omnifunc=jedi#completions
+         autocmd! FileType python setlocal omnifunc=coc#completions
         autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
         autocmd! FileType ruby setlocal omnifunc=rubycomplete#Complete
         autocmd! FileType haskell setlocal omnifunc=necoghc#omnifunc
@@ -1376,39 +1333,6 @@ call plug#end()
         set omnifunc=syntaxcomplete#Complete
         set completeopt=menu
         "--------------------------------------------------------------------------------
-        call deoplete#custom#source('neosnippet',    'rank', 690)
-        call deoplete#custom#source('ultisnips',     'rank', 680)
-        call deoplete#custom#source('padawan',       'rank', 660)
-        call deoplete#custom#source('go',            'rank', 650)
-        call deoplete#custom#source('vim',           'rank', 640)
-        call deoplete#custom#source('flow',          'rank', 630)
-        call deoplete#custom#source('TernJS',        'rank', 620)
-        call deoplete#custom#source('LanguageClient','rank', 610)
-        call deoplete#custom#source('jedi',          'rank', 600)
-        call deoplete#custom#source('tag',           'rank', 550)
-        call deoplete#custom#source('omni',          'rank', 500)
-        call deoplete#custom#source('member',        'rank', 500)
-        call deoplete#custom#source('file_include',  'rank', 420)
-        call deoplete#custom#source('file',          'rank', 410)
-        call deoplete#custom#source('around',        'rank', 330)
-        call deoplete#custom#source('buffer',        'rank', 320)
-        call deoplete#custom#source('dictionary',    'rank', 310)
-        call deoplete#custom#source('tmux-complete', 'rank', 300)
-        call deoplete#custom#source('syntax',        'rank', 200)
-        "--------------------------------------------------------------------------------
-        call deoplete#custom#source('LanguageClient','mark', 'langC')
-        call deoplete#custom#source('omni',          'mark', 'omni')
-        call deoplete#custom#source('flow',          'mark', 'flow')
-        call deoplete#custom#source('TernJS',        'mark', 'tern')
-        call deoplete#custom#source('go',            'mark', 'go')
-        call deoplete#custom#source('jedi',          'mark', 'Jedi')
-        call deoplete#custom#source('vim',           'mark', 'vim')
-        call deoplete#custom#source('neosnippet',    'mark', 'neoSnp')
-        call deoplete#custom#source('around',        'mark', 'round')
-        call deoplete#custom#source('buffer',        'mark', 'Buf')
-        call deoplete#custom#source('tmux-complete', 'mark', 'tmux')
-        call deoplete#custom#source('syntax',        'mark', 'synt')
-        call deoplete#custom#source('member',        'mark', 'mmbr')
 
 
         "---!!!-???-----------------------------------------------------------
