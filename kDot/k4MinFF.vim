@@ -2,7 +2,7 @@
 " File: k3MinFF.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Di 24 Sep 2019 09:01:40  CEST
+" Last Modified:      Mi 25 Sep 2019 06:13:19  CEST
 "==================================================================================================
 " KRANKES:NETZ-2
 "==================================================================================================
@@ -222,7 +222,7 @@
 
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
          " source ~/git/bTest/kDot/k2MinFzfDeoLs.vim
-         source ~/git/bTest/kDot/k3MinFzfCocLs.vim
+         source ~/git/bTest/kDot/k4MinFzfCocLs.vim
          source ~/git/bTest/kDot/logoABB.vim
          source ~/git/bTest/kDot/logoFunc.vim
         "source ~/git/bTest/kDot/minFzfDeoLsJediSnip.vim

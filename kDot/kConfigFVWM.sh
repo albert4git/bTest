@@ -330,7 +330,7 @@ Style "FvwmPager" !Title, !Handles, Sticky, WindowListSkip, \
 CirculateSkip, BorderWidth 5
 
 DestroyModuleConfig FvwmPager:*
-*FvwmPager: Colorset * 9
+*FvwmPager: Colorset * 14
 *FvwmPager: HilightColorset * 5
 *FvwmPager: BalloonColorset * 10
 *FvwmPager: WindowColorsets 10 11
@@ -397,12 +397,13 @@ Style FvwmIdent WindowListSkip
 #   |   |   |
 #   +---+---+
 #
+#################################################################################
 
 DesktopName 0 Main
 DesktopName 1 Desk1
 DesktopName 2 Desk2
 DesktopName 3 Desk3
-DesktopSize 3x3
+DesktopSize 4x3
 
 ###############################################################################
 # Global Behavior Commands                                                    #
@@ -478,9 +479,14 @@ Test (!x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-205)),\
     Frame 0)
 *RightPanel: (120x5, Frame 0)
 
+########
+AddToFunc StartFunction I Module FvwmEvent EventNewDesk
+########
+
 #################################################################################
 # FvwmIconMan is a powerful tool to list and manage windows. This
 # is used as the window list in the panel or taskbar.
+#################################################################################
 DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: UseWinList true
 *FvwmIconMan: ButtonGeometry 100x20
@@ -515,42 +521,6 @@ AddToFunc   IconManClick
 + I ThisWindow (AcceptsFocus) FlipFocus
 #######################################################################################
 
-########
-DestroyModuleConfig SensorDock: *
-#*SensorDock: Geometry 190x300-1750+800
-*SensorDock: Geometry 190x300-1700+400
-*SensorDock: Colorset 13
-*SensorDock: Rows 47
-*SensorDock: Columns 24
-*SensorDock: Font "xft:Sans:Bold:size=10:antialias=True"
-*SensorDock: Frame 0
-#*SensorDock: (17x7, Swallow DateTime 'Module FvwmScript $[FVWM_USERDIR]/scripts/DateTime', Frame 0)
-*SensorDock: (24x1, Frame 0)
-*SensorDock: (2x5, Frame 0)
-*SensorDock: (5x5, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 12, Frame 0)
-*SensorDock: (5x5, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, Colorset 10, ActiveColorset 12, Frame 0)
-*SensorDock: (5x5, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, Colorset 10, ActiveColorset 12, Frame 0)
-*SensorDock: (5x5, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, Colorset 10, ActiveColorset 12, Frame 0)
-*SensorDock: (2x5, Frame 0)
-*SensorDock: (2x12, Frame 0)
-*SensorDock: (20x12, Swallow FvwmPager 'Module FvwmPager *', Frame 0)
-*SensorDock: (2x12, Frame 0)
-*SensorDock: (12x1, Frame 0)
-*SensorDock: (12x18, Swallow Sensors 'Module FvwmScript $[FVWM_USERDIR]/scripts/Sensors', Frame 2)
-*SensorDock: (1x16, Frame 0)
-*SensorDock: (10x10, Swallow(UseOld) "cpumon" `Exec exec xosview -title cpumon +cpu`, Frame 0)
-*SensorDock: (1x16, Frame 0)
-*SensorDock: (10x2, Swallow(UseOld) "memmon" `Exec exec xosview -title memmon +mem`, Frame 0)
-*SensorDock: (10x2, Swallow(UseOld) "netmon" `Exec exec xosview -title netmon +net`, Frame 0)
-*SensorDock: (10x2, Swallow(UseOld) "hdmon" `Exec exec xosview -title hdmon +disk`, Frame 0)
-*SensorDock: (2x4, Frame 0)
-*SensorDock: (20x4, Swallow(NoClose,UseOld) "stalonetray" 'Exec exec stalonetray', Frame 0)
-*SensorDock: (2x4, Frame 0)
-########
-AddToFunc StartFunction I Module FvwmButtons SensorDock
-AddToFunc StartFunction I Module FvwmEvent EventNewDesk
-########
-
 AddToFunc TileLeft
 + I ThisWindow (!Shaded, !Iconic) Maximize 50 100
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
@@ -582,7 +552,7 @@ Colorset 10 fg #ffffff, bg #003c3c, hi #aaaaaa, sh #999999, Plain, NoShape
 Colorset 11 fg #ffffff, bg #1a6e99, hi #ffffff, sh #ffffff, Plain, NoShape
 Colorset 12 fg #2d2d2d, bg #ffffff, hi, sh, Plain, NoShape
 Colorset 13 fg #ffffff, bg #006c6c, hi, sh, Plain, NoShape
-Colorset 14 fg #555555, bg #003c3c, hi #aaaaaa, sh #999999, Plain, NoShape
+Colorset 14 fg #CC0005, bg #20cc7c, hi #aaaaaa, sh #999999, Plain, NoShape
 
 ###########################################################################
 ###############GLYPHOSAT###################################################

@@ -3,7 +3,7 @@
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Di 24 Sep 2019 09:01:27  CEST
+" Last Modified:      Mi 25 Sep 2019 06:31:03  CEST
 "==================================================================================================
 
 "-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
@@ -92,15 +92,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 "??? apt-get install dictd dict-gcide dict
                 "let g:dokumentary_docprgs = {'c': 'cdoc {0}', 'python': ''}
                 let g:dokumentary_docprgs = {'c': 'cdoc {0}'}
-        "--------------------------------------------------------------------------------- 
-        "-=TTT=-
-        "Plug 'xolox/vim-pyref'
-        "let g:pyref_mapping = 'T'
-        "let g:pyref_python = '/usr/share/doc/python3/html/'
-        "let g:pyref_python = '/usr/share/doc/python/'
-        "let g:pyref_python = 'file:///usr/share/doc/python2.7/html/index.html'
-        "let g:pyref_python = $HOME . '/docs/python'
-        "let g:pyref_python = '/usr/bin/pydoc'
         "---------------------------------------------------------------------------------- 
         Plug 'fs111/pydoc.vim', {'external_commands': ['pydoc']}
         let g:ref_pydoc_cmd = 'pydoc'
@@ -123,49 +114,9 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'tyru/capture.vim'
         Plug 'thinca/vim-quickrun'
         "---------------------------------------------------------------------------------- 
-        "Plug 'vim-airline/vim-airline'
-        "Plug 'vim-airline/vim-airline-themes'
-        "        let g:airline_theme='light'
-        "        set showmode                "-Display the current mode
-        "        set showcmd                 "-Show partial commands in status line 
-        "        "--------------------------------------------------------------------------
-        "        let g:airline_section_c = '%{strftime("%Y %b %d %X")}'
-        "        let g:airline#extensions#tabline#enabled = 1
-        "        let g:airline#extensions#tabline#buffer_min_count = 1
-        "        "-----------------------------------------------------------
-        "        let g:airline#extensions#syntastic#enabled = 1
-        "        let g:airline#extensions#branch#enabled = 1
-        "        "-----------------------------------------------------------
-        "        if !exists('g:airline_symbols')
-        "                let g:airline_symbols = {}
-        "        endif
-        "        "--------------------------------------------------------------------------
-        "        hi statusline ctermbg=10 ctermfg=Black  cterm=bold
-        "        hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
         "---------------------------------------------------------------------------------- 
         Plug 'itchyny/lightline.vim'
-                                " \ 'colorscheme': 'wombat',
-                                " \ 'colorscheme': 'ayu',
         Plug 'yarisgutierrez/ayu-lightline'
-        let g:lightline = {
-                                \ 'colorscheme': 'ayu',
-                                \ 'active': {
-                                \   'left': [ [ 'mode', 'paste' ],
-                                \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-                                \ },
-                                \ 'component': {
-                                \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-                                \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-                                \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-                                \ },
-                                \ 'component_visible_condition': {
-                                \   'readonly': '(&filetype!="help"&& &readonly)',
-                                \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-                                \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-                                \ },
-                                \ 'separator': { 'left': '⮀', 'right': '⮂' },
-                                \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-                                \ }
         "---------------------------------------------------------------------------------- 
         Plug 'skywind3000/vim-preview'
                 "VSSplit
@@ -198,23 +149,9 @@ call plug#begin('~/.config/nvim/plugged/')
                     let g:indentLine_char = '|'
                     let g:indentLine_first_char='.'
                     let g:indentLine_first_char='|'
-                        "let g:indentLine_first_char='¦'
-                        "let g:indentLine_leadingSpaceEnabled = 1
-                        "let g:indentLine_leadingSpaceChar = '·'
                     let g:indentLine_showFirstIndentLevel=1
                     let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']
         "---------------------------------------------------------------------------------- 
-                    " let g:indentLine_char = '.'
-                    " let g:indentLine_first_char='¦'
-        "---------------------------------------------------------------------------------- 
-        " Plug 'nathanaelkane/vim-indent-guides'
-        "         let g:indent_guides_indent_levels = 30
-        "         let g:indent_guides_auto_colors = 1
-        "         let g:indent_guides_color_change_percent = 10
-        "         let g:indent_guides_start_level = 1
-        "         let g:indent_guides_tab_guides = 1
-        "         hi IndentGuidesOdd   ctermbg=22
-        "         hi IndentGuidesEven  ctermbg=239
 
         "---------------------------------------------------------------------------------- 
         " Plug 'davidhalter/jedi-vim'
@@ -240,25 +177,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'vim-scripts/L9'
         Plug 'vim-scripts/FuzzyFinder'
         "---------------------------------------------------------------------------------- 
-        "Plug 'vim-scripts/tComment'
-        " As operator (the prefix can be customized via g:tcommentMapLeaderOp1 
-        " and g:tcommentMapLeaderOp2):
-        " gc{motion}   :: Toggle comments (for small comments within one line 
-        "                 the &filetype_inline style will be used, if 
-        "                 defined)
-        " gcc          :: Toggle comment for the current line
-        " gC{motion}   :: Comment region
-        " gCc          :: Comment the current line
-        " Primary key maps:
-        " <c-_><c-_>   :: :TComment
-        " <c-_><space> :: :TComment <QUERY COMMENT-BEGIN ?COMMENT-END>
-        " <c-_>b       :: :TCommentBlock
-        " <c-_>a       :: :TCommentAs <QUERY COMMENT TYPE>
-        " <c-_>n       :: :TCommentAs &filetype <QUERY COUNT>
-        " <c-_>s       :: :TCommentAs &filetype_<QUERY COMMENT SUBTYPE>
-        " <c-_>i       :: :TCommentInline
-        " <c-_>r       :: :TCommentRight
-        " <c-_>p       :: Comment the current inner paragraph
 
         "---------------------------------------------------------------------------------- 
         Plug 'prabirshrestha/async.vim'
@@ -333,11 +251,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'Chun-Yang/vim-action-ag'
         Plug 'rking/ag.vim'
         "----------------------------------------------------------------------------------
-        " But if you want to install fzf as well using vim-plug:
-        " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
         Plug 'junegunn/fzf', { 'do': './install --all' }
-        " Plug 'junegunn/fzf'
         Plug 'junegunn/fzf.vim'
         Plug 'pbogut/fzf-mru.vim'
            let g:fzf_mru_relative = 1
@@ -418,15 +332,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'xolox/vim-misc'
         "-------------------------------------------------------------------------- 
         Plug 'jreybert/vimagit'
-        "===========================================================================
-        Plug 'junegunn/gv.vim'
-        "   - o or <cr> on a commit to display the content of it
-        "   - o or <cr> on commits to display the diff in the range
-        "   - O opens a new tab instead
-        "   - gb for :Gbrowse
-        "   - ]] and [[ to move between commits
-        "   - . to start command-line with :Git [CURSOR] SHA à la fugitive
-        "   - q to close
         "==========================================================================
         Plug 'tpope/vim-fugitive'
         "   - :Git[!] [args]
@@ -447,6 +352,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'tpope/vim-repeat'
         Plug 'tpope/vim-unimpaired'
         Plug 'tpope/vim-eunuch'
+        "-------------------------------------------------------------------------- 
         "#??? Plug 'tpope/vim-surround'
         "-------------------------------------------------------------------------- 
         Plug 'terryma/vim-expand-region'
@@ -467,7 +373,6 @@ call plug#begin('~/.config/nvim/plugged/')
                                          \ 'ih'  :1
                                          \ }
         "----------------------------------------------------------------------------------
-
         Plug 'machakann/vim-sandwich'
                 " sd,sr, sa{motion/textobject}{addition}(normal and visual mode)
                 " let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
@@ -673,19 +578,6 @@ call plug#begin('~/.config/nvim/plugged/')
                         " Alternative: autocmd FileType python AutoFormatBuffer autopep8
                         autocmd FileType json syntax match Comment +\/\/.\+$+
                 augroup END
-
-"---POC------------------------------------------------------------------------------- 
-  ""languageserver": {
-  "  "efm": {
-  "    "command": "efm-langserver",
-  "    "args": [],
-  "    // custom config path
-  "    // "args": ["-c", "/path/to/your/config.yaml"],
-  "    "filetypes": ["vim", "eruby", "markdown", "yaml"]
-  "  }
-  "},
-"---------------------------------------------------------------------------------- 
-
 
         "--------------------------------------------------------------------------------- 
         Plug 'godlygeek/tabular'
@@ -979,7 +871,6 @@ call plug#begin('~/.config/nvim/plugged/')
                         return get(b:, 'coc_current_function', '')
                 endfunction
 
-                                " \ 'colorscheme': 'molokai',
         "---cox-light----------------------------------------------------------------------
                 let g:lightline = {
                                 \ 'colorscheme': 'molokai',
@@ -1289,34 +1180,8 @@ call plug#end()
         "==================================================================================
         "----------------------------------------------------------------------------------
         "==================================================================================
-        "let g:jedi#use_splits_not_buffers = "left"
-
-        "let g:jedi#popup_on_dot = 0
-        ""----------------------------------------------------------------------- 
-        "let g:jedi#goto_command = "<leader>d"
-        "let g:jedi#goto_assignments_command = "<leader>g"
-        "let g:jedi#goto_definitions_command = ""
-        ""--------------MMM--------------------------
-        "let g:jedi#documentation_command = "M"
-        "let g:jedi#usages_command = "<leader>n"
-        "let g:jedi#rename_command = "<leader>r"
-        ""let g:jedi#completions_command = "<C-z>"
-        "let g:jedi#completions_command = "<C-Space>"
-        "let g:jedi#popup_on_dot = 1
-        "let g:jedi#completions_enabled = 1
-        "let g:jedi#popup_select_first = 1
-        "let g:jedi#show_call_signatures = "1"
-        "let g:jedi#goto_command = "gt"
-        "let g:jedi#auto_close_doc = 0  " close preview window after completion
         "::::::::::::::::::::::-=<1>=-:::::::::::::::::::::::::::::::::::::::::::::::::::::
         "---POC----------------------------------------------------------------------------- 
-        " let g:LanguageClient_serverCommands = {
-        "                         \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-        "                         \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-        "                         \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-        "                         \ 'python': ['/usr/local/bin/pyls'],
-        "                         \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-        "                         \ }
         "-------------------------------------------------------------------------------- 
         autocmd! FileType python setlocal completeopt-=preview
         "--------------------------------------------------------------------------------

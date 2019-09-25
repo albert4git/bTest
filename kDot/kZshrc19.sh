@@ -156,7 +156,8 @@ alias nd2='deonvim  -u ~/git/bTest/kDot/nd2MinFF.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias a41='401nv.app  -u ~/git/bTest/kDot/k3MinFF.vim'
 alias a42='402nv.app  -u ~/git/bTest/kDot/k3MinFF.vim'
-alias a4='402nv.app  -u ~/git/bTest/kDot/k3MinFF.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias e4='402nv.app  -u ~/git/bTest/kDot/k4MinFF.vim'
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -741,8 +742,12 @@ source ~/.config/up/up.sh
 #-DUDA-bdm
 tar -P --listed-incremental=/media/red/124Black/TAR/TarTopX2Py/x2Snap.file -cJpf /media/red/124Black/TAR/TarTopX2Py/x2PyBack-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/x2PyCalc/ >> /dev/null 2>&1
 
-#----DotK-----------------------------------------------------------------------------
+#----DotK------------------------------------------------------------------------------------------
 tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kDot2Snap.file -cJpf /media/red/124Black/TAR/TarDotK/kDot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/
-#---------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------
 
+
+tar -P --listed-incremental=/media/red/124Black/TAR/TarRedConfig/RedConfig2Snap.file -cJpf /media/red/124Black/TAR/TarRedConfig/TarRedConfig-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/.config/
+
+#--------------------------------------------------------------------------------------------------
 cd ~/git/bTest/kDot/
