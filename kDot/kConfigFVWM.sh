@@ -73,8 +73,8 @@ DestroyMenu MenuSendToDesk
 AddToMenu   MenuSendToDesk
 + "Desk 0"	MoveToDesk 0 0
 + "Desk 1"	MoveToDesk 0 1
-+ "Desk 2"	MoveToDesk 0 2
-+ "Desk 3"	MoveToDesk 0 3
+# + "Desk 2"	MoveToDesk 0 2
+# + "Desk 3"	MoveToDesk 0 3
 
 DestroyMenu MenuSendToPage
 AddToMenu   MenuSendToPage
@@ -155,17 +155,6 @@ Mouse 3	TSIF A        RaiseLower
 # Default Font
 DefaultFont "xft:Sans:Bold:size=12:antialias=True"
 ###############################################################################
-# Init & Restart Functions                                                    #
-###############################################################################
-# DestroyFunc StartFunction
-# AddToFunc   StartFunction
-# + I Test (Init, f $[FVWM_USERDIR]/.BGdefault) \
-#     Exec exec fvwm-root $[FVWM_USERDIR]/.BGdefault
-# + I TestRc (NoMatch) Exec exec fvwm-root \
-#     $[FVWM_DATADIR]/default-config/images/background/bg1.png
-# + I Test (Init) Module FvwmBanner
-# + I Module FvwmButtons RightPanel
-# + I Module FvwmEvent EventNewDesk
 
 
 DestroyFunc StartFunction
@@ -254,6 +243,7 @@ Style Fvwm* CirculateSkipIcon
 Style Fvwm* Sticky
 Style Fvwm* !Title
 Style Fvwm* WindowListSkip
+#######################################################################################
 
 
 #######################################################################################
@@ -403,7 +393,7 @@ DesktopName 0 Main
 DesktopName 1 Desk1
 DesktopName 2 Desk2
 DesktopName 3 Desk3
-DesktopSize 4x3
+DesktopSize 2x2
 
 ###############################################################################
 # Global Behavior Commands                                                    #
@@ -448,35 +438,63 @@ DestroyModuleConfig FvwmScript:*
 #################################################################################
 
 # Note - To use the system tray you must have "stalonetray" installed.
+# DestroyModuleConfig RightPanel:*
+# *RightPanel: Geometry 120x$[vp.height]-0+0
+# *RightPanel: Colorset 12
+# *RightPanel: Rows $[vp.height]
+# *RightPanel: Columns 120
+# *RightPanel: Frame 0
+# *RightPanel: Font "xft:Sans:Bold:size=10:antialias=True"
+# *RightPanel: (110x40, Icon "fvwm-logo-small.png", Frame 0)
+# *RightPanel: (120x5, Frame 0)
+# *RightPanel: (10x20, Frame 0)
+
+# *RightPanel: (25x20, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 13, Frame 0)
+# *RightPanel: (25x20, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 13, Frame 0)
+# *RightPanel: (25x20, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 13, Frame 0)
+# *RightPanel: (25x20, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 13, Frame 0)
+# *RightPanel: (10x20, Frame 0)
+# *RightPanel: (5x80, Frame 0)
+# *RightPanel: (110x80, Swallow FvwmPager 'Module FvwmPager *', Frame 0)
+# *RightPanel: (5x80, Frame 0)
+# *RightPanel: (120x5, Frame 0)
+# Test (x stalonetray) *RightPanel: (120x20, Swallow(NoClose,UseOld) \
+#     stalonetray 'Exec exec stalonetray --config \
+#     "$[FVWM_DATADIR]/default-config/.stalonetrayrc"', Frame 0)
+# Test (x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-225)), \
+#     Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
+# Test (!x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-205)),\
+#     Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
+# *RightPanel: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime',\
+#     Frame 0)
+# *RightPanel: (120x5, Frame 0)
+
 DestroyModuleConfig RightPanel:*
-*RightPanel: Geometry 120x$[vp.height]-0+0
-*RightPanel: Colorset 12
-*RightPanel: Rows $[vp.height]
+*RightPanel: Geometry 120x720-0+0
+*RightPanel: Colorset 10
+*RightPanel: Rows 720
 *RightPanel: Columns 120
 *RightPanel: Frame 0
 *RightPanel: Font "xft:Sans:Bold:size=10:antialias=True"
-*RightPanel: (110x40, Icon "fvwm-logo-small.png", Frame 0)
+*RightPanel: (120x45, Icon "fvwm-logo-small.png", Frame 0)
 *RightPanel: (120x5, Frame 0)
 *RightPanel: (10x20, Frame 0)
-
-*RightPanel: (25x20, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, Colorset 11, ActiveColorset 13, Frame 0)
-*RightPanel: (25x20, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, ActiveColorset 13, Frame 0)
-*RightPanel: (25x20, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, ActiveColorset 13, Frame 0)
-*RightPanel: (25x20, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, ActiveColorset 13, Frame 0)
+*RightPanel: (25x20, Id desk0, Title "0", Action (Mouse 1) GotoDesk 0 0, \
+              Colorset 11, ActiveColorset 12, Frame 0)
+*RightPanel: (25x20, Id desk1, Title "1", Action (Mouse 1) GotoDesk 0 1, \
+              ActiveColorset 12, Frame 0)
+*RightPanel: (25x20, Id desk2, Title "2", Action (Mouse 1) GotoDesk 0 2, \
+              ActiveColorset 12, Frame 0)
+*RightPanel: (25x20, Id desk3, Title "3", Action (Mouse 1) GotoDesk 0 3, \
+              ActiveColorset 12, Frame 0)
 *RightPanel: (10x20, Frame 0)
 *RightPanel: (5x80, Frame 0)
 *RightPanel: (110x80, Swallow FvwmPager 'Module FvwmPager *', Frame 0)
 *RightPanel: (5x80, Frame 0)
 *RightPanel: (120x5, Frame 0)
-Test (x stalonetray) *RightPanel: (120x20, Swallow(NoClose,UseOld) \
-    stalonetray 'Exec exec stalonetray --config \
-    "$[FVWM_DATADIR]/default-config/.stalonetrayrc"', Frame 0)
-Test (x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-225)), \
-    Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
-Test (!x stalonetray) PipeRead 'echo "*RightPanel: (120x$(($[vp.height]-205)),\
-    Top, Swallow FvwmIconMan \'Module FvwmIconMan\', Frame 0)"'
-*RightPanel: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime',\
-    Frame 0)
+*RightPanel: (120x515, Top, Swallow FvwmIconMan 'Module FvwmIconMan', Frame 0)
+*RightPanel: (120x45, Swallow DateTime 'Module FvwmScript \
+              FvwmScript-DateTime', Frame 0)
 *RightPanel: (120x5, Frame 0)
 
 ########

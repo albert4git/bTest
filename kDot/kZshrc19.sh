@@ -142,12 +142,10 @@ alias ca='ccat'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
-alias kdeo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-alias d7='deonvim NONE -u ~/git/bTest/kDot/kFF7Min.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-alias d2='deonvim  -u ~/git/bTest/kDot/k2MinFF.vim'
-alias nd2='deonvim  -u ~/git/bTest/kDot/nd2MinFF.vim'
+alias e2='deonvim  -u ~/git/bTest/kDot/k2MinFF.vim'
+alias ne2='deonvim  -u ~/git/bTest/kDot/nd2MinFF.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # alias d50='nvim500  -u ~/git/bTest/kDot/k3MinFF.vim'
 # alias d42='nvim402  -u ~/git/bTest/kDot/k3MinFF.vim'
@@ -155,11 +153,15 @@ alias nd2='deonvim  -u ~/git/bTest/kDot/nd2MinFF.vim'
 # alias d40='nvim400  -u ~/git/bTest/kDot/k3MinFF.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias a41='401nv.app  -u ~/git/bTest/kDot/k3MinFF.vim'
-alias a42='402nv.app  -u ~/git/bTest/kDot/k3MinFF.vim'
+alias e3='402nv.app  -u ~/git/bTest/kDot/k3MinFF.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias e4='402nv.app  -u ~/git/bTest/kDot/k4MinFF.vim'
-
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias e7='402nv.app  -u ~/git/bTest/kDot/kFF7Min.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias svim='vim -u ~/.SpaceVim/vimrc'
+
+
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias vif='vim $(fzf)'
 alias def='deo $(fzf)'

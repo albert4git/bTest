@@ -3,7 +3,7 @@
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Mi 25 Sep 2019 06:31:03  CEST
+" Last Modified:      So 29 Sep 2019 03:04:24  CEST
 "==================================================================================================
 
 "-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
@@ -901,7 +901,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'm42e/vim-lgh'
         "----Nice---Tabs------
         Plug 'ap/vim-buftabline'
-        Plug 'xolox/vim-notes'
+        " Plug 'xolox/vim-notes'
         "------------------TODO------------------------------------------------------------ 
         " Plug 'rakr/vim-one'
         " Plug 'chriskempson/base16-vim'

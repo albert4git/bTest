@@ -87,6 +87,20 @@ rm ~/.xsession
 rm ~/.fvwm/config
 
 
+
+#------------------------------------------------------------------------------------------
+rm ~/.config/nvim/coc-settings.json
+
+ln -s  ~/git/bTest/kDot/kCoc-settings.json  ~/.config/nvim/coc-settings.json
+#------------------------------------------------------------------------------------------
+rm ~/.vimrc
+rm ~/.vimrc.before
+rm ~/.vimrc.bundles
+
+ln -s ~/git/bTest/kDot/kSpf13vimrc         ~/.vimrc
+ln -s ~/git/bTest/kDot/kSpf13vimrc.before         ~/.vimrc.before
+ln -s ~/git/bTest/kDot/kSpf13vimrc.bundles         ~/.vimrc.bundles
+
 #------------------------------------------------------------------------------------------
 rm ~/.config/pet/snippet.toml
 ln -s ~/git/bTest/kDot/kPetSnippet.toml ~/.config/pet/snippet.toml
@@ -96,7 +110,8 @@ ln -s ~/git/bTest/kDot/kHyper.js         ~/.hyper.js
 
 #------------------------------------------------------------------------------------------
 rm ~/.fvwm/config
-ln -s ~/git/bTest/kDot/kConfigFVWM.sh      ~/.fvwm/config
+# ln -s ~/git/bTest/kDot/kConfigFVWM.sh      ~/.fvwm/config
+ln -s ~/git/bTest/kDot/kFVWMdef.sh        ~/.fvwm/config
 #------------------------------------------------------------------
 ln -s ~/git/bTest/kDot/kXsession         ~/.xsession
 

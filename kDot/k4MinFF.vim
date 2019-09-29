@@ -2,7 +2,7 @@
 " File: k3MinFF.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Mi 25 Sep 2019 06:13:19  CEST
+" Last Modified:      So 29 Sep 2019 02:33:50  CEST
 "==================================================================================================
 " KRANKES:NETZ-2
 "==================================================================================================
@@ -293,11 +293,10 @@
         " guibg=#333333
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
 
-
         hi ColorColumn    ctermbg=22
         set signcolumn=yes
-        hi signcolumn     ctermbg=23 guibg=14
-        highlight SignColumn     ctermbg=230       guibg=#00ff00
+        " hi SignColumn     ctermbg=230       guibg=#00ff00
+        hi signcolumn     ctermbg=23 
 
         "hi LineNr         ctermbg=199 ctermfg=16 
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#020202
@@ -343,7 +342,8 @@
         hi darkGray       ctermbg=211 guibg=#ffbbff  guifg=#8000f0
 
         "------------------------------------------------------
-        highlight Visual cterm=bold ctermbg=2 ctermfg=NONE
+        highlight Visual cterm=bold ctermbg=2 ctermfg=NONE  guibg=#00C500
+
         hi Pmenue        ctermfg=11
         set nuw =4
         set list
