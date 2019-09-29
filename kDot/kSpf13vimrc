@@ -1265,7 +1265,7 @@
         hi CursorColumn   ctermbg=16 guibg=#570087 
 "---------------------------------------------------------------------------------------------------
 
-        hi LineNr         ctermbg=10 ctermfg=15   guibg=#308030  guifg=#ffffff
+        hi LineNr         ctermbg=1 ctermfg=15   guibg=#901030  guifg=#ffffff
 
         set colorcolumn=92,100,112,120
         hi ColorColumn    ctermbg=240

@@ -87,6 +87,11 @@ rm ~/.xsession
 rm ~/.fvwm/config
 
 
+#------------------------------------------------------------------------------------------
+rm ~/.SpaceVim/init.vim
+rm ~/.SpaceVim.d/init.vim
+
+ln -s  ~/git/bTest/kDot/k-init.toml  ~/.SpaceVim.d/init.vim
 
 #------------------------------------------------------------------------------------------
 rm ~/.config/nvim/coc-settings.json
