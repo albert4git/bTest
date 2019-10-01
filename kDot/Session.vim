@@ -18,7 +18,7 @@ badd +3 logoGit.vim
 badd +588 b5DEO.vim
 badd +1 xFZF.sh
 argglobal
-silent! argdel *
+%argdel
 $argadd NONE
 edit 4Temp.vim
 set splitbelow splitright
@@ -36,11 +36,11 @@ setlocal fdl=0
 setlocal fml=6
 setlocal fdn=20
 setlocal nofen
-let s:l = 29 - ((15 * winheight(0) + 15) / 31)
+let s:l = 30 - ((15 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-29
+30
 normal! 0
 lcd ~/git/bTest/kDot
 tabnext 1

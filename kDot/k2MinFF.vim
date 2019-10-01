@@ -2,7 +2,7 @@
 " File: k2MinFF.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      So 29 Sep 2019 02:01:07  CEST
+" Last Modified:      Mo 30 Sep 2019 04:27:33  CEST
 "==================================================================================================
 "==================================================================================================
 "==================================================================================================
@@ -1427,14 +1427,6 @@ au CursorHold * sil call CocActionAsync('highlight')
 au CursorHoldI * sil call CocActionAsync('showSignatureHelp')
 "===============================================================================================================
 
-Shortcut format function call, removing parentheses
-      \ noremap <silent> <Space>f( :call Format_funcall_drop_parens()<CR>
-
-Shortcut convert double to single quotes at cursor
-      \ nnoremap <silent> <Space>f' :call Format_quotes_singularize()<CR>
-
-Shortcut convert single to double quotes at cursor
-      \ nnoremap <silent> <Space>f" :call Format_quotes_pluralize()<CR>
 "===============================================================================================================
 "===============================================================================================================
 " remove parentheses around function call arguments

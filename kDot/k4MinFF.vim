@@ -2,7 +2,7 @@
 " File: k3MinFF.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      So 29 Sep 2019 02:33:50  CEST
+" Last Modified:      Di 01 Okt 2019 12:19:36  CEST
 "==================================================================================================
 " KRANKES:NETZ-2
 "==================================================================================================
@@ -286,20 +286,24 @@
         " LocalVariable   : Local Variable
         "==================================================================================
 
+        "------------------------------------------------------
+        highlight Visual cterm=bold ctermbg=2 ctermfg=NONE  guibg=#006600
+
+        "------------------------------------------------------
+        hi Comment        ctermfg=241
+        hi Comment        ctermfg=249  guifg=#004400 guibg=#F070A0
+        hi Comment        ctermfg=249  guibg=#000090 guifg=#ccCCcc
+        "------------------------------------------------------
+        hi pythonSelf  ctermfg=68  guifg=#3f57d7 cterm=bold gui=bold
         "-TOP---!!!---------------------------------------------------------------------------
-        hi pythonSelf  ctermfg=68 cterm=bold 
         hi Search         ctermbg=11 
         hi Normal         ctermbg=234 guibg = #333233
-        " guibg=#333333
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
 
-        hi ColorColumn    ctermbg=22
         set signcolumn=yes
         " hi SignColumn     ctermbg=230       guibg=#00ff00
         hi signcolumn     ctermbg=23 
 
-        "hi LineNr         ctermbg=199 ctermfg=16 
-        hi LineNr         ctermbg=17 ctermfg=15   guibg=#020202
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#10205f  guifg=#ffffff
         "--------------------------------------------------------------------------------- 
         "red let g:indentLine_color_term = 251
@@ -315,7 +319,6 @@
 
         "--------------------------------------------------------------------------------
         set colorcolumn=92,100,112,120
-        hi ColorColumn    ctermbg=240
         hi ColorColumn    ctermbg=14   guibg=#005500
 
         set pumheight=12
@@ -328,8 +331,8 @@
 
         "--------------------------------------------------------------------------------
         silent! set complete& completeopt=menu infercase noshowfulltag
-        "set shortmess+=c
         "suppress intro message because the above makes it look bad
+        "set shortmess+=c
         set shortmess+=I
         "--------------------------------------------------------------------------------
         " automatically open and close the popup menu / preview window
@@ -341,8 +344,6 @@
         hi lightGray      ctermbg=12
         hi darkGray       ctermbg=211 guibg=#ffbbff  guifg=#8000f0
 
-        "------------------------------------------------------
-        highlight Visual cterm=bold ctermbg=2 ctermfg=NONE  guibg=#00C500
 
         hi Pmenue        ctermfg=11
         set nuw =4
@@ -369,12 +370,9 @@
         call matchadd('customPink', '---')
         call matchadd('customPink', '--')
         call matchadd('customPink', '-')
-        "------------------------------------------------------
-        hi Comment        ctermfg=241
-        hi Comment        ctermfg=249
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "source ~/git/bTest/kDot/myPlug/logoCyan.vim
-        source ~/git/bTest/kDot/myPlug/nHydra.vim
+        " source ~/git/bTest/kDot/myPlug/nHydra.vim
         "------------------------------------------------------
         "source ~/git/bTest/kDot/myPlug/NNV.vim
         "let g:nnv_search_paths = ['~/git/bTest/']
@@ -1509,6 +1507,10 @@ nmap <silent> <C-d> <Plug>(coc-definition)
 nmap <silent> <C-,> <Plug>(coc-references)
 nn <silent> K :call CocActionAsync('doHover')<cr>
 
+"===============================================================================================================
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+nnoremap <silent> ; :<c-u>WhichKey  ';'<CR>
 
 "===============================================================================================================
 "===============================================================================================================

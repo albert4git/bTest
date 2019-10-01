@@ -87,8 +87,14 @@ rm ~/.xsession
 rm ~/.fvwm/config
 
 
+#----SPACE-VIM-----------------------------------------------------------------------------
+rm ~/.SpaceVim.d/init.toml
+
+ln  ~/git/bTest/kDot/kSpaceInit.toml  ~/.SpaceVim.d/init.toml
+
+ls ~/.SpaceVim.d/
+
 #------------------------------------------------------------------------------------------
-rm ~/.SpaceVim/init.vim
 rm ~/.SpaceVim.d/init.vim
 
 ln -s  ~/git/bTest/kDot/k-init.toml  ~/.SpaceVim.d/init.vim

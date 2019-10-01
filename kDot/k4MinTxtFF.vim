@@ -1,4 +1,35 @@
 
+"===============================================================================================================
+     " Quick run via <F5>
+    nnoremap <F5> :call <SID>compile_and_run()<CR>
+     
+    augroup spacevimAsyncRun
+        autocmd!
+        " Automatically open the quickfix window
+        autocmd User AsyncRunStart call asyncrun#quickfix_toggle(15, 1)
+    augroup END
+     
+    function! s:compile_and_run()
+     let l:cmd = {
+     \ 'c' : "gcc % -o %<; time ./%<",
+     \ 'sh' : "time bash %",
+     \ 'go' : "go run %",
+     \ 'cpp' : "g++ -std=c++11 % -o %<; time ./%<",
+     \ 'ruby' : "time ruby %",
+     \ 'java' : "javac %; time java %<",
+     \ 'rust' : "rustc % -o %<; time ./%<",
+     \ 'python' : "time python %",
+     \}
+     let l:ft = &filetype
+     if has_key(l:cmd, l:ft)
+       exec 'w'
+       exec "AsyncRun! ".l:cmd[l:ft]
+     else
+       echoerr "AsyncRun not supported in current filetype!"
+     endif
+    endfunction
+"===============================================================================================================
+
 	like https://github.com/tpope/vim-markdown, and use settings like:
 let g:markdown_fenced_languages = ['css', 'js=javascript']
 "===============================================================================================================
@@ -878,3 +909,26 @@ vim.eval(str)						*python-eval*
 						# string.atoi() to convert to
 						# a number.
 
+"--------------------------------------------------------------------------------- 
+pip install yapf
+
+let g:which_key_map['w'] = {
+      \ 'name' : '+windows' ,
+      \ 'w' : ['<C-W>w'     , 'other-window']          ,
+      \ 'd' : ['<C-W>c'     , 'delete-window']         ,
+      \ '-' : ['<C-W>s'     , 'split-window-below']    ,
+      \ '|' : ['<C-W>v'     , 'split-window-right']    ,
+      \ '2' : ['<C-W>v'     , 'layout-double-columns'] ,
+      \ 'h' : ['<C-W>h'     , 'window-left']           ,
+      \ 'j' : ['<C-W>j'     , 'window-below']          ,
+      \ 'l' : ['<C-W>l'     , 'window-right']          ,
+      \ 'k' : ['<C-W>k'     , 'window-up']             ,
+      \ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
+      \ 'J' : ['resize +5'  , 'expand-window-below']   ,
+      \ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
+      \ 'K' : ['resize -5'  , 'expand-window-up']      ,
+      \ '=' : ['<C-W>='     , 'balance-window']        ,
+      \ 's' : ['<C-W>s'     , 'split-window-below']    ,
+      \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
+      \ '?' : ['Windows'    , 'fzf-window']            ,
+      \ }

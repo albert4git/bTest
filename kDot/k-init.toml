@@ -38,14 +38,8 @@ name = 'git'
 
 [[layers]]
 name = 'lang#vim'
-
-[[layers]]
 name = 'lang#c'
-
-[[layers]]
 name = 'lang#python'
-
-[[layers]]
 name = "lang#typescript"
 
 [[layers]]
@@ -59,15 +53,20 @@ enable_flow_syntax = true
 
 [[layers]]
 name = "unite"
+name = "ctrlp"
 
 [[layers]]
-name = "ctrlp"
+name = "fzf"
+
+[[custom-plugins]]
+name = "gabesoft/vim-ags"
+name = "mileszs/ack.vim"
+name = "majutsushi/tagbar"
 
 [[layers]]
 name = 'shell'
 default_position = 'top'
 default_height = 30
-
 
 [[layers]]
 name = "colorscheme"

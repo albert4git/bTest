@@ -3,7 +3,7 @@
 " File: k2MinFzfDeoLs.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      So 29 Sep 2019 03:04:24  CEST
+" Last Modified:      Di 01 Okt 2019 12:03:17  CEST
 "==================================================================================================
 
 "-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
@@ -19,22 +19,28 @@ call plug#begin('~/.config/nvim/plugged/')
         "Plug 'vimim/vimim'
         " Plug 'cy2081/vim-cyim'
         " Plug 'vim-scripts/VimIM'
+        "--------------------------------------------------------------------------------- 
 
         "---------NOVA--------------------------------------------------------------------- 
         Plug 'wesQ3/vim-windowswap' 
+        "--------------------------------------------------------------------------------- 
         " Plug 'google/vim-searchindex'
-        let g:searchindex_improved_star=1
+        " let g:searchindex_improved_star=1
+
         "--------------------------------------------------------------------------------- 
         Plug 'kana/vim-textobj-user'
+
         "----------------------------------------------------------------------------------
         Plug 'adriaanzon/vim-textobj-matchit'
         "`am` and `im` :if-ifend , for-endfore ..
+
         "----------------------------------------------------------------------------------
         Plug 'gilligan/textobj-gitgutter'
                 vmap ih <Plug>(textobj-gitgutter-i)
         "----------------------------------------------------------------------------------
         Plug 'kana/vim-textobj-diff'
-        "-AAA6--GitGutter-----------------------------------------------------------------------{{{
+
+        "----------------------------------------------------------------------------------
         Plug 'airblade/vim-gitgutter'
                 nmap ]c <Plug>GitGutterNextHunk
                 nmap [c <Plug>GitGutterPrevHunk
@@ -45,7 +51,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------------------------------------
                 let g:gitgutter_signs = 1
                 let g:gitgutter_max_signs = 2000
-        "--------------------------------------------------------------------------
+        "-----------------------------------------------------------
                 highlight GitGutterAdd ctermfg=green   guifg=#00ffff 
                 highlight GitGutterChange ctermfg=yellow
                 highlight GitGutterDelete ctermfg=red
@@ -55,38 +61,24 @@ call plug#begin('~/.config/nvim/plugged/')
                         " let vim-gitgutter know we changed the SignColumn colors!
                         call gitgutter#highlight#define_highlights()
                 endif
-        "-------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------- 
         Plug 'aghareza/vim-gitgrep'
-        "--------------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------- 
         Plug 'romainl/vim-qf'
         Plug 'yssl/QFEnter'
-        "--------------------------------------------------------------------------
-        Plug 'junegunn/gv.vim'
-                " o or <cr> on a commit to display the content of it
-                " o or <cr> on commits to display the diff in the range
-                " O opens a new tab instead
-                " gb for :Gbrowse
-                " ]] and [[ to move between commits
-                " . to start command-line with :Git [CURSOR] SHA à la fugitive
-                " q to close
-        "-------------------------------------------------------------------------- 
-        Plug 'int3/vim-extradite'
-                ":Extradite | :Extradite! -- vertical.
-                let g:extradite_width = 60
-                let g:extradite_showhash = 1 "show abbre commit hashes.
-        "-6-}}}
-
-        "---------------------------------------------------------------------------------- 
+        "----------------------------------------------------------------------------------
         Plug 'brooth/far.vim'
+
         "---------------------------------------------------------------------------------- 
         Plug 'osyo-manga/vim-brightest'
                 let g:brightest#highlight = { "group" : "Define" }
                 " JAPAN
 
+        "---------------------------------------------------------------------------------- 
         Plug 'roxma/python-support.nvim'
                 let g:python_support_python2_require = 0
                 let g:python_support_python3_require = 0
-        "--------------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------- 
         Plug 'gastonsimone/vim-dokumentary/'
                 "-=KKK=-
                 "??? apt-get install dictd dict-gcide dict
@@ -118,8 +110,8 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'itchyny/lightline.vim'
         Plug 'yarisgutierrez/ayu-lightline'
         "---------------------------------------------------------------------------------- 
+        "VSSplit
         Plug 'skywind3000/vim-preview'
-                "VSSplit
         "---------------------------------------------------------------------------------- 
         Plug 'flazz/vim-colorschemes'
         " Plug 'rafi/awesome-vim-colorschemes'
@@ -181,37 +173,36 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'prabirshrestha/async.vim'
         Plug 'skywind3000/asyncrun.vim'
-        Plug 'neomake/neomake'
-                " Plug 'benekastah/neomake' " Makers for various file types. TODO: auto install tool (jshint, eslint).
 
-                    " --- jshint config
-                    "let g:neomake_javascript_enabled_makers = ['jshint']
-                    "let g:neomake_javascript_jshint_maker = {
-                        "\ 'args': ['--verbose'],
-                        "\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)'
-                        "\ }
+                    "Plug 'neomake/neomake'
+                    "" --- jshint config -----------------------------------------
+                    ""let g:neomake_javascript_enabled_makers = ['jshint']
+                    ""let g:neomake_javascript_jshint_maker = {
+                    "    "\ 'args': ['--verbose'],
+                    "    "\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)'
+                    "    "\ }
 
-                    " --- eslint config
-                    let g:neomake_javascript_enabled_makers = ['eslint']
+                    "" --- eslint config
+                    "let g:neomake_javascript_enabled_makers = ['eslint']
 
-                    " --- tslint config
-                    let g:neomake_typescript_enabled_makers = ['tslint']
-                    "let g:neomake_typescript_tslint_maker = {
-                        "\ 'args': ['--verbose'],
-                        "\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-                        "\ }
+                    "" --- tslint config
+                    "let g:neomake_typescript_enabled_makers = ['tslint']
+                    ""let g:neomake_typescript_tslint_maker = {
+                    "    "\ 'args': ['--verbose'],
+                    "    "\ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+                    "    "\ }
 
+                    "let g:neomake_error_sign = {
+                    "    \ 'text': '✖',
+                    "    \ 'texthl': 'ErrorMsg',
+                    "    \ }
 
-                    let g:neomake_error_sign = {
-                        \ 'text': '✖',
-                        \ 'texthl': 'ErrorMsg',
-                        \ }
-                    let g:neomake_warning_sign = {
-                        \ 'text': '∇',
-                        \ 'texthl': 'WarningMsg',
-                        \ }
+                    "let g:neomake_warning_sign = {
+                    "    \ 'text': '∇',
+                    "    \ 'texthl': 'WarningMsg',
+                    "    \ }
 
-                    autocmd FileType javascript :autocmd BufWritePost <buffer> :silent Neomake
+                    "autocmd FileType javascript :autocmd BufWritePost <buffer> :silent Neomake
 
 
         Plug 'tpope/vim-dispatch'
@@ -892,6 +883,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'lilydjwg/colorizer'
         " g:colorizer_maxlines=1000
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+        Plug 'liuchengxu/vim-which-key'
         "---------------------------------------------------------
         " Plug 'tpope/vim-dadbod'
         " Plug 'vpenkoff/vim-pg'  "postgres"
@@ -1051,7 +1043,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'tacahiroy/ctrlp-funky'
         "------------------------------------------------------------------------------------------
         " Plug 'epheien/termdbg'
-        "------------------------------------------------------------------------------------------
+        "---NEXT-TODO------------------------------------------------------------------------------
         " Plug 'guns/vim-sexp',    {'for': 'clojure'}
         " Plug 'liquidz/vim-iced', {'for': 'clojure'}
         "------------------------------------------------------------------------------------------
@@ -1068,7 +1060,13 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------------------------------------------------------------------------
         Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
         "------------------------------------------------------------------------------------------
+        " \   'python': ['pylama'],
+        " \   'python': ['pylint'],
+        " \   'python': ['flake8'],
         "------------------------------------------------------------------------------------------
+        Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+        "------------------------------------------------------------------------------------------
+
         Plug 'w0rp/ale'
                 "Linting
                 let g:ale_sign_column_always = 1

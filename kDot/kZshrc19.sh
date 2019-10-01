@@ -78,6 +78,9 @@ export GOROOT=/usr/lib/go-1.10
 export GOPATH=/home/red/go
 #=============================================================
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+#=============================================================
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle/"
+export PATH=$PATH:$JAVA_HOME/bin
 
 #=============================================================
 export JYTHON_HOME=/home/red/jython2.7.0
@@ -748,7 +751,7 @@ tar -P --listed-incremental=/media/red/124Black/TAR/TarTopX2Py/x2Snap.file -cJpf
 tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kDot2Snap.file -cJpf /media/red/124Black/TAR/TarDotK/kDot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/
 #--------------------------------------------------------------------------------------------------
 
-
+#---.Config---
 tar -P --listed-incremental=/media/red/124Black/TAR/TarRedConfig/RedConfig2Snap.file -cJpf /media/red/124Black/TAR/TarRedConfig/TarRedConfig-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/.config/
 
 #--------------------------------------------------------------------------------------------------
