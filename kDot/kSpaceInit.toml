@@ -1,0 +1,155 @@
+#=============================================================================
+# dark_powered.toml --- dark powered configuration example for SpaceVim
+# Copyright (c) 2016-2017 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg at 163.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+# All SpaceVim option below [option] section
+[options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer
+    #colorscheme = "gruvbox"
+    #colorscheme = "molokai"
+    colorscheme = "jellybeans"
+    colorscheme_bg = "dark"
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors
+    enable_guicolors = true
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    statusline_separator = "arrow"
+    statusline_inactive_separator = "arrow"
+    buffer_index_type = 4
+    enable_tabline_filetype_icon = true
+    enable_statusline_mode = false
+    relativenumber = false
+
+# Enable autocomplete layer
+[[layers]]
+name = 'autocomplete'
+auto-completion-return-key-behavior = "complete"
+auto-completion-tab-key-behavior = "smart"
+
+[[layers]]
+name = "VersionControl"
+
+[[layers]]
+name = 'git'
+
+#==========================================================================================
+[[layers]]
+name = "lang#ruby"
+
+[[layers]]
+name = 'lang#vim'
+name = 'lang#python'
+name = "lang#java"
+name = "lang#go"
+name = "lang#clojure"
+name = 'lang#php'
+name = 'lang#rust'
+name = "lang#lisp"
+
+
+[[layers]]
+  name = "lang#c"
+  name = "lang#cpp"
+  clang_executable = "/usr/lib/llvm-8/bin/clang"
+
+# clang_executable = "/usr/bin/clang"
+# lrwxrwxrwx 25 root 16 Mai  2018 /usr/bin/clang -> ../lib/llvm-6.0/bin/clang
+# /usr/local/Cellar/llvm/7.0.0/bin/clangd
+
+[[layers]]
+name = "lsp"
+filetypes = [
+    "python",
+    "ruby",
+    "go",
+    "php",
+    "css",
+    "typescript",
+    "c",
+    "cpp",
+    "javascript",
+  ]
+
+#==========================================================================================
+
+
+
+
+[[layers]]
+name = 'lang#html'
+name = "lang#javascript"
+auto_fix = true
+enable_flow_syntax = true
+
+#NORD
+[[layers]]
+name = "lang#typescript"
+
+[[layers]]
+name = "unite"
+name = "ctrlp"
+name = "fzf"
+
+[[layers]]
+name = "tools#zeal"
+
+[[layers]]
+name = 'shell'
+default_position = 'top'
+default_height = 30
+
+[[layers]]
+name = "debug"
+
+[[layers]]
+name = "default"
+
+[[layers]]
+name = "tags"
+
+
+
+[[layers]]
+name = "tools"
+
+[[layers]]
+name = "colorscheme"
+
+[[layers]]
+  name = "ui"
+
+#==================CUSTOM==================
+[[custom_plugins]]
+name = "Konfekt/FastFold"
+merged = 0
+
+[[custom_plugins]]
+name = 'vim-pandoc/vim-pandoc'
+merged = 0
+
+[[custom_plugins]]
+name = 'vim-pandoc/vim-pandoc-syntax'
+merged = 0
+
+[[custom_plugins]]
+name = 'jalvesaq/Nvim-R'
+merged = 0
+
+[[custom_plugins]]
+name = 'airblade/vim-gitgutter'
+merged = 0
+
+
+[[custom-plugins]]
+name = "itchyny/vim-cursorword"
+name = "gabesoft/vim-ags"
+name = "mileszs/ack.vim"
+name = "lilydjwg/colorizer"
+
