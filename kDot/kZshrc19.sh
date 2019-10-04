@@ -168,6 +168,9 @@ alias svim='vim -u ~/.SpaceVim/vimrc'
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias h1='402nv.app  -u ~/git/bTest/kDot/h1Hunter.vim'
+alias h1l='402nv.app  -u ~/git/bTest/kDot/h1HunterLsp.vim'
+alias h1c='402nv.app  -u ~/git/bTest/kDot/h1HunterCoc.vim'
+alias h1d='402nv.app  -u ~/git/bTest/kDot/h1HunterDeo.vim'
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias vif='vim $(fzf)'

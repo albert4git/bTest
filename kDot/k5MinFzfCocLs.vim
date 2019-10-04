@@ -108,7 +108,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
         Plug 'itchyny/lightline.vim'
-        Plug 'yarisgutierrez/ayu-lightline'
         "---------------------------------------------------------------------------------- 
         "VSSplit
         Plug 'skywind3000/vim-preview'
@@ -455,6 +454,8 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "-AAA3----------------------------------------------------------------------------------{{{
          Plug 'scrooloose/nerdtree'
+        " Plug 'ivalkeen/nerdtree-execute'
+        " Plug 'Linfee/nerdtree-open'
          Plug 'Xuyuanp/nerdtree-git-plugin'
                 let g:NERDTreeIndicatorMapCustom = {
                 \ "Modified"  : "✹",
@@ -633,10 +634,11 @@ call plug#begin('~/.config/nvim/plugged/')
         "==================================================================================
         Plug 'tiagoinacio/fzf-bookmark.vim'
         Plug 'runfalk/vim-fzf-extended'
-        Plug 'ryanoasis/vim-devicons'
         Plug 'mhinz/vim-startify'
-        Plug 'blueyed/vim-diminactive'
         Plug 'vim-scripts/timestamp.vim'
+        Plug 'blueyed/vim-diminactive'
+        "---------------------------------------------------------------------------------- 
+        Plug 'ryanoasis/vim-devicons'
         "---------------------------------------------------------------------------------- 
         Plug 'metakirby5/codi.vim'
         "---------------------------------------------------------------------------------- 
@@ -798,7 +800,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "--------------------Nice---------------------------------------------------------- 
         Plug 'moll/vim-bbye'
         "---------------------------------------------------------------------------------- 
-        ":Acks- Plug 'wincent/ferret'
         " Plug 'lyuts/vim-rtags'
         " Plug 'vim-scripts/Conque-Shell'
         "---------------------------------------------------------------------------------- 
@@ -815,6 +816,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "         nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
         "-------------------------TESTING-------------------------------------------------
         " Plug 'vim-scripts/CRefVim'
+        ":Acks- Plug 'wincent/ferret'
         "---------------------------------------------------------------------------------- 
         Plug 'alvan/vim-closetag'
         let g:closetag_close_shortcut = '<leader>>'
@@ -863,6 +865,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 endfunction
 
         "---cox-light----------------------------------------------------------------------
+        Plug 'yarisgutierrez/ayu-lightline'
                 let g:lightline = {
                                 \ 'colorscheme': 'molokai',
                                 \ 'active': {
@@ -881,12 +884,12 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------
         Plug 'cwfoo/vim-text-omnicomplete'
         Plug 'lilydjwg/colorizer'
-        " g:colorizer_maxlines=1000
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
         Plug 'liuchengxu/vim-which-key'
         "---------------------------------------------------------
         " Plug 'tpope/vim-dadbod'
-        " Plug 'vpenkoff/vim-pg'  "postgres"
+        " postgres
+        " Plug 'vpenkoff/vim-pg' 
         " Plug 'vim-scripts/dbext.vim'
         " :'<,'>DBExecSQL    (or used the default map <Leader>se)
         "----!!!---LGHistory--------------------------------------
@@ -1002,7 +1005,8 @@ call plug#begin('~/.config/nvim/plugged/')
         " - Editing HTML
         " - Bookmark files, directories, URLs
         "---------------------------------------------------------------------------------- 
-        " Plug 'tpope/vim-abolish'        " Extended abbreviation/substition.
+        " Extended abbreviation/substition.
+        " Plug 'tpope/vim-abolish'       
         "---------------------------------------------------------------------------------- 
         "Plug 'amiorin/vim-project'
         "Plug 'tpope/vim-projectionist'
@@ -1066,7 +1070,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------------------------------------------------------------------------
         Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
         "------------------------------------------------------------------------------------------
-
         "Plug 'w0rp/ale'
         "        "Linting
         "        let g:ale_sign_column_always = 1

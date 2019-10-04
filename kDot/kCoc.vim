@@ -56,6 +56,21 @@
                                 \ 'cmd': {server_info->['php', expand('~/.vim/plugged/php-language-server/bin/php-language-server.php')]},
                                 \ 'whitelist': ['php'],                                                     
                                 \ })
+
+        Plug 'prabirshrestha/vim-lsp'
+        let g:lsp_signs_enabled = 1         " enable signs
+        let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+        let g:lsp_signs_error = {'text': 'eR'}
+        let g:lsp_signs_warning = {'text': '‼' } " icons require GUI
+        let g:lsp_signs_hint = {'text': '!?' }
+        augroup LspEFM
+                au!
+                autocmd User lsp_setup call lsp#register_server({
+                                        \ 'name': 'efm-langserver-erb',
+                                        \ 'cmd': {server_info->['efm-langserver', '-c=/path/to/your/config.yaml']},
+                                        \ 'whitelist': ['eruby', 'markdown'],
+                                        \ })
+        augroup END
         "------------------------------------------------------------------------------------------
         " After vim-lsp, etc
         Plug 'ryanolsonx/vim-lsp-python'
