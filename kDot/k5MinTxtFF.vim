@@ -1,5 +1,101 @@
-
 "===============================================================================================================
+" k5MinTxtFF.vim
+"===============================================================================================================
+{
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pep8Enabled": true,
+    "python.linting.pep8Args": [
+        "--ignore=E501"
+ ],
+}
+
+
+"=======================================================
+{
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.mypyEnabled": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.jediEnabled": true
+}
+
+"=======================================================
+
+{
+  "languageserver": {
+    "python": {
+      "command": "python",
+      "args": [
+        "-mpyls",
+        "-vv",
+        "--log-file",
+        "/tmp/lsp_python.log"
+      ],
+      "trace.server": "verbose",
+      "filetypes": [
+        "python"
+      ],
+      "settings": {
+        "pyls": {
+          "enable": true,
+          "trace": {
+            "server": "verbose"
+          },
+          "commandPath": "",
+          "configurationSources": [
+            "pycodestyle"
+          ],
+          "plugins": {
+            "jedi_completion": {
+              "enabled": true
+            },
+            "jedi_hover": {
+              "enabled": true
+            },
+            "jedi_references": {
+              "enabled": true
+            },
+            "jedi_signature_help": {
+              "enabled": true
+            },
+            "jedi_symbols": {
+              "enabled": true,
+              "all_scopes": true
+            },
+            "mccabe": {
+              "enabled": true,
+              "threshold": 15
+            },
+            "preload": {
+              "enabled": true
+            },
+            "pycodestyle": {
+              "enabled": true
+            },
+            "pydocstyle": {
+              "enabled": false,
+              "match": "(?!test_).*\\.py",
+              "matchDir": "[^\\.].*"
+            },
+            "pyflakes": {
+              "enabled": true
+            },
+            "rope_completion": {
+              "enabled": true
+            },
+            "yapf": {
+              "enabled": true
+            }
+          }
+        }
+      }
+    }
+  },
+
+
+"=======================================================
      " Quick run via <F5>
     nnoremap <F5> :call <SID>compile_and_run()<CR>
      
@@ -74,13 +170,14 @@ E117: Unknown function: CocActionAsync
 :help usr_32.txt
 :help usr_42.txt
 
-        " Plug 'unblevable/quick-scope'
-        " let g:qs_highlight_on_keys = ['f', 'F']
-        " augroup qs_colors
-        "         autocmd!
-        "         autocmd ColorScheme * highlight QuickScopePrimary  ctermfg=155 cterm=underline
-        "         autocmd ColorScheme * highlight QuickScopeSecondary  ctermfg=81 cterm=underline
-        " augroup END
+" Plug 'unblevable/quick-scope'
+" let g:qs_highlight_on_keys = ['f', 'F']
+" augroup qs_colors
+"         autocmd!
+"         autocmd ColorScheme * highlight QuickScopePrimary  ctermfg=155 cterm=underline
+"         autocmd ColorScheme * highlight QuickScopeSecondary  ctermfg=81 cterm=underline
+" augroup END
+
 
 #### 3. Use Quickfix
 * **Move your cursor inside Quickfix window to use these key bindings**

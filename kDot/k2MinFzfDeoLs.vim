@@ -4,7 +4,7 @@
 "==================================================================================================
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Mo 30 Sep 2019 04:24:52  CEST
+" Last Modified:      Fr 04 Okt 2019 07:57:34  CEST
 "==================================================================================================
 
 "-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
@@ -83,7 +83,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'osyo-manga/vim-brightest'
                 let g:brightest#highlight = { "group" : "Define" }
                 " JAPAN
-
+        "---------------------------------------------------------------------------------- 
         Plug 'roxma/python-support.nvim'
                 let g:python_support_python2_require = 0
                 let g:python_support_python3_require = 0

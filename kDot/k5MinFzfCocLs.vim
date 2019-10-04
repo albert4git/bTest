@@ -1,9 +1,9 @@
 "==================================================================================================
 " tmf: $0,0=$1,2 = $1,1 * $1,1 
-" File: k2MinFzfDeoLs.vim
+" File: k5MinFzfCocLs.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Mi 02 Okt 2019 05:34:02  CEST
+" Last Modified:      Mi 02 Okt 2019 08:03:55  CEST
 "==================================================================================================
 
 "-AAA3-UnPlug-nPlugStart------------------------------------------------------------------------------------{{{
@@ -1052,13 +1052,13 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
         "------------------------------------------------------------------------------------------
         " Plug 'liuchengxu/vista.vim'
-        "------------------------------------------------------------------------------------------
+        " Plug 'neoclide/coc-jedi', {'do': 'yarn install'}
+        "--Go-Coc----------------------------------------------------------------------------------
         " Use release branch
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        "------------------------------------------------------------------------------------------
-        " Plug 'neoclide/coc-jedi', {'do': 'yarn install'}
-        "------------------------------------------------------------------------------------------
-        Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+        " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+
+
         "------------------------------------------------------------------------------------------
         " \   'python': ['pylama'],
         " \   'python': ['pylint'],
@@ -1067,22 +1067,22 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
         "------------------------------------------------------------------------------------------
 
-        Plug 'w0rp/ale'
-                "Linting
-                let g:ale_sign_column_always = 1
-                let g:ale_sign_error = 'rr'
-                let g:ale_sign_warning = 'ww'
-                let g:ale_linters = {
-                                        \   'javascript': ['eslint'],
-                                        \   'jsx': ['eslint'],
-                                        \   'python': ['flake8'],
-                                        \   'vim': ['vint'],
-                                        \}
-                let b:ale_fixers = {'python': ['black', 'isort'], 'javascript': ['xo']}
+        "Plug 'w0rp/ale'
+        "        "Linting
+        "        let g:ale_sign_column_always = 1
+        "        let g:ale_sign_error = 'rr'
+        "        let g:ale_sign_warning = 'ww'
+        "        let g:ale_linters = {
+        "                                \   'javascript': ['eslint'],
+        "                                \   'jsx': ['eslint'],
+        "                                \   'python': ['flake8'],
+        "                                \   'vim': ['vint'],
+        "                                \}
+        "        let b:ale_fixers = {'python': ['black', 'isort'], 'javascript': ['xo']}
 
-        "------------------------------------------------------------------
-        highlight ALEErrorSign ctermbg=NONE ctermfg=red guibg=#A00000
-        highlight ALEWarningSign ctermbg=NONE ctermfg=yellow guibg=#FF4F30
+        ""------------------------------------------------------------------
+        "highlight ALEErrorSign ctermbg=NONE ctermfg=red guibg=#A00000
+        "highlight ALEWarningSign ctermbg=NONE ctermfg=yellow guibg=#FF4F30
         "------------------------------------------------------------------
         " let g:ale_lint_on_text_changed = 'never'
         " let g:ale_lint_on_enter = 0
