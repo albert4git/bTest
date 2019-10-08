@@ -142,6 +142,15 @@ alias py='python'
 alias py3='python3'
 alias ca='ccat'
 
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias h1='402nv.app  -u ~/git/bTest/kDot/h1Hunter.vim'
+alias h1coc='402nv.app  -u ~/git/bTest/kDot/h1HunterCoc.vim'
+alias h1de='402nv.app  -u ~/git/bTest/kDot/h1HunterDeo.vim'
+alias h1Vls='402nv.app  -u ~/git/bTest/kDot/h1HunterVimLsp.vim'
+alias h1lc='402nv.app  -u ~/git/bTest/kDot/h1HunterLc.vim'
+alias h1ycm='402nv.app  -u ~/git/bTest/kDot/h1HunteYCM.vim'
+alias h0deo='402nv.app  -u ~/git/bTest/kDot/h0MinDeo.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
@@ -166,11 +175,6 @@ alias e7='402nv.app  -u ~/git/bTest/kDot/kFF7Min.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias svim='vim -u ~/.SpaceVim/vimrc'
 
-#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-alias h1='402nv.app  -u ~/git/bTest/kDot/h1Hunter.vim'
-alias h1l='402nv.app  -u ~/git/bTest/kDot/h1HunterLsp.vim'
-alias h1c='402nv.app  -u ~/git/bTest/kDot/h1HunterCoc.vim'
-alias h1d='402nv.app  -u ~/git/bTest/kDot/h1HunterDeo.vim'
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias vif='vim $(fzf)'
@@ -250,28 +254,30 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #alias ffl='fzf --preview="less -f {}|ccze"'
 alias fff='fzf --preview="head -$LINES {}"'
 alias ffc='fzf --preview="ccat --color=always {}"'
+#==============================================================
+
 # Press F1 to open the file with less without leaving fzf
 # Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
 
+#==============================================================
 alias ff1='fff --bind "f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
 #==============================================================
 alias ff3='fff --bind "f1:execute(vi {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
 #==============================================================
 alias ff4='fff --bind "f1:execute(deonvim NONE -u ~/git/bTest/kDot/kMinit.vim {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
+#==============================================================
 
 
 #==============================================================
 alias ffv='vim $(ffc)'
 alias ffe='de $(ffc)'
 alias ff2='d2 $(ffc)'
-###############################################################
-###############################################################
+
 #==============================================================
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
-
 
 #==============================================================
 ffd() {
@@ -280,23 +286,25 @@ ffd() {
                   -o -type d -print 2> /dev/null | fzf --preview 'tree -C {} | head -200' ) &&
   cd "$dir"
 }
+
 #==============================================================
 fft() {
   local dir
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf --preview 'tree -C {} | head -200') && cd "$dir"
 }
+
 #==============================================================
 ffa() {
   local dir
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
+
 #==============================================================
-# fh - repeat history
 ffh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
+
 #==============================================================
-# fshow - git commit browser
 ffgshow() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
@@ -313,8 +321,8 @@ ffglog() {
   echo $hash | xclip
   echo $hash
 }
+
 ###############################################################
-# fkill - kill processes - list only the ones you can kill. Modified the earlier script.
 fkill() {
     local pid 
     if [ "$UID" != "0" ]; then
@@ -329,6 +337,7 @@ fkill() {
     fi  
 }
 
+###############################################################
 extract1 () {
         if [ -f $1 ] ; then
                 case $1 in
@@ -386,6 +395,7 @@ alias exat='exa -lT'
 alias xx='exa -lT'
 alias lst='exa -lT'
 
+#==========================================================================================
 #-Pretty print the path--------------------------------------------------------------------
 alias ips="ip a | grep 'inet ' | sed -e 's/^.*inet //g' -e 's/\/.*//g' | grep -v '127.0.0.1'"
 alias lss='LC_COLLATE=C ls -A --color -h --group-directories-first'
@@ -394,6 +404,7 @@ alias mpath='echo $PATH | tr -s ":" "\n"'
 
 alias ggt="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gil="git log --oneline --graph"
+
 #==========================================================================================
 function mkd() {
         mkdir -p "$@" && cd "$_";

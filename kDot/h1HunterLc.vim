@@ -2,7 +2,7 @@
 " File: h1Hunter.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Fr 04 Okt 2019 02:20:36  CEST
+" Last Modified:      Di 08 Okt 2019 05:37:11  CEST
 "==================================================================================================
 "==================================================================================================
 
@@ -245,6 +245,10 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'prabirshrestha/async.vim'
         Plug 'skywind3000/asyncrun.vim'
 
+        "-------------------------------------------------------------------------- 
+        Plug 'tpope/vim-commentary'
+        Plug 'tpope/vim-repeat'
+        Plug 'tpope/vim-unimpaired'
         "---------------------------------------------------------------------------------- 
         Plug 'google/vim-maktaba'
         "-Strongly recommended: easy configuration of maktaba plugins.
@@ -571,7 +575,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'mattn/emmet-vim'
         Plug 'tpope/vim-eunuch'
         Plug 'tpope/vim-surround'
-        Plug 'w0rp/ale'
         "----------------------------------------------------------------------------------
         Plug 'itchyny/lightline.vim'
         Plug 'yarisgutierrez/ayu-lightline'
@@ -630,9 +633,183 @@ call plug#begin('~/.config/nvim/plugged/')
                 " | isr   | student | id     |
                 " +-------+---------+--------+
 
-
+        "----------------------------------------------------------------------------------
         "----------------------------------------------------------------------------------
         Plug 'liuchengxu/vim-which-key'
+        "----------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+        set runtimepath+=~/.config/nvim/plugged/deoplete.nvim/
+        "----------------------------------------------------------------------------------
+        Plug 'lighttiger2505/deoplete-vim-lsp'
+        "----------------------------------------------------------------------------------
+        Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh', }
+        "=================================================================================
+        " Plug 'davidhalter/jedi-vim'
+        " Plug 'zchee/deoplete-jedi'
+        " Plug 'deoplete-plugins/deoplete-jedi'
+        "=================================================================================
+        Plug 'zchee/deoplete-clang'
+        "=================================================================================
+        "--- Plug 'vhakulinen/neovim-intellij-complete-deoplete'
+        "=================================================================================
+        Plug 'w0rp/ale'
+        "=================================================================================
+        " language client
+        let g:LanguageClient_serverCommands = {
+                                \ 'haskell': ['hie', '--lsp'],
+                                \ 'c': ['ccls', '--log-file=/tmp/ccls.log'],
+                                \ 'cpp': ['ccls', '--log-file=/tmp/ccls.log'],
+                                \ 'python': ['pyls', '--log-file=/tmp/pyls.log'],
+                                \ }
+        "=================================================================================
+
+        let g:autocomplete_deoplete = 'deoplete'
+        "----------------------------------------------------------------------------------
+        let g:deoplete#sources = {}
+        let g:deoplete#sources.cpp = ['LanguageClient']
+        let g:deoplete#sources.python = ['LanguageClient']
+        let g:deoplete#sources.python3 = ['LanguageClient']
+        let g:deoplete#sources.rust = ['LanguageClient']
+        let g:deoplete#sources.c = ['LanguageClient']
+        let g:deoplete#sources.vim = ['vim']
+
+        "===DEOPLETE-CLANG=========================================================================
+        let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-6.0/lib/libclang.so.1"
+        let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+        let g:deoplete#sources#clang#sort_algo = 'priority' " alphabetical
+
+        "==========================================================================================
+        "? let g:clang_auto = 1
+        "? let g:clang_cpp_options = '-std=c++ -stdlib=libc++'
+        "? let g:clang_exec = 'clang'
+        "==========================================================================================
+
+        " let g:deoplete#omni_patterns = {}
+        " let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
+        " let g:deoplete#sources._ = []
+        "==========================================================================================
+
+        "::::::::::::::::::::::-=<1>=-:::::::::::::::::::::::::::::::::::::::::::::::::::::
+        let g:deoplete#enable_at_startup = 1
+        call deoplete#custom#option('refresh_always', v:true)
+        "call deoplete#enable_logging('DEBUG', 'deoplete.log')
+        "-------------------------------------------------------------------------------- 
+        let g:deoplete#enable_ignore_case = 1
+        let g:deoplete#enable_smart_case = 1
+        let g:deoplete#enable_camel_case = 1
+        let g:deoplete#enable_refresh_always = 1
+        let g:deoplete#max_abbr_width = 0
+        let g:deoplete#max_menu_width = 0
+        " let g:deoplete#enable_yarp = 1
+
+        "--------------------------------------------------------------------------------
+        let g:deoplete#sources#ternjs#timeout = 3
+        let g:deoplete#sources#ternjs#types = 1
+        let g:deoplete#sources#ternjs#docs = 1
+        "--------------------------------------------------------------------------------
+        let g:deoplete#skip_chars = ['(', ')', '<', '>']
+        let g:deoplete#tag#cache_limit_size = 800000
+        let g:deoplete#file#enable_buffer_path = 1
+
+
+        "--------------------------------------------------------------------------------
+        autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        autocmd! FileType ruby setlocal omnifunc=rubycomplete#Complete
+        autocmd! FileType haskell setlocal omnifunc=necoghc#omnifunc
+        autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
+        " autocmd! FileType python setlocal omnifunc=jedi#completions
+        "--------------------------------------------------------------------------------
+        set complete=.,w,b,t,i,u,kspell
+        "            | | | | | | |
+        "            | | | | | | `-dict
+        "            | | | | | `-unloaded buffers
+        "            | | | | `-include files
+        "            | | | `-tags
+        "            | | `-other loaded buffers
+        "            | `-windows buffers
+        "            `-the current buffer
+        "--------------------------------------------
+        "set complete+=ispell
+        "set completeopt=menuone,menu,longest,preview
+        set omnifunc=syntaxcomplete#Complete
+        set completeopt=menu
+
+        "==========================================================================================
+        "---ZELENKA---ZELIONKA---ZELEN-------------------------------------------------------------
+        "==========================================================================================
+        autocmd! FileType python setlocal completeopt+=preview
+        "-------------------------------------------------------------------------------- 
+        " let g:deoplete#auto_complete_start_length=1
+        "-------------------------------------------------------------------------------- 
+        " deoplete#min_pattern_length = 2 
+        " imap <expr> <C-Space> deoplete#mappings#manual_complete()
+
+        "-------------------------------------------------------------------------------- 
+        " inoremap <silent><expr> <c-space>
+        "                         \ pumvisible() ? "\<C-n>" :
+        "                         \ <SID>check_back_space() ? "\<TAB>" :
+        "                         \ deoplete#manual_complete()
+
+        " function! s:check_back_space() abort "{{{
+        "         let col = col('.') - 1
+        "         return !col || getline('.')[col - 1]  =~ '\s'
+        " endfunction"}}}
+        "-------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------
+        imap <expr> <C-Space>  deoplete#manual_complete()
+        "--------------------------------------------------------------------------------
+        " Plugin key-mappings.
+        inoremap <expr><C-g>     deoplete#undo_completion()
+        inoremap <expr><C-l>     deoplete#refresh()
+        inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
+
+        "--------------------------------------------------------------------------------
+
+        call deoplete#custom#source('neosnippet',    'rank', 690)
+        call deoplete#custom#source('ultisnips',     'rank', 680)
+        call deoplete#custom#source('padawan',       'rank', 660)
+        call deoplete#custom#source('go',            'rank', 650)
+        call deoplete#custom#source('vim',           'rank', 640)
+        call deoplete#custom#source('flow',          'rank', 630)
+        call deoplete#custom#source('TernJS',        'rank', 620)
+        call deoplete#custom#source('LanguageClient','rank', 610)
+        call deoplete#custom#source('jedi',          'rank', 600)
+        call deoplete#custom#source('tag',           'rank', 550)
+        call deoplete#custom#source('omni',          'rank', 500)
+        call deoplete#custom#source('member',        'rank', 500)
+        call deoplete#custom#source('file_include',  'rank', 420)
+        call deoplete#custom#source('file',          'rank', 410)
+        call deoplete#custom#source('around',        'rank', 330)
+        call deoplete#custom#source('buffer',        'rank', 320)
+        call deoplete#custom#source('dictionary',    'rank', 310)
+        call deoplete#custom#source('tmux-complete', 'rank', 300)
+        call deoplete#custom#source('syntax',        'rank', 200)
+        call deoplete#custom#source('LanguageClient','mark', 'langCl')
+        call deoplete#custom#source('omni',          'mark', 'omni')
+        call deoplete#custom#source('flow',          'mark', 'flow')
+        call deoplete#custom#source('TernJS',        'mark', 'tern')
+        call deoplete#custom#source('go',            'mark', 'go')
+        call deoplete#custom#source('jedi',          'mark', 'Jedi')
+        call deoplete#custom#source('vim',           'mark', 'vim')
+        call deoplete#custom#source('neosnippet',    'mark', 'neoSnp')
+        call deoplete#custom#source('around',        'mark', 'round')
+        call deoplete#custom#source('buffer',        'mark', 'Buf')
+        call deoplete#custom#source('tmux-complete', 'mark', 'tmux')
+        call deoplete#custom#source('syntax',        'mark', 'synt')
+        call deoplete#custom#source('member',        'mark', 'mmbr')
+        "--------------------------------------------------------------------------------
+        "--------------------------------------------------------------------------------
+
+        " ale
+        let g:ale_sign_column_always = 0
+        let g:ale_emit_conflict_warnings = 0
+        let g:ale_lint_on_text_changed = 'never'
+        let g:ale_set_loclist = 0
+        let g:ale_set_quickfix = 1
 
 call plug#end()
 "====================================================
@@ -722,10 +899,12 @@ call plug#end()
         "--------------------------------------------------------------------------------
         set pumheight=12
         " Popup menu hightLight Group
-        hi Pmenu          ctermfg=1  ctermbg=255
+        hi Pmenu          ctermfg=1  ctermbg=255 guibg=#FA5D94
+        hi Pmenu          ctermfg=1  ctermbg=255 guibg=#006600
         hi PmenuSbar      ctermfg=11 ctermbg=5 cterm=NONE
         hi PmenuThumb     ctermfg=12 ctermbg=2 cterm=NONE
-        hi PmenuSel       ctermbg=10 ctermfg=1
+        hi PmenuSel       ctermbg=10 ctermfg=1  guibg=#FA5D94
+
         let g:CommandTHighlightColor = 9
 
         "--------------------------------------------------------------------------------

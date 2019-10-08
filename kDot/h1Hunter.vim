@@ -2,7 +2,7 @@
 " File: h1Hunter.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Sa 05 Okt 2019 01:04:44  CEST
+" Last Modified:      Sa 05 Okt 2019 01:18:44  CEST
 "==================================================================================================
 "==================================================================================================
 
@@ -634,23 +634,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 " | isr   | student | id     |
                 " +-------+---------+--------+
 
-        "------------------------------------------------------------------------------------------
-        Plug 'prabirshrestha/vim-lsp'
-                let g:lsp_signs_enabled = 1         " enable signs
-                let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
-                let g:lsp_signs_error = {'text': 'eR'}
-                let g:lsp_signs_warning = {'text': 'x!' } " icons require GUI
-                let g:lsp_signs_hint = {'text': 'x?' }
-        "------------------------------------------------------------------------------------------
-        " Plug 'ryanolsonx/vim-lsp-python'
-        " if executable('pyls')
-        "         au User lsp_setup call lsp#register_server({
-        "                                 \ 'name': 'pyls',
-        "                                 \ 'cmd': {server_info->['pyls']},
-        "                                 \ 'whitelist': ['python'],
-        "                                 \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
-        "                                 \ })
-        " endif
+        "---LSP------------------------------------------------------------------------------------
         "------------------------------------------------------------------------------------------
 
         "----------------------------------------------------------------------------------

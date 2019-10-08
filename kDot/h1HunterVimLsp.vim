@@ -2,7 +2,7 @@
 " File: h1Hunter.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Sa 05 Okt 2019 01:04:44  CEST
+" Last Modified:      Sa 05 Okt 2019 07:11:11  CEST
 "==================================================================================================
 "==================================================================================================
 
@@ -575,7 +575,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'mattn/emmet-vim'
         Plug 'tpope/vim-eunuch'
         Plug 'tpope/vim-surround'
-        Plug 'w0rp/ale'
         "----------------------------------------------------------------------------------
         Plug 'itchyny/lightline.vim'
         Plug 'yarisgutierrez/ayu-lightline'
@@ -633,29 +632,71 @@ call plug#begin('~/.config/nvim/plugged/')
                 " +=======+=========+========+
                 " | isr   | student | id     |
                 " +-------+---------+--------+
+        "------------------------------------------------------------------------------------------
+        "------------------------------------------------------------------------------------------
 
         "------------------------------------------------------------------------------------------
         Plug 'prabirshrestha/vim-lsp'
-                let g:lsp_signs_enabled = 1         " enable signs
-                let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+                let g:lsp_diagnostics_enabled = 1 
+                " virtual text color ?
+                let g:lsp_virtual_text_enabled = 1 
+                let g:lsp_signs_enabled = 1 
+                " enable echo under cursor when in normal mode
+                let g:lsp_diagnostics_echo_cursor = 0
+                let g:lsp_highlights_enabled = 1
+                let g:lsp_textprop_enabled = 1
+
+        "----------------------------------------------------------
+        highlight link LspErrorHighlight GruvboxPurpleSign
+        highlight link LspErrorHighlight Error
+        "----------------------------------------------------------
+        highlight link LspWarningHighlight GruvboxYellowSign
+        highlight link LspWarningHighlight lightGray
+        "----------------------------------------------------------
+        highlight link LspInformationHighlight GruvboxBlueSign
+        highlight link LspInformationHighlight customPink
+        "----------------------------------------------------------
+        highlight link LspHintHighlight GruvboxGreenSign
+        highlight link LspHintHighlight darkGray
+        "----------------------------------------------------------
+
+        highlight link LspErrorText darkGray
+        highlight clear LspWarningLine
+
                 let g:lsp_signs_error = {'text': 'eR'}
                 let g:lsp_signs_warning = {'text': 'x!' } " icons require GUI
                 let g:lsp_signs_hint = {'text': 'x?' }
-        "------------------------------------------------------------------------------------------
-        " Plug 'ryanolsonx/vim-lsp-python'
-        " if executable('pyls')
-        "         au User lsp_setup call lsp#register_server({
-        "                                 \ 'name': 'pyls',
-        "                                 \ 'cmd': {server_info->['pyls']},
-        "                                 \ 'whitelist': ['python'],
-        "                                 \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
-        "                                 \ })
-        " endif
-        "------------------------------------------------------------------------------------------
+                let g:lsp_signs_information = {'text': 'i?' }
 
+        highlight link LspErrorText GruvboxRedSign
+        highlight clear LspWarningLine
+
+        " call s:add_sign('LspError', 'E>', g:lsp_signs_error)
+        " call s:add_sign('LspWarning', 'W>', g:lsp_signs_warning)
+        " call s:add_sign('LspInformation', 'I>', g:lsp_signs_information)
+        " call s:add_sign('LspHint', 'H>', g:lsp_signs_hint)
+
+        "------------------------------------------------------------------------------------------
+        Plug 'ryanolsonx/vim-lsp-python'
+        if executable('pyls')
+                au User lsp_setup call lsp#register_server({
+                                        \ 'name': 'pyls',
+                                        \ 'cmd': {server_info->['pyls']},
+                                        \ 'whitelist': ['python'],
+                                        \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
+                                        \ })
+        endif
+        "----------------------------------------------------------------------------------
+        Plug 'prabirshrestha/asyncomplete.vim'
+        Plug 'prabirshrestha/asyncomplete-lsp.vim'
+        "----------------------------------------------------------------------------------
+        "===KEY============================================================================
         "----------------------------------------------------------------------------------
         Plug 'liuchengxu/vim-which-key'
-
+        "==================================================================================
+        " Plug 'w0rp/ale'
+        "==================================================================================
+        
 call plug#end()
 "====================================================
 "---PlugEnd---PlugStop-------------------------------
@@ -664,6 +705,8 @@ call plug#end()
         "----------------------------------------------------------------------------------
          source ~/git/bTest/kDot/logoABB.vim
          source ~/git/bTest/kDot/legoHFunc.vim
+        "----------------------------------------------------------------------------------
+         source ~/git/bTest/kDot/mix/n-gruve.vim
         "----------------------------------------------------------------------------------
         "source ~/git/bTest/kDot/myPlug/logoCyan.vim
         " source ~/git/bTest/kDot/myPlug/nHydra.vim
@@ -715,7 +758,9 @@ call plug#end()
         "---TOP---!!!----------------------------------------------------------------------
         hi pythonSelf  ctermfg=68 cterm=bold 
         hi Search         ctermbg=11 
-        " hi Normal         ctermbg=235 guibg=#333333
+        "--------------------------------------------------------------------------------- 
+        " hi Normal         ctermbg=235 guibg=#035303
+        "--------------------------------------------------------------------------------- 
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
         set signcolumn=yes
@@ -761,7 +806,7 @@ call plug#end()
 
         "------------------------------------------------------
         hi customPink     ctermbg=245 ctermfg=White  guifg=#ff5f00 guibg=#ccbbcc
-        hi lightGray      ctermbg=12
+        hi lightGray      ctermbg=12  guibg=#5fCbff  guifg=#1000f0
         hi darkGray       ctermbg=211 guibg=#ffbbff  guifg=#8000f0
 
         "------------------------------------------------------
