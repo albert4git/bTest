@@ -2,7 +2,7 @@
 " File: h1Hunter.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Sa 05 Okt 2019 07:11:11  CEST
+" Last Modified:      Di 08 Okt 2019 05:56:42  CEST
 "==================================================================================================
 "==================================================================================================
 
@@ -659,9 +659,9 @@ call plug#begin('~/.config/nvim/plugged/')
         highlight link LspHintHighlight GruvboxGreenSign
         highlight link LspHintHighlight darkGray
         "----------------------------------------------------------
-
         highlight link LspErrorText darkGray
         highlight clear LspWarningLine
+        "----------------------------------------------------------
 
                 let g:lsp_signs_error = {'text': 'eR'}
                 let g:lsp_signs_warning = {'text': 'x!' } " icons require GUI

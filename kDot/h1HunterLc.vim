@@ -2,7 +2,7 @@
 " File: h1Hunter.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Di 08 Okt 2019 05:37:11  CEST
+" Last Modified:      Di 08 Okt 2019 07:30:12  CEST
 "==================================================================================================
 "==================================================================================================
 
@@ -644,16 +644,14 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'lighttiger2505/deoplete-vim-lsp'
         "----------------------------------------------------------------------------------
         Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh', }
-        "=================================================================================
+        "==================================================================================
         " Plug 'davidhalter/jedi-vim'
         " Plug 'zchee/deoplete-jedi'
         " Plug 'deoplete-plugins/deoplete-jedi'
-        "=================================================================================
+        "==================================================================================
         Plug 'zchee/deoplete-clang'
-        "=================================================================================
+        "==================================================================================
         "--- Plug 'vhakulinen/neovim-intellij-complete-deoplete'
-        "=================================================================================
-        Plug 'w0rp/ale'
         "=================================================================================
         " language client
         let g:LanguageClient_serverCommands = {
@@ -662,7 +660,7 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \ 'cpp': ['ccls', '--log-file=/tmp/ccls.log'],
                                 \ 'python': ['pyls', '--log-file=/tmp/pyls.log'],
                                 \ }
-        "=================================================================================
+        "==================================================================================
 
         let g:autocomplete_deoplete = 'deoplete'
         "----------------------------------------------------------------------------------
@@ -690,11 +688,11 @@ call plug#begin('~/.config/nvim/plugged/')
         " let g:deoplete#sources._ = []
         "==========================================================================================
 
-        "::::::::::::::::::::::-=<1>=-:::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "::::::::::::::::::::::-=<1>=-::::::::::::::::::::::::::::::::::::::::::::::::::::::
         let g:deoplete#enable_at_startup = 1
         call deoplete#custom#option('refresh_always', v:true)
         "call deoplete#enable_logging('DEBUG', 'deoplete.log')
-        "-------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------
         let g:deoplete#enable_ignore_case = 1
         let g:deoplete#enable_smart_case = 1
         let g:deoplete#enable_camel_case = 1
@@ -742,33 +740,17 @@ call plug#begin('~/.config/nvim/plugged/')
         "---ZELENKA---ZELIONKA---ZELEN-------------------------------------------------------------
         "==========================================================================================
         autocmd! FileType python setlocal completeopt+=preview
-        "-------------------------------------------------------------------------------- 
+        "----------------------------------------------------------------------------------
         " let g:deoplete#auto_complete_start_length=1
-        "-------------------------------------------------------------------------------- 
-        " deoplete#min_pattern_length = 2 
-        " imap <expr> <C-Space> deoplete#mappings#manual_complete()
+        " imap <expr> <C-Space>  deoplete#manual_complete()
 
-        "-------------------------------------------------------------------------------- 
-        " inoremap <silent><expr> <c-space>
-        "                         \ pumvisible() ? "\<C-n>" :
-        "                         \ <SID>check_back_space() ? "\<TAB>" :
-        "                         \ deoplete#manual_complete()
-
-        " function! s:check_back_space() abort "{{{
-        "         let col = col('.') - 1
-        "         return !col || getline('.')[col - 1]  =~ '\s'
-        " endfunction"}}}
-        "-------------------------------------------------------------------------------- 
-        "--------------------------------------------------------------------------------
-        imap <expr> <C-Space>  deoplete#manual_complete()
-        "--------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         " Plugin key-mappings.
         inoremap <expr><C-g>     deoplete#undo_completion()
         inoremap <expr><C-l>     deoplete#refresh()
         inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
 
-        "--------------------------------------------------------------------------------
-
+        "----------------------------------------------------------------------------------
         call deoplete#custom#source('neosnippet',    'rank', 690)
         call deoplete#custom#source('ultisnips',     'rank', 680)
         call deoplete#custom#source('padawan',       'rank', 660)
@@ -801,15 +783,73 @@ call plug#begin('~/.config/nvim/plugged/')
         call deoplete#custom#source('tmux-complete', 'mark', 'tmux')
         call deoplete#custom#source('syntax',        'mark', 'synt')
         call deoplete#custom#source('member',        'mark', 'mmbr')
-        "--------------------------------------------------------------------------------
-        "--------------------------------------------------------------------------------
-
-        " ale
+        "==================================================================================
+        ""----------------------------------------------------------
+        "highlight link LspErrorHighlight GruvboxPurpleSign
+        "highlight link LspErrorHighlight Error
+        ""----------------------------------------------------------
+        "highlight link LspWarningHighlight GruvboxYellowSign
+        "highlight link LspWarningHighlight lightGray
+        ""----------------------------------------------------------
+        "highlight link LspInformationHighlight GruvboxBlueSign
+        "highlight link LspInformationHighlight customPink
+        ""----------------------------------------------------------
+        "highlight link LspHintHighlight GruvboxGreenSign
+        "highlight link LspHintHighlight darkGray
+        ""----------------------------------------------------------
+        "highlight link LspErrorText darkGray
+        "-----------------------------------------------------------
+        "==================================================================================
+        Plug 'w0rp/ale'
         let g:ale_sign_column_always = 0
         let g:ale_emit_conflict_warnings = 0
         let g:ale_lint_on_text_changed = 'never'
         let g:ale_set_loclist = 0
         let g:ale_set_quickfix = 1
+        "-----------------------------
+        let g:ale_set_signs = 0
+        "==================================================================================
+        hi link ALEErrorSign    lightGray
+        hi link ALEWarningSign  darkGray
+        hi link ALEInfoSign  customPink
+        "==================================================================================
+        hi! link ALEVirtualTextError lightGray
+        hi! link ALEVirtualTextWarning darkGray
+        hi! link ALEVirtualTextInfo customPink
+        "==================================================================================
+        let diagnosticsDisplaySettings={
+                                \       '1': {
+                                \           'name': 'Error',
+                                \           'texthl': 'ALEError',
+                                \           'signText': 'aX',
+                                \           'signTexthl': 'ALEErrorSign',
+                                \           'virtualTexthl': 'darkGray',
+                                \       },
+                                \       '2': {
+                                \           'name': 'Warning',
+                                \           'texthl': 'ALEWarning',
+                                \           'signText': 'a!',
+                                \           'signTexthl': 'ALEWarningSign',
+                                \           'virtualTexthl': 'lightGray',
+                                \       },
+                                \       '3': {
+                                \           'name': 'Information',
+                                \           'texthl': 'ALEInfo',
+                                \           'signText': 'aI',
+                                \           'signTexthl': 'ALEInfoSign',
+                                \           'virtualTexthl': 'customPink',
+                                \       },
+                                \       '4': {
+                                \           'name': 'Hint',
+                                \           'texthl': 'ALEInfo',
+                                \           'signText': 'aH',
+                                \           'signTexthl': 'ALEInfoSign',
+                                \       },
+                                \  }
+
+        let g:LanguageClient_diagnosticsDisplay=diagnosticsDisplaySettings
+
+
 
 call plug#end()
 "====================================================
