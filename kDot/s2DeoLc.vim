@@ -2,7 +2,7 @@
 "= File: s2DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Fr 11 Okt 2019 07:42:36  CEST
+" Last Modified:      Fr 11 Okt 2019 12:34:20  CEST
 "==================================================================================================
 "==================================================================================================
 "==================================================================================================
@@ -903,7 +903,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "==================================================================================
         Plug 'tiagoinacio/fzf-bookmark.vim'
         Plug 'runfalk/vim-fzf-extended'
-        Plug 'ryanoasis/vim-devicons'
+        " Plug 'ryanoasis/vim-devicons'
         Plug 'mhinz/vim-startify'
         Plug 'blueyed/vim-diminactive'
         Plug 'vim-scripts/timestamp.vim'
@@ -976,10 +976,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         "------------------------ END --REPL----------------------------------------------- 
         "---1812--------------------------------------------------------------------------- 
-        "---------------------------------------------------------------------------------- 
-        " Plug 'Shougo/echodoc.vim'
-        "         set cmdheight=2
-        "         let g:echodoc_enable_at_startup = 1
         "--------------------------------------------------------------------------------- 
         Plug 'Shougo/echodoc.vim'
                 set cmdheight=2
@@ -1131,10 +1127,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'ap/vim-buftabline'
         Plug 'xolox/vim-notes'
         "------------------TODO------------------------------------------------------------ 
-        " Plug 'rakr/vim-one'
         " Plug 'chriskempson/base16-vim'
-        " Plug 'KeitaNakamura/neodark.vim'
-        " Plug 'joshdick/onedark.vim'
         Plug 'trusktr/seti.vim'
         Plug 'ayu-theme/ayu-vim' " or other package manager
         " colorscheme ayu
@@ -1142,7 +1135,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " let ayucolor="mirage" " for mirage version of theme
         " let ayucolor="dark"   " for dark version of theme
         "------------------TODO------------------------------------------------------------ 
-        " Plug 'sheerun/vim-polyglot'
+        Plug 'sheerun/vim-polyglot'
 
         "------------------Nice------------------------------------------------------------ 
         Plug 'vim-scripts/underlinetag'
@@ -1174,7 +1167,6 @@ call plug#begin('~/.config/nvim/plugged/')
         let g:utl_opt_verbose=0 " 0=no (default), 1=yes
         let g:utl_opt_highlight_urls='yes' " 'yes' is default / 'no'
 
-        " reference utl_rc.vim
         " HTTP
         " %u, %p for Unix, %P for Windows.
         if !exists("g:utl_cfg_hdl_scm_http_system")
@@ -1237,11 +1229,11 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'tpope/vim-abolish'        " Extended abbreviation/substition.
         "---------------------------------------------------------------------------------- 
-        "Plug 'amiorin/vim-project'
-        "Plug 'tpope/vim-projectionist'
-        "Plug 'tpope/vim-rake'
+        "-Plug 'amiorin/vim-project'
+        "-Plug 'tpope/vim-projectionist'
+        "-Plug 'tpope/vim-rake'
+        "-Plug 'tpope/vim-rails'
         Plug 'vim-ruby/vim-ruby'
-        "Plug 'tpope/vim-rails'
 
         "-------------------$mkid---idtools------------------------------------------------ 
         " Plug 'fcamel/gj'
@@ -1260,15 +1252,17 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'vim-scripts/foo.vim'
         "?pum? Plug 'tpope/vim-endwise'
         "--------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------- 
 
-        "--------------------------------------------------------------------------------- 
-        "--------------------------------------------------------------------------------- 
         " smart <c-a> and <c-x> to toggle true/false, on/off, increment dates or weekday names, etc.
         Plug 'nishigori/increment-activator'
         "------------------------------------------------------------------------------------------
         "-------420--------------------------------------------------------------------------------
         "------------------------------------------------------------------------------------------
         Plug 'tacahiroy/ctrlp-funky'
+                nnoremap <Leader>fu :CtrlPFunky<Cr>
+                " narrow the list down with a word under cursor
+                nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
         "------------------------------------------------------------------------------------------
         Plug 'epheien/termdbg'
         "------------------------------------------------------------------------------------------
@@ -1286,7 +1280,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------------------------------------------------------------------------
         Plug 'liuchengxu/vista.vim'
         let g:vista_fzf_preview = ['right:50%']
-
         "------------------------------------------------
         let g:vista#renderer#icons = {
                                 \   "function": "\uf794",
@@ -1295,17 +1288,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------------------------------------------------------------------------
         Plug 'prabirshrestha/vim-lsp'
         "------------------------------------------------------------------------------------------
-        "------------------------------------------------------------------------------------------
-        Plug 'w0rp/ale'
-                "Linting
-                let g:ale_sign_column_always = 1
-                let g:ale_sign_error = '>>'
-                let g:ale_sign_warning = '--'
-                let g:ale_linters = {
-                                        \   'javascript': ['eslint'],
-                                        \   'jsx': ['eslint'],
-                                        \   'python': ['flake8'],
-                                        \}
 
         "------------------------------------------------------------------------------------------
         " Plug 'jacobsimpson/nvim-example-python-plugin'
@@ -1319,6 +1301,63 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'elzr/vim-json' " For metadata.json
         Plug 'mrk21/yaml-vim' " For hieradata
 
+        "------------------------------------------------------------------------------------------
+        "Plug 'w0rp/ale'
+        "        "Linting
+        "        let g:ale_sign_column_always = 1
+        "        let g:ale_sign_error = '>>'
+        "        let g:ale_sign_warning = '--'
+        "        let g:ale_linters = {
+        "                                \   'javascript': ['eslint'],
+        "                                \   'jsx': ['eslint'],
+        "                                \   'python': ['flake8'],
+        "                                \}
+        "==================================================================================
+        Plug 'w0rp/ale'
+        let g:ale_sign_column_always = 0
+        let g:ale_emit_conflict_warnings = 0
+        let g:ale_lint_on_text_changed = 'never'
+        let g:ale_set_loclist = 0
+        let g:ale_set_quickfix = 1
+        "---------------------------------------
+        let g:ale_set_signs = 0
+        "---------------------------------------
+        "==================================================================================
+        hi link ALEErrorSign    custRed
+        hi link ALEWarningSign  custYellow
+        hi link ALEInfoSign     custGreen
+        "==================================================================================
+        let diagnosticsDisplaySettings={
+                                \       '1': {
+                                \           'name': 'Error',
+                                \           'texthl': 'ALEError',
+                                \           'signText': 'cR',
+                                \           'signTexthl': 'ALEErrorSign',
+                                \           'virtualTexthl': 'custRed',
+                                \       },
+                                \       '2': {
+                                \           'name': 'Warning',
+                                \           'texthl': 'ALEWarning',
+                                \           'signText': 'cW',
+                                \           'signTexthl': 'ALEWarningSign',
+                                \           'virtualTexthl': 'custYellow',
+                                \       },
+                                \       '3': {
+                                \           'name': 'Information',
+                                \           'texthl': 'ALEInfo',
+                                \           'signText': 'cI',
+                                \           'signTexthl': 'ALEInfoSign',
+                                \           'virtualTexthl': 'custGreen',
+                                \       },
+                                \       '4': {
+                                \           'name': 'Hint',
+                                \           'texthl': 'ALEInfo',
+                                \           'signText': 'cH',
+                                \           'signTexthl': 'custGreen',
+                                \       },
+                                \  }
+        "==================================================================================
+        let g:LanguageClient_diagnosticsDisplay=diagnosticsDisplaySettings
 call plug#end()
 
 """""""""""""""""
@@ -1342,70 +1381,6 @@ call plug#end()
         let g:diminactive_enable_focus = 1
         let g:diminactive_buftype_blacklist = ['nofile', 'nowrite', 'acwrite', 'quickfix', 'help']
         "==================================================================================
-        " loading the plugin
-        let g:webdevicons_enable = 1
-        " adding the flags to NERDTree
-        let g:webdevicons_enable_nerdtree = 1
-        " adding the custom source to unite
-        let g:webdevicons_enable_unite = 1
-        " adding the column to vimfiler
-        let g:webdevicons_enable_vimfiler = 1
-        " adding to vim-airline's tabline
-        let g:webdevicons_enable_airline_tabline = 1
-        " adding to vim-airline's statusline
-        let g:webdevicons_enable_airline_statusline = 1
-        " ctrlp glyphs
-        let g:webdevicons_enable_ctrlp = 1
-        " adding to vim-startify screen
-        let g:webdevicons_enable_startify = 1
-        " adding to flagship's statusline
-        let g:webdevicons_enable_flagship_statusline = 1
-        " turn on/off file node glyph decorations (not particularly useful)
-        let g:WebDevIconsUnicodeDecorateFileNodes = 1
-        " use double-width(1) or single-width(0) glyphs
-        " only manipulates padding, has no effect on terminal or set(guifont) font
-        let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-        " whether or not to show the nerdtree brackets around flags
-        let g:webdevicons_conceal_nerdtree_brackets = 1
-        " the amount of space to use after the glyph character (default ' ')
-        let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
-        " Force extra padding in NERDTree so that the filetype icons line up vertically
-        let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-        " Adding the custom source to denite
-        let g:webdevicons_enable_denite = 1
-        " change the default character when no match found
-        let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = 'ƛ'
-        " set a byte character marker (BOM) utf-8 symbol when retrieving file encoding
-        " disabled by default with no value
-        let g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol = ''
-        " enable folder/directory glyph flag (disabled by default with 0)
-        let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-        " enable open and close folder/directory glyph flags (disabled by default with 0)
-        let g:DevIconsEnableFoldersOpenClose = 1
-        " enable pattern matching glyphs on folder/directory (enabled by default with 1)
-        let g:DevIconsEnableFolderPatternMatching = 1
-        " enable file extension pattern matching glyphs on folder/directory (disabled by default with 0)
-        let g:DevIconsEnableFolderExtensionPatternMatching = 0
-        " enable custom folder/directory glyph exact matching
-        " (enabled by default when g:WebDevIconsUnicodeDecorateFolderNodes is set to 1)
-        let WebDevIconsUnicodeDecorateFolderNodesExactMatches = 1
-        " change the default folder/directory glyph/icon
-        let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = 'ƛ'
-        " change the default open folder/directory glyph/icon (default is '')
-        let g:DevIconsDefaultFolderOpenSymbol = 'ƛ'
-        " change the default dictionary mappings for file extension matches
-        let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
-        let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = 'ƛ'
-        " change the default dictionary mappings for exact file node matches
-        let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {} " needed
-        let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['MyReallyCoolFile.okay'] = 'ƛ'
-        " add or override pattern matches for filetypes
-        " these take precedence over the file extensions
-        let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {} " needed
-        let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*jquery.*\.js$'] = 'ƛ'
-        " add or override individual additional filetypes
-        let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
-        let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
 
         "==================================================================================
         "----------------------------------------------------------------------------------
@@ -1454,15 +1429,27 @@ call plug#end()
                                 \ 'python': ['/usr/local/bin/pyls'],
                                 \ }
 
-        "-------------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------- 
         let g:deoplete#sources#jedi#statement_length = 30
         let g:deoplete#sources#jedi#show_docstring = 1
         let g:deoplete#sources#jedi#short_types = 1
-        "-------------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------- 
+
+        "---------------Zelenski-----------------------------------------------------------
+        " If you want to trigger deoplete manually, see also
+        " |deoplete-options-auto_complete|, which should be 1 then
+        " set to 1 if you want to disable autocomplete
+        let g:deoplete#disable_auto_complete = 0
+        let g:deoplete#auto_complete_start_length=1
+        "----------------------------------------------------------------------------------
         " Plugin key-mappings.
-        " inoremap <expr><C-g>     deoplete#undo_completion()
-        " inoremap <expr><C-l>     deoplete#refresh()
+        inoremap <expr><C-g>     deoplete#undo_completion()
+        inoremap <expr><C-l>     deoplete#refresh()
         " inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
+        inoremap <expr><C-k>     deoplete#smart_close_popup()
+        inoremap <C-space>     <Esc>a
+
+        " imap <expr> <C-Space>  deoplete#manual_complete()
         "-------------------------------------------------------------------------------- 
         autocmd! FileType python setlocal completeopt-=preview
         "--------------------------------------------------------------------------------
@@ -1544,143 +1531,36 @@ call plug#end()
          source ~/git/bTest/kDot/logoABB.vim
          source ~/git/bTest/kDot/logoFunc.vim
         "source ~/git/bTest/kDot/minFzfDeoLsJediSnip.vim
-        "---------------------------------------------------------------------------------- 
-
-        "-------------------------------Gold Stuck.chen--------------------------------""
-
-        "::::::CYAN::::::::::::::::-=2=-:::::::::::::::::::::::::::::::::::::::::::::::::::
-        set termguicolors     " enable true colors support
+        "----------------------------------------------------------------------------------
+        "-------CYAN---------------------old Stuck.chen------------------------------------
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "source mix/n-badwolf.vim 
         "colorscheme molokai
-        "colorscheme badwolf
-        "source ~/git/bTest/kDot/mix/n-badwolf.vim
         "colorscheme candycode
+        set termguicolors
         colorscheme desert
         colorscheme badwolf
-         " colorscheme ayu
-        " let ayucolor="dark"   " for dark version of theme
-        " let ayucolor="light"  " for light version of theme
-        " let ayucolor="mirage" " for mirage version of theme
+        colorscheme ayu
+        let ayucolor="dark"
+        " let ayucolor="light"
+        " let ayucolor="mirage"
+        source ~/git/bTest/kDot/legoSCyan.vim
 
-        "-TOP------------------------------------------------------------------------------
-        highlight DiffAdd           cterm=bold ctermbg=22
-        highlight DiffDelete        cterm=bold ctermbg=3
-        highlight DiffChange        cterm=bold ctermbg=11
-        highlight DiffChange        cterm=bold ctermbg=52
-
-        hi SpecialKey ctermfg=251 guifg=#999999
-
-        highlight Class cterm=bold ctermbg=88
-        highlight Function cterm=bold ctermbg=19
-        highlight LocalVariable cterm=bold ctermbg=14
-        highlight GlobalVariable cterm=bold ctermbg=207
-
-        highlight UnderlineTag  cterm=underline  
-
-        " hi Enumerator guifg="c000c0"
-        " Class           : Class
-        " DefinedName     : Define
-        " Enumerator      : Enumerator
-        " Function        : Function or method
-        " EnumerationName : Enumeration name
-        " Member          : Member (of structure or class)
-        " Structure       : Structure Name
-        " Type            : Typedef
-        " Union           : Union Name
-        " GlobalConstant  : Global Constant
-        " GlobalVariable  : Global Variable
-        " LocalVariable   : Local Variable
-
-        "-TOP---!!!---------------------------------------------------------------------------
-        hi pythonSelf  ctermfg=68 cterm=bold 
-        hi Search         ctermbg=11 
-        " hi Normal         ctermbg=235
-        " guibg=#333333
-        hi ColorColumn    ctermbg=22
-        hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
-        set signcolumn=yes
-        hi signcolumn     ctermbg=23 guibg=14
-        highlight SignColumn     ctermbg=230       guibg=#00ff00
-
-        "hi LineNr         ctermbg=199 ctermfg=16 
-        hi LineNr         ctermbg=17 ctermfg=15   guibg=#020202
-        hi LineNr         ctermbg=17 ctermfg=15   guibg=#10205f  guifg=#ffffff
-        "--------------------------------------------------------------------------------- 
-        "red let g:indentLine_color_term = 251
-        "red let g:indentLine_newVersion = 0
-        "--------------------------------------------------------------------------------- 
-        " :sign define piet text=>> texthl=Search
-        " :exe ":sign place 2 line=240 name=piet file=" . expand("%:p")
-
-        "--------------------------------------------------------------------------------
-        hi CursorLine     ctermbg=90  guibg=#870087
-        set cursorcolumn
-        hi CursorColumn   ctermbg=16 guibg=#870087 
-
-        "--------------------------------------------------------------------------------
-        set colorcolumn=92,100,112,120
-        hi ColorColumn    ctermbg=240
-        hi ColorColumn    ctermbg=14   guibg=#005500
-        set pumheight=12
-        " Popup menu hightLight Group
-        hi Pmenu          ctermfg=1  ctermbg=255
-        hi PmenuSbar      ctermfg=11 ctermbg=5 cterm=NONE
-        hi PmenuThumb     ctermfg=12 ctermbg=2 cterm=NONE
-        hi PmenuSel       ctermbg=10 ctermfg=1
-        let g:CommandTHighlightColor = 9
-
-        "--------------------------------------------------------------------------------
         silent! set complete& completeopt=menu infercase noshowfulltag
         "set shortmess+=c
-        "suppress intro message because the above makes it look bad
+        "suppress intro message 
         set shortmess+=I
-        "--------------------------------------------------------------------------------
-        " automatically open and close the popup menu / preview window
-        au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
+        "----------------------------------------------------------------------------------
+        "::::::CYAN::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "----------------------------------------------------------------------------------
+        "-source ~/git/bTest/kDot/myPlug/logoCyan.vim
+        "-source ~/git/bTest/kDot/myPlug/nHydra.vim
         "------------------------------------------------------
-
-        hi customPink     ctermbg=245 ctermfg=White  guifg=#ff5f00 guibg=#ccbbcc
-        hi lightGray      ctermbg=12
-        hi darkGray       ctermbg=211 guibg=#ffbbff  guifg=#8000f0
-
-        "------------------------------------------------------
-        highlight Visual cterm=bold ctermbg=2 ctermfg=NONE
-        hi Pmenue        ctermfg=11
-        set nuw =4
-        set list
-        set listchars=tab:▸\
-
-        "---???------------------------------------------------
-        call matchadd('darkGray', 'NEXT')
-        call matchadd('darkGray', 'TODO')
-        call matchadd('darkGray', '!!!')
-        call matchadd('darkGray', '???')
-        call matchadd('darkGray', 'AAA')
-        call matchadd('darkGray', 'KKK')
-        call matchadd('darkGray', 'MMM')
-        call matchadd('darkGray', 'TTT')
-        call matchadd('darkGray', 'DDD')
-        call matchadd('customPink', '===')
-        call matchadd('customPink', '==')
-        call matchadd('customPink', '=')
-        call matchadd('customPink', '###')
-        call matchadd('customPink', ':::')
-        call matchadd('customPink', '::')
-        call matchadd('customPink', '---')
-        call matchadd('customPink', '--')
-        call matchadd('customPink', '-')
-        "------------------------------------------------------
-        hi Comment        ctermfg=241
-        hi Comment        ctermfg=249
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "source ~/git/bTest/kDot/myPlug/logoCyan.vim
-        source ~/git/bTest/kDot/myPlug/nHydra.vim
-        "------------------------------------------------------
-        "source ~/git/bTest/kDot/myPlug/NNV.vim
-        "let g:nnv_search_paths = ['~/git/bTest/']
-        "let g:nnv_search_paths = ['/media/red/124Black/']
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "-source ~/git/bTest/kDot/myPlug/NNV.vim
+        "-let g:nnv_search_paths = ['~/git/bTest/']
+        "-let g:nnv_search_paths = ['/media/red/124Black/']
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         autocmd! User Oblique       normal! zz
         autocmd! User ObliqueStar   normal! zz
@@ -2462,39 +2342,6 @@ call plug#end()
        "============================================================================================
        "=========
 
-       command! ZDeviList call ZDeviList()
-       command! ZDevi call ZDeviList()
-       " Files + devicons
-       function! ZDeviList()
-               function! s:files()
-                       let files = split(system($FZF_DEFAULT_COMMAND), '\n')
-                       return s:prepend_icon(files)
-               endfunction
-
-               function! s:prepend_icon(candidates)
-                       let result = []
-                       for candidate in a:candidates
-                               let filename = fnamemodify(candidate, ':p:t')
-                               let icon = WebDevIconsGetFileTypeSymbol(filename, isdirectory(filename))
-                               call add(result, printf("%s %s", icon, candidate))
-                       endfor
-
-                       return result
-               endfunction
-
-               function! s:edit_file(item)
-                       let parts = split(a:item, ' ')
-                       let file_path = get(parts, 1, '')
-                       execute 'silent e' file_path
-               endfunction
-
-               call fzf#run({
-                                       \ 'source': <sid>files(),
-                                       \ 'sink':   function('s:edit_file'),
-                                       \ 'options': '-m -x +s',
-                                       \ 'down':    '40%' })
-       endfunction
-
        "============================================================================================
        " Any command that lists files can be used as the source
        " call fzf#run(fzf#wrap({'source': 'ls'}))
@@ -2709,7 +2556,6 @@ let g:startify_commands = [
                         \ {'e': ['ZPlugHelp', ':ZPlugHelp']},
                         \ {'k': ['ZTag', ':ZTag']},
                         \ {'l': ['ZFiles', ':ZFiles']},
-                        \ {'o': ['ZDeviList', ':ZDeviList']},
                         \ {'n': ['ZLibList', ':ZLibList']},
                         \ {'f': ['LGHistory', ':LGHistory']},
                         \ {'g': ['CommandTHelp', ':CommandTHelp']},
