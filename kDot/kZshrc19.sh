@@ -150,11 +150,23 @@ alias h1de='402nv.app  -u ~/git/bTest/kDot/h1HunterDeo.vim'
 alias h1Vls='402nv.app  -u ~/git/bTest/kDot/h1HunterVimLsp.vim'
 alias h1lc='402nv.app  -u ~/git/bTest/kDot/h1HunterLc.vim'
 alias h1ycm='402nv.app  -u ~/git/bTest/kDot/h1HunteYCM.vim'
-alias h0deo='402nv.app  -u ~/git/bTest/kDot/h0MinDeo.vim'
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias h2='402nv.app  -u ~/git/bTest/kDot/h2HunterLc.vim'
+alias h3='deonvim  -u ~/git/bTest/kDot/h3HunterLc.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias h0de='402nv.app  -u ~/git/bTest/kDot/h0MinDeo.vim'
+alias h02de='402nv.app  -u ~/git/bTest/kDot/h0Min2Deo.vim'
+alias h01y='402nv.app  -u ~/git/bTest/kDot/h01YCM.vim'
+alias h02y='402nv.app  -u ~/git/bTest/kDot/h02YCM.vim'
+
+alias h03g='402nv.app  -u ~/git/bTest/kDot/hGreg.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias de='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim NONE -u ~/git/bTest/kDot/kMinit.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+alias s2='deonvim  -u ~/git/bTest/kDot/s2DeoLc.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias e2='deonvim  -u ~/git/bTest/kDot/k2MinFF.vim'
 alias ne2='deonvim  -u ~/git/bTest/kDot/nd2MinFF.vim'

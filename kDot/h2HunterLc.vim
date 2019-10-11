@@ -2,7 +2,7 @@
 " File: h1Hunter.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Mi 09 Okt 2019 02:56:02  CEST
+" Last Modified:      Do 10 Okt 2019 02:01:22  CEST
 "==================================================================================================
 "==================================================================================================
 
@@ -229,9 +229,9 @@
 
 "-2Remap-}}}
 
-"====================================================
-"---PlugStart----------------------------------------
-"====================================================
+"===============
+"---PlugStart---
+"===============
 
 call plug#begin('~/.config/nvim/plugged/')
         Plug 'c9s/helper.vim'
@@ -244,11 +244,11 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'prabirshrestha/async.vim'
         Plug 'skywind3000/asyncrun.vim'
+
         "-------------------------------------------------------------------------- 
         Plug 'tpope/vim-commentary'
         Plug 'tpope/vim-repeat'
         Plug 'tpope/vim-unimpaired'
-
         "---------------------------------------------------------------------------------- 
         Plug 'google/vim-maktaba'
         "-Strongly recommended: easy configuration of maktaba plugins.
@@ -271,6 +271,21 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'guns/xterm-color-table.vim'
         "---------------------------------------------------------------------------------- 
         Plug 'sjl/gundo.vim'
+        "----------ADD---------------------------------------------------------------------
+        Plug 'haya14busa/incsearch.vim'
+        Plug 'vim-scripts/SearchComplete'
+        Plug 'tpope/vim-abolish'
+        " Plug 'tpope/vim-endwise'
+        "<c-a> and <c-x> to toggle true/false, on/off, increment dates or weekday names
+        Plug 'nishigori/increment-activator'
+        Plug 'osyo-manga/vim-anzu'
+        Plug 'xolox/vim-misc'
+        Plug 'ivyl/vim-bling'
+                let g:bling_time = 42
+                let g:bling_color_fg = 'green'
+                let g:bling_color_cterm = 'reverse'
+        "------------------------------------------------------------------------------------------ 
+        "----------------------------------------------------------------------------------
         "---------------------------------------------------------
         "----!!!---LGHistory--------------------------------------
         "---------------------------------------------------------
@@ -330,7 +345,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 " let g:pydoc_use_drop=1
                 " let g:pydoc_window_lines=15
                 " " let g:pydoc_highlight=0
-
+        "---------------------------------------------------------------------------------- 
+        Plug 'hdima/python-syntax'
         "---------------------------------------------------------------------------------- 
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
         "--------------------TODO--------------------------------------------------------- 
@@ -409,10 +425,10 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
         "----------------------------------------------------------------------------------
-        Plug 'vigoux/LanguageTool.nvim'
-        let g:languagetool_server='$HOME/LanguageTool-4.6-stable/languagetool-server.jar'
-        hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
-        hi LanguageToolSpellingError guisp=red  gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=red  term=underline cterm=none
+        " Plug 'vigoux/LanguageTool.nvim'
+        " let g:languagetool_server='$HOME/LanguageTool-4.6-stable/languagetool-server.jar'
+        " hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
+        " hi LanguageToolSpellingError guisp=red  gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=red  term=underline cterm=none
         "---------------------------------------------------------------------------------- 
         "---:T---:Tnew---:Topen---:TREPL---------------------------------------------------
         "---------------------------------------------------------------------------------- 
@@ -467,6 +483,13 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'trusktr/seti.vim'
         Plug 'morhetz/gruvbox'
         Plug 'ayu-theme/ayu-vim'
+
+        "----------------------------------------------------------------------------------
+        "Plug 'gko/vim-coloresque'
+        "Plug 'vim-scripts/tagselect'
+        "Plug 'xolox/vim-easytags'
+
+        "------------------------------------------------------------------------------------------
         "----------------------------------------------------------------------------------
         Plug 'editorconfig/editorconfig-vim'
         "----------------------------------------------------------------------------------
@@ -584,7 +607,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'mattn/emmet-vim'
         Plug 'tpope/vim-eunuch'
         Plug 'tpope/vim-surround'
-        Plug 'w0rp/ale'
         "----------------------------------------------------------------------------------
         Plug 'itchyny/lightline.vim'
         Plug 'yarisgutierrez/ayu-lightline'
@@ -606,6 +628,57 @@ call plug#begin('~/.config/nvim/plugged/')
                 \ 'Ignored'   : '☒',
                 \ "Unknown"   : "?"
                 \ }
+                "-----------------------------------
+                 let NERDTreeShowBookmarks=1
+                 let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+                 let NERDTreeChDirMode=0
+                 let NERDTreeMinimalUI = 1
+                 let NERDTreeDirArrows = 1
+                 let NERDTreeQuitOnOpen=1
+                 let NERDTreeMouseMode=2
+                 let NERDTreeShowHidden=1
+                 let NERDTreeKeepTreeInNewTab=1
+                 " always open NERDTree in the appropriate directory.
+                 function! NERDTreeToggleInCurDir()
+                         if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+                                 exe ":NERDTreeClose"
+                         else
+                                 if (expand("%:t") != '')
+                                         exe ":NERDTreeFind"
+                                 else
+                                         exe ":NERDTreeToggle"
+                                 endif
+                         endif
+                 endfunction
+        "----------------------------------------------------------------------------------
+                 let g:NERDDefaultAlign = 'left'
+                 " let g:NERDCommentEmptyLines = 1
+                 " let g:NERDTrimTrailingWhitespace = 1
+                 " NERDTrees File highlighting
+                 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+                         exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+                         exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+                 endfunction
+        "----------------------------------------------------------------------------------
+                call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+                call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+                call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+                call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+                call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+                call NERDTreeHighlightFile('vim', 'Red', 'none', 'red', '#151515')
+                call NERDTreeHighlightFile('js', 'blue', 'none', '#ffa500', '#151515')
+                call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+                call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
+                call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
+                call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
+                call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
+                call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
+        "----------------------------------------------------------------------------------
 
         "----------------------------------------------------------------------------------
         Plug 'lilydjwg/colorizer'
@@ -643,16 +716,251 @@ call plug#begin('~/.config/nvim/plugged/')
                 " | isr   | student | id     |
                 " +-------+---------+--------+
 
-        "---LSP------------------------------------------------------------------------------------
-        "------------------------------------------------------------------------------------------
-
         "----------------------------------------------------------------------------------
         Plug 'liuchengxu/vim-which-key'
 
+
+        "=====DEOSTART=====================================================================
+        "-- Plug 'davidhalter/jedi-vim'
+        "-- Plug 'zchee/deoplete-jedi'
+        "---- Plug 'vhakulinen/neovim-intellij-complete-deoplete'
+        "==================================================================================
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+        set runtimepath+=~/.config/nvim/plugged/deoplete.nvim/
+        "----------------------------------------------------------------------------------
+        Plug 'lighttiger2505/deoplete-vim-lsp'
+        "----------------------------------------------------------------------------------
+        Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh', }
+        "==================================================================================
+        Plug 'zchee/deoplete-clang'
+
+        "=================================================================================
+        Plug 'wokalski/autocomplete-flow'
+                let g:autocomplete_flow#insert_paren_after_function = 0
+        "=================================================================================
+        "============ADD==================================================================
+        Plug 'eagletmt/neco-ghc'
+                let g:haskellmode_completion_ghc = 1
+                autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+        "=================================================================================
+        Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+                let g:deoplete#sources#go#package_dot = 1
+                let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+        "=================================================================================
+        Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
+        Plug 'mkusher/padawan.vim'
+                let $PATH=$PATH . ':' . expand('~/.config/composer/vendor/bin/')
+                let g:padawan#composer_command = "/usr/bin/composer"
+        "=================================================================================
+        Plug 'artur-shaik/vim-javacomplete2'
+                nnoremap <leader>cj :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
+                autocmd filetype java nnoremap <F4> :w <bar> !javac % && java -enableassertions %:p <CR>
+                " imap <F3> <Plug>(JavaComplete-Imports-RemoveUnused)
+                " nmap <F4> <Plug>(JavaComplete-Imports-Add)
+                " nmap <F5> <Plug>(JavaComplete-Imports-AddMissing)
+                " nmap <F6> <Plug>(JavaComplete-Imports-RemoveUnused)
+                " :setlocal omnifunc=javacomplete#Complete
+                " :setlocal completefunc=javacomplete#CompleteParamsInfo
+                " autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+        "=================================================================================
+        Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
+        Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+        "=================================================================================
+        Plug 'fishbullet/deoplete-ruby'
+        Plug 'takkii/ruby-dictionary3'
+        "=================================================================================
+        "=================================================================================
+        "--language--client-CHECK-LIST--
+        "=================================================================================
+
+
+        "==================================================================================
+        "=====DEOEND1======================================================================
+        "==================================================================================
+        let g:LanguageClient_serverCommands = {
+                                \ 'haskell': ['hie', '--lsp'],
+                                \ 'c': ['ccls', '--log-file=/tmp/ccls.log'],
+                                \ 'cpp': ['ccls', '--log-file=/tmp/ccls.log'],
+                                \ 'python': ['pyls', '--log-file=/tmp/pyls.log'],
+                                \ }
+
+        let g:autocomplete_deoplete = 'deoplete'
+        "----------------------------------------------------------------------------------
+        let g:deoplete#sources = {}
+        let g:deoplete#sources.cpp = ['LanguageClient']
+        let g:deoplete#sources.python = ['LanguageClient']
+        let g:deoplete#sources.python3 = ['LanguageClient']
+        let g:deoplete#sources.rust = ['LanguageClient']
+        let g:deoplete#sources.c = ['LanguageClient']
+        let g:deoplete#sources.vim = ['vim']
+
+        "===DEOPLETE-CLANG=========================================================================
+        let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-6.0/lib/libclang.so.1"
+        let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+        let g:deoplete#sources#clang#sort_algo = 'priority' " alphabetical
+
+        "==========================================================================================
+        "? let g:clang_auto = 1
+        "? let g:clang_cpp_options = '-std=c++ -stdlib=libc++'
+        "? let g:clang_exec = 'clang'
+        "==========================================================================================
+
+        let g:deoplete#enable_at_startup = 1
+        call deoplete#custom#option('refresh_always', v:true)
+        "--------------------------------------------------------------------------------
+        let g:deoplete#enable_ignore_case = 1
+        let g:deoplete#enable_smart_case = 1
+        let g:deoplete#enable_camel_case = 1
+        let g:deoplete#enable_refresh_always = 1
+        let g:deoplete#max_abbr_width = 0
+        let g:deoplete#max_menu_width = 0
+        " let g:deoplete#enable_yarp = 1
+
+        "--------------------------------------------------------------------------------
+        let g:deoplete#sources#ternjs#timeout = 3
+        let g:deoplete#sources#ternjs#types = 1
+        let g:deoplete#sources#ternjs#docs = 1
+
+        "--------------------------------------------------------------------------------
+        let g:deoplete#skip_chars = ['(', ')', '<', '>']
+        let g:deoplete#tag#cache_limit_size = 800000
+        let g:deoplete#file#enable_buffer_path = 1
+
+        "--------------------------------------------------------------------------------
+        " If you want to trigger deoplete manually, see also
+        " |deoplete-options-auto_complete|, which should be 1 then
+        " set to 1 if you want to disable autocomplete
+        let g:deoplete#disable_auto_complete = 0
+        let g:deoplete#auto_complete_start_length=1
+
+        autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+        "==========================================================================================
+        "---ZELENKA---ZELIONKA---ZELEN---PREVIEW---------------------------------------------------
+        "==========================================================================================
+        autocmd! FileType python setlocal completeopt+=preview
+        "----------------------------------------------------------------------------------
+
+        "----------------------------------------------------------------------------------
+        " Plugin key-mappings.
+        inoremap <expr><C-g>     deoplete#undo_completion()
+        inoremap <expr><C-l>     deoplete#refresh()
+        " inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
+        inoremap <expr><C-k>     deoplete#smart_close_popup()
+        inoremap <C-space>     <Esc>a
+
+        " imap <expr> <C-Space>  deoplete#manual_complete()
+        "--------------------------------------------------------------------------------
+        autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        autocmd! FileType ruby setlocal omnifunc=rubycomplete#Complete
+        autocmd! FileType haskell setlocal omnifunc=necoghc#omnifunc
+        autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
+        " autocmd! FileType python setlocal omnifunc=jedi#completions
+        "--------------------------------------------------------------------------------
+        set complete=.,w,b,t,i,u,kspell
+        "            | | | | | | |
+        "            | | | | | | `-dict
+        "            | | | | | `-unloaded buffers
+        "            | | | | `-include files
+        "            | | | `-tags
+        "            | | `-other loaded buffers
+        "            | `-windows buffers
+        "            `-the current buffer
+        "--------------------------------------------
+        "set complete+=ispell
+        "set completeopt=menuone,menu,longest,preview
+        set omnifunc=syntaxcomplete#Complete
+        set completeopt=menu
+        "----------------------------------------------------------------------------------
+        call deoplete#custom#source('LanguageClient','mark', 'langCl')
+        call deoplete#custom#source('omni',          'mark', 'omni')
+        call deoplete#custom#source('flow',          'mark', 'flow')
+        call deoplete#custom#source('TernJS',        'mark', 'tern')
+        call deoplete#custom#source('go',            'mark', 'go')
+        call deoplete#custom#source('jedi',          'mark', 'Jedi')
+        call deoplete#custom#source('vim',           'mark', 'vim')
+        call deoplete#custom#source('neosnippet',    'mark', 'neoSnp')
+        call deoplete#custom#source('around',        'mark', 'round')
+        call deoplete#custom#source('buffer',        'mark', 'Buf')
+        call deoplete#custom#source('tmux-complete', 'mark', 'tmux')
+        call deoplete#custom#source('syntax',        'mark', 'synt')
+        call deoplete#custom#source('member',        'mark', 'mmbr')
+        call deoplete#custom#source('neosnippet',    'rank', 690)
+        call deoplete#custom#source('ultisnips',     'rank', 680)
+        call deoplete#custom#source('padawan',       'rank', 660)
+        call deoplete#custom#source('go',            'rank', 650)
+        call deoplete#custom#source('vim',           'rank', 640)
+        call deoplete#custom#source('flow',          'rank', 630)
+        call deoplete#custom#source('TernJS',        'rank', 620)
+        call deoplete#custom#source('LanguageClient','rank', 610)
+        call deoplete#custom#source('jedi',          'rank', 600)
+        call deoplete#custom#source('tag',           'rank', 550)
+        call deoplete#custom#source('omni',          'rank', 500)
+        call deoplete#custom#source('member',        'rank', 500)
+        call deoplete#custom#source('file_include',  'rank', 420)
+        call deoplete#custom#source('file',          'rank', 410)
+        call deoplete#custom#source('around',        'rank', 330)
+        call deoplete#custom#source('buffer',        'rank', 320)
+        call deoplete#custom#source('dictionary',    'rank', 310)
+        call deoplete#custom#source('tmux-complete', 'rank', 300)
+        call deoplete#custom#source('syntax',        'rank', 200)
+        "==================================================================================
+        Plug 'w0rp/ale'
+        let g:ale_sign_column_always = 0
+        let g:ale_emit_conflict_warnings = 0
+        let g:ale_lint_on_text_changed = 'never'
+        let g:ale_set_loclist = 0
+        let g:ale_set_quickfix = 1
+        "---------------------------------------
+        let g:ale_set_signs = 0
+        "---------------------------------------
+        "==================================================================================
+        hi link ALEErrorSign    custRed
+        hi link ALEWarningSign  custYellow
+        hi link ALEInfoSign     custGreen
+        "==================================================================================
+        let diagnosticsDisplaySettings={
+                                \       '1': {
+                                \           'name': 'Error',
+                                \           'texthl': 'ALEError',
+                                \           'signText': 'cR',
+                                \           'signTexthl': 'ALEErrorSign',
+                                \           'virtualTexthl': 'custRed',
+                                \       },
+                                \       '2': {
+                                \           'name': 'Warning',
+                                \           'texthl': 'ALEWarning',
+                                \           'signText': 'cW',
+                                \           'signTexthl': 'ALEWarningSign',
+                                \           'virtualTexthl': 'custYellow',
+                                \       },
+                                \       '3': {
+                                \           'name': 'Information',
+                                \           'texthl': 'ALEInfo',
+                                \           'signText': 'cI',
+                                \           'signTexthl': 'ALEInfoSign',
+                                \           'virtualTexthl': 'custGreen',
+                                \       },
+                                \       '4': {
+                                \           'name': 'Hint',
+                                \           'texthl': 'ALEInfo',
+                                \           'signText': 'cH',
+                                \           'signTexthl': 'custGreen',
+                                \       },
+                                \  }
+        "==================================================================================
+        let g:LanguageClient_diagnosticsDisplay=diagnosticsDisplaySettings
+        "==================================================================================
+
+
+
 call plug#end()
-"====================================================
-"---PlugEnd---PlugStop-------------------------------
-"====================================================
+"==========================
+"----PlugEnd---PlugStop----
+"==========================
 
         "----------------------------------------------------------------------------------
          source ~/git/bTest/kDot/logoABB.vim
@@ -670,8 +978,8 @@ call plug#end()
         "colorscheme candycode
         colorscheme desert
         colorscheme badwolf
-        " colorscheme ayu
-        " let ayucolor="dark"   " for dark version of theme
+        colorscheme ayu
+        let ayucolor="dark"   " for dark version of theme
         " let ayucolor="light"  " for light version of theme
         " let ayucolor="mirage" " for mirage version of theme
 
@@ -713,7 +1021,7 @@ call plug#end()
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
         set signcolumn=yes
         hi signcolumn     ctermbg=23 guibg=14
-        highlight SignColumn     ctermbg=230       guibg=#00ff00
+        " highlight SignColumn     ctermbg=230       guibg=#00ff00
 
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#020202
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#10205f  guifg=#ffffff
@@ -732,15 +1040,16 @@ call plug#end()
         hi ColorColumn    ctermbg=240
         hi ColorColumn    ctermbg=14   guibg=#005500
         hi Visual cterm=bold ctermbg=2 ctermfg=NONE  guibg=#005500
-        hi Comment        ctermfg=249 guifg=#aaAAaa  guibg=#770000
+        hi Comment        ctermfg=249 guifg=#dddddd  guibg=#ff3f00
 
         "--------------------------------------------------------------------------------
         set pumheight=12
         " Popup menu hightLight Group
-        hi Pmenu          ctermfg=1  ctermbg=255
-        hi PmenuSbar      ctermfg=11 ctermbg=5 cterm=NONE
-        hi PmenuThumb     ctermfg=12 ctermbg=2 cterm=NONE
-        hi PmenuSel       ctermbg=10 ctermfg=1
+        hi Pmenu          ctermfg=1  ctermbg=255 guibg=#006600
+        hi PmenuSbar      ctermfg=11 ctermbg=5 cterm=NONE guibg=#660000
+        hi PmenuThumb     ctermfg=12 ctermbg=2 cterm=NONE guibg=#000066
+        hi PmenuSel       ctermbg=10 ctermfg=1  guibg=#BF0011
+
         let g:CommandTHighlightColor = 9
 
         "--------------------------------------------------------------------------------
@@ -752,35 +1061,34 @@ call plug#end()
         " automatically open and close the popup menu / preview window
         au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
-        "------------------------------------------------------
-        hi customPink     ctermbg=245 ctermfg=White  guifg=#ff5f00 guibg=#ccbbcc
-        hi lightGray      ctermbg=12
-        hi darkGray       ctermbg=211 guibg=#ffbbff  guifg=#8000f0
+        "--------------------------------------------------------------------------------
+        hi customPink     ctermbg=245 ctermfg=White  guibg=#ccbbcc guifg=#ff3f00
+        hi lightGray      ctermbg=12  guibg=#4c6b6c guifg=#ff5fa0
+        hi darkGray       ctermbg=211 guibg=#ffff00  guifg=#8000f0
 
-        "------------------------------------------------------
+        "--------------------------------------------------------------------------------
+        hi custRed     ctermbg=Red   ctermfg=White  guibg=#ffFF97  guifg=#ff0011
+        hi custGreen   ctermbg=Green ctermfg=White  guibg=#Afffaf  guifg=#0024fF
+        hi custYellow  ctermbg=Blue  ctermfg=White  guibg=#AfffDf  guifg=#ff5f00
+        "--------------------------------------------------------------------------------
         hi Pmenue        ctermfg=11
         set nuw =4
         set list
         set listchars=tab:▸\
 
-        "---???------------------------------------------------
-        call matchadd('darkGray', 'NEXT')
+        "--------------------------------------------------------------------------------
+        call matchadd('lightGray', 'NEXT')
+        call matchadd('lightGray', 'AAA')
         call matchadd('darkGray', 'TODO')
         call matchadd('darkGray', '!!!')
         call matchadd('darkGray', '???')
-        call matchadd('darkGray', 'AAA')
         call matchadd('darkGray', 'KKK')
         call matchadd('darkGray', 'MMM')
         call matchadd('darkGray', 'TTT')
         call matchadd('darkGray', 'DDD')
-        call matchadd('customPink', '===')
-        call matchadd('customPink', '==')
         call matchadd('customPink', '=')
-        call matchadd('customPink', '###')
-        call matchadd('customPink', ':::')
-        call matchadd('customPink', '::')
-        call matchadd('customPink', '---')
-        call matchadd('customPink', '--')
+        call matchadd('customPink', '#')
+        call matchadd('customPink', ':')
         call matchadd('customPink', '-')
         "------------------------------------------------------
 
@@ -1087,19 +1395,7 @@ call plug#end()
         nnoremap <F4> <esc>:Startify<cr>
         "==========================================================================================
         nnoremap <F5> :w<CR>:!python %<CR>
-
-        "==========================================================================================
-        "autocmd! filetype python noremap <buffer> <F4> :w<CR>:!python %<CR>
-        "autocmd! filetype python inoremap <buffer> <C-F4> <Esc>:w<CR>:!python %<CR>
-        "autocmd! filetype python noremap <buffer> <S-F4> :w<CR>:!ipython %<CR>
-        "autocmd! filetype python inoremap <buffer> <S-F4> <Esc>:w<CR>:!ipython %<CR>
-        "noremap <buffer> <F4> :w<CR>:!python %<CR>
-        "noremap <buffer> <C-F4> :w<CR>:!clear;python %<CR>
-        "noremap <buffer> <S-F4> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
-
-        "==========================================================================================
         nnoremap <F5> :call <SID>compile_and_run()<CR>
-
         "==========================================================================================
         function! s:compile_and_run()
             exec 'w'
@@ -1115,7 +1411,6 @@ call plug#end()
                exec "AsyncRun! time python %"
             endif
         endfunction
-
         let g:asyncrun_open = 15
 
 "==================================================================================================
@@ -1125,23 +1420,16 @@ call plug#end()
         "------------------------------------------------------------------
         nnoremap <Leader>1 :SideSearch <C-r><C-w><CR> | wincmd p
         command! -complete=file -nargs=+ SIS execute 'SideSearch <args>'
+        nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
         "------------------------------------------------------------------
         nnoremap <Leader>2 :PymodeDoc <cword> .<cr>
         "------------------------------------------------------------------
-        nnoremap <Leader>3 :Pydoc <cword> .<cr>
+        nnoremap <Leader>3 :Pydoc <C-r><C-w><CR> | wincmd p
         "------------------------------------------------------------------
         nnoremap <Leader>4 <Plug>AgRawSearch
         "------------------------------------------------------------------
-        nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
-
-        "-------------------------------------------------
-        " let g:pydoc_cmd = '/usr/bin/pydoc'
         let g:pydoc_cmd = 'python -m pydoc'
         nnoremap PP :Pydoc <C-r><C-w><CR> | wincmd p
-        "------------------------------------------------------------------
-        " :Pydoc foo.bar.baz (e.g. :Pydoc re.compile)
-        " Or search a word (uses pydoc -k) in the documentation by typing:
-        " :PydocSearch foobar (e.g. :PydocSearch socket)
         "------------------------------------------------------------------
         nnoremap ff :NV <C-r><C-w><CR> | wincmd p
         nnoremap FF :ZRg <C-r><C-w><CR> | wincmd p
@@ -1244,6 +1532,97 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 nnoremap <silent> ; :<c-u>WhichKey  ';'<CR>
 "===============================================================================================================
+"===VIM-SARTIFY-1===============================================================================================
+"===============================================================================================================
+" autocmd!  VimEnter * execute ":Startify"
+" autocmd!  VimEnter * execute ":SearchIndex"
+"===============================================================================================================
+let g:startify_custom_header      =
+        \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
+
+let g:startify_enable_special      = 1
+let g:startify_files_number        = 9
+let g:startify_relative_path       = 1
+let g:startify_change_to_dir       = 1
+let g:startify_update_oldfiles     = 1
+let g:startify_session_autoload    = 1
+let g:startify_session_persistence = 1
+
+highlight StartifyBracket ctermfg=14
+highlight StartifyFooter  ctermfg=10
+highlight StartifyHeader  ctermfg=14
+highlight StartifyNumber  ctermfg=9
+highlight StartifyPath    ctermfg=245
+highlight StartifySlash   ctermfg=240
+highlight StartifySpecial ctermfg=240
+
+"===============================================================================================================
+let g:startify_skiplist = [
+        \ 'COMMIT_EDITMSG',
+        \ 'bundle/.*/doc',
+        \ '/data/repo/neovim/runtime/doc',
+        \ '/Users/mhi/local/vim/share/vim/vim74/doc',
+        \ ]
+
+"===============================================================================================================
+let g:startify_bookmarks = [
+        \ '~/git/bTest/kDot/kIng19.sh',
+        \ '~/git/bTest/kDot/k2MinFF.vim',
+        \ '~/git/bTest/kDot/k2MinFzfDeoLs.vim',
+        \ '~/git/bTest/kDot/kZshrc19.sh',
+        \ '~/git/bTest/kDot/kBank21.yml',
+        \ ]
+
+"===============================================================================================================
+let g:startify_custom_footer =
+        \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
+
+"===============================================================================================================
+let g:startify_list_order = [
+                        \ ['   Commands'], 'commands',
+                        \ ['   Sessions'], 'sessions',
+                        \ ['   MRU Files'], 'files',
+                        \ ['   MRU Files in Current Dir'], 'dir',
+                        \ ['   Bookmarks'], 'bookmarks',
+                        \ ]
+
+"===============================================================================================================
+let g:startify_session_dir = '~/git/bTest/kDot/zSS'
+let g:startify_session_sort = 1
+let g:startify_session_number = 5
+
+"===============================================================================================================
+let g:startify_commands = [
+                        \ {'a': ['seti', ':colorscheme seti']},
+                        \ {'b': ['FZFMru', ':FZFMru']},
+                        \ {'i': ['FFMarks', ':FFMarks']},
+                        \ {'c': ['FFHistory', ':FFHistory']},
+                        \ {'d': ['FFHelptags', ':FFHelptags']},
+                        \ {'e': ['ZPlugHelp', ':ZPlugHelp']},
+                        \ {'k': ['ZTag', ':ZTag']},
+                        \ {'l': ['ZFiles', ':ZFiles']},
+                        \ {'o': ['ZDeviList', ':ZDeviList']},
+                        \ {'n': ['ZLibList', ':ZLibList']},
+                        \ {'f': ['LGHistory', ':LGHistory']},
+                        \ {'g': ['CommandTHelp', ':CommandTHelp']},
+                        \ {'x': ['FZFDefinitions', ':FZFDefinitions']},
+                        \ {'p': ['List', ':List']},
+                        \ {'r': ['List', ':List']},
+                        \ {'u': ['unite', ':Unite help buffer file_mru file file_rec bookmark']},
+                        \ ]
+
+"===============================================================================================================
+cabbrev SS  SideSearch
+cabbrev ZA  FFMarks
+cabbrev ZM  FZFMru
+cabbrev ZD  FZFDefinitions
+cabbrev ZH  FFHelptags
+cabbrev ZL  FFLines
+cabbrev ZBL FFBLines
+cabbrev ZT  ZTag
+cabbrev ZF  ZFiles
+cabbrev ZS  ZSnippets
+nmap == :call FzfSpell()<CR>
 
 "===============================================================================================================
 

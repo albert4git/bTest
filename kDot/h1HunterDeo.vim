@@ -2,7 +2,7 @@
 " File: h1Hunter.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Sa 05 Okt 2019 01:04:44  CEST
+" Last Modified:      Mi 09 Okt 2019 02:56:03  CEST
 "==================================================================================================
 "==================================================================================================
 
@@ -260,6 +260,15 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'tyru/capture.vim'
         Plug 'thinca/vim-quickrun'
+        "------------------------------------------------------------------------------------------
+        Plug 'majutsushi/tagbar'
+                highlight TagbarHighlight   ctermfg=051 ctermbg=9 cterm=bold
+                highlight TagListTagName    ctermfg=250
+                highlight TagbarFoldIcon    ctermfg=051 ctermbg=9 
+                highlight TagbarHelp        ctermfg=051 ctermbg=9
+        Plug 'ludovicchabant/vim-gutentags'
+        Plug 'vim-scripts/genutils'
+        Plug 'guns/xterm-color-table.vim'
         "---------------------------------------------------------------------------------- 
         Plug 'sjl/gundo.vim'
         "---------------------------------------------------------
