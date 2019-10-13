@@ -57,7 +57,9 @@
         hi ColorColumn    ctermbg=240
         hi ColorColumn    ctermbg=14   guibg=#005500
         hi Visual cterm=bold ctermbg=2 ctermfg=NONE  guibg=#005500
-        hi Comment        ctermfg=249 guifg=#dddddd  guibg=#ff3f00
+        hi Comment        ctermfg=249 guifg=#dddddd  guibg=#0087ff
+        hi Comment        ctermfg=249 guifg=#dddddd  guifg=#50DFFF
+        hi Comment        ctermfg=249 guifg=#dddddd  guibg=#0F8F14
 
         "--------------------------------------------------------------------------------
         set pumheight=12
@@ -75,6 +77,11 @@
 
         "--------------------------------------------------------------------------------
         hi customPink     ctermbg=245 ctermfg=White  guibg=#ccbbcc guifg=#ff3f00
+        hi customBlue     ctermbg=245 ctermfg=White  guibg=#ccbbcc guifg=#0087ff
+        hi customBlue     ctermbg=245 ctermfg=White  guifg=#ff5f00 guibg=#0FBF34
+        hi customBlue     ctermbg=245 ctermfg=White  guifg=#ccCCcc guibg=#0F8F14
+
+
         hi lightGray      ctermbg=12  guibg=#4c6b6c guifg=#ff5fa0
         hi darkGray       ctermbg=211 guibg=#ffff00  guifg=#8000f0
 
@@ -98,10 +105,11 @@
         call matchadd('darkGray', 'MMM')
         call matchadd('darkGray', 'TTT')
         call matchadd('darkGray', 'DDD')
-        call matchadd('customPink', '=')
+        call matchadd('customBlue', '=')
+        call matchadd('customBlue', '==')
         call matchadd('customPink', '#')
         call matchadd('customPink', ':')
-        call matchadd('customPink', '-')
+        call matchadd('customBlue', '-')
         "------------------------------------------------------
 
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
