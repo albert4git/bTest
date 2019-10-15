@@ -5,8 +5,23 @@
 
 "===============================================================================================================
 
+        " set listchars=eol:$
+        set showbreak=↪\ 
+        set listchars=eol:↲
+        set listchars=tab:▸\
 "===============================================================================================================
 
+        "---------------------------------------------------------------------------------- 
+        Plug 'mengelbrecht/lightline-bufferline'
+        autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
+        let g:lightline#bufferline#show_number  = 1
+        let g:lightline#bufferline#shorten_path = 0
+        let g:lightline#bufferline#unnamed      = '[No Name]'
+
+        let g:lightline                  = {}
+        let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+        let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+        let g:lightline.component_type   = {'buffers': 'tabsel'}
 "===============================================================================
 function! MyJumpTo()
     let filetype=&ft
@@ -267,3 +282,85 @@ function! ZDeviList()
                                 \ 'options': '-m -x +s',
                                 \ 'down':    '40%' })
 endfunction
+
+
+        "------------------TODO------------------------------------------------------------ 
+        Plug 'vim-scripts/utl.vim'
+        " [ open with \o ] {{{ open: URL, preview doc: markdown, TeX, etc.
+        " Utl {{{ :Utl to open links, files.
+        " nnoremap <leader>o :Utl<CR>
+        " nnoremap ;o :Utl<CR>
+        " Syntax: no need to escape 'spaces'.
+        " use '' contain filename(url) strings. e.g. = ":silent !evince '%p' &"
+        " <url:#r=here> id=here | <url:tn=some text> <url:filename.txt#line=-10>
+        " <url:fo obar.pdf> | <url:.t/emp> folder |
+        " <url:../plugin/utl.vim#tn=text>
+        " <url:file:///home/stb/.vim/plugin/utl.vim>
+        " <url:http://www.google.ocm> www.vm.oigr
+        " <url:man:ls> || <urlc:onfig:>
+        " download from [1] || [1] www.google.com
+        " It brings the benefits of URL-based hyperlinking to plain text,
+        " extending the URL syntax for plain text needs.
+        let g:utl_opt_verbose=0 " 0=no (default), 1=yes
+        let g:utl_opt_highlight_urls='yes' " 'yes' is default / 'no'
+
+        " HTTP
+        " %u, %p for Unix, %P for Windows.
+        if !exists("g:utl_cfg_hdl_scm_http_system")
+                if has("unix")
+                        " let g:utl_cfg_hdl_scm_http_system = 'silent !xdg-open %u' " for ubuntu system
+                        "let g:utl_cfg_hdl_scm_http_system = "!xterm -e lynx '%u#%f'" "	console browser
+                        " if browser is GUI, don't use "silent" => "silent !browser", will crash terminal vim screen
+                        " Check if an instance is already running, and if yes use it, else start firefox.
+                        " let g:utl_cfg_hdl_scm_http_system = "silent !firefox -remote 'ping()' && firefox -remote 'openURL( %u )' || firefox '%u#%f' &"
+                        " use lightweight browser like : luakit, jumanji, urbl etc.
+                        let g:utl_cfg_hdl_scm_http_system = "!firefox '%u#%f' &"
+                endif
+                let g:utl_cfg_hdl_scm_http=g:utl_cfg_hdl_scm_http_system
+        endif
+        " http wget:
+        let g:utl_cfg_hdl_scm_http__wget="call Utl_if_hdl_scm_http__wget('%u')"
+        " scp
+        if !exists("g:utl_cfg_hdl_scm_scp")
+                let g:utl_cfg_hdl_scm_scp = "silent %d %u"
+        endif
+        " mailto:
+        if !exists("g:utl_cfg_hdl_scm_mailto")
+                let g:utl_cfg_hdl_scm_mailto = "!urxvt -e mutt '%u'"
+        endif
+        " generic
+        if !exists("g:utl_cfg_hdl_mt_generic")
+                if has("unix")
+                        if $WINDOWMANAGER =~? 'kde'
+                                let g:utl_cfg_hdl_mt_generic = 'silent !konqueror "%p" &'
+                        else
+                                let g:utl_cfg_hdl_mt_generic = 'silent !urxvt -e sh -c ranger "%p"'
+                        endif
+                endif
+        endif
+        " directory
+        let g:utl_cfg_hdl_mt_text_directory__cmd = ':!urxvt -e sh -c ranger "%p"'
+        let g:utl_cfg_hdl_mt_text_directory__vim = 'VIM'   " Vim builtin file explorer
+        " let g:utl_cfg_hdl_mt_text_directory='VIM'
+        " let g:utl_cfg_hdl_mt_text_directory = ':silent !nautilus "%p" &'
+        let g:utl_cfg_hdl_mt_text_directory=g:utl_cfg_hdl_mt_text_directory__cmd
+        " application/pdf
+        let g:utl_cfg_hdl_mt_application_pdf = ":silent !evince '%p' &"
+        " TODO application/djvu
+        let g:utl_cfg_hdl_mt_application_djvu = ":silent !evince '%p' &"
+        " application/chm
+        " let g:utl_cfg_hdl_mt_application_chm = ":silent !chmsee '%p' &"
+        " application/doc
+        let g:utl_cfg_hdl_mt_application_msword = ":silent !libreoffice '%p' &"
+        " }}}
+
+        " - Open any URLs found in text with appropriate handler
+        " - Open files of any media type from within Vim (.pdf, .jpg, etc)
+        " - Small helper utilities via embedded Vimscript
+        " - Project management
+        " - Organizing ideas
+        " - Commenting source code
+        " - Personal Wiki
+        " - Editing HTML
+        " - Bookmark files, directories, URLs
+        "--------------------------------------------------------------------------------- 
