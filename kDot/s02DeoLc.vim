@@ -2,25 +2,18 @@
 "= File: s2DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      So 13 Okt 2019 11:36:23  CEST
-
-"==================================================================================================
+" Lass Modified:      Mi 16 Okt 2019 05:31:56  CEST
 "==================================================================================================
 "==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
-        "----------------------------------------------------------------------------------
-
         "----------------------------------------------------------------------------------
         let $MYVIMRC='~/.config/nvim/init.vim'
         "----------------------------------------------------------------------------------
         let g:python_host_prog = '/usr/bin/python2'
         let g:python3_host_prog = '/usr/bin/python3'
         "let g:deoplete#sources#jedi#extra_path = $PYTHONPATH
-        "let g:python_host_prog = '/Users/davidbrewer/.pyenv/versions/neovim2/bin/python'
-        "let g:python3_host_prog = '/Users/davidbrewer/.pyenv/versions/neovim3/bin/python'
         "let g:python3_host_prog=expand('~/anaconda3/bin/python')
         "------------------------------------------------------------------------------------------
-
         set dictionary+=/home/red/git/bTest/DICT/english-words.txt
         "----------------------------------------------------------------------------------
         filetype on
@@ -33,16 +26,13 @@
         set nocompatible
         set helplang=en,de
         set encoding=UTF-8
-        " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 14
-        set shell=/bin/bash
         set shell=/bin/zsh
-        "set tags+=.tags;
         set tags=.tags;
         set tags+=tags;
         ":set tags=./tags,tags,/home/user/commontags
         "----------------------------------------------------------------------------------
         " set dictionary=/usr/share/dict/words
-        " set dictionary="/usr/dict/words"     
+        " set dictionary="/usr/dict/words"
         " set spellfile=~/.config/nvim/spell/en.utf-8.add
         " set spelllang=de,tech_speak
         " 'zg': add, 'zw': remove.
@@ -55,16 +45,16 @@
         set spelllang=en
         set spell
         set nospell
+        set nuw =4
+        " set list
         "----------------------------------------------------------------------------------
-        set makeprg=gcc\ -o\ %<\ % 
+        set makeprg=gcc\ -o\ %<\ %
         set grepprg=rg\ --vimgrep
-
         "===============================================================================
         if executable('ag')
                 set grepprg=ag\ --nogroup\ --nocolor\ --column\ --ignore-dir\ node_modules\ --ignore-dir\ bower_components
                 set grepformat=%f:%l:%c:%m
         endif
-
 
         let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
         "----------------------------------------------------------------------------------
@@ -82,7 +72,6 @@
         syntax enable
         "==================================================================================
 
-"-AAA4-undo-------------------------------------------------------------------------------------------------{{{
         set noswapfile
         set backup                               " enable backups
         set undodir=~/.config/nvim/undoDir/      " undo files
@@ -101,16 +90,16 @@
         "----------------------------------------------------------------------------------
         set undofile
         set undoreload=10000
-"-4undo-}}}
+        "----------------------------------------------------------------------------------
 
 "-AAA5--PreSetUp-Appearance--Edit--Clipboard--Bell--ExpandTab-Hist--SmartEnter------------------------------{{{
-        "-magic--------    
+        "-magic--------
         silent! set wrapscan ignorecase smartcase incsearch hlsearch magic
         " \v: 'very magic', make every character except a-zA-Z0-9 and '_' have special meaning
         " use \v and \V to switch 'very magic' on or off.
         " \m, \M: 'magic' mode.
         " use \m and \M to switch 'magic' on or off.
-        "-Appearance--- 
+        "-Appearance---
         silent! display=lastline,uhex nowrap wrapmargin=0 guioptions=ce key=
         silent! set noshowmatch  noshowmode cmdheight=1 cmdwinheight=10 
         silent! set noshowcmd ruler rulerformat= laststatus=2 statusline=%t\ %=\ %m%r%y%w\ %3l:%-2c
@@ -121,7 +110,7 @@
         silent! set equalalways nowinfixwidth nowinfixheight winminwidth=3 winminheight=3 nowarn noconfirm
         silent! set fillchars=vert:\|,fold:\  eventignore= helplang=en viewoptions=options,cursor virtualedit=
         set nowrap
-        "set whichwrap=b,s,h,l,<,>,[,]
+        "---set whichwrap=b,s,h,l,<,>,[,]
         set splitbelow splitright
         set viminfo='20,\"80
         " read/write a .viminfo file, don't store more
@@ -136,15 +125,11 @@
         silent! set nohidden autoread noautowrite noautowriteall nolinebreak mouse=a modeline& modelines&
         silent! set noautochdir write nowriteany writedelay=0 verbose=0 verbosefile= notildeop noinsertmode
         set modelines=0
-
-        "-AAA2.1-Extra vi-compatibility---------------------------------------------------------{{{
-                set switchbuf=useopen    " reveal already opened files from the
-                " do not auto insert comment chars on newline
-                autocmd! FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-                " Global
-                set hidden               " Hide buffer instead of abandoning when unloading
-        "-2.1-}}}
-
+        "------------------------------------------------------------------------------------------
+        "-CHECK-It-TODO
+        autocmd! FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+        set switchbuf=useopen    " reveal already opened files from the
+        set hidden               " Hide buffer instead of abandoning when unloading
         "------------------------------------------------------------------------------------------
         silent! set clipboard=unnamed
         silent! set clipboard+=unnamedplus
@@ -211,7 +196,6 @@
         set cf         " Enable error files & error jumping.
         set nu
         "---------------------------------------------------------------------------------- 
-
 "-2Remap-}}}
 
 "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -224,24 +208,28 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'nixprime/cpsm'
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
-        Plug 'tomtom/tlib_vim'       
-
+        Plug 'tomtom/tlib_vim'
+        "----------------------------------------------------------------------------------
+        Plug 'vim-scripts/L9'
+        " Plug 'vim-scripts/FuzzyFinder'
+        "----------------------------------------------------------------------------------
+        Plug 'prabirshrestha/async.vim'
+        Plug 'skywind3000/asyncrun.vim'
         "----------------------------------------------------------------------------------
         Plug 'vim-scripts/genutils'
         Plug 'LucHermitte/lh-vim-lib'
         Plug 'inkarkat/vim-ingo-library'
         "----------------------------------------------------------------------------------
-        "--------------------------------------------------------------------------------- 
         "Plug 'vimim/vimim'
         "Plug 'cy2081/vim-cyim'
         "Plug 'vim-scripts/VimIM'
-        "--------------------------------------------------------------------------------- 
+        "----------------------------------------------------------------------------------
 
-        "---------NOVA--------------------------------------------------------------------- 
+        "---------NOVA---------------------------------------------------------------------
         Plug 'wesQ3/vim-windowswap' 
         " Plug 'google/vim-searchindex'
         let g:searchindex_improved_star=1
-        "--------------------------------------------------------------------------------- 
+        "----------------------------------------------------------------------------------
         Plug 'kana/vim-textobj-user'
         "----------------------------------------------------------------------------------
         Plug 'adriaanzon/vim-textobj-matchit'
@@ -251,7 +239,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 vmap ih <Plug>(textobj-gitgutter-i)
         "----------------------------------------------------------------------------------
         Plug 'kana/vim-textobj-diff'
-        "-AAA6--GitGutter-----------------------------------------------------------------------{{{
+
         Plug 'airblade/vim-gitgutter'
                 nmap ]c <Plug>GitGutterNextHunk
                 nmap [c <Plug>GitGutterPrevHunk
@@ -263,10 +251,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:gitgutter_signs = 1
                 let g:gitgutter_max_signs = 2000
         "--------------------------------------------------------------------------
-                highlight GitGutterAdd ctermfg=green   guifg=#00ffff 
-                highlight GitGutterChange ctermfg=yellow
-                highlight GitGutterDelete ctermfg=red
-                highlight GitGutterChangeDelete ctermfg=cyan
         "--------------------------------------------------------------------------
                 if exists("*gitgutter#highlight#define_highlights")
                         " let vim-gitgutter know we changed the SignColumn colors!
@@ -307,34 +291,54 @@ call plug#begin('~/.config/nvim/plugged/')
         " let g:pydoc_cmd = '/usr/bin/pydoc'
         " " let g:pydoc_highlight=0
         "---------------------------------------------------------------------------------- 
+        " Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+        "---------------------------------------------------------------------------------- 
         Plug 'tyru/capture.vim'
         Plug 'thinca/vim-quickrun'
         Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes'
-                let g:airline_theme='light'
-                set showmode                "-Display the current mode
-                set showcmd                 "-Show partial commands in status line 
-                "--------------------------------------------------------------------------
-                let g:airline_section_c = '%{strftime("%Y %b %d %X")}'
-                let g:airline#extensions#tabline#enabled = 1
-                let g:airline#extensions#tabline#buffer_min_count = 1
-                "-----------------------------------------------------------
-                let g:airline#extensions#syntastic#enabled = 1
-                let g:airline#extensions#branch#enabled = 1
-                "-----------------------------------------------------------
-                if !exists('g:airline_symbols')
-                        let g:airline_symbols = {}
-                endif
-                "--------------------------------------------------------------------------
-                hi statusline ctermbg=10 ctermfg=Black  cterm=bold
-                hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
+        "---------------------------------------------------------------------------------- 
+        "Plug 'vim-airline/vim-airline-themes'
+        "        let g:airline_theme='light'
+        "        set showmode                "-Display the current mode
+        "        set showcmd                 "-Show partial commands in status line 
+        "        "--------------------------------------------------------------------------
+        "        let g:airline_section_c = '%{strftime("%Y %b %d %X")}'
+        "        let g:airline#extensions#tabline#enabled = 1
+        "        let g:airline#extensions#tabline#buffer_min_count = 1
+        "        "-----------------------------------------------------------
+        "        let g:airline#extensions#syntastic#enabled = 1
+        "        let g:airline#extensions#branch#enabled = 1
+        "        "-----------------------------------------------------------
+        "        if !exists('g:airline_symbols')
+        "                let g:airline_symbols = {}
+        "        endif
+        "---------------------------------------------------------------------------------- 
+
+        "---------------------------------------------------------------------------------- 
+        Plug 'itchyny/lightline.vim'
+        Plug 'yarisgutierrez/ayu-lightline'
+        let g:lightline = {
+                                \ 'colorscheme': 'molokai',
+                                \ 'active': {
+                                \   'left': [ [ 'mode', 'paste' ],
+                                \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+                                \ },
+                                \ 'component_function': {
+                                \   'gitbranch': 'fugitive#head'
+                                \ },
+                                \ }
+
+        "----Nice---Tabs------
+        Plug 'ap/vim-buftabline'
+        Plug 'zefei/vim-wintabs'
+        Plug 'zefei/vim-wintabs-powerline'
 
         "---------------------------------------------------------------------------------- 
         Plug 'skywind3000/vim-preview'
                 "VSSplit
         "---------------------------------------------------------------------------------- 
         Plug 'flazz/vim-colorschemes'
-        " Plug 'rafi/awesome-vim-colorschemes'
+        Plug 'rafi/awesome-vim-colorschemes'
         "---------------------------------------------------------------------------------- 
         Plug 'kshenoy/vim-signature'
         " :SignatureListMarkers         : List all markers
@@ -351,21 +355,16 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:indentLine_enabled = 1
                 let g:indentLine_noConcealCursor='nc'
                 let g:indentLine_color_term = 10
-                let g:indentLine_color_gui = '#A4E57E'
                 let g:indentLine_color_gui = '#ffFF00'
                 let g:indentLine_color_gui = '#ff5f00'
+                let g:indentLine_color_gui = '#00ff00'
                 "let g:indentLine_setConceal = 0
                 let g:indentLine_bgcolor_term = 202
-                    let g:indentLine_faster = 1
-                    let g:indentLine_char = '.'
-                    let g:indentLine_char = '|'
-                    let g:indentLine_first_char='.'
-                    let g:indentLine_first_char='|'
-                        "let g:indentLine_first_char='¦'
-                        "let g:indentLine_leadingSpaceEnabled = 1
-                        "let g:indentLine_leadingSpaceChar = '·'
-                    let g:indentLine_showFirstIndentLevel=1
-                    let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']
+                let g:indentLine_faster = 1
+                let g:indentLine_char = '|'
+                let g:indentLine_first_char='|'
+                let g:indentLine_showFirstIndentLevel=1
+                let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']
 
         "---------------------------------------------------------------------------------- 
         Plug 'cwfoo/vim-text-omnicomplete'
@@ -377,7 +376,48 @@ call plug#begin('~/.config/nvim/plugged/')
         " let g:python_host_prog = '/full/path/to/neovim2/bin/python'
         " let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
         "---------------------------------------------------------------------------------- 
-
+        Plug 'zchee/deoplete-clang'
+        "===DEOPLETE-CLANG==========================================================================
+        let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-6.0/lib/libclang.so.1"
+        let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+        let g:deoplete#sources#clang#sort_algo = 'priority' " alphabetical
+        "============ADD==================================================================
+        Plug 'eagletmt/neco-ghc'
+                let g:haskellmode_completion_ghc = 1
+                autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+        "=================================================================================
+        Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+                let g:deoplete#sources#go#package_dot = 1
+                let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+        "=================================================================================
+        Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
+        Plug 'mkusher/padawan.vim'
+                let $PATH=$PATH . ':' . expand('~/.config/composer/vendor/bin/')
+                let g:padawan#composer_command = "/usr/bin/composer"
+        "=================================================================================
+        Plug 'artur-shaik/vim-javacomplete2'
+                autocmd FileType java setlocal omnifunc=javacomplete#Complete
+                " nnoremap <leader>cj :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
+                " autocmd filetype java nnoremap <F4> :w <bar> !javac % && java -enableassertions %:p <CR>
+                " imap <F3> <Plug>(JavaComplete-Imports-RemoveUnused)
+                " nmap <F4> <Plug>(JavaComplete-Imports-Add)
+                " nmap <F5> <Plug>(JavaComplete-Imports-AddMissing)
+                " nmap <F6> <Plug>(JavaComplete-Imports-RemoveUnused)
+                " :setlocal omnifunc=javacomplete#Complete
+                " :setlocal completefunc=javacomplete#CompleteParamsInfo
+                " autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
+        "=================================================================================
+        "------LSP--for-DEO-unnotig---------------------------------------------------------
+        " Plug 'prabirshrestha/vim-lsp'
+        "=================================================================================
+        Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
+        Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+        "=================================================================================
+        Plug 'fishbullet/deoplete-ruby'
+        Plug 'takkii/ruby-dictionary3'
+        setlocal dictionary+=~/.config/nvim/repos/github.com/takkii/ruby-dictionary3/autoload/source/ruby_method_deoplete
+        " call deoplete#custom#source('dictionary', 'ruby', ['[^. *\t]\.\w*\|\h\w*::'])
+        "=================================================================================
 
         "---------------------------------------------------------------------------------- 
         "---GLEB--------------------------------------------------------------------------- 
@@ -394,12 +434,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'devjoe/vim-codequery'
         Plug 'aperezdc/vim-template'
 
-        "---------------------------------------------------------------------------------- 
-        Plug 'vim-scripts/L9'
-        " Plug 'vim-scripts/FuzzyFinder'
-        "---------------------------------------------------------------------------------- 
-        Plug 'prabirshrestha/async.vim'
-        Plug 'skywind3000/asyncrun.vim'
         "---------------------------------------------------------------------------------- 
         "-TODO Plug 'neomake/neomake'
         "---------------------------------------------------------------------------------- 
@@ -440,7 +474,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'Chun-Yang/vim-action-ag'
         Plug 'rking/ag.vim'
         "----------------------------------------------------------------------------------
-        " But if you want to install fzf as well using vim-plug:
         Plug 'junegunn/fzf', { 'do': './install --all' }
         Plug 'junegunn/fzf.vim'
         Plug 'pbogut/fzf-mru.vim'
@@ -513,7 +546,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "   - O opens a new tab instead
         "   - gb for :Gbrowse
         "   - ]] and [[ to move between commits
-        "   - . to start command-line with :Git [CURSOR] SHA à la fugitive
         "   - q to close
         "==========================================================================
         Plug 'tpope/vim-fugitive'
@@ -611,7 +643,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:AutoPairsMapCh=1
                 let g:AutoPairsDelete = '<M-5>'
 
-
         " <CR> : Insert new indented line after return if cursor in blank brackets
         "        or quotes.
         " <BS> : Delete brackets in pair
@@ -629,10 +660,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:bling_color_cterm = 'reverse'
         "------------------------------------------------------------------------------------------
         Plug 'majutsushi/tagbar'
-                highlight TagbarHighlight   ctermfg=051 ctermbg=9 cterm=bold
-                highlight TagListTagName    ctermfg=250
-                highlight TagbarFoldIcon    ctermfg=051 ctermbg=9 
-                highlight TagbarHelp        ctermfg=051 ctermbg=9
         "Plug 'vim-scripts/tagselect'
         "Plug 'xolox/vim-easytags'
         Plug 'ludovicchabant/vim-gutentags'
@@ -644,7 +671,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'haya14busa/incsearch.vim'
         Plug 'vim-scripts/SearchComplete'
 
-        "-AAA3----------------------------------------------------------------------------------{{{
          Plug 'scrooloose/nerdtree'
          Plug 'Xuyuanp/nerdtree-git-plugin'
                 let g:NERDTreeIndicatorMapCustom = {
@@ -660,7 +686,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 \ "Unknown"   : "?"
                 \ }
                 "-----------------------------------
-                "-----------------------------------
                  let NERDTreeShowBookmarks=1
                  let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
                  let NERDTreeChDirMode=0
@@ -670,7 +695,7 @@ call plug#begin('~/.config/nvim/plugged/')
                  let NERDTreeMouseMode=2
                  let NERDTreeShowHidden=1
                  let NERDTreeKeepTreeInNewTab=1
-                 " always open NERDTree in the appropriate directory.
+                 "-always open NERDTree in the appropriate directory.
                  function! NERDTreeToggleInCurDir()
                          if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
                                  exe ":NERDTreeClose"
@@ -682,11 +707,10 @@ call plug#begin('~/.config/nvim/plugged/')
                                  endif
                          endif
                  endfunction
-                 "" NERDCommenter
+                 "-NERDCommenter
                  let g:NERDDefaultAlign = 'left'
                  " let g:NERDCommentEmptyLines = 1
                  " let g:NERDTrimTrailingWhitespace = 1
-                 "" NERD
 
                  " NERDTrees File highlighting
                  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -694,24 +718,6 @@ call plug#begin('~/.config/nvim/plugged/')
                          exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
                  endfunction
 
-                call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-                call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-                call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-                call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-                call NERDTreeHighlightFile('vim', 'Red', 'none', 'red', '#151515')
-                call NERDTreeHighlightFile('js', 'blue', 'none', '#ffa500', '#151515')
-                call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-                call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
-                call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
-                call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
-                call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
-                call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
         "----------------------------------------------------------------------------------
          Plug 'mtth/scratch.vim'
         "---------------------------------------------------------------------------------- 
@@ -732,8 +738,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 " :VSResize to execute the VSResize ex command on the selected range
                 " nmap <C-W>r  <Plug>(Visual-Split-Resize)
                 " nmap <C-W>s <Plug>(Visual-Split-Split)
-        "---AAA-nnn-----------------------------------------------------}}}
-
 
         "==================================================================================
         Plug 'nvie/vim-flake8'
@@ -776,7 +780,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 " | isr   | student | id     |
                 " +-------+---------+--------+
 
-
         "==================================================================================
         "source ~/git/aTest/dotFiles/nVim/logoTextObjct.vim
         "source ~/git/aTest/dotFiles/nVim/logoHtml.vim
@@ -801,22 +804,18 @@ call plug#begin('~/.config/nvim/plugged/')
                 endfunction
                 "------------------------------------------------------
                 autocmd! BufEnter * :call BookmarkMapKeys()
-                highlight BookmarkSign ctermbg=10 ctermfg=1
-                highlight BookmarkLine ctermbg=10 ctermfg=1
-                highlight BookmarkAnnotationLine ctermbg=9 ctermfg=1
-                highlight BookmarkAnnotationSign ctermbg=9 ctermfg=1
                 "------------------------------------------------------
                 let g:bookmark_auto_close = 1
-                let g:bookmark_highlight_lines = 1          
-                let g:bookmark_show_warning = 0           
-                let g:bookmark_show_toggle_warning = 0      
+                let g:bookmark_highlight_lines = 1
+                let g:bookmark_show_warning = 0
+                let g:bookmark_show_toggle_warning = 0
                 let g:bookmark_sign = '♥'
                 let g:bookmark_highlight_lines = 1
                 let g:bookmark_save_per_working_dir = 1
                 let g:bookmark_auto_save = 1
-                let g:bookmark_save_per_working_dir = 1  
+                let g:bookmark_save_per_working_dir = 1
                 "------------------------------------------------------
-                "let g:bookmark_manage_per_buffer = 1`        
+                "let g:bookmark_manage_per_buffer = 1`
                 "let g:bookmark_auto_save_file = '/bookmarks'`
 
         "==================================================================================
@@ -829,7 +828,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'metakirby5/codi.vim'
         "---------------------------------------------------------------------------------- 
-
         Plug 'tylerhunt/vim-spark'
         "Plug 'sjl/vim-sparkup'
         Plug 'vim-scripts/Emmet.vim'
@@ -900,10 +898,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 " set noshowmode
                 let g:echodoc_enable_at_startup = 1
                 let g:echodoc#type = 'virtual'
-                " let g:echodoc#type = 'floating'
-                " change Pmenu to your highlight group
-                highlight link EchoDocFloat Pmenu
-                
+                let g:echodoc#type = 'floating'
+                " highlight link EchoDocFloat Pmenu
         "--------------------------------------------------------------------------------- 
         Plug 'KabbAmine/zeavim.vim'
         "------Advanced:------------------------------------------------------------------ 
@@ -961,7 +957,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'itchyny/calendar.vim'
         "--NewNew---TODO------------------------------------------
         Plug 'haya14busa/vim-easyoperator-line'
-        " Plug 'bfredl/nvim-miniyank'
         "--------------------------------------------------------------------------------- 
         Plug 'unblevable/quick-scope'
         augroup qs_colors
@@ -971,11 +966,6 @@ call plug#begin('~/.config/nvim/plugged/')
         augroup END
         "--------------------Nice---------------------------------------------------------- 
         Plug 'moll/vim-bbye'
-        "---------------------------------------------------------------------------------- 
-        "-:Acks- Plug 'wincent/ferret'
-        "-Plug 'lyuts/vim-rtags'
-        "-Plug 'vim-scripts/Conque-Shell'
-        "-Plug 'vim-scripts/spreadsheet.vim'
         "---------------------------------------------------------------------------------- 
         "---:T---:Tnew---:Topen---:TREPL---------------------------------------------------
         "---------------------------------------------------------------------------------- 
@@ -987,9 +977,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 " <Plug>(neoterm-repl-send)
         "---------------------------------------------------------------------------------- 
         Plug 'brookhong/cscope.vim'
-        "         nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
-        "-------------------------TESTING-------------------------------------------------
-        "- Plug 'vim-scripts/CRefVim'
+        " nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
+        "---------------------------------------------------------------------------------- 
         Plug 'alvan/vim-closetag'
         let g:closetag_close_shortcut = '<leader>>'
         let g:closetag_filetypes = 'html,xhtml,phtml'
@@ -1006,50 +995,31 @@ call plug#begin('~/.config/nvim/plugged/')
                 ":let $MYVIFMRC=/path/to/custom/vifmrc
                 let $MYVIFMRC='~/.config/vifm/vifmrc'
                 let g:vifmSplitWidth = 88
-        "------------------TODO------------------------------------------------------------ 
-        " enable support for concealing some constructs with unicode glyphs.
-        " Plug 'hylang/vim-hy'
-        " let g:hy_enable_conceal = 1 
-        " If you do let g:hy_conceal_fancy=1, xi and #% are displayed as ξ
+
+        Plug 'HerringtonDarkholme/yats.vim'
 
         "------------------TODO------------------------------------------------------------ 
-        "-???err??? Plug 'mhartington/nvim-typescript'
         "-Plug 'mhartington/nvim-typescript'
         "-autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
         "---------------------------------------------------------------------------------- 
-        " TYPESCRIPT
-        Plug 'HerringtonDarkholme/yats.vim'
         Plug 'leafgarland/typescript-vim', { 'for': [ 'typescript', 'vue' ] }
         Plug 'peitalin/vim-jsx-typescript'
                 autocmd BufNewFile,BufRead *.tsx,*.jsx,*.ts,*.js set filetype=typescript.tsx
-                " dark red
-                hi tsxTagName guifg=#E06C75
-                " orange
-                hi tsxCloseString guifg=#F99575
-                hi tsxCloseTag guifg=#F99575
-                hi tsxAttributeBraces guifg=#F99575
-                hi tsxEqual guifg=#F99575
-                " yellow
-                hi tsxAttrib guifg=#F8BD7F cterm=italic
+        "---------------------------------------------------------------------------------- 
         "------------------CAR-------------------------------------------------------------- 
         Plug 'ivalkeen/nerdtree-execute'
         Plug 'Linfee/nerdtree-open'
         Plug 'lilydjwg/colorizer'
         Plug 'tpope/vim-dadbod'
-        "--------------------------------------------------------------------------------- 
-        " Plug 'vpenkoff/vim-pg'  "postgres"
-        " Plug 'vim-scripts/dbext.vim'
-        " :'<,'>DBExecSQL    (or used the default map <Leader>se)
-        "----!!!---LGHistory--------------------------------------
+        "----!!!---:LGHistory--------------------------------------
         Plug 'm42e/vim-lgh'
-        "----Nice---Tabs------
-        " Plug 'ap/vim-buftabline'
+        "---------------------
         Plug 'xolox/vim-notes'
         "------------------TODO------------------------------------------------------------ 
-        " Plug 'chriskempson/base16-vim'
+        Plug 'chriskempson/base16-vim'
+        Plug 'morhetz/gruvbox'
         Plug 'trusktr/seti.vim'
         Plug 'ayu-theme/ayu-vim' " or other package manager
-        " colorscheme ayu
         " let ayucolor="light"  " for light version of theme
         " let ayucolor="mirage" " for mirage version of theme
         " let ayucolor="dark"   " for dark version of theme
@@ -1063,115 +1033,51 @@ call plug#begin('~/.config/nvim/plugged/')
                 autocmd BufEnter *.py UnderlineTagOn
         augroup END
 
-        "---Perfection - Continuity------
+        "---Perfection-Continuity-------------
         Plug 'terryma/vim-smooth-scroll'
-
-        "------------------TODO------------------------------------------------------------ 
-        Plug 'vim-scripts/utl.vim'
-        " [ open with \o ] {{{ open: URL, preview doc: markdown, TeX, etc.
-        " Utl {{{ :Utl to open links, files.
-        " nnoremap <leader>o :Utl<CR>
-        " nnoremap ;o :Utl<CR>
-        " Syntax: no need to escape 'spaces'.
-        " use '' contain filename(url) strings. e.g. = ":silent !evince '%p' &"
-        " <url:#r=here> id=here | <url:tn=some text> <url:filename.txt#line=-10>
-        " <url:fo obar.pdf> | <url:.t/emp> folder |
-        " <url:../plugin/utl.vim#tn=text>
-        " <url:file:///home/stb/.vim/plugin/utl.vim>
-        " <url:http://www.google.ocm> www.vm.oigr
-        " <url:man:ls> || <urlc:onfig:>
-        " download from [1] || [1] www.google.com
-        " It brings the benefits of URL-based hyperlinking to plain text,
-        " extending the URL syntax for plain text needs.
-        let g:utl_opt_verbose=0 " 0=no (default), 1=yes
-        let g:utl_opt_highlight_urls='yes' " 'yes' is default / 'no'
-
-        " HTTP
-        " %u, %p for Unix, %P for Windows.
-        if !exists("g:utl_cfg_hdl_scm_http_system")
-                if has("unix")
-                        " let g:utl_cfg_hdl_scm_http_system = 'silent !xdg-open %u' " for ubuntu system
-                        "let g:utl_cfg_hdl_scm_http_system = "!xterm -e lynx '%u#%f'" "	console browser
-                        " if browser is GUI, don't use "silent" => "silent !browser", will crash terminal vim screen
-                        " Check if an instance is already running, and if yes use it, else start firefox.
-                        " let g:utl_cfg_hdl_scm_http_system = "silent !firefox -remote 'ping()' && firefox -remote 'openURL( %u )' || firefox '%u#%f' &"
-                        " use lightweight browser like : luakit, jumanji, urbl etc.
-                        let g:utl_cfg_hdl_scm_http_system = "!firefox '%u#%f' &"
-                endif
-                let g:utl_cfg_hdl_scm_http=g:utl_cfg_hdl_scm_http_system
-        endif
-        " http wget:
-        let g:utl_cfg_hdl_scm_http__wget="call Utl_if_hdl_scm_http__wget('%u')"
-        " scp
-        if !exists("g:utl_cfg_hdl_scm_scp")
-                let g:utl_cfg_hdl_scm_scp = "silent %d %u"
-        endif
-        " mailto:
-        if !exists("g:utl_cfg_hdl_scm_mailto")
-                let g:utl_cfg_hdl_scm_mailto = "!urxvt -e mutt '%u'"
-        endif
-        " generic
-        if !exists("g:utl_cfg_hdl_mt_generic")
-                if has("unix")
-                        if $WINDOWMANAGER =~? 'kde'
-                                let g:utl_cfg_hdl_mt_generic = 'silent !konqueror "%p" &'
-                        else
-                                let g:utl_cfg_hdl_mt_generic = 'silent !urxvt -e sh -c ranger "%p"'
-                        endif
-                endif
-        endif
-        " directory
-        let g:utl_cfg_hdl_mt_text_directory__cmd = ':!urxvt -e sh -c ranger "%p"'
-        let g:utl_cfg_hdl_mt_text_directory__vim = 'VIM'   " Vim builtin file explorer
-        " let g:utl_cfg_hdl_mt_text_directory='VIM'
-        " let g:utl_cfg_hdl_mt_text_directory = ':silent !nautilus "%p" &'
-        let g:utl_cfg_hdl_mt_text_directory=g:utl_cfg_hdl_mt_text_directory__cmd
-        " application/pdf
-        let g:utl_cfg_hdl_mt_application_pdf = ":silent !evince '%p' &"
-        " TODO application/djvu
-        let g:utl_cfg_hdl_mt_application_djvu = ":silent !evince '%p' &"
-        " application/chm
-        " let g:utl_cfg_hdl_mt_application_chm = ":silent !chmsee '%p' &"
-        " application/doc
-        let g:utl_cfg_hdl_mt_application_msword = ":silent !libreoffice '%p' &"
-        " }}}
-
-        " - Open any URLs found in text with appropriate handler
-        " - Open files of any media type from within Vim (.pdf, .jpg, etc)
-        " - Small helper utilities via embedded Vimscript
-        " - Project management
-        " - Organizing ideas
-        " - Commenting source code
-        " - Personal Wiki
-        " - Editing HTML
-        " - Bookmark files, directories, URLs
         "---------------------------------------------------------------------------------- 
         Plug 'tpope/vim-abolish'        " Extended abbreviation/substition.
         "---------------------------------------------------------------------------------- 
-        "-Plug 'amiorin/vim-project'
-        "-Plug 'tpope/vim-projectionist'
+        Plug 'vim-ruby/vim-ruby'
         "-Plug 'tpope/vim-rake'
         "-Plug 'tpope/vim-rails'
-        Plug 'vim-ruby/vim-ruby'
 
         "---------------------------------------------------------------------------------- 
-        "--------------------------TRASH--------------------------------------------------- 
-        " Plug 'WolfgangMehner/bash-support'
-        " Plug 'tpope/vim-rsi'
         "---------------------------------------------------------------------------------- 
+        "--------------------------TRASH--------------------------------------------------- 
+        "-------------------------TESTING-------------------------------------------------
+        "---------------------------------------------------------------------------------- 
+        "-Plug 'amiorin/vim-project'
+        "-Plug 'tpope/vim-projectionist'
+        "---------------------------------------------------------------------------------- 
+        "-:Acks- Plug 'wincent/ferret'
+        "-Plug 'lyuts/vim-rtags'
+        " Plug 'bfredl/nvim-miniyank'
+        "---------------------------------------------------------------------------------- 
+        " Plug 'LucHermitte/lh-cpp'
+        "- Plug 'vim-scripts/CRefVim'
+        " nmap <Leader>c <Plug>CRV_CRefVimNormal
+        " vmap <Leader>r <Plug>CRV_CRefVimVisual
+        " map  <Leader>cw <Plug>CRV_CRefVimAsk
+        " map  <Leader>cc <Plug>CRV_CRefVimInvoke
+        "--------------------------------------------------------------------------------- 
+        " Plug 'vpenkoff/vim-pg'  "postgres"
+        " Plug 'vim-scripts/dbext.vim'
+        " :'<,'>DBExecSQL    (or used the default map <Leader>se)
         "---------------------------------------------------------------------------------- 
         " Plug 'StanAngeloff/php.vim'
         " Plug 'squizlabs/PHP_CodeSniffer'
-        " Plug 'LucHermitte/lh-cpp'
         "--------------------------------------------------------------------------------- 
-        " Plug 'vim-scripts/foo.vim'
-        "--------------------------------------------------------------------------------- 
-        "--------------------------------------------------------------------------------- 
+        "------------------TODO------------------------------------------------------------ 
+        " enable support for concealing some constructs with unicode glyphs.
+        " Plug 'hylang/vim-hy'
+        " let g:hy_enable_conceal = 1 
+        " If you do let g:hy_conceal_fancy=1, xi and #% are displayed as ξ
 
+
+        "--------------------------------------------------------------------------------- 
         " smart <c-a> and <c-x> to toggle true/false, on/off, increment dates or weekday names, etc.
         Plug 'nishigori/increment-activator'
-        "------------------------------------------------------------------------------------------
-        "-------420--------------------------------------------------------------------------------
         "------------------------------------------------------------------------------------------
         Plug 'tacahiroy/ctrlp-funky'
                 nnoremap <Leader>fu :CtrlPFunky<Cr>
@@ -1191,7 +1097,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------------------------------------------------------------------------
         Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
         "------------------------------------------------------------------------------------------
-        "------------------------------------------------------------------------------------------
         Plug 'liuchengxu/vista.vim'
         let g:vista_fzf_preview = ['right:50%']
         "------------------------------------------------
@@ -1200,9 +1105,6 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \   "variable": "\uf71b",
                                 \  }
         "------------------------------------------------------------------------------------------
-        "------LSP---------------------------------------------------------------------------------
-        Plug 'prabirshrestha/vim-lsp'
-        "------------------------------------------------------------------------------------------
 
         "------------------------------------------------------------------------------------------
         " Plug 'jacobsimpson/nvim-example-python-plugin'
@@ -1210,23 +1112,9 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'vigoux/LanguageTool.nvim'
         let g:languagetool_server='$HOME/LanguageTool-4.6-stable/languagetool-server.jar'
 
-        hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
-        hi LanguageToolSpellingError guisp=red  gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=red  term=underline cterm=none
-
+        "------------------------------------------------------------------------------------------
         Plug 'elzr/vim-json' " For metadata.json
         Plug 'mrk21/yaml-vim' " For hieradata
-
-        "------------------------------------------------------------------------------------------
-        "Plug 'w0rp/ale'
-        "        "Linting
-        "        let g:ale_sign_column_always = 1
-        "        let g:ale_sign_error = '>>'
-        "        let g:ale_sign_warning = '--'
-        "        let g:ale_linters = {
-        "                                \   'javascript': ['eslint'],
-        "                                \   'jsx': ['eslint'],
-        "                                \   'python': ['flake8'],
-        "                                \}
         "==================================================================================
         Plug 'w0rp/ale'
         let g:ale_sign_column_always = 0
@@ -1237,6 +1125,13 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------
         let g:ale_set_signs = 0
         "---------------------------------------
+
+        "--------------------------------------------------------------------------------
+        hi custRed     ctermbg=Red   ctermfg=White  guibg=#ffFF97  guifg=#ff0011
+        hi custGreen   ctermbg=Green ctermfg=White  guibg=#Afffaf  guifg=#0024fF
+        hi custYellow  ctermbg=Blue  ctermfg=White  guibg=#AfffDf  guifg=#ff5f00
+        "--------------------------------------------------------------------------------
+
         "==================================================================================
         hi link ALEErrorSign    custRed
         hi link ALEWarningSign  custYellow
@@ -1271,14 +1166,13 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \           'signTexthl': 'custGreen',
                                 \       },
                                 \  }
+
         "==================================================================================
         let g:LanguageClient_diagnosticsDisplay=diagnosticsDisplaySettings
         Plug 'skywind3000/quickmenu.vim'
         "----------------------------------------------------------------------------------
-
         Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
         autocmd User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
-
         "----------------------------------------------------------------------------------
          Plug 'hecal3/vim-leader-guide'
         "----------------------------------------------------------------------------------
@@ -1298,8 +1192,6 @@ call plug#end()
                 let entry_format .= '. entry_path'
         endif
         "==================================================================================
-
-        " hi ColorColumn    ctermbg=240
         let DimInactiveSyntaxOn = 1
         let g:diminactive_use_syntax = 1
         let g:diminactive_enable_focus = 1
@@ -1349,11 +1241,6 @@ call plug#end()
         let g:deoplete#tag#cache_limit_size = 800000
         let g:deoplete#file#enable_buffer_path = 1
         "-------------------------------------------------------------------------------- 
-        " let g:LanguageClient_serverCommands = {
-        "                         \ 'python': ['/usr/local/bin/pyls'],
-        "                         \ }
-        "-------------------------------------------------------------------------------- 
-        "-------------------------------------------------------------------------------- 
 
         let g:LanguageClient_serverCommands = {
                                 \ 'haskell': ['hie', '--lsp'],
@@ -1361,7 +1248,6 @@ call plug#end()
                                 \ 'cpp': ['ccls', '--log-file=/tmp/ccls.log'],
                                 \ 'python': ['pyls', '--log-file=/tmp/pyls.log'],
                                 \ }
-
 
         "---------------------------------------------------------------------------------- 
         let g:deoplete#sources#jedi#statement_length = 30
@@ -1466,28 +1352,26 @@ call plug#end()
         "source ~/git/bTest/kDot/minFzfDeoLsJediSnip.vim
         "----------------------------------------------------------------------------------
         "-------CYAN---------------------old Stuck.chen------------------------------------
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "source mix/n-badwolf.vim 
         "colorscheme molokai
         "colorscheme candycode
         set termguicolors
         colorscheme desert
-        colorscheme badwolf
         colorscheme ayu
+        colorscheme badwolf
         let ayucolor="dark"
         " let ayucolor="light"
         " let ayucolor="mirage"
         source ~/git/bTest/kDot/legoSCyan.vim
 
         silent! set complete& completeopt=menu infercase noshowfulltag
-        "set shortmess+=c
         "suppress intro message 
+        "set shortmess+=c
         set shortmess+=I
 
         "----------------------------------------------------------------------------------
         "::::::CYAN::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "----------------------------------------------------------------------------------
-        "-source ~/git/bTest/kDot/myPlug/logoCyan.vim
         "-source ~/git/bTest/kDot/myPlug/nHydra.vim
         "------------------------------------------------------
         "-source ~/git/bTest/kDot/myPlug/NNV.vim
@@ -1530,12 +1414,8 @@ call plug#end()
         set wildignore+=*.dx64fsl                        " CCL
         set wildignore+=classes
         set wildignore+=lib
-"-16-}}}
+"-AAA16-WILD-}}}
 
-      " nmap <Leader>c <Plug>CRV_CRefVimNormal
-      " vmap <Leader>r <Plug>CRV_CRefVimVisual
-      " map  <Leader>cw <Plug>CRV_CRefVimAsk
-      " map  <Leader>cc <Plug>CRV_CRefVimInvoke
 
 "---------------------------------------------------------------------------------------------------
 ":::::::::::::::::::::::::::-START1-:::::::::-PreNAVI-::::::::::::::::::::::::::::::::::::::::::::::
@@ -1581,7 +1461,6 @@ call plug#end()
 "---------------------------------------------------------------------------------------------------
 "::::::::::::::::::::::::::::::-=NAVI2=-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "---------------------------------------------------------------------------------------------------
-
         "------------------------
         nmap <tab>     :bn<cr>
         nmap <s-tab>   :bp<cr>
@@ -1609,7 +1488,7 @@ call plug#end()
         "----------------------------------------------------------------------------------
         noremap <S-j> :PreviewScroll -1<cr>
         noremap <S-l> :PreviewScroll +1<cr>
-        "------------------------------------------------------------------------------------------ 
+        "----------------------------------------------------------------------------------
         fun! ScrollOtherWindow(dir)
                 if a:dir == "down"
                         let move = "\<C-E>"
@@ -1662,7 +1541,7 @@ call plug#end()
         nnoremap ;r :execute "rightbelow vsplit" bufname('#')<cr>
 
         "------------------------------------------------------------------------------------------
-        "===openFileWithSameBasenameDifferentExtension=============================================        
+        "===openFileWithSameBasenameDifferentExtension=============================================
         "nnoremap <expr> ,R  ":e ".expand("%:r")."."
 
         "------------------------------------------------------------------------------------------
@@ -1690,19 +1569,16 @@ call plug#end()
         "Transport Down Ex: Pull word under cursor into :Ex LHS of a subs ztitute (replace)
         nnoremap ,w :<C-r>=expand("<cword>")<CR>
         nnoremap ;w :<C-r>=getline(".")<CR>
-
-        "---------------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
         nmap ,, <Plug>(easymotion-overwin-w)
         nmap ;; <Plug>(easymotion-overwin-w)
         imap ;; <ESC>
-
+        "---------------------------------------------------------------------------------- 
         let g:EasyOperator_line_do_mapping = 0
         omap ;l  <Plug>(easyoperator-line-select)
         xmap ;l  <Plug>(easyoperator-line-select)
         nmap d;l <Plug>(easyoperator-line-delete)
         nmap p;l <Plug>(easyoperator-line-yank)
-
 
         "------------------------------------------------------------------
         "1y$  //yank current row to register 1
@@ -1729,11 +1605,9 @@ call plug#end()
         " augroup END
         "------------------------------------------------------------------
 
-
         "==========================================================================================
         "::::::::::::::::::::::::::::::-2MAGIC2-:::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
-
         vmap <A-c> :w !cat >> ./zbuf<CR>
         "==========================================================================================
         "==:Ex-TRIGER==MAGIC==Execute VIM colon command under cursor==:ls==========================
@@ -1747,7 +1621,6 @@ call plug#end()
         nnoremap ) <c-a>:y x\|@x<cr>
         "==========================================================================================
         "---FIREFOX----www.ewb.de------------------------------------------------------------------
-        
         "==========================================================================================
         nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
         nnoremap <localleader>o :Utl<CR>
@@ -1799,7 +1672,6 @@ call plug#end()
         let cmdline_map_send_paragraph = '<LocalLeader>p'
         let cmdline_map_send_block     = '<LocalLeader>b'
         let cmdline_map_quit           = '<LocalLeader>q'
-
 
 "==================================================================================================
 ":::::::::::::::::F2, F3, F4, F5, F6, F7 ,F8 , F9::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -1888,7 +1760,6 @@ call plug#end()
 
         "==================================================================================
         "====
-
                 nnoremap <LocalLeader>; :CodeQueryMenu Unite Full<CR>
                 " nnoremap <LocalLeader>; :CodeQueryMenu Unite Magic<CR>
                 " Or enable typing (to search menu items) by default
@@ -1898,15 +1769,12 @@ call plug#end()
                 let g:codequery_trigger_build_db_when_db_not_found = 1
                 " Custom your `CodeQuery Text` commands
                 let g:codequery_find_text_cmd = 'Ack!'
-                
                 let g:codequery_find_text_from_current_file_dir = 0
                 " 0 => search from project dir (git root directory -> then the directory containing xxx.db file)
                 " 1 => search from the directory containing current file
-                
                 " If you use ':CodeQuery Symbol' in a txt file, of course, it will fail due to wrong filetype.
                 " With the following option set to 1, ':CodeQuery Text' will be automatically sent when your query fails.
                 let g:codequery_auto_switch_to_find_text_for_wrong_filetype = 0
-
         "====
         "==================================================================================
         "====
@@ -1917,15 +1785,12 @@ call plug#end()
                 set tags+=./go_tags;/
                 set tags+=./java_tags;/
                 set tags+=./c_tags;/
-
         "====
         "==================================================================================
-
         nnoremap \\ :<C-u>Unite -buffer-name=register register<CR>
         "---------------------------------------------------------------
         nnoremap <F6> :FFLines <C-r><C-w><CR> | wincmd p
         nnoremap <F7> :FFBLines <C-r><C-w><CR> | wincmd p
-
 
         noremap <F6> :call quickmenu#toggle(0)<cr>
         "==========================================================================================
@@ -1953,7 +1818,6 @@ call plug#end()
         "==========================================================================================
         " clear all the items
         call g:quickmenu#reset()
-
 
         " new section: empty action with text starts with "#" represent a new section
         call quickmenu#append("# Debug", '')
@@ -2099,7 +1963,6 @@ call plug#end()
                 let &grepformat = gf_s
                 let &grepprg = gp_s
         endfunc
- 
 
         "======================================================================================================
         "::::::::::::::::::::::::::::::---FZF---:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -2181,7 +2044,6 @@ call plug#end()
                 endif
         endfunction
         "======================================================================================================
-
 
         "========================================================
         " KKK FZF Selecting Mappings
@@ -2288,17 +2150,13 @@ call plug#end()
                                \'right': '30%'
                                \}))
 
-
+       "=========
        "============================================================================================
        " Any command that lists files can be used as the source
        " call fzf#run(fzf#wrap({'source': 'ls'}))
        " call fzf#run(fzf#wrap({'source': 'git ls-files'}))
        "============================================================================================
 
-
-       "========================================================
-       "===YANK2================================================
-       "========================================================
        nmap zp <Plug>yankstack_substitute_older_paste
        nmap zn <Plug>yankstack_substitute_newer_paste
 
@@ -2334,13 +2192,11 @@ call plug#end()
         " :MMake to perform a :make and to open any resulting quickfix window: 
         " command -nargs=* MMake make <args>|cwindow 3
 
-
         "--------------------------------------------------------------------------------- 
         " nmap gz <Plug>ZVOperator
         " vmap <localleader>z <Plug>ZVVisSelection
         nmap ;z <Plug>Zeavim
         nmap <Leader>z <Plug>ZVKeyDocset
-
 
 "===============================================================================================================
 " Convenient command to see the difference between the current buffer and the
@@ -2374,14 +2230,6 @@ nnoremap <Leader>t :!goldendict <C-r><C-w><CR>
 " <Leader>dk <Plug>(textobj-diff-hunk-p)
 
 "===============================================================================================================
-
-" let g:windowswap_map_keys = 0 "prevent default bindings
-" nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
-" nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
-" nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
-
-
-"===============================================================================================================
 "===VIM-SARTIFY-1===============================================================================================
 "===============================================================================================================
 " autocmd!  VimEnter * execute ":Startify"
@@ -2398,13 +2246,6 @@ let g:startify_update_oldfiles     = 1
 let g:startify_session_autoload    = 1
 let g:startify_session_persistence = 1
 
-highlight StartifyBracket ctermfg=14
-highlight StartifyFooter  ctermfg=10
-highlight StartifyHeader  ctermfg=14
-highlight StartifyNumber  ctermfg=9
-highlight StartifyPath    ctermfg=245
-highlight StartifySlash   ctermfg=240
-highlight StartifySpecial ctermfg=240
 
 "===============================================================================================================
 let g:startify_skiplist = [
@@ -2442,9 +2283,6 @@ let g:startify_session_sort = 1
 let g:startify_session_number = 5
 
 "===============================================================================================================
-"\ {'m': ['My magical function', 'call Magic()']},
-"\ ['Vim Reference', 'h ref'],
-"===============================================================================================================
 let g:startify_commands = [
                         \ {'a': ['seti', ':colorscheme seti']},
                         \ {'b': ['FZFMru', ':FZFMru']},
@@ -2476,17 +2314,14 @@ cabbrev ZF  ZFiles
 cabbrev ZS  ZSnippets
 nmap == :call FzfSpell()<CR>
 
-
 "===============================================================================================================
-"===============================================================================================================
-
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 nnoremap <silent> ; :<c-u>WhichKey  ';'<CR>
 
-let g:which_key_hspace =9
+let g:which_key_hspace =4
 let g:which_key_sep = get(g:, 'which_key_sep', '>>')
-let g:which_key_hspace = get(g:, 'which_key_hspace', 5)
+let g:which_key_hspace = get(g:, 'which_key_hspace', 4)
 let g:which_key_vertical = get(g:, 'which_key_vertical', 1)
 " let g:which_key_flatten = get(g:, 'which_key_flatten', 0)
 "===============================================================================================================
@@ -2505,8 +2340,6 @@ let g:which_key_map.9 = {
 \ 'p' : ['bprevious' , 'previous-buffer'] ,
 \ '?' : ['Buffers'   , 'fzf-buffer']      ,
 \ }
-
-" call which_key#register('<Space>', "g:which_key_map")
 
 let g:which_key_map.8= {
 \ 'name' : '+windows' ,
@@ -2528,9 +2361,12 @@ let g:which_key_map.8= {
 \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
 \ '?' : ['Windows'    , 'fzf-window']            ,
 \ }
-"===============================================================================================================
 
-"===============================================================================================================
+let g:which_key_map.7 = {
+      \ 'name' : '+open',
+      \ 'q' : 'open-quickfix'    ,
+      \ 'l' : 'open-locationlist',
+      \ }
 
 "===============================================================================================================
 "===============================================================================================================

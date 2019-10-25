@@ -11,22 +11,30 @@ badd +20 NONE
 badd +601 kConfigFVWM.sh
 badd +16 kMinit.vim
 badd +3 k5DEO.vim
-badd +29 4Temp.vim
+badd +30 4Temp.vim
 badd +1 timeTest.txt
 badd +2 logoTextObjct.vim
 badd +3 logoGit.vim
 badd +588 b5DEO.vim
 badd +1 xFZF.sh
+badd +0 zHighLight.vim
+badd +0 __XtermColorTable__
 argglobal
-%argdel
+silent! argdel *
 $argadd NONE
-edit 4Temp.vim
+edit zHighLight.vim
 set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 wincmd t
 set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+exe '1resize ' . ((&lines * 13 + 16) / 32)
+exe '2resize ' . ((&lines * 14 + 16) / 32)
 argglobal
 setlocal fdm=marker
 setlocal fde=0
@@ -36,13 +44,30 @@ setlocal fdl=0
 setlocal fml=6
 setlocal fdn=20
 setlocal nofen
-let s:l = 30 - ((14 * winheight(0) + 13) / 27)
+let s:l = 11 - ((5 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-30
-normal! 0
+11
+normal! 019|
 lcd ~/git/bTest/kDot
+wincmd w
+argglobal
+enew
+file ~/git/bTest/kDot/__XtermColorTable__
+setlocal fdm=marker
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=6
+setlocal fdn=20
+setlocal nofen
+lcd ~/git/bTest/kDot
+wincmd w
+2wincmd w
+exe '1resize ' . ((&lines * 13 + 16) / 32)
+exe '2resize ' . ((&lines * 14 + 16) / 32)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

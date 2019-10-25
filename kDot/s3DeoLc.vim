@@ -2,7 +2,7 @@
 "= File: s2DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Fr 25 Okt 2019 10:03:02  CEST
+" Lass Modified:      Mi 16 Okt 2019 11:11:46  CEST
 "==================================================================================================
 "==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -297,7 +297,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'tyru/capture.vim'
         Plug 'thinca/vim-quickrun'
-        " Plug 'vim-airline/vim-airline'
+        Plug 'vim-airline/vim-airline'
         "---------------------------------------------------------------------------------- 
         "Plug 'vim-airline/vim-airline-themes'
         "        let g:airline_theme='light'
@@ -321,7 +321,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'itchyny/lightline.vim'
         Plug 'yarisgutierrez/ayu-lightline'
-
         let g:lightline = {
                                 \ 'colorscheme': 'molokai',
                                 \ 'active': {
@@ -379,13 +378,26 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'zchee/deoplete-jedi'
         " let g:python_host_prog = '/full/path/to/neovim2/bin/python'
         " let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
+
         "---------------------------------------------------------------------------------- 
         Plug 'zchee/deoplete-clang'
-        "============ADD==================================================================
+        "---------------------------------------------------------------------------------- 
+        let g:deoplete#sources = {}
+        let g:deoplete#sources.cpp = ['LanguageClient']
+        let g:deoplete#sources.python = ['LanguageClient']
+        let g:deoplete#sources.python3 = ['LanguageClient']
+        let g:deoplete#sources.rust = ['LanguageClient']
+        let g:deoplete#sources.c = ['LanguageClient']
+        let g:deoplete#sources.vim = ['vim']
+        "===DEOPLETE-CLANG==================================================================
+        let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-6.0/lib/libclang.so.1"
+        let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+        let g:deoplete#sources#clang#sort_algo = 'priority' " alphabetical
+        "============ADD====================================================================
         Plug 'eagletmt/neco-ghc'
                 let g:haskellmode_completion_ghc = 1
                 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-        "=================================================================================
+        "===================================================================================
         Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
                 let g:deoplete#sources#go#package_dot = 1
                 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
@@ -415,6 +427,8 @@ call plug#begin('~/.config/nvim/plugged/')
         "=================================================================================
         Plug 'fishbullet/deoplete-ruby'
         Plug 'takkii/ruby-dictionary3'
+        setlocal dictionary+=~/.config/nvim/repos/github.com/takkii/ruby-dictionary3/autoload/source/ruby_method_deoplete
+        " call deoplete#custom#source('dictionary', 'ruby', ['[^. *\t]\.\w*\|\h\w*::'])
         "=================================================================================
 
         "---------------------------------------------------------------------------------- 
@@ -472,7 +486,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'Chun-Yang/vim-action-ag'
         Plug 'rking/ag.vim'
         "----------------------------------------------------------------------------------
-        " But if you want to install fzf as well using vim-plug:
         Plug 'junegunn/fzf', { 'do': './install --all' }
         Plug 'junegunn/fzf.vim'
         Plug 'pbogut/fzf-mru.vim'
@@ -689,7 +702,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 \ "Unknown"   : "?"
                 \ }
                 "-----------------------------------
-                "-----------------------------------
                  let NERDTreeShowBookmarks=1
                  let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
                  let NERDTreeChDirMode=0
@@ -699,7 +711,7 @@ call plug#begin('~/.config/nvim/plugged/')
                  let NERDTreeMouseMode=2
                  let NERDTreeShowHidden=1
                  let NERDTreeKeepTreeInNewTab=1
-                 " always open NERDTree in the appropriate directory.
+                 "-always open NERDTree in the appropriate directory.
                  function! NERDTreeToggleInCurDir()
                          if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
                                  exe ":NERDTreeClose"
@@ -711,11 +723,10 @@ call plug#begin('~/.config/nvim/plugged/')
                                  endif
                          endif
                  endfunction
-                 "" NERDCommenter
+                 "-NERDCommenter
                  let g:NERDDefaultAlign = 'left'
                  " let g:NERDCommentEmptyLines = 1
                  " let g:NERDTrimTrailingWhitespace = 1
-                 "" NERD
 
                  " NERDTrees File highlighting
                  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -761,7 +772,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 " :VSResize to execute the VSResize ex command on the selected range
                 " nmap <C-W>r  <Plug>(Visual-Split-Resize)
                 " nmap <C-W>s <Plug>(Visual-Split-Split)
-
 
         "==================================================================================
         Plug 'nvie/vim-flake8'
@@ -856,7 +866,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'metakirby5/codi.vim'
         "---------------------------------------------------------------------------------- 
-
         Plug 'tylerhunt/vim-spark'
         "Plug 'sjl/vim-sparkup'
         Plug 'vim-scripts/Emmet.vim'
@@ -928,7 +937,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:echodoc_enable_at_startup = 1
                 let g:echodoc#type = 'virtual'
                 let g:echodoc#type = 'floating'
-                " change Pmenu to your highlight group
                 highlight link EchoDocFloat Pmenu
         "--------------------------------------------------------------------------------- 
         Plug 'KabbAmine/zeavim.vim'
@@ -987,7 +995,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'itchyny/calendar.vim'
         "--NewNew---TODO------------------------------------------
         Plug 'haya14busa/vim-easyoperator-line'
-        " Plug 'bfredl/nvim-miniyank'
         "--------------------------------------------------------------------------------- 
         Plug 'unblevable/quick-scope'
         augroup qs_colors
@@ -997,9 +1004,6 @@ call plug#begin('~/.config/nvim/plugged/')
         augroup END
         "--------------------Nice---------------------------------------------------------- 
         Plug 'moll/vim-bbye'
-        "---------------------------------------------------------------------------------- 
-        "-:Acks- Plug 'wincent/ferret'
-        "-Plug 'lyuts/vim-rtags'
         "---------------------------------------------------------------------------------- 
         "---:T---:Tnew---:Topen---:TREPL---------------------------------------------------
         "---------------------------------------------------------------------------------- 
@@ -1011,9 +1015,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 " <Plug>(neoterm-repl-send)
         "---------------------------------------------------------------------------------- 
         Plug 'brookhong/cscope.vim'
-        "         nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
-        "-------------------------TESTING-------------------------------------------------
-        "- Plug 'vim-scripts/CRefVim'
+        " nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
+        "---------------------------------------------------------------------------------- 
         Plug 'alvan/vim-closetag'
         let g:closetag_close_shortcut = '<leader>>'
         let g:closetag_filetypes = 'html,xhtml,phtml'
@@ -1030,18 +1033,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 ":let $MYVIFMRC=/path/to/custom/vifmrc
                 let $MYVIFMRC='~/.config/vifm/vifmrc'
                 let g:vifmSplitWidth = 88
-        "------------------TODO------------------------------------------------------------ 
-        " enable support for concealing some constructs with unicode glyphs.
-        " Plug 'hylang/vim-hy'
-        " let g:hy_enable_conceal = 1 
-        " If you do let g:hy_conceal_fancy=1, xi and #% are displayed as ξ
 
-        "------------------TODO------------------------------------------------------------ 
-        "-???err??? Plug 'mhartington/nvim-typescript'
-        "-Plug 'mhartington/nvim-typescript'
-        "-autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
-        "---------------------------------------------------------------------------------- 
-        " TYPESCRIPT
         Plug 'HerringtonDarkholme/yats.vim'
         Plug 'leafgarland/typescript-vim', { 'for': [ 'typescript', 'vue' ] }
         Plug 'peitalin/vim-jsx-typescript'
@@ -1060,11 +1052,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'Linfee/nerdtree-open'
         Plug 'lilydjwg/colorizer'
         Plug 'tpope/vim-dadbod'
-        "--------------------------------------------------------------------------------- 
-        " Plug 'vpenkoff/vim-pg'  "postgres"
-        " Plug 'vim-scripts/dbext.vim'
-        " :'<,'>DBExecSQL    (or used the default map <Leader>se)
-        "----!!!---LGHistory--------------------------------------
+        "----!!!---:LGHistory--------------------------------------
         Plug 'm42e/vim-lgh'
         "---------------------
         Plug 'xolox/vim-notes'
@@ -1100,17 +1088,37 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "---------------------------------------------------------------------------------- 
         "--------------------------TRASH--------------------------------------------------- 
+        "-------------------------TESTING-------------------------------------------------
+        "---------------------------------------------------------------------------------- 
+        "-:Acks- Plug 'wincent/ferret'
+        "-Plug 'lyuts/vim-rtags'
+        " Plug 'bfredl/nvim-miniyank'
+        "---------------------------------------------------------------------------------- 
+        " Plug 'LucHermitte/lh-cpp'
+        "- Plug 'vim-scripts/CRefVim'
+        "--------------------------------------------------------------------------------- 
+        " Plug 'vpenkoff/vim-pg'  "postgres"
+        " Plug 'vim-scripts/dbext.vim'
+        " :'<,'>DBExecSQL    (or used the default map <Leader>se)
         "---------------------------------------------------------------------------------- 
         " Plug 'StanAngeloff/php.vim'
         " Plug 'squizlabs/PHP_CodeSniffer'
-        " Plug 'LucHermitte/lh-cpp'
         "--------------------------------------------------------------------------------- 
-        "--------------------------------------------------------------------------------- 
+        "------------------TODO------------------------------------------------------------ 
+        " enable support for concealing some constructs with unicode glyphs.
+        " Plug 'hylang/vim-hy'
+        " let g:hy_enable_conceal = 1 
+        " If you do let g:hy_conceal_fancy=1, xi and #% are displayed as ξ
 
+        "------------------TODO------------------------------------------------------------ 
+        "-Plug 'mhartington/nvim-typescript'
+        "-autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
+        "---------------------------------------------------------------------------------- 
+        " TYPESCRIPT
+
+        "--------------------------------------------------------------------------------- 
         " smart <c-a> and <c-x> to toggle true/false, on/off, increment dates or weekday names, etc.
         Plug 'nishigori/increment-activator'
-        "------------------------------------------------------------------------------------------
-        "-------420--------------------------------------------------------------------------------
         "------------------------------------------------------------------------------------------
         Plug 'tacahiroy/ctrlp-funky'
                 nnoremap <Leader>fu :CtrlPFunky<Cr>
@@ -1392,7 +1400,7 @@ call plug#end()
         let ayucolor="dark"
         " let ayucolor="light"
         " let ayucolor="mirage"
-        source ~/git/bTest/kDot/legoSCyan.vim
+        source ~/git/bTest/kDot/legoS3Cyan.vim
 
         silent! set complete& completeopt=menu infercase noshowfulltag
         "suppress intro message 

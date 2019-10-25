@@ -1,8 +1,5 @@
 
-        "==================================================================================
-        "==================================================================================
-        "==================================================================================
-        "==================================================================================
+
 
         "-TOP------------------------------------------------------------------------------
         highlight DiffAdd           cterm=bold ctermbg=22
@@ -80,7 +77,7 @@
         au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
         "--------------------------------------------------------------------------------
-        hi customPink     ctermbg=245 ctermfg=White  guibg=#444444 guifg=#ff3f00
+        hi customPink     ctermbg=245 ctermfg=White  guibg=#555555 guifg=#ff3f00
         hi customBlue     ctermbg=245 ctermfg=White  guibg=#ccbbcc guifg=#0087ff
         hi customBlue     ctermbg=245 ctermfg=White  guifg=#ff5f00 guibg=#0FBF34
         hi customBlue     ctermbg=245 ctermfg=White  guifg=#ccCCcc guibg=#0F8F14
@@ -97,7 +94,6 @@
         hi Pmenue        ctermfg=11
         set nuw =4
         set list
-        set listchars=tab:▸\
 
         "--------------------------------------------------------------------------------
         call matchadd('lightGray', 'NEXT')
@@ -113,6 +109,7 @@
         call matchadd('customBlue', '==')
         call matchadd('customPink', '#')
         call matchadd('customPink', ':')
+        call matchadd('customPink', '::')
         call matchadd('customBlue', '-')
         "------------------------------------------------------
 
@@ -131,6 +128,7 @@
 " set list
 set listchars=tab:▸\ ,eol:¬,trail:⋅
 hi NonText ctermfg=16 guifg=#Fa3a19
+hi NonText ctermfg=16 guifg=#00ff25
 hi SpecialKey ctermfg=16 guifg=#ff00af
 "===============================================================================================================
 highlight ExtraWhitespace ctermbg=red guibg=#ffFFff

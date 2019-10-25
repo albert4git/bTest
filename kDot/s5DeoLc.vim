@@ -2,7 +2,7 @@
 "= File: s2DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Fr 25 Okt 2019 10:03:02  CEST
+" Lass Modified:      Fr 25 Okt 2019 11:04:10  CEST
 "==================================================================================================
 "==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -237,6 +237,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 vmap ih <Plug>(textobj-gitgutter-i)
         "----------------------------------------------------------------------------------
         Plug 'kana/vim-textobj-diff'
+        "----vac----
+        Plug 'coderifous/textobj-word-column.vim'
 
         Plug 'airblade/vim-gitgutter'
                 nmap ]c <Plug>GitGutterNextHunk
@@ -263,13 +265,12 @@ call plug#begin('~/.config/nvim/plugged/')
         "--------------------------------------------------------------------------------- 
         Plug 'romainl/vim-qf'
         Plug 'yssl/QFEnter'
-
         "---------------------------------------------------------------------------------- 
         Plug 'brooth/far.vim'
         "---------------------------------------------------------------------------------- 
         Plug 'osyo-manga/vim-brightest'
                 let g:brightest#highlight = { "group" : "Define" }
-                "-JAPAN-
+        "-JAPAN-
         "---------------------------------------------------------------------------------- 
         Plug 'roxma/python-support.nvim'
                 let g:python_support_python2_require = 0
@@ -321,7 +322,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'itchyny/lightline.vim'
         Plug 'yarisgutierrez/ayu-lightline'
-
         let g:lightline = {
                                 \ 'colorscheme': 'molokai',
                                 \ 'active': {
@@ -335,12 +335,11 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "----Nice---Tabs------
         Plug 'ap/vim-buftabline'
-        Plug 'zefei/vim-wintabs'
-        Plug 'zefei/vim-wintabs-powerline'
-
+        " Plug 'zefei/vim-wintabs'
+        " Plug 'zefei/vim-wintabs-powerline'
         "---------------------------------------------------------------------------------- 
         Plug 'skywind3000/vim-preview'
-                "VSSplit
+        "VSSplit
         "---------------------------------------------------------------------------------- 
         Plug 'flazz/vim-colorschemes'
         Plug 'rafi/awesome-vim-colorschemes'
@@ -381,15 +380,15 @@ call plug#begin('~/.config/nvim/plugged/')
         " let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
         "---------------------------------------------------------------------------------- 
         Plug 'zchee/deoplete-clang'
-        "============ADD==================================================================
-        Plug 'eagletmt/neco-ghc'
-                let g:haskellmode_completion_ghc = 1
-                autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-        "=================================================================================
+        "===================================================================================
+        " Plug 'eagletmt/neco-ghc'
+        "         let g:haskellmode_completion_ghc = 1
+        "         autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+        "===================================================================================
         Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
                 let g:deoplete#sources#go#package_dot = 1
                 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-        "=================================================================================
+        "===================================================================================
         Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
         Plug 'mkusher/padawan.vim'
                 let $PATH=$PATH . ':' . expand('~/.config/composer/vendor/bin/')
@@ -414,7 +413,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
         "=================================================================================
         Plug 'fishbullet/deoplete-ruby'
-        Plug 'takkii/ruby-dictionary3'
+        " Plug 'takkii/ruby-dictionary3'
         "=================================================================================
 
         "---------------------------------------------------------------------------------- 
@@ -425,14 +424,11 @@ call plug#begin('~/.config/nvim/plugged/')
         autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
         "---------------------------------------------------------------------------------- 
         Plug 'sjl/gundo.vim'
-        Plug 'coderifous/textobj-word-column.vim'
-        "----vac----
-
         "---------------------------------------------------------------------------------- 
-        Plug 'devjoe/vim-codequery'
         Plug 'aperezdc/vim-template'
 
         "---------------------------------------------------------------------------------- 
+        "-Plug 'devjoe/vim-codequery'
         "-TODO Plug 'neomake/neomake'
         "---------------------------------------------------------------------------------- 
         Plug 'tpope/vim-dispatch'
@@ -465,7 +461,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'vim-scripts/Lynx-Offline-Documentation-Browser'
         "---------------------------------------------------------------------------------- 
-        Plug 'jesseleite/vim-agriculture'
+        " Plug 'jesseleite/vim-agriculture'
         Plug 'mileszs/ack.vim'
         Plug 'jremmen/vim-ripgrep'
         "----------------------------------------------------------------------------------
@@ -566,7 +562,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'tpope/vim-repeat'
         Plug 'tpope/vim-unimpaired'
         Plug 'tpope/vim-eunuch'
-        "#??? Plug 'tpope/vim-surround'
+        "=??? Plug 'tpope/vim-surround'
         "-------------------------------------------------------------------------- 
         Plug 'terryma/vim-expand-region'
                  "-Default-settings. 
@@ -586,7 +582,6 @@ call plug#begin('~/.config/nvim/plugged/')
                                          \ 'ih'  :1
                                          \ }
         "----------------------------------------------------------------------------------
-
         Plug 'machakann/vim-sandwich'
                 " sd,sr, sa{motion/textobject}{addition}(normal and visual mode)
                 " let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
@@ -663,17 +658,15 @@ call plug#begin('~/.config/nvim/plugged/')
                 highlight TagListTagName    ctermfg=250
                 highlight TagbarFoldIcon    ctermfg=051 ctermbg=9 
                 highlight TagbarHelp        ctermfg=051 ctermbg=9
-        "Plug 'vim-scripts/tagselect'
-        "Plug 'xolox/vim-easytags'
+        "----------------------------------------------------------------------------------
         Plug 'ludovicchabant/vim-gutentags'
-
         "----------------------------------------------------------------------------------
         Plug 'guns/xterm-color-table.vim'
         "Plug 'gko/vim-coloresque'
         "----------------------------------------------------------------------------------
         Plug 'haya14busa/incsearch.vim'
         Plug 'vim-scripts/SearchComplete'
-
+        "----------------------------------------------------------------------------------
          Plug 'scrooloose/nerdtree'
          Plug 'Xuyuanp/nerdtree-git-plugin'
                 let g:NERDTreeIndicatorMapCustom = {
@@ -693,8 +686,8 @@ call plug#begin('~/.config/nvim/plugged/')
                  let NERDTreeShowBookmarks=1
                  let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
                  let NERDTreeChDirMode=0
-                let NERDTreeMinimalUI = 1
-                let NERDTreeDirArrows = 1
+                 let NERDTreeMinimalUI = 1
+                 let NERDTreeDirArrows = 1
                  let NERDTreeQuitOnOpen=1
                  let NERDTreeMouseMode=2
                  let NERDTreeShowHidden=1
@@ -715,7 +708,6 @@ call plug#begin('~/.config/nvim/plugged/')
                  let g:NERDDefaultAlign = 'left'
                  " let g:NERDCommentEmptyLines = 1
                  " let g:NERDTrimTrailingWhitespace = 1
-                 "" NERD
 
                  " NERDTrees File highlighting
                  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -742,14 +734,17 @@ call plug#begin('~/.config/nvim/plugged/')
                 call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
                 call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
         "----------------------------------------------------------------------------------
+        Plug 'ivalkeen/nerdtree-execute'
+        Plug 'Linfee/nerdtree-open'
+        "----------------------------------------------------------------------------------
          Plug 'mtth/scratch.vim'
         "---------------------------------------------------------------------------------- 
-        Plug 'francoiscabrol/ranger.vim'
+        " Plug 'francoiscabrol/ranger.vim'
         "----------------------------------------------------------------------------------
          Plug 'henrik/vim-qargs'
          "-----------------------------------------------------------
          Plug 'AndrewRadev/undoquit.vim'
-                 "---c-w+u------ 
+        "---c-w+u------ 
          Plug 'maxbrunsfeld/vim-yankstack'
         "----------------------------------------------------------------------------------
         Plug 'easymotion/vim-easymotion'
@@ -761,20 +756,19 @@ call plug#begin('~/.config/nvim/plugged/')
                 " :VSResize to execute the VSResize ex command on the selected range
                 " nmap <C-W>r  <Plug>(Visual-Split-Resize)
                 " nmap <C-W>s <Plug>(Visual-Split-Split)
-
-
         "==================================================================================
         Plug 'nvie/vim-flake8'
-        "---------------------------------------------------------------------------------- 
+        "==================================================================================
+        "----------------------------------------------------------------------------------
         Plug 'google/vim-maktaba'
-        "-Strongly recommended: easy configuration of maktaba plugins.
+        "-configuration of maktaba plugins.
         Plug 'google/vim-glaive'
                 let g:myplugin_enablefeature = 1
                 let g:myplugin_defaultdir = $HOME
                 let g:myplugin_weirdmode = 'm'
-
         Plug 'google/vim-syncopate'
         "----------------------------------------------------------------------------------
+        "==================================================================================
         Plug 'google/vim-codefmt'
                 augroup autoformat_settings
                         autocmd FileType bzl AutoFormatBuffer buildifier
@@ -789,7 +783,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 augroup END
         "---------------------------------------------------------------------------------- 
         Plug 'godlygeek/tabular'
-
         "--------------------------------------------------------------------------------- 
                 " abc,def,ghi , some , shrt 
                 " a,b,c
@@ -856,7 +849,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'metakirby5/codi.vim'
         "---------------------------------------------------------------------------------- 
-
         Plug 'tylerhunt/vim-spark'
         "Plug 'sjl/vim-sparkup'
         Plug 'vim-scripts/Emmet.vim'
@@ -883,7 +875,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------ START --REPL-------------------------------------------- 
         "--------------------------------------------------------------------------------- 
         Plug 'jalvesaq/vimcmdline'
-                " vimcmdline options
                 let cmdline_vsplit      = 1      " Split the window vertically
                 let cmdline_esc_term    = 1      " Remap <Esc> to :stopinsert in Neovim's terminal
                 let cmdline_in_buffer   = 1      " Start the interpreter in a Neovim's terminal
@@ -971,7 +962,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'iamcco/dict.vim'
                 let g:api_key = "1932136763"
                 let g:keyfrom = "aioiyuuko"
-
         "--------------------------------------------------------------------------------- 
         Plug 'ron89/thesaurus_query.vim'
         let g:tq_mthesaur_file="/home/red/git/bTest/kDot/DICT/mthesaurGu.txt"
@@ -984,9 +974,10 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'matze/vim-move'
                 let g:move_key_modifier = 'C'
         "---------------------------------------------------------------------------------- 
-        Plug 'itchyny/calendar.vim'
+        " Plug 'itchyny/calendar.vim'
         "--NewNew---TODO------------------------------------------
         Plug 'haya14busa/vim-easyoperator-line'
+        "--------------------------------------------------------------------------------- 
         " Plug 'bfredl/nvim-miniyank'
         "--------------------------------------------------------------------------------- 
         Plug 'unblevable/quick-scope'
@@ -1014,6 +1005,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "         nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
         "-------------------------TESTING-------------------------------------------------
         "- Plug 'vim-scripts/CRefVim'
+        "---------------------------------------------------------------------------------- 
         Plug 'alvan/vim-closetag'
         let g:closetag_close_shortcut = '<leader>>'
         let g:closetag_filetypes = 'html,xhtml,phtml'
@@ -1027,7 +1019,6 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "---------------------------------------------------------------------------------- 
         Plug 'vifm/neovim-vifm'
-                ":let $MYVIFMRC=/path/to/custom/vifmrc
                 let $MYVIFMRC='~/.config/vifm/vifmrc'
                 let g:vifmSplitWidth = 88
         "------------------TODO------------------------------------------------------------ 
@@ -1040,8 +1031,9 @@ call plug#begin('~/.config/nvim/plugged/')
         "-???err??? Plug 'mhartington/nvim-typescript'
         "-Plug 'mhartington/nvim-typescript'
         "-autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
-        "---------------------------------------------------------------------------------- 
-        " TYPESCRIPT
+        "===================================================================================
+        "=TYPESCRIPT========================================================================
+        "===================================================================================
         Plug 'HerringtonDarkholme/yats.vim'
         Plug 'leafgarland/typescript-vim', { 'for': [ 'typescript', 'vue' ] }
         Plug 'peitalin/vim-jsx-typescript'
@@ -1056,8 +1048,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 " yellow
                 hi tsxAttrib guifg=#F8BD7F cterm=italic
         "------------------CAR-------------------------------------------------------------- 
-        Plug 'ivalkeen/nerdtree-execute'
-        Plug 'Linfee/nerdtree-open'
         Plug 'lilydjwg/colorizer'
         Plug 'tpope/vim-dadbod'
         "--------------------------------------------------------------------------------- 
@@ -1098,14 +1088,13 @@ call plug#begin('~/.config/nvim/plugged/')
         "-Plug 'tpope/vim-rails'
         Plug 'vim-ruby/vim-ruby'
 
-        "---------------------------------------------------------------------------------- 
-        "--------------------------TRASH--------------------------------------------------- 
+        "===================================================================================
         "---------------------------------------------------------------------------------- 
         " Plug 'StanAngeloff/php.vim'
         " Plug 'squizlabs/PHP_CodeSniffer'
         " Plug 'LucHermitte/lh-cpp'
-        "--------------------------------------------------------------------------------- 
-        "--------------------------------------------------------------------------------- 
+        "-----------------------------------------------------------------------------------
+        "===================================================================================
 
         " smart <c-a> and <c-x> to toggle true/false, on/off, increment dates or weekday names, etc.
         Plug 'nishigori/increment-activator'
@@ -1120,31 +1109,29 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'epheien/termdbg'
         "------------------------------------------------------------------------------------------
         Plug 'guns/vim-sexp',    {'for': 'clojure'}
-        Plug 'liquidz/vim-iced', {'for': 'clojure'}
+        "------------------------------------------------------------------------------------------
+        " Plug 'liquidz/vim-iced', {'for': 'clojure'}
         "------------------------------------------------------------------------------------------
         Plug 'dominikduda/vim_timebox'
         "------------------------------------------------------------------------------------------
         Plug 'osyo-manga/vim-anzu'
         "------------------------------------------------------------------------------------------
-        Plug 'sunaku/vim-shortcut'
+        " Plug 'sunaku/vim-shortcut'
         "------------------------------------------------------------------------------------------
         Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
         "------------------------------------------------------------------------------------------
         Plug 'liuchengxu/vista.vim'
         let g:vista_fzf_preview = ['right:50%']
-        "------------------------------------------------
         let g:vista#renderer#icons = {
                                 \   "function": "\uf794",
                                 \   "variable": "\uf71b",
                                 \  }
-        "------------------------------------------------------------------------------------------
 
         "------------------------------------------------------------------------------------------
         " Plug 'jacobsimpson/nvim-example-python-plugin'
         "------------------------------------------------------------------------------------------
         Plug 'vigoux/LanguageTool.nvim'
         let g:languagetool_server='$HOME/LanguageTool-4.6-stable/languagetool-server.jar'
-
         hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
         hi LanguageToolSpellingError guisp=red  gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=red  term=underline cterm=none
         "------------------------------------------------------------------------------------------
@@ -1392,7 +1379,7 @@ call plug#end()
         let ayucolor="dark"
         " let ayucolor="light"
         " let ayucolor="mirage"
-        source ~/git/bTest/kDot/legoSCyan.vim
+        source ~/git/bTest/kDot/legoS5Cyan.vim
 
         silent! set complete& completeopt=menu infercase noshowfulltag
         "suppress intro message 
