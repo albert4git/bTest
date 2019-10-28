@@ -17,7 +17,7 @@ badd +2 logoTextObjct.vim
 badd +3 logoGit.vim
 badd +588 b5DEO.vim
 badd +1 xFZF.sh
-badd +0 zHighLight.vim
+badd +1 zHighLight.vim
 badd +0 __XtermColorTable__
 argglobal
 silent! argdel *
@@ -33,8 +33,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 13 + 16) / 32)
-exe '2resize ' . ((&lines * 14 + 16) / 32)
+exe '1resize ' . ((&lines * 15 + 17) / 35)
+exe '2resize ' . ((&lines * 15 + 17) / 35)
 argglobal
 setlocal fdm=marker
 setlocal fde=0
@@ -44,7 +44,7 @@ setlocal fdl=0
 setlocal fml=6
 setlocal fdn=20
 setlocal nofen
-let s:l = 11 - ((5 * winheight(0) + 6) / 13)
+let s:l = 11 - ((6 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -53,8 +53,7 @@ normal! 019|
 lcd ~/git/bTest/kDot
 wincmd w
 argglobal
-enew
-file ~/git/bTest/kDot/__XtermColorTable__
+if bufexists('~/git/bTest/kDot/__XtermColorTable__') | buffer ~/git/bTest/kDot/__XtermColorTable__ | else | edit ~/git/bTest/kDot/__XtermColorTable__ | endif
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -63,11 +62,17 @@ setlocal fdl=0
 setlocal fml=6
 setlocal fdn=20
 setlocal nofen
+let s:l = 1 - ((0 * winheight(0) + 7) / 15)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
 lcd ~/git/bTest/kDot
 wincmd w
 2wincmd w
-exe '1resize ' . ((&lines * 13 + 16) / 32)
-exe '2resize ' . ((&lines * 14 + 16) / 32)
+exe '1resize ' . ((&lines * 15 + 17) / 35)
+exe '2resize ' . ((&lines * 15 + 17) / 35)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

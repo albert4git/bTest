@@ -1,5 +1,89 @@
 "==================================================================================
 "==================================================================================
+npm install sqlanywhere
+"==================================================================================
+set statusline=
+set statusline +=%1*\ %n\ %*            "buffer number
+set statusline +=%5*%{&ff}%*            "file format
+set statusline +=%3*%y%*                "file type
+set statusline +=%4*\ %<%F%*            "full path
+set statusline +=%2*%m%*                "modified flag
+set statusline +=%1*%=%5l%*             "current line
+set statusline +=%2*/%L%*               "total lines
+set statusline +=%1*%4v\ %*             "virtual column number
+set statusline +=%2*0x%04B\ %*          "character under cursor
+
+" hi User1 guifg=#eea040 guibg=#2222a2
+" hi User2 guifg=#dd3333 guibg=#222262
+" hi User3 guifg=#ff66ff guibg=#225222
+" hi User4 guifg=#a0ee40 guibg=#822222
+" hi User5 guifg=#eeee40 guibg=#522222
+"==================================================================================
+hi User1 guifg=#ffdad8  guibg=#880c0e
+hi User2 guifg=#000000  guibg=#F4905C
+hi User3 guifg=#292b00  guibg=#f4f597
+hi User4 guifg=#112605  guibg=#aefe7B
+hi User5 guifg=#051d00  guibg=#7dcc7d
+hi User7 guifg=#ffffff  guibg=#880c0e gui=bold
+hi User8 guifg=#ffffff  guibg=#5b7fbb
+hi User9 guifg=#ffffff  guibg=#810085
+hi User0 guifg=#ffffff  guibg=#094afe
+
+let g:currentmode={
+    \ 'n'      : 'N ',
+    \ 'no'     : 'N·Operator Pending ',
+    \ 'v'      : 'V ',
+    \ 'V'      : 'V·Line ',
+    \ '\<C-V>' : 'V·Block ',
+    \ 's'      : 'Select ',
+    \ 'S'      : 'S·Line ',
+    \ '\<C-S>' : 'S·Block ',
+    \ 'i'      : 'I ',
+    \ 'R'      : 'R ',
+    \ 'Rv'     : 'V·Replace ',
+    \ 'c'      : 'Command ',
+    \ 'cv'     : 'Vim Ex ',
+    \ 'ce'     : 'Ex ',
+    \ 'r'      : 'Prompt ',
+    \ 'rm'     : 'More ',
+    \ 'r?'     : 'Confirm ',
+    \ '!'      : 'Shell ',
+    \ 't'      : 'Terminal '
+    \}
+
+
+function! ChangeStatuslineColor()
+        if (mode() =~# '\v(n|no)')
+                exe 'hi! StatusLine ctermfg=008 guibg=#2fda00'
+        elseif (mode() =~# '\v(v|V)' || g:currentmode[mode()] ==# 'V·Block' || get(g:currentmode, mode(), '') ==# 't')
+                exe 'hi! StatusLine ctermfg=005 guibg=#ff0ad8'
+        elseif (mode() ==# 'i')
+                exe 'hi! StatusLine ctermfg=004 guibg=#0fdad8'
+        else
+                exe 'hi! StatusLine ctermfg=006 guibg=#ffda00'
+        endif
+        return ''
+endfunction
+"===============================================================================================================
+" guifg=#ff0ad8 
+" guifg=#0fdad8 
+" guifg=#ffda00 
+"===============================================================================================================
+function! GitInfo()
+        let git = fugitive#head()
+        if git != ''
+                return ' '.fugitive#head()
+        else
+                return ''
+endfunction
+"===============================================================================================================
+set laststatus=2
+set statusline=
+set statusline+=%{ChangeStatuslineColor()}               " Changing the statusline color
+set statusline+=%0*\ %{toupper(g:currentmode[mode()])}   " Current mode
+set statusline+=%8*\ [%n]                                " buffernr
+set statusline+=%8*\ %{GitInfo()}                        " Git Branch name
+"==================================================================================
         "Plug 'vim-scripts/tagselect'
         "Plug 'xolox/vim-easytags'
 "==================================================================================

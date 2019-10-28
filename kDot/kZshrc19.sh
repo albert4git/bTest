@@ -143,6 +143,8 @@ alias py3='python3'
 alias ca='ccat'
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias h00='402nv.app  -u ~/git/bTest/kDot/h00.vim'
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias h1='402nv.app  -u ~/git/bTest/kDot/h1Hunter.vim'
 alias h1coc='402nv.app  -u ~/git/bTest/kDot/h1HunterCoc.vim'
 alias h1de='402nv.app  -u ~/git/bTest/kDot/h1HunterDeo.vim'
@@ -153,6 +155,12 @@ alias h1ycm='402nv.app  -u ~/git/bTest/kDot/h1HunteYCM.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias h2='402nv.app  -u ~/git/bTest/kDot/h2HunterLc.vim'
 alias h3='deonvim  -u ~/git/bTest/kDot/h3HunterLc.vim'
+
+alias h27='402nv.app  -u ~/git/bTest/kDot/h27deo.vim'
+alias h26='402nv.app  -u ~/git/bTest/kDot/h26mu.vim'
+alias h25='402nv.app  -u ~/git/bTest/kDot/h25ncm2.vim'
+alias h24='402nv.app  -u ~/git/bTest/kDot/h24ncm2.vim'
+
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias h0de='402nv.app  -u ~/git/bTest/kDot/h0MinDeo.vim'
 alias h02de='402nv.app  -u ~/git/bTest/kDot/h0Min2Deo.vim'
@@ -177,7 +185,8 @@ alias s03='deonvim  -u ~/git/bTest/kDot/s03-LightLine-DeoLc.vim'
 alias sn03='deonvim  -u ~/git/bTest/kDot/s03DeoLc-NoDeo.vim'
 #==higlite problems===
 alias s4='deonvim  -u ~/git/bTest/kDot/s4DeoLc.vim' 
-alias s5='deonvim  -u ~/git/bTest/kDot/s5DeoLc.vim' 
+alias s5='402nv.app  -u ~/git/bTest/kDot/s5DeoLc.vim' 
+alias s6='402nv.app  -u ~/git/bTest/kDot/s6DeoLc.vim' 
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias e2='deonvim  -u ~/git/bTest/kDot/k2MinFF.vim'
