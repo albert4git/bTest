@@ -2,7 +2,7 @@
 "= File: s2DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mo 28 Okt 2019 08:52:49  CET
+" Lass Modified:      Di 29 Okt 2019 01:49:45  CET
 "==================================================================================================
 "==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -1394,7 +1394,7 @@ call plug#end()
         let ayucolor="dark"
         " let ayucolor="light"
         " let ayucolor="mirage"
-        source ~/git/bTest/kDot/legoS5Cyan.vim
+        source ~/git/bTest/kDot/p1legoHiCyan.vim
 
         silent! set complete& completeopt=menu infercase noshowfulltag
         "suppress intro message 

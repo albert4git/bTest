@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <sqlite3.h> 
+
 int main(int argc, char* argv[]) {
         sqlite3 *db;
         char *zErrMsg = 0;

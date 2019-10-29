@@ -16,7 +16,6 @@
  * =====================================================================================
  */
 #include <stdlib.h>
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <sqlite3.h> 
@@ -47,6 +46,7 @@ int main(int argc, char* argv[]) {
                 return(0);
         } else {
                 fprintf(stdout, "Opened database successfully\n");
+                fprintf(file)
         }
 
 
@@ -61,6 +61,11 @@ int main(int argc, char* argv[]) {
                 sqlite3_free(zErrMsg);
         } else {
                 fprintf(stdout, "Operation done successfully\n");
+                fprintf(h,"...\n",)
+
+                fprintf(h,"")
+
+
                 
                 
         }

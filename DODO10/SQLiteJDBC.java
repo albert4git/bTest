@@ -8,6 +8,8 @@ public class SQLiteJDBC {
 
                 try {
                         Class.forName("org.sqlite.JDBC");
+
+
                         c = DriverManager.getConnection("jdbc:sqlite:test.db");
                         System.out.println("Opened database successfully");
 

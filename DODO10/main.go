@@ -23,5 +23,6 @@ func main() {
 	for rows.Next() {
 		rows.Scan(&id, &firstname, &lastname)
 		fmt.Println(strconv.Itoa(id) + ": " + firstname + " " + lastname)
+        
 	}
 }

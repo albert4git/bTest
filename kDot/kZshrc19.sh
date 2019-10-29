@@ -161,6 +161,10 @@ alias h26='402nv.app  -u ~/git/bTest/kDot/h26mu.vim'
 alias h25='402nv.app  -u ~/git/bTest/kDot/h25ncm2.vim'
 alias h24='402nv.app  -u ~/git/bTest/kDot/h24ncm2.vim'
 
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias h23='402nv.app  -u ~/git/bTest/kDot/h23jacobGM.vim'
+alias h22='402nv.app  -u ~/git/bTest/kDot/h22ncm2B.vim'
+alias h21='402nv.app  -u ~/git/bTest/kDot/h21wip.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias h0de='402nv.app  -u ~/git/bTest/kDot/h0MinDeo.vim'
 alias h02de='402nv.app  -u ~/git/bTest/kDot/h0Min2Deo.vim'
@@ -188,6 +192,8 @@ alias s4='deonvim  -u ~/git/bTest/kDot/s4DeoLc.vim'
 alias s5='402nv.app  -u ~/git/bTest/kDot/s5DeoLc.vim' 
 alias s6='402nv.app  -u ~/git/bTest/kDot/s6DeoLc.vim' 
 
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias p1='402nv.app  -u ~/git/bTest/kDot/p1Deo.vim' 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias e2='deonvim  -u ~/git/bTest/kDot/k2MinFF.vim'
 alias ne2='deonvim  -u ~/git/bTest/kDot/nd2MinFF.vim'

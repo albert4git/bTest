@@ -158,7 +158,39 @@ let g:ags_agargs = {
   \ '--colors'         : [['match:fg:green', 'match:bg:black', 'match:style:nobold', 'path:fg:red', 'path:style:bold', 'line:fg:black', 'line:style:bold'] ,''],
   \ }
 "--------------------------------------------------------------------------------- 
+if &compatible " use Vim settings, rather than Vi
+  set nocompatible
+endif
+filetype plugin indent on " enable file type detection and plugin and indent loading
+syntax enable " enable syntax highlighting
 
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'} " vim client for LSP
+Plug 'ncm2/ncm2' " completion engine
+Plug 'ncm2/ncm2-ultisnips' " complete snippets
+Plug 'roxma/nvim-yarp' " ncm2 dependency
+Plug 'sirver/ultisnips' " create and use snippets
+Plug 'honza/vim-snippets' " community decided snippets
+call plug#end()
+
+" LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+  \ 'python': ['pyls'],
+  \ }
+let g:LanguageClient_diagnosticsEnable = 0
+
+" ncm2
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=menuone,noselect,noinsert
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent> <expr> <CR> pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>"
+
+" ultisnips
+let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
+let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
+let g:UltiSnipsRemoveSelectModeMappings = 0
 "--------------------------------------------------------------------------------- 
 
 "--------------------------------------------------------------------------------- 

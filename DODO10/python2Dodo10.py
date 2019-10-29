@@ -10,8 +10,7 @@
 """
 import sqlite3
 from sqlite3 import Error
-import numpy as np
-import matplotlib.pyplot as plt
+from sqlite3 import SQLITE_CREATE_TEMP_TABLE
 
 
 def create_connection(db_file):
@@ -22,26 +21,13 @@ def create_connection(db_file):
     """
     try:
         conn = sqlite3.connect(db_file)
-        # konn = sqlite3.connect('db_file')
-        return conn
-    except Error as e:
-        print(e)
+        # konn = sqlite3.connect('db_file'")
+    # cur.execute(select * from table)
+    cur.execute("SELECT ")
+    cur.exe
 
-    return None
-
-
-def select_all_tasks(conn):
-    """
-    Query all rows in the tasks table
-    :param conn: the Connection object
-    :return:
-    """
-    cur = conn.cursor()
-
-    cur.execute("SELECT * FROM COMPANY")
-    cur.execute("SELECT * FROM COMPANY")
-    cur.execute("SELECT * ")
-
+    rows = cur.fetchall()
+    rows = cur.fetchall()
     rows = cur.fetchall()
 
     for row in rows:
@@ -58,18 +44,12 @@ def select_task_by_priority(conn, priority):
     cur = conn.cursor()
 
     cur.execute("SELECT * FROM COMPANY WHERE ID=?", (priority, ))
+    cur.execute()
 
     rows = cur.fetchall()
 
     for row in rows:
         print(row)
-
-    x = np.linspace(-np.pi, np.pi, 256)
-    S, C = np.sin(x), np.cos(x)
-
-    plt.plot(x, S)
-    plt.plot(x, C)
-    plt.plot(x, c)
 
 
 def main():
