@@ -97,7 +97,6 @@ let g:mapleader = " "
 """"""""""""""""""""""""""""
 set ruler
 set number
-set relativenumber
 set showbreak=↪\  breakindent
 set fillchars+=vert:│
 set hidden
@@ -359,10 +358,10 @@ augroup tabs
 augroup END
 
 " use arrow keys to resize
-nnoremap <Up> :resize +5<CR>
-nnoremap <Down> :resize -5<CR>
-nnoremap <Left> :vertical resize -5<CR>
-nnoremap <Right> :vertical resize +5<CR>
+" nnoremap <Up> :resize +5<CR>
+" nnoremap <Down> :resize -5<CR>
+" nnoremap <Left> :vertical resize -5<CR>
+" nnoremap <Right> :vertical resize +5<CR>
 
 " terminal remaps
 tnoremap <leader><ESC> <C-\><C-n>

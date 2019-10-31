@@ -215,6 +215,9 @@ set termguicolors
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'cool'
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+let g:airline_theme = 'cool'
 
 let g:nightshift = 1
 

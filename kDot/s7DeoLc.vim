@@ -1,8 +1,8 @@
 "==================================================================================================
-"= File: p1Deo.vim
+"= File: s7DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Do 31 Okt 2019 05:11:54  CET
+" Lass Modified:      Do 31 Okt 2019 11:39:23  CET
 "==================================================================================================
 "==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -15,12 +15,6 @@
         "let g:python3_host_prog=expand('~/anaconda3/bin/python')
         "------------------------------------------------------------------------------------------
         set dictionary+=/home/red/git/bTest/DICT/english-words.txt
-        "----------------------------------------------------------------------------------
-        " let g:loaded_clipboard_provider = 1
-        " let g:loaded_clipboard_provider = 1
-
-        " eval_has_provider() decides based on this variable.
-        let g:loaded_clipboard_provider = empty(provider#clipboard#Executable()) ? 1 : 2
         "----------------------------------------------------------------------------------
         filetype on
         filetype plugin on
@@ -304,12 +298,8 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'tyru/capture.vim'
         Plug 'thinca/vim-quickrun'
-
-
-
-
+        " Plug 'vim-airline/vim-airline'
         "---------------------------------------------------------------------------------- 
-        "Plug 'vim-airline/vim-airline'
         "Plug 'vim-airline/vim-airline-themes'
         "        let g:airline_theme='light'
         "        set showmode                "-Display the current mode
@@ -330,33 +320,18 @@ call plug#begin('~/.config/nvim/plugged/')
         hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
 
         "---------------------------------------------------------------------------------- 
-        " Plug 'itchyny/lightline.vim'
-        " Plug 'yarisgutierrez/ayu-lightline'
-        " let g:lightline = {
-        "                         \ 'colorscheme': 'molokai',
-        "                         \ 'active': {
-        "                         \   'left': [ [ 'mode', 'paste' ],
-        "                         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        "                         \ },
-        "                         \ 'component_function': {
-        "                         \   'gitbranch': 'fugitive#head'
-        "                         \ },
-        "                         \ }
-        "---------------------------------------------------------------------------------- 
-
-
-        "===COOL-BUNT======================================================================
-        Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes'
-        set laststatus=2
-        let g:airline_powerline_fonts = 1
-        let g:airline_theme = 'cool'
-        " Set this. Airline will handle the rest.
-        let g:airline#extensions#ale#enabled = 1
-        let g:airline_theme = 'cool'
-        "---------------------------------------------------------------------------------- 
-
-
+        Plug 'itchyny/lightline.vim'
+        Plug 'yarisgutierrez/ayu-lightline'
+        let g:lightline = {
+                                \ 'colorscheme': 'molokai',
+                                \ 'active': {
+                                \   'left': [ [ 'mode', 'paste' ],
+                                \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+                                \ },
+                                \ 'component_function': {
+                                \   'gitbranch': 'fugitive#head'
+                                \ },
+                                \ }
         "---------------------------------------------------------------------------------- 
         "----Nice---Tabs------
         Plug 'ap/vim-buftabline'
@@ -393,13 +368,14 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:indentLine_first_char='|'
                 let g:indentLine_showFirstIndentLevel=1
                 let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']
+
+        " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
         "---------------------------------------------------------------------------------- 
-        "---COMP-1------------------------------------------------------------------------- 
+        "----DEO-1-------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
 
-
         "---------------------------------------------------------------------------------- 
-        "---COMP-2------------------------------------------------------------------------- 
+        "---GLEB--------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
         Plug 'sukima/xmledit/'
         autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
@@ -417,7 +393,6 @@ call plug#begin('~/.config/nvim/plugged/')
         let g:dispatch_compilers = {
                                 \ 'latex': 'tex',
                                 \ 'bundle exec': ''}
-
 
         "---------------------------------------------------------------------------------- 
         Plug 'vim-scripts/Lynx-Offline-Documentation-Browser'
@@ -712,21 +687,20 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'ivalkeen/nerdtree-execute'
         Plug 'Linfee/nerdtree-open'
         "----------------------------------------------------------------------------------
-        Plug 'mtth/scratch.vim'
+         Plug 'mtth/scratch.vim'
         "---------------------------------------------------------------------------------- 
         " Plug 'francoiscabrol/ranger.vim'
         "----------------------------------------------------------------------------------
-        Plug 'henrik/vim-qargs'
-        "-----------------------------------------------------------
-        Plug 'AndrewRadev/undoquit.vim'
+         Plug 'henrik/vim-qargs'
+         "-----------------------------------------------------------
+         Plug 'AndrewRadev/undoquit.vim'
         "---c-w+u------ 
-        Plug 'maxbrunsfeld/vim-yankstack'
+         Plug 'maxbrunsfeld/vim-yankstack'
         "----------------------------------------------------------------------------------
         Plug 'easymotion/vim-easymotion'
                 let g:EasyMotion_smartcase = 1
                 let g:EasyMotion_do_mapping = 0 "-Disable default mappings
                 nmap <LocalLeader><LocalLeader> <Plug>(easymotion-overwin-w)
-        "----------------------------------------------------------------------------------
         Plug 'wellle/visual-split.vim'
                 " :VSSplit, :VSSplitAbove or :VSSplitBelow to create the split
                 " :VSResize to execute the VSResize ex command on the selected range
@@ -754,7 +728,7 @@ call plug#begin('~/.config/nvim/plugged/')
                         autocmd FileType gn AutoFormatBuffer gn
                         " autocmd FileType html,css,json AutoFormatBuffer js-beautify
                         autocmd FileType java AutoFormatBuffer google-java-format
-                        " autocmd FileType python AutoFormatBuffer yapf
+                        autocmd FileType python AutoFormatBuffer yapf
                         " Alternative: autocmd FileType python AutoFormatBuffer autopep8
                 augroup END
         "---------------------------------------------------------------------------------- 
@@ -1113,18 +1087,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------------------------------------------------------------------------
         Plug 'elzr/vim-json' " For metadata.json
         Plug 'mrk21/yaml-vim' " For hieradata
-
-        "==================================================================================
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "==================================================================================
-        Plug 'skywind3000/quickmenu.vim'
-        "==================================================================================
-        Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-        autocmd User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
-        "----------------------------------------------------------------------------------
-        "Plug 'hecal3/vim-leader-guide'
-        "----------------------------------------------------------------------------------
-
         "==================================================================================
         Plug 'w0rp/ale'
         let g:ale_sign_column_always = 0
@@ -1135,18 +1097,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------
         let g:ale_set_signs = 0
         "---------------------------------------
-        "---------------------------------------
-        let g:ale_fix_on_save = 1
-        let g:ale_sign_error = '✗'
-        let g:ale_sign_warning = '⚠'
-        let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-        let g:ale_lint_on_text_changed = 0
-        let g:ale_lint_on_save = 1
-        " You can disable this option too
-        " if you don't want linters to run on opening a file
-        let g:ale_lint_on_enter = 1
-
-
         "==================================================================================
         hi link ALEErrorSign    custRed
         hi link ALEWarningSign  custYellow
@@ -1183,137 +1133,35 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \  }
 
         "==================================================================================
-        "=(Completion plugin option 1)
-        " Plug 'roxma/nvim-completion-manager'
-        " Plug 'lifepillar/vim-mucomplete'
-        " let g:mucomplete#enable_auto_at_startup = 1
-        "==================================================================================
-        " Plug 'ncm2/ncm2'
-        " autocmd BufEnter * call ncm2#enable_for_buffer()
-        " set completeopt=noinsert,menuone,noselect
-        " Plug 'prabirshrestha/vim-lsp'
-        " Plug 'ncm2/ncm2-vim-lsp'
-        " Plug 'ncm2/ncm2-bufword'
-        " Plug 'ncm2/ncm2-jedi'
-        " Plug 'ncm2/ncm2-ultisnips'
-        "Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-        "Plug 'davidhalter/jedi-vim'
-        "Plug 'Shougo/neocomplete.vim'
-        "------------------------------------------------------------------------------------------
-        Plug 'prabirshrestha/vim-lsp'
-                let g:lsp_diagnostics_enabled = 1 
-                " virtual text color ?
-                let g:lsp_virtual_text_enabled = 1 
-                let g:lsp_signs_enabled = 1 
-                " enable echo under cursor when in normal mode
-                let g:lsp_diagnostics_echo_cursor = 0
-                let g:lsp_highlights_enabled = 1
-                let g:lsp_textprop_enabled = 1
-
-        "----------------------------------------------------------
-        highlight link LspErrorHighlight GruvboxPurpleSign
-        highlight link LspErrorHighlight Error
-        "----------------------------------------------------------
-        highlight link LspWarningHighlight GruvboxYellowSign
-        highlight link LspWarningHighlight lightGray
-        "----------------------------------------------------------
-        highlight link LspInformationHighlight GruvboxBlueSign
-        highlight link LspInformationHighlight customPink
-        "----------------------------------------------------------
-        highlight link LspHintHighlight GruvboxGreenSign
-        highlight link LspHintHighlight darkGray
-        "----------------------------------------------------------
-        highlight link LspErrorText darkGray
-        highlight clear LspWarningLine
-        "----------------------------------------------------------
-
-                let g:lsp_signs_error = {'text': 'eR'}
-                let g:lsp_signs_warning = {'text': 'x!' } " icons require GUI
-                let g:lsp_signs_hint = {'text': 'x?' }
-                let g:lsp_signs_information = {'text': 'i?' }
-
-        highlight link LspErrorText GruvboxRedSign
-        highlight clear LspWarningLine
-        "------------------------------------------------------------------------------------------
-        Plug 'ryanolsonx/vim-lsp-python'
-        if executable('pyls')
-                au User lsp_setup call lsp#register_server({
-                                        \ 'name': 'pyls',
-                                        \ 'cmd': {server_info->['pyls']},
-                                        \ 'whitelist': ['python'],
-                                        \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
-                                        \ })
-        endif
-        "----------------------------------------------------------------------------------
-        Plug 'prabirshrestha/asyncomplete.vim'
-        Plug 'prabirshrestha/asyncomplete-lsp.vim'
-        "==================================================================================
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-        let g:deoplete#enable_at_startup = 1
-        let g:deoplete_disable_auto_complete=1
-
-
-
-        "==================================================================================
-        " LanguageServer client for NeoVim.
-        "==================================================================================
-        Plug 'autozimu/LanguageClient-neovim', {
-        \ 'branch': 'next',
-        \ 'do': 'bash install.sh',
-        \ }
-        let g:LanguageClient_autoStart = 1
-        " let g:LanguageClient_hoverPreview="Never"
-        "----------------------------------------------------------------------------------
         let g:LanguageClient_diagnosticsDisplay=diagnosticsDisplaySettings
+        Plug 'skywind3000/quickmenu.vim'
         "----------------------------------------------------------------------------------
-        let g:LanguageClient_serverCommands = {
-                                \ 'haskell': ['hie', '--lsp'],
-                                \ 'c': ['ccls', '--log-file=/tmp/ccls.log'],
-                                \ 'cpp': ['ccls', '--log-file=/tmp/ccls.log'],
-                                \ 'python': ['pyls', '--log-file=/tmp/pyls.log'],
+        Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+        autocmd User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
+        "----------------------------------------------------------------------------------
+         Plug 'hecal3/vim-leader-guide'
+        "----------------------------------------------------------------------------------
+        "Plug 'tomtom/tstatus_vim'
+
+        "---------------------------------------------------------------------------------- 
+        "----DEO-2------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------- 
+        " Plug 'cwfoo/vim-text-omnicomplete'
+        "---------------------------------------------------------------------------------- 
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+        Plug 'zchee/deoplete-clang'
+        "---------------------------------------------------------------------------------- 
+        Plug 'autozimu/LanguageClient-neovim', {
+                                \ 'branch': 'next',
+                                \ 'do': 'bash install.sh',
                                 \ }
 
-        " If ALE is used, there is little sense to leave diagnostics errors 
-        let g:LanguageClient_diagnosticsEnable = 0
-        let g:LanguageClient_rootMarkers = {
-        \ 'go': ['.git', 'go.mod'],
-        \ }
-        nnoremap <F7> :call LanguageClient_contextMenu()<CR>
-        nnoremap <silent> <c-]> :call LanguageClient#textDocument_definition()<CR>
-        nnoremap <silent> M :call LanguageClient#textDocument_hover()<CR>
 
 call plug#end()
-
-
 
 """""""""""""""""
 """ HappyEnd """"
 """""""""""""""""
-
-" ------------------
-
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-":::::::::::::::::::::::::::DEOSTART:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "==================================================================================
-        "-----COMPL-3----------------------------------------------------------------------
-        "==================================================================================
-        " set complete=.,w,b,t,i,u,kspell
-        " set completeopt=menu
-        " set completeopt=menuone,menu,longest,preview
-
-        " set completeopt+=menuone
-        " set completeopt+=noselect
-        " set completeopt+=noinsert
-
-        source ~/git/bTest/kDot/p1legoDeo.vim
-        "==================================================================================
-        "-----COMPL-4----------------------------------------------------------------------
-        "==================================================================================
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-":::::::::::::::::::::::::::DEOEND:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 
         "===VIM-SARTIFY-2==================================================================
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
@@ -1332,6 +1180,120 @@ call plug#end()
         let g:diminactive_buftype_blacklist = ['nofile', 'nowrite', 'acwrite', 'quickfix', 'help']
         "==================================================================================
 
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"::::::::::::::::::::::::::::DEO-START::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        let g:deoplete#enable_at_startup = 1
+        call deoplete#custom#option('refresh_always', v:true)
+        "call deoplete#custom#source('jedi', 'is_debug_enabled', 1)
+        "call deoplete#enable_logging('DEBUG', 'deoplete.log')
+        "-------------------------------------------------------------------------------- 
+        let g:deoplete#enable_ignore_case = 1
+        let g:deoplete#enable_smart_case = 1
+        let g:deoplete#enable_camel_case = 1
+        let g:deoplete#enable_refresh_always = 1
+        let g:deoplete#max_abbr_width = 0
+        let g:deoplete#max_menu_width = 0
+        "--------------------------------------------------------------------------------
+        let g:deoplete#sources#ternjs#timeout = 3
+        let g:deoplete#sources#ternjs#types = 1
+        let g:deoplete#sources#ternjs#docs = 1
+        call deoplete#custom#source('_', 'min_pattern_length', 3)
+        "--------------------------------------------------------------------------------
+        let g:deoplete#skip_chars = ['(', ')', '<', '>']
+        let g:deoplete#tag#cache_limit_size = 800000
+        let g:deoplete#file#enable_buffer_path = 1
+        "-------------------------------------------------------------------------------- 
+
+        let g:LanguageClient_serverCommands = {
+                                \ 'haskell': ['hie', '--lsp'],
+                                \ 'c': ['ccls', '--log-file=/tmp/ccls.log'],
+                                \ 'cpp': ['ccls', '--log-file=/tmp/ccls.log'],
+                                \ 'python': ['pyls', '--log-file=/tmp/pyls.log'],
+                                \ }
+
+        "---------------------------------------------------------------------------------- 
+        let g:deoplete#sources#jedi#statement_length = 30
+        let g:deoplete#sources#jedi#show_docstring = 1
+        let g:deoplete#sources#jedi#short_types = 1
+        "---------------------------------------------------------------------------------- 
+
+        "---------------Zelenski-----------------------------------------------------------
+        " If you want to trigger deoplete manually, see also
+        " deoplete-options-auto_complete, which should be 1 then
+        " set to 1 if you want to disable autocomplete
+        let g:deoplete#disable_auto_complete = 0
+        let g:deoplete#auto_complete_start_length=1
+        " let g:autocomplete_deoplete = 'deoplete'
+        "----------------------------------------------------------------------------------
+        " Plugin key-mappings.
+        inoremap <expr><C-g>     deoplete#undo_completion()
+        inoremap <expr><C-l>     deoplete#refresh()
+        " inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
+        inoremap <expr><C-k>     deoplete#smart_close_popup()
+        inoremap <C-space>     <Esc>a
+
+        " imap <expr> <C-Space>  deoplete#manual_complete()
+        "-------------------------------------------------------------------------------- 
+        autocmd! FileType python setlocal completeopt-=preview
+        "--------------------------------------------------------------------------------
+        autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
+        autocmd! FileType python setlocal omnifunc=jedi#completions
+        autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        autocmd! FileType ruby setlocal omnifunc=rubycomplete#Complete
+        autocmd! FileType haskell setlocal omnifunc=necoghc#omnifunc
+        "--------------------------------------------------------------------------------
+        set complete=.,w,b,t,i,u,kspell
+        "            | | | | | | |
+        "            | | | | | | `-dict
+        "            | | | | | `-unloaded buffers
+        "            | | | | `-include files
+        "            | | | `-tags
+        "            | | `-other loaded buffers
+        "            | `-windows buffers
+        "            `-the current buffer
+        "--------------------------------------------
+        "set complete+=ispell
+        "set completeopt=menuone,menu,longest,preview
+        set omnifunc=syntaxcomplete#Complete
+        set completeopt=menu
+        "--------------------------------------------------------------------------------
+        call deoplete#custom#source('neosnippet',    'rank', 690)
+        call deoplete#custom#source('ultisnips',     'rank', 680)
+        call deoplete#custom#source('padawan',       'rank', 660)
+        call deoplete#custom#source('go',            'rank', 650)
+        call deoplete#custom#source('vim',           'rank', 640)
+        call deoplete#custom#source('flow',          'rank', 630)
+        call deoplete#custom#source('TernJS',        'rank', 620)
+        call deoplete#custom#source('LanguageClient','rank', 610)
+        call deoplete#custom#source('jedi',          'rank', 600)
+        call deoplete#custom#source('tag',           'rank', 550)
+        call deoplete#custom#source('omni',          'rank', 500)
+        call deoplete#custom#source('member',        'rank', 500)
+        call deoplete#custom#source('file_include',  'rank', 420)
+        call deoplete#custom#source('file',          'rank', 410)
+        call deoplete#custom#source('around',        'rank', 330)
+        call deoplete#custom#source('buffer',        'rank', 320)
+        call deoplete#custom#source('dictionary',    'rank', 310)
+        call deoplete#custom#source('tmux-complete', 'rank', 300)
+        call deoplete#custom#source('syntax',        'rank', 200)
+        "--------------------------------------------------------------------------------
+        call deoplete#custom#source('LanguageClient','mark', 'langCl')
+        call deoplete#custom#source('omni',          'mark', 'omni')
+        call deoplete#custom#source('flow',          'mark', 'flow')
+        call deoplete#custom#source('TernJS',        'mark', 'tern')
+        call deoplete#custom#source('go',            'mark', 'go')
+        call deoplete#custom#source('jedi',          'mark', 'Jedi')
+        call deoplete#custom#source('vim',           'mark', 'vim')
+        call deoplete#custom#source('neosnippet',    'mark', 'neoSnp')
+        call deoplete#custom#source('around',        'mark', 'round')
+        call deoplete#custom#source('buffer',        'mark', 'Buf')
+        call deoplete#custom#source('tmux-complete', 'mark', 'tmux')
+        call deoplete#custom#source('syntax',        'mark', 'synt')
+        call deoplete#custom#source('member',        'mark', 'mmbr')
 
         "---!!!-???-----------------------------------------------------------
         let generate_tags=1
@@ -1344,6 +1306,10 @@ call plug#end()
         call unite#filters#matcher_default#use(['matcher_fuzzy'])
         call unite#filters#matcher_default#use(['matcher_fzf'])
 
+
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::::::::::::::::::::::DEO-END:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
         " source ~/git/bTest/kDot/k2MinFzfDeoLs.vim
          source ~/git/bTest/kDot/logoABB.vim
@@ -1361,11 +1327,11 @@ call plug#end()
         let ayucolor="dark"
         " let ayucolor="light"
         " let ayucolor="mirage"
-        source ~/git/bTest/kDot/p1legoHiCyan.vim
+        source ~/git/bTest/kDot/legoS7Cyan.vim
 
         silent! set complete& completeopt=menu infercase noshowfulltag
         "suppress intro message 
-        set shortmess+=c
+        "set shortmess+=c
         set shortmess+=I
 
         "----------------------------------------------------------------------------------
@@ -1803,7 +1769,8 @@ call plug#end()
         nnoremap \\ :<C-u>Unite -buffer-name=register register<CR>
         "---------------------------------------------------------------
         nnoremap <F6> :FFLines <C-r><C-w><CR> | wincmd p
-        " nnoremap <F7> :FFBLines <C-r><C-w><CR> | wincmd p
+        nnoremap <F7> :FFBLines <C-r><C-w><CR> | wincmd p
+
 
         noremap <F6> :call quickmenu#toggle(0)<cr>
         "==========================================================================================

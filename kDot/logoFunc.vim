@@ -147,19 +147,19 @@ endfunction
 command! -register MiniPy3 call MiniPy3()
 
 "===============================================================================================================
-function! ColorizeSignColumn()
-python << endpython
-import vim, struct, hashlib
-fname = vim.eval("expand('%:t')")
-hash_byte = hashlib.sha1(fname).hexdigest()[0]
-fname_color = struct.unpack('B', hash_byte)[0]
-vim.command(":hi SignColumn ctermbg={}".format(fname_color))
-vim.command("autocmd FileType python highlight ColorColumn ctermbg={}".format(fname_color))
-endpython
-endfunction
+" function! ColorizeSignColumn()
+" python << endpython
+" import vim, struct, hashlib
+" fname = vim.eval("expand('%:t')")
+" hash_byte = hashlib.sha1(fname).hexdigest()[0]
+" fname_color = struct.unpack('B', hash_byte)[0]
+" vim.command(":hi SignColumn ctermbg={}".format(fname_color))
+" vim.command("autocmd FileType python highlight ColorColumn ctermbg={}".format(fname_color))
+" endpython
+" endfunction
 
-command! CColorizeSignColumn call ColorizeSignColumn()
-autocmd BufEnter * :call ColorizeSignColumn()
+" command! CColorizeSignColumn call ColorizeSignColumn()
+" autocmd BufEnter * :call ColorizeSignColumn()
 "===============================================================================================================
 
 
