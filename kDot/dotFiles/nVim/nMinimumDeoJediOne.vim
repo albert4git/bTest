@@ -149,6 +149,11 @@ call plug#end()
                 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
         " }}}
 
+let g:LanguageClient_serverCommands = {
+  \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+  \ 'go': ['bingo'],
+  \ 'typescript': ['javascript-typescript-stdio'],
+  \ }
 "------------------------------------------------------------------------- 
         let g:LanguageClient_serverCommands = {
         \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],

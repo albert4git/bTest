@@ -40,7 +40,7 @@ call plug#begin('~/.config/nvim/plugged/')
         \ 'branch': 'next',
         \ 'do': 'bash install.sh',
         \ }
-    let g:LanguageClient_serverCommands = {
+    let g:languageclient_servercommands = {
                 \ 'vue': ['vls'],
                 \ 'rust': ['rls'],
                 \ }

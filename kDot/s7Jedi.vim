@@ -2,7 +2,24 @@
         "---------------------------------------------------------------------------------- 
 
         "---------------------------------------------------------------------------------- 
+        let g:LanguageClient_serverCommands = {
+        \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+        \ 'javascript': ['javascript-typescript-stdio'],
+        \ 'javascript.jsx': ['javascript-typescript-stdio'],
+        \ 'typescript': ['javascript-typescript-stdio'],
+        \ 'cpp': ['clangd'],
+        \ 'objc': ['clangd'],
+        \ 'c': ['clangd'],
+        \ 'objcpp': ['clangd']
+        \ }
 
+        noremap <silent> H :call LanguageClient_textDocument_hover()<CR>
+        noremap <silent> Z :call LanguageClient_textDocument_definition()<CR>
+        noremap <silent> R :call LanguageClient_textDocument_rename()<CR>
+        noremap <silent> S :call LanguageClient_textDocument_documentSymbol()<CR>
+
+        set omnifunc=LanguageClient#complete
+        set completefunc=LanguageClient#complete
         "---------------------------------------------------------------------------------- 
         " TESTING doesn't the "on" setting work?
         Plug 'ternjs/tern_for_vim', {

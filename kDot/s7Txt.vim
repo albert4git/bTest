@@ -1,4 +1,43 @@
+let g:airline_theme="base16"
+let g:airline_highlighting_cache=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#syntastic#enabled=0
+let g:airline#extensions#tagbar#enabled=0
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#displayed_head_limit=12
+let g:airline#extensions#branch#sha1_len=8
+let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
+let g:airline#extensions#taboo#enabled=1
+let g:airline#extensions#ale#enabled=0
+let g:airline#extensions#hunks#enabled=0
+
+let g:airline_powerline_fonts=0
+let g:airline_left_sep='▙'
+let g:airline_right_sep='▟'
+let g:airline_mode_map={
+if !exists('g:airline_symbols')
+    let g:airline_symbols={}
+let g:airline_symbols.spell='✓'
+let g:airline_section_z='%4l/%L'
 "==================================================================================
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+
+  return l:counts.total == 0 ? '✨ all good ✨' : printf(
+        \   '😞 %dW %dE',
+        \   all_non_errors,
+        \   all_errors
+        \)
+endfunction
+
+set statusline=
+set statusline+=%m
+set statusline+=\ %f
+set statusline+=%=
+set statusline+=\ %{LinterStatus()}
 "==================================================================================
 npm install sqlanywhere
 "==================================================================================
