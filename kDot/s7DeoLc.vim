@@ -2,7 +2,7 @@
 "= File: s7DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Fr 01 Nov 2019 06:26:38  CET
+" Lass Modified:      Sa 02 Nov 2019 03:23:14  CET
 "==================================================================================================
 "==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -303,29 +303,41 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'thinca/vim-quickrun'
         "---------------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
-        Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes'
-                let g:airline_theme='cool'
-                set showmode                "-Display the current mode
-                set showcmd                 "-Show partial commands in status line 
-                "--------------------------------------------------------------------------
-                let g:airline_section_c = '%{strftime("%Y %b %d %X")}'
-                let g:airline#extensions#tabline#enabled = 1
-                let g:airline#extensions#tabline#buffer_min_count = 1
+        "Plug 'vim-airline/vim-airline'
+        "Plug 'vim-airline/vim-airline-themes'
+        "        let g:airline_theme='cool'
+        "        set showmode                "-Display the current mode
+        "        set showcmd                 "-Show partial commands in status line 
+        "        "--------------------------------------------------------------------------
+        "        let g:airline_section_c = '%{strftime("%b %d %X")}'
+        "        let g:airline#extensions#tabline#enabled = 1
+        "        let g:airline#extensions#tabline#buffer_min_count = 1
+        "        "-----------------------------------------------------------
+        "        let g:airline#extensions#branch#enabled = 1
+        "        "-----------------------------------------------------------
+        "        let g:airline#extensions#tagbar#enabled=1
+        "        let g:airline#extensions#hunks#enabled=1
+        "        let g:airline#extensions#branch#displayed_head_limit=12
+        "        let g:airline#extensions#branch#sha1_len=8
+        "        let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
+        "        let g:airline#extensions#taboo#enabled=1
+        "        let g:airline#extensions#ale#enabled=1
                 "-----------------------------------------------------------
-                let g:airline#extensions#syntastic#enabled = 0
-                let g:airline#extensions#branch#enabled = 1
+                " let g:airline_powerline_fonts=1
+                " let g:airline_left_sep='▙'
+                " let g:airline_right_sep='▟'
                 "-----------------------------------------------------------
-                if !exists('g:airline_symbols')
-                        let g:airline_symbols = {}
-                endif
+                " if !exists('g:airline_symbols')
+                "         let g:airline_symbols = {}
+                " endif
         "---------------------------------------------------------------------------------- 
         hi statusline ctermbg=10 ctermfg=Black  cterm=bold guibg=custGreen 
         hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
 
+
         "---------------------------------------------------------------------------------- 
-        " Plug 'itchyny/lightline.vim'
-        " Plug 'yarisgutierrez/ayu-lightline'
+        Plug 'itchyny/lightline.vim'
+        Plug 'yarisgutierrez/ayu-lightline'
         " " \ 'colorscheme': 'molokai',
         " let g:lightline = {
         "                         \ 'active': {
@@ -337,6 +349,31 @@ call plug#begin('~/.config/nvim/plugged/')
         "                         \ },
         "                         \ }
         "---------------------------------------------------------------------------------- 
+
+        let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'readonly', 'filename', 'modified', 'method' ] ]
+        \ },
+        \ 'component_function': {
+        \   'method': 'NearestMethodOrFunction'
+        \ },
+        \ }
+
+
+        "---cox-light----------------------------------------------------------------------
+                let g:lightline = {
+                                \ 'colorscheme': 'molokai',
+                                \ 'active': {
+                                \   'left': [ [ 'mode', 'paste' ],
+                                \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+                                \ },
+                                \ 'component_function': {
+                                \   'cocstatus': 'coc#status',
+                                \   'currentfunction': 'CocCurrentFunction'
+                                \ },
+                                \ }
 
         "===COOL-BUNT======================================================================
         " Plug 'vim-airline/vim-airline'
@@ -1088,13 +1125,6 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'sunaku/vim-shortcut'
         "------------------------------------------------------------------------------------------
         Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
-        "------------------------------------------------------------------------------------------
-        Plug 'liuchengxu/vista.vim'
-        let g:vista_fzf_preview = ['right:50%']
-        let g:vista#renderer#icons = {
-                                \   "function": "\uf794",
-                                \   "variable": "\uf71b",
-                                \  }
 
         "------------------------------------------------------------------------------------------
         " Plug 'jacobsimpson/nvim-example-python-plugin'
@@ -1190,72 +1220,81 @@ call plug#begin('~/.config/nvim/plugged/')
         " bundle exec rackup
 
         Plug '907th/vim-auto-save'
-        Plug 'jeetsukumaran/vim-pythonsense'                                            " Python text objects
+        Plug 'jeetsukumaran/vim-pythonsense'    " Python text objects
+
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        "------------------------------------------------------------------------------------------
+        " Plug 'neoclide/coc-jedi', {'do': 'yarn install'}
+        "------------------------------------------------------------------------------------------
+        " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "------------------------------------------------------------------------------------------
+        "------------------------------------------------------------------------------------------
+        Plug 'liuchengxu/vista.vim'
+        let g:vista_fzf_preview = ['right:50%']
+        let g:vista#renderer#icons = {
+                                \   "function": "\uf794",
+                                \   "variable": "\uf71b",
+                                \  }
+
+        " let g:vista#executive#ctags#support_json_format = 1
+        let g:vista#executives = ['coc', 'ctags', 'lcn', 'vim_lsp']
+        let g:vista#executives = ['ale', 'coc', 'ctags', 'lcn', 'vim_lsp']
+        let g:vista_executive_for = {'typescript': 'coc', 'go': 'coc', 'c': 'coc', 'javascript': 'coc', 'html': 'coc', 'rust': 'coc', 'cpp': 'coc', 'css': 'coc', 'python': 'coc'}
+        let g:vista_icon_indent = ['╰─🞂 ', '├─🞂 ']
+
+        let g:vista_default_executive = 'ctags'
+        let g:vista_fzf_preview = ['right:50%']
+
         "---------------------------------------------------------------------------------- 
-        " Java-completion
-        " Plug 'junegunn/vim-javacomplete2', {'for': 'java'} " Load only for java files 
-        Plug 'artur-shaik/vim-javacomplete2'
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+        " Plug 'prabirshrestha/vim-lsp'
 
-
+        " if executable('pyls')
+        " " pip install python-language-server
+        " au User lsp_setup call lsp#register_server({
+        "         \ 'name': 'pyls',
+        "         \ 'cmd': {server_info->['pyls']},
+        "         \ 'whitelist': ['python'],
+        "         \ })
+        " endif
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "---------------------------------------------------------------------------------- 
         "----DEO-2------------------------------------------------------------------------- 
-        "---------------------------------------------------------------------------------- 
-        "-Plug 'cwfoo/vim-text-omnicomplete'
-        "---------------------------------------------------------------------------------- 
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-        Plug 'zchee/deoplete-clang'
-        "===================================================================================
-        Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-                let g:deoplete#sources#go#package_dot = 1
-                let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-        "===================================================================================
-        Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
-        Plug 'mkusher/padawan.vim'
-                let $PATH=$PATH . ':' . expand('~/.config/composer/vendor/bin/')
-                let g:padawan#composer_command = "/usr/bin/composer"
-
-        "=================================================================================
-        Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
-        Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-
-        "=================================================================================
-        Plug 'fishbullet/deoplete-ruby'
-        "Plug 'takkii/ruby-dictionary3'
-        Plug 'HerringtonDarkholme/deoplete-typescript'
-
-        "=================================================================================
-        Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
-        Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-                " Add extra filetypes
-                let g:tern#filetypes=['jsx', 'javascript.jsx', 'vue']
-                " Use tern_for_vim
-                let g:tern#command=['tern']
-                let g:tern#arguments=['--persistent']
-                " Include documentation strings (if found) in the result data
-                let g:deoplete#sources#ternjs#docs=1
-                " Use a case-insensitive compare
-                let g:deoplete#sources#ternjs#case_insensitive=1
-                " Sort the result set
-                let g:deoplete#sources#ternjs#sort=1
-                " Ignore JavaScript keywords when completing
-                let g:deoplete#sources#ternjs#include_keywords=0
-        "=================================================================================
-
-        "---------------------------------------------------------------------------------- 
-        Plug 'autozimu/LanguageClient-neovim', {
-                                \ 'branch': 'next',
-                                \ 'do': 'bash install.sh',
-                                \ }
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+         " source ~/git/bTest/kDot/s7PlugDeo.vim
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "----DEO-3------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
 call plug#end()
+
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+function! CocCurrentFunction()
+        return get(b:, 'coc_current_function', '')
+endfunction
+
+autocmd! FileType python setlocal omnifunc=coc#completions
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+set statusline+=%{NearestMethodOrFunction()}
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+" By default vista.vim never run if you don't call it explicitly.
+"
+" If you want to show the nearest function in your statusline automatically,
+" you can add the following line to your vimrc 
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 """""""""""""""""
 """ HappyEnd """"
 """""""""""""""""
-        " Java completion
-        autocmd FileType java setlocal omnifunc=javacomplete#Complete
-        autocmd FileType java JCEnable
-
         "===VIM-SARTIFY-2==================================================================
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
 
@@ -1264,174 +1303,42 @@ call plug#end()
         else
                 let entry_format .= '. entry_path'
         endif
-        "==================================================================================
-
         " hi ColorColumn    ctermbg=240
-        let DimInactiveSyntaxOn = 1
+        ":DimInactiveSyntaxOn 
         let g:diminactive_use_syntax = 1
         let g:diminactive_enable_focus = 1
         let g:diminactive_buftype_blacklist = ['nofile', 'nowrite', 'acwrite', 'quickfix', 'help']
         "==================================================================================
-        " Config Language Server
-
-        " let g:LanguageClient_serverCommands = {
-        "                         \ 'haskell': ['hie', '--lsp'],
-        "                         \ 'c': ['ccls', '--log-file=/tmp/ccls.log'],
-        "                         \ 'cpp': ['ccls', '--log-file=/tmp/ccls.log'],
-        "                         \ 'python': ['pyls', '--log-file=/tmp/pyls.log'],
-        "                         \ }
-
-        "===DEOPLETE-CLANG==========================================================================
-        let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-6.0/lib/libclang.so.1"
-        let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
-        let g:deoplete#sources#clang#sort_algo = 'priority' " alphabetical
-        "---------------------------------------------------------------------------------- 
-        let g:LanguageClient_serverCommands = {
-        \ 'cpp': ['clangd'],
-        \ 'c': ['ccls'],
-        \ 'python': ['pyls'],
-        \ 'go': ['bingo'],
-        \ 'ruby': ['solargraph', 'stdio'],
-        \ 'vue': ['vls'],
-        \ 'rust': ['rls'],
-        \ 'javascript.jsx': ['js-langserver', '--stdio'],
-        \ }
-        nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-
-        let g:LanguageClient_autoStart=1
-        " let g:LanguageClient_autoStop=1
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-"------------------------------------------------------------------------- 
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"::::::::::::::::::::::::::::DEO-START::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        let g:deoplete#enable_at_startup = 1
-        "call deoplete#custom#option('refresh_always', v:true)
-        "call deoplete#custom#source('jedi', 'is_debug_enabled', 1)
-        "call deoplete#enable_logging('DEBUG', 'deoplete.log')
-        "-------------------------------------------------------------------------------- 
-        let g:deoplete#enable_ignore_case = 1
-        let g:deoplete#enable_smart_case = 1
-        let g:deoplete#enable_camel_case = 1
-        let g:deoplete#enable_refresh_always = 1
-        let g:deoplete#max_abbr_width = 0
-        let g:deoplete#max_menu_width = 0
-        "--------------------------------------------------------------------------------
-        let g:deoplete#sources#ternjs#timeout = 3
-        let g:deoplete#sources#ternjs#types = 1
-        let g:deoplete#sources#ternjs#docs = 1
-        "--------------------------------------------------------------------------------
-        let g:deoplete#skip_chars = ['(', ')', '<', '>']
-        let g:deoplete#tag#cache_limit_size = 800000
-        let g:deoplete#file#enable_buffer_path = 1
-        "-------------------------------------------------------------------------------- 
-
-        let g:deoplete#sources#jedi#statement_length = 30
-        let g:deoplete#sources#jedi#show_docstring = 1
-        let g:deoplete#sources#jedi#short_types = 1
-        "---------------------------------------------------------------------------------- 
-
-        "---------------Zelenski-----------------------------------------------------------
-        " If you want to trigger deoplete manually, see also
-        " deoplete-options-auto_complete, which should be 1 then
-        " set to 1 if you want to disable autocomplete
-        let g:deoplete#disable_auto_complete = 0
-        let g:deoplete#auto_complete_start_length=1
-        call deoplete#custom#source('_', 'min_pattern_length', 1)
-        " let g:autocomplete_deoplete = 'deoplete'
-        "----------------------------------------------------------------------------------
-        " Plugin key-mappings.
-        inoremap <expr><C-g>     deoplete#undo_completion()
-        inoremap <expr><C-l>     deoplete#refresh()
-        " inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
-        inoremap <expr><C-k>     deoplete#smart_close_popup()
-        inoremap <C-space>     <Esc>a
-
-        " imap <expr> <C-Space>  deoplete#manual_complete()
-        "-------------------------------------------------------------------------------- 
-        autocmd! FileType python setlocal completeopt-=preview
-        "--------------------------------------------------------------------------------
-        autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-        autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd! FileType python setlocal omnifunc=jedi#completions
-        autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-        autocmd! FileType ruby setlocal omnifunc=rubycomplete#Complete
-        autocmd! FileType haskell setlocal omnifunc=necoghc#omnifunc
-        "--------------------------------------------------------------------------------
-        set complete=.,w,b,t,i,u,kspell
-        "            | | | | | | |
-        "            | | | | | | `-dict
-        "            | | | | | `-unloaded buffers
-        "            | | | | `-include files
-        "            | | | `-tags
-        "            | | `-other loaded buffers
-        "            | `-windows buffers
-        "            `-the current buffer
-        "--------------------------------------------
-        "set complete+=ispell
-        "set completeopt=menuone,menu,longest,preview
-        set omnifunc=syntaxcomplete#Complete
-        set completeopt=menu
-        "--------------------------------------------------------------------------------
-        call deoplete#custom#source('neosnippet',    'rank', 690)
-        call deoplete#custom#source('ultisnips',     'rank', 680)
-        call deoplete#custom#source('padawan',       'rank', 660)
-        call deoplete#custom#source('go',            'rank', 650)
-        call deoplete#custom#source('vim',           'rank', 640)
-        call deoplete#custom#source('flow',          'rank', 630)
-        call deoplete#custom#source('TernJS',        'rank', 620)
-        call deoplete#custom#source('LanguageClient','rank', 610)
-        call deoplete#custom#source('jedi',          'rank', 600)
-        call deoplete#custom#source('tag',           'rank', 550)
-        call deoplete#custom#source('omni',          'rank', 500)
-        call deoplete#custom#source('member',        'rank', 500)
-        call deoplete#custom#source('file_include',  'rank', 420)
-        call deoplete#custom#source('file',          'rank', 410)
-        call deoplete#custom#source('around',        'rank', 330)
-        call deoplete#custom#source('buffer',        'rank', 320)
-        call deoplete#custom#source('dictionary',    'rank', 310)
-        call deoplete#custom#source('tmux-complete', 'rank', 300)
-        call deoplete#custom#source('syntax',        'rank', 200)
-        "--------------------------------------------------------------------------------
-        call deoplete#custom#source('LanguageClient','mark', 'langCl')
-        call deoplete#custom#source('omni',          'mark', 'omni')
-        call deoplete#custom#source('flow',          'mark', 'flow')
-        call deoplete#custom#source('TernJS',        'mark', 'tern')
-        call deoplete#custom#source('go',            'mark', 'go')
-        call deoplete#custom#source('jedi',          'mark', 'Jedi')
-        call deoplete#custom#source('vim',           'mark', 'vim')
-        call deoplete#custom#source('neosnippet',    'mark', 'neoSnp')
-        call deoplete#custom#source('around',        'mark', 'round')
-        call deoplete#custom#source('buffer',        'mark', 'Buf')
-        call deoplete#custom#source('tmux-complete', 'mark', 'tmux')
-        call deoplete#custom#source('syntax',        'mark', 'synt')
-        call deoplete#custom#source('member',        'mark', 'mmbr')
-
-        "---!!!-???-----------------------------------------------------------
-        let generate_tags=1
-        "==========================================================================================
-        ":UniteResume, :UniteBookmarkAdd,
-        call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
-                                \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
-        "------------------------------------------------------------------------------------------
-        call unite#filters#sorter_default#use(['sorter_rank'])
-        call unite#filters#matcher_default#use(['matcher_fuzzy'])
-        call unite#filters#matcher_default#use(['matcher_fzf'])
-
 
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-":::::::::::::::::::::::::::DEO-END:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        let g:lsp_signs_enabled = 1
+        let g:lsp_diagnostics_echo_cursor = 1
+        let g:lsp_signs_error = {'text': '✗'}
+        let g:lsp_signs_warning = {'text': '‼', 'icon': '/path/to/some/icon'}
+        let g:lsp_signs_hint = {'icon': '/path/to/some/other/icon'}
+        let g:lsp_highlights_enabled = 0
+        let g:lsp_textprop_enabled = 0
+        let g:lsp_virtual_text_enabled = 0
+        let g:lsp_highlight_references_enabled = 1
+        highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
+        "==================================================================================
 
+
+        "==================================================================================
+
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::::::::::::::::::::::DEO-START:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        " source ~/git/bTest/kDot/s7legoDeo.vim
+        " source ~/git/bTest/kDot/s7OneLegoDeo.vim
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " source ~/git/bTest/kDot/k2MinFzfDeoLs.vim
          source ~/git/bTest/kDot/logoABB.vim
          source ~/git/bTest/kDot/logoFunc.vim
         "source ~/git/bTest/kDot/minFzfDeoLsJediSnip.vim
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::::::::::::::::::::::DEO-END:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "----------------------------------------------------------------------------------
         "-------CYAN---------------------old Stuck.chen------------------------------------
         "source mix/n-badwolf.vim 

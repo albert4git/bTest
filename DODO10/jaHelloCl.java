@@ -14,7 +14,7 @@ public class jaHelloCl
                 System.out.println("---");
                 System.out.println("ii");
                 System.out.println("void");
-                System.out.println("void");
+                System.out.printf("hallo");
         }
 
                 public jaHelloCl() {

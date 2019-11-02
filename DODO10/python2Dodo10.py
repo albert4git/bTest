@@ -29,6 +29,7 @@ def create_connection(db_file):
     rows = cur.fetchall()
     rows = cur.fetchall()
     rows = cur.fetchall()
+    rows = cur.fet
 
     for row in rows:
         print(row)

@@ -1,3 +1,54 @@
+https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python
+https://github.com/prabirshrestha/vim-lsp/wiki/Servers
+
+function! s:js_completor(opt, ctx) abort
+    let l:col = a:ctx['col']
+    let l:typed = a:ctx['typed']
+
+    let l:kw = matchstr(l:typed, '\v\S+$')
+    let l:kwlen = len(l:kw)
+
+    let l:startcol = l:col - l:kwlen
+
+    let l:matches = [
+        \ "do", "if", "in", "for", "let", "new", "try", "var", "case", "else", "enum", "eval", "null", "this", "true",
+        \ "void", "with", "await", "break", "catch", "class", "const", "false", "super", "throw", "while", "yield",
+        \ "delete", "export", "import", "public", "return", "static", "switch", "typeof", "default", "extends",
+        \ "finally", "package", "private", "continue", "debugger", "function", "arguments", "interface", "protected",
+        \ "implements", "instanceof"
+        \ ]
+
+    call asyncomplete#complete(a:opt['name'], a:ctx, l:startcol, l:matches)
+endfunction
+
+au User asyncomplete_setup call asyncomplete#register_source({
+    \ 'name': 'javascript',
+    \ 'whitelist': ['javascript'],
+    \ 'completor': function('s:js_completor'),
+    \ })
+
+"==================================================================================
+
+let g:ale_fixers = {
+\    'ruby': ['standardrb'],
+\}
+let g:ale_fix_on_save = 1
+
+let g:ale_linters = {
+      \   'ruby': ['standardrb', 'rubocop'],
+      \   'python': ['flake8', 'pylint'],
+      \   'javascript': ['eslint'],
+      \}
+" golsp or bingo 
+"==================================================================================
+$ git clone https://github.com/posquit0/vimrc ~/.vim
+$ ln -s .vim/vimrc .vimrc
+# If you use NeoVIM
+$ ln -s ~/.vim .config/nvim
+$ vim +PlugInstall +qall now
+"==================================================================================
+
+
 let g:airline_theme="base16"
 let g:airline_highlighting_cache=1
 let g:airline#extensions#tabline#enabled=1

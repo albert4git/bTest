@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.path as pth
 
 x = np.linspace(-np.pi, np.pi, 256)
 S, C = np.sin(x), np.cos(x)
@@ -7,10 +8,11 @@ S, C = np.sin(x), np.cos(x)
 plt.plot(x, S)
 plt.plot(x, C)
 plt.show()
-plt.sin()
 plt.six()
-plt.suptitle(t,k)
-plt.
+plt.suptitle(t, k)
+plt.switch_backend()
+plt.scatter(1, 2)
+plt.plot(x, y)
 
 
 class some_class(object):

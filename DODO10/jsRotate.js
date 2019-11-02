@@ -13,7 +13,6 @@
         if (document.pic.src=='http://localhost/test/pic1.png'){
 
                 document.pic.src='pic2.png';
-                docum
 
         } 
         else if (document.pic.src=='http://localhost/test/pic2.png'){
