@@ -2,12 +2,13 @@
 "= File: s7DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Sa 02 Nov 2019 03:23:14  CET
+" Lass Modified:      Di 05 Nov 2019 06:14:10  CET
 "==================================================================================================
 "==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
         "----------------------------------------------------------------------------------
         let $MYVIMRC='~/.config/nvim/init.vim'
+        command! Vimrc :vs $MYVIMRC
         "----------------------------------------------------------------------------------
         let g:python_host_prog = '/usr/bin/python2'
         let g:python3_host_prog = '/usr/bin/python3'
@@ -301,10 +302,22 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
         Plug 'tyru/capture.vim'
         Plug 'thinca/vim-quickrun'
+
         "---------------------------------------------------------------------------------- 
         "---------------------------------------------------------------------------------- 
         "Plug 'vim-airline/vim-airline'
         "Plug 'vim-airline/vim-airline-themes'
+        "" Plug 'ffanzhang/vim-airline-stopwatch'
+        "Plug 'Zuckonit/vim-airline-tomato'
+        "let g:airline_theme='cool'
+        "let g:tomato#interval = 60 * 20
+        "let g:tomato#show_clock = 1
+        "let g:tomato#remind = "☻" 
+        "let g:tomato#restinfo = "☺"
+        "let g:tomato#show_clock = 1
+        "let g:tomato#show_count_down = 1
+
+        "---------------------------------------------------------------------------------- 
         "        let g:airline_theme='cool'
         "        set showmode                "-Display the current mode
         "        set showcmd                 "-Show partial commands in status line 
@@ -322,22 +335,22 @@ call plug#begin('~/.config/nvim/plugged/')
         "        let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
         "        let g:airline#extensions#taboo#enabled=1
         "        let g:airline#extensions#ale#enabled=1
-                "-----------------------------------------------------------
-                " let g:airline_powerline_fonts=1
-                " let g:airline_left_sep='▙'
-                " let g:airline_right_sep='▟'
-                "-----------------------------------------------------------
-                " if !exists('g:airline_symbols')
-                "         let g:airline_symbols = {}
-                " endif
+                        "-----------------------------------------------------------
+                        " let g:airline_powerline_fonts=1
+                        " let g:airline_left_sep='▙'
+                        " let g:airline_right_sep='▟'
+                        "-----------------------------------------------------------
+                        " if !exists('g:airline_symbols')
+                        "         let g:airline_symbols = {}
+                        " endif
         "---------------------------------------------------------------------------------- 
         hi statusline ctermbg=10 ctermfg=Black  cterm=bold guibg=custGreen 
         hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
 
 
         "---------------------------------------------------------------------------------- 
-        Plug 'itchyny/lightline.vim'
-        Plug 'yarisgutierrez/ayu-lightline'
+        " Plug 'itchyny/lightline.vim'
+        " Plug 'yarisgutierrez/ayu-lightline'
         " " \ 'colorscheme': 'molokai',
         " let g:lightline = {
         "                         \ 'active': {
@@ -350,30 +363,37 @@ call plug#begin('~/.config/nvim/plugged/')
         "                         \ }
         "---------------------------------------------------------------------------------- 
 
-        let g:lightline = {
-        \ 'colorscheme': 'wombat',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'readonly', 'filename', 'modified', 'method' ] ]
-        \ },
-        \ 'component_function': {
-        \   'method': 'NearestMethodOrFunction'
-        \ },
-        \ }
+        "--DeoLSP-------------------------------------------------------------------------- 
+        " Plug 'itchyny/lightline.vim'
+        " Plug 'yarisgutierrez/ayu-lightline'
+        " let g:lightline = {
+        " \ 'colorscheme': 'wombat',
+        " \ 'active': {
+        " \   'left': [ [ 'mode', 'paste' ],
+        " \             [ 'readonly', 'filename', 'modified', 'method' ] ]
+        " \ },
+        " \ 'component_function': {
+        " \   'method': 'NearestMethodOrFunction'
+        " \ },
+        " \ }
+        "---------------------------------------------------------------------------------- 
 
 
-        "---cox-light----------------------------------------------------------------------
-                let g:lightline = {
-                                \ 'colorscheme': 'molokai',
-                                \ 'active': {
-                                \   'left': [ [ 'mode', 'paste' ],
-                                \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
-                                \ },
-                                \ 'component_function': {
-                                \   'cocstatus': 'coc#status',
-                                \   'currentfunction': 'CocCurrentFunction'
-                                \ },
-                                \ }
+        "---COX-light----------------------------------------------------------------------
+         Plug 'itchyny/lightline.vim'
+         Plug 'yarisgutierrez/ayu-lightline'
+         let g:lightline = {
+                         \ 'colorscheme': 'molokai',
+                         \ 'active': {
+                         \   'left': [ [ 'mode', 'paste' ],
+                         \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+                         \ },
+                         \ 'component_function': {
+                         \   'cocstatus': 'coc#status',
+                         \   'currentfunction': 'CocCurrentFunction'
+                         \ },
+                         \ }
+        "---------------------------------------------------------------------------------- 
 
         "===COOL-BUNT======================================================================
         " Plug 'vim-airline/vim-airline'
@@ -390,8 +410,11 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "---------------------------------------------------------------------------------- 
         "----Nice---Tabs------
-        " Plug 'ap/vim-buftabline'
-        " Plug 'zefei/vim-wintabs'
+        " Plug 'webdevel/tabulous'
+        " let tabulousLabelNameTruncate = 0
+        Plug 'itchyny/thumbnail.vim'
+        Plug 'ap/vim-buftabline'
+        "Plug 'zefei/vim-wintabs'
         " Plug 'zefei/vim-wintabs-powerline'
         "---------------------------------------------------------------------------------- 
         Plug 'skywind3000/vim-preview'
@@ -1184,6 +1207,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "==================================================================================
         let g:LanguageClient_diagnosticsDisplay=diagnosticsDisplaySettings
         Plug 'skywind3000/quickmenu.vim'
+        " Plug 'Timoses/vim-venu'
         "----------------------------------------------------------------------------------
         Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
         autocmd User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
@@ -1208,7 +1232,8 @@ call plug#begin('~/.config/nvim/plugged/')
         hi default link ClapPreview          ClapDefaultPreview
         hi default link ClapSelected         ClapDefaultSelected
         hi default link ClapCurrentSelection ClapDefaultCurrentSelection
-        "==========================================================================
+
+        "===================NewNovember2019=======================================================
         "---------------------------------------------------------------------------------- 
         " Plug 'rhysd/devdocs.vim'
         " nmap M <Plug>(devdocs-under-cursor)
@@ -1218,16 +1243,100 @@ call plug#begin('~/.config/nvim/plugged/')
         " bundle install
         " bundle exec thor docs:download --default
         " bundle exec rackup
+        "===!!!============================================================================
+        "Plug 'xerron/wordbyword.vim'
+        "Plug 'https://github.com/jsnal/vim-serape', { 'tag': 'v0.2.2' }
+        "===!!!============================================================================
+        "==================================================================================
+        "Plug '907th/vim-auto-save'
+        "let g:auto_save = 1
+        "===!!!============================================================================
 
-        Plug '907th/vim-auto-save'
-        Plug 'jeetsukumaran/vim-pythonsense'    " Python text objects
+        "===!!!=================================
+        "Python text objects
+        "Plug 'jeetsukumaran/vim-pythonsense' 
+        "Plug 'voldikss/vim-hello-word'
+        "===!!!=================================
+        Plug 'AndrewRadev/dsf.vim'
+        Plug 'lifepillar/vim-cheat40'
+        Plug 'dalance/vseq.vim'
+        Plug 'sk1418/HowMuch'
+        Plug 'sk1418/QFGrep'
+        Plug 'sk1418/Join'
+        Plug 'salsifis/vim-transpose'
+        Plug 'uguu-org/vim-matrix-screensaver'
+        Plug 'vim-scripts/TeTrIs.vim'
+        Plug 'vim-scripts/a.vim'
+        Plug 'machakann/vim-swap'
+                omap i, <Plug>(swap-textobject-i)
+                xmap i, <Plug>(swap-textobject-i)
+                omap a, <Plug>(swap-textobject-a)
+                xmap a, <Plug>(swap-textobject-a)
+        Plug 'pravj/vingvong'
+        " Plug 'cosminadrianpopescu/vim-sql-workbench'
+        "===!!!=================================
+
+        "Plug 'voldikss/vim-search-me'
+        "Plug 'waiting-for-dev/vim-www'
+        "Plug 'tyru/caw.vim'
+        "Plug 'rudrab/vimf90' 
+        "Plug 'idanarye/vim-merginal'
+        " Plug 'laurentgoudet/vim-howdoi.git'
+        "Plug 'jtmkrueger/vim-c-cr'
+        "===TYPESCRIPT==========================
+        "Plug 'HerringtonDarkholme/yats.vim'
+        "Plug 'moll/vim-node'
+        "Plug 'sareyko/neat.vim'
+        "--------------------------------------------------------------------------------- 
+        ":RUN 
+        "Plug 'sollidsnake/verun'
+        "Plug '5long/pytest-vim-compiler'
+        "Plug 'reinh/vim-makegreen'
+        "--------------------------------------------------------------------------------- 
+        "Plug 'nielsmadan/venom'
+        "Plug 'nielsmadan/mercury'
+        "Plug 'nielsmadan/yankee'
+        "--------------------------------------------------------------------------------- 
+
+        "--------------------------------------------------------------------------------- 
+        Plug 'justincampbell/vim-eighties'
+        let g:eighties_enabled = 1
+        let g:eighties_minimum_width = 70
+        " Increase this if you want some extra room
+        let g:eighties_extra_width = 0
+        " Disable this if you just want the minimum + extra
+        let g:eighties_compute = 1
+        " Defaults to [], 'fugitiveblame' is only an example. Takes a comma delimited list of bufnames as strings.
+        let g:eighties_bufname_additional_patterns = ['fugitiveblame']
+
+        "--------------------------------------------------------------------------------- 
+        "Plug 'dkarter/bullets.vim'
+        "let g:bullets_enabled_file_types = [
+        "\ 'markdown',
+        "\ 'text',
+        "\ 'scratch'
+        "\]
+
+        "---REST----------------------------------------------------------------------------
+        "Plug 'jaxbot/browserlink.vim'
+        "Plug 'notalex/vim-run-live'
+        "Plug 'openuado/vimtips-fortune'
+        "Plug 'twe4ked/vim-diff-toggle'
+        "Plug 'szw/vim-dict'
+        "Plug 'hsitz/PyScratch'
+        "Plug 'amdt/vim-niji'
+        "--------------------------------------------------------------------------------- 
+        Plug 'hallison/vim-rdoc'
+        Plug 'msbmsb/stem-search.vim'
+        Plug 'bronson/vim-trailing-whitespace'
+        Plug 'mivok/vimtodo'
 
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         "------------------------------------------------------------------------------------------
         " Plug 'neoclide/coc-jedi', {'do': 'yarn install'}
         "------------------------------------------------------------------------------------------
-        " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+        Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "------------------------------------------------------------------------------------------
@@ -1242,7 +1351,8 @@ call plug#begin('~/.config/nvim/plugged/')
         " let g:vista#executive#ctags#support_json_format = 1
         let g:vista#executives = ['coc', 'ctags', 'lcn', 'vim_lsp']
         let g:vista#executives = ['ale', 'coc', 'ctags', 'lcn', 'vim_lsp']
-        let g:vista_executive_for = {'typescript': 'coc', 'go': 'coc', 'c': 'coc', 'javascript': 'coc', 'html': 'coc', 'rust': 'coc', 'cpp': 'coc', 'css': 'coc', 'python': 'coc'}
+        let g:vista_executive_for = {'php': 'coc', 'java': 'coc', 'typescript': 'coc', 'go': 'coc', 'c': 'coc', 'javascript': 'coc', 'html': 'coc', 'rust': 'coc', 'cpp': 'coc', 'css': 'coc', 'python': 'coc'}
+
         let g:vista_icon_indent = ['╰─🞂 ', '├─🞂 ']
 
         let g:vista_default_executive = 'ctags'
@@ -1271,12 +1381,76 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------- 
 call plug#end()
 
+"""""""""""""""""
+""" HappyEnd1""""
+"""""""""""""""""
+
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    " Plugin Config - coc.nvim {{{ "
+        " Remap keys for gotos
+        "nmap <silent> gd <Plug>(coc-definition)
+        "nmap <silent> gy <Plug>(coc-type-definition)
+        "nmap <silent> gi <Plug>(coc-implementation)
+        "nmap <silent> gr <Plug>(coc-references)
+        "vmap <silent> gf <Plug>(coc-format-selected)
+        "-Remap for rename current word
+        "nmap gm <Plug>(coc-rename)
+        "-Show documentation in preview window
+        "nmap <silent> gh :call CocAction('doHover')<CR>
+        "nmap <silent> gc :CocList diagnostics<CR>
+        "nmap <silent> go :CocList outline<CR>
+        "nmap <silent> gs :CocList -I symbols<CR>
+
+    " }}} Plugin Config - coc.nvim "
+
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+let g:dsf_no_mappings = 1
+nmap dsf <Plug>DsfDelete
+nmap csf <Plug>DsfChange
+nmap dsnf <Plug>DsfNextDelete
+nmap csnf <Plug>DsfNextChange
+omap af <Plug>DsfTextObjectA
+xmap af <Plug>DsfTextObjectA
+omap if <Plug>DsfTextObjectI
+xmap if <Plug>DsfTextObjectI
+
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+" map tr :call airline#extensions#stopwatch#run()<CR>
+" map tp :call airline#extensions#stopwatch#split()<CR>
+" map ts :call airline#extensions#stopwatch#stop()<CR>
+" map tt :call airline#extensions#stopwatch#reset()<CR>
+" map ty :call airline#extensions#stopwatch#summary()<CR>
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 function! CocCurrentFunction()
         return get(b:, 'coc_current_function', '')
 endfunction
 
+autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"--------------------------------------------------------------------------------- 
 autocmd! FileType python setlocal omnifunc=coc#completions
+" autocmd FileType python setlocal omnifunc=lsp#complete
+" autocmd! FileType typescript setlocal omnifunc=coc#completions
+" autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd! FileType python setlocal omnifunc=jedi#completions
+"--------------------------------------------------------------------------------- 
+autocmd! FileType python setlocal completeopt+=preview
+autocmd! FileType python setlocal completeopt+=menu,preview
+autocmd! FileType typescript setlocal completeopt+=menu,preview
+"--------------------------------------------------------------------------------- 
+
+autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd! FileType java setlocal omnifunc=javacomplete#Complete
+autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd! FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd! FileType haskell setlocal omnifunc=necoghc#omnifunc
+"--------------------------------------------------------------------------------- 
+
+let g:asyncomplete_auto_popup = 0
+imap <c-space> <Plug>(asyncomplete_force_refresh)
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 function! NearestMethodOrFunction() abort
@@ -1293,7 +1467,7 @@ set statusline+=%{NearestMethodOrFunction()}
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
 """""""""""""""""
-""" HappyEnd """"
+""" HappyEnd2""""
 """""""""""""""""
         "===VIM-SARTIFY-2==================================================================
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
@@ -1360,6 +1534,8 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
         "----------------------------------------------------------------------------------
         "::::::CYAN::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        source ~/git/bTest/kDot/myPlug/fliplr.vim
+        source ~/git/bTest/kDot/myPlug/increment.vim
         "----------------------------------------------------------------------------------
         "-source ~/git/bTest/kDot/myPlug/nHydra.vim
         "------------------------------------------------------
@@ -1522,7 +1698,6 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
         nnoremap EE :source $MYVIMRC<CR>
         nnoremap BB ggVG
         nnoremap CC ggVG"+y
-        "==========================================================================================
         "==========================================================================================
         nnoremap ;e :ls<cr>:b<space>
         "==========================================================================================
@@ -2381,4 +2556,19 @@ let g:which_key_map.7 = {
       \ 'l' : 'open-locationlist',
       \ }
 
+
+" linux 
 "===============================================================================================================
+
+let g:vimrcversion= 7
+:au VimEnter * echo "VIMRC v"g:vimrcversion
+"===============================================================================================================
+nnoremap <F2> :exe getline(".")<CR>
+vnoremap <F2> :<C-w>exe join(getline("'<","'>"),'<Bar>')<CR>
+"===============================================================================================================
+" Type <Leader>s to trig searching in normal mode
+nmap <silent> <Leader>s <Plug>SearchNormal
+" Type <Leader>s to search selected text in visual mode
+vmap <silent> <Leader>s <Plug>SearchVisual
+" Type <Leader>S to input the text you want to search in the cmdline
+nmap <silent> <Leader>S <Plug>SearchComand

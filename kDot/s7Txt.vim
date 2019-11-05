@@ -1,5 +1,84 @@
+
+
+
+
+:nmap <F2> "=strftime('%c')<C-M>p
+:imap <F2> <C-R>=strftime('%c')<C-M>
+" generate Number sequ 
+put =map(range(1,150), 'printf(''%04d'', v:val)')
+for i in range(1,10) | put ='192.168.0.'.i | endfor
+
+193.168.0.1
+0192.168.0.2
+0192.168.0.3
+0192.168.0.4
+0211.168.0.5
+
+0
+1
+2
+3
+4
+5
+6
+
+"--------------------------------------------------------------------------------- 
+" Add argument (can be negative, default 1) to global variable i.
+" Return value of i before the change.
+function Inc(...)
+  let result = g:i
+  let g:i += a:0 > 0 ? a:1 : 1
+  return result
+endfunction
+
+Suppose you want to replace each occurrence of "abc" with "xyz_N"
+where N is an ascending number (xyz_1, xyz_2, xyz_3, and so on).
+
+:let i = 1 | %s/abc/\='xyz_' . Inc()/g
+
+
+For another example, the following command replaces each occurrence of "abc" with a number
+that increases by 5, starting at 100 (the numbers will be 100, 105, 110, and so on):
+
+:let i=100 | :%s/abc/\=Inc(5)/g
+
+"--------------------------------------------------------------------------------- 
+
+
+"--------------------------------------------------------------------------------- 
+
+
+
+"--------------------------------------------------------------------------------- 
+https://github.com/Quramy/tsuquyomi
+
 https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python
 https://github.com/prabirshrestha/vim-lsp/wiki/Servers
+
+
+        "Plug 'endel/vim-github-colorscheme'
+
+        Plug 'kshenoy/vim-origami'
+        " `<count>Za`  Align all folds of level 'count'
+        "         `ZA`  Align all folds
+        " `<count>ZF`  Insert a start foldmarker of level 'count' at the end of line and comment it
+        " `<count>Zf`  Insert a start foldmarker of level 'count' at the end of line but don't comment it
+        " `<count>ZC`  Insert an end  foldmarker of level 'count' at the end of line and comment it
+        " `<count>Zc`  Insert an end  foldmarker of level 'count' at the end of line but don't comment it
+        "         `ZD`  Delete the foldmarker from the line
+        "==========================================================================================
+        let g:OrigamiMap = {
+                \ 'Leader'           : "Z",
+                \ 'Align'            : "Z",
+                \ 'AlignAll'         : "A",
+                \ 'CommentedOpen'    : "F",
+                \ 'UncommentedOpen'  : "f",
+                \ 'CommentedClose'   : "C",
+                \ 'UncommentedClose' : "c",
+                \ 'Delete'           : "D",
+                \ }
+
+"--------------------------------------------------------------------------------- 
 
 function! s:js_completor(opt, ctx) abort
     let l:col = a:ctx['col']
