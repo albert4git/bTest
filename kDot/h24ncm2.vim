@@ -1,5 +1,6 @@
 " Plugins
-call plug#begin('~/.local/share/nvim/25plugged')
+" call plug#begin('~/.local/share/nvim/25plugged')
+call plug#begin('~/.config/nvim/plugged/')
 
 " Theme
 Plug 'joshdick/onedark.vim'             " one dark theme

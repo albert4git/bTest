@@ -159,11 +159,20 @@ alias h2='402nv.app  -u ~/git/bTest/kDot/h2HunterLc.vim'
 alias h2de='deonvim  -u ~/git/bTest/kDot/h2HunterLc.vim'
 alias h500='500nv.app  -u ~/git/bTest/kDot/h2HunterLc.vim'
 alias h50='50nv  -u ~/git/bTest/kDot/h2HunterLc.vim'
+
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
-
+alias h40='deonvim  -u ~/git/bTest/kDot/h40tasty.vim'
+alias h39='deonvim  -u ~/git/bTest/kDot/h39cocGT.vim'
+# alias h38='deonvim  -u ~/git/bTest/kDot/h38cocTern.vim'
+alias h37='deonvim  -u ~/git/bTest/kDot/h37cocList.vim'
+alias h36='deonvim  -u ~/git/bTest/kDot/h36coc.vim'
+alias h35='deonvim  -u ~/git/bTest/kDot/h35cocList.vim'
+alias h34='deonvim  -u ~/git/bTest/kDot/h34coc.vim'
+alias h33c='deonvim  -u ~/git/bTest/kDot/h33coc.vim'
+alias h33d='deonvim  -u ~/git/bTest/kDot/h33deopl.vim'
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias h32='deonvim  -u ~/git/bTest/kDot/h32deo.vim'
 alias h31='deonvim  -u ~/git/bTest/kDot/h31YCM.vim'
@@ -210,6 +219,9 @@ alias s6='402nv.app  -u ~/git/bTest/kDot/s6DeoLc.vim'
 alias s7='402nv.app  -u ~/git/bTest/kDot/s7DeoLc.vim' 
 alias s70='deonvim  -u ~/git/bTest/kDot/s7DeoLc.vim' 
 
+alias s8='402nv.app  -u ~/git/bTest/kDot/s8DeoLc.vim' 
+alias s9='402nv.app  -u ~/git/bTest/kDot/s9DeoLc.vim' 
+alias s10='402nv.app  -u ~/git/bTest/kDot/s10DeoLc.vim' 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias p1='500nv.app  -u ~/git/bTest/kDot/p1Deo.vim' 
 alias p2='50nv  -u ~/git/bTest/kDot/p1Deo.vim' 

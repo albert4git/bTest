@@ -6,13 +6,13 @@ x = np.linspace(-np.pi, np.pi, 256)
 S, C = np.sin(x), np.cos(x)
 
 plt.plot(x, S)
-plt.plot(x, C)
 plt.show()
 plt.six()
 plt.suptitle(t, k)
 plt.switch_backend()
 plt.scatter(1, 2)
 plt.plot(x, y)
+plt.scatter(2)
 
 
 class some_class(object):

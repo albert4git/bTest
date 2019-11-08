@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.pylab as plb
 import matplotlib.path as pth
 import matplotlib.compat as cmp
+import matplotlib.pi as Pii
 
 x = np.linspace(-np.pi, np.pi, 256)
 S, C = np.sin(x), np.cos(x)
@@ -9,32 +10,19 @@ y = np.lexsort(k, a)
 
 plt.sin()
 plt.plot()
-plt.scatter(x, y, s, m)
+plt.scatter(x, y, m)
 plt.sci(x)
 plt.semilogy()
 plt.semilogx()
-plt.sca()
-plt.sci(im)
-plt.semilogx(x, y)
 plt.silent_list(1)
 plt.sci(2)
-plt.sca(1)
 plt.scatter(1, 3, 4)
-plt.scatter(1 , 2)
-plt.scatter(1 , 2, 4)
 plt.savefig(1, 2)
 plt.stackplot(1, 3)
 plt.savefig(1, 0)
-plt.scatter(1, 0)
-
-
-
-
-
-
-
-
-
+plt.silent_list(1, 2)
+plt.scatter(2, 3)
+plt.sca(3)
 
 
 #=================================================================================

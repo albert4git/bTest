@@ -1,114 +1,24 @@
 {
-        /* "coc.preferences.hoverTarget": "echo", */
-        /* "coc.preferences.enableFloatHighlight": false, */
-        "coc.preferences.formatOnType": true,
-        "coc.preferences.formatOnSaveFiletypes": [
-                "go",
-                "typescript",
-                "json",
-                "jsonc"
-        ],
-        "suggest.timeout": 5000,
-        "suggest.autoTrigger": "trigger",
-        "prettier.printWidth": 160,
-        "prettier.singleQuote": true,
-        "codeLens.enable": true,
-        "diagnostic.virtualText": true,
-        "diagnostic.checkCurrentLine": true,
-        "git.addGlameToVirtualText": true,
-        "signature.target": "echo",
-        "snippets.extends": {
-                "javascriptreact": [
-                        "javascript"
-                ],
-                "typescript": [
-                        "javascript"
-                ]
-        },
-        "suggest.completionItemKindLabels": {
-                "keyword": "\uf1de",
-                "variable": "\ue79b",
-                "value": "\uf89f",
-                "operator": "\u03a8",
-                "function": "\u0192",
-                "reference": "\ufa46",
-                "constant": "\uf8fe",
-                "method": "\uf09a",
-                "struct": "\ufb44",
-                "class": "\uf0e8",
-                "interface": "\uf417",
-                "text": "\ue612",
-                "enum": "\uf435",
-                "enumMember": "\uf02b",
-                "module": "\uf40d",
-                "color": "\ue22b",
-                "property": "\ue624",
-                "field": "\uf9be",
-                "unit": "\uf475",
-                "event": "\ufacd",
-                "file": "\uf723",
-                "folder": "\uf114",
-                "snippet": "\ue60b",
-                "typeParameter": "\uf728",
-                "default": "\uf29c"
-        },
-        "list.normalMappings": {
-                "<C-c>": "do:exit"
-        },
-        "list.insertMappings": {
-                "<C-c>": "do:exit"
-        },
-        "languageserver": {
-                "efm": {
-                        /* go get github.com/mattn/efm-langserver */
-                        /* yarn global add markdownlint-cli */
-                        /* pip3 install yamllint */
-                        "command": "efm-langserver",
-                        "filetypes": [
-                                "markdown",
-                                "yaml"
-                        ]
-                },
-                "dart": {
-                        "command": "dart",
-                        "args": [
-                                "/usr/local/opt/dart/libexec/bin/snapshots/analysis_server.dart.snapshot",
-                                "--lsp"
-                        ],
-                        "filetypes": [
-                                "dart"
-                        ]
-                },
-                "ccls": {
-                        "command": "ccls",
-                        "filetypes": [
-                                "c",
-                                "cpp",
-                                "cuda",
-                                "objc",
-                                "objcpp"
-                        ],
-                        "rootPatterns": [
-                                "compile_commands.json",
-                                ".ccls",
-                                ".root",
-                                ".git/"
-                        ],
-                        "initializationOptions": {
-                                "cacheDirectory": "/tmp/ccls"
-                        }
-                },
-                "bash": {
-                        "command": "bash-language-server",
-                        "filetypes": [
-                                "sh"
-                        ],
-                        "args": [
-                                "start"
-                        ],
-                        "ignoredRootPaths": [
-                                "~"
-                        ]
-                }
-        }
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact"
+  ],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "signature.target": "echo",
+  "diagnostic.messageTarget": "echo",
+  "coc.preferences.hoverTarget": "echo",
+  "diagnostic.virtualText": true,
+  "diagnostic.errorSign": "E",
+  "diagnostic.warningSign": "W",
+  "diagnostic.infoSign": "I"
 }

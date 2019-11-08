@@ -1,58 +1,28 @@
 
+        " Set the executive for some filetypes explicitly. Use the explicit executive
+        " instead of the default one for these filetypes when using `:Vista` without
+        " specifying the executive.
+        let g:vista_executive_for = {
+        \ 'cpp': 'vim_lsp',
+        \ 'php': 'vim_lsp',
+        \ }
+
+        " Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
+        let g:vista#renderer#enable_icon = 1
+
+        " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
+        let g:vista#renderer#icons = {
+        \   "function": "\uf794",
+        \   "variable": "\uf71b",
+        \  }
+
+        "--------------------------------------------------------------------------------- 
 
 
-        "---------------------------------------------------------------------------------- 
-        " \ 'colorscheme': 'monokai_tasty',
-        " \ 'colorscheme': 'Tomorrow_Night_Eighties',
-        " \ 'colorscheme': 'monokai_tasty',
-        " \ 'colorscheme': 'monokai_tasty',
-        "---------------------------------------------------------------------------------- 
-        " let s:p.tabline.tabsel = [ [ s:base3, s:base03 ] ]
-        "---------------------------------------------------------------------------------- 
-
-        " let g:lightline = {
-        " \ 'active': {
-        " \   'left': [ [ 'mode', 'paste' ],
-        " \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-        " \ },
-        " \ 'component_function': {
-        " \   'cocstatus': 'coc#status',
-        " \   'gitbranch': 'fugitive#head'
-        " \ },
-        " \ 'subseparator': {
-        " \   'left': '',
-        " \   'right': ''
-        " \ }
-        " \ }
-
-
-        " \ 'separator': {
-        " \   'left': '',
-        " \   'right': ''
-        " \ },
-
-        " let g:lightline.colorscheme = 'deus_beta_dark'
-        " let g:lightline.colorscheme = 'space_vim_dark'
-        " let g:lightline.colorscheme = 'Tomorrow_Night_Eighties'
-
-
-        let g:lightline.active = {
-                                \ 'left': [ [ 'mode', 'paste' ],
-                                \           [ 'readonly', 'filename', 'modified' ] ],
-                                \ 'right': [ [ 'lineinfo' ],
-                                \            [ 'percent' ],
-                                \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
-        let g:lightline.inactive = {
-                                \ 'left': [ [ 'filename' ] ],
-                                \ 'right': [ [ 'lineinfo' ],
-                                \            [ 'percent' ] ] }
-        let g:lightline.tabline = {
-                                \ 'left': [ [ 'tabs' ] ],
-                                \ 'right': [ [ 'close' ] ] }
-
-        let g:lightline.tab = {
-                                \ 'active': [ 'tabnum', 'filename', 'modified' ],
-                                \ 'inactive': [ 'tabnum', 'filename', 'modified' ] }
+  "diagnostic.errorSign": "cER",
+  "diagnostic.warningSign": "cWR",
+  "diagnostic.infoSign": "cIn",
+  "diagnostic.virtualText": true
 
 
 :nmap <F2> "=strftime('%c')<C-M>p
@@ -67,13 +37,6 @@ for i in range(1,10) | put ='192.168.0.'.i | endfor
 0192.168.0.4
 0211.168.0.5
 
-0
-1
-2
-3
-4
-5
-6
 
 "--------------------------------------------------------------------------------- 
 " Add argument (can be negative, default 1) to global variable i.

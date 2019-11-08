@@ -2,7 +2,7 @@
 " => Plug
 """"""""""""""""""""""""""""
 
-call plug#begin('$HOME/.config/nvim/25plugged')
+call plug#begin('~/.config/nvim/plugged/')
 Plug 'https://github.com/SirVer/ultisnips'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/dhruvasagar/vim-table-mode'

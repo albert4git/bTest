@@ -18,6 +18,7 @@
         else if (document.pic.src=='http://localhost/test/pic2.png'){
 
                 document.pic.src='pic1.png';
+                doc
         }
 }
 

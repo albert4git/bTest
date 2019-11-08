@@ -23,13 +23,12 @@ def create_connection(db_file):
         conn = sqlite3.connect(db_file)
         # konn = sqlite3.connect('db_file'")
     # cur.execute(select * from table)
-    cur.execute("SELECT ")
-    cur.exe
+    cur.execute("SELECT * ")
 
     rows = cur.fetchall()
     rows = cur.fetchall()
     rows = cur.fetchall()
-    rows = cur.fet
+    rows = cur.fetchall()
 
     for row in rows:
         print(row)
@@ -43,9 +42,9 @@ def select_task_by_priority(conn, priority):
     :return:
     """
     cur = conn.cursor()
+    cur = conn.cursor()
 
     cur.execute("SELECT * FROM COMPANY WHERE ID=?", (priority, ))
-    cur.execute()
 
     rows = cur.fetchall()
 

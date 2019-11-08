@@ -1,59 +1,6 @@
 
 
 
-        "---------------------------------------------------------------------------------- 
-        " \ 'colorscheme': 'monokai_tasty',
-        " \ 'colorscheme': 'Tomorrow_Night_Eighties',
-        " \ 'colorscheme': 'monokai_tasty',
-        " \ 'colorscheme': 'monokai_tasty',
-        "---------------------------------------------------------------------------------- 
-        " let s:p.tabline.tabsel = [ [ s:base3, s:base03 ] ]
-        "---------------------------------------------------------------------------------- 
-
-        " let g:lightline = {
-        " \ 'active': {
-        " \   'left': [ [ 'mode', 'paste' ],
-        " \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-        " \ },
-        " \ 'component_function': {
-        " \   'cocstatus': 'coc#status',
-        " \   'gitbranch': 'fugitive#head'
-        " \ },
-        " \ 'subseparator': {
-        " \   'left': '',
-        " \   'right': ''
-        " \ }
-        " \ }
-
-
-        " \ 'separator': {
-        " \   'left': '',
-        " \   'right': ''
-        " \ },
-
-        " let g:lightline.colorscheme = 'deus_beta_dark'
-        " let g:lightline.colorscheme = 'space_vim_dark'
-        " let g:lightline.colorscheme = 'Tomorrow_Night_Eighties'
-
-
-        let g:lightline.active = {
-                                \ 'left': [ [ 'mode', 'paste' ],
-                                \           [ 'readonly', 'filename', 'modified' ] ],
-                                \ 'right': [ [ 'lineinfo' ],
-                                \            [ 'percent' ],
-                                \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
-        let g:lightline.inactive = {
-                                \ 'left': [ [ 'filename' ] ],
-                                \ 'right': [ [ 'lineinfo' ],
-                                \            [ 'percent' ] ] }
-        let g:lightline.tabline = {
-                                \ 'left': [ [ 'tabs' ] ],
-                                \ 'right': [ [ 'close' ] ] }
-
-        let g:lightline.tab = {
-                                \ 'active': [ 'tabnum', 'filename', 'modified' ],
-                                \ 'inactive': [ 'tabnum', 'filename', 'modified' ] }
-
 
 :nmap <F2> "=strftime('%c')<C-M>p
 :imap <F2> <C-R>=strftime('%c')<C-M>

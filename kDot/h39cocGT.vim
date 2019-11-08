@@ -1,10 +1,10 @@
-
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+
+call plug#begin('~/.config/nvim/plugged/')
 
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-obsession'
