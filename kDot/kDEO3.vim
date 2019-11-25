@@ -847,7 +847,6 @@ call plug#end()
         "==================================================================================
         "----------------------------------------------------------------------------------
         let g:jedi#use_splits_not_buffers = "left"
-        let g:jedi#popup_on_dot = 0
         "----------------------------------------------------------------------- 
         let g:jedi#goto_command = "<leader>d"
         let g:jedi#goto_assignments_command = "<leader>g"
@@ -858,11 +857,12 @@ call plug#end()
         let g:jedi#rename_command = "<leader>r"
         let g:jedi#completions_command = "<C-z>"
         "let g:jedi#completions_command = "<C-Space>"
-        let g:jedi#popup_on_dot = 1
-        let g:jedi#completions_enabled = 1
         let g:jedi#popup_select_first = 1
         let g:jedi#show_call_signatures = "1"
         let g:jedi#goto_command = "gt"
+
+        let g:jedi#completions_enabled = 1
+        let g:jedi#popup_on_dot = 1
         let g:jedi#auto_close_doc = 0  " close preview window after completion
         "::::::::::::::::::::::-=<1>=-:::::::::::::::::::::::::::::::::::::::::::::::::::::
         let g:deoplete#enable_at_startup = 1

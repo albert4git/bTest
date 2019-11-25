@@ -1,4 +1,33 @@
 
+" Type <Leader>s to trig searching in normal mode
+nmap <silent> <Leader>s <Plug>SearchNormal
+" Type <Leader>s to search selected text in visual mode
+vmap <silent> <Leader>s <Plug>SearchVisual
+" Type <Leader>S to input the text you want to search in the cmdline
+nmap <silent> <Leader>S <Plug>SearchComand
+
+"--------------------------------------------------------------------------------- 
+command! -nargs=0 Tsc    :CocCommand tsserver.watchBuild
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+" let g:asyncomplete_auto_popup = 0
+" imap <c-space> <Plug>(asyncomplete_force_refresh)
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+        "==================================================================================
+        let g:lsp_signs_enabled = 1
+        let g:lsp_diagnostics_echo_cursor = 1
+        let g:lsp_signs_error = {'text': '✗'}
+        let g:lsp_signs_warning = {'text': '‼', 'icon': '/path/to/some/icon'}
+        let g:lsp_signs_hint = {'icon': '/path/to/some/other/icon'}
+        let g:lsp_highlights_enabled = 0
+        let g:lsp_textprop_enabled = 0
+        let g:lsp_virtual_text_enabled = 0
+        let g:lsp_highlight_references_enabled = 1
+        highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
+        "==================================================================================
+
+
         " Set the executive for some filetypes explicitly. Use the explicit executive
         " instead of the default one for these filetypes when using `:Vista` without
         " specifying the executive.
@@ -67,9 +96,9 @@ that increases by 5, starting at 100 (the numbers will be 100, 105, 110, and so 
 
 "--------------------------------------------------------------------------------- 
 https://github.com/Quramy/tsuquyomi
-
 https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python
 https://github.com/prabirshrestha/vim-lsp/wiki/Servers
+"--------------------------------------------------------------------------------- 
 
 
         "Plug 'endel/vim-github-colorscheme'
@@ -635,3 +664,96 @@ endfunction
         " - Editing HTML
         " - Bookmark files, directories, URLs
         "--------------------------------------------------------------------------------- 
+
+        "----------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        "Plug 'vim-airline/vim-airline'
+        "Plug 'vim-airline/vim-airline-themes'
+        "" Plug 'ffanzhang/vim-airline-stopwatch'
+        "Plug 'Zuckonit/vim-airline-tomato'
+        "let g:airline_theme='cool'
+        "let g:tomato#interval = 60 * 20
+        "let g:tomato#show_clock = 1
+        "let g:tomato#remind = "☻"
+        "let g:tomato#restinfo = "☺"
+        "let g:tomato#show_clock = 1
+        "let g:tomato#show_count_down = 1
+
+        "----------------------------------------------------------------------------------
+        "        let g:airline_theme='cool'
+        "        set showmode                "-Display the current mode
+        "        set showcmd                 "-Show partial commands in status line
+        "        "--------------------------------------------------------------------------
+        "        let g:airline_section_c = '%{strftime("%b %d %X")}'
+        "        let g:airline#extensions#tabline#enabled = 1
+        "        let g:airline#extensions#tabline#buffer_min_count = 1
+        "        "-----------------------------------------------------------
+        "        let g:airline#extensions#branch#enabled = 1
+        "        "-----------------------------------------------------------
+        "        let g:airline#extensions#tagbar#enabled=1
+        "        let g:airline#extensions#hunks#enabled=1
+        "        let g:airline#extensions#branch#displayed_head_limit=12
+        "        let g:airline#extensions#branch#sha1_len=8
+        "        let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
+        "        let g:airline#extensions#taboo#enabled=1
+        "        let g:airline#extensions#ale#enabled=1
+                        "-----------------------------------------------------------
+                        " let g:airline_powerline_fonts=1
+                        " let g:airline_left_sep='▙'
+                        " let g:airline_right_sep='▟'
+                        "-----------------------------------------------------------
+                        " if !exists('g:airline_symbols')
+                        "         let g:airline_symbols = {}
+                        " endif
+        "----------------------------------------------------------------------------------
+        hi statusline ctermbg=10 ctermfg=Black  cterm=bold guibg=custGreen
+        hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
+
+        "===COOL-BUNT======================================================================
+        " Plug 'vim-airline/vim-airline'
+        " Plug 'vim-airline/vim-airline-themes'
+        " set laststatus=2
+        " let g:airline_powerline_fonts = 1
+        " let g:airline#extensions#ale#enabled = 1
+        " let g:airline_theme = 'cool'
+        " let g:airline_section_c = '%{strftime("%Y %b %d %X")}'
+        " let g:airline#extensions#tabline#enabled = 1
+        " let g:airline#extensions#tabline#buffer_min_count = 1
+        " let g:airline#extensions#hunks#enabled=1
+        "----------------------------------------------------------------------------------
+        " ?COC?
+        " let g:airline#extensions#coc#enabled = 1
+        " let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+        " let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+        "----------------------------------------------------------------------------------
+
+        "----------------------------------------------------------------------------------
+        " Plug 'itchyny/lightline.vim'
+        " Plug 'yarisgutierrez/ayu-lightline'
+        " " \ 'colorscheme': 'molokai',
+        " let g:lightline = {
+        "                         \ 'active': {
+        "                         \   'left': [ [ 'mode', 'paste' ],
+        "                         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        "                         \ },
+        "                         \ 'component_function': {
+        "                         \   'gitbranch': 'fugitive#head'
+        "                         \ },
+        "                         \ }
+        "----------------------------------------------------------------------------------
+
+        "--DeoLSP--------------------------------------------------------------------------
+        " Plug 'itchyny/lightline.vim'
+        " Plug 'yarisgutierrez/ayu-lightline'
+        " let g:lightline = {
+        " \ 'colorscheme': 'wombat',
+        " \ 'active': {
+        " \   'left': [ [ 'mode', 'paste' ],
+        " \             [ 'readonly', 'filename', 'modified', 'method' ] ]
+        " \ },
+        " \ 'component_function': {
+        " \   'method': 'NearestMethodOrFunction'
+        " \ },
+        " \ }
+        "----------------------------------------------------------------------------------
+

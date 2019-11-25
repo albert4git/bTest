@@ -28,10 +28,7 @@
         \ 'rust': ['rls'],
         \ 'javascript.jsx': ['js-langserver', '--stdio'],
         \ }
-        nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 
-        let g:LanguageClient_autoStart=1
-        " let g:LanguageClient_autoStop=1
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -40,6 +37,8 @@
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "::::::::::::::::::::::::::::DEO-START::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
         "call deoplete#custom#option('refresh_always', v:true)
         "call deoplete#custom#source('jedi', 'is_debug_enabled', 1)
         "call deoplete#enable_logging('DEBUG', 'deoplete.log')
@@ -69,15 +68,11 @@
         let g:deoplete#auto_complete_start_length=1
         call deoplete#custom#source('_', 'min_pattern_length', 1)
         " let g:autocomplete_deoplete = 'deoplete'
-        "----------------------------------------------------------------------------------
-        " Plugin key-mappings.
-        inoremap <expr><C-g>     deoplete#undo_completion()
-        inoremap <expr><C-l>     deoplete#refresh()
-        " inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
-        inoremap <expr><C-k>     deoplete#smart_close_popup()
-        inoremap <C-space>     <Esc>a
 
-        " imap <expr> <C-Space>  deoplete#manual_complete()
+        "-------------------------------------------------------------------------------- 
+        " call deoplete#custom#option('auto_complete', v:false)
+        " call deoplete#custom#option('manual_complete', v:true)
+
         "-------------------------------------------------------------------------------- 
         autocmd! FileType python setlocal completeopt-=preview
         "--------------------------------------------------------------------------------
@@ -139,15 +134,5 @@
         call deoplete#custom#source('syntax',        'mark', 'synt')
         call deoplete#custom#source('member',        'mark', 'mmbr')
 
-        "---!!!-???-----------------------------------------------------------
-        let generate_tags=1
-        "==========================================================================================
-        ":UniteResume, :UniteBookmarkAdd,
-        call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
-                                \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
-        "------------------------------------------------------------------------------------------
-        call unite#filters#sorter_default#use(['sorter_rank'])
-        call unite#filters#matcher_default#use(['matcher_fuzzy'])
-        call unite#filters#matcher_default#use(['matcher_fzf'])
 
 

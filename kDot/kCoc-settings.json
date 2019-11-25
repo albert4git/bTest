@@ -1,4 +1,7 @@
 {
+  "suggest.snippetIndicator": "►",
+  "suggest.autoTrigger": "trigger",
+  "suggest.timeout": 500,
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "coc.preferences.formatOnSaveFiletypes": [

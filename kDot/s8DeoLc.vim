@@ -1,10 +1,12 @@
 "==================================================================================================
-"= File: s7DeoLc.vim
+"= File: s8DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Fr 08 Nov 2019 08:02:35  CET
+" Lass Modified:      Mo 25 Nov 2019 02:11:57  CET
 "==================================================================================================
 "==================================================================================================
+
+"++AAA0+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
         "----------------------------------------------------------------------------------
         let $MYVIMRC='~/.config/nvim/init.vim'
@@ -14,12 +16,13 @@
         let g:python3_host_prog = '/usr/bin/python3'
         "let g:deoplete#sources#jedi#extra_path = $PYTHONPATH
         "let g:python3_host_prog=expand('~/anaconda3/bin/python')
-        "------------------------------------------------------------------------------------------
         "----------------------------------------------------------------------------------
         " let g:loaded_clipboard_provider = empty(provider#clipboard#Executable()) ? 1 : 2
         "----------------------------------------------------------------------------------
         set dictionary+=/home/red/git/bTest/DICT/english-words.txt
-        "----------------------------------------------------------------------------------
+"++AAA++}}}
+
+"++++AAA1+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         filetype on
         filetype plugin on
         filetype indent on
@@ -93,7 +96,9 @@
         set undoreload=10000
         "----------------------------------------------------------------------------------
 
-"-AAA5--PreSetUp-Appearance--Edit--Clipboard--Bell--ExpandTab-Hist--SmartEnter------------------------------{{{
+"++AAA1++}}}
+
+"++++AAA2+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "-magic--------
         silent! set wrapscan ignorecase smartcase incsearch hlsearch magic
         " \v: 'very magic', make every character except a-zA-Z0-9 and '_' have special meaning
@@ -121,10 +126,12 @@
         "---Editing---------------------------------------------------------------------------------
         silent! set iminsert=0 imsearch=0 nopaste pastetoggle= nogdefault comments& commentstring=#\ %s
         silent! set smartindent autoindent shiftround shiftwidth=8 expandtab tabstop=4 smarttab softtabstop=8
-        silent! set foldclose=all foldcolumn=1 nofoldenable foldlevel=0 foldmarker={{{,}}} foldmethod=marker foldminlines=6
         silent! set textwidth=0 backspace=indent,eol,start nrformats=hex formatoptions=cmMj nojoinspaces
         silent! set nohidden autoread noautowrite noautowriteall nolinebreak mouse=a modeline& modelines&
         silent! set noautochdir write nowriteany writedelay=0 verbose=0 verbosefile= notildeop noinsertmode
+        silent! set foldcolumn=1 nofoldenable foldlevel=0 foldmarker={{{,}}} foldmethod=marker foldminlines=6
+        " set foldclose=all
+
         set modelines=0
         "------------------------------------------------------------------------------------------
         "-CHECK-It-TODO
@@ -168,9 +175,9 @@
         "------------------------------------------------------------------------------------------
         set report=0 " always report changed lines
         "------------------------------------------------------------------------------------------
-"-5SetUp-}}}
+"+AAA2+}}}
 
-"-AAA2------------------------------------------------------------------------------------------------------{{{
+"++AAA3+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         function! ScriptExecute()
                 :!chmod u+x %
                 :w
@@ -197,14 +204,13 @@
         set cf         " Enable error files & error jumping.
         set nu
         "----------------------------------------------------------------------------------
-"-2Remap-}}}
+"++3AAA++}}}
 
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"::::::::::::::::::::::::::PLUGSTART:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"::::::::::::::::::::::::::STARTPLUG:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
+"""""""""""""""""
+""" HappyStart1""
+"""""""""""""""""
 call plug#begin('~/.config/nvim/plugged/')
+"++AAA4+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         Plug 'c9s/helper.vim'
         Plug 'c9s/treemenu.vim'
         Plug 'nixprime/cpsm'
@@ -303,98 +309,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'tyru/capture.vim'
         Plug 'thinca/vim-quickrun'
 
-        "----------------------------------------------------------------------------------
-        "----------------------------------------------------------------------------------
-        "Plug 'vim-airline/vim-airline'
-        "Plug 'vim-airline/vim-airline-themes'
-        "" Plug 'ffanzhang/vim-airline-stopwatch'
-        "Plug 'Zuckonit/vim-airline-tomato'
-        "let g:airline_theme='cool'
-        "let g:tomato#interval = 60 * 20
-        "let g:tomato#show_clock = 1
-        "let g:tomato#remind = "☻"
-        "let g:tomato#restinfo = "☺"
-        "let g:tomato#show_clock = 1
-        "let g:tomato#show_count_down = 1
-
-        "----------------------------------------------------------------------------------
-        "        let g:airline_theme='cool'
-        "        set showmode                "-Display the current mode
-        "        set showcmd                 "-Show partial commands in status line
-        "        "--------------------------------------------------------------------------
-        "        let g:airline_section_c = '%{strftime("%b %d %X")}'
-        "        let g:airline#extensions#tabline#enabled = 1
-        "        let g:airline#extensions#tabline#buffer_min_count = 1
-        "        "-----------------------------------------------------------
-        "        let g:airline#extensions#branch#enabled = 1
-        "        "-----------------------------------------------------------
-        "        let g:airline#extensions#tagbar#enabled=1
-        "        let g:airline#extensions#hunks#enabled=1
-        "        let g:airline#extensions#branch#displayed_head_limit=12
-        "        let g:airline#extensions#branch#sha1_len=8
-        "        let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
-        "        let g:airline#extensions#taboo#enabled=1
-        "        let g:airline#extensions#ale#enabled=1
-                        "-----------------------------------------------------------
-                        " let g:airline_powerline_fonts=1
-                        " let g:airline_left_sep='▙'
-                        " let g:airline_right_sep='▟'
-                        "-----------------------------------------------------------
-                        " if !exists('g:airline_symbols')
-                        "         let g:airline_symbols = {}
-                        " endif
-        "----------------------------------------------------------------------------------
-        hi statusline ctermbg=10 ctermfg=Black  cterm=bold guibg=custGreen
-        hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
-
-        "===COOL-BUNT======================================================================
-        " Plug 'vim-airline/vim-airline'
-        " Plug 'vim-airline/vim-airline-themes'
-        " set laststatus=2
-        " let g:airline_powerline_fonts = 1
-        " let g:airline#extensions#ale#enabled = 1
-        " let g:airline_theme = 'cool'
-        " let g:airline_section_c = '%{strftime("%Y %b %d %X")}'
-        " let g:airline#extensions#tabline#enabled = 1
-        " let g:airline#extensions#tabline#buffer_min_count = 1
-        " let g:airline#extensions#hunks#enabled=1
-        "----------------------------------------------------------------------------------
-        " ?COC?
-        " let g:airline#extensions#coc#enabled = 1
-        " let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
-        " let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
-        "----------------------------------------------------------------------------------
-
-        "----------------------------------------------------------------------------------
-        " Plug 'itchyny/lightline.vim'
-        " Plug 'yarisgutierrez/ayu-lightline'
-        " " \ 'colorscheme': 'molokai',
-        " let g:lightline = {
-        "                         \ 'active': {
-        "                         \   'left': [ [ 'mode', 'paste' ],
-        "                         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        "                         \ },
-        "                         \ 'component_function': {
-        "                         \   'gitbranch': 'fugitive#head'
-        "                         \ },
-        "                         \ }
-        "----------------------------------------------------------------------------------
-
-        "--DeoLSP--------------------------------------------------------------------------
-        " Plug 'itchyny/lightline.vim'
-        " Plug 'yarisgutierrez/ayu-lightline'
-        " let g:lightline = {
-        " \ 'colorscheme': 'wombat',
-        " \ 'active': {
-        " \   'left': [ [ 'mode', 'paste' ],
-        " \             [ 'readonly', 'filename', 'modified', 'method' ] ]
-        " \ },
-        " \ 'component_function': {
-        " \   'method': 'NearestMethodOrFunction'
-        " \ },
-        " \ }
-        "----------------------------------------------------------------------------------
-
         "---COX-light----------------------------------------------------------------------
          Plug 'itchyny/lightline.vim'
          Plug 'yarisgutierrez/ayu-lightline'
@@ -418,7 +332,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 Plug 'itchyny/thumbnail.vim'
                 Plug 'ap/vim-buftabline'
         "----------------------------------------
-        "Plug 'zefei/vim-wintabs'
+        Plug 'zefei/vim-wintabs'
         " Plug 'zefei/vim-wintabs-powerline'
         "----------------------------------------------------------------------------------
         Plug 'skywind3000/vim-preview'
@@ -467,7 +381,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'sjl/gundo.vim'
         "----------------------------------------------------------------------------------
         Plug 'aperezdc/vim-template'
-
         "----------------------------------------------------------------------------------
         "-Plug 'devjoe/vim-codequery'
         "-TODO Plug 'neomake/neomake'
@@ -476,7 +389,6 @@ call plug#begin('~/.config/nvim/plugged/')
         let g:dispatch_compilers = {
                                 \ 'latex': 'tex',
                                 \ 'bundle exec': ''}
-
         "----------------------------------------------------------------------------------
         Plug 'vim-scripts/Lynx-Offline-Documentation-Browser'
         "----------------------------------------------------------------------------------
@@ -772,7 +684,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'ivalkeen/nerdtree-execute'
         Plug 'Linfee/nerdtree-open'
-        "----------------------------------------------------------------------------------
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
          Plug 'mtth/scratch.vim'
         "----------------------------------------------------------------------------------
         " Plug 'francoiscabrol/ranger.vim'
@@ -819,10 +731,10 @@ call plug#begin('~/.config/nvim/plugged/')
                 augroup END
         "----------------------------------------------------------------------------------
         Plug 'godlygeek/tabular'
-        "---------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
                 " abc,def,ghi , some , shrt
                 " a,b,c
-        "---------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
         Plug 'dhruvasagar/vim-table-mode'
                 let g:table_mode_corner_corner='+'
                 let g:table_mode_header_fillchar='='
@@ -840,8 +752,8 @@ call plug#begin('~/.config/nvim/plugged/')
         "source ~/git/aTest/dotFiles/nVim/logoMako.vim
         "source ~/git/aTest/dotFiles/nVim/logoQF.vim
         "source ~/git/aTest/dotFiles/nVim/logoAsyncPy.vim
+        "===BOOKMARK=======================================================================
 
-        "===BOOKMARK========================================================================
         Plug 'MattesGroeger/vim-bookmarks'
                 let g:bookmark_no_default_key_mappings = 1
                 function! BookmarkMapKeys()
@@ -878,7 +790,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "==================================================================================
         Plug 'tiagoinacio/fzf-bookmark.vim'
         Plug 'runfalk/vim-fzf-extended'
-        " Plug 'ryanoasis/vim-devicons'
+        Plug 'ryanoasis/vim-devicons'
         Plug 'mhinz/vim-startify'
         Plug 'blueyed/vim-diminactive'
         Plug 'vim-scripts/timestamp.vim'
@@ -949,11 +861,12 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         "------------------------ END --REPL-----------------------------------------------
         "---------------------------------------------------------------------------------
-        " Plug 'Shougo/echodoc.vim'
-        "         set cmdheight=2
-        "         " set noshowmode
-        "         let g:echodoc_enable_at_startup = 1
-        "         let g:echodoc#type = 'virtual'
+        Plug 'Shougo/echodoc.vim'
+                set cmdheight=2
+                " set noshowmode
+                let g:echodoc_enable_at_startup = 1
+                let g:echodoc#type = 'virtual'
+                let g:echodoc#type = 'echo'
         "         let g:echodoc#type = 'floating'
         "         " change Pmenu to your highlight group
         "         highlight link EchoDocFloat Pmenu
@@ -965,7 +878,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---FUZZY-SEARCH------------------------------------------------------------------
         "---------------------------------------------------------------------------------
         " Plug 'junegunn/vim-oblique'
-        "---------------------------------------------------------------------------------
         "         hi! def link ObliqueCurrentMatch Keyword
         "         hi! def link ObliquePrompt       Structure
         "         hi! def link ObliqueLine         String
@@ -1039,7 +951,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'brookhong/cscope.vim'
         "         nnoremap ff :call CscopeFindInteractive(expand('<cword>'))<CR>
-        "-------------------------TESTING-------------------------------------------------
+        "----------------------------TESTING-----------------------------------------------
         "- Plug 'vim-scripts/CRefVim'
         "----------------------------------------------------------------------------------
         Plug 'alvan/vim-closetag'
@@ -1083,10 +995,13 @@ call plug#begin('~/.config/nvim/plugged/')
                 hi tsxEqual guifg=#F99575
                 " yellow
                 hi tsxAttrib guifg=#F8BD7F cterm=italic
+        "===================================================================================
         "------------------CAR--------------------------------------------------------------
         Plug 'lilydjwg/colorizer'
-        Plug 'tpope/vim-dadbod'
-        "---------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        "---DATABASE-CONSOLE---------------------------------------------------------------
+        " Plug 'tpope/vim-dadbod'
+        "----------------------------------------------------------------------------------
         " Plug 'vpenkoff/vim-pg'  "postgres"
         " Plug 'vim-scripts/dbext.vim'
         " :'<,'>DBExecSQL    (or used the default map <Leader>se)
@@ -1120,6 +1035,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         "-Plug 'amiorin/vim-project'
         "-Plug 'tpope/vim-projectionist'
+        "----------------------------------------------------------------------------------
         "-Plug 'tpope/vim-rake'
         "-Plug 'tpope/vim-rails'
         Plug 'vim-ruby/vim-ruby'
@@ -1133,36 +1049,32 @@ call plug#begin('~/.config/nvim/plugged/')
         "===================================================================================
 
         " smart <c-a> and <c-x> to toggle true/false, on/off, increment dates or weekday names, etc.
-        Plug 'nishigori/increment-activator'
+        ":::Nice::::
+        " Plug 'nishigori/increment-activator'
         "------------------------------------------------------------------------------------------
         "-------420--------------------------------------------------------------------------------
         "------------------------------------------------------------------------------------------
-        Plug 'tacahiroy/ctrlp-funky'
-                nnoremap <Leader>fu :CtrlPFunky<Cr>
-                " narrow the list down with a word under cursor
-                nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+        " Plug 'tacahiroy/ctrlp-funky'
+        "         nnoremap <Leader>fu :CtrlPFunky<Cr>
+        "         " narrow the list down with a word under cursor
+        "         nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
         "------------------------------------------------------------------------------------------
-        Plug 'epheien/termdbg'
+        " Plug 'epheien/termdbg'
         "------------------------------------------------------------------------------------------
-        Plug 'guns/vim-sexp',    {'for': 'clojure'}
+        " Plug 'guns/vim-sexp',    {'for': 'clojure'}
         "------------------------------------------------------------------------------------------
         " Plug 'liquidz/vim-iced', {'for': 'clojure'}
         "------------------------------------------------------------------------------------------
-        Plug 'dominikduda/vim_timebox'
-        "------------------------------------------------------------------------------------------
-        Plug 'osyo-manga/vim-anzu'
+        " Plug 'osyo-manga/vim-anzu'
         "------------------------------------------------------------------------------------------
         " Plug 'sunaku/vim-shortcut'
         "------------------------------------------------------------------------------------------
-        Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
-
-        "------------------------------------------------------------------------------------------
         " Plug 'jacobsimpson/nvim-example-python-plugin'
         "------------------------------------------------------------------------------------------
-        Plug 'vigoux/LanguageTool.nvim'
-        let g:languagetool_server='$HOME/LanguageTool-4.6-stable/languagetool-server.jar'
-        hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
-        hi LanguageToolSpellingError guisp=red  gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=red  term=underline cterm=none
+        " Plug 'vigoux/LanguageTool.nvim'
+        " let g:languagetool_server='$HOME/LanguageTool-4.6-stable/languagetool-server.jar'
+        " hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
+        " hi LanguageToolSpellingError guisp=red  gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=red  term=underline cterm=none
         "------------------------------------------------------------------------------------------
         Plug 'elzr/vim-json' " For metadata.json
         Plug 'mrk21/yaml-vim' " For hieradata
@@ -1173,14 +1085,17 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'elzr/vim-json'
         Plug 'jparise/vim-graphql'
         "==================================================================================
-        Plug 'w0rp/ale'
-        let g:ale_sign_column_always = 0
-        let g:ale_emit_conflict_warnings = 0
-        let g:ale_lint_on_text_changed = 'never'
-        let g:ale_set_loclist = 0
-        let g:ale_set_quickfix = 1
-        "---------------------------------------
-        let g:ale_set_signs = 0
+        Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+        "------------------------------------------------------------------------------------------
+        Plug 'dominikduda/vim_timebox'
+        "==================================================================================
+        " Plug 'w0rp/ale'
+        " let g:ale_sign_column_always = 0
+        " let g:ale_emit_conflict_warnings = 0
+        " let g:ale_lint_on_text_changed = 'never'
+        " let g:ale_set_loclist = 0
+        " let g:ale_set_quickfix = 1
+        " let g:ale_set_signs = 0
         "---------------------------------------
         "==================================================================================
         hi link ALEErrorSign    custRed
@@ -1221,13 +1136,20 @@ call plug#begin('~/.config/nvim/plugged/')
         let g:LanguageClient_diagnosticsDisplay=diagnosticsDisplaySettings
         Plug 'skywind3000/quickmenu.vim'
         " Plug 'Timoses/vim-venu'
+
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "----------------------------------------------------------------------------------
-        Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-        autocmd User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
+        " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+        " autocmd User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
+        "--IRENE----------------------------------------------------------------------------
+        Plug 'hecal3/vim-leader-guide'
         "----------------------------------------------------------------------------------
-         Plug 'hecal3/vim-leader-guide'
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
         "----------------------------------------------------------------------------------
-        "==========================================================================
+        Plug 'skywind3000/quickmenu.vim'
+
+        "==================================================================================
         Plug 'liuchengxu/vim-clap'
         let g:clap_provider_alias = {'hist:': 'command_history'}
         " let g:clap_open_action: Dict, { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit'}
@@ -1348,65 +1270,89 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'mivok/vimtodo'
         Plug 'patstockwell/vim-monokai-tasty'
         Plug 'sainnhe/lightline_foobar.vim'
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        "------------------------------------------------------------------------------------------
-        " Plug 'neoclide/coc-jedi', {'do': 'yarn install'}
-        "------------------------------------------------------------------------------------------
-        " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "----------------------------------------------------------------------------------
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         Plug 'liuchengxu/vista.vim'
         let g:vista_fzf_preview = ['right:50%']
         let g:vista#renderer#icons = {
                                 \   "function": "\uf794",
                                 \   "variable": "\uf71b",
                                 \  }
-
         " let g:vista#executive#ctags#support_json_format = 1
         let g:vista#executives = ['coc', 'ctags', 'lcn', 'vim_lsp']
         let g:vista#executives = ['ale', 'coc', 'ctags', 'lcn', 'vim_lsp']
         let g:vista_executive_for = {'php': 'coc', 'java': 'coc', 'typescript': 'coc', 'go': 'coc', 'c': 'coc', 'javascript': 'coc', 'html': 'coc', 'rust': 'coc', 'cpp': 'coc', 'css': 'coc', 'python': 'coc'}
-
         let g:vista_icon_indent = ['╰─🞂 ', '├─🞂 ']
-
         let g:vista_default_executive = 'ctags'
         let g:vista_fzf_preview = ['right:50%']
-
-        " Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
+        " Ensure you have installed some decent font to show these pretty symbols
+        " then you can enable icon for the kind.
         let g:vista#renderer#enable_icon = 1
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-        "----------------------------------------------------------------------------------
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        ":::IRENE::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        "------------------------------------------------------------------------------------------
+        " Plug 'neoclide/coc-jedi', {'do': 'yarn install'}
+        "------------------------------------------------------------------------------------------
+        " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-        " Plug 'prabirshrestha/vim-lsp'
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        Plug 'prabirshrestha/vim-lsp'
+        if executable('pyls')
+        " pip install python-language-server
+        au User lsp_setup call lsp#register_server({
+                \ 'name': 'pyls',
+                \ 'cmd': {server_info->['pyls']},
+                \ 'whitelist': ['python'],
+                \ })
+        endif
 
-        " if executable('pyls')
-        " " pip install python-language-server
-        " au User lsp_setup call lsp#register_server({
-        "         \ 'name': 'pyls',
-        "         \ 'cmd': {server_info->['pyls']},
-        "         \ 'whitelist': ['python'],
-        "         \ })
-        " endif
+        "---------------------------------------------------------------------------------- 
+        Plug 'autozimu/LanguageClient-neovim', {
+                                \ 'branch': 'next',
+                                \ 'do': 'bash install.sh',
+                                \ }
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "----DEO-2--------------------------------------------------------------------------
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "----------------------------------------------------------------------------------
-        "----DEO-2-------------------------------------------------------------------------
+         source ~/git/bTest/kDot/s7PlugDeo.vim
+
+        Plug 'davidhalter/jedi-vim'
+        Plug 'zchee/deoplete-jedi'
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-         " source ~/git/bTest/kDot/s7PlugDeo.vim
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "----DEO-3-------------------------------------------------------------------------
-        "----------------------------------------------------------------------------------
+        "----DEO-3--------------------------------------------------------------------------
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " Plug 'maralla/completor.vim'
         " Plug 'prabirshrestha/asyncomplete.vim'
         " Plug 'maralla/completor.vim'
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-call plug#end()
+        Plug 'vlmarek/DiffGoFile'
+        Plug 'alfredodeza/pytest.vim'
+        " Plug 'tommcdo/vim-lion'
+        " let g:lion_squeeze_spaces = 1
+        Plug 'hsitz/VimOrganizer'
 
+"++4AAA++}}}
+call plug#end()
 """""""""""""""""
 """ HappyEnd1""""
 """""""""""""""""
+
+":::::::::::!!!::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        let generate_tags=1
+        "==========================================================================================
+        ":UniteResume, :UniteBookmarkAdd,
+        call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
+                                \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
+        "==========================================================================================
+        call unite#filters#sorter_default#use(['sorter_rank'])
+        call unite#filters#matcher_default#use(['matcher_fuzzy'])
+        call unite#filters#matcher_default#use(['matcher_fzf'])
+"++AAA5+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 
 function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
@@ -1440,20 +1386,6 @@ xmap if <Plug>DsfTextObjectI
 " map ty :call airline#extensions#stopwatch#summary()<CR>
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-"---------------------------------------------------------------------------------
-autocmd! FileType typescript setlocal completeopt+=menu,preview
-autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd! FileType java setlocal omnifunc=javacomplete#Complete
-autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd! FileType ruby setlocal omnifunc=rubycomplete#Complete
-autocmd! FileType haskell setlocal omnifunc=necoghc#omnifunc
-"---------------------------------------------------------------------------------
-
-let g:asyncomplete_auto_popup = 0
-imap <c-space> <Plug>(asyncomplete_force_refresh)
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
@@ -1485,35 +1417,13 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
         let g:diminactive_enable_focus = 1
         let g:diminactive_buftype_blacklist = ['nofile', 'nowrite', 'acwrite', 'quickfix', 'help']
         "==================================================================================
-
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        let g:lsp_signs_enabled = 1
-        let g:lsp_diagnostics_echo_cursor = 1
-        let g:lsp_signs_error = {'text': '✗'}
-        let g:lsp_signs_warning = {'text': '‼', 'icon': '/path/to/some/icon'}
-        let g:lsp_signs_hint = {'icon': '/path/to/some/other/icon'}
-        let g:lsp_highlights_enabled = 0
-        let g:lsp_textprop_enabled = 0
-        let g:lsp_virtual_text_enabled = 0
-        let g:lsp_highlight_references_enabled = 1
-        highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
-        "==================================================================================
-
-
-        "==================================================================================
-
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-":::::::::::::::::::::::::::DEO-START:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        " source ~/git/bTest/kDot/s7legoDeo.vim
-        " source ~/git/bTest/kDot/s7OneLegoDeo.vim
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " source ~/git/bTest/kDot/k2MinFzfDeoLs.vim
          source ~/git/bTest/kDot/logoABB.vim
          source ~/git/bTest/kDot/logoFunc.vim
         "source ~/git/bTest/kDot/minFzfDeoLsJediSnip.vim
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-":::::::::::::::::::::::::::DEO-END:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "----------------------------------------------------------------------------------
         "-------CYAN---------------------old Stuck.chen------------------------------------
@@ -1529,7 +1439,7 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
         let ayucolor="dark"
         " let ayucolor="light"
         " let ayucolor="mirage"
-        source ~/git/bTest/kDot/legoS7Cyan.vim
+        source ~/git/bTest/kDot/legoS8Cyan.vim
 
         silent! set complete& completeopt=menu infercase noshowfulltag
         "suppress intro message
@@ -1557,7 +1467,6 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
         hi! def link ObliqueLine         String
         let g:oblique#clear_highlight =0
 
-"-AAA16---Wildmenu------------------------------------------------------------------------------------------{{{
         " More useful command-line completion
         au! FocusLost * :silent! wall     "Save when losing focus
         set wildmenu
@@ -1583,7 +1492,6 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
         set wildignore+=*.dx64fsl                        " CCL
         set wildignore+=classes
         set wildignore+=lib
-"-AAA16-WILD-}}}
 
       " nmap <Leader>c <Plug>CRV_CRefVimNormal
       " vmap <Leader>r <Plug>CRV_CRefVimVisual
@@ -1785,7 +1693,7 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
         "::::::::::::::::::::::::::::::-2MAGIC2-:::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
 
-        vmap <A-c> :w !cat >> ./zbuf<CR>
+        vmap <M-c> :w !cat >> ./zbuf<CR>
         "==========================================================================================
         "==:Ex-TRIGER==MAGIC==Execute VIM colon command under cursor==:ls==========================
         "==========================================================================================
@@ -1806,7 +1714,7 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
         "------------------------------------------------------------------------------------------
         "===Control-] pop open a window and show the tag there.====================================
         "------------------------------------------------------------------------------------------
-        nnoremap <A-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
+        nnoremap <M-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
         "------------------------------------------------------------------------------------------
         function! s:VSetSearch()
                 let temp = @@
@@ -1867,10 +1775,8 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
         " au! FileType vim,help nnoremap M :exec "helpgrep" expand("<cword>")<CR>
 
         "==========================================================================================
-        " nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
-        " inoremap <F3> <esc>:NERDTreeToggle<cr>
-        "==========================================================================================
-        " nnoremap <F4> <esc>:Startify<cr>
+        nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
+        inoremap <F3> <esc>:NERDTreeToggle<cr>
         "==========================================================================================
         nnoremap <F5> :w<CR>:!python %<CR>
 
@@ -2242,7 +2148,7 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
        "Replace the default dictionary completion with fzf-based fuzzy completion
         inoremap <expr> <c-x><c-k> fzf#vim#complete('cat /usr/share/dict/words')
         imap <c-k> <plug>(fzf-complete-word)
-        imap <expr><A-k> fzf#vim#complete#word({'left': '20%'})
+        imap <expr><M-k> fzf#vim#complete#word({'left': '20%'})
         " imap <c-j> <plug>(fzf-complete-file-ag)
         imap <c-l> <plug>(fzf-complete-line)
 
@@ -2414,86 +2320,44 @@ nnoremap <Leader>t :!goldendict <C-r><C-w><CR>
 
 " <Leader>dk <Plug>(textobj-diff-hunk-p)
 
-"===============================================================================================================
-"===VIM-SARTIFY-1===============================================================================================
-"===============================================================================================================
-" autocmd!  VimEnter * execute ":Startify"
-" autocmd!  VimEnter * execute ":SearchIndex"
-"===============================================================================================================
-let g:startify_custom_header      =
-        \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
 
-let g:startify_enable_special      = 1
-let g:startify_files_number        = 9
-let g:startify_relative_path       = 1
-let g:startify_change_to_dir       = 1
-let g:startify_update_oldfiles     = 1
-let g:startify_session_autoload    = 1
-let g:startify_session_persistence = 1
-
-highlight StartifyBracket ctermfg=14
-highlight StartifyFooter  ctermfg=10
-highlight StartifyHeader  ctermfg=14
-highlight StartifyNumber  ctermfg=9
-highlight StartifyPath    ctermfg=245
-highlight StartifySlash   ctermfg=240
-highlight StartifySpecial ctermfg=240
 
 "===============================================================================================================
-let g:startify_skiplist = [
-        \ 'COMMIT_EDITMSG',
-        \ 'bundle/.*/doc',
-        \ '/data/repo/neovim/runtime/doc',
-        \ '/Users/mhi/local/vim/share/vim/vim74/doc',
-        \ ]
+let g:vimrcversion= 8
+au VimEnter * echo "VIMRC v"g:vimrcversion
 
+"====EX-EXEC====================================================================================================
+nnoremap <F2> :exe getline(".")<CR>
+vnoremap <F2> :<C-w>exe join(getline("'<","'>"),'<Bar>')<CR>
 "===============================================================================================================
-let g:startify_bookmarks = [
-        \ '~/git/bTest/kDot/kIng19.sh',
-        \ '~/git/bTest/kDot/k2MinFF.vim',
-        \ '~/git/bTest/kDot/k2MinFzfDeoLs.vim',
-        \ '~/git/bTest/kDot/kZshrc19.sh',
-        \ '~/git/bTest/kDot/kBank21.yml',
-        \ ]
 
-"===============================================================================================================
-let g:startify_custom_footer =
-        \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"---------------------------------------------------------------------------------
+" autocmd FileType python setlocal omnifunc=lsp#complete
+" autocmd! FileType typescript setlocal omnifunc=coc#completions
+" autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd! FileType python setlocal omnifunc=jedi#completions
+" autocmd! FileType python setlocal completeopt+=menu,preview
+"---------------------------------------------------------------------------------
+"=autocmd! FileType python setlocal completeopt+=preview
+"=autocmd! FileType python setlocal omnifunc=coc#completions
+"---------------------------------------------------------------------------------
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-"===============================================================================================================
-let g:startify_list_order = [
-                        \ ['   Commands'], 'commands',
-                        \ ['   Sessions'], 'sessions',
-                        \ ['   MRU Files'], 'files',
-                        \ ['   MRU Files in Current Dir'], 'dir',
-                        \ ['   Bookmarks'], 'bookmarks',
-                        \ ]
+autocmd! FileType typescript setlocal completeopt+=menu,preview
+autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd! FileType java setlocal omnifunc=javacomplete#Complete
+autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd! FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd! FileType haskell setlocal omnifunc=necoghc#omnifunc
+"------------------------------------------------------------------------------------------
+set completeopt+=menu
+set completeopt+=preview
+set cot+=preview
 
-"===============================================================================================================
-let g:startify_session_dir = '~/git/bTest/kDot/zSS'
-let g:startify_session_sort = 1
-let g:startify_session_number = 5
-
-"===============================================================================================================
-let g:startify_commands = [
-                        \ {'a': ['seti', ':colorscheme seti']},
-                        \ {'b': ['FZFMru', ':FZFMru']},
-                        \ {'i': ['FFMarks', ':FFMarks']},
-                        \ {'c': ['FFHistory', ':FFHistory']},
-                        \ {'d': ['FFHelptags', ':FFHelptags']},
-                        \ {'e': ['ZPlugHelp', ':ZPlugHelp']},
-                        \ {'k': ['ZTag', ':ZTag']},
-                        \ {'l': ['ZFiles', ':ZFiles']},
-                        \ {'n': ['ZLibList', ':ZLibList']},
-                        \ {'f': ['LGHistory', ':LGHistory']},
-                        \ {'g': ['CommandTHelp', ':CommandTHelp']},
-                        \ {'x': ['FZFDefinitions', ':FZFDefinitions']},
-                        \ {'p': ['List', ':List']},
-                        \ {'r': ['List', ':List']},
-                        \ {'u': ['unite', ':Unite help buffer file_mru file file_rec bookmark']},
-                        \ ]
-
-"===============================================================================================================
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 cabbrev SS  SideSearch
 cabbrev ZA  FFMarks
 cabbrev ZM  FZFMru
@@ -2506,199 +2370,283 @@ cabbrev ZF  ZFiles
 cabbrev ZS  ZSnippets
 nmap == :call FzfSpell()<CR>
 
-"===============================================================================================================
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
-nnoremap <silent> ; :<c-u>WhichKey  ';'<CR>
-
-let g:which_key_hspace =4
-let g:which_key_sep = get(g:, 'which_key_sep', '>>')
-let g:which_key_hspace = get(g:, 'which_key_hspace', 4)
-let g:which_key_vertical = get(g:, 'which_key_vertical', 1)
-" let g:which_key_flatten = get(g:, 'which_key_flatten', 0)
-"===============================================================================================================
-
-let g:which_key_map = {}
-
-let g:which_key_map.9 = {
-\ 'name' : '+buffer' ,
-\ '1' : ['b1'        , 'buffer 1']        ,
-\ '2' : ['b2'        , 'buffer 2']        ,
-\ 'd' : ['bd'        , 'delete-buffer']   ,
-\ 'f' : ['bfirst'    , 'first-buffer']    ,
-\ 'h' : ['Startify'  , 'home-buffer']     ,
-\ 'l' : ['blast'     , 'last-buffer']     ,
-\ 'n' : ['bnext'     , 'next-buffer']     ,
-\ 'p' : ['bprevious' , 'previous-buffer'] ,
-\ '?' : ['Buffers'   , 'fzf-buffer']      ,
-\ }
-
-let g:which_key_map.8= {
-\ 'name' : '+windows' ,
-\ 'w' : ['<C-W>w'     , 'other-window']          ,
-\ 'd' : ['<C-W>c'     , 'delete-window']         ,
-\ '-' : ['<C-W>s'     , 'split-window-below']    ,
-\ '|' : ['<C-W>v'     , 'split-window-right']    ,
-\ '2' : ['<C-W>v'     , 'layout-double-columns'] ,
-\ 'h' : ['<C-W>h'     , 'window-left']           ,
-\ 'j' : ['<C-W>j'     , 'window-below']          ,
-\ 'l' : ['<C-W>l'     , 'window-right']          ,
-\ 'k' : ['<C-W>k'     , 'window-up']             ,
-\ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
-\ 'J' : ['resize +5'  , 'expand-window-below']   ,
-\ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
-\ 'K' : ['resize -5'  , 'expand-window-up']      ,
-\ '=' : ['<C-W>='     , 'balance-window']        ,
-\ 's' : ['<C-W>s'     , 'split-window-below']    ,
-\ 'v' : ['<C-W>v'     , 'split-window-below']    ,
-\ '?' : ['Windows'    , 'fzf-window']            ,
-\ }
-
-let g:which_key_map.7 = {
-      \ 'name' : '+open',
-      \ 'q' : 'open-quickfix'    ,
-      \ 'l' : 'open-locationlist',
-      \ }
-
-
-" linux
-"===============================================================================================================
-
-let g:vimrcversion= 7
-:au VimEnter * echo "VIMRC v"g:vimrcversion
-"===============================================================================================================
-nnoremap <F2> :exe getline(".")<CR>
-vnoremap <F2> :<C-w>exe join(getline("'<","'>"),'<Bar>')<CR>
-"===============================================================================================================
-" Type <Leader>s to trig searching in normal mode
-nmap <silent> <Leader>s <Plug>SearchNormal
-" Type <Leader>s to search selected text in visual mode
-vmap <silent> <Leader>s <Plug>SearchVisual
-" Type <Leader>S to input the text you want to search in the cmdline
-nmap <silent> <Leader>S <Plug>SearchComand
-
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"---------------------------------------------------------------------------------
-autocmd! FileType python setlocal omnifunc=coc#completions
-" autocmd FileType python setlocal omnifunc=lsp#complete
-" autocmd! FileType typescript setlocal omnifunc=coc#completions
-" autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
-" autocmd! FileType python setlocal omnifunc=jedi#completions
-"---------------------------------------------------------------------------------
-autocmd! FileType python setlocal completeopt+=preview
-autocmd! FileType python setlocal completeopt+=menu,preview
-"---------------------------------------------------------------------------------
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::::::::::::::::::vim-leader-guide:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+":::::::
+"::::
+"==========================================================================================
+source ~/git/bTest/kDot/sLeader8Guide.vim
+        call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
+        nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+        vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
+        nnoremap <localleader> :<c-u>LeaderGuide  ','<CR>
+        vnoremap <localleader> :<c-u>LeaderGuideVisual  ','<CR>
+"==========================================================================================
+ " source ~/git/bTest/kDot/sWhich8Key.vim
+ "        nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+ "        nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+ "        nnoremap <silent> ; :<c-u>WhichKey  ';'<CR>
+"==========================================================================================
 
 "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"::::::::::::::::::::COCS:::COCKS:::COX::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"::::::::::::::::::::STARTCOC-GRUND::::COCK::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-let g:coc_global_extensions = [
-  \'coc-json',
-  \'coc-tsserver',
-  \'coc-html',
-  \'coc-css',
-  \'coc-solargraph',
-  \'coc-yaml',
-  \'coc-python',
-  \'coc-emmet',
-  \'coc-ultisnips',
-  \'coc-lists',
-  \'coc-svg',
-  \'coc-emoji',
-  \'coc-tag',
-  \'coc-omni',
-  \'coc-syntax',
-  \'coc-explorer',
-  \'coc-tsserver',
-  \'coc-tslint',
-  \'coc-tslint-plugin',
-\]
+":::::::
+"::::
+"==========================================================================================
+source ~/git/bTest/kDot/s8Startify.vim
+        nnoremap <F4> <esc>:Startify<cr>
 
+"++5AAA++}}}
+"==========================================================================================
+":::::::::::::::::::::::::::DEO-START:::::DEO-COC-:::::::::::::::::::::::::::::::::::::::::
+"==========================================================================================
+" source ~/git/bTest/kDot/slegoCoc.vim
 
+"++xAAA-DEO+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        source ~/git/bTest/kDot/s7legoDeo.vim
+        " source ~/git/bTest/kDot/s7OneLegoDeo.vim
+        " Vim-Supertab Configuration
+        " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+        let g:SuperTabContextDefaultCompletionType = '<c-n>'
+        let g:SuperTabDefaultCompletionType = '<C-n>'
+        "----------------------------------------------------------------------------------
+        let g:jedi#documentation_command = "gj"
+        let g:jedi#completions_enabled = 1
+        let g:jedi#popup_on_dot = 1
+        let g:jedi#auto_close_doc = 1  " close preview window after completion
+        "----------------------------------------------------------------------------------
+        " Plugin key-mappings.
+        inoremap <expr><C-g>     deoplete#undo_completion()
+        inoremap <expr><C-l>     deoplete#refresh()
+        " inoremap <expr><C-h>     deoplete#smart_close_popup()."\<C-h>"
+        inoremap <expr><C-k>     deoplete#smart_close_popup()
+        "-------------------------------------------------------------------------------- 
+        imap <expr> <C-Space>  deoplete#manual_complete()
+        inoremap <C-space>     <Esc>a
+        "-------------------------------------------------------------------------------- 
+        " imap <expr> <C-j>  deoplete#manual_complete()
+        " imap <expr> <M-j>  deoplete#manual_complete() <C-n>
+        " -- Auto --
 
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"::::::::::::::::::::STARTCOC-GRUND::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-hi link CocErrorSign custRed
-hi default link CocErrorVirtualText  CocErrorSign
-hi default link CocErrorVirtualText  custGreen
+        let g:LanguageClient_autoStart = 1
+        " let g:LanguageClient_hoverPreview="Never"
+        let g:LanguageClient_hoverPreview="Always"
+        let g:LanguageClient_useFloatingHover=1
+        let g:LanguageClient_serverCommands = {
+                                \ 'python': ['/usr/local/bin/pyls'],
+                                \ }
+        " let g:LanguageClient_autoStop=1
+        nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+"++xAAA++}}} 
+"==========================================================================================
+source ~/git/bTest/kDot/sQuick8Menu.vim
+        noremap <silent><F12> :call quickmenu#toggle(0)<CR>
+"==========================================================================================
 
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"---------------------------------------------------------------------------------
-function! CocCurrentFunction()
-        return get(b:, 'coc_current_function', '')
-endfunction
-"---------------------------------------------------------------------------------
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-" inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <silent><expr> <c-j> coc#refresh()
-" Close preview window when completion is done.
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-nmap <leader>rn  <Plug>(coc-rename)
-vmap <leader>aa  <Plug>(coc-codeaction-selected)
-nmap <leader>aa  <Plug>(coc-codeaction-selected)
-nmap <leader>ac  <Plug>(coc-codeaction)
-":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-nmap <silent> <F3> :call <SID>show_documentation()<CR>
-nmap <silent> <F4> :call CocAction('showSignatureHelp')<cr>
-
-"=Remap keys for gotos===============================
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-"====================================================
-nmap <silent> <F5> :call CocAction('doHover')<CR>
-nmap <silent> <F6> :CocList diagnostics<CR>
-nmap <silent> <F7> :CocList outline<CR>
-nmap <silent> <F8> :CocList -I symbols<CR>
-"====================================================
-
-" Use K for show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-"::::::::::::::::::::::::::::::::::::::::::::::
-nmap <leader>ac  <Plug>(coc-codeaction)
-nmap <leader>qf  <Plug>(coc-fix-current)
-"::::::::::::::::::::::::::::::::::::::::::::::
-nmap <F9>  <Plug>(coc-codeaction)
-nmap <F10>  <Plug>(coc-fix-current)
-"::::::::::::::::::::::::::::::::::::::::::::::
-
-
-" Create mappings for function text object, requires document symbols feature of languageserver.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
+"::::
+":::::::
 "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "::::::::::::::::::::STOPCOC-GRUND:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+"++AAAy++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+" Utility functions
+function! GetSynUnder()
+        return synIDattr(synID(line('.'), col('.'), 1), 'name')
+endfunction
+
+function! GetCharUnder()
+        return strpart(getline('.'), col('.') - 1, 1)
+endfunction
+
+function! GetCharBefore(offset)
+        return strpart(getline('.'), col('.') - (a:offset + 1), 1)
+endfunction
+
+function! GetCharAfter()
+        return strpart(getline('.'), col('.'), 1)
+endfunction
+
+function! AtEnd()
+        return col('$') == col('.')
+endfunction
+
+function! GetStringBeforeCursor(offset)
+        return strpart(getline('.'), 0, col('.') - a:offset)
+endfunction
+
+function! GetStringAfterCursor()
+        return strpart(getline('.'), col('.'))
+endfunction
+
+function! GetWordBeforeCursor(keep_spaces)
+        let regexp = '^.*\(\<\w\+\)'
+        if !a:keep_spaces
+                let regexp .= '\s*'
+        endif
+        let regexp .= '$'
+        return substitute(GetStringBeforeCursor(0), regexp, '\1', '')
+endfunction
+
+function! GetExactWordBeforeCursor(offset)
+        return substitute(GetStringBeforeCursor(a:offset), '^.*\(\<\w\+\)\s*$', '\1', '')
+endfunction
+
+function! GetFirstWord()
+        return substitute(getline('.'), '^\W*\(\<\w\+\).*$', '\1', '')
+endfunction
+
+function! CountOccurances(haystack, needle)
+        let occurances = 0
+        let lastpos = 0
+        let firstiter = 1
+        while lastpos > -1
+                if firstiter
+                        let lastpos = match(a:haystack, a:needle, lastpos)
+                else
+                        let lastpos = match(a:haystack, a:needle, lastpos + 1)
+                endif
+                let firstiter = 0
+                if lastpos > -1
+                        let occurances = occurances + 1
+                endif
+        endwhile
+        return occurances
+endfunction
+
+function! InsideTag()
+        let str = GetStringBeforeCursor(0) . GetCharUnder()
+        return str =~ '^.*<[^/>]*$'
+endfunction
+
+function! InsideQuote(char)
+        let str = GetStringBeforeCursor(0) . GetCharUnder()
+        if !InsideTag()
+                let tags_complete = CountOccurances(str, '<[^/>]*>')
+                let tags_incomplete = CountOccurances(str, '<\w')
+                let tags = tags_incomplete - tags_complete
+                return (CountOccurances(str, a:char) - tags) % 2 != 0
+        else
+                return CountOccurances(str, a:char) % 2 != 0
+        endif
+endfunction
+
+
+" Insert ending characters
+function! InsertAtEnd(char)
+        let line = getline('.')
+        if line =~ a:char . '$'
+                return "\<Right>\<Left>"
+        else
+                let extra = ''
+                if AtEnd()
+                        let extra = "\<Right>"
+                endif
+                if line =~ ';\s*$'
+                        return "\<C-o>mk\<End>\<Left>i" . a:char . "\<C-o>`ki" . extra
+                else
+                        return "\<C-o>mk\<End>i" . a:char . "\<C-o>`ki" . extra
+                endif
+        endif
+endfunction
+
+"==========================================================================================
+
+
+
+
+"==============================================================
+inoremap <silent> <M-;> <C-R>=InsertAtEnd(';')=<CR>
+inoremap <silent> <M-,> <C-R>=InsertAtEnd(',')<CR>
+" Use <M-d> to delete the rest of the word
+"  Use <M-d> to delete  the word
+inoremap <silent> <M-d> <C-o>cw<Esc><Right>
+" Use <C-a> as an alias to <Home>
+inoremap <silent> <C-a> <C-o>^
+" Use <C-e> as an alias to <End>
+inoremap <silent> <C-e> <End>
+"==========================================================================================
+
+
+
+
+"==========================================================================================
+" Convenience shortcuts
+command! CD cd %:p:h
+
+" Write / Quit
+nnoremap <M-w> :write!<CR>
+inoremap <silent> <M-w> <C-o>:write!<CR>
+nnoremap <M-q> :quit<CR>
+inoremap <silent> <M-q> <C-o>:quit<CR>
+nnoremap <M-Q> :quit!<CR>
+inoremap <silent> <M-Q> <C-o>:quit!<CR>
+
+vmap <M-h> =
+"==========================================================================================
+" Visual mode functions
+function! Enclose(mode, indent)
+        if a:mode == '{'
+                let start = '{'
+                let end = '}'
+        elseif a:mode == '/'
+                if &ft == 'xml' || &ft == 'html'
+                        let start = '<!--'
+                        let end = '-->'
+                else
+                        let start = '/**'
+                        let end = '/**/'
+                endif
+        endif
+        let extra = ''
+        if a:indent
+                let extra = "\<BS>"
+        endif
+        call cursor(line("'<"), col("'<"))
+        execute "normal! O" . extra . start
+        call cursor(line("'>"), col("'>"))
+        execute "normal! o" . extra . end
+endfunction
+
+
+
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+" Template and tag expansion
+function! ExpandTemplate(ignore_quote)
+        if a:ignore_quote || GetSynUnder() == 'htmlString' || (!InsideQuote("'") && !InsideQuote('"'))
+                let cword = GetExactWordBeforeCursor(1)
+                if exists('g:template' . &ft . cword)
+                        return "\<C-W>" . g:template{&ft}{cword}
+                elseif exists('g:template_' . cword)
+                        return "\<C-W>" . g:template_{cword}
+                endif
+        endif
+        return ExpandTag(' ')
+endfunction
+" inoremap <silent> <Space> <C-R>=ExpandTemplate(0)<CR>
+
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+" Vim templates
+let g:template{'vim'}{'f'} = "function! ()\<CR>endfunction\<Up>\<End>\<Left>\<Left>"
+let g:template{'vim'}{'r'} = "return "
+
+" Python templates
+let g:template{'python'}{'f'} = "def ():\<CR>\<Tab>pass\<Up>\<End>" . repeat("\<Left>", 3)
+let g:template{'python'}{'fi'} = "def __init__(self):\<CR>\<Tab>pass\<Up>\<End>" . repeat("\<Left>", 2)
+let g:template{'python'}{'cl'} = "class ():\<CR>\<Tab>pass\<Up>\<End>" . repeat("\<Left>", 3)
+let g:template{'python'}{'p'} = 'pass'
+let g:template{'python'}{'s'} = 'self.'
+let g:template{'python'}{'t'} = g:template{'python'}{'s'}
+"++yAAA++}}} 
+
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+vnoremap <silent> <M-{> >gv:<C-u>call Enclose('{', 1)<CR>
+vnoremap <silent> <M-3> >gv:<C-u>call Enclose('#', 1)<CR>
+vnoremap <silent> <M-/> :<C-u>call Enclose('/', 0)<CR>
+
