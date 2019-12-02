@@ -1,5 +1,210 @@
+        "----------------------------------------------------------------------------------
+
+        "----------------------------------------------------------------------------------
+        " nmap <Leader>c <Plug>CRV_CRefVimNormal
+        " vmap <Leader>r <Plug>CRV_CRefVimVisual
+        " map  <Leader>cw <Plug>CRV_CRefVimAsk
+        " map  <Leader>cc <Plug>CRV_CRefVimInvoke
+
+        "----------------------------------------------------------------------------------
+        " <Plug>(neoterm-repl-send)
+        "----------------------------------------------------------------------------------
+        " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+        " autocmd User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
+        "--IRENE----------------------------------------------------------------------------
+        "==========================================================================================
+        " source ~/git/bTest/kDot/sWhich8Key.vim
+        "        nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+        "        nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+        "        nnoremap <silent> ; :<c-u>WhichKey  ';'<CR>
+        "==========================================================================================
+
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "---------------------------------------------------------------------------------
+        " autocmd FileType python setlocal omnifunc=lsp#complete
+        " autocmd! FileType typescript setlocal omnifunc=coc#completions
+        " autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
+        " autocmd! FileType python setlocal omnifunc=jedi#completions
+        " autocmd! FileType python setlocal completeopt+=menu,preview
+        "---------------------------------------------------------------------------------
+        "=autocmd! FileType python setlocal completeopt+=preview
+        "=autocmd! FileType python setlocal omnifunc=coc#completions
+        "---------------------------------------------------------------------------------
+        "===============================================================================================================
+        " Search for visually highlighted text
+        " :vmap ff y/<C-R>"<CR>
+        "===============================================================================================================
+
+        "===============================================================================================================
+        " Since teaching a lesson on pytest in our 100 Days of Code course I discovered
+        " coverage and made this alias in my .vimrc to simply check it with one keystroke:
+        " nmap ,t :w<CR>:!pytest -s --cov-report term-missing --cov='.'<CR>
+        " # enable venv (TODO: switch to pipenv)
+        " pip install pytest-cov
+        "===============================================================================================================
+
+        "---------------------------------------------------------------------------------
+        " nmap gz <Plug>ZVOperator
+        " vmap <localleader>z <Plug>ZVVisSelection
+        "========================================================
+        snippet si2nce
+        @since ${0:#:version}
+        "========================================================
+        " imap <c-k> <plug>(fzf-complete-word)
+        " imap <C-8> <plug>(fzf-complete-file-ag)
+        " imap <expr><M-0> fzf#vim#complete('cat /usr/share/dict/words')
+
+        "==================================================================================
+        Plug 'liuchengxu/vim-clap'
+        let g:clap_provider_alias = {'hist:': 'command_history'}
+        " let g:clap_open_action: Dict, { 'ctrl-t': 'tab split', 'ctrl-x': 'split', 'ctrl-v': 'vsplit'}
+        "========================================================
+        hi default link ClapInput   Visual
+        hi default link ClapDisplay Pmenu
+        hi default link ClapPreview PmenuSel
+        hi default link ClapMatches Search
+        "========================================================
+        "=ClapQuery will use the bold fg of Normal and the same bg of ClapInput
+        hi ClapDefaultPreview          ctermbg=237 guibg=#3E4452
+        hi ClapDefaultSelected         cterm=bold,underline gui=bold,underline ctermfg=80 guifg=#5fd7d7
+        hi ClapDefaultCurrentSelection cterm=bold gui=bold ctermfg=224 guifg=#ffd7d7
+        "========================================================
+        hi default link ClapPreview          ClapDefaultPreview
+        hi default link ClapSelected         ClapDefaultSelected
+        hi default link ClapCurrentSelection ClapDefaultCurrentSelection
+        "==================================================================================
 
 
+        "----------------------------------------------------------------------------------
+        nnoremap <Leader>4 <Plug>(textobj-diff-hunk-p)
+        "==================================================================================
+        "====
+
+                nnoremap <LocalLeader>; :CodeQueryMenu Unite Full<CR>
+                " nnoremap <LocalLeader>; :CodeQueryMenu Unite Magic<CR>
+                " Or enable typing (to search menu items) by default
+                nnoremap <LocalLeader>\ :CodeQueryMenu Unite Magic<CR>A
+
+                " Trigger db building (in current filetype) when your query fails
+                let g:codequery_trigger_build_db_when_db_not_found = 1
+                " Custom your `CodeQuery Text` commands
+                let g:codequery_find_text_cmd = 'Ack!'
+                let g:codequery_find_text_from_current_file_dir = 0
+                " 0 => search from project dir (git root directory -> then the directory containing xxx.db file)
+                " 1 => search from the directory containing current file
+                " If you use ':CodeQuery Symbol' in a txt file, of course, it will fail due to wrong filetype.
+                " With the following option set to 1, ':CodeQuery Text' will be automatically sent when your query fails.
+                let g:codequery_auto_switch_to_find_text_for_wrong_filetype = 0
+
+        "====
+        "==================================================================================
+
+        "==========================================================================================
+        "nnoremap <F6> :ScratchPreview<CR>
+        "nnoremap <F7> :Scratch<CR>
+
+        "==========================================================================================
+        ""Python runners
+        "autocmd! filetype python noremap <buffer> <F4> :w<CR>:!python %<CR>
+        "autocmd! filetype python inoremap <buffer> <C-F4> <Esc>:w<CR>:!python %<CR>
+        "autocmd! filetype python noremap <buffer> <S-F4> :w<CR>:!ipython %<CR>
+        "autocmd! filetype python inoremap <buffer> <S-F4> <Esc>:w<CR>:!ipython %<CR>
+        "noremap <buffer> <F4> :w<CR>:!python %<CR>
+        "noremap <buffer> <C-F4> :w<CR>:!clear;python %<CR>
+        "noremap <buffer> <S-F4> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
+        "==========================================================================================
+
+        nnoremap <M-q> :quit<CR>
+        inoremap <silent> <M-q> <C-o>:quit<CR>
+        nnoremap <M-Q> :quit!<CR>
+        inoremap <silent> <M-Q> <C-o>:quit!<CR>
+
+        " nnoremap <C-z> yy:<C-r>"<cr>
+        " nnoremap ;y yy:<C-r>"<cr>
+
+
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+        noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+        noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+        noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+" map tr :call airline#extensions#stopwatch#run()<CR>
+" map tp :call airline#extensions#stopwatch#split()<CR>
+" map ts :call airline#extensions#stopwatch#stop()<CR>
+" map tt :call airline#extensions#stopwatch#reset()<CR>
+" map ty :call airline#extensions#stopwatch#summary()<CR>
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+":::???::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+let g:dsf_no_mappings = 1
+nmap dsf <Plug>DsfDelete
+nmap csf <Plug>DsfChange
+nmap dsnf <Plug>DsfNextDelete
+nmap csnf <Plug>DsfNextChange
+omap af <Plug>DsfTextObjectA
+xmap af <Plug>DsfTextObjectA
+omap if <Plug>DsfTextObjectI
+xmap if <Plug>DsfTextObjectI
+
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+" Type <Leader>s to trig searching in normal mode
+nmap <silent> <Leader>s <Plug>SearchNormal
+" Type <Leader>s to search selected text in visual mode
+vmap <silent> <Leader>s <Plug>SearchVisual
+" Type <Leader>S to input the text you want to search in the cmdline
+nmap <silent> <Leader>S <Plug>SearchComand
+
+"--------------------------------------------------------------------------------- 
+command! -nargs=0 Tsc    :CocCommand tsserver.watchBuild
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+" let g:asyncomplete_auto_popup = 0
+" imap <c-space> <Plug>(asyncomplete_force_refresh)
+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+        "==================================================================================
+        let g:lsp_signs_enabled = 1
+        let g:lsp_diagnostics_echo_cursor = 1
+        let g:lsp_signs_error = {'text': '✗'}
+        let g:lsp_signs_warning = {'text': '‼', 'icon': '/path/to/some/icon'}
+        let g:lsp_signs_hint = {'icon': '/path/to/some/other/icon'}
+        let g:lsp_highlights_enabled = 0
+        let g:lsp_textprop_enabled = 0
+        let g:lsp_virtual_text_enabled = 0
+        let g:lsp_highlight_references_enabled = 1
+        highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
+        "==================================================================================
+
+
+        " Set the executive for some filetypes explicitly. Use the explicit executive
+        " instead of the default one for these filetypes when using `:Vista` without
+        " specifying the executive.
+        let g:vista_executive_for = {
+        \ 'cpp': 'vim_lsp',
+        \ 'php': 'vim_lsp',
+        \ }
+
+        " Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
+        let g:vista#renderer#enable_icon = 1
+
+        " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
+        let g:vista#renderer#icons = {
+        \   "function": "\uf794",
+        \   "variable": "\uf71b",
+        \  }
+
+        "--------------------------------------------------------------------------------- 
+
+
+  "diagnostic.errorSign": "cER",
+  "diagnostic.warningSign": "cWR",
+  "diagnostic.infoSign": "cIn",
+  "diagnostic.virtualText": true
 
 
 :nmap <F2> "=strftime('%c')<C-M>p
@@ -14,13 +219,6 @@ for i in range(1,10) | put ='192.168.0.'.i | endfor
 0192.168.0.4
 0211.168.0.5
 
-0
-1
-2
-3
-4
-5
-6
 
 "--------------------------------------------------------------------------------- 
 " Add argument (can be negative, default 1) to global variable i.
@@ -51,9 +249,9 @@ that increases by 5, starting at 100 (the numbers will be 100, 105, 110, and so 
 
 "--------------------------------------------------------------------------------- 
 https://github.com/Quramy/tsuquyomi
-
 https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python
 https://github.com/prabirshrestha/vim-lsp/wiki/Servers
+"--------------------------------------------------------------------------------- 
 
 
         "Plug 'endel/vim-github-colorscheme'
@@ -619,3 +817,102 @@ endfunction
         " - Editing HTML
         " - Bookmark files, directories, URLs
         "--------------------------------------------------------------------------------- 
+
+        "----------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        "Plug 'vim-airline/vim-airline'
+        "Plug 'vim-airline/vim-airline-themes'
+        "" Plug 'ffanzhang/vim-airline-stopwatch'
+        "Plug 'Zuckonit/vim-airline-tomato'
+        "let g:airline_theme='cool'
+        "let g:tomato#interval = 60 * 20
+        "let g:tomato#show_clock = 1
+        "let g:tomato#remind = "☻"
+        "let g:tomato#restinfo = "☺"
+        "let g:tomato#show_clock = 1
+        "let g:tomato#show_count_down = 1
+
+        "----------------------------------------------------------------------------------
+        "        let g:airline_theme='cool'
+        "        set showmode                "-Display the current mode
+        "        set showcmd                 "-Show partial commands in status line
+        "        "--------------------------------------------------------------------------
+        "        let g:airline_section_c = '%{strftime("%b %d %X")}'
+        "        let g:airline#extensions#tabline#enabled = 1
+        "        let g:airline#extensions#tabline#buffer_min_count = 1
+        "        "-----------------------------------------------------------
+        "        let g:airline#extensions#branch#enabled = 1
+        "        "-----------------------------------------------------------
+        "        let g:airline#extensions#tagbar#enabled=1
+        "        let g:airline#extensions#hunks#enabled=1
+        "        let g:airline#extensions#branch#displayed_head_limit=12
+        "        let g:airline#extensions#branch#sha1_len=8
+        "        let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
+        "        let g:airline#extensions#taboo#enabled=1
+        "        let g:airline#extensions#ale#enabled=1
+                        "-----------------------------------------------------------
+                        " let g:airline_powerline_fonts=1
+                        " let g:airline_left_sep='▙'
+                        " let g:airline_right_sep='▟'
+                        "-----------------------------------------------------------
+                        " if !exists('g:airline_symbols')
+                        "         let g:airline_symbols = {}
+                        " endif
+        "----------------------------------------------------------------------------------
+        hi statusline ctermbg=10 ctermfg=Black  cterm=bold guibg=custGreen
+        hi StatusLineNC  ctermbg=5 ctermfg=0 cterm=NONE
+
+        "===COOL-BUNT======================================================================
+        " Plug 'vim-airline/vim-airline'
+        " Plug 'vim-airline/vim-airline-themes'
+        " set laststatus=2
+        " let g:airline_powerline_fonts = 1
+        " let g:airline#extensions#ale#enabled = 1
+        " let g:airline_theme = 'cool'
+        " let g:airline_section_c = '%{strftime("%Y %b %d %X")}'
+        " let g:airline#extensions#tabline#enabled = 1
+        " let g:airline#extensions#tabline#buffer_min_count = 1
+        " let g:airline#extensions#hunks#enabled=1
+        "----------------------------------------------------------------------------------
+        " ?COC?
+        " let g:airline#extensions#coc#enabled = 1
+        " let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+        " let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+        "----------------------------------------------------------------------------------
+
+        "----------------------------------------------------------------------------------
+        " Plug 'itchyny/lightline.vim'
+        " Plug 'yarisgutierrez/ayu-lightline'
+        " " \ 'colorscheme': 'molokai',
+        " let g:lightline = {
+        "                         \ 'active': {
+        "                         \   'left': [ [ 'mode', 'paste' ],
+        "                         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        "                         \ },
+        "                         \ 'component_function': {
+        "                         \   'gitbranch': 'fugitive#head'
+        "                         \ },
+        "                         \ }
+        "----------------------------------------------------------------------------------
+
+        "--DeoLSP--------------------------------------------------------------------------
+        " Plug 'itchyny/lightline.vim'
+        " Plug 'yarisgutierrez/ayu-lightline'
+        " let g:lightline = {
+        " \ 'colorscheme': 'wombat',
+        " \ 'active': {
+        " \   'left': [ [ 'mode', 'paste' ],
+        " \             [ 'readonly', 'filename', 'modified', 'method' ] ]
+        " \ },
+        " \ 'component_function': {
+        " \   'method': 'NearestMethodOrFunction'
+        " \ },
+        " \ }
+        "----------------------------------------------------------------------------------
+
+        "----------------------------------------------------------------------------------
+        " abc,def,ghi
+        " the, most , short , long , big , bigly
+        " a,b,c
+        "----------------------------------------------------------------------------------
+

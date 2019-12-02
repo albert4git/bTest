@@ -1,10 +1,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 plt.plot()
 plt.scatter(x, y, s, m)
-plt.sci(x)
+plt.sci(4)
 plt.semilogy()
+plt.scatter()
+plt.scatter(1, 2, 3)
+plt.scatter(3, 3, 3)
+plt.axes(1, 3)
+
 
 class some_class(object):
     """

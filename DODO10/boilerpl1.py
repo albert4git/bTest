@@ -27,6 +27,8 @@ __version__ = '0.1'
 log = logging.getLogger(__name__ if __name__ != '__main__ '
                         else Path(__file__).stem)
 
+log = logging.getLogger(name)
+
 
 def manipulate_data(data):
     """This function is where the real work happens (or at least starts).
@@ -73,6 +75,7 @@ def read_instream(instream):
     """
     log.info('Reading Input')
     return instream.read()
+
 
 
 def main():

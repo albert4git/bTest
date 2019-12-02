@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.pylab as plb
 import matplotlib.path as pth
-import matplotlib.compat as cmp
-import matplotlib.pi as Pii
+import matplotlib.artist as art
 
 x = np.linspace(-np.pi, np.pi, 256)
 S, C = np.sin(x), np.cos(x)
@@ -10,7 +9,6 @@ y = np.lexsort(k, a)
 
 plt.sin()
 plt.plot()
-plt.scatter(x, y, m)
 plt.sci(x)
 plt.semilogy()
 plt.semilogx()
@@ -21,8 +19,12 @@ plt.savefig(1, 2)
 plt.stackplot(1, 3)
 plt.savefig(1, 0)
 plt.silent_list(1, 2)
-plt.scatter(2, 3)
-plt.sca(3)
+plt.scatter(1, 2, 3)
+plt.scatter(1, 8, 9)
+plt.scatter(1, 3, 9)
+plt.scatter(4, 7, 0)
+plt.scatter(5, 5, 5)
+plt.specgram(5, 7, 8)
 
 
 #=================================================================================

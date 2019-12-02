@@ -2,7 +2,7 @@
 "= File: s8DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mo 02 Dez 2019 12:52:22  CET
+" Lass Modified:      Mo 02 Dez 2019 01:32:54  CET
 "==================================================================================================
 let g:vimrcversion= 8
 au VimEnter * echo "VIMRC v"g:vimrcversion
@@ -165,8 +165,6 @@ au VimEnter * echo "VIMRC v"g:vimrcversion
 
         set modelines=0
         "------------------------------------------------------------------------------------------
-        "-CHECK-It-TODO
-        autocmd! FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
         set switchbuf=useopen    " reveal already opened files from the
         set hidden               " Hide buffer instead of abandoning when unloading
         "------------------------------------------------------------------------------------------
@@ -177,10 +175,6 @@ au VimEnter * echo "VIMRC v"g:vimrcversion
         silent! set updatetime=300 timeout timeoutlen=300 ttimeout ttimeoutlen=50 ttyfast lazyredraw
         silent! set noerrorbells visualbell t_vb=
         "------------------------------------------------------------------------------------------
-        "-Always open read-only when a swap file is found
-        autocmd! vimrc SwapExists * let v:swapchoice = 'o'
-        "-Setting lazyredraw causes a problem on startup
-        autocmd! vimrc VimEnter * redraw
         "-Enter-I-never-use the default behavior of <cr> and this saves me a keystroke...
         nnoremap <cr> o<esc>
         "-Smart Enter
@@ -196,8 +190,6 @@ au VimEnter * echo "VIMRC v"g:vimrcversion
         vnoremap . :normal .<CR>
         "-For when you forget to sudo.. Really Write the file.
         cmap w!! w !sudo tee % >/dev/null
-        "-Move to the directory each buffer
-        autocmd! vimrc BufEnter * silent! lcd %:p:h
         "-SWITCH TO THE DIRECTORY OF THE OPEN BUFFER
         map cd :cd %:p:h<cr>
         "------------------------------------------------------------------------------------------
@@ -209,28 +201,12 @@ au VimEnter * echo "VIMRC v"g:vimrcversion
 "+AAA2+}}}
 
 "++AAA3+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        function! ScriptExecute()
-                :!chmod u+x %
-                :w
-        endfunction
-        "------------------------------------------------------------------------------------------
-        augroup ScriptExecutePermission
-                autocmd!
-                autocmd BufWritePost *.sh :call ScriptExecute()
-        augroup END
-        "------------------------------------------------------------------------------------------
-        augroup SourceVimrc
-               autocmd!
-                autocmd bufwritepost .vimrc source $MYVIMRC
-        augroup END
         "------------------------------------------------------------------------------------------
         set diffopt+=vertical
         "???2019
         "------------------------------------------------------------------------------------------
         "char = can be removed from the list of valid filename char. JAVA_HOME=/opt/java/jdk1.4
         set isfname-==
-        "- go to last edit position when opening files -
-        au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
         set autowrite  " Writes on make/shell commands
         set cf         " Enable error files & error jumping.
         set nu
@@ -389,8 +365,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---GLEB---------------------------------------------------------------------------
         "----------------------------------------------------------------------------------
         Plug 'sukima/xmledit/'
-        autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
-        autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
         "----------------------------------------------------------------------------------
         Plug 'sjl/gundo.vim'
         "----------------------------------------------------------------------------------
@@ -737,17 +711,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         "==================================================================================
         Plug 'google/vim-codefmt'
-                augroup autoformat_settings
-                        autocmd FileType bzl AutoFormatBuffer buildifier
-                        autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
-                        autocmd FileType dart AutoFormatBuffer dartfmt
-                        autocmd FileType go AutoFormatBuffer gofmt
-                        autocmd FileType gn AutoFormatBuffer gn
-                        " autocmd FileType html,css,json AutoFormatBuffer js-beautify
-                        autocmd FileType java AutoFormatBuffer google-java-format
-                        autocmd FileType python AutoFormatBuffer yapf
-                        " Alternative: autocmd FileType python AutoFormatBuffer autopep8
-                augroup END
         "----------------------------------------------------------------------------------
         Plug 'godlygeek/tabular'
         "----------------------------------------------------------------------------------
@@ -787,7 +750,6 @@ call plug#begin('~/.config/nvim/plugged/')
                         nmap mjj :BookmarkMoveDown
                 endfunction
                 "------------------------------------------------------
-                autocmd! BufEnter * :call BookmarkMapKeys()
                 highlight BookmarkSign ctermbg=10 ctermfg=1 guifg=#cc1122 guibg=#FF5F00
                 highlight BookmarkLine ctermbg=10 ctermfg=1 guibg=#ff5f00 guifg=#000088
                 highlight BookmarkAnnotationLine ctermbg=9 ctermfg=1
@@ -945,11 +907,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'haya14busa/vim-easyoperator-line'
         "---------------------------------------------------------------------------------
         Plug 'unblevable/quick-scope'
-        augroup qs_colors
-                autocmd!
-                autocmd ColorScheme * highlight QuickScopePrimary  ctermfg=81 cterm=underline
-                autocmd ColorScheme * highlight QuickScopeSecondary  ctermfg=93 cterm=underline
-        augroup END
         "--------------------Nice----------------------------------------------------------
         Plug 'moll/vim-bbye'
         "----------------------------------------------------------------------------------
@@ -1038,10 +995,6 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "------------------Nice------------------------------------------------------------
         Plug 'vim-scripts/underlinetag'
-        augroup UnderlineTag
-                autocmd!
-                autocmd BufEnter *.py UnderlineTagOn
-        augroup END
 
         "===================================================================================
         "---Perfection - Continuity------
@@ -1287,27 +1240,6 @@ call plug#end()
 "++AAAxU++}}} 
 
 "++AAA5Main++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        function! NearestMethodOrFunction() abort
-        return get(b:, 'vista_nearest_method_or_function', '')
-        endfunction
-
-        set statusline+=%{NearestMethodOrFunction()}
-
-        " By default vista.vim never run if you don't call it explicitly.
-        " If you want to show the nearest function in your statusline automatically,
-        " you can add the following line to your vimrc 
-        autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-        " By default vista.vim never run if you don't call it explicitly.
-        "
-        " If you want to show the nearest function in your statusline automatically,
-        " you can add the following line to your vimrc
-        autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-
         "===VIM-STARTIFY-2==================================================================
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
 
@@ -1359,18 +1291,6 @@ call plug#end()
         "-let g:nnv_search_paths = ['~/git/bTest/']
         "-let g:nnv_search_paths = ['/media/red/124Black/']
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-        autocmd! User Oblique       normal! zz
-        autocmd! User ObliqueStar   normal! zz
-        autocmd! User ObliqueRepeat normal! zz
-
-        hi! def link ObliqueCurrentMatch Keyword
-        hi! def link ObliquePrompt       Structure
-        hi! def link ObliqueLine         String
-        let g:oblique#clear_highlight =0
-
-        " More useful command-line completion
-        au! FocusLost * :silent! wall
         set wildmenu
         "black-List
         set wildmode=list:longest
@@ -1479,7 +1399,7 @@ call plug#end()
         nnoremap <M-x> :exe getline(".")<CR>
         vnoremap <M-x> :<C-w>exe join(getline("'<","'>"),'<Bar>')<CR>
         "==========================================================================================
-        "Transport Down Ex: Pull word under cursor into :Ex LHS of a subs ztitute (replace)
+        "Transport Down Ex:
         nnoremap ,w :<C-r>=expand("<cword>")<CR>
         nnoremap ;w :<C-r>=getline(".")<CR>
 
@@ -1517,10 +1437,6 @@ call plug#end()
         nnoremap hh <c-w>w
         nnoremap ll :execute "leftabove vsplit" bufname('#')<cr>
         nnoremap VV :execute "vsplit" bufname('#')<cr>
-
-        "===openFileWithSameBasenameDifferentExtension=============================================
-        "nnoremap <expr> ,R  ":e ".expand("%:r")."."
-        "==========================================================================================
 
         "==========================================================================================
         " Convenience shortcuts
@@ -1590,15 +1506,6 @@ call plug#end()
         nnoremap ( <c-x>:y x\|@x<cr>
         nnoremap ) <c-a>:y x\|@x<cr>
 
-        "==========================================================================================
-        "---FIREFOX---
-        " www.ewb.de
-        "===NOWO====================================================================================
-        " nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
-        " nnoremap <localleader>o :Utl<CR>
-        " nnoremap ;o :Utl<CR>
-        "==========================================================================================
-
         "------------------------------------------------------------------------------------------
         "===Control-] pop open a window and show the tag there.====================================
         "------------------------------------------------------------------------------------------
@@ -1624,7 +1531,6 @@ call plug#end()
                 Unite -start-insert -winheight=100 -immediately -no-empty ultisnips
                 return ''
         endfunction
-        " inoremap <F4> <C-R>=(pumvisible()? "\<LT>C-E>":"")<CR><C-R>=UltiSnipsCallUnite()<CR>
         let g:UltiSnipsExpandTrigger="<C-b>"
         let g:UltiSnipsJumpForwardTrigger="<C-b>"
         let g:UltiSnipsJumpBackwardTrigger="<C-z>"
@@ -1723,7 +1629,6 @@ call plug#end()
         "---------------------------------------------------------------------------------
         nmap ;z <Plug>Zeavim
         nmap <Leader>z <Plug>ZVKeyDocset
-
         "------------------
         " :Pydoc foo.bar.baz (e.g. :Pydoc re.compile)
         " Or search a word (uses pydoc -k) in the documentation by typing:
@@ -1779,7 +1684,6 @@ call plug#end()
         " Use <C-e> as an alias to <End>
         inoremap <silent> <C-e> <End>
         "==============================================================
-        "===NEXT==================================================
         "imap <c-f> <plug>(fzf-complete-path)
         "========================================================
         imap <expr><C-0> fzf#vim#complete#word({'left': '20%'})
@@ -1843,15 +1747,8 @@ call plug#end()
                 endif
         endfunction
 
-        "==================================================================================
-        "---Open-Quickfix-window-automatically---------------------------------------------
-        "==================================================================================
-        autocmd QuickFixCmdPost grep cwindow
-        autocmd! vimrc QuickfixCmdPost [^l]* nested copen | wincmd p
-        autocmd! vimrc QuickfixCmdPost l* nested lopen | wincmd p
 
         "==================================================================================
-        " Focus the current line.  Basically:
         function! FocusLine()
                 let oldscrolloff = &scrolloff
                 set scrolloff=0
@@ -1900,7 +1797,6 @@ call plug#end()
 
 "++AAAFzf++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         let g:fzf_command_prefix = 'FF'
-        " In Neovim, you can set up fzf window using a Vim command
         let g:fzf_layout = { 'window': 'enew' }
         let g:fzf_layout = { 'window': '-tabnew' }
         let g:fzf_layout = { 'down': '~20%' }
@@ -1926,14 +1822,6 @@ call plug#end()
                                 \ 'ctrl-s': 'split',
                                 \ 'ctrl-x': ':Lynx',
                                 \ 'ctrl-v': 'vsplit' }
-        "==========================================================================================
-        function! s:fzf_statusline()
-                highlight fzf1 ctermfg=11 ctermbg=9
-                highlight fzf2 ctermfg=11 ctermbg=9
-                highlight fzf3 ctermfg=11 ctermbg=9
-                setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
-        endfunction
-        autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
         "======================================================================================================
         "-[Buffers] Jump to the existing window if possible
@@ -2022,7 +1910,6 @@ call plug#end()
        command! ZLibList call fzf#run({'source': 'find ~/git/ ~/Documents/ -type f', 'sink':  'edit'})
 
        "========================================================================================================
-
        function! s:plug_help_sink(line)
                let dir = g:plugs[a:line].dir
                for pat in ['doc/*.txt', 'README.md']
@@ -2042,20 +1929,6 @@ call plug#end()
                                \'right': '30%'
                                \}))
 
-
-        "============================================================================================
-        " Any command that lists files can be used as the source
-        " call fzf#run(fzf#wrap({'source': 'ls'}))
-        " call fzf#run(fzf#wrap({'source': 'git ls-files'}))
-        "============================================================================================
-        " I want this tip to inspire you. Perhaps you never thought of running a web
-        " server from inside your text editor. Does this give you ideas for other
-        " processes that you could control remotely?
-
-        "===???======================================================================================
-        " :command! NpmRestart call jobsend(1, "\<C-c>npm run server\<CR>")
-        " :command! ApaStart call jobsend(1, "\<C-c>apachectl start\<CR>")
-        " :Restart
 
         "============================================================================================
         " Convenient command to see the difference between the current buffer and the
@@ -2093,9 +1966,6 @@ call plug#end()
         nnoremap ; :<c-u>LeaderGuide  ';'<CR>
         vnoremap ; :<c-u>LeaderGuideVisual  ';'<CR>
         "========================================
-        " nnoremap z :<c-u>LeaderGuide  'z'<CR>
-        " vnoremap z :<c-u>LeaderGuideVisual  'z'<CR>
-        "========================================
         "========================================
 "++AAALeader++}}} 
 
@@ -2123,6 +1993,7 @@ call plug#end()
         "--------------------------------------------------------------------------------
         " imap <expr> <C-j>  deoplete#manual_complete()
         " imap <expr> <M-j>  deoplete#manual_complete() <C-n>
+        "--------------------------------------------------------------------------------
 
         let g:LanguageClient_autoStart = 1
         " let g:LanguageClient_hoverPreview="Never"
@@ -2151,12 +2022,113 @@ call plug#end()
         autocmd! FileType haskell setlocal omnifunc=necoghc#omnifunc
         set completeopt+=menu
         set completeopt+=preview
+        "==========================================================================================
+        "==========================================================================================
+        "-CHECK-It-TODO
+        autocmd! FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+        "==========================================================================================
+        "-Always open read-only when a swap file is found
+        autocmd! vimrc SwapExists * let v:swapchoice = 'o'
+        "-Setting lazyredraw causes a problem on startup
+        autocmd! vimrc VimEnter * redraw
+        "==========================================================================================
+        "-Move to the directory each buffer
+        autocmd! vimrc BufEnter * silent! lcd %:p:h
+        "==========================================================================================
+        function! ScriptExecute()
+                :!chmod u+x %
+                :w
+        endfunction
+        "------------------------------------------------------------------------------------------
+        augroup ScriptExecutePermission
+                autocmd!
+                autocmd BufWritePost *.sh :call ScriptExecute()
+        augroup END
+        "------------------------------------------------------------------------------------------
+        augroup SourceVimrc
+               autocmd!
+                autocmd bufwritepost .vimrc source $MYVIMRC
+        augroup END
+        "==========================================================================================
+        autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
+        autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+        "==========================================================================================
+        "codefmt
+                augroup autoformat_settings
+                        autocmd FileType bzl AutoFormatBuffer buildifier
+                        autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+                        autocmd FileType dart AutoFormatBuffer dartfmt
+                        autocmd FileType go AutoFormatBuffer gofmt
+                        autocmd FileType gn AutoFormatBuffer gn
+                        " autocmd FileType html,css,json AutoFormatBuffer js-beautify
+                        autocmd FileType java AutoFormatBuffer google-java-format
+                        autocmd FileType python AutoFormatBuffer yapf
+                        " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+                augroup END
+        "==========================================================================================
+                autocmd! BufEnter * :call BookmarkMapKeys()
+        "==========================================================================================
+        augroup qs_colors
+                autocmd!
+                autocmd ColorScheme * highlight QuickScopePrimary  ctermfg=81 cterm=underline
+                autocmd ColorScheme * highlight QuickScopeSecondary  ctermfg=93 cterm=underline
+        augroup END
+        "==========================================================================================
+        augroup UnderlineTag
+                autocmd!
+                autocmd BufEnter *.py UnderlineTagOn
+        augroup END
+        "==========================================================================================
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "::::::
+                function! NearestMethodOrFunction() abort
+                return get(b:, 'vista_nearest_method_or_function', '')
+                endfunction
+
+                set statusline+=%{NearestMethodOrFunction()}
+
+                " By default vista.vim never run if you don't call it explicitly.
+                " If you want to show the nearest function in your statusline automatically,
+                " you can add the following line to your vimrc 
+                autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+        "::::::
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "==========================================================================================
+        " autocmd! User Oblique       normal! zz
+        " autocmd! User ObliqueStar   normal! zz
+        " autocmd! User ObliqueRepeat normal! zz
+
+        " hi! def link ObliqueCurrentMatch Keyword
+        " hi! def link ObliquePrompt       Structure
+        " hi! def link ObliqueLine         String
+        " let g:oblique#clear_highlight =0
+        "==================================================================================
+        "---Open-Quickfix-window-automatically---------------------------------------------
+        "==================================================================================
+        autocmd QuickFixCmdPost grep cwindow
+        autocmd! vimrc QuickfixCmdPost [^l]* nested copen | wincmd p
+        autocmd! vimrc QuickfixCmdPost l* nested lopen | wincmd p
+
+        "==========================================================================================
+        function! s:fzf_statusline()
+                highlight fzf1 ctermfg=11 ctermbg=9
+                highlight fzf2 ctermfg=11 ctermbg=9
+                highlight fzf3 ctermfg=11 ctermbg=9
+                setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+        endfunction
+        autocmd! User FzfStatusLine call <SID>fzf_statusline()
+        "==========================================================================================
+        " More useful command-line completion
+        au! FocusLost * :silent! wall
+        "==========================================================================================
+        "==========================================================================================
+        "- go to last edit position when opening files -
+        au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+        "==========================================================================================
+        "==========================================================================================
+        "==========================================================================================
 "++AAA-Auto++}}} 
-
-
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 vnoremap <silent> <M-{> >gv:<C-u>call Enclose('{', 1)<CR>
 vnoremap <silent> <M-3> >gv:<C-u>call Enclose('#', 1)<CR>
 vnoremap <silent> <M-/> :<C-u>call Enclose('/', 0)<CR>
-

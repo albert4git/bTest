@@ -220,9 +220,11 @@ alias s7='402nv.app  -u ~/git/bTest/kDot/s7DeoLc.vim'
 alias s70='deonvim  -u ~/git/bTest/kDot/s7DeoLc.vim' 
 
 alias s8='402nv.app  -u ~/git/bTest/kDot/s8DeoLc.vim' 
-alias s9='402nv.app  -u ~/git/bTest/kDot/s9DeoLc.vim' 
-alias s10='402nv.app  -u ~/git/bTest/kDot/s10DeoLc.vim' 
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""
+# alias s9='402nv.app  -u ~/git/bTest/kDot/s9DeoLc.vim' 
+# alias s10='402nv.app  -u ~/git/bTest/kDot/s10DeoLc.vim' 
+#====================NEW=================================
+alias s9='402nv.app  -u ~/git/bTest/sPot/s9DeoLc.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias p1='500nv.app  -u ~/git/bTest/kDot/p1Deo.vim' 
 alias p2='50nv  -u ~/git/bTest/kDot/p1Deo.vim' 
 alias p3='deonvim  -u ~/git/bTest/kDot/p1Deo.vim' 
@@ -675,8 +677,6 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 
-
-
 #===FIN==STOP==============================================================================
 zplug check || zplug install
 #zplug load
@@ -843,4 +843,6 @@ tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kDot2Snap.file -cJpf
 tar -P --listed-incremental=/media/red/124Black/TAR/TarRedConfig/RedConfig2Snap.file -cJpf /media/red/124Black/TAR/TarRedConfig/TarRedConfig-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/.config/
 
 #--------------------------------------------------------------------------------------------------
-cd ~/git/bTest/kDot/
+# cd ~/git/bTest/kDot/
+#--------------------------------------------------------------------------------------------------
+cd ~/git/bTest/sPot/

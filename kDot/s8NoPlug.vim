@@ -1,3 +1,33 @@
+        "===openFileWithSameBasenameDifferentExtension=============================================
+        "nnoremap <expr> ,R  ":e ".expand("%:r")."."
+        "==========================================================================================
+
+        "============================================================================================
+        "==========================================================================================
+        "---FIREFOX---
+        " www.ewb.de
+        "===NOWO====================================================================================
+        " nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
+        " nnoremap <localleader>o :Utl<CR>
+        " nnoremap ;o :Utl<CR>
+        "==========================================================================================
+        "============================================================================================
+
+        " inoremap <F4> <C-R>=(pumvisible()? "\<LT>C-E>":"")<CR><C-R>=UltiSnipsCallUnite()<CR>
+        "============================================================================================
+        "============================================================================================
+        " Any command that lists files can be used as the source
+        " call fzf#run(fzf#wrap({'source': 'ls'}))
+        " call fzf#run(fzf#wrap({'source': 'git ls-files'}))
+        "============================================================================================
+        " I want this tip to inspire you. Perhaps you never thought of running a web
+        " server from inside your text editor. Does this give you ideas for other
+        " processes that you could control remotely?
+
+        "===???======================================================================================
+        " :command! NpmRestart call jobsend(1, "\<C-c>npm run server\<CR>")
+        " :command! ApaStart call jobsend(1, "\<C-c>apachectl start\<CR>")
+        " :Restart
 
         "------------------------------------------------------------------
         " augroup ft_fugitive
