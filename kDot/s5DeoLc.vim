@@ -2,7 +2,7 @@
 "= File: s2DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mo 28 Okt 2019 08:52:49  CET
+" Lass Modified:      So 01 Dez 2019 08:12:42  CET
 "==================================================================================================
 "==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -2119,41 +2119,30 @@ call plug#end()
                                 \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
        "========================================================
 
-       "============================================================================================
-       "=========
-       "MAO 
-       "nmap <C-p> :FZF<cr>
-       "nnoremap <C-p> :<C-u>FZF<CR>
-       "mao
-       "=========
-       "============================================================================================
-       "=========
 
+       "====MAO=====================================================================================
        command! -bang -nargs=* ZFind call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
        command! -bang -nargs=* ZFi call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-
-       "=========
        "============================================================================================
-       "=========
-
        command! -bang -nargs=? -complete=dir ZFiles
                                \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
+       "============================================================================================
        command! -bang -nargs=?  ZAg
                                \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview(), <bang>0)
-
+       "============================================================================================
        command! -bang -nargs=* ZRg 
                                \call fzf#vim#grep('rg --column --line-number --no-heading 
                                \--fixed-strings --ignore-case --no-ignore --hidden --follow 
                                \--glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-
+       "============================================================================================
        command! -bang -nargs=?  ZGit
                                \ call fzf#run({'source': 'git ls-files', 'sink': 'e', 'right': '40%'})
-
+       "============================================================================================
        command! -bang -nargs=?  ZClr
                                \ call fzf#run({'source': map(split(globpath(&rtp, 'colors/*.vim')),
                                \ 'fnamemodify(v:val, ":t:r")'),
                                \ 'sink': 'colo', 'left': '25%'})
+       "============================================================================================
 
 
        "=========

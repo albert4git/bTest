@@ -27,3 +27,27 @@ call quickmenu#append("# Misc", '')
 call quickmenu#append("Turn paste %{&paste? 'off':'on'}", "set paste!", "enable/disable paste mode (:set paste!)")
 call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
 call quickmenu#append("Function List", "TagbarToggle", "Switch Tagbar on/off")
+
+"--------------------------------------------------------------------------------- 
+"--------------------------------------------------------------------------------- 
+" " clear all the items
+" call g:quickmenu#reset()
+
+" " new section: empty action with text starts with "#" represent a new section
+" call quickmenu#append("# Debug", '')
+
+" " script between %{ and } will be evaluated before menu open
+" call quickmenu#append("Run %{expand('%:t')}", '!./%', "Run current file")
+
+" " new section
+" call quickmenu#append("# Git", '')
+
+" " use fugitive to show diff
+" call quickmenu#append("git diff", 'Gvdiff', "use fugitive's Gvdiff on current document")
+" call quickmenu#append("git status", 'Gstatus', "use fugitive's Gstatus on current document")
+
+" " new section
+" call quickmenu#append("# Misc", '')
+" call quickmenu#append("Turn paste %{&paste? 'off':'on'}", "set paste!", "enable/disable paste mode (:set paste!)")
+" call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
+" call quickmenu#append("Function List", "TagbarToggle", "Switch Tagbar on/off")

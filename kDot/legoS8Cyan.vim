@@ -82,6 +82,8 @@
         hi Comment        ctermfg=249 guifg=#dddddd  guibg=#0F8F14
 
         hi Folded     ctermfg=249 guifg=#dddddd  guibg=#0087ff
+        hi Folded     ctermfg=249 guifg=#0081FF  guibg=#aa0022
+        hi Folded     ctermfg=249 guifg=#FFffFF  guibg=#aa0022
         "--------------------------------------------------------------------------------
         set pumheight=18
         hi Pmenu          ctermfg=1  ctermbg=255 guibg=#0090F6
@@ -108,7 +110,7 @@
 
         hi customPlus     ctermbg=245 ctermfg=White  guibg=#EcEcEc guifg=#0011ff
 
-        hi lightGray      ctermbg=12  guibg=#cccccc guifg=#ff11c0
+        hi lightGray      ctermbg=12  guibg=#afffaf guifg=#001100 gui=bold
         hi darkGray       ctermbg=211 guibg=#ffff00  guifg=#8000f0
 
         "--------------------------------------------------------------------------------
