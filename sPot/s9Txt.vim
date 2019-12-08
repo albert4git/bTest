@@ -1,5 +1,49 @@
-        "----------------------------------------------------------------------------------
 
+
+"==================================================================================================
+vnoremap <silent> <M-{> >gv:<C-u>call Enclose('{', 1)<CR>
+vnoremap <silent> <M-3> >gv:<C-u>call Enclose('#', 1)<CR>
+vnoremap <silent> <M-/> :<C-u>call Enclose('/', 0)<CR>
+
+
+"==================================================================================================
+find . -name '*.java' > cscope.files
+"==================================================================================================
+
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+        \ },
+
+"==================================================================================================
+" ctags -R --fields=+l --languages=python --python-kinds=-iv -f /.tags ./
+
+types_c.taghl
+types_go.taghl
+types_java.taghl 
+types_php.taghl
+types_pl.taghl 
+types_py.taghl 
+types_ruby.taghl
+        "==================================================================================
+        "====
+        " let generate_tags=1
+        " Set tags option
+        " set tags=./javascript_tags;/
+        " set tags+=./python_tags;/
+        " set tags+=./ruby_tags;/
+        " set tags+=./go_tags;/
+        " set tags+=./java_tags;/
+        " set tags+=./c_tags;/
+        ":set tags=./tags,tags,/home/user/commontags
+        "====
+        "==========================================================================================
+        "----------------------------------------------------------------------------------
+"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        " set dictionary=/usr/share/dict/words
+        " set dictionary="/usr/dict/words"
+        " set spellfile=~/.config/nvim/spell/en.utf-8.add
+"++AAAx++}}} 
         "----------------------------------------------------------------------------------
         " nmap <Leader>c <Plug>CRV_CRefVimNormal
         " vmap <Leader>r <Plug>CRV_CRefVimVisual
@@ -54,6 +98,7 @@
         " imap <C-8> <plug>(fzf-complete-file-ag)
         " imap <expr><M-0> fzf#vim#complete('cat /usr/share/dict/words')
 
+"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "==================================================================================
         Plug 'liuchengxu/vim-clap'
         let g:clap_provider_alias = {'hist:': 'command_history'}
@@ -73,9 +118,9 @@
         hi default link ClapSelected         ClapDefaultSelected
         hi default link ClapCurrentSelection ClapDefaultCurrentSelection
         "==================================================================================
+"++AAAx++}}} 
 
-
-        "----------------------------------------------------------------------------------
+        "===???============================================================================
         nnoremap <Leader>4 <Plug>(textobj-diff-hunk-p)
         "==================================================================================
         "====
@@ -179,8 +224,6 @@ command! -nargs=0 Tsc    :CocCommand tsserver.watchBuild
         let g:lsp_highlight_references_enabled = 1
         highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
         "==================================================================================
-
-
         " Set the executive for some filetypes explicitly. Use the explicit executive
         " instead of the default one for these filetypes when using `:Vista` without
         " specifying the executive.
@@ -219,8 +262,7 @@ for i in range(1,10) | put ='192.168.0.'.i | endfor
 0192.168.0.4
 0211.168.0.5
 
-
-"--------------------------------------------------------------------------------- 
+"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 " Add argument (can be negative, default 1) to global variable i.
 " Return value of i before the change.
 function Inc(...)
@@ -229,10 +271,12 @@ function Inc(...)
   return result
 endfunction
 
-Suppose you want to replace each occurrence of "abc" with "xyz_N"
-where N is an ascending number (xyz_1, xyz_2, xyz_3, and so on).
+" Suppose you want to replace each occurrence of "abc" with "xyz_N"
+" where N is an ascending number (xyz_1, xyz_2, xyz_3, and so on).
 
-:let i = 1 | %s/abc/\='xyz_' . Inc()/g
+" :let i = 1 | %s/abc/\='xyz_' . Inc()/g
+
+"++AAAx++}}} 
 
 
 For another example, the following command replaces each occurrence of "abc" with a number
@@ -538,12 +582,10 @@ endfunction
 
 set statusline+=%{NearestMethodOrFunction()}
 
-"==================================================================================
-after I improved indenting, highlighting and autocompletion slightly.
-"==================================================================================
 let s:save_cpo = &cpo
 set cpo&vim
 
+"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 let g:which_key_sep = get(g:, 'which_key_sep', '→')
 let g:which_key_hspace = get(g:, 'which_key_hspace', 5)
 let g:which_key_flatten = get(g:, 'which_key_flatten', 1)
@@ -631,8 +673,9 @@ call which_key#register('<Space>', "g:which_key_map")
 
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
+"++AAAx++}}} 
 
-
+"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "==================================================================================
 " loading the plugin
 let g:webdevicons_enable = 1
@@ -698,11 +741,13 @@ let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*jquery.*\.js$'] = 'ƛ
 " add or override individual additional filetypes
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
+"++AAAx++}}} 
 "==================================================================================
 
 "==================================================================================
 
 "==================================================================================
+"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 command! ZDeviList call ZDeviList()
 command! ZDevi call ZDeviList()
 " Files + devicons
@@ -735,8 +780,9 @@ function! ZDeviList()
                                 \ 'options': '-m -x +s',
                                 \ 'down':    '40%' })
 endfunction
+"++AAAx++}}} 
 
-
+"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "------------------TODO------------------------------------------------------------ 
         Plug 'vim-scripts/utl.vim'
         " [ open with \o ] {{{ open: URL, preview doc: markdown, TeX, etc.
@@ -817,6 +863,7 @@ endfunction
         " - Editing HTML
         " - Bookmark files, directories, URLs
         "--------------------------------------------------------------------------------- 
+"++AAAx++}}} 
 
         "----------------------------------------------------------------------------------
         "----------------------------------------------------------------------------------

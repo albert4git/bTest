@@ -39,6 +39,7 @@
         "         au BufNewFile,BufRead .git/index setlocal nolist
         " augroup END
         "------------------------------------------------------------------
+        " Plug 'jesseleite/vim-agriculture'
         "----------------------------------------------------------------------------------
         "Plug 'vimim/vimim'
         "Plug 'cy2081/vim-cyim'

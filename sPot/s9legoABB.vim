@@ -13,21 +13,20 @@ ab fro for
 iabbrev yyy "---------------------------------------------------------------------------------
 iabbrev yyy1 "---------------------------------------------------------------------------------------------
 iabbrev yyy2 "--------------------------------------------------------------------------------------------------{{{
-iabbrev yyy3 "++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{<CR>"++xAAA++}}}
+iabbrev yyy3 "++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{<CR>"++AAAx++}}}
 
-
-iabbrev yyy9 "....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8....+....9....+...10<esc>
+iabbrev yyy= "======================================================================================================
+iabbrev yyy: ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 iabbrev a@    albert@sv.com
 iabbrev c@ Copyright 2018 Albert, all rights reserved.
+
 autocmd FileType vim :iabbrev <buffer> iff if ()<left>
 autocmd FileType c,cpp :iabbrev <buffer> iff if () { }<left>
 
 iabbrev adate  <c-r>=strftime("%F")<cr>
 iabbrev cdate  <c-r>=strftime("%c")<cr>
 
-cabbrev sta vertical sta
-cabbrev h vertical help
 "===================================================================================================
 :iab ff0 if ()<Left>
 :iab ff1 for (i = 0; i < ; ++i)
@@ -88,7 +87,6 @@ endfunction
 " call BoxMy("Gold Stuck.chen")
 
 
-cabbrev BoxM  call BoxMyCenter("")
 
 command! BoxMyC call BoxMyCenter()
 

@@ -33,7 +33,6 @@
         highlight LocalVariable cterm=bold ctermbg=14
         highlight GlobalVariable cterm=bold ctermbg=207
 
-        highlight UnderlineTag  cterm=underline  gui=underline guifg=#555555
 
         "----------------------------------------------------------------------------------
         " hi Enumerator guifg="c000c0"
@@ -118,9 +117,6 @@
         hi custGreen   ctermbg=Green ctermfg=White  guibg=#Afffaf  guifg=#0024fF
         hi custYellow  ctermbg=Blue  ctermfg=White  guibg=#AfffDf  guifg=#ff5f00
         "--------------------------------------------------------------------------------
-        set nuw =4
-        set list
-        set listchars=tab:▸\
 
         "--------------------------------------------------------------------------------
         call matchadd('lightGray', 'NEXT')
@@ -151,12 +147,6 @@
         hi! def link ObliqueLine         String
         let g:oblique#clear_highlight =0
 
-"===============================================================================================================
-" show invisible
-" set list
-set listchars=tab:▸\ ,eol:¬,trail:⋅
-hi NonText ctermfg=16 guifg=#Fa3a19
-hi SpecialKey ctermfg=16 guifg=#ff00af
 "===============================================================================================================
 highlight ExtraWhitespace ctermbg=red guibg=#ffFFff
 highlight ExtraTabs ctermbg=red guibg=#FF9922

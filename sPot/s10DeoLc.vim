@@ -1,29 +1,28 @@
 "==================================================================================================
-"= File: s8DeoLc.vim
+"= File: s10DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Fr 06 Dez 2019 05:32:10  CET
+" Lass Modified:      So 08 Dez 2019 03:36:20  CET
 "==================================================================================================
-let g:vimrcversion= 9
+let g:vimrcversion= 10
 au VimEnter * echo "VIMRC v"g:vimrcversion
 "==================================================================================================
 " after I improved indenting, highlighting and autocompletion slightly.
+" EditScope in NormalMode
 " togle Fold?
 set foldlevel=0
 set foldclose=all
 "==================================================================================================
-"=Fish=============================================================================================
-"==================================================================================================
 
 "++AAA0-Py+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
+        set path+=.,/home/red/Documents/
         "----------------------------------------------------------------------------------
         let $MYVIMRC='~/.config/nvim/init.vim'
         " command! Vimrc :vs $MYVIMRC
         "----------------------------------------------------------------------------------
         let g:python_host_prog = '/usr/bin/python2'
         let g:python3_host_prog = '/usr/bin/python3'
-        "let g:deoplete#sources#jedi#extra_path = $PYTHONPATH
         "let g:python3_host_prog=expand('~/anaconda3/bin/python')
         "----------------------------------------------------------------------------------
         " let g:loaded_clipboard_provider = empty(provider#clipboard#Executable()) ? 1 : 2
@@ -42,6 +41,12 @@ set foldclose=all
         set helplang=en,de
         set encoding=UTF-8
         set shell=/bin/zsh
+        let generate_tags=1
+        set tags=.tags;
+        set tags+=tags;
+        "==================================================================================
+        "==========================================================================================
+        ":set tags=./tags,tags,/home/user/commontags
         "----------------------------------------------------------------------------------
         " set spelllang=de,tech_speak
         " 'zg': add, 'zw': remove.
@@ -112,7 +117,7 @@ set foldclose=all
         "----------------------------------------------------------------------------------
 
 "++AAA1++}}}
-"++AAA2-MainSet+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+"++AAA2+MainSet+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "-magic--------
         silent! set wrapscan ignorecase smartcase incsearch hlsearch magic
         " \v: 'very magic', make every character except a-zA-Z0-9 and '_' have special meaning
@@ -195,9 +200,13 @@ set foldclose=all
         set autowrite  " Writes on make/shell commands
         set cf         " Enable error files & error jumping.
         set nu
+        set nonu
 "++AAA2++}}}
 "++AAA3ToDo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "------------------------------------------------------------------------------------------
+        "-TODO-
+        "-TODO-
+        "-TODO-
         "-TODO-
         "------------------------------------------------------------------------------------------
         let g:ctrlp_map='<c-p>'
@@ -310,43 +319,17 @@ call plug#begin('~/.config/nvim/plugged/')
          Plug 'itchyny/lightline.vim'
          Plug 'yarisgutierrez/ayu-lightline'
          let g:lightline = {
-                                 \ 'colorscheme': 'monokai_tasty',
-                                 \ 'mode_map': {
-                                 \   '__' : '-',
-                                 \   'n'  : 'N',
-                                 \   'no' : 'N·Operator Pending',
-                                 \   'v'  : 'V',
-                                 \   'V'  : 'V·Line',
-                                 \   's'  : 'Select',
-                                 \   'S'  : 'S·Line',
-                                 \   'i'  : 'I',
-                                 \   'R'  : 'R',
-                                 \   'Rv' : 'V·Replace',
-                                 \   'c'  : 'Command',
-                                 \   'cv' : 'Vim Ex',
-                                 \   'ce' : 'Ex',
-                                 \   'r'  : 'Prompt',
-                                 \   'rm' : 'More',
-                                 \   'r?' : 'Confirm',
-                                 \   '!'  : 'Shell',
-                                 \   't'  : 'Terminal'
-                                 \ },
-                                 \ 'active': {
-                                 \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
-                                 \   'right': [ ['percent', 'lineinfo'], [ 'fileformat', 'fileencoding', 'filetype', 'filesize' ],  ['tags'] ]
-                                 \ },
-                                 \ 'component_function': {
-                                 \   'cocstatus': 'coc#status',
-                                 \   'currentfunction': 'CocCurrentFunction',
-                                 \   'method': 'NearestMethodOrFunction'
-                                 \ },
-                                 \ 'component_expand': {
-                                 \   'paste': 'LightlinePaste',
-                                 \   'neomake': 'LightlineNeomake',
-                                 \   'tags': 'LightlineTags',
-                                 \   'obsession': 'LightlineObsession'
-                                 \ },
-                                 \ }
+                         \ 'colorscheme': 'monokai_tasty',
+                         \ 'active': {
+                         \   'left': [ [ 'mode', 'paste' ],
+                         \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+                         \ },
+                         \ 'component_function': {
+                         \   'cocstatus': 'coc#status',
+                         \   'currentfunction': 'CocCurrentFunction',
+                         \   'method': 'NearestMethodOrFunction'
+                         \ },
+                         \ }
 
         "----------------------------------------
         Plug 'zefei/vim-wintabs'
@@ -383,7 +366,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:indentLine_showFirstIndentLevel=1
                 let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']
 
-        Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+        " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
         "----------------------------------------------------------------------------------
         "----DEO-1--------------------------------------------------------------------------
         "----------------------------------------------------------------------------------
@@ -465,9 +448,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:CommandTTageIncludeFilenames = 1 " include filenames when matches
         "--------------------------------------
         Plug 'Shougo/unite.vim'
-        " Plug 'tsukkee/unite-tag'
-        " Plug 'SpaceVim/unite-ctags'
-        "-Plug 'lyuts/vim-rtags'
+        Plug 'tsukkee/unite-tag'
+        Plug 'SpaceVim/unite-ctags'
         Plug 'Shougo/unite-outline/'
         Plug 'tsukkee/unite-help'
         Plug 'rstacruz/vim-fastunite'
@@ -621,8 +603,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 highlight TagbarHelp        ctermfg=051 ctermbg=9
         "----------------------------------------------------------------------------------
         Plug 'ludovicchabant/vim-gutentags'
-        Plug 'skywind3000/gutentags_plus'
-        Plug 'multilobyte/gtags-cscope'
         "----------------------------------------------------------------------------------
         Plug 'guns/xterm-color-table.vim'
         "Plug 'gko/vim-coloresque'
@@ -910,8 +890,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:api_key = "1932136763"
                 let g:keyfrom = "aioiyuuko"
         "---------------------------------------------------------------------------------
-        " Plug 'ron89/thesaurus_query.vim'
-        " let g:tq_mthesaur_file="/home/red/git/bTest/sPot/DYCT/mthesaurGu.txt"
+        Plug 'ron89/thesaurus_query.vim'
+        let g:tq_mthesaur_file="/home/red/git/bTest/sPot/DYCT/mthesaurGu.txt"
         "------------------------------
         "----------------------------------------------------------------------------------
         Plug 'junegunn/goyo.vim'
@@ -928,6 +908,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'moll/vim-bbye'
         "----------------------------------------------------------------------------------
         "-:Acks- Plug 'wincent/ferret'
+        "-Plug 'lyuts/vim-rtags'
         "----------------------------------------------------------------------------------
         "---:T---:Tnew---:Topen---:TREPL---------------------------------------------------
         "----------------------------------------------------------------------------------
@@ -1011,7 +992,6 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "------------------Nice------------------------------------------------------------
         Plug 'vim-scripts/underlinetag'
-
         "--------------------------------------------------------------------------------- 
         Plug 'vim-scripts/TagHighlight'
         " TagHighlight highlight names of class, variable, types in code.
@@ -1029,6 +1009,7 @@ call plug#begin('~/.config/nvim/plugged/')
                                         \ "if_pyth3", "if_pyth", "python", "compiled",
                                         \ ]
         "--------------------------------------------------------------------------------- 
+
         "===================================================================================
         "---Perfection - Continuity------
         Plug 'terryma/vim-smooth-scroll'
@@ -1036,7 +1017,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " Extended abbreviation/substition.
         Plug 'tpope/vim-abolish'
         "----------------------------------------------------------------------------------
-        Plug 'amiorin/vim-project'
+        "-Plug 'amiorin/vim-project'
         "-Plug 'tpope/vim-projectionist'
         "----------------------------------------------------------------------------------
         "-Plug 'tpope/vim-rake'
@@ -1140,7 +1121,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'sk1418/QFGrep'
         Plug 'sk1418/Join'
         Plug 'salsifis/vim-transpose'
-        Plug 'vim-scripts/a.vim'
+        " Plug 'vim-scripts/a.vim'
         Plug 'machakann/vim-swap'
                 " omap i, <Plug>(swap-textobject-i)
                 " xmap i, <Plug>(swap-textobject-i)
@@ -1215,7 +1196,6 @@ call plug#begin('~/.config/nvim/plugged/')
         " let g:vista_executive_for = {'php': 'coc', 'java': 'coc', 'typescript': 'coc', 'go': 'coc', 'c': 'coc', 'javascript': 'coc', 'html': 'coc', 'rust': 'coc', 'cpp': 'coc', 'css': 'coc', 'python': 'coc'}
         " let g:vista_icon_indent = ['╰─🞂 ', '├─🞂 ']
         " let g:vista_default_executive = 'ctags'
-        " let g:vista_fzf_preview = ['right:50%']
         " let g:vista#renderer#enable_icon = 1
         " " By default vista.vim never run if you don't call it explicitly.
         " " If you want to show the nearest function in your statusline automatically,
@@ -1256,6 +1236,15 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'davidhalter/jedi-vim'
         Plug 'zchee/deoplete-jedi'
 "++AAAdeo++}}} 
+
+        " Plug 'KeyboardFire/vim-minisnip'
+        Plug 'gastonsimone/vim-dokumentary'
+        Plug 'joereynolds/deoplete-minisnip'
+        Plug 'vim-scripts/visualrepeat'
+        Plug 'vim-scripts/repmo.vim'
+        Plug 'tpope/vim-apathy'
+        Plug 'tpope/vim-scriptease'
+        Plug 'tpope/vim-classpath'
 
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " Plug 'hsitz/VimOrganizer'
@@ -1391,6 +1380,7 @@ call plug#end()
         map <C-M-j> <C-W>j<C-W>_
         map <C-M-k> <C-W>k<C-W>_
         "map <C-M-=> <C-W>=
+        "########################
         "------------------------
         "###Rezise###############
         "------------------------
@@ -1451,7 +1441,6 @@ call plug#end()
         vnoremap Q :norm @q<cr>
         "==========================================================================================
         imap ;; <ESC>
-
 
         "==========================================================================================
         nmap q <Nop>
@@ -1518,7 +1507,7 @@ call plug#end()
         nnoremap <Leader>d <Plug>DictSearch
         nnoremap <Leader>t :!goldendict <C-r><C-w><CR>
         nnoremap <Leader>s <Plug>(textobj-diff-hunk-n)
-        " nnoremap <Leader>x :ThesaurusQueryReplaceCurrentWord<CR>
+        nnoremap <Leader>x :ThesaurusQueryReplaceCurrentWord<CR>
         "------------------------------------------------------------------
         "vnoremap <unique> <Leader>x "ky:ThesaurusQueryReplace <C-r>k<CR>
         "nnoremap <LocalLeader>z :ThesaurusQueryReplaceCurrentWord<CR>
@@ -1813,8 +1802,6 @@ call plug#end()
 
         "==================================================================================
         command! ShowFuncKeys call ShowFuncKeys(<q-bang>)
-
-
         function! ShowFuncKeys(bang)
                 for i in range(1,12)
                         redir! => map
@@ -1828,7 +1815,6 @@ call plug#end()
 
         "==================================================================================
         command! ShowFunc call ShowFunc()
-
         function! ShowFunc()
                 let gf_s = &grepformat
                 let gp_s = &grepprg
@@ -1852,19 +1838,19 @@ call plug#end()
         let g:fzf_layout = { 'window': '10split enew' }
         "let g:fzf_history_dir = '~/.local/share/fzf-history'
         "==========================================================================================
-        let g:fzf_colors =  { 'fg':      ['fg', 'Comment'],
-                                \ 'bg':      ['bg', 'Normal'],
-                                \ 'hl':      ['fg', 'Comment'],
-                                \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-                                \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn', 'Normal'],
-                                \ 'hl+':     ['fg', 'Statement'],
-                                \ 'info':    ['fg', 'PreProc'],
-                                \ 'border':  ['fg', 'Ignore'],
-                                \ 'prompt':  ['fg', 'Conditional'],
-                                \ 'pointer': ['fg', 'Exception'],
-                                \ 'marker':  ['fg', 'Keyword'],
-                                \ 'spinner': ['fg', 'Comment'],
-                                \ 'header':  ['fg', 'Comment'] }
+        " let g:fzf_colors =  {   ['fg', 'Comment'],
+        "                         \ 'bg':      ['bg', 'Normal'],
+        "                         \ 'hl':      ['fg', 'Comment'],
+        "                         \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+        "                         \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn', 'Normal'],
+        "                         \ 'hl+':     ['fg', 'Statement'],
+        "                         \ 'info':    ['fg', 'PreProc'],
+        "                         \ 'border':  ['fg', 'Ignore'],
+        "                         \ 'prompt':  ['fg', 'Conditional'],
+        "                         \ 'pointer': ['fg', 'Exception'],
+        "                         \ 'marker':  ['fg', 'Keyword'],
+        "                         \ 'spinner': ['fg', 'Comment'],
+        "                         \ 'header':  ['fg', 'Comment'] }
         "==========================================================================================
         let g:fzf_action = {
                                 \ 'ctrl-t': 'tab split',
@@ -1877,10 +1863,9 @@ call plug#end()
         let g:fzf_buffers_jump = 1
         "-[[B]Commits] Customize the options used by 'git log':
         let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-        "============================================
+        "-iotag - hier in, in s9 out 
         "-[Tags] Command to generate tags file
-        " let g:fzf_tags_command = 'ctags -R'
-        "============================================
+        let g:fzf_tags_command = 'ctags -R'
         "-[Commands] --expect expression for directly executing the command
         let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
@@ -2078,7 +2063,7 @@ call plug#end()
         autocmd! vimrc SwapExists * let v:swapchoice = 'o'
         "==========================================================================================
         "-Setting lazyredraw causes a problem on startup
-        autocmd! vimrc VimEnter * redraw
+        " autocmd! vimrc VimEnter * redraw
         "==========================================================================================
         "-Move to the directory each buffer
         autocmd! vimrc BufEnter * silent! lcd %:p:h
@@ -2094,18 +2079,17 @@ call plug#end()
         augroup END
         "==========================================================================================
         "==Cool!!==================================================================================
-        "==========================================================================================
-        " augroup SourceVimrc
-        "         autocmd!
-        "         autocmd bufwritepost .vimrc source $MYVIMRC
-        " augroup END
-        "==========================================================================================
+        augroup SourceVimrc
+                autocmd!
+                autocmd bufwritepost .vimrc source $MYVIMRC
+        augroup END
         "==========================================================================================
         autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
         autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
         "==========================================================================================
         "codefmt
         augroup autoformat_settings
+                autocmd!
                 autocmd FileType bzl AutoFormatBuffer buildifier
                 autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
                 autocmd FileType dart AutoFormatBuffer dartfmt
@@ -2144,6 +2128,10 @@ call plug#end()
 
                 set statusline+=%{NearestMethodOrFunction()}
 
+                " By default vista.vim never run if you don't call it explicitly.
+                " If you want to show the nearest function in your statusline automatically,
+                " you can add the following line to your vimrc 
+                " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
         "::::::
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
@@ -2181,88 +2169,6 @@ call plug#end()
         "==========================================================================================
 "++AAA19Auto++}}} 
 
-let g:project_use_nerdtree = 1
-
-" :Project  '~/git/bTest/sPot/swamPyt3' , 'swampy'
-" Project  '~/git/bTest/sPot/shell_games'  , 'sgame'
-
-
-"==================================================================================================
-
-vnoremap <silent> <M-{> >gv:<C-u>call Enclose('{', 1)<CR>
-vnoremap <silent> <M-3> >gv:<C-u>call Enclose('#', 1)<CR>
-vnoremap <silent> <M-/> :<C-u>call Enclose('/', 0)<CR>
-"==================================================================================================
-"======================================DerTAG======================================================
-"==================================================================================================
-
-function LightlinePaste()
-    return '%{&paste?"PASTE":""}'
-endfunction
-
-function LightlineNeomake()
-    return '%{neomake#statusline#LoclistStatus()}'
-endfunction
-
-function LightlineTags()
-    return '%{gutentags#statusline("[Generating\ tags...]")}'
-endfunction
-
-function LightlineObsession()
-    return '%{ObsessionStatus()}'
-endfunction
-
-"==================================================================================================
-" set tags=.tags;
-set tags+=tags;
-"==================================================================================================
-"-==enable gtags module==-
-let g:gutentags_modules = ['ctags', 'gtags_cscope']
-let g:gutentags_cache_dir = expand('~/.cache/tags')
-let g:gutentags_ctags_tagfile = 'tags'
-"====================================================================================
-let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.json', '*.xml', '*.txt',
-                        \ '*.phar', '*.ini', '*.rst', '*.md', '*.bin',
-                        \ '*storage/*', '*vendor/*', '*node_modules/*', '*public/*']
-let g:gutentags_auto_add_gtags_cscope = 1
-" let g:gutentags_trace = 1
-
-let g:gutentags_define_advanced_commands = 1
-" :GutentagsToggleTrace
-" :messages
-
-
-"====================================================================================
-" " generate datebases in my cache directory, prevent gtags files polluting my project
-" let s:vim_tags = expand('~/.cache/tags')
-" let g:gutentags_cache_dir = s:vim_tags
-" let g:gutentags_cache_dir = expand('~/.cache/tags')
-"================================================================
-" let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extras=+q']
-" let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-" let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-" let g:gutentags_ctags_extra_args += ['--PHP-kinds=+cf']
-" let g:gutentags_ctags_extra_args += ['--Go-kinds=+cf']
-" let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
-" " change focus to quickfix window after search (optional).
-" let g:gutentags_plus_switch = 1
-" let g:gutentags_plus_switch = 1
 "==================================================================================================
 "==================================================================================================
-" " config project root markers.
-" let g:gutentags_project_root = ['.root']
-" let g:gutentags_project_root = ['.git', '.svn', '.root', '.hg', '.project']
-" let g:gutentags_ctags_tagfile = '.tags'
-" let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q', '--c++-kinds=+px', '--c-kinds=+px']
-" let g:gutentags_file_list_command = {
-"             \  'markers': {
-"                 \  '.git': 'git ls-files',
-"                 \  '.hg': 'hg files',
-"                 \  }
-"             \  }
-"==================================================================================================
-"==================================================================================================
-" au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
-"==================================================================================================
-"======================================EndTAG======================================================
 "==================================================================================================

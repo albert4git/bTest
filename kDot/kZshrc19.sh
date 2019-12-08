@@ -224,6 +224,15 @@ alias s8='402nv.app  -u ~/git/bTest/kDot/s8DeoLc.vim'
 # alias s10='402nv.app  -u ~/git/bTest/kDot/s10DeoLc.vim' 
 #====================NEW=================================
 alias s9='402nv.app  -u ~/git/bTest/sPot/s9DeoLc.vim'
+alias s10='402nv.app  -u ~/git/bTest/sPot/s10DeoLc.vim'
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias s39='402nv.app  -u ~/git/bTest/sPot/s39DeoLc.vim'
+# alias s40='402nv.app  -u ~/git/bTest/sPot/s40DeoLc.vim'
+# alias s41='402nv.app  -u ~/git/bTest/sPot/s41DeoLc.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+alias s19='402nv.app  -u ~/git/bTest/kDot/s1NoCs9DeoLc.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias p1='500nv.app  -u ~/git/bTest/kDot/p1Deo.vim' 
 alias p2='50nv  -u ~/git/bTest/kDot/p1Deo.vim' 
@@ -841,6 +850,10 @@ tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kDot2Snap.file -cJpf
 
 #---.Config---
 tar -P --listed-incremental=/media/red/124Black/TAR/TarRedConfig/RedConfig2Snap.file -cJpf /media/red/124Black/TAR/TarRedConfig/TarRedConfig-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/.config/
+
+#----sPot------------------------------------------------------------------------------------------
+tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kSPot2Snap.file -cJpf /media/red/124Black/TAR/TarSPot/kDot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/sPot/
+#--------------------------------------------------------------------------------------------------
 
 #--------------------------------------------------------------------------------------------------
 # cd ~/git/bTest/kDot/
