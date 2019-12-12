@@ -2,7 +2,7 @@
 "= File: s10DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      So 08 Dez 2019 03:36:20  CET
+" Lass Modified:      Fr 13 Dez 2019 12:47:23  CET
 "==================================================================================================
 let g:vimrcversion= 10
 au VimEnter * echo "VIMRC v"g:vimrcversion
@@ -40,6 +40,7 @@ set foldclose=all
         set nocompatible
         set helplang=en,de
         set encoding=UTF-8
+        scriptencoding utf-8
         set shell=/bin/zsh
         let generate_tags=1
         set tags=.tags;
@@ -184,8 +185,6 @@ set foldclose=all
         vnoremap . :normal .<CR>
         "-For when you forget to sudo.. Really Write the file.
         cmap w!! w !sudo tee % >/dev/null
-        "-SWITCH TO THE DIRECTORY OF THE OPEN BUFFER
-        map cd :cd %:p:h<cr>
         "------------------------------------------------------------------------------------------
         set nosm
         set wmh=0
@@ -199,8 +198,18 @@ set foldclose=all
         "------------------------------------------------------------------------------------------
         set autowrite  " Writes on make/shell commands
         set cf         " Enable error files & error jumping.
-        set nu
         set nonu
+        set nu
+        "----------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        " [ match ]
+        set showmatch
+        set matchpairs+=(:),{:},[:],<:>
+        set matchpairs+=':'
+        set matchtime=5
+        highlight MatchParen gui=bold  guifg=yellow guibg=blue
+        set scrolloff=4
+
 "++AAA2++}}}
 "++AAA3ToDo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "------------------------------------------------------------------------------------------
@@ -212,20 +221,29 @@ set foldclose=all
         let g:ctrlp_map='<c-p>'
         let g:ctrlp_cmd = 'CtrlPMRU'
         let g:ctrlp_extensions = ['tag']
-        let g:ctrlp_match_window_bottom = 0
+        let g:ctrlp_match_window_bottom = 1
         let g:ctrlp_match_window_reversed = 0
         let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-        let g:ctrlp_dotfiles = 0
         let g:ctrlp_switch_buffer = 0
         let g:ctrlp_working_path_mode = 0
         let g:ctrlp_working_path_mode = 'ar'
+        let g:ctrlp_mruf_max = 950
+        let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*' " MacOSX/Linux
+        let g:ctrlp_mruf_include = '\.py$\|\.rb$'
+        let g:ctrlp_mruf_relative = 0 " 1: show only MRU files in current working dir
+        let g:ctrlp_mruf_case_sensitive = 1 " avoid duplicate MRU entries.
+        let g:ctrlp_dotfiles = 1 " =0 to don't scan for dotfiles and dotdirs.
         "-------------------------------------------------------------------------------
         "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
         "nnoremap <silent> <C-o> :let g:cpsm_match_empty_query = 0<CR>:CtrlPMRU<CR>
         "nnoremap <silent> <C-p> :let g:cpsm_match_empty_query = 1<CR>:CtrlP<CR>
         "-------------------------------------------------------------------------------
 "++AAA3++}}}
-"++AAA4Plug++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+
+
+
+
+"++AAAPlug++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "==HappyStart1==
 call plug#begin('~/.config/nvim/plugged/')
         Plug 'c9s/helper.vim'
@@ -244,262 +262,101 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'vim-scripts/genutils'
         Plug 'LucHermitte/lh-vim-lib'
         Plug 'inkarkat/vim-ingo-library'
-        "----------------------------------------------------------------------------------
 
-        "---------NOVA---------------------------------------------------------------------
-        Plug 'wesQ3/vim-windowswap'
-        "Plug 'google/vim-searchindex'
-        " let g:searchindex_improved_star=1
-        "----------------------------------------------------------------------------------
-        Plug 'kana/vim-textobj-user'
-        "----------------------------------------------------------------------------------
-        Plug 'adriaanzon/vim-textobj-matchit'
-        "`am` and `im` :if-ifend , for-endfore ..
-        "----------------------------------------------------------------------------------
-        Plug 'gilligan/textobj-gitgutter'
-                vmap ih <Plug>(textobj-gitgutter-i)
-        "----------------------------------------------------------------------------------
-        Plug 'kana/vim-textobj-diff'
-        "----vac----
-        Plug 'coderifous/textobj-word-column.vim'
         "----------------------------------------------------------------------------------
         Plug 'airblade/vim-gitgutter'
                 let g:gitgutter_signs = 1
                 let g:gitgutter_max_signs = 2000
-        "--------------------------------------------------------------------------
-                highlight GitGutterAdd ctermfg=green   guifg=#00ffff
-                highlight GitGutterChange ctermfg=yellow
-                highlight GitGutterDelete ctermfg=red
-                highlight GitGutterChangeDelete ctermfg=cyan
+                let g:gitgutter_max_signs = 800
+                highlight GitGutterAdd ctermfg=green          guibg=#aa2211  guifg=#8ae234
+                highlight GitGutterChange ctermfg=yellow      guibg=#662211  guifg=#fce94f
+                highlight GitGutterDelete ctermfg=red         guibg=#666666  guifg=#ef2929
+                highlight GitGutterChangeDelete ctermfg=cyan  guibg=#aa8877  guifg=#fce94f
         "--------------------------------------------------------------------------
                 if exists("*gitgutter#highlight#define_highlights")
                         " let vim-gitgutter know we changed the SignColumn colors!
                         call gitgutter#highlight#define_highlights()
                 endif
         "----------------------------------------------------------------------------------
-        Plug 'aghareza/vim-gitgrep'
         "----------------------------------------------------------------------------------
-        Plug 'romainl/vim-qf'
-        Plug 'yssl/QFEnter'
+        "---------NOVA---------------------------------------------------------------------
         "----------------------------------------------------------------------------------
-        Plug 'brooth/far.vim'
-        "----------------------------------------------------------------------------------
-        Plug 'osyo-manga/vim-brightest'
-                let g:brightest#highlight = { "group" : "Define" }
-        "-JAPAN-
-        "----------------------------------------------------------------------------------
-        Plug 'roxma/python-support.nvim'
-                let g:python_support_python2_require = 0
-                let g:python_support_python3_require = 0
-        "---------------------------------------------------------------------------------
-        Plug 'gastonsimone/vim-dokumentary/'
-                "-=KKK=-
-                "??? apt-get install dictd dict-gcide dict
-                "let g:dokumentary_docprgs = {'c': 'cdoc {0}', 'python': ''}
-                let g:dokumentary_docprgs = {'c': 'cdoc {0}'}
-        "----------------------------------------------------------------------------------
-        Plug 'fs111/pydoc.vim', {'external_commands': ['pydoc']}
-        let g:ref_pydoc_cmd = 'pydoc'
-        let g:ref_pydoc_complete_head = 1
-        " let g:pydoc_cmd = 'python -m pydoc'
-        " let g:pydoc_open_cmd = 'vsplit'
-        " " If you want pydoc to switch to an already open tab with pydoc page,
-        " let g:pydoc_use_drop=1
-        " let g:pydoc_window_lines=15
-        " " let g:pydoc_window_lines=0.5
-        " let g:pydoc_cmd = '/usr/bin/pydoc'
-        " " let g:pydoc_highlight=0
-        "----------------------------------------------------------------------------------
-        " Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
-        "----------------------------------------------------------------------------------
-        Plug 'tyru/capture.vim'
-        Plug 'thinca/vim-quickrun'
-
-        "---light--COX---------------------------------------------------------------------
-         Plug 'itchyny/lightline.vim'
-         Plug 'yarisgutierrez/ayu-lightline'
-         let g:lightline = {
-                         \ 'colorscheme': 'monokai_tasty',
-                         \ 'active': {
-                         \   'left': [ [ 'mode', 'paste' ],
-                         \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
-                         \ },
-                         \ 'component_function': {
-                         \   'cocstatus': 'coc#status',
-                         \   'currentfunction': 'CocCurrentFunction',
-                         \   'method': 'NearestMethodOrFunction'
-                         \ },
-                         \ }
-
-        "----------------------------------------
-        Plug 'zefei/vim-wintabs'
-        " Plug 'zefei/vim-wintabs-powerline'
-        "----------------------------------------------------------------------------------
-        Plug 'skywind3000/vim-preview'
-        "VSSplit
-        "----------------------------------------------------------------------------------
-        Plug 'flazz/vim-colorschemes'
-        " Plug 'rafi/awesome-vim-colorschemes'
-        "----------------------------------------------------------------------------------
-        Plug 'kshenoy/vim-signature'
-        " :SignatureListMarkers         : List all markers
-        " :SignatureListMarkers 1       : List only the '!' marker
-        " :SignatureListMarkers @       : List only the '@' marker
-        " :SignatureListMarkers 0, 2    : List only ) marker with 2 lines of context
-        " :SignatureListMarkers '', 2   : List all markers with 2 lines of context
-        " :SignatureListMarkers '!@', 2 : List only the '!' and '@' markers and show
-        "----------------------------------------------------------------------------------
-        Plug 'machakann/vim-highlightedyank'
-                let g:highlightedyank_highlight_duration = -1
-        "----------------------------------------------------------------------------------
-        Plug 'Yggdroot/indentLine'
-                let g:indentLine_enabled = 1
-                let g:indentLine_noConcealCursor='nc'
-                let g:indentLine_color_term = 10
-                let g:indentLine_color_gui = '#ffFF00'
-                let g:indentLine_color_gui = '#ff5f00'
-                "let g:indentLine_setConceal = 0
-                let g:indentLine_bgcolor_term = 202
-                let g:indentLine_faster = 1
-                let g:indentLine_char = '|'
-                let g:indentLine_first_char='|'
-                let g:indentLine_showFirstIndentLevel=1
-                let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']
-
-        " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-        "----------------------------------------------------------------------------------
-        "----DEO-1--------------------------------------------------------------------------
+        Plug 'wesQ3/vim-windowswap'
+                "Plug 'google/vim-searchindex'
+                " let g:searchindex_improved_star=1
         "----------------------------------------------------------------------------------
 
-        Plug 'sukima/xmledit/'
-        "----------------------------------------------------------------------------------
-        Plug 'sjl/gundo.vim'
-        "----------------------------------------------------------------------------------
-        Plug 'aperezdc/vim-template'
-        "----------------------------------------------------------------------------------
-        "-Plug 'devjoe/vim-codequery'
-        "-TODO Plug 'neomake/neomake'
-        "----------------------------------------------------------------------------------
-        Plug 'tpope/vim-dispatch'
-        let g:dispatch_compilers = {
-                                \ 'latex': 'tex',
-                                \ 'bundle exec': ''}
-        "----------------------------------------------------------------------------------
-        Plug 'vim-scripts/Lynx-Offline-Documentation-Browser'
-        "----------------------------------------------------------------------------------
-        Plug 'dyng/ctrlsf.vim'
-        Plug 'mileszs/ack.vim'
-        Plug 'jremmen/vim-ripgrep'
-        "----------------------------------------------------------------------------------
-        Plug 'Chun-Yang/vim-action-ag'
-        Plug 'rking/ag.vim'
-        Plug 'gabesoft/vim-ags'
-        let g:ags_agexe = 'rg'
-        let g:ags_agargs = {
-        \ '--column'         : ['', ''],
-        \ '--line-number'    : ['', ''],
-        \ '--context'        : ['g:ags_agcontext', '-C'],
-        \ '--max-count'      : ['g:ags_agmaxcount', ''],
-        \ '--heading'        : ['',''],
-        \ '--smart-case'     : ['','-S'],
-        \ '--color'          : ['always',''],
-        \ '--colors'         : [['match:fg:green', 'match:bg:black', 'match:style:nobold', 'path:fg:red', 'path:style:bold', 'line:fg:black', 'line:style:bold'] ,''],
-        \ }
-        "----------------------------------------------------------------------------------
-        Plug 'junegunn/fzf', { 'do': './install --all' }
-        Plug 'junegunn/fzf.vim'
-        Plug 'pbogut/fzf-mru.vim'
-           let g:fzf_mru_relative = 1
-        " FZFMru --prompt "Sup? " -q "notmuch"
-        "------------------------------------------------------------------------------------------
-        Plug 'cskeeters/unite-fzf'
-        "------------------------------------------------------------------------------------------
-        Plug 'ddrscott/vim-side-search'
-        "--heading and --stats are required!
-        let g:side_search_prg = 'ag --word-regexp'
-                                \. " --ignore='*.js.map'"
-                                \. " --heading --stats -B 1 -A 4"
-        "---------------------------------------------------------
-        " Can use vnew or new
-        let g:side_search_splitter = 'vnew'
-        let g:side_search_split_pct = 0.4
-        "------------------------------------------------------------------------------------------
-        Plug 'alok/notational-fzf-vim'
-                let g:nv_search_paths = ['~/' ]
-                let g:nv_search_paths = ['/media/red/']
-                let g:nv_search_paths = ['~/git/bTest/pyLabGitPdbPythonMode27']
-                let g:nv_search_paths = ['~/git/']
-        "----------------------------------------------------------------------
-        Plug 'Shougo/neomru.vim'
-        "--------------------------------------
-        Plug 'kien/ctrlp.vim'
-        Plug 'wincent/command-t'
+        "??? (including [vim-vspec](https://github.com/kana/vim-vspec)-specific syntax)
         "==================================================================================
-                let g:CommandTMaxFiles = 10000 " maximum number of files scan.
-                let g:CommandTMaxDepth = 15
-                let g:CommandTMaxCacheDirectories = 1 " 0: no limit.
-                let g:CommandTMaxHeight = 15 " 0: as much as available space.
-                let g:CommandTMinHeight = 0 " 0: single line.
-                let g:CommandTAlwaysShowDotFiles = 0 " only if entered string contains a dot
-                let g:CommandTNeverShowDotFiles  = 0
-                let g:CommandTScanDotDirectories = 0
-                let g:CommandTMatchWindowAtTop   = 0 " match window appear at bottom.
-                let g:CommandTMatchWindowReverse = 1 " let the best match at bottom.
-                let g:CommandTTageIncludeFilenames = 1 " include filenames when matches
-        "--------------------------------------
-        Plug 'Shougo/unite.vim'
-        Plug 'tsukkee/unite-tag'
-        Plug 'SpaceVim/unite-ctags'
-        Plug 'Shougo/unite-outline/'
-        Plug 'tsukkee/unite-help'
-        Plug 'rstacruz/vim-fastunite'
+        "======================StartTO======================================================
         "==================================================================================
-        Plug 'exvim/ex-matchit'
+        Plug 'kana/vim-textobj-user'
         "----------------------------------------------------------------------------------
-        Plug 'ervandew/supertab'
+        Plug 'adriaanzon/vim-textobj-matchit'
+        "`am` and `im` :if-ifend , for-endfore ..
         "----------------------------------------------------------------------------------
-        Plug 'MarcWeber/vim-addon-mw-utils'
-        Plug 'garbas/vim-snipmate'
-        Plug 'honza/vim-snippets'
-        Plug 'SirVer/ultisnips'
-        Plug 'Shougo/neosnippet.vim'
-        Plug 'Shougo/neosnippet-snippets'
-        "------------------------------------------------------------------------------------------
-        ":Tmux
-        Plug 'tmux-plugins/vim-tmux'
-        "------------------------------------------------------------------------------------------
-        Plug 'xolox/vim-misc'
+        "==================================================================================
+        "----------------------------------------------------------------------------------
+                " Plug 'bps/vim-textobj-python'
+                " call textobj#user#map('python', {
+                "         \   'class': {
+                "         \     'select-a': '<buffer>ac',
+                "         \     'select-i': '<buffer>ic',
+                "         \     'move-n': '<buffer>]pc',
+                "         \     'move-p': '<buffer>[pc',
+                "         \   },
+                "         \   'function': {
+                "         \     'select-a': '<buffer>af',
+                "         \     'select-i': '<buffer>if',
+                "         \     'move-n': '<buffer>]pf',
+                "         \     'move-p': '<buffer>[pf',
+                "         \   }
+                "         \ })
+                " xmap af <Plug>(textobj-python-function-a)
+                " omap af <Plug>(textobj-python-function-a)
+                " xmap if <Plug>(textobj-python-function-i)
+                " omap if <Plug>(textobj-python-function-i)
+                " :TextobjPythonDefaultKeyMappings  :to redefine the default
+        "==================================================================================
+                " wellle/targets.vim great text objects for selecting/changing parameters
+                " Plug 'wellle/targets.vim'
+        "----------------------------------------------------------------------------------
+        "==================================================================================
+        "----------------------------------------------------------------------------------
+        Plug 'kana/vim-textobj-diff'
+        Plug 'reedes/vim-textobj-sentence'
+                let g:textobj#sentence#select = 's'
+                let g:textobj#sentence#move_p = '('
+                let g:textobj#sentence#move_n = ')'
+
+        Plug 'kana/vim-textobj-function'
+        Plug 'Julian/vim-textobj-brace'
+        Plug 'glts/vim-textobj-indblock'
+        Plug 'kana/vim-textobj-indent'
+        Plug 'kana/vim-textobj-fold'
+        Plug 'beloglazov/vim-textobj-quotes'
+        "------------------------------------------------
+        "----vac-?-
+        Plug 'coderifous/textobj-word-column.vim'
+        "----vac-??-
+        Plug 'glts/vim-textobj-comment'
+        let g:textobj_comment_no_default_key_mappings = 1
+        xmap ax <Plug>(textobj-comment-a)
+        omap ax <Plug>(textobj-comment-a)
+        xmap ix <Plug>(textobj-comment-i)
+        omap ix <Plug>(textobj-comment-i)
+        xmap aX <Plug>(textobj-comment-big-a)
+        omap aX <Plug>(textobj-comment-big-a)
+        xmap iX <Plug>(textobj-comment-big-i)
+        omap iX <Plug>(textobj-comment-big-i)
+        "------------------------------------------------
+
+        " Plug 'killphi/vim-textobj-signify-hunk'
+        "         vmap ih  <Plug>(textobj-signify-hunk-i)
+        Plug 'gilligan/textobj-gitgutter'
+                vmap ih <Plug>(textobj-gitgutter-i)
+                vmap ah <Plug>(textobj-gitgutter-a)
         "--------------------------------------------------------------------------
-        Plug 'jreybert/vimagit'
-        "===========================================================================
-        Plug 'junegunn/gv.vim'
-        "   - o or <cr> on a commit to display the content of it
-        "   - o or <cr> on commits to display the diff in the range
-        "   - O opens a new tab instead
-        "   - gb for :Gbrowse
-        "   - ]] and [[ to move between commits
-        "   - q to close
-        "==========================================================================
-        Plug 'tpope/vim-fugitive'
-        "    :Git[!] [args]
-        "    :Gstatus
-        "    :Gcommit [args]
-        "    :Gedit/:Gsplit/:Gvsplit/:Gtabedit/:Gpedit [revision]
-        "    :Gwrite/:Gwq {path}
-        "    :Gmove {destination}
-        "    :Gremove
-        "    :{range}Gread [revision]/[args]
-        "    :Gdiff/:Gsdiff/:Gvdiff [revision]
-        "    :Ggrep/:Glgrep [args] -- :grep/:lgrep with git-grep as 'grepprg'
-        "    :Glog [args] -- load all previous revisions of current file into quickfix
-        "    :[range]Gblame {flags}
-        "    :[range]Gbrowse {revision}
-        "--------------------------------------------------------------------------
-        Plug 'tpope/vim-commentary'
-        Plug 'tpope/vim-repeat'
-        Plug 'tpope/vim-unimpaired'
-        Plug 'tpope/vim-eunuch'
-        "=??? Plug 'tpope/vim-surround'
         "--------------------------------------------------------------------------
         Plug 'terryma/vim-expand-region'
                  "-Default-settings.
@@ -518,6 +375,9 @@ call plug#begin('~/.config/nvim/plugged/')
                                          \ 'ip'  :1,
                                          \ 'ih'  :1
                                          \ }
+        "======TheBest======
+        vmap v <Plug>(expand_region_expand)
+        vmap <c-v> <Plug>(expand_region_shrink)
         "----------------------------------------------------------------------------------
         Plug 'machakann/vim-sandwich'
                 " sd,sr, sa{motion/textobject}{addition}(normal and visual mode)
@@ -539,18 +399,16 @@ call plug#begin('~/.config/nvim/plugged/')
                 omap aa <Plug>(textobj-sandwich-auto-a)
                 xmap aa <Plug>(textobj-sandwich-auto-a)
         "--------------------------------------------------------------
-        "[ {(hello) ( noch ) ('Mal') ("tomos") } tormos]
+        " [ {(hello) ( noch ) ('Mal') ("tomos") } tormos]
 
-        "---------------SYMPY-SANDWICH-----------------------------------------------------
+        "---------------SYMPY--SANDWICH--BREXIT---------------------------------------------
                 vmap sb "zdi sympy.pprint(<c-r>z)<esc>
                 vmap sn "zdi print(<c-r>z)<esc>
-                "-wrap <b></b> around selected text
                 vmap se "zdi<b><c-r>z</b><esc>
-                "-wrap <?=   ?> around visually selected text
-                "vmap st "zdi<?= <c-r>z ?><esc>
-        "----------------------------------------------------------------------------------
-        "---NoAutoClose-YCM----------------------------------------------------------------
-        "----------------------------------------------------------------------------------
+                vmap st "zdi<?= <c-r>z ?><esc>
+        "-----------------------------------------------------------------------------------
+        "---NoAutoClose-YCM-----------------------------------------------------------------
+        "-----------------------------------------------------------------------------------
         Plug 'jiangmiao/auto-pairs'
                 "   <M-o> : neline with indentation
                 "   <M-a> : jump to of line
@@ -590,6 +448,273 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
 
          "{ sin ( cosin ( <b>'x2'</b> ) ) }
+
+        "==================================================================================
+        "======================EndTO=======================================================
+        "==================================================================================
+
+        "----------------------------------------------------------------------------------
+        Plug 'aghareza/vim-gitgrep'
+        "----------------------------------------------------------------------------------
+        Plug 'romainl/vim-qf'
+        Plug 'yssl/QFEnter'
+        "----------------------------------------------------------------------------------
+        Plug 'brooth/far.vim'
+        "--111-----------------------------------------------------------------------------
+        Plug 'osyo-manga/vim-brightest'
+                let g:brightest#highlight = { "group" : "Define" }
+        "-JAPAN-
+        "----------------------------------------------------------------------------------
+        Plug 'roxma/python-support.nvim'
+                let g:python_support_python2_require = 0
+                let g:python_support_python3_require = 0
+        "---------------------------------------------------------------------------------
+        "-222-----------------------------------------------------------------------------
+        Plug 'gastonsimone/vim-dokumentary/'
+                "-=KKK=-
+                "??? apt-get install dictd dict-gcide dict
+                "let g:dokumentary_docprgs = {'c': 'cdoc {0}', 'python': ''}
+                let g:dokumentary_docprgs = {'c': 'cdoc {0}'}
+
+        " echo g:dokumentary_docprgs["c"]
+        " echo g:dokumentary_docprgs["python"]
+        " apt-get install dictd dict-gcide dict
+        "---------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        Plug 'fs111/pydoc.vim', {'external_commands': ['pydoc']}
+        let g:ref_pydoc_cmd = 'pydoc'
+        let g:ref_pydoc_complete_head = 1
+        " let g:pydoc_cmd = 'python -m pydoc'
+        " let g:pydoc_open_cmd = 'vsplit'
+        " " If you want pydoc to switch to an already open tab with pydoc page,
+        " let g:pydoc_use_drop=1
+        " let g:pydoc_window_lines=15
+        " " let g:pydoc_window_lines=0.5
+        " let g:pydoc_cmd = '/usr/bin/pydoc'
+        " " let g:pydoc_highlight=0
+        "----------------------------------------------------------------------------------
+        " Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+        "----------------------------------------------------------------------------------
+        Plug 'tyru/capture.vim'
+        Plug 'thinca/vim-quickrun'
+
+        "---light--COX---------------------------------------------------------------------
+         Plug 'itchyny/lightline.vim'
+         Plug 'yarisgutierrez/ayu-lightline'
+         " let g:lightline = {
+         "                 \ 'colorscheme': 'monokai_tasty',
+         "                 \ 'active': {
+         "                 \   'left': [ [ 'mode', 'paste' ],
+         "                 \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+         "                 \ },
+         "                 \ 'component_function': {
+         "                 \   'cocstatus': 'coc#status',
+         "                 \   'currentfunction': 'CocCurrentFunction',
+         "                 \   'method': 'NearestMethodOrFunction'
+         "                 \ },
+         "                 \ }
+
+        let g:lightline = {
+                \ 'colorscheme': 'monokai_tasty',
+                \ 'enable': {
+                \   'statusline': 1,
+                \   'tabline': 0,
+                \ },
+                \ 'active': {
+                \   'left': [
+                \       [ 'mode', 'paste' ],
+                \       [ 'filename', 'readonly', 'modified' ],
+                \       [ 'fugitive', ],
+                \   ]
+                \ },
+                \ 'inactive': {
+                \   'left': [
+                \       [ 'filename', 'readonly', 'modified' ],
+                \       [ ],
+                \   ]
+                \ },
+                \ 'component': {
+                \   'readonly': '%{&readonly?"x":""}',
+                \   'fugitive': '%{winwidth(0) > 70 ? (exists("*fugitive#head") ? "⎇  " . fugitive#head() : "") : ""}',
+                \   'filetype': '%{winwidth(0) > 70 ? (&filetype !=# "" ? &filetype : "no ft") : ""}',
+                \   'fileencoding': '%{winwidth(0) > 70 ? (&fenc !=# "" ? &fenc : &enc) : ""}',
+                \   'fileformat': '%{winwidth(0) > 70 ? &fileformat : ""}',
+                \ },
+                \ 'component_visible_condition': {
+                \   'fugitive': '(exists("*fugitive#head") && winwidth(0) > 70 && ""!=fugitive#head())',
+                \   'filetype': '(winwidth(0) > 70)',
+                \   'fileencoding': '(winwidth(0) > 70)',
+                \   'fileformat': '(winwidth(0) > 70)',
+                \ },
+                \ 'separator': { 'left': '', 'right': '' },
+                \ 'subseparator': { 'left': '|', 'right': '|' }
+                \ }
+
+
+        "------------------------------PreCursor----------------------------------------------------
+        " mode aware cursors (in GUI)
+        set gcr=a:block
+        set gcr+=o:hor50-Cursor
+        set gcr+=n:Cursor
+        set gcr+=i-ci-sm:InsertCursor
+        set gcr+=r-cr:ReplaceCursor-hor20
+        set gcr+=c:CommandCursor
+        set gcr+=v-ve:VisualCursor
+        set gcr+=a:blinkon0
+
+        hi InsertCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=37  guibg=#880000
+        hi VisualCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=125 guibg=#ee4422
+        hi ReplaceCursor ctermfg=15 guifg=#fdf6e3 ctermbg=65  guibg=#00ff00
+        hi CommandCursor ctermfg=15 guifg=#fdf6e3 ctermbg=166 guibg=#FF0000
+        "----------------------------------------------------------------------------------
+
+        "----------------------------------------
+        Plug 'zefei/vim-wintabs'
+        " Plug 'zefei/vim-wintabs-powerline'
+        "----------------------------------------------------------------------------------
+        Plug 'skywind3000/vim-preview'
+        "VSSplit
+        "----------------------------------------------------------------------------------
+        Plug 'flazz/vim-colorschemes'
+        " Plug 'rafi/awesome-vim-colorschemes'
+        "----------------------------------------------------------------------------------
+        Plug 'kshenoy/vim-signature'
+        " :SignatureListMarkers         : List all markers
+        " :SignatureListMarkers 1       : List only the '!' marker
+        " :SignatureListMarkers @       : List only the '@' marker
+        " :SignatureListMarkers 0, 2    : List only ) marker with 2 lines of context
+        " :SignatureListMarkers '', 2   : List all markers with 2 lines of context
+        " :SignatureListMarkers '!@', 2 : List only the '!' and '@' markers and show
+        "----------------------------------------------------------------------------------
+        Plug 'machakann/vim-highlightedyank'
+                let g:highlightedyank_highlight_duration = -1
+        "----------------------------------------------------------------------------------
+        "Plug 'Yggdroot/indentLine'
+        "        let g:indentLine_enabled = 1
+        "        let g:indentLine_noConcealCursor='nc'
+        "        let g:indentLine_color_term = 10
+        "        let g:indentLine_color_gui = '#ffFF00'
+        "        let g:indentLine_color_gui = '#ff5f00'
+        "        "let g:indentLine_setConceal = 0
+        "        let g:indentLine_bgcolor_term = 202
+        "        let g:indentLine_faster = 1
+        "        let g:indentLine_char = '|'
+        "        let g:indentLine_first_char='|'
+        "        let g:indentLine_showFirstIndentLevel=1
+        "        let g:indentLine_fileTypeExclude = ['thumbnail', 'json', 'markdown']
+
+        "----------------------------------------------------------------------------------
+        Plug 'nathanaelkane/vim-indent-guides'
+                " let g:indentLine_enabled = 1
+                " let g:indent_guides_auto_colors = 1
+        let g:indent_guides_enable_on_vim_startup = v:true
+        let g:indent_guides_exclude_filetypes = ['help', 'man']
+
+        let g:indent_guides_auto_colors = 0
+        " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   guibg=#992211
+        autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   guibg=#331144
+        autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=#331159
+        "----------------------------------------------------------------------------------
+
+        Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+        "---DEO-1--------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+
+        Plug 'sukima/xmledit/'
+        "----------------------------------------------------------------------------------
+        Plug 'sjl/gundo.vim'
+        "----------------------------------------------------------------------------------
+        Plug 'aperezdc/vim-template'
+        "----------------------------------------------------------------------------------
+        "-Plug 'devjoe/vim-codequery'
+        "-TODO Plug 'neomake/neomake'
+        "----------------------------------------------------------------------------------
+        Plug 'vim-scripts/Lynx-Offline-Documentation-Browser'
+        "----------------------------------------------------------------------------------
+        Plug 'dyng/ctrlsf.vim'
+        Plug 'mileszs/ack.vim'
+        Plug 'jremmen/vim-ripgrep'
+        "----------------------------------------------------------------------------------
+        Plug 'Chun-Yang/vim-action-ag'
+        Plug 'rking/ag.vim'
+        Plug 'gabesoft/vim-ags'
+        let g:ags_agexe = 'rg'
+        let g:ags_agargs = {
+        \ '--column'         : ['', ''],
+        \ '--line-number'    : ['', ''],
+        \ '--context'        : ['g:ags_agcontext', '-C'],
+        \ '--max-count'      : ['g:ags_agmaxcount', ''],
+        \ '--heading'        : ['',''],
+        \ '--smart-case'     : ['','-S'],
+        \ '--color'          : ['always',''],
+        \ '--colors'         : [['match:fg:green', 'match:bg:black', 'match:style:nobold', 'path:fg:red', 'path:style:bold', 'line:fg:black', 'line:style:bold'] ,''],
+        \ }
+        "----------------------------------------------------------------------------------
+        Plug 'junegunn/fzf', { 'do': './install --all' }
+        Plug 'junegunn/fzf.vim'
+        Plug 'pbogut/fzf-mru.vim'
+           let g:fzf_mru_relative = 1
+        " FZFMru --prompt "Sup? " -q "notmuch"
+        "------------------------------------------------------------------------------------------
+        "------------------------------------------------------------------------------------------
+        Plug 'ddrscott/vim-side-search'
+        "--heading and --stats are required!
+        let g:side_search_prg = 'ag --word-regexp'
+                                \. " --ignore='*.js.map'"
+                                \. " --heading --stats -B 1 -A 4"
+        "---------------------------------------------------------
+        " Can use vnew or new
+        let g:side_search_splitter = 'vnew'
+        let g:side_search_split_pct = 0.4
+        "------------------------------------------------------------------------------------------
+        Plug 'alok/notational-fzf-vim'
+                let g:nv_search_paths = ['~/' ]
+                let g:nv_search_paths = ['/media/red/']
+                let g:nv_search_paths = ['~/git/bTest/pyLabGitPdbPythonMode27']
+                let g:nv_search_paths = ['~/git/']
+        "----------------------------------------------------------------------
+        "--------------------------------------
+        Plug 'kien/ctrlp.vim'
+        Plug 'wincent/command-t'
+        "--------------------------------------
+        " Plug 'Shougo/unite.vim'
+        " Plug 'tsukkee/unite-tag'
+        " Plug 'SpaceVim/unite-ctags'
+        " Plug 'Shougo/unite-outline/'
+        " Plug 'tsukkee/unite-help'
+        " Plug 'rstacruz/vim-fastunite'
+        " Plug 'cskeeters/unite-fzf'
+        " Plug 'Shougo/neomru.vim'
+        "--------------------------------------
+        " Plug 'Shougo/denite.nvim' " async version of unite.vim
+        "--------------------------------------
+
+        "==================================================================================
+        Plug 'exvim/ex-matchit'
+        "----------------------------------------------------------------------------------
+        Plug 'ervandew/supertab'
+        "----------------------------------------------------------------------------------
+        Plug 'MarcWeber/vim-addon-mw-utils'
+        Plug 'garbas/vim-snipmate'
+        Plug 'honza/vim-snippets'
+        Plug 'SirVer/ultisnips'
+        Plug 'Shougo/neosnippet.vim'
+        Plug 'Shougo/neosnippet-snippets'
+        "------------------------------------------------------------------------------------------
+        ":Tmux
+        Plug 'tmux-plugins/vim-tmux'
+        "------------------------------------------------------------------------------------------
+        Plug 'xolox/vim-misc'
+        "--------------------------------------------------------------------------
+        Plug 'jreybert/vimagit'
+        "===========================================================================
+        Plug 'junegunn/gv.vim'
+        "   - o or <cr> on a commit to display the content of it
+        "   - o or <cr> on commits to display the diff in the range
+        "   - O opens a new tab instead
+        "   - gb for :Gbrowse
+        "   - ]] and [[ to move between commits
+        "   - q to close
         "--------------------------------------------------------------------------
         Plug 'ivyl/vim-bling'
                 let g:bling_time = 42
@@ -925,6 +1050,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'junegunn/vader.vim'
         Plug 'janko-m/vim-test'
                 let test#strategy='neoterm'
+                let test#strategy = "dispatch"
         " let test#python#runner = 'pytest'
         " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose' and Python's built-in 'unittest'
 
@@ -965,9 +1091,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "===================================================================================
         "------------------CAR--------------------------------------------------------------
         Plug 'lilydjwg/colorizer'
-        "----------------------------------------------------------------------------------
-        "---DATABASE-CONSOLE---------------------------------------------------------------
-        " Plug 'tpope/vim-dadbod'
         "----------------------------------------------------------------------------------
         "postgres
         " Plug 'vpenkoff/vim-pg'
@@ -1013,16 +1136,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "===================================================================================
         "---Perfection - Continuity------
         Plug 'terryma/vim-smooth-scroll'
-        "----------------------------------------------------------------------------------
-        " Extended abbreviation/substition.
-        Plug 'tpope/vim-abolish'
-        "----------------------------------------------------------------------------------
-        "-Plug 'amiorin/vim-project'
-        "-Plug 'tpope/vim-projectionist'
-        "----------------------------------------------------------------------------------
-        "-Plug 'tpope/vim-rake'
-        "-Plug 'tpope/vim-rails'
-        Plug 'vim-ruby/vim-ruby'
         "===================================================================================
         " Plug 'StanAngeloff/php.vim'
         " Plug 'squizlabs/PHP_CodeSniffer'
@@ -1122,7 +1235,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'sk1418/Join'
         Plug 'salsifis/vim-transpose'
         " Plug 'vim-scripts/a.vim'
-        Plug 'machakann/vim-swap'
+        " Plug 'machakann/vim-swap'
                 " omap i, <Plug>(swap-textobject-i)
                 " xmap i, <Plug>(swap-textobject-i)
                 " omap a, <Plug>(swap-textobject-a)
@@ -1165,7 +1278,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 "\ 'scratch'
                 "\]
 
-        "---------------------------------------------------------------------------------
+        "--KickStart?-----------------------------------------------------------------------
         Plug 'hallison/vim-rdoc'
         Plug 'msbmsb/stem-search.vim'
         Plug 'bronson/vim-trailing-whitespace'
@@ -1215,6 +1328,8 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         Plug 'prabirshrestha/vim-lsp'
+        "-333- Plug 'prabirshrestha/asyncomplete.vim'
+        "-333- Plug 'prabirshrestha/asyncomplete-lsp.vim'
         if executable('pyls')
         " pip install python-language-server
         "==================================================
@@ -1231,36 +1346,88 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \ }
 "++AAALsp++}}} 
 
-"++AAAdeo++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+
+"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        " Plug 'prabirshrestha/asyncomplete.vim'
+        " Plug 'prabirshrestha/async.vim'
+        " Plug 'prabirshrestha/vim-lsp'
+        " Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+        " if executable('pyls')
+        "     " pip install python-language-server
+        "     au User lsp_setup call lsp#register_server({
+        "         \ 'name': 'pyls',
+        "         \ 'cmd': {server_info->['pyls']},
+        "         \ 'whitelist': ['python'],
+        "         \ })
+        " endif
+
+        " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+        " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+        " inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+
+"++AAAx++}}} 
+
+"++AAAdeo-Jedi++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         source ~/git/bTest/sPot/s9PlugDeo.vim
         Plug 'davidhalter/jedi-vim'
         Plug 'zchee/deoplete-jedi'
-"++AAAdeo++}}} 
+"++AAAdeo-Jedi++}}} 
 
+        "---------------------------------------------------------------------------------
         " Plug 'KeyboardFire/vim-minisnip'
-        Plug 'gastonsimone/vim-dokumentary'
-        Plug 'joereynolds/deoplete-minisnip'
+        " Plug 'joereynolds/deoplete-minisnip'
+        " let g:minisnip_trigger = '<M-4>'
+        "----------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        "---DATABASE-CONSOLE---------------------------------------------------------------
+        " Plug 'tpope/vim-dadbod'
+
+        "===BBB============================================================================
+        Plug 'tpope/vim-fugitive'
+        "==================================================================================
+        Plug 'tpope/vim-commentary'
+        Plug 'tpope/vim-repeat'
         Plug 'vim-scripts/visualrepeat'
-        Plug 'vim-scripts/repmo.vim'
+        Plug 'tpope/vim-eunuch'
+        " Plug 'tpope/vim-unimpaired'
+        "??? Plug 'tpope/vim-surround'
+        "----------------------------------------------------------------------------------
+        " Extended abbreviation/substition.
+        Plug 'tpope/vim-abolish'
+        "----------------------------------------------------------------------------------
+        "-Plug 'tpope/vim-rake'
+        "-Plug 'tpope/vim-rails'
+        " Plug 'vim-ruby/vim-ruby'
+        "----------------------------------------------------------------------------------
+        Plug 'tpope/vim-projectionist'
+        "----------------------------------------------------------------------------------
         Plug 'tpope/vim-apathy'
         Plug 'tpope/vim-scriptease'
         Plug 'tpope/vim-classpath'
+        "-------------------------------------------------
+        Plug 'tpope/vim-dispatch'
+        let g:dispatch_compilers = {
+                                \ 'latex': 'tex',
+                                \ 'bundle exec': ''}
+        "---------------------------------------------------------------------------------
+        "-PHP-Projectionist-
+        " Plug 'noahfrederick/vim-composer'
+        "==================================================================================
+        Plug 'vim-scripts/repmo.vim'
 
+        "---------------------------------------------------------------------------------
+        "-!- Plug 'lambdalisue/lista.nvim'
+        " nnoremap <M-3> :<C-u>Lista<CR>
+        " nnoremap <M-4> :<C-u>ListaCursorWord<CR>
+        " vim-lost
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " Plug 'hsitz/VimOrganizer'
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 call plug#end()
 "==HappyEnd1====
-"++AAA4Plug++}}}
-"++AAA5Unite+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        ":UniteResume, :UniteBookmarkAdd,
-        call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
-                                \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
-        "==========================================================================================
-        call unite#filters#sorter_default#use(['sorter_rank'])
-        call unite#filters#matcher_default#use(['matcher_fuzzy'])
-        call unite#filters#matcher_default#use(['matcher_fzf'])
-"++AAA5U++}}} 
+"++AAAPlug++}}} 
 "++AAA6Source+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "===VIM-STARTIFY-2==================================================================
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
@@ -1273,18 +1440,27 @@ call plug#end()
         endif
         " hi ColorColumn    ctermbg=240
         ":DimInactiveSyntaxOn
+        "==444======================================================================================
         let g:diminactive_use_syntax = 1
         let g:diminactive_enable_focus = 1
-        let g:diminactive_buftype_blacklist = ['nofile', 'nowrite', 'acwrite', 'quickfix', 'help']
-        "==========================================================================================
-        "==========================================
+        let g:diminactive_buftype_blacklist = ['nofile', 'nowrite', 'acwrite', 'quickfix', 'help', 'tagbar']
+        "==444======================================================================================
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "-source ~/git/bTest/sPot/SYPLUG/nHydra.vim
+        "-source ~/git/bTest/sPot/SYPLUG/NNV.vim
+        "-let g:nnv_search_paths = ['~/git/bTest/']
+        "-let g:nnv_search_paths = ['/media/red/124Black/']
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "==============================================
         set termguicolors
         colorscheme badwolf
         source ~/git/bTest/sPot/s9legoABB.vim
         source ~/git/bTest/sPot/s9legoFunc.vim
+        source ~/git/bTest/sPot/SYPLUG/fliplr.vim
+        source ~/git/bTest/sPot/SYPLUG/increment.vim
         source ~/git/bTest/sPot/s9legoCyan.vim
-        "==========================================
-"++AAA6Main++}}}
+        "==============================================
+"++AAA6Source++}}}
 "++AAA7CYAN++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "source MYX/n-badwolf.vim
         "colorscheme molokai
@@ -1298,17 +1474,21 @@ call plug#end()
         "suppress intro message
         "set shortmess+=c
         set shortmess+=I
-
+        "-TOP------------------------------------------------------------------------------
+        " guifg=#ff0ad8 
+        " guifg=#0fdad8 
+        " guifg=#ffda00 
+        "-TOP------------------------------------------------------------------------------
+        "==================================================================================
+        highlight DiffAdd           cterm=bold ctermbg=22  guibg=#3f5a18
+        highlight DiffAdd           cterm=bold ctermbg=22  guibg=#0fDA95
+        highlight DiffDelete        cterm=bold ctermbg=3   guibg=#ff0a78
+        highlight DiffChange        cterm=bold ctermbg=52  guibg=#ff8a00
+        "==================================================================================
+        "-TOP------------------------------------------------------------------------------
         "----------------------------------------------------------------------------------
         "::::::CYAN::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        source ~/git/bTest/sPot/SYPLUG/fliplr.vim
-        source ~/git/bTest/sPot/SYPLUG/increment.vim
         "----------------------------------------------------------------------------------
-        "-source ~/git/bTest/sPot/SYPLUG/nHydra.vim
-        "-source ~/git/bTest/sPot/SYPLUG/NNV.vim
-        "-let g:nnv_search_paths = ['~/git/bTest/']
-        "-let g:nnv_search_paths = ['/media/red/124Black/']
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         set wildmenu
         "black-List
         set wildmode=list:longest
@@ -1317,6 +1497,7 @@ call plug#end()
         "------------------------------------------------------------------------------------------
         "set wildchar=9 nowildmenu wildmode=list:longest wildoptions= wildignorecase cedit=<C-k>
         "------------------------------------------------------------------------------------------
+        set wildignore+=*.pdf,*.swp,*.[ao],*~,*.db
         set wildignore+=.hg,.git,.svn                    " Version control
         set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
         set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
@@ -1333,8 +1514,8 @@ call plug#end()
         set wildignore+=classes
         set wildignore+=lib
 
-"++AAA7CYAN++}}} 
-"++AAA8NAVI++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+"++AAA7CYAN++}}}
+"++AAA8NAVI++++++++++++++++++++++++++++=TOPF=++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         nnoremap <BS> X
         "---it2018---------------------------------------------------------------------------------
         noremap j gj
@@ -1395,13 +1576,17 @@ call plug#end()
         noremap <silent> <S-up> :call smooth_scroll#up(&scroll, 0, 2)<CR>
         noremap <silent> <S-down> :call smooth_scroll#down(&scroll, 0, 2)<CR>
         "----------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        " move 5 lines at a time
+        " noremap <c-down> 5<down>
+        " noremap <c-up> 5<up>
+
 
         "----------------------------------------------------------------------------------
-        " noremap <S-j> :PreviewScroll -1<cr>
-        " noremap <S-k> :PreviewScroll +1<cr>
+        noremap <M-9> :PreviewScroll -1<cr>
+        noremap <M-0> :PreviewScroll +1<cr>
         "----------------------------------------------------------------------------------
 
-        "----------------------------------------------------------------------------------
         fun! ScrollOtherWindow(dir)
                 if a:dir == "down"
                         let move = "\<C-E>"
@@ -1412,6 +1597,8 @@ call plug#end()
         endfun
         nmap <silent> <C-Down> :call ScrollOtherWindow("down")<CR>
         nmap <silent> <C-Up> :call ScrollOtherWindow("up")<CR>
+
+
 "++AAA8NAVI++}}} 
 "++AAA-EX-EXEC+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         nnoremap <M-x> :exe getline(".")<CR>
@@ -1520,18 +1707,19 @@ call plug#end()
         "1y$  //yank current row to register 1
         "<C-r>a to paste from register a
         "------------------------------------------------------------------
-        nmap ]c <Plug>(GitGutterNextHunk)
-        nmap [c <Plug>(GitGutterPrevHunk)
+        "-----------------hulk-hunk----------------------------------------
         "------------------------------------------------------------------
-        nmap hp <Plug>(GitGutterPreviewHunk)
-        nmap hs <Plug>(GitGutterStageHunk)
-        nmap hu <Plug>(GitGutterUndoHunk)
+        nmap [c <Plug>(GitGutterPrevHunk)
+        nmap ]c <Plug>(GitGutterNextHunk)
+        "-------------------------------------
+        nmap ]h <Plug>(GitGutterPreviewHunk)
+        nmap ]u <Plug>(GitGutterUndoHunk)
+        nmap ]s <Plug>(GitGutterStageHunk)
         "------------------------------------------------------------------
         vmap     dg  :diffget<CR>
         vmap     dp  :diffput<CR>
         nnoremap do  :diffoff!<cr>
         "------------------------------------------------------------------
-
         "==========================================================================================
         "::::::::::::::::::::::::::::::-2MAGIC2-:::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
@@ -1560,16 +1748,10 @@ call plug#end()
         vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
         "==========================================================================================
         "---TODO------------------------------------------------------------
-        " nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
-        " imap <C-s>    <Plug>(neosnippet_start_unite_snippet)
         imap <C-b>    <Plug>(neosnippet_expand_or_jump)
         smap <C-b>    <Plug>(neosnippet_expand_or_jump)
         xmap <C-b>    <Plug>(neosnippet_expand_target)
         "==========================================================================================
-        function! UltiSnipsCallUnite()
-                Unite -start-insert -winheight=100 -immediately -no-empty ultisnips
-                return ''
-        endfunction
         let g:UltiSnipsExpandTrigger="<C-b>"
         let g:UltiSnipsJumpForwardTrigger="<C-b>"
         let g:UltiSnipsJumpBackwardTrigger="<C-z>"
@@ -1586,6 +1768,55 @@ call plug#end()
         let cmdline_map_quit           = '<LocalLeader>q'
 
 "++AAA9Win++}}} 
+
+" Command-T {{{
+        " <Leader>t provide fast, intuitive mechanism for opening files and buffers
+        "nnoremap <silent> <Leader>t :CommandT<CR>
+        "nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+        " <BS> <Del> -- delete
+        " <Left> <C-h> -- move left.
+        " <Right> <C-l> -- move right
+        " <C-a> -- move to the start.
+        " <C-e> -- move to the end.
+        " <C-u> -- clear the contents of the prompt.
+        " <Tab> -- switch focus between the file listing and prompt.
+        " ---------------------------------------------------------
+        "  <C-CR> <C-s> -- split open
+        "  <C-v> -- vsplit
+        "  <C-t> -- tab
+        "  <C-j> <C-n> <Down> -- select next file in file listing.
+        "  <C-k> <C-p> <Up> -- select previous file in file listing.
+        "  <Esc> <C-c> -- cancel (dismisses file listing)
+        let g:CommandTMaxFiles = 10000 " maximum number of files scan.
+        let g:CommandTMaxDepth = 15
+        let g:CommandTMaxCacheDirectories = 1 " 0: no limit.
+        let g:CommandTMaxHeight = 15 " 0: as much as available space.
+        let g:CommandTMinHeight = 0 " 0: single line.
+        let g:CommandTAlwaysShowDotFiles = 0 " only if entered string contains a dot
+        let g:CommandTNeverShowDotFiles = 0
+        let g:CommandTScanDotDirectories = 0
+        let g:CommandTMatchWindowAtTop = 0 " match window appear at bottom.
+        let g:CommandTMatchWindowReverse = 1 " let the best match at bottom.
+        let g:CommandTTageIncludeFilenames = 1 " include filenames when matches
+        "let g:CommandTCancelMap='<C-x>'
+        let g:CommandTCancelMap=['<C-x>', '<C-c>'] " multiple alternative mapping.
+" }}}
+
+"""""""""""""""""""""""""""""""""""""
+" n  ;m    * :CtrlPMRU<CR>
+" n  ;p    * :CtrlP<CR>
+" n  ;h    * :CommandTHelp<CR>
+" n  ;j    * :CommandTJump<CR>
+" n  <Plug>(CommandTTag) * :CommandTTag<CR>
+" n  <Plug>(CommandTSearch) * :CommandTSearch<CR>
+" n  <Plug>(CommandTMRU) * :CommandTMRU<CR>
+" n  <Plug>(CommandTLine) * :CommandTLine<CR>
+" n  <Plug>(CommandTCommand) * :CommandTCommand<CR>
+" n  <Plug>(CommandTHistory) * :CommandTHistory<CR>
+" n  <Plug>(CommandTBuffer) * :CommandTBuffer<CR>
+" n  <Plug>(CommandT) * :CommandT<CR>
+"""""""""""""""""""""""""""""""""""""
+
 "++AAA10F2+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         let g:asyncrun_open = 15
 
@@ -1600,9 +1831,8 @@ call plug#end()
         nmap <C-M-h> "zyw:exe  "h ".@z.""<CR>
         nmap <F2> <Esc>:help <C-r><C-w><CR>
 
-        nnoremap ,h :CommandTHelp<cr>
-        nnoremap ;h :CommandTHelp<cr>
-        "==========================================================================================
+        nnoremap <M-t> :CommandTJump<cr>
+        nnoremap <C-t> :CommandTHelp<cr>
 
         "==MMM====================================================================================
         " au! FileType vim,help nnoremap M :exec "helpgrep" expand("<cword>")<CR>
@@ -1663,30 +1893,26 @@ call plug#end()
         " let g:pydoc_cmd = '/usr/bin/pydoc'
         let g:pydoc_cmd = 'python -m pydoc'
         nnoremap PP :Pydoc <C-r><C-w><CR> | wincmd p
-        "---------------------------------------------------------------------------------
-        nmap ;z <Plug>Zeavim
-        nmap <Leader>z <Plug>ZVKeyDocset
         "------------------
+        nmap ;z <Plug>Zeavim
+        nmap ,z <Plug>ZVKeyDocset
+        "---------------------------------------------------------------------------------
         " :Pydoc foo.bar.baz (e.g. :Pydoc re.compile)
         " Or search a word (uses pydoc -k) in the documentation by typing:
         " :PydocSearch foobar (e.g. :PydocSearch socket)
         "------------------
         "==================================================================
         command! -complete=file -nargs=+ SIS execute 'SideSearch <args>'
-        nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
         "---------------------------------------------------------------
+        nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
         nnoremap ff :NV <C-r><C-w><CR> | wincmd p
-        nnoremap FF :ZRg <C-r><C-w><CR> | wincmd p
+        nnoremap FF :FFRg <C-r><C-w><CR> | wincmd p
         nnoremap AA :ZAg <C-r><C-w><CR> | wincmd p
         nnoremap GG :ZGit <C-r><C-w><CR> | wincmd p
         nnoremap <Leader>a :Ack <C-r><C-w><CR> | wincmd p
         "==================================================================
         nnoremap OO :call CscopeFindInteractive(expand('<cword>'))<CR>
-        nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
-        "==================================================================
-        nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
-        nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
-        nnoremap \\ :<C-u>Unite -buffer-name=register register<CR>
+        " nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
         "==================================================================
 "++AAA11Serch++}}} 
 "++AAA12inoremap+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -1703,7 +1929,7 @@ call plug#end()
         inoremap <C-down> <C-X><C-Y>
 
         "------------------------------------------------------------------------------------------
-        "??? make it so that if I acidentally pres ^W or ^U in insert mode,
+        "???!!!ke it so that if I ACIDENTALly pres ^W or ^U in insert mode,
         " then <ESC>u wil undo just the ^W/^U, and not the whole insert
         " This is docmented in :help ins-special-special, a few pages down
         "------------------------------------------------------------------------------------------
@@ -1713,11 +1939,9 @@ call plug#end()
         "==============================================================
         inoremap <silent> <M-;> <C-R>=InsertAtEnd(';')=<CR>
         inoremap <silent> <M-,> <C-R>=InsertAtEnd(',')<CR>
-        " Use <M-d> to delete the rest of the word
         inoremap <silent> <M-d> <C-o>cw<Esc><Right>
-        " Use <C-a> as an alias to <Home>
+        "------------------------------------------
         inoremap <silent> <C-a> <C-o>^
-        " Use <C-e> as an alias to <End>
         inoremap <silent> <C-e> <End>
         "==============================================================
         "imap <c-f> <plug>(fzf-complete-path)
@@ -1732,26 +1956,25 @@ call plug#end()
                                 \ 'options': '--ansi --delimiter : --nth 3..',
                                 \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
        "========================================================
-       imap <c-7> <plug>(fzf-complete-path)
 "++AAA12imap++}}} 
 "++AAA13Unfuc+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+
         nnoremap fu :syntax sync fromstart<cr>:redraw!<cr>
         nnoremap zu :<c-u>update<cr>
         "=============================================
+        vnoremap <Tab> >gv
+        vnoremap <Backspace> <gv
+        "=============================================
         "===Make zO recursively open whatever fold====
         "=============================================
-        nnoremap ,z :call FocusLine()<cr>
         nnoremap zf :call FocusLine()<cr>
-        nnoremap z0 zczO
         nmap <M-a> za
-        nmap <M-z> zi
+        nmap <M-z> zM
+        "=============================================
         "=============================================
         nmap zp <Plug>yankstack_substitute_older_paste
         nmap zn <Plug>yankstack_substitute_newer_paste
-        " C-c and C-v - Copy/Paste to global clipboard
-        vmap <C-c> "+yi imap <C-v> <esc>"+gpi nmap WW ]p
-        " map p <Plug>(miniyank-autoput)
-        " map P <Plug>(miniyank-autoPut)
+
 "++AAA13Unfuc++}}} 
 "++AAA14Func+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         command! LocationToggle call LocationToggle()
@@ -1907,20 +2130,13 @@ call plug#end()
         omap <leader><tab> <plug>(fzf-maps-o)
 
        "============================================================================================
-       command! -bang -nargs=* ZFind call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
        command! -bang -nargs=* ZFi call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
        "============================================================================================
        command! -bang -nargs=? -complete=dir ZFiles
                                \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
        "============================================================================================
-
        command! -bang -nargs=?  ZAg
                                \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview(), <bang>0)
-       "============================================================================================
-       command! -bang -nargs=* ZRg
-                               \call fzf#vim#grep('rg --column --line-number --no-heading
-                               \--fixed-strings --ignore-case --no-ignore --hidden --follow
-                               \--glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
        "============================================================================================
        command! -bang -nargs=?  ZGit
                                \ call fzf#run({'source': 'git ls-files', 'sink': 'e', 'right': '40%'})
@@ -1974,19 +2190,44 @@ call plug#end()
                                         \ | wincmd p | diffthis
         endif
         "============================================================================================
+
+        "------NoWo-----------------------
+        " command! FFMru call FZFMru()
+        "---------------------------------
+
         cabbrev h vertical help
         cabbrev BoxM  call BoxMyCenter("")
         cabbrev SS  SideSearch
         cabbrev ZA  FFMarks
-        cabbrev ZM  FZFMru
-        cabbrev ZD  FZFDefinitions
-        cabbrev ZH  FFHelptags
         cabbrev ZL  FFLines
         cabbrev ZBL FFBLines
+        cabbrev ZM  FZFMru
         cabbrev ZT  ZTag
         cabbrev ZF  ZFiles
-        cabbrev ZS  ZSnippets
+        cabbrev ZS  FFSnippets
+        cabbrev ZD  FZFDefinitions
+        "---------------------------------
+        cabbrev ZH  FFHelptags
+        "---------------------------------
         nmap == :call FzfSpell()<CR>
+        "---------------------------------
+
+        if has('autocmd')
+                function! s:fzf_status()
+                        let l:laststatus = &laststatus
+                        let l:ruler = &ruler
+                        let l:showmode = &showmode
+                        autocmd FileType fzf set laststatus=0 noshowmode noruler
+                        execute 'autocmd BufLeave <buffer> set ' .
+                                                \ 'laststatus=' . l:laststatus ' ' .
+                                                \ (l:ruler ? '' : 'no') . 'ruler ' .
+                                                \ (l:showmode ? '' : 'no') . 'showmode'
+                endfunction
+                augroup jnrowe_fzf
+                        autocmd FileType fzf call s:fzf_status()
+                augroup END
+        endif
+
 "++AAA15Fzf++}}} 
 "++AAA16Leader+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "============================================
@@ -2011,11 +2252,12 @@ call plug#end()
          " source ~/git/bTest/sPot/s9legoCoc.vim
          " source ~/git/bTest/sPot/s9legoCoc.vim
 "++AAA17Coc++}}} 
-"++AAA18-DEO-Jedi-LSP++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+"++AAA18-DEO-jedi-LSP++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         source ~/git/bTest/sPot/s9legoDeo.vim
         let g:SuperTabContextDefaultCompletionType = '<c-n>'
         let g:SuperTabDefaultCompletionType = '<C-n>'
         "----------------------------------------------------------------------------------
+        let g:jedi#force_py_version=3
         let g:jedi#documentation_command = "gj"
         let g:jedi#completions_enabled = 1
         let g:jedi#popup_on_dot = 1
@@ -2169,6 +2411,15 @@ call plug#end()
         "==========================================================================================
 "++AAA19Auto++}}} 
 
-"==================================================================================================
-"==================================================================================================
-"==================================================================================================
+
+
+" nnoremap <leader>f :Denite -direction=dynamicbottom -auto-preview file_rec<CR>
+" nnoremap <leader>b :Denite -direction=dynamicbottom -auto-preview buffer<CR>
+" call denite#custom#var('file/rec', 'command', ['ag', '--follow', '-g', '--nogroup', '--nocolor', '-u', ''])
+" call denite#custom#var('grep', 'command', ['ag'])
+" call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+" call denite#custom#var('grep', 'recursive_opts', [])
+" call denite#custom#var('grep', 'pattern_opt', [])
+" call denite#custom#var('grep', 'separator', ['--'])
+" call denite#custom#var('grep', 'final_opts', [])
+

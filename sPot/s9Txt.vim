@@ -1,5 +1,310 @@
 
+|:TextobjDiffDefaultKeyMappings| to redefine these key mappings.
 
+mode	{lhs}		{rhs}				~
+----	-----		------------------------------	~
+NVO	<Leader>dfJ	<Plug>(textobj-diff-file-N)
+NVO	<Leader>dfK	<Plug>(textobj-diff-file-P)
+NVO	<Leader>dfj	<Plug>(textobj-diff-file-n)
+NVO	<Leader>dfk	<Plug>(textobj-diff-file-p)
+NVO	<Leader>dJ	<Plug>(textobj-diff-hunk-N)
+NVO	<Leader>dK	<Plug>(textobj-diff-hunk-P)
+NVO	<Leader>dj	<Plug>(textobj-diff-hunk-n)
+NVO	<Leader>dk	<Plug>(textobj-diff-hunk-p)
+VO	adH		<Plug>(textobj-diff-file)
+VO	adf		<Plug>(textobj-diff-file)
+VO	adh		<Plug>(textobj-diff-hunk)
+VO	idH		<Plug>(textobj-diff-file)
+VO	idf		<Plug>(textobj-diff-file)
+VO	idh		<Plug>(textobj-diff-hunk)
+
+"++AAA5Unite+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        "":UniteResume, :UniteBookmarkAdd,
+        "call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
+        "                        \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
+        ""==========================================================================================
+        "call unite#filters#sorter_default#use(['sorter_rank'])
+        "call unite#filters#matcher_default#use(['matcher_fuzzy'])
+        "call unite#filters#matcher_default#use(['matcher_fzf'])
+"++AAA5U++}}} 
+"----------------------------------------------------------------------------------
+        " nnoremap <Leader>y :<C-u>Unite -buffer-name=neosnippet neosnippet<CR>
+        " imap <C-s>    <Plug>(neosnippet_start_unite_snippet)
+"----------------------------------------------------------------------------------
+        "==================================================================
+        nnoremap <Leader>m :<C-u>Unite -buffer-name=jump jump<CR>
+        nnoremap <Leader>c :<C-u>Unite -buffer-name=change change<CR>
+        nnoremap \\ :<C-u>Unite -buffer-name=register register<CR>
+"----------------------------------------------------------------------------------
+"----------------------------------------------------------------------------------
+        function! UltiSnipsCallUnite()
+                Unite -start-insert -winheight=100 -immediately -no-empty ultisnips
+                return ''
+        endfunction
+"----------------------------------------------------------------------------------
+
+        " C-c and C-v - Copy/Paste to global clipboard
+        vmap <C-c> "+yi imap <C-v> <esc>"+gpi nmap WW ]ppp
+        " map p <Plug>(miniyank-autoput)
+        " map P <Plug>(miniyank-autoPut)
+
+""==========================================================================================
+        nnoremap z<Up> zR
+        nnoremap z<Down> zM
+""==========================================================================================
+       imap <c-7> <plug>(fzf-complete-path)
+        "-SWITCH TO THE DIRECTORY OF THE OPEN BUFFER
+        map cd :cd %:p:h<cr>
+""==========================================================================================
+        function! s:cursor_ping()
+                let l:cursorline = &cursorline
+                let l:cursorcolumn = &cursorcolumn
+                for _ in range(5)
+                        set cursorline! cursorcolumn!
+                        redraw
+                        sleep 15m
+                endfor
+                let &cursorline = l:cursorline
+                let &cursorcolumn = l:cursorcolumn
+        endfunction
+        nmap <silent> <M-Space> :call <SID>cursor_ping()<CR>
+
+        "----------------------------------------------------------------------------------
+        cmap <M-.> <C-r>=expand('%:p:h') . '/'<CR>
+"----------------------------------------------------------------------------------
+        function! Version()
+                let l:n = 1
+                while has('patch' . n)
+                        let l:n += 1
+                endwhile
+                return printf('%d.%d.%04d', v:version / 100, v:version % 100, n - 1)
+        endfunction
+        command! Version echo 's10-' . Version()
+"----------------------------------------------------------------------------------
+"----------------------------------------------------------------------------------
+        " Set "very magic" for all searches.
+        "Plug 'coot/EnchantedVim'
+        let g:VeryMagic = 0
+        " Turn on all other features.
+        let g:VeryMagicSubstituteNormalise = 1
+        let g:VeryMagicSubstitute = 1
+        let g:VeryMagicGlobal = 1
+        let g:VeryMagicVimGrep = 1
+        let g:VeryMagicSearchArg = 1
+        let g:VeryMagicFunction = 1
+        let g:VeryMagicHelpgrep = 1
+        let g:VeryMagicRange = 1
+        let g:VeryMagicEscapeBackslashesInSearchArg = 1
+        let g:SortEditArgs = 1
+
+        " no-magic searching
+        nnoremap / /\V
+        nnoremap ? ?\V
+        vnoremap / /\V
+        vnoremap ? ?\V
+
+        " If using incsearch:
+        noremap <leader>/ /\v
+        noremap <leader>? ?\v
+        vnoremap <leader>/ /\v
+        vnoremap <leader>? ?\v
+"----------------------------------------------------------------------------------
+        " draw text-based things like lines, boxes, graphs, etc
+        Plug 'vim-scripts/DrawIt'
+"----------------------------------------------------------------------------------
+        set cursorline " highlight the current line. Needed for the next plugin to work.
+        Plug 'vim-scripts/CursorLineCurrentWindow'
+"----------------------------------------------------------------------------------
+        let g:indentLine_enabled = 1
+        let g:indent_guides_auto_colors = 1
+        let g:indent_guides_enable_on_vim_startup = v:true
+
+        let g:indent_guides_exclude_filetypes = ['help', 'man']
+
+        let g:indent_guides_enable_on_vim_startup = 1
+        let g:indent_guides_color_change_percent = 20
+        let g:indent_guides_guide_size = 1
+"----------------------------------------------------------------------------------
+
+        " Fzf seems cleaner and faster, and exists for zsh too.
+        if ((has('nvim') || v:version > 799) && has('python3')) " for neovim or vim 8.0+
+                Plug 'Shougo/denite.nvim' " async version of unite.vim
+        else
+                Plug 'Shougo/unite.vim'
+        endif
+
+"--------------------------------------------------------------------------------- 
+let s:VIMROOT = $HOME."/.vim"
+let &runtimepath=s:VIMROOT."," . &runtimepath
+let &runtimepath=s:VIMROOT."/bundle/vim-plug," . &runtimepath
+
+    if glob(s:VIMROOT."/bundle/vim-plug/") != "" " if Plug exists
+        " BEGIN PLUGIN MANAGEMENT:
+            if has('vim_starting')
+                let &runtimepath=s:VIMROOT."/bundle/vim-plug," . &runtimepath
+                runtime plug.vim
+            endif
+"--------------------------------------------------------------------------------- 
+"
+" Create necessary folders if they don't already exist.
+if exists("*mkdir")
+    silent! call mkdir(s:VIMROOT, "p")
+    silent! call mkdir(s:VIMROOT."/bundle", "p")
+    silent! call mkdir(s:VIMROOT."/swap", "p")
+    silent! call mkdir(s:VIMROOT."/undo", "p")
+    silent! call mkdir(s:VIMROOT."/backup", "p")
+else
+    echo "Error: Create the directories ".s:VIMROOT."/, ".s:VIMROOT."/bundle/, ".s:VIMROOT."/undo/, ".s:VIMROOT."/backup/, and ".s:VIMROOT."/swap/ first."
+    exit
+endif
+
+let &backupdir=s:VIMROOT.'/backup//' " double slash means make the filenames unique.
+
+set noswapfile
+let &directory=s:VIMROOT.'/swap//' " double slash means make the filenames unique.
+
+"----------------------------------------------------------------------------------
+" Beautify json.
+        command JsonFormat %!python -m json.tool
+" Reverse all lines.
+        command Reverse g/^/m0
+"----------------------------------------------------------------------------------
+
+"----------------------------------------------------------------------------------
+"----------------------------------------------------------------------------------
+" Make completion popups show complete matches which can often be used as call tip:
+set showfulltag
+hi IndentGuidesOdd   guibg=#662211
+hi IndentGuidesEven  guibg=#333396
+
+"----------------------------------------------------------------------------------
+" Enable tooltips:
+" if has('balloon_eval')
+"         set ballooneval
+" endif
+"----------------------------------------------------------------------------------
+"==================================================================================================
+" Perform word-ish searches in a new window, so we can maintain position in the current window:
+"==================================================================================================
+" nnoremap <C-?> :<C-U>execute 'Man' v:count '<C-R><C-W>'<CR>
+"==================================================================================================
+
+        "----------------------------------------------------------------------------------
+        localcfg/plugin_vim_coiled_snake.vim
+        I prefer my fold text as it is uniform across all filetypes:
+        let g:coiled_snake_set_foldtext = v:false
+        localcfg/plugin_vim_ditto
+        Store data in user’s system data directory:
+        let g:ditto_dir = g:vim_data_dir . '/ditto'
+        "----------------------------------------------------------------------------------
+        "???
+        " vim-clevertab performs exactly how I want:
+        "----------------------------------------------------------------------
+        let s:types = ['start', 'tab', 'keyword', 'omni', 'dictionary', 'stop']
+        if has('pythonx') && v:version >= 704
+                let s:types = insert(s:types, 'ultisnips', 2)
+        endif
+        execute "inoremap <silent> <Tab> " .
+                                \ join(map(s:types,
+                                \
+        {_, v -> '<C-r>=CleverTab#Complete("' . v . '")<CR>'}),
+                                \
+        "")
+        inoremap <silent> <S-Tab> <C-r>=CleverTab#Complete('prev')<CR>
+        "----------------------------------------------------------------------------------
+        if (&termencoding ==# 'utf-8') || has('gui_running')
+                let g:ale_sign_error = ''
+                let g:ale_sign_warning = ''
+                let g:ale_sign_info = ''
+                let g:ale_sign_style_error = ''
+                let g:ale_sign_style_warning = ''
+        endif
+        if has('gui_running')
+                for s:k in ['Error', 'Info', 'Warning']
+                        execute 'sign define ALE' . s:k . 'Sign icon=' .
+                                                \ expand('~/.vim/icons/' . tolower(s:k) . '.png')
+                endfor
+        endif
+        "----------------------------------------------------------------------------------
+        " :emenu   ???
+        " dwm.vim
+
+        call s:define_menu('&python', {
+                                \ '&config': [
+                                \
+        expand('$PYTHONSTARTUP'),
+                                \
+        g:xdg_config_dir . '/python/rc',
+                                \ ],
+                                \ '&flake8': g:xdg_config_dir . '/flake8',
+                                \ '&pip': g:xdg_config_dir . '/pip/pip.conf',
+                                \ 'ptpytho&n': '~/.ptpython/config.py',
+                                \ })
+        "==================================================================================================
+        "----------------------------------------------------------------------------------
+
+        nohtml
+        "==================================================================================
+        Plug 'tpope/vim-fugitive'
+        "==================================================================================
+        "    :Git[!] [args]
+        "    :Gstatus
+        "    :Gcommit [args]
+        "    :Gedit/:Gsplit/:Gvsplit/:Gtabedit/:Gpedit [revision]
+        "    :Gwrite/:Gwq {path}
+        "    :Gmove {destination}
+        "    :Gremove
+        "    :{range}Gread [revision]/[args]
+        "    :Gdiff/:Gsdiff/:Gvdiff [revision]
+        "    :Ggrep/:Glgrep [args] -- :grep/:lgrep with git-grep as 'grepprg'
+        "    :Glog [args] -- load all previous revisions of current file into quickfix
+        "    :[range]Gblame {flags}
+        "    :[range]Gbrowse {revision}
+        "==================================================================================
+        "----------------------------------------------------------------------------------
+# Use Neovim as "preferred editor"
+export VISUAL=nvim
+# Use Neovim instead of Vim or Vi
+alias vim=nvim
+alias vi=nvim
+        "----------------------------------------------------------------------------------
+        Plug 'markonm/traces.vim'
+        " Replace text
+        nnoremap gr" vi":s/
+        nnoremap gr) vi):s/
+        nnoremap gr> vi>:s/
+        nnoremap gr] vi]:s/
+        nnoremap gra ggvG:s/
+        nnoremap grl 0v$:s/
+        nnoremap gg vip:s/
+        nnoremap gf vis:s/
+        nnoremap gr} vi}:s/
+        "----------------------------------------------------------------------------------
+
+* `:PP`: Pretty print.  With no argument, acts as a REPL.
+* `:Runtime`: Reload runtime files.  Like `:runtime!`, but it unlets any
+  include guards first.
+* `:Disarm`: Remove a runtime file's maps, commands, and autocommands,
+  effectively disabling it.
+* `:Scriptnames`: Load `:scriptnames` into the quickfix list.
+* `:Messages`: Load `:messages` into the quickfix list, with stack trace
+  parsing.
+* `:Verbose`: Capture the output of a `:verbose` invocation into the preview
+  window.
+* `:Time`: Measure how long a command takes.
+* `:Breakadd`: Like its lowercase cousin, but makes it much easier to set
+  breakpoints inside functions.  Also `:Breakdel`.
+* `:Vedit`: Edit a file relative the runtime path. For example,
+  `:Vedit plugin/scriptease.vim`. Also, `:Vsplit`, `:Vtabedit`, etc.
+  Extracted from [pathogen.vim](https://github.com/tpope/vim-pathogen).
+* `K`: Look up the `:help` for the VimL construct under the cursor.
+* `zS`: Show the active syntax highlighting groups under the cursor.
+* `g=`: Eval a motion or selection as VimL and replace it with the result.
+  This is handy for doing math, even outside of VimL.
+* Projections for
+
+        "----------------------------------------------------------------------------------
+        "-Plug 'amiorin/vim-project'
 "==================================================================================================
 vnoremap <silent> <M-{> >gv:<C-u>call Enclose('{', 1)<CR>
 vnoremap <silent> <M-3> >gv:<C-u>call Enclose('#', 1)<CR>
@@ -962,4 +1267,21 @@ endfunction
         " the, most , short , long , big , bigly
         " a,b,c
         "----------------------------------------------------------------------------------
-
+        runtime vimrc.d/paths.vim
+        " *Must* be early
+        runtime vimrc.d/disabled.vim
+        runtime vimrc.d/dein.vim
+        runtime vimrc.d/settings.vim
+        runtime vimrc.d/syntax.vim
+        runtime vimrc.d/misc.vim
+        runtime vimrc.d/maps.vim
+        if has('patch-7.4.1821')
+                runtime vimrc.d/packages.vim
+        else
+                " There may be other things in packages.vim, but this is *the* thing
+                " I can't do without.
+                if !exists('*EditExisting')
+                        runtime macros/editexisting.vim
+                endif
+        endif
+        runtime vimrc.d/localcfg.vim

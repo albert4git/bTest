@@ -14,17 +14,6 @@
         " hi DiffText     gui=none    guifg=NONE          guibg=#8cbee2
         "==================================================================================
 
-        " guifg=#ff0ad8 
-        " guifg=#0fdad8 
-        " guifg=#ffda00 
-        "-TOP------------------------------------------------------------------------------
-        "==================================================================================
-        " highlight DiffAdd           cterm=bold ctermbg=22  guibg=#3f5a18
-        " highlight DiffAdd           cterm=bold ctermbg=22  guibg=#00008f
-        " highlight DiffDelete        cterm=bold ctermbg=3  guibg=#ff0a78
-        " highlight DiffChange        cterm=bold ctermbg=52  guibg=#ff8a00
-        "==================================================================================
-        "-TOP------------------------------------------------------------------------------
 
         hi SpecialKey ctermfg=251 guifg=#999999
 
@@ -60,16 +49,21 @@
         " highlight SignColumn     ctermbg=230       guibg=#00ff00
 
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#020202
-        hi LineNr         ctermbg=17 ctermfg=15   guibg=#10205f  guifg=#ffffff
+        hi LineNr         ctermbg=17 ctermfg=15   guibg=#ef5000  guifg=#ffffff
+        hi LineNr         ctermbg=17 ctermfg=15   guibg=#0f5000  guifg=#ffffff
         "--------------------------------------------------------------------------------- 
         "red let g:indentLine_color_term = 251
         "red let g:indentLine_newVersion = 0
         "--------------------------------------------------------------------------------- 
 
+        " hi CursorLine term=underline
+        " hi CursorLineNr term=bold,italic,reverse,underline
         "--------------------------------------------------------------------------------
-        hi CursorLine     ctermbg=90  guibg=#870087
+        " hi CursorLine     ctermbg=90  guibg=#870087 gui=underline
+        " hi CursorLine     ctermbg=90  guibg=#662211 gui=underline
+        hi CursorLine    guibg=#331166   gui=underline
         set cursorcolumn
-        hi CursorColumn   ctermbg=16 guibg=#870087 
+        " hi CursorColumn   ctermbg=16 guibg=#ff4040
 
         "--------------------------------------------------------------------------------
         set colorcolumn=92,100,112,120
