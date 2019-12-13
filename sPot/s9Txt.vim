@@ -1,4 +1,73 @@
 
+         " let g:lightline = {
+         "                 \ 'colorscheme': 'monokai_tasty',
+         "                 \ 'active': {
+         "                 \   'left': [ [ 'mode', 'paste' ],
+         "                 \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+         "                 \ },
+         "                 \ 'component_function': {
+         "                 \   'cocstatus': 'coc#status',
+         "                 \   'currentfunction': 'CocCurrentFunction',
+         "                 \   'method': 'NearestMethodOrFunction'
+         "                 \ },
+         "                 \ }
+
+
+" set lighline theme inside lightline config
+" let g:lightline = { 'colorscheme': 'tender' }
+" let g:lightline = { 'colorscheme': 'ayu' }
+" \ 'colorscheme': 'monokai_tasty',
+
+
+" let g:lightline = {
+"         \ 'colorscheme': 'monokai_tasty',
+"         \ }
+
+
+        let g:lightline = {
+                \ 'colorscheme': 'monokai_tasty',
+                \ 'enable': {
+                \   'statusline': 1,
+                \   'tabline': 0,
+                \ },
+                \ 'active': {
+                \   'left': [
+                \       [ 'mode', 'paste' ],
+                \       [ 'filename', 'readonly', 'modified' ],
+                \       [ 'fugitive', ],
+                \   ]
+                \ },
+                \ 'inactive': {
+                \   'left': [
+                \       [ 'filename', 'readonly', 'modified' ],
+                \       [ ],
+                \   ]
+                \ },
+                \ 'component': {
+                \   'readonly': '%{&readonly?"x":""}',
+                \   'fugitive': '%{winwidth(0) > 70 ? (exists("*fugitive#head") ? "⎇  " . fugitive#head() : "") : ""}',
+                \   'filetype': '%{winwidth(0) > 70 ? (&filetype !=# "" ? &filetype : "no ft") : ""}',
+                \   'fileencoding': '%{winwidth(0) > 70 ? (&fenc !=# "" ? &fenc : &enc) : ""}',
+                \   'fileformat': '%{winwidth(0) > 70 ? &fileformat : ""}',
+                \ },
+                \ 'component_visible_condition': {
+                \   'fugitive': '(exists("*fugitive#head") && winwidth(0) > 70 && ""!=fugitive#head())',
+                \   'filetype': '(winwidth(0) > 70)',
+                \   'fileencoding': '(winwidth(0) > 70)',
+                \   'fileformat': '(winwidth(0) > 70)',
+                \ },
+                \ 'separator': { 'left': '', 'right': '' },
+                \ 'subseparator': { 'left': '|', 'right': '|' }
+                \ }
+
+
+        Plug 'dmonllao/vim-IDE'
+        Plug 'mkropat/vim-jumpthere'
+        Plug 'Shougo/denite.nvim' " async version of unite.vim
+        Plug 'vimplugin/project.vim'
+        Plug 'kristijanhusak/vim-project-lint'
+        Plug 'daniel-samson/project-tree.vim'
+
 |:TextobjDiffDefaultKeyMappings| to redefine these key mappings.
 
 mode	{lhs}		{rhs}				~
@@ -403,7 +472,7 @@ types_ruby.taghl
         " imap <C-8> <plug>(fzf-complete-file-ag)
         " imap <expr><M-0> fzf#vim#complete('cat /usr/share/dict/words')
 
-"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+"++AAAClap++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "==================================================================================
         Plug 'liuchengxu/vim-clap'
         let g:clap_provider_alias = {'hist:': 'command_history'}
@@ -423,7 +492,7 @@ types_ruby.taghl
         hi default link ClapSelected         ClapDefaultSelected
         hi default link ClapCurrentSelection ClapDefaultCurrentSelection
         "==================================================================================
-"++AAAx++}}} 
+"++AAAClap++}}} 
 
         "===???============================================================================
         nnoremap <Leader>4 <Plug>(textobj-diff-hunk-p)

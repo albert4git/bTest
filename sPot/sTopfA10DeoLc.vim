@@ -2,7 +2,7 @@
 "= File: s10DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Fr 13 Dez 2019 10:55:01  CET
+" Lass Modified:      Fr 13 Dez 2019 04:36:07  CET
 "==================================================================================================
 let g:vimrcversion= 10
 au VimEnter * echo "VIMRC v"g:vimrcversion
@@ -212,6 +212,34 @@ set foldclose=all
         set scrolloff=4
 
 "++AAA2++}}}
+"++AAA3ToDo+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        "------------------------------------------------------------------------------------------
+        "-TODO-
+        "-TODO-
+        "-TODO-
+        "-TODO-
+        "------------------------------------------------------------------------------------------
+        let g:ctrlp_map='<c-p>'
+        let g:ctrlp_cmd = 'CtrlPMRU'
+        let g:ctrlp_extensions = ['tag']
+        let g:ctrlp_match_window_bottom = 1
+        let g:ctrlp_match_window_reversed = 0
+        let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+        let g:ctrlp_switch_buffer = 0
+        let g:ctrlp_working_path_mode = 0
+        let g:ctrlp_working_path_mode = 'ar'
+        let g:ctrlp_mruf_max = 950
+        let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*' " MacOSX/Linux
+        let g:ctrlp_mruf_include = '\.py$\|\.rb$'
+        let g:ctrlp_mruf_relative = 0 " 1: show only MRU files in current working dir
+        let g:ctrlp_mruf_case_sensitive = 1 " avoid duplicate MRU entries.
+        let g:ctrlp_dotfiles = 1 " =0 to don't scan for dotfiles and dotdirs.
+        "-------------------------------------------------------------------------------
+        "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+        "nnoremap <silent> <C-o> :let g:cpsm_match_empty_query = 0<CR>:CtrlPMRU<CR>
+        "nnoremap <silent> <C-p> :let g:cpsm_match_empty_query = 1<CR>:CtrlP<CR>
+        "-------------------------------------------------------------------------------
+"++AAA3++}}}
 
 
 
@@ -326,6 +354,9 @@ call plug#begin('~/.config/nvim/plugged/')
 
         " Plug 'killphi/vim-textobj-signify-hunk'
         "         vmap ih  <Plug>(textobj-signify-hunk-i)
+        Plug 'gilligan/textobj-gitgutter'
+                vmap ih <Plug>(textobj-gitgutter-i)
+                vmap ah <Plug>(textobj-gitgutter-a)
         "--------------------------------------------------------------------------
         "--------------------------------------------------------------------------
         Plug 'terryma/vim-expand-region'
@@ -469,11 +500,8 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'thinca/vim-quickrun'
 
         "---light--COX---------------------------------------------------------------------
-        Plug 'itchyny/lightline.vim'
-        Plug 'NLKNguyen/papercolor-theme'
-        Plug 'jacoborus/tender.vim'
-        Plug 'yarisgutierrez/ayu-lightline'
-        "----------------------------------------------------------------------------------
+         Plug 'itchyny/lightline.vim'
+         Plug 'yarisgutierrez/ayu-lightline'
          " let g:lightline = {
          "                 \ 'colorscheme': 'monokai_tasty',
          "                 \ 'active': {
@@ -486,6 +514,42 @@ call plug#begin('~/.config/nvim/plugged/')
          "                 \   'method': 'NearestMethodOrFunction'
          "                 \ },
          "                 \ }
+
+        let g:lightline = {
+                \ 'colorscheme': 'monokai_tasty',
+                \ 'enable': {
+                \   'statusline': 1,
+                \   'tabline': 0,
+                \ },
+                \ 'active': {
+                \   'left': [
+                \       [ 'mode', 'paste' ],
+                \       [ 'filename', 'readonly', 'modified' ],
+                \       [ 'fugitive', ],
+                \   ]
+                \ },
+                \ 'inactive': {
+                \   'left': [
+                \       [ 'filename', 'readonly', 'modified' ],
+                \       [ ],
+                \   ]
+                \ },
+                \ 'component': {
+                \   'readonly': '%{&readonly?"x":""}',
+                \   'fugitive': '%{winwidth(0) > 70 ? (exists("*fugitive#head") ? "⎇  " . fugitive#head() : "") : ""}',
+                \   'filetype': '%{winwidth(0) > 70 ? (&filetype !=# "" ? &filetype : "no ft") : ""}',
+                \   'fileencoding': '%{winwidth(0) > 70 ? (&fenc !=# "" ? &fenc : &enc) : ""}',
+                \   'fileformat': '%{winwidth(0) > 70 ? &fileformat : ""}',
+                \ },
+                \ 'component_visible_condition': {
+                \   'fugitive': '(exists("*fugitive#head") && winwidth(0) > 70 && ""!=fugitive#head())',
+                \   'filetype': '(winwidth(0) > 70)',
+                \   'fileencoding': '(winwidth(0) > 70)',
+                \   'fileformat': '(winwidth(0) > 70)',
+                \ },
+                \ 'separator': { 'left': '', 'right': '' },
+                \ 'subseparator': { 'left': '|', 'right': '|' }
+                \ }
 
 
         "------------------------------PreCursor----------------------------------------------------
@@ -503,6 +567,7 @@ call plug#begin('~/.config/nvim/plugged/')
         hi VisualCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=125 guibg=#ee4422
         hi ReplaceCursor ctermfg=15 guifg=#fdf6e3 ctermbg=65  guibg=#00ff00
         hi CommandCursor ctermfg=15 guifg=#fdf6e3 ctermbg=166 guibg=#FF0000
+        "----------------------------------------------------------------------------------
 
         "----------------------------------------
         Plug 'zefei/vim-wintabs'
@@ -622,6 +687,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'cskeeters/unite-fzf'
         " Plug 'Shougo/neomru.vim'
         "--------------------------------------
+        " Plug 'Shougo/denite.nvim' " async version of unite.vim
         "--------------------------------------
 "++AAAClap++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "==================================================================================
@@ -1213,8 +1279,8 @@ call plug#begin('~/.config/nvim/plugged/')
         let g:eighties_bufname_additional_patterns = ['fugitiveblame']
         "---------------------------------------------------------------------------------
 
-        "===!!!Err=================================
-        " Plug 'cosminadrianpopescu/vim-sql-workbench'
+        "===!!!=================================
+        Plug 'cosminadrianpopescu/vim-sql-workbench'
         "===!!!=================================
         "---------------------------------------------------------------------------------
         ":RUN
@@ -1382,143 +1448,9 @@ call plug#begin('~/.config/nvim/plugged/')
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         " Plug 'hsitz/VimOrganizer'
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-        Plug 'gilligan/textobj-gitgutter'
-                vmap ih <Plug>(textobj-gitgutter-i)
-                vmap ah <Plug>(textobj-gitgutter-a)
-"----------------------------------------------------------------------------------
-        Plug 'amiorin/vim-project'
-"----------------------------------------------------------------------------------
-        " draw text-based things like lines, boxes, graphs, etc
-        Plug 'vim-scripts/DrawIt'
-"----------------------------------------------------------------------------------
-        Plug 'vim-scripts/CursorLineCurrentWindow'
-        set cursorline " highlight the current line. Needed for the next plugin to work.
-        Plug 'kshenoy/vim-origami'
-        " `<count>Za`  Align all folds of level 'count'
-        "         `ZA`  Align all folds
-        " `<count>ZF`  Insert a start foldmarker of level 'count' at the end of line and comment it
-        " `<count>Zf`  Insert a start foldmarker of level 'count' at the end of line but don't comment it
-        " `<count>ZC`  Insert an end  foldmarker of level 'count' at the end of line and comment it
-        " `<count>Zc`  Insert an end  foldmarker of level 'count' at the end of line but don't comment it
-        "         `ZD`  Delete the foldmarker from the line
-        "==========================================================================================
-        let g:OrigamiMap = {
-                \ 'Leader'           : "Z",
-                \ 'Align'            : "Z",
-                \ 'AlignAll'         : "A",
-                \ 'CommentedOpen'    : "F",
-                \ 'UncommentedOpen'  : "f",
-                \ 'CommentedClose'   : "C",
-                \ 'UncommentedClose' : "c",
-                \ 'Delete'           : "D",
-                \ }
-
-        "---------------------------------------------------------------------------------- 
-        Plug 'mengelbrecht/lightline-bufferline'
-        autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
-        let g:lightline#bufferline#show_number  = 1
-        let g:lightline#bufferline#shorten_path = 0
-        let g:lightline#bufferline#unnamed      = '[No Name]'
-
-        let g:lightline                  = {}
-        let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
-        let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-        let g:lightline.component_type   = {'buffers': 'tabsel'}
-        "===============================================================================
-
-        Plug 'Shougo/denite.nvim' " async version of unite.vim
-        " Plug 'dmonllao/vim-IDE'
-        Plug 'mkropat/vim-jumpthere'
-        Plug 'frazrepo/vim-rainbow'
-        Plug 'osyo-manga/vim-over' " Better command interaction
-        Plug 'edkolev/tmuxline.vim' " Keep tmux theme and vim theme in sync
-        Plug 'rhysd/conflict-marker.vim' " Jump to merge conflict markers
 call plug#end()
 "==HappyEnd1====
 "++AAAPlug++}}}
-
-
-        " let g:lightline = { 'colorscheme': 'PaperColor' }
-
-        let g:lightline = {
-                \ 'colorscheme': 'tender',
-                \ 'enable': {
-                \   'statusline': 1,
-                \   'tabline': 0,
-                \ },
-                \ 'active': {
-                \   'left': [
-                \       [ 'mode', 'paste' ],
-                \       [ 'filename', 'readonly', 'modified' ],
-                \       [ 'fugitive', ],
-                \   ]
-                \ },
-                \ 'inactive': {
-                \   'left': [
-                \       [ 'filename', 'readonly', 'modified' ],
-                \       [ ],
-                \   ]
-                \ },
-                \ 'component': {
-                \   'readonly': '%{&readonly?"x":""}',
-                \   'fugitive': '%{winwidth(0) > 70 ? (exists("*fugitive#head") ? "⎇  " . fugitive#head() : "") : ""}',
-                \   'filetype': '%{winwidth(0) > 70 ? (&filetype !=# "" ? &filetype : "no ft") : ""}',
-                \   'fileencoding': '%{winwidth(0) > 70 ? (&fenc !=# "" ? &fenc : &enc) : ""}',
-                \   'fileformat': '%{winwidth(0) > 70 ? &fileformat : ""}',
-                \ },
-                \ 'component_visible_condition': {
-                \   'fugitive': '(exists("*fugitive#head") && winwidth(0) > 70 && ""!=fugitive#head())',
-                \   'filetype': '(winwidth(0) > 70)',
-                \   'fileencoding': '(winwidth(0) > 70)',
-                \   'fileformat': '(winwidth(0) > 70)',
-                \ },
-                \ 'separator': { 'left': '', 'right': '' },
-                \ 'subseparator': { 'left': '|', 'right': '|' }
-                \ }
-
-"++AAACtrlP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        "------------------------------------------------------------------------------------------
-        "-TODO-
-        "-TODO-
-        "-TODO-
-        "-TODO-
-        "------------------------------------------------------------------------------------------
-        " let g:ctrlp_map='<c-p>'
-        " let g:ctrlp_cmd = 'CtrlPMRU'
-        " let g:ctrlp_extensions = ['tag']
-        " let g:ctrlp_match_window_bottom = 1
-        " let g:ctrlp_match_window_reversed = 0
-        " let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-        " let g:ctrlp_switch_buffer = 0
-        " let g:ctrlp_working_path_mode = 0
-        " let g:ctrlp_working_path_mode = 'ar'
-        " let g:ctrlp_mruf_max = 150
-        " let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*|\.md$|\.txt$' " MacOSX/Linux
-        " let g:ctrlp_mruf_include = '\.py$\|\.rb$|\.vim$'
-        " let g:ctrlp_mruf_relative = 0 " 1: show only MRU files in current working dir
-        " let g:ctrlp_mruf_case_sensitive = 1 " avoid duplicate MRU entries.
-        " let g:ctrlp_dotfiles = 1 " =0 to don't scan for dotfiles and dotdirs.
-
-        "===SetPLAY5===============================================================================
-        let g:ctrlp_cmd = 'CtrlPMRU'
-        let g:ctrlp_extensions = ['tag']
-        let g:ctrlp_match_window_bottom = 0
-        let g:ctrlp_match_window_reversed = 0
-        let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-        let g:ctrlp_dotfiles = 0
-        let g:ctrlp_switch_buffer = 0
-        let g:ctrlp_working_path_mode = 0
-        let g:ctrlp_map='<c-p>'
-        let g:ctrlp_open_new_file = 'R'
-
-
-        "-------------------------------------------------------------------------------
-        "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
-        "nnoremap <silent> <C-o> :let g:cpsm_match_empty_query = 0<CR>:CtrlPMRU<CR>
-        "nnoremap <silent> <C-p> :let g:cpsm_match_empty_query = 1<CR>:CtrlP<CR>
-        "-------------------------------------------------------------------------------
-"++AAACtrlP++}}}
 "++AAA6Source+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "===VIM-STARTIFY-2==================================================================
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
@@ -1577,8 +1509,6 @@ call plug#end()
         highlight DiffChange        cterm=bold ctermbg=52  guibg=#ff8a00
         "==================================================================================
         "-TOP------------------------------------------------------------------------------
-        set guicursor=a:block-blinkon100-Cursor/Cursor
-        hi Cursor guifg=black guibg=green gui=reverse
         "----------------------------------------------------------------------------------
         "::::::CYAN::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "----------------------------------------------------------------------------------

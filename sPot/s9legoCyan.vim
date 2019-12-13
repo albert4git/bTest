@@ -82,7 +82,9 @@
         hi Pmenu          ctermfg=1  ctermbg=255 guibg=#0090F6
         hi Pmenu          ctermfg=1  ctermbg=255 guibg=#A040F6
         hi Pmenu          ctermfg=1  ctermbg=255 guibg=#880033
+        hi Pmenu          ctermfg=1  ctermbg=255 guibg=#000088
 
+        "==================================================================================
         " hi Pmenu guibg=brown gui=bold
         hi PmenuSbar      ctermfg=11 ctermbg=5   guibg=#F0B000
         hi PmenuThumb     ctermfg=12 ctermbg=2   guibg=#8000FF
@@ -141,6 +143,7 @@
         hi! def link ObliqueLine         String
         let g:oblique#clear_highlight =0
 
+"===============================================================================================================
 "===============================================================================================================
 highlight ExtraWhitespace ctermbg=red guibg=#ffFFff
 highlight ExtraTabs ctermbg=red guibg=#FF9922
