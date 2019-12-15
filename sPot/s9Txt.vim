@@ -1,4 +1,34 @@
 
+
+
+
+        "----------------------------------------------------------------------------------
+        Plug 'vim-scripts/CursorLineCurrentWindow'
+        set cursorline " highlight the current line. Needed for the next plugin to work.
+        "----------------------------------------------------------------------------------
+
+        Plug 'kshenoy/vim-origami'
+        " `<count>Za`  Align all folds of level 'count'
+        "         `ZA`  Align all folds
+        " `<count>ZF`  Insert a start foldmarker of level 'count' at the end of line and comment it
+        " `<count>Zf`  Insert a start foldmarker of level 'count' at the end of line but don't comment it
+        " `<count>ZC`  Insert an end  foldmarker of level 'count' at the end of line and comment it
+        " `<count>Zc`  Insert an end  foldmarker of level 'count' at the end of line but don't comment it
+        "         `ZD`  Delete the foldmarker from the line
+        "==========================================================================================
+        let g:OrigamiMap = {
+                \ 'Leader'           : "Z",
+                \ 'Align'            : "Z",
+                \ 'AlignAll'         : "A",
+                \ 'CommentedOpen'    : "F",
+                \ 'UncommentedOpen'  : "f",
+                \ 'CommentedClose'   : "C",
+                \ 'UncommentedClose' : "c",
+                \ 'Delete'           : "D",
+                \ }
+
+
+
          " let g:lightline = {
          "                 \ 'colorscheme': 'monokai_tasty',
          "                 \ 'active': {

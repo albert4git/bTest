@@ -1,4 +1,13 @@
         "==================================================================================
+        Plug 'NLKNguyen/papercolor-theme'
+        " let g:lightline = { 'colorscheme': 'PaperColor' }
+        " \ 'colorscheme': 'onedark',
+        " \ 'colorscheme': 'gruvbox',
+        " let g:lightline.colorscheme = 'deus_beta_dark'
+        " let g:lightline.colorscheme = 'space_vim_dark'
+        " let g:lightline.colorscheme = 'Tomorrow_Night_Eighties'
+        " \ 'colorscheme': 'tender',
+
 
         "==================================================================================
         "==================================================================================
@@ -51,6 +60,7 @@
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#020202
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#ef5000  guifg=#ffffff
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#0f5000  guifg=#ffffff
+        hi LineNr         ctermbg=17 ctermfg=15   guibg=#5fafdf  guifg=#ffffff
         "--------------------------------------------------------------------------------- 
         "red let g:indentLine_color_term = 251
         "red let g:indentLine_newVersion = 0
