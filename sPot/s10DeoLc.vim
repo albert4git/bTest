@@ -1,19 +1,18 @@
-"==================================================================================================
-"= File: s10DeoLc.vim TOPFc
-"==================================================================================================
+"==============================================================================================================
+"= File: s10DeoLc.vim TOPFd
+"==============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mo 16 Dez 2019 01:39:34  CET
-"==================================================================================================
+" Lass Modified:      Mo 16 Dez 2019 04:12:55  CET
+"==============================================================================================================
 let g:vimrcversion= 10
 au VimEnter * echo "VIMRC v"g:vimrcversion
-"==================================================================================================
+"==============================================================================================================
 " after I improved indenting, highlighting and autocompletion slightly.
 " EditScope in NormalMode
-" togle Fold?
 set foldlevel=0
 set foldclose=all
-"==================================================================================================
-"==================================================================================================
+"==============================================================================================================
+"==============================================================================================================
 
 "++AAA0-Py+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -46,7 +45,6 @@ set foldclose=all
         set tags=.tags;
         set tags+=tags;
         "==================================================================================
-        "==========================================================================================
         ":set tags=./tags,tags,/home/user/commontags
         "----------------------------------------------------------------------------------
         " set spelllang=de,tech_speak
@@ -87,16 +85,9 @@ set foldclose=all
         set backupdir=~/.config/nvim/backUpDir/  " backups
         set directory=~/.config/nvim/swapDir/    " swap files
        "============================================================================================
-        " The GNU bison parser generator (similar to YACC) generates a couple of
-        " different types of errors. They start with the file name, then a colon. If
-        " available, the linenumber comes next, followed by a dot (period) and the
-        " column number. If appropriate, a dash and then another column number (giving a
-        " column range) follows, and then a colon, space, and the error message.
-
         set errorformat+=%f:%l.%c-%*[0-9]:\ %m
         set errorformat+=%f:%l.%c:\ %m
         set errorformat+=%f:\ %m
-
         "==================================================================================
         if !isdirectory(expand(&undodir))
                 call mkdir(expand(&undodir), "p")
@@ -116,10 +107,6 @@ set foldclose=all
 "++AAA2+MainSet+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "-magic--------
         silent! set wrapscan ignorecase smartcase incsearch hlsearch magic
-        " \v: 'very magic', make every character except a-zA-Z0-9 and '_' have special meaning
-        " use \v and \V to switch 'very magic' on or off.
-        " \m, \M: 'magic' mode.
-        " use \m and \M to switch 'magic' on or off.
         "-Appearance---
         silent! display=lastline,uhex nowrap wrapmargin=0 guioptions=ce key=
         silent! set noshowmatch  noshowmode cmdheight=1 cmdwinheight=10
@@ -141,10 +128,6 @@ set foldclose=all
         "---set whichwrap=b,s,h,l,<,>,[,]
         set splitbelow splitright
         set viminfo='20,\"80
-        " read/write a .viminfo file, don't store more
-        " means that the current buffer can be put
-        " to background without being written; and
-        " that marks and undo history are preserved
         "---Editing---------------------------------------------------------------------------------
         silent! set iminsert=0 imsearch=0 nopaste pastetoggle= nogdefault comments& commentstring=#\ %s
         silent! set smartindent autoindent shiftround shiftwidth=8 expandtab tabstop=4 smarttab softtabstop=8
@@ -196,8 +179,6 @@ set foldclose=all
         set nonu
         set nu
         "----------------------------------------------------------------------------------
-        "----------------------------------------------------------------------------------
-        " [ match ]
         set showmatch
         set matchpairs+=(:),{:},[:],<:>
         set matchpairs+=':'
@@ -252,52 +233,26 @@ call plug#begin('~/.config/nvim/plugged/')
         "===================================================================================
         Plug 'adriaanzon/vim-textobj-matchit'
         "`am` and `im` :if-ifend , for-endfore ..
-        "===================================================================================
-        " Plug 'bps/vim-textobj-python'
-        " call textobj#user#map('python', {
-        "         \   'class': {
-        "         \     'select-a': '<buffer>ac',
-        "         \     'select-i': '<buffer>ic',
-        "         \     'move-n': '<buffer>]pc',
-        "         \     'move-p': '<buffer>[pc',
-        "         \   },
-        "         \   'function': {
-        "         \     'select-a': '<buffer>af',
-        "         \     'select-i': '<buffer>if',
-        "         \     'move-n': '<buffer>]pf',
-        "         \     'move-p': '<buffer>[pf',
-        "         \   }
-        "         \ })
-        " xmap af <Plug>(textobj-python-function-a)
-        " omap af <Plug>(textobj-python-function-a)
-        " xmap if <Plug>(textobj-python-function-i)
-        " omap if <Plug>(textobj-python-function-i)
-        " :TextobjPythonDefaultKeyMappings  :to redefine the default
-        "===================================================================================
 
-        "===================================================================================
         "==!!!==============================================================================
-        " wellle/targets.vim great text objects for selecting/changing parameters
+        " great text objects for selecting/changing parameters
         " Plug 'wellle/targets.vim'
-        "----------------------------------------------------------------------------------
         "==================================================================================
-        "----------------------------------------------------------------------------------
         Plug 'kana/vim-textobj-diff'
         Plug 'reedes/vim-textobj-sentence'
                 let g:textobj#sentence#select = 's'
                 let g:textobj#sentence#move_p = '('
                 let g:textobj#sentence#move_n = ')'
-
+        "==================================================================================
         Plug 'kana/vim-textobj-function'
         Plug 'Julian/vim-textobj-brace'
         Plug 'glts/vim-textobj-indblock'
         Plug 'kana/vim-textobj-indent'
         Plug 'kana/vim-textobj-fold'
         Plug 'beloglazov/vim-textobj-quotes'
-        "------------------------------------------------
-        "----vac-?-
+        "----vac---
         Plug 'coderifous/textobj-word-column.vim'
-        "----vac-??-
+        "----vax---
         Plug 'glts/vim-textobj-comment'
         let g:textobj_comment_no_default_key_mappings = 1
         xmap ax <Plug>(textobj-comment-a)
@@ -311,9 +266,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------------------------------------
         " Plug 'killphi/vim-textobj-signify-hunk'
         "--------------------------------------------------------------------------
-        "--------------------------------------------------------------------------
         Plug 'terryma/vim-expand-region'
-                 "-Default-settings.
                  let g:expand_region_text_objects = {
                                          \ 'iw'  :0,
                                          \ 'iW'  :0,
@@ -326,21 +279,12 @@ call plug#begin('~/.config/nvim/plugged/')
                                          \ 'ip'  :1,
                                          \ 'ih'  :1
                                          \ }
+        "--------------------------------------------------------------------------
         "======TheBest======
         vmap v <Plug>(expand_region_expand)
         vmap <c-v> <Plug>(expand_region_shrink)
         "----------------------------------------------------------------------------------
         Plug 'machakann/vim-sandwich'
-                " sd,sr, sa{motion/textobject}{addition}(normal and visual mode)
-                " let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
-                " Sandwiched text could be resolved into two parts, {surrounding} and {surrounded text}.
-                " sa add surroundings: mapped to the key sequence sa
-                " sd Delete surroundings: mapped to the key sequence sd
-                " sr Replace surroundings: mapped to the key sequence sr
-                " ib Search and select a sandwiched text automatically: mapped to the key sequence ib and ab
-                " is Search and select a sandwiched text with query: mapped to the key sequence is and as
-                " da" will delete a quoted sympy.pprint(string.)
-                "(<b>'Sbandawitch'</b>)
                 nmap s <Nop>
                 xmap s <Nop>
         "-------------------------------------------------------------
@@ -368,7 +312,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'sk1418/Join'
         Plug 'salsifis/vim-transpose'
         " Plug 'vim-scripts/a.vim'
-        " ah - bh
+        "--- ah - bh ---
         Plug 'machakann/vim-swap'
         "=======================================
         Plug 'sk1418/QFGrep'
@@ -376,10 +320,9 @@ call plug#begin('~/.config/nvim/plugged/')
         "Python text objects
         "Plug 'jeetsukumaran/vim-pythonsense'
         "Plug 'voldikss/vim-hello-word'
-        "-----------------------------------------------------------------------------------
 
-        "-----StopTO------------------------------------------------------------------------
         "-----------------------------------------------------------------------------------
+        "-----StopTO------------------------------------------------------------------------
         "---NoAutoClose-YCM-----------------------------------------------------------------
         "-----------------------------------------------------------------------------------
         Plug 'jiangmiao/auto-pairs'
@@ -406,27 +349,15 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:AutoPairsMapCh=1
                 let g:AutoPairsDelete = '<M-5>'
 
-        " <CR> : Insert new indented line after return if cursor in blank brackets
-        "        or quotes.
-        " <BS> : Delete brackets in pair
-        " <M-p>: Toggle Autopairs (|g:AutoPairsShortcutToggle|)
-        " <M-e>: Fast Wrap (|g:AutoPairsShortcutFastWrap|)
-        " <M-n>: Jump to next closed pair (|g:AutoPairsShortcutJump|)
-        " <M-b>: BackInsert (|g:AutoPairsShortcutBackInsert|)
-        "---------------------------------------------------------------------------------
+        "==================================================================================
         Plug 'alvan/vim-closetag'
         let g:closetag_close_shortcut = '<leader>>'
         let g:closetag_filetypes = 'html,xhtml,phtml'
         let g:closetag_xhtml_filetypes = 'xhtml,jsx'
-        "----------------------------------------------------------------------------------
-
-         "{ sin ( cosin ( <b>'x2'</b> ) ) }
-
         "==================================================================================
+        "{ sin ( cosin ( <b>'x2'</b> ) ) }
         "======================EndTO=======================================================
         "==================================================================================
-
-        "----------------------------------------------------------------------------------
         Plug 'aghareza/vim-gitgrep'
         "----------------------------------------------------------------------------------
         Plug 'romainl/vim-qf'
@@ -445,14 +376,12 @@ call plug#begin('~/.config/nvim/plugged/')
         "-222------------------------------------------------------------------------------
         Plug 'gastonsimone/vim-dokumentary/'
                 "-=KKK=-
-                "??? apt-get install dictd dict-gcide dict
                 "let g:dokumentary_docprgs = {'c': 'cdoc {0}', 'python': ''}
                 let g:dokumentary_docprgs = {'c': 'cdoc {0}'}
 
         " echo g:dokumentary_docprgs["c"]
         " echo g:dokumentary_docprgs["python"]
         " apt-get install dictd dict-gcide dict
-        "---------------------------------------------------------------------------------
         "----------------------------------------------------------------------------------
         Plug 'fs111/pydoc.vim', {'external_commands': ['pydoc']}
         let g:ref_pydoc_cmd = 'pydoc'
@@ -476,11 +405,9 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'sainnhe/lightline_foobar.vim'
         Plug 'mengelbrecht/lightline-bufferline'
         Plug 'jacoborus/tender.vim'
-
         "------------------------------PreCursor----------------------------------------------------
         " set guicursor=a:block-blinkon100-Cursor/Cursor
         " hi Cursor guifg=black guibg=green gui=reverse
-        " mode aware cursors (in GUI)
         set gcr=a:block
         set gcr+=o:hor50-Cursor
         set gcr+=n:Cursor
@@ -489,12 +416,11 @@ call plug#begin('~/.config/nvim/plugged/')
         set gcr+=c:CommandCursor
         set gcr+=v-ve:VisualCursor
         set gcr+=a:blinkon0
-
-        hi InsertCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=37  guibg=#880000
+        "----------------------------------------
+        hi InsertCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=37  guibg=#cc00aa
         hi VisualCursor  ctermfg=15 guifg=#fdf6e3 ctermbg=125 guibg=#ee4422
         hi ReplaceCursor ctermfg=15 guifg=#fdf6e3 ctermbg=65  guibg=#00ff00
         hi CommandCursor ctermfg=15 guifg=#fdf6e3 ctermbg=166 guibg=#FF0000
-
         "----------------------------------------
         Plug 'zefei/vim-wintabs'
         " Plug 'zefei/vim-wintabs-powerline'
@@ -504,11 +430,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'kshenoy/vim-signature'
         " :SignatureListMarkers         : List all markers
-        " :SignatureListMarkers 1       : List only the '!' marker
-        " :SignatureListMarkers @       : List only the '@' marker
-        " :SignatureListMarkers 0, 2    : List only ) marker with 2 lines of context
-        " :SignatureListMarkers '', 2   : List all markers with 2 lines of context
-        " :SignatureListMarkers '!@', 2 : List only the '!' and '@' markers and show
         "----------------------------------------------------------------------------------
         Plug 'machakann/vim-highlightedyank'
                 let g:highlightedyank_highlight_duration = -1
@@ -522,7 +443,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=#331159
         "----------------------------------------------------------------------------------
         Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-        "---DEO-1--------------------------------------------------------------------------
         "----------------------------------------------------------------------------------
         Plug 'sukima/xmledit/'
         "----------------------------------------------------------------------------------
@@ -557,9 +477,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'junegunn/fzf.vim'
         Plug 'pbogut/fzf-mru.vim'
            let g:fzf_mru_relative = 1
-
-        " FZFMru --prompt "Sup? " -q "notmuch"
-        "------------------------------------------------------------------------------------------
         "------------------------------------------------------------------------------------------
         Plug 'ddrscott/vim-side-search'
         "--heading and --stats are required!
@@ -576,7 +493,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:nv_search_paths = ['/media/red/']
                 let g:nv_search_paths = ['~/git/bTest/pyLabGitPdbPythonMode27']
                 let g:nv_search_paths = ['~/git/']
-        "----------------------------------------------------------------------
         "--------------------------------------
         Plug 'kien/ctrlp.vim'
         Plug 'wincent/command-t'
@@ -677,7 +593,6 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \ "Unknown"   : "?"
                                 \ }
                 "-----------------------------------
-                "-----------------------------------
                  let NERDTreeShowBookmarks=1
                  let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
                  let NERDTreeChDirMode=0
@@ -699,10 +614,10 @@ call plug#begin('~/.config/nvim/plugged/')
                                  endif
                          endif
                  endfunction
-                 "" NERDCommenter
+                 " NERDCommenter
                  let g:NERDDefaultAlign = 'left'
                  " let g:NERDCommentEmptyLines = 1
-                 " let g:NERDTrimTrailingWhitespace = 1
+                 let g:NERDTrimTrailingWhitespace = 1
 
                  " NERDTrees File highlighting
                  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -710,24 +625,6 @@ call plug#begin('~/.config/nvim/plugged/')
                          exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
                  endfunction
 
-                call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-                call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-                call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-                call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-                call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-                call NERDTreeHighlightFile('vim', 'Red', 'none', 'red', '#151515')
-                call NERDTreeHighlightFile('js', 'blue', 'none', '#ffa500', '#151515')
-                call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-                call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
-                call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
-                call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
-                call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
-                call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
         "----------------------------------------------------------------------------------
         Plug 'ivalkeen/nerdtree-execute'
         Plug 'Linfee/nerdtree-open'
@@ -825,7 +722,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'metakirby5/codi.vim'
         "----------------------------------------------------------------------------------
         Plug 'tylerhunt/vim-spark'
-        "Plug 'sjl/vim-sparkup'
         Plug 'vim-scripts/Emmet.vim'
         let g:user_emmet_settings = {
                                 \  'indentation' : '  ',
@@ -910,7 +806,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
                 nmap ga <Plug>(EasyAlign)
         "----------------------------------------------------------------------------------
-
         "---TODO---------------------------------------------------------------------------
         " Plug 'SkyLeach/pudb.vim'
         " if has('nvim')
@@ -924,9 +819,17 @@ call plug#begin('~/.config/nvim/plugged/')
         "         let g:pudb_breakpoint_symbol='☠'
         " endif
         "--------------------TODO---------------------------------------------------------
-        "--??was uber wie??--
-        "--------------------
         " Plug 'google/vim-coverage'
+        "----------------------------------------------------------------------------------
+        " Plug 'junegunn/vader.vim'
+        Plug 'janko-m/vim-test'
+                let test#strategy='neoterm'
+                let test#strategy = "dispatch"
+        " let test#python#runner = 'pytest'
+        " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose'
+        " and Python's built-in 'unittest'
+        "----------------------------------------------------------------------------------
+        Plug 'alfredodeza/pytest.vim'
         "---------------------------------------------------------------------------------
         Plug 'voldikss/vim-translate-me'
         Plug 'iamcco/dict.vim'
@@ -951,25 +854,13 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------TESTING-----------------------------------------------
         "- Plug 'vim-scripts/CRefVim'
         "----------------------------------------------------------------------------------
-        " Plug 'junegunn/vader.vim'
-        Plug 'janko-m/vim-test'
-                let test#strategy='neoterm'
-                let test#strategy = "dispatch"
-        " let test#python#runner = 'pytest'
-        " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose'
-        " and Python's built-in 'unittest'
-
-        "----------------------------------------------------------------------------------
         Plug 'vifm/neovim-vifm'
                 let $MYVIFMRC='~/.config/vifm/vifmrc'
                 let g:vifmSplitWidth = 88
 
         "===================================================================================
-        "------------------TODO------------------------------------------------------------
         "-Plug 'mhartington/nvim-typescript'
         "-autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
-        "===================================================================================
-        "==TYPESCRIPT=======================================================================
         "===================================================================================
         " Plug 'moll/vim-node'
         " Plug 'sareyko/neat.vim'
@@ -994,7 +885,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'm42e/vim-lgh'
         "------------------TODO------------------------------------------------------------
         Plug 'sheerun/vim-polyglot'
-
         "------------------Nice------------------------------------------------------------
         Plug 'vim-scripts/underlinetag'
         "---------------------------------------------------------------------------------
@@ -1018,17 +908,8 @@ call plug#begin('~/.config/nvim/plugged/')
         "---Perfection - Continuity------
         Plug 'terryma/vim-smooth-scroll'
         "======================================777=================================================
-        ":::Nice::::
         " smart <c-a> and <c-x> to toggle true/false, on/off, increment dates or weekday names, etc.
         Plug 'nishigori/increment-activator'
-        "------------------------------------------------------------------------------------------
-        " Plug 'vigoux/LanguageTool.nvim'
-        " let g:languagetool_server='$HOME/LanguageTool-4.6-stable/languagetool-server.jar'
-        " hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
-        " hi LanguageToolSpellingError guisp=red  gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=red  term=underline cterm=none
-
-        "===!!!============================================================================
-        "Plug 'xerron/wordbyword.vim'
         "------------------------------------------------------------------------------------------
         Plug 'elzr/vim-json'
         Plug 'mrk21/yaml-vim'
@@ -1047,7 +928,6 @@ call plug#begin('~/.config/nvim/plugged/')
         " let g:ale_set_loclist = 0
         " let g:ale_set_quickfix = 1
         " let g:ale_set_signs = 0
-        "---------------------------------------
         "==================================================================================
         hi link ALEErrorSign    custRed
         hi link ALEWarningSign  custYellow
@@ -1089,62 +969,21 @@ call plug#begin('~/.config/nvim/plugged/')
         "==================================================================================
         Plug 'hecal3/vim-leader-guide'
         "==================================================================================
-        "==================NewNovember2019==================================================
-        "==================================================================================
+        "---SSTRACH------------------------------------------------------------------------
+        " Plug 'justincampbell/vim-eighties'
+        " let g:eighties_enabled = 1
+        " let g:eighties_minimum_width = 70
+        " let g:eighties_extra_width = 0
+        " let g:eighties_compute = 1
+        " let g:eighties_bufname_additional_patterns = ['fugitiveblame']
 
-        "---!!!---------------------------------------------------------------------------
-        Plug 'justincampbell/vim-eighties'
-        let g:eighties_enabled = 1
-        let g:eighties_minimum_width = 70
-        " Increase this if you want some extra room
-        let g:eighties_extra_width = 0
-        " Disable this if you just want the minimum + extra
-        let g:eighties_compute = 1
-        " Defaults to [], 'fugitiveblame' is only an example.
-        " Takes a comma delimited list of bufnames as strings.
-        let g:eighties_bufname_additional_patterns = ['fugitiveblame']
-
-        "--KickStart?-----------------------------------------------------------------------
+        "--KickStart?----------------------------------------------------------------------
         Plug 'hallison/vim-rdoc'
         Plug 'msbmsb/stem-search.vim'
         Plug 'bronson/vim-trailing-whitespace'
-        Plug 'mivok/vimtodo'
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        " Plug 'mivok/vimtodo'
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         Plug 'vlmarek/DiffGoFile'
-        Plug 'alfredodeza/pytest.vim'
-
-        ":::ALT-DEO:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        " Plug 'maralla/completor.vim'
-        " Plug 'prabirshrestha/asyncomplete.vim'
-        " Plug 'maralla/completor.vim'
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-"++AAACoc-Vista+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        " Plug 'liuchengxu/vista.vim'
-        " let g:vista_fzf_preview = ['right:50%']
-        " let g:vista#renderer#icons = {
-        "                         \   "function": "\uf794",
-        "                         \   "variable": "\uf71b",
-        "                         \  }
-        " " let g:vista#executive#ctags#support_json_format = 1
-        " let g:vista#executives = ['coc', 'ctags', 'lcn', 'vim_lsp']
-        " let g:vista#executives = ['ale', 'coc', 'ctags', 'lcn', 'vim_lsp']
-        " let g:vista_executive_for = {'php': 'coc', 'java': 'coc', 'typescript': 'coc', 'go': 'coc', 'c': 'coc', 'javascript': 'coc', 'html': 'coc', 'rust': 'coc', 'cpp': 'coc', 'css': 'coc', 'python': 'coc'}
-        " let g:vista_icon_indent = ['╰─🞂 ', '├─🞂 ']
-        " let g:vista_default_executive = 'ctags'
-        " let g:vista#renderer#enable_icon = 1
-        " " By default vista.vim never run if you don't call it explicitly.
-        " " If you want to show the nearest function in your statusline automatically,
-        " " you can add the following line to your vimrc
-        " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-        ":::IRENE::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        "------------------------------------------------------------------------------------------
-        " Plug 'neoclide/coc-jedi', {'do': 'yarn install'}
-        "------------------------------------------------------------------------------------------
-        " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"++AAAcoc++}}}
 
 "++AAALspAltDeo2+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -1169,28 +1008,6 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \ }
 "++AAALsp++}}}
 
-
-"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        " Plug 'prabirshrestha/asyncomplete.vim'
-        " Plug 'prabirshrestha/async.vim'
-        " Plug 'prabirshrestha/vim-lsp'
-        " Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
-        " if executable('pyls')
-        "     " pip install python-language-server
-        "     au User lsp_setup call lsp#register_server({
-        "         \ 'name': 'pyls',
-        "         \ 'cmd': {server_info->['pyls']},
-        "         \ 'whitelist': ['python'],
-        "         \ })
-        " endif
-
-        " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-        " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-        " inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-
-"++AAAx++}}}
-
 "++AAAdeo-Jedi++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         source ~/git/bTest/sPot/s9PlugDeo.vim
         Plug 'davidhalter/jedi-vim'
@@ -1198,10 +1015,9 @@ call plug#begin('~/.config/nvim/plugged/')
 "++AAAdeo-Jedi++}}}
 
         "----------------------------------------------------------------------------------
-        "----------------------------------------------------------------------------------
         "---DATABASE-CONSOLE---------------------------------------------------------------
         " Plug 'tpope/vim-dadbod'
-        "===BBB============================================================================
+        "----------------------------------------------------------------------------------
         Plug 'tpope/vim-fugitive'
         "==================================================================================
         Plug 'tpope/vim-commentary'
@@ -1221,9 +1037,9 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'tpope/vim-projectionist'
         "----------------------------------------------------------------------------------
-        Plug 'tpope/vim-apathy'
-        Plug 'tpope/vim-scriptease'
-        Plug 'tpope/vim-classpath'
+        " Plug 'tpope/vim-apathy'
+        " Plug 'tpope/vim-scriptease'
+        " Plug 'tpope/vim-classpath'
         "-------------------------------------------------
         Plug 'tpope/vim-dispatch'
         let g:dispatch_compilers = {
@@ -1231,8 +1047,7 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \ 'bundle exec': ''}
         "==================================================================================
         Plug 'vim-scripts/repmo.vim'
-
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         Plug 'frazrepo/vim-rainbow'
         Plug 'edkolev/tmuxline.vim' " Keep tmux theme and vim theme in sync
         Plug 'rhysd/conflict-marker.vim' " Jump to merge conflict markers
@@ -1241,7 +1056,6 @@ call plug#end()
 "++AAAPlug++}}}
 
         "==================================================================================
-        "----------------------------------------------------------------------------------
         autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
         let g:lightline#bufferline#show_number  = 1
         let g:lightline#bufferline#shorten_path = 0
@@ -1250,24 +1064,7 @@ call plug#end()
         let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
         let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
         let g:lightline.component_type   = {'buffers': 'tabsel'}
-        "----------------------------------------------------------------------------------
         "==================================================================================
-        "----------------------------------------------------------------------------------
-         " let g:lightline = {
-         "                 \ 'colorscheme': 'monokai_tasty',
-         "                 \ 'active': {
-         "                 \   'left': [ [ 'mode', 'paste' ],
-         "                 \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
-         "                 \ },
-         "                 \ 'component_function': {
-         "                 \   'cocstatus': 'coc#status',
-         "                 \   'currentfunction': 'CocCurrentFunction',
-         "                 \   'method': 'NearestMethodOrFunction'
-         "                 \ },
-         "                 \ }
-        "----------------------------------------------------------------------------------
-        "==================================================================================
-        "----------------------------------------------------------------------------------
         let g:lightline = {
                 \ 'colorscheme': 'tender',
                 \ 'enable': {
@@ -1304,11 +1101,6 @@ call plug#end()
                 \ 'subseparator': { 'left': '|', 'right': '|' }
                 \ }
 "++AAACtrlP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        "------------------------------------------------------------------------------------------
-        "-TODO-
-        "-TODO-
-        "------------------------------------------------------------------------------------------
-        "===SetPLAY5===============================================================================
         let g:ctrlp_cmd = 'CtrlPMRU'
         let g:ctrlp_extensions = ['tag']
         let g:ctrlp_match_window_bottom = 0
@@ -1320,35 +1112,22 @@ call plug#end()
         let g:ctrlp_map='<c-p>'
         let g:ctrlp_open_new_file = 'R'
         " let g:ctrlp_mruf_max = 150
-        "-------------------------------------------------------------------------------
-        "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
-        "nnoremap <silent> <C-o> :let g:cpsm_match_empty_query = 0<CR>:CtrlPMRU<CR>
-        "nnoremap <silent> <C-p> :let g:cpsm_match_empty_query = 1<CR>:CtrlP<CR>
-        "-------------------------------------------------------------------------------
 "++AAACtrlP++}}}
 "++AAA6Source+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        "===VIM-STARTIFY-2==================================================================
+
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
         "==========================================================================================
-
         if exists('*WebDevIconsGetFileTypeSymbol')  " support for vim-devicons
                 let entry_format .= ". WebDevIconsGetFileTypeSymbol(entry_path) .' '.  entry_path"
         else
                 let entry_format .= '. entry_path'
         endif
-        ":DimInactiveSyntaxOn
         "==444======================================================================================
+        ":DimInactiveSyntaxOn
         let g:diminactive_use_syntax = 1
         let g:diminactive_enable_focus = 1
         let g:diminactive_buftype_blacklist = ['nofile', 'nowrite', 'acwrite', 'quickfix', 'help', 'tagbar']
         "==444======================================================================================
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "-source ~/git/bTest/sPot/SYPLUG/nHydra.vim
-        "-source ~/git/bTest/sPot/SYPLUG/NNV.vim
-        "-let g:nnv_search_paths = ['~/git/bTest/']
-        "-let g:nnv_search_paths = ['/media/red/124Black/']
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "==============================================
         set termguicolors
         syntax enable
         syntax on
@@ -1367,19 +1146,15 @@ call plug#end()
         "suppress intro message
         "set shortmess+=c
         set shortmess+=I
-        "-TOP------------------------------------------------------------------------------
+        "==================================================================================
         " guifg=#ff0ad8
         " guifg=#0fdad8
         " guifg=#ffda00
-        "-TOP------------------------------------------------------------------------------
         "==================================================================================
-        highlight DiffAdd           cterm=bold ctermbg=22  guibg=#3f5a18
         highlight DiffAdd           cterm=bold ctermbg=22  guibg=#0fDA95
         highlight DiffDelete        cterm=bold ctermbg=3   guibg=#ff0a78
         highlight DiffChange        cterm=bold ctermbg=52  guibg=#ff8a00
         "==================================================================================
-        "-TOP------------------------------------------------------------------------------
-        "----------------------------------------------------------------------------------
         "::::::CYAN::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "----------------------------------------------------------------------------------
         set wildmenu
@@ -1387,8 +1162,6 @@ call plug#end()
         set wildmode=list:longest
         "blackGreen-List
         set wildmode=list:full
-        "------------------------------------------------------------------------------------------
-        "set wildchar=9 nowildmenu wildmode=list:longest wildoptions= wildignorecase cedit=<C-k>
         "------------------------------------------------------------------------------------------
         set wildignore+=*.pdf,*.swp,*.[ao],*~,*.db
         set wildignore+=.hg,.git,.svn                    " Version control
@@ -1410,7 +1183,6 @@ call plug#end()
 "++AAA7CYAN++}}}
 "++AAA8NAVI++++++++++++++++++++++++++++=TOPF=++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         nnoremap <BS> X
-        "---it2018---------------------------------------------------------------------------------
         noremap j gj
         noremap k gk
         noremap gj j
@@ -1435,15 +1207,11 @@ call plug#end()
         "noremap \\ #*
         "--------------------------------------------------------------------------
         nnoremap  <Esc><Esc> :<C-u>set nopaste<CR>:nohlsearch<CR>
-        "-------------------------------------------------------------------------------------------
-        "########################
         "------------------------
         nmap  n nzz
         nmap  N Nzz
         nmap  g* g*zz
         nmap  g# g#zz
-        "------------------------
-        "########################
         "------------------------
         nmap <tab>     :bn<cr>
         nmap <s-tab>   :bp<cr>
@@ -1483,15 +1251,12 @@ call plug#end()
         nnoremap ,w :<C-r>=expand("<cword>")<CR>
         nnoremap ;w :<C-r>=getline(".")<CR>
         "==========================================================================================
-
-        " Add argument (can be negative, default 1) to global variable i.
-        " Return value of i before the change.
         function Inci(...)
                 let result = g:i
                 let g:i += a:0 > 0 ? a:1 : 1
                 return result
         endfunction
-        " Suppose you want to replace each occurrence of "abc" with "xyz_N"
+        " Suppose you want to replace each occurrence of abc with xyz_N
         " where N is an ascending number (xyz_1, xyz_2, xyz_3, and so on).
         " let i = 1 | %s/AAA/\='BBB-' . Inci() .'CCC'/g
 
@@ -1502,7 +1267,6 @@ call plug#end()
         vnoremap Q :norm @q<cr>
         "==========================================================================================
         imap ;; <ESC>
-        "==========================================================================================
         nmap q <Nop>
         nnoremap q <Nop>
         nnoremap ss :wa<cr>
@@ -1520,7 +1284,7 @@ call plug#end()
         nnoremap wq <C-w>q<CR>
         nnoremap ww <C-w>o<CR>
         "------------------------------------------------------------------------------------------
-        nnoremap ZZ  <Nop>
+        nnoremap ZZ <Nop>
         nnoremap ZZ mzzt1<c-u>`z
         nnoremap zs mzzt2<c-u>`z
         nnoremap zx mzzt35<c-u>`z
@@ -1537,7 +1301,6 @@ call plug#end()
         nnoremap VV :execute "vsplit" bufname('#')<cr>
         nnoremap vv <S-v>
         "==========================================================================================
-        " Convenience shortcuts
         command! CD cd %:p:h
         nnoremap <M-w> :write!<CR>
         inoremap <silent> <M-w> <C-o>:write!<CR>
@@ -1559,29 +1322,22 @@ call plug#end()
         "==========================================================================================
         nnoremap ;f ?^func\\|^[a-zA-Z].*func<CR>,/
         "==========================================================================================
-        "==========================================================================================
         nnoremap ;d mayiw`a:exe ":Capture !dict -P - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
         nnoremap ,d mayiw`a:exe ":Capture !dict -d fd-eng-deu - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
-        "------------------------------------------------------------------
+        "==========================================================================================
         nnoremap <Leader>d <Plug>DictSearch
         nnoremap <Leader>t :!goldendict <C-r><C-w><CR>
         nnoremap <Leader>s <Plug>(textobj-diff-hunk-n)
         nnoremap <Leader>x :ThesaurusQueryReplaceCurrentWord<CR>
-        "------------------------------------------------------------------
+        "==========================================================================================
         "vnoremap <unique> <Leader>x "ky:ThesaurusQueryReplace <C-r>k<CR>
         "nnoremap <LocalLeader>z :ThesaurusQueryReplaceCurrentWord<CR>
-
-        "----------------------------------------------------------------------------------
+        "==================================================================================
         nmap ;; <Plug>(easymotion-overwin-w)
         let g:EasyOperator_line_do_mapping = 0
-
         "==================================================================================
         let g:rainbow_active = 1
         let g:rainbow_guifgs = ['cyan', 'DarkOrange1', 'RoyalBlue1', 'FireBrick', 'DarkOrchid1']
-        "----------------------------------------------------------------------------------
-        "==================================================================================
-        "1y$  //yank current row to register 1
-        "<C-r>a to paste from register a
         "----------------------------------------------------------------------------------
         "---------------HULK--hulk--hunk--HUNK--SMA--888-----------------------------------
         "----------------------------------------------------------------------------------
@@ -1606,25 +1362,16 @@ call plug#end()
         "::::::::::::::::::::::::::::::-2MAGIC2-:::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
         vmap <M-c> :w !cat >> ./zbuf<CR>
-
-                "==========================================================================================
+                "================================================================================
                 " Pressing ,ss will toggle and untoggle spell checking
                 map <leader>ss :setlocal spell!<cr>
                 map <leader>sn ]s
                 map <leader>sp [s
                 map <leader>sa zg
                 map <leader>s? z=
-                " Fix from spellcheck
-                " I can never remember if it's zg or z=, and the wrong one adds the word to
-                " the DB (lol), so fuck it, just add an easier mapping.
-                "==========================================================================================
+                "================================================================================
 
-                " Auto format codes
-                " noremap <F4> :Autoformat<CR>
-                " formatt upon saving
-                " au BufWrite * :Autoformat
-
-                "==========================================================================================
+                "================================================================================
                 hi StatusLine                  ctermfg=8     ctermbg=2     cterm=NONE
                 hi StatusLineNC                ctermfg=2     ctermbg=8     cterm=NONE
                 if has('statusline')
@@ -1635,8 +1382,7 @@ call plug#end()
                         set statusline+=\ [%{getcwd()}]          " Current dir
                         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
                 endif
-                "==========================================================================================
-
+                "================================================================================
 
         "==========================================================================================
         "---PlusMinus------------------------------------------------------------------------------
@@ -1697,34 +1443,26 @@ call plug#end()
         let g:CommandTCancelMap=['<C-x>', '<C-c>'] " multiple alternative mapping.
 " }}}
 
-
 "++AAA10F2+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         let g:asyncrun_open = 15
-
         inoremap <F1> <ESC>
         nnoremap <F1> <ESC>
         vnoremap <F1> <ESC>
-
-        "==========================================================================================
-        "==HelpInHelpInHelp========================================================================
         "==========================================================================================
         nmap <M-h> <Esc>:helpgrep <C-r><C-w><CR>
         nmap <C-M-h> "zyw:exe  "h ".@z.""<CR>
         nmap <F2> <Esc>:help <C-r><C-w><CR>
-
+        "==========================================================================================
         nnoremap <M-t> :CommandTJump<cr>
         nnoremap <C-t> :CommandTHelp<cr>
-
         "==MMM====================================================================================
         " au! FileType vim,help nnoremap M :exec "helpgrep" expand("<cword>")<CR>
         "==========================================================================================
         nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
         inoremap <F3> <esc>:NERDTreeToggle<cr>
-
         "==========================================================================================
         source ~/git/bTest/sPot/s9legoStartify.vim
         nnoremap <F4> <esc>:Startify<cr>
-
         "==========================================================================================
         nnoremap <F5> :w<CR>:!python %<CR>
         nnoremap <F5> :call <SID>compile_and_run()<CR>
@@ -1767,18 +1505,10 @@ call plug#end()
         "==========================================================================================
         " www.web.de
         " nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
-        " nnoremap <localleader>o :Utl<CR>
         " nnoremap ;o :Utl<CR>
-
-
         "==========================================================================================
         " call BoxMyC("Gold Stuck.chen")
         nnoremap <leader>c :<c-u>call BoxC()<cr>
-
-        " ############################################################################## 
-        " BREXIT in BOX
-        " ############################################################################## 
-
         "---------------------------------------------------------------
         nnoremap <Leader>0 :set number!<return>
         "---------------------------------------------------------------
@@ -1839,9 +1569,6 @@ call plug#end()
                                 \ 'options': '--ansi --delimiter : --nth 3..',
                                 \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
        "========================================================
-       " autopsy
-       "========================================================
-
 
 "++AAA12imap++}}}
 "++AAA13Unfuc+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -1852,12 +1579,9 @@ call plug#end()
         vnoremap <Tab> >gv
         vnoremap <Backspace> <gv
         "=============================================
-        "===Make zO recursively open whatever fold====
-        "=============================================
         nnoremap zf :call FocusLine()<cr>
         nmap <M-a> za
         nmap <M-z> zM
-        "=============================================
         "=============================================
         nmap zp <Plug>yankstack_substitute_older_paste
         nmap zn <Plug>yankstack_substitute_newer_paste
@@ -1893,7 +1617,6 @@ call plug#end()
                 endif
         endfunction
 
-
         "==================================================================================
         function! FocusLine()
                 let oldscrolloff = &scrolloff
@@ -1928,14 +1651,11 @@ call plug#end()
         function! ShowFunc()
                 let gf_s = &grepformat
                 let gp_s = &grepprg
-
                 let &grepformat = '%*\k%*\sfunction%*\s%l%*\s%f %*\s%m'
                 let &grepprg = 'ctags -x --c-types=f --sort=no -o -'
-
                 write
                 silent! grep %
                 cwindow
-
                 let &grepformat = gf_s
                 let &grepprg = gp_s
         endfunc
@@ -1995,14 +1715,9 @@ call plug#end()
                 endif
         endfunction
         "======================================================================================================
-
-        "========================================================
-        " KKK FZF Selecting Mappings
         nmap <leader><tab> <plug>(fzf-maps-n)
         xmap <leader><tab> <plug>(fzf-maps-x)
         omap <leader><tab> <plug>(fzf-maps-o)
-        "============================================================================================
-        command! -bang -nargs=* ZFi call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
         "============================================================================================
         command! -bang -nargs=? -complete=dir ZFiles
                                 \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
@@ -2012,61 +1727,48 @@ call plug#end()
         "============================================================================================
         command! -bang -nargs=?  ZGit
                                 \ call fzf#run({'source': 'git ls-files', 'sink': 'e', 'right': '40%'})
-        "============================================================================================
-        command! -bang -nargs=?  ZClr
-                                \ call fzf#run({'source': map(split(globpath(&rtp, 'colors/*.vim')),
-                                \ 'fnamemodify(v:val, ":t:r")'),
-                                \ 'sink': 'colo', 'left': '25%'})
 
         "========================================================================================================
-       let g:pathToTemplates='~/bakBuk/'
+        let g:pathToTemplates='~/bakBuk/'
 
-       function! PutSink(file)
-               execute ':r '.g:pathToTemplates.a:file
-       endfunction
+        function! PutSink(file)
+                execute ':r '.g:pathToTemplates.a:file
+        endfunction
 
-       command! ZPut call fzf#run({
-                               \  'source': 'ls '.g:pathToTemplates,
-                               \  'sink':    function('PutSink')})
+        command! ZPut call fzf#run({
+                                \  'source': 'ls '.g:pathToTemplates,
+                                \  'sink':    function('PutSink')})
+        "========================================================================================================
 
-        "====================================================================================
-
-       command! ZLibList call fzf#run({'source': 'find ~/git/ ~/Documents/ -type f', 'sink':  'edit'})
+        command! ZLibList call fzf#run({'source': 'find ~/git/ ~/Documents/ -type f', 'sink':  'edit'})
 
         "========================================================================================================
-       function! s:plug_help_sink(line)
-               let dir = g:plugs[a:line].dir
-               for pat in ['doc/*.txt', 'README.md']
-                       let match = get(split(globpath(dir, pat), "\n"), 0, '')
-                       if len(match)
-                               execute 'tabedit' match
-                               return
-                       endif
-               endfor
-               tabnew
-               execute 'Explore' dir
-       endfunction
+        function! s:plug_help_sink(line)
+                let dir = g:plugs[a:line].dir
+                for pat in ['doc/*.txt', 'README.md']
+                        let match = get(split(globpath(dir, pat), "\n"), 0, '')
+                        if len(match)
+                                execute 'tabedit' match
+                                return
+                        endif
+                endfor
+                tabnew
+                execute 'Explore' dir
+        endfunction
 
-       command! ZPlugHelp call fzf#run(fzf#wrap({
-                               \ 'source': sort(keys(g:plugs)),
-                               \ 'sink':   function('s:plug_help_sink'),
-                               \'right': '30%'
-                               \}))
+        command! ZPlugHelp call fzf#run(fzf#wrap({
+                                \ 'source': sort(keys(g:plugs)),
+                                \ 'sink':   function('s:plug_help_sink'),
+                                \'right': '30%'
+                                \}))
 
-
-        "============================================================================================
-        " Convenient command to see the difference between the current buffer and the
-        " file it was loaded from, thus the changes you made.
+        "==========================================================================================
         if !exists(":DiffOrig")
                 command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
                                         \ | wincmd p | diffthis
         endif
-        "============================================================================================
 
-        "------NoWo-----------------------
-        " command! FFMru call FZFMru()
-        "---------------------------------
-
+        "==========================================================================================
         cabbrev h vertical help
         cabbrev BoxM  call BoxMyCenter("")
         cabbrev SS  SideSearch
@@ -2133,7 +1835,6 @@ call plug#end()
         let g:jedi#documentation_command = "gj"
         let g:jedi#completions_enabled = 1
         let g:jedi#popup_on_dot = 1
-        " close preview window after completion
         let g:jedi#auto_close_doc = 1
         "----------------------------------------------------------------------------------
         inoremap <expr><C-g>     deoplete#undo_completion()
@@ -2183,13 +1884,12 @@ call plug#end()
                 :!chmod u+x %
                 :w
         endfunction
-        "------------------------------------------------------------------------------------------
+        "====================================Change================================================
         augroup ScriptExecutePermission
                 autocmd!
                 autocmd BufWritePost *.sh :call ScriptExecute()
         augroup END
         "==========================================================================================
-        "==Cool!!==================================================================================
         augroup SourceVimrc
                 autocmd!
                 autocmd bufwritepost .vimrc source $MYVIMRC
@@ -2212,10 +1912,8 @@ call plug#end()
                 " Alternative: autocmd FileType python AutoFormatBuffer autopep8
         augroup END
         "==========================================================================================
-        "-YES-
         autocmd! BufEnter * :call BookmarkMapKeys()
         "==========================================================================================
-        "-???-
         augroup qs_colors
                 autocmd!
                 autocmd ColorScheme * highlight QuickScopePrimary  ctermfg=81 cterm=underline
@@ -2233,16 +1931,31 @@ call plug#end()
         "==========================================================================================
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "::::::
-                function! NearestMethodOrFunction() abort
-                return get(b:, 'vista_nearest_method_or_function', '')
-                endfunction
 
-                set statusline+=%{NearestMethodOrFunction()}
+                " function! NearestMethodOrFunction() abort
+                " return get(b:, 'vista_nearest_method_or_function', '')
+                " endfunction
+
+                " set statusline+=%{NearestMethodOrFunction()}
 
                 " By default vista.vim never run if you don't call it explicitly.
                 " If you want to show the nearest function in your statusline automatically,
-                " you can add the following line to your vimrc
                 " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
+                "==================================================================================
+                " let g:lightline = {
+                "                 \ 'colorscheme': 'monokai_tasty',
+                "                 \ 'active': {
+                "                 \   'left': [ [ 'mode', 'paste' ],
+                "                 \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+                "                 \ },
+                "                 \ 'component_function': {
+                "                 \   'cocstatus': 'coc#status',
+                "                 \   'currentfunction': 'CocCurrentFunction',
+                "                 \   'method': 'NearestMethodOrFunction'
+                "                 \ },
+                "                 \ }
+
         "::::::
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
@@ -2251,7 +1964,6 @@ call plug#end()
         autocmd QuickFixCmdPost grep cwindow
         autocmd! vimrc QuickfixCmdPost [^l]* nested copen | wincmd p
         autocmd! vimrc QuickfixCmdPost l* nested lopen | wincmd p
-
         "==========================================================================================
         function! s:fzf_statusline()
                 highlight fzf1 ctermfg=11 ctermbg=9
@@ -2261,15 +1973,10 @@ call plug#end()
         endfunction
         autocmd! User FzfStatusLine call <SID>fzf_statusline()
         "==========================================================================================
-        " More useful command-line completion
         au! FocusLost * :silent! wall
-        "==========================================================================================
         "==========================================================================================
         "- go to last edit position when opening files -
         au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
         "==========================================================================================
-        "==========================================================================================
-        "==========================================================================================
 "++AAA19Auto++}}}
-
 

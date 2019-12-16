@@ -1,5 +1,30 @@
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "-source ~/git/bTest/sPot/SYPLUG/nHydra.vim
+        "-source ~/git/bTest/sPot/SYPLUG/NNV.vim
+        "-let g:nnv_search_paths = ['~/git/bTest/']
+        "-let g:nnv_search_paths = ['/media/red/124Black/']
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+        "-------------------------------------------------------------------------------
+        "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+        "nnoremap <silent> <C-o> :let g:cpsm_match_empty_query = 0<CR>:CtrlPMRU<CR>
+        "nnoremap <silent> <C-p> :let g:cpsm_match_empty_query = 1<CR>:CtrlP<CR>
+        "==================================================================================
+        "1y$  //yank current row to register 1
+        "<C-r>a to paste from register a
+        "----------------------------------------------------------------------------------
+                " Auto format codes
+                " noremap <F4> :Autoformat<CR>
+                " formatt upon saving
+                " au BufWrite * :Autoformat
         "---------------------------------------------------------------
+        "============================================================================================
+        " command! -bang -nargs=?  ZClr
+        "                         \ call fzf#run({'source': map(split(globpath(&rtp, 'colors/*.vim')),
+        "                         \ 'fnamemodify(v:val, ":t:r")'),
+        "                         \ 'sink': 'colo', 'left': '25%'})
+        "============================================================================================
+        " command! -bang -nargs=* ZFi call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
         "---------------------------------------------------------------
 
