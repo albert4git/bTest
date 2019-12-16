@@ -1,5 +1,77 @@
 
+        "---------------------------------------------------------------
 
+        "---------------------------------------------------------------
+
+        "---------------------------------------------------------------
+
+        :com -complete=custom,ListUsers -nargs=1 Finger !finger <args>
+        :fun ListUsers(A,L,P)
+        :    return system("cut -d: -f1 /etc/passwd")
+        :endfun
+"--------------------------------------------------------------------------------- 
+
+        "---------------------------------------------------------------
+        vmap sq "zdi"<C-R>z"<ESC>
+        vmap sb "zdi( <C-R>z )<ESC>
+
+        "---------------------------------------------------------------
+        command! -complete=file -nargs=+ SIS execute 'SideSearch <args>'
+        "---------------------------------------------------------------
+
+        let g:lightline.component = {
+                                \ 'mode': '%{lightline#mode()}',
+                                \ 'absolutepath': '%F',
+                                \ 'relativepath': '%f',
+                                \ 'filename': '%t',
+                                \ 'modified': '%M',
+                                \ 'bufnum': '%n',
+                                \ 'paste': '%{&paste?"PASTE":""}',
+                                \ 'readonly': '%R',
+                                \ 'charvalue': '%b',
+                                \ 'charvaluehex': '%B',
+                                \ 'fileencoding': '%{&fenc!=#""?&fenc:&enc}',
+                                \ 'fileformat': '%{&ff}',
+                                \ 'filetype': '%{&ft!=#""?&ft:"no ft"}',
+                                \ 'percent': '%3p%%',
+                                \ 'percentwin': '%P',
+                                \ 'spell': '%{&spell?&spelllang:""}',
+                                \ 'lineinfo': '%3l:%-2v',
+                                \ 'line': '%l',
+                                \ 'column': '%c',
+                                \ 'close': '%999X X ',
+                                \ 'winnr': '%{winnr()}' }
+
+        let g:lightline.tab_component_function = {
+                                \ 'filename': 'lightline#tab#filename',
+                                \ 'modified': 'lightline#tab#modified',
+                                \ 'readonly': 'lightline#tab#readonly',
+                                \ 'tabnum': 'lightline#tab#tabnum' }
+
+        let g:lightline.mode_map = {
+                                \ 'n' : 'NORM',
+                                \ 'i' : 'INSERT',
+                                \ 'R' : 'REPLACE',
+                                \ 'v' : 'VISUAL',
+                                \ 'V' : 'V-LINE',
+                                \ "\<C-v>": 'V-BLOCK',
+                                \ 'c' : 'COMMAND',
+                                \ 's' : 'SELECT',
+                                \ 'S' : 'S-LINE',
+                                \ "\<C-s>": 'S-BLOCK',
+                                \ 't': 'TERMINAL',
+                                \ }
+
+        let g:lightline = {
+                                \ 'colorscheme': 'tender',
+                                \ 'active': {
+                                \   'left': [ [ 'mode', 'paste' ],
+                                \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+                                \ },
+                                \ 'component_function': {
+                                \   'gitbranch': 'fugitive#head'
+                                \ },
+                                \ }
 
 
         "----------------------------------------------------------------------------------
@@ -27,7 +99,44 @@
                 \ 'Delete'           : "D",
                 \ }
 
+        " vmap it <Plug>(textobj-signify-hunk-i)
+        " vmap ah <Plug>(textobj-gitgutter-a)
+        "----------------------------------------------------------------------------------
+        " 255   0 255		magenta1
+        " 0   139 139		dark cyan
+        " 0   139 139		DarkCyan
+        " 139   0 139		dark magenta
+        " 1h39   0 139		DarkMagenta
+        " 139   0   0		dark red
+        " 139   0   0		DarkRed
+        " 144 238 144		light green
+        " 144 238 144		LightGreen
+                 let g:expand_region_text_objects = {
+                                         \ 'iw'  :0,
+                                         \ 'iW'  :0,
+                                         \ 'i"'  :0,
+                                         \ 'i''' :1,
+                                         \ 'ib'  :1,
+                                         \ 'i)'  :1,
+                                         \ 'iB'  :1,
+                                         \ 'i}'  :1,
+                                         \ 'i]'  :1,
+                                         \ 'if'  :1,
+                                         \ 'io'  :1,
+                                         \ 'ip'  :1,
+                                         \ 'ih'  :1
+                                         \ }
 
+        "----------------------------------------------------------------------------------
+        " 255   0 255		magenta1
+        " 0   139 139		dark cyan
+        " 0   139 139		DarkCyan
+        " 139   0 139		dark magenta
+        " 139   0 139		DarkMagenta
+        " 139   0   0		dark red
+        " 139   0   0		DarkRed
+        " 144 238 144		light green
+        " 144 238 144		LightGreen
 
          " let g:lightline = {
          "                 \ 'colorscheme': 'monokai_tasty',

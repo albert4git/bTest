@@ -4,9 +4,6 @@ ab funcion function
 ab funicton function
 ab funciton function
 ab fucntion function
-ab dupate update
-ab upate update
-ab udpate update
 ab teh the
 ab fro for
 
@@ -24,6 +21,7 @@ iabbrev c@ Copyright 2018 Albert, all rights reserved.
 autocmd FileType vim :iabbrev <buffer> iff if ()<left>
 autocmd FileType c,cpp :iabbrev <buffer> iff if () { }<left>
 
+"===================================================================================================
 iabbrev adate  <c-r>=strftime("%F")<cr>
 iabbrev cdate  <c-r>=strftime("%c")<cr>
 
@@ -33,9 +31,7 @@ iabbrev cdate  <c-r>=strftime("%c")<cr>
 "===================================================================================================
 
 iabbrev str START
-iabbrev strt START
 iabbrev stp STOP
-iabbrev que question
 iabbrev #i #include
 iabbrev #d #define
 iabbrev cmnt /*<CR><CR>*/<Up>
@@ -49,6 +45,7 @@ endfunction
 function! MakeSpacelessIabbrev(from, to)
         execute "iabbrev <silent> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
 endfunction
+
 function! MakeSpacelessBufferIabbrev(from, to)
         execute "iabbrev <silent> <buffer> ".a:from." ".a:to."<C-R>=EatChar('\\s')<CR>"
 endfunction
@@ -87,11 +84,9 @@ endfunction
 " call BoxMy("Gold Stuck.chen")
 
 
+command! BoxMyC call BoxMyC()
 
-command! BoxMyC call BoxMyCenter()
-
-function! BoxMyCenter(...)
-
+function! BoxMyC(...)
         " get the arguments properly 
         if (a:0 == 0) 
                 let argString = "" 
@@ -142,17 +137,13 @@ endfunction
 
 "==========================================================================================
 " We define <leader>b as a shortcut to create/delete a box.
-" nnoremap <leader>b :<c-u>call CommentBox()<cr>
-command! BoxC call BoxC()
+" nnoremap <leader>b :<c-u>call BoxC()<cr>
 
-" ############################################################################## 
-" snow
-" ############################################################################## 
 " ############################################################################## 
 " snow2
 " ############################################################################## 
 
-
+command! BoxC call BoxC()
 function! BoxC()
 
         " PREPARATIONS
@@ -253,12 +244,6 @@ function! BoxC()
 
 endfunction
 
-"--------------------------------------------------------------------------------- 
-
-        :com -complete=custom,ListUsers -nargs=1 Finger !finger <args>
-        :fun ListUsers(A,L,P)
-        :    return system("cut -d: -f1 /etc/passwd")
-        :endfun
 "--------------------------------------------------------------------------------- 
 
 

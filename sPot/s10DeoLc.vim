@@ -1,8 +1,8 @@
 "==================================================================================================
-"= File: s10DeoLc.vim
+"= File: s10DeoLc.vim TOPFc
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      So 15 Dez 2019 05:26:37  CET
+" Lass Modified:      Mo 16 Dez 2019 01:39:34  CET
 "==================================================================================================
 let g:vimrcversion= 10
 au VimEnter * echo "VIMRC v"g:vimrcversion
@@ -39,7 +39,6 @@ set foldclose=all
         let mapleader=' '
         "----------------------------------------------------------------------------------
         set nocompatible
-        set helplang=en,de
         set encoding=UTF-8
         scriptencoding utf-8
         set shell=/bin/zsh
@@ -54,7 +53,6 @@ set foldclose=all
         " 'zg': add, 'zw': remove.
         "----------------------------------------------------------------------------------
         set spellsuggest=best
-        set spelllang=fr
         set spelllang=de
         set spelllang=he
         set spelllang=en
@@ -82,15 +80,12 @@ set foldclose=all
         let g:pymode_python = 'python3'
         "----------------------------------------------------------------------------------
         set background=dark
-        syntax on
-        syntax enable
         "==================================================================================
         set noswapfile
         set backup                               " enable backups
         set undodir=~/.config/nvim/undoDir/      " undo files
         set backupdir=~/.config/nvim/backUpDir/  " backups
         set directory=~/.config/nvim/swapDir/    " swap files
-
        "============================================================================================
         " The GNU bison parser generator (similar to YACC) generates a couple of
         " different types of errors. They start with the file name, then a colon. If
@@ -102,8 +97,7 @@ set foldclose=all
         set errorformat+=%f:%l.%c:\ %m
         set errorformat+=%f:\ %m
 
-
-        "----------------------------------------------------------------------------------
+        "==================================================================================
         if !isdirectory(expand(&undodir))
                 call mkdir(expand(&undodir), "p")
         endif
@@ -113,10 +107,10 @@ set foldclose=all
         if !isdirectory(expand(&directory))
                 call mkdir(expand(&directory), "p")
         endif
-        "----------------------------------------------------------------------------------
+        "==================================================================================
         set undofile
-        set undoreload=10000
-        "----------------------------------------------------------------------------------
+        set undoreload=12000
+        "==================================================================================
 
 "++AAA1++}}}
 "++AAA2+MainSet+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -232,7 +226,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'vim-scripts/genutils'
         Plug 'LucHermitte/lh-vim-lib'
         Plug 'inkarkat/vim-ingo-library'
-
         "----------------------------------------------------------------------------------
         Plug 'airblade/vim-gitgutter'
                 let g:gitgutter_signs = 1
@@ -247,41 +240,43 @@ call plug#begin('~/.config/nvim/plugged/')
                         " let vim-gitgutter know we changed the SignColumn colors!
                         call gitgutter#highlight#define_highlights()
                 endif
-        "----------------------------------------------------------------------------------
+        "-----------------------------------------------------------------------------------
         Plug 'wesQ3/vim-windowswap'
+
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "======================StartTO======================================================
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         Plug 'gilligan/textobj-gitgutter'
-        "==================================================================================
+        "===================================================================================
         Plug 'kana/vim-textobj-user'
-        "----------------------------------------------------------------------------------
+        "===================================================================================
         Plug 'adriaanzon/vim-textobj-matchit'
         "`am` and `im` :if-ifend , for-endfore ..
-        "----------------------------------------------------------------------------------
-        "==================================================================================
-        "----------------------------------------------------------------------------------
-                " Plug 'bps/vim-textobj-python'
-                " call textobj#user#map('python', {
-                "         \   'class': {
-                "         \     'select-a': '<buffer>ac',
-                "         \     'select-i': '<buffer>ic',
-                "         \     'move-n': '<buffer>]pc',
-                "         \     'move-p': '<buffer>[pc',
-                "         \   },
-                "         \   'function': {
-                "         \     'select-a': '<buffer>af',
-                "         \     'select-i': '<buffer>if',
-                "         \     'move-n': '<buffer>]pf',
-                "         \     'move-p': '<buffer>[pf',
-                "         \   }
-                "         \ })
-                " xmap af <Plug>(textobj-python-function-a)
-                " omap af <Plug>(textobj-python-function-a)
-                " xmap if <Plug>(textobj-python-function-i)
-                " omap if <Plug>(textobj-python-function-i)
-                " :TextobjPythonDefaultKeyMappings  :to redefine the default
-        "==!!!=============================================================================
+        "===================================================================================
+        " Plug 'bps/vim-textobj-python'
+        " call textobj#user#map('python', {
+        "         \   'class': {
+        "         \     'select-a': '<buffer>ac',
+        "         \     'select-i': '<buffer>ic',
+        "         \     'move-n': '<buffer>]pc',
+        "         \     'move-p': '<buffer>[pc',
+        "         \   },
+        "         \   'function': {
+        "         \     'select-a': '<buffer>af',
+        "         \     'select-i': '<buffer>if',
+        "         \     'move-n': '<buffer>]pf',
+        "         \     'move-p': '<buffer>[pf',
+        "         \   }
+        "         \ })
+        " xmap af <Plug>(textobj-python-function-a)
+        " omap af <Plug>(textobj-python-function-a)
+        " xmap if <Plug>(textobj-python-function-i)
+        " omap if <Plug>(textobj-python-function-i)
+        " :TextobjPythonDefaultKeyMappings  :to redefine the default
+        "===================================================================================
+
+        "===================================================================================
+        "==!!!==============================================================================
         " wellle/targets.vim great text objects for selecting/changing parameters
         " Plug 'wellle/targets.vim'
         "----------------------------------------------------------------------------------
@@ -314,9 +309,7 @@ call plug#begin('~/.config/nvim/plugged/')
         xmap iX <Plug>(textobj-comment-big-i)
         omap iX <Plug>(textobj-comment-big-i)
         "------------------------------------------------
-
         " Plug 'killphi/vim-textobj-signify-hunk'
-        "         vmap ih  <Plug>(textobj-signify-hunk-i)
         "--------------------------------------------------------------------------
         "--------------------------------------------------------------------------
         Plug 'terryma/vim-expand-region'
@@ -327,10 +320,7 @@ call plug#begin('~/.config/nvim/plugged/')
                                          \ 'i"'  :0,
                                          \ 'i''' :1,
                                          \ 'ib'  :1,
-                                         \ 'i)'  :1,
                                          \ 'iB'  :1,
-                                         \ 'i}'  :1,
-                                         \ 'i]'  :1,
                                          \ 'if'  :1,
                                          \ 'io'  :1,
                                          \ 'ip'  :1,
@@ -362,27 +352,32 @@ call plug#begin('~/.config/nvim/plugged/')
         "--------------------------------------------------------------
         " [ {(hello) ( noch ) ('Mal') ("tomos") } tormos]
 
-        "---------------SYMPY--SANDWICH--BREXIT---------------------------------------------
-                vmap sb "zdi sympy.pprint(<c-r>z)<esc>
-                vmap sn "zdi print(<c-r>z)<esc>
-                vmap se "zdi<b><c-r>z</b><esc>
-                vmap st "zdi<?= <c-r>z ?><esc>
+        "---------------MySANDWICH--BREXIT-------------------------------------------------
+                vmap ss "zdi sympy.pprint(<c-r>z)<esc>
+                vmap sp "zdi print(<c-r>z)<esc>
+                vmap st "zdi<b><c-r>z</b><esc>
+                vmap sh "zdi<?= <c-r>z ?><esc>
 
         "===!!!=================================
-        Plug 'AndrewRadev/dsf.vim'
+        " The plugin defines a mapping to delete a surrounding function call (or
+        " Plug 'AndrewRadev/dsf.vim'
+        "--------------------------------------------------------------
         Plug 'lifepillar/vim-cheat40'
         Plug 'dalance/vseq.vim'
         Plug 'sk1418/HowMuch'
-        Plug 'sk1418/QFGrep'
         Plug 'sk1418/Join'
         Plug 'salsifis/vim-transpose'
         " Plug 'vim-scripts/a.vim'
+        " ah - bh
         Plug 'machakann/vim-swap'
+        "=======================================
+        Plug 'sk1418/QFGrep'
         "===!!!=================================
         "Python text objects
         "Plug 'jeetsukumaran/vim-pythonsense'
         "Plug 'voldikss/vim-hello-word'
         "-----------------------------------------------------------------------------------
+
         "-----StopTO------------------------------------------------------------------------
         "-----------------------------------------------------------------------------------
         "---NoAutoClose-YCM-----------------------------------------------------------------
@@ -446,8 +441,8 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'roxma/python-support.nvim'
                 let g:python_support_python2_require = 0
                 let g:python_support_python3_require = 0
-        "---------------------------------------------------------------------------------
-        "-222-----------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        "-222------------------------------------------------------------------------------
         Plug 'gastonsimone/vim-dokumentary/'
                 "-=KKK=-
                 "??? apt-get install dictd dict-gcide dict
@@ -562,6 +557,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'junegunn/fzf.vim'
         Plug 'pbogut/fzf-mru.vim'
            let g:fzf_mru_relative = 1
+
         " FZFMru --prompt "Sup? " -q "notmuch"
         "------------------------------------------------------------------------------------------
         "------------------------------------------------------------------------------------------
@@ -1244,16 +1240,7 @@ call plug#end()
 "==HappyEnd1====
 "++AAAPlug++}}}
 
-        "----------------------------------------------------------------------------------
-        vmap hh <Plug>(textobj-gitgutter-i)
-        vmap ah <Plug>(textobj-gitgutter-a)
-        nmap ah <Plug>(swap-prev)
-        nmap bh <Plug>(swap-next)
-        " call foo(arg3, arg1, arg2)
-        "----------------------------------------------------------------------------------
-        let g:rainbow_active = 1
-        let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
-        "----------------------------------------------------------------------------------
+        "==================================================================================
         "----------------------------------------------------------------------------------
         autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
         let g:lightline#bufferline#show_number  = 1
@@ -1264,6 +1251,7 @@ call plug#end()
         let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
         let g:lightline.component_type   = {'buffers': 'tabsel'}
         "----------------------------------------------------------------------------------
+        "==================================================================================
         "----------------------------------------------------------------------------------
          " let g:lightline = {
          "                 \ 'colorscheme': 'monokai_tasty',
@@ -1278,7 +1266,8 @@ call plug#end()
          "                 \ },
          "                 \ }
         "----------------------------------------------------------------------------------
-
+        "==================================================================================
+        "----------------------------------------------------------------------------------
         let g:lightline = {
                 \ 'colorscheme': 'tender',
                 \ 'enable': {
@@ -1311,10 +1300,9 @@ call plug#end()
                 \   'fileencoding': '(winwidth(0) > 70)',
                 \   'fileformat': '(winwidth(0) > 70)',
                 \ },
-                \ 'separator': { 'left': '', 'right': '' },
+                \ 'separator': { 'left': 'L', 'right': 'R' },
                 \ 'subseparator': { 'left': '|', 'right': '|' }
                 \ }
-
 "++AAACtrlP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "------------------------------------------------------------------------------------------
         "-TODO-
@@ -1362,6 +1350,8 @@ call plug#end()
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==============================================
         set termguicolors
+        syntax enable
+        syntax on
         colorscheme badwolf
         source ~/git/bTest/sPot/s9legoABB.vim
         source ~/git/bTest/sPot/s9legoFunc.vim
@@ -1446,7 +1436,6 @@ call plug#end()
         "--------------------------------------------------------------------------
         nnoremap  <Esc><Esc> :<C-u>set nopaste<CR>:nohlsearch<CR>
         "-------------------------------------------------------------------------------------------
-
         "########################
         "------------------------
         nmap  n nzz
@@ -1463,28 +1452,19 @@ call plug#end()
         "------------------------
         map <C-M-j> <C-W>j<C-W>_
         map <C-M-k> <C-W>k<C-W>_
-        "map <C-M-=> <C-W>=
-        "########################
-        "------------------------
-        "###Rezise###############
+        map <C-M-=> <C-W>=
         "------------------------
         nnoremap <M-right> :vertical resize +3<cr>
         nnoremap <M-left>  :vertical resize -3<cr>
         nnoremap <M-up>    :resize +3<cr>
         nnoremap <M-down>  :resize -3<cr>
-        "------------------------
-        "########################
-
         "------------------SCROLL----------------------------------------------------------
         noremap <silent> <S-up> :call smooth_scroll#up(&scroll, 0, 2)<CR>
         noremap <silent> <S-down> :call smooth_scroll#down(&scroll, 0, 2)<CR>
         "----------------------------------------------------------------------------------
-
+        noremap <C-9> :PreviewScroll -1<cr>
+        noremap <C-0> :PreviewScroll +1<cr>
         "----------------------------------------------------------------------------------
-        noremap <M-9> :PreviewScroll -1<cr>
-        noremap <M-0> :PreviewScroll +1<cr>
-        "----------------------------------------------------------------------------------
-
         fun! ScrollOtherWindow(dir)
                 if a:dir == "down"
                         let move = "\<C-E>"
@@ -1498,8 +1478,6 @@ call plug#end()
 
 "++AAA8NAVI++}}}
 "++AAA-EX-EXEC+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        nnoremap <M-x> :exe getline(".")<CR>
-        vnoremap <M-x> :<C-w>exe join(getline("'<","'>"),'<Bar>')<CR>
         "==========================================================================================
         "Transport Down Ex:
         nnoremap ,w :<C-r>=expand("<cword>")<CR>
@@ -1513,7 +1491,6 @@ call plug#end()
                 let g:i += a:0 > 0 ? a:1 : 1
                 return result
         endfunction
-
         " Suppose you want to replace each occurrence of "abc" with "xyz_N"
         " where N is an ascending number (xyz_1, xyz_2, xyz_3, and so on).
         " let i = 1 | %s/AAA/\='BBB-' . Inci() .'CCC'/g
@@ -1525,22 +1502,19 @@ call plug#end()
         vnoremap Q :norm @q<cr>
         "==========================================================================================
         imap ;; <ESC>
-
         "==========================================================================================
         nmap q <Nop>
         nnoremap q <Nop>
         nnoremap ss :wa<cr>
         nnoremap sx :xa<cr>
-
+        nnoremap xa :xa<cr>
         nnoremap qa :wa<cr> :bd<cr>
         nnoremap qq :bd<cr>
         nnoremap qs :wa<cr> :qa<cr>
-
         "==========================================================================================
         let g:undoquit_mapping = ';q'
         nnoremap <Leader>q :Bdelete<CR>
         "---XA-------------------------------------------------------------------------------------
-
         nnoremap ;e :ls<cr>:b<space>
         nnoremap qw <C-w>q<CR>
         nnoremap wq <C-w>q<CR>
@@ -1556,12 +1530,12 @@ call plug#end()
         nnoremap ;s :ls<cr>:b<space>
         "==========================================================================================
         nnoremap ee <c-w>w
-        nnoremap ;v <c-w>v<c-w>l
-        nnoremap vv <c-w>v<c-w>l<cr><c-w>w<cr>
         nnoremap hh <c-w>w
         nnoremap ll :execute "leftabove vsplit" bufname('#')<cr>
+        " nnoremap vv <c-w>v<c-w>l<cr><c-w>w<cr>
+        nnoremap ;v <c-w>v<c-w>l
         nnoremap VV :execute "vsplit" bufname('#')<cr>
-
+        nnoremap vv <S-v>
         "==========================================================================================
         " Convenience shortcuts
         command! CD cd %:p:h
@@ -1570,8 +1544,8 @@ call plug#end()
         "==========================================================================================
         ":::::::::::::::FORMAT-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
-        nmap cc  gcl
         vmap <M-h> =
+        nmap cc  gcl
         nnoremap W gwip
         nnoremap ;t :set tw=70<cr>v<s-}>gq<end>
         noremap  ;a =ip
@@ -1601,12 +1575,16 @@ call plug#end()
         nmap ;; <Plug>(easymotion-overwin-w)
         let g:EasyOperator_line_do_mapping = 0
 
-        "------------------------------------------------------------------
+        "==================================================================================
+        let g:rainbow_active = 1
+        let g:rainbow_guifgs = ['cyan', 'DarkOrange1', 'RoyalBlue1', 'FireBrick', 'DarkOrchid1']
+        "----------------------------------------------------------------------------------
+        "==================================================================================
         "1y$  //yank current row to register 1
         "<C-r>a to paste from register a
-        "------------------------------------------------------------------
-        "-----------------hulk-hunk----------------------------------------
-        "------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        "---------------HULK--hulk--hunk--HUNK--SMA--888-----------------------------------
+        "----------------------------------------------------------------------------------
         nmap [c <Plug>(GitGutterPrevHunk)
         nmap ]c <Plug>(GitGutterNextHunk)
         "-------------------------------------
@@ -1617,11 +1595,48 @@ call plug#end()
         vmap     dg  :diffget<CR>
         vmap     dp  :diffput<CR>
         nnoremap do  :diffoff!<cr>
+        "==================================================================================
+        "----------------ERR--NoWo-----------------------------------------
+        vmap ih <Plug>(textobj-gitgutter-i)
+
         "------------------------------------------------------------------
+        nmap ah <Plug>(swap-prev)
+        nmap bh <Plug>(swap-next)
         "==========================================================================================
         "::::::::::::::::::::::::::::::-2MAGIC2-:::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
         vmap <M-c> :w !cat >> ./zbuf<CR>
+
+                "==========================================================================================
+                " Pressing ,ss will toggle and untoggle spell checking
+                map <leader>ss :setlocal spell!<cr>
+                map <leader>sn ]s
+                map <leader>sp [s
+                map <leader>sa zg
+                map <leader>s? z=
+                " Fix from spellcheck
+                " I can never remember if it's zg or z=, and the wrong one adds the word to
+                " the DB (lol), so fuck it, just add an easier mapping.
+                "==========================================================================================
+
+                " Auto format codes
+                " noremap <F4> :Autoformat<CR>
+                " formatt upon saving
+                " au BufWrite * :Autoformat
+
+                "==========================================================================================
+                hi StatusLine                  ctermfg=8     ctermbg=2     cterm=NONE
+                hi StatusLineNC                ctermfg=2     ctermbg=8     cterm=NONE
+                if has('statusline')
+                        set laststatus=2
+                        set statusline=%<%f\                     " Filename
+                        set statusline+=%w%h%m%r                 " Options
+                        set statusline+=\ [%{&ff}/%Y]            " Filetype
+                        set statusline+=\ [%{getcwd()}]          " Current dir
+                        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+                endif
+                "==========================================================================================
+
 
         "==========================================================================================
         "---PlusMinus------------------------------------------------------------------------------
@@ -1743,8 +1758,6 @@ call plug#end()
         "==========================================================================================
         nnoremap TT :TagbarToggle<CR>
         "==========================================================================================
-
-        "==========================================================================================
         source ~/git/bTest/sPot/s9legoQuickMenu.vim
         noremap <F12> :call quickmenu#toggle(0)<CR>
         "==========================================================================================
@@ -1756,20 +1769,27 @@ call plug#end()
         " nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
         " nnoremap <localleader>o :Utl<CR>
         " nnoremap ;o :Utl<CR>
+
+
         "==========================================================================================
+        " call BoxMyC("Gold Stuck.chen")
+        nnoremap <leader>c :<c-u>call BoxC()<cr>
+
+        " ############################################################################## 
+        " BREXIT in BOX
+        " ############################################################################## 
 
         "---------------------------------------------------------------
         nnoremap <Leader>0 :set number!<return>
         "---------------------------------------------------------------
         nnoremap <Leader>1 :PymodeDoc <cword> .<cr>
         "---------------------------------------------------------------
-        nnoremap <Leader>2 :Pydoc <cword> .<cr>
-        "---------------------------------------------------------------
         " let g:pydoc_cmd = '/usr/bin/pydoc'
         let g:pydoc_cmd = 'python -m pydoc'
         nnoremap PP :Pydoc <C-r><C-w><CR> | wincmd p
-        "------------------
+        "---------------------------------------------------------------
         nmap ;z <Plug>Zeavim
+        "---------------------------------------------------------------
         nmap ,z <Plug>ZVKeyDocset
         "---------------------------------------------------------------------------------
         " :Pydoc foo.bar.baz (e.g. :Pydoc re.compile)
@@ -1777,17 +1797,15 @@ call plug#end()
         " :PydocSearch foobar (e.g. :PydocSearch socket)
         "------------------
         "==================================================================
-        command! -complete=file -nargs=+ SIS execute 'SideSearch <args>'
-        "---------------------------------------------------------------
         nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
         nnoremap ff :NV <C-r><C-w><CR> | wincmd p
         nnoremap FF :FFRg <C-r><C-w><CR> | wincmd p
         nnoremap AA :ZAg <C-r><C-w><CR> | wincmd p
         nnoremap GG :ZGit <C-r><C-w><CR> | wincmd p
         nnoremap <Leader>a :Ack <C-r><C-w><CR> | wincmd p
-        "==================================================================
         nnoremap OO :call CscopeFindInteractive(expand('<cword>'))<CR>
         " nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+        "==================================================================
         "==================================================================
 "++AAA11Serch++}}}
 "++AAA12inoremap+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -1798,39 +1816,33 @@ call plug#end()
         inoremap <silent> <C-l> <C-x><C-l>
         inoremap <silent> <C-]> <C-x><C-]>
         "inoremap <silent> <C-u> <C-x><C-u>
-
-        "------------------------------InsertMode Scroll-------------------------------------------
-        inoremap <C-up> <C-X><C-E>
-        inoremap <C-down> <C-X><C-Y>
-
         "------------------------------------------------------------------------------------------
-        "???!!!ke it so that if I ACIDENTALly pres ^W or ^U in insert mode,
-        " then <ESC>u wil undo just the ^W/^U, and not the whole insert
-        " This is docmented in :help ins-special-special, a few pages down
-        "------------------------------------------------------------------------------------------
-        inoremap <C-W> <C-G>u<C-W>
-        inoremap <C-U> <C-G>u<C-U>
-
-        "==============================================================
-        inoremap <silent> <M-;> <C-R>=InsertAtEnd(';')=<CR>
-        inoremap <silent> <M-,> <C-R>=InsertAtEnd(',')<CR>
-        inoremap <silent> <M-d> <C-o>cw<Esc><Right>
-        "------------------------------------------
         inoremap <silent> <C-a> <C-o>^
         inoremap <silent> <C-e> <End>
-        "==============================================================
-        "imap <c-f> <plug>(fzf-complete-path)
+        "------------------------------InsertMode Scroll-------------------------------------------
+        inoremap <M-j> <C-X><C-E>
+        inoremap <M-k> <C-X><C-Y>
+        "------------------------------------------
+        inoremap <M-;> <C-R>=InsertAtEnd(';')<CR>
+        inoremap <M-,> <C-R>=InsertAtEnd(',')<CR>
+        inoremap <M-d> <C-o>cb<Esc><Right>
+        inoremap <C-d> <C-o>cw<Esc><Right>
+        inoremap <C-U> <C-G>u<C-U>
+        "------------------------------------------
         "========================================================
-        imap <expr><C-0> fzf#vim#complete#word({'left': '20%'})
-        imap <C-9> <plug>(fzf-complete-line)
+        imap <expr><M-0> fzf#vim#complete#word({'left': '20%'})
+        imap <M-9> <plug>(fzf-complete-line)
         "========================================================
-        " Global line completion (not just open buffers. ripgrep required.)
-        imap <expr> <c-8> fzf#vim#complete(fzf#wrap({
+        imap <expr> <M-8> fzf#vim#complete(fzf#wrap({
                                 \ 'prefix': '^.*$',
                                 \ 'source': 'rg -n ^ --color always',
                                 \ 'options': '--ansi --delimiter : --nth 3..',
                                 \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
        "========================================================
+       " autopsy
+       "========================================================
+
+
 "++AAA12imap++}}}
 "++AAA13Unfuc+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 
@@ -2259,4 +2271,5 @@ call plug#end()
         "==========================================================================================
         "==========================================================================================
 "++AAA19Auto++}}}
+
 
