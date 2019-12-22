@@ -48,8 +48,8 @@
         " LocalVariable   : Local Variable
 
         "---TOP---!!!----------------------------------------------------------------------
-        hi pythonSelf  ctermfg=68 cterm=bold 
-        hi Search         ctermbg=11 
+        hi pythonSelf  ctermfg=68 cterm=bold
+        hi Search         ctermbg=11
         " hi Normal         ctermbg=235 guibg=#333333
         hi ColorColumn    ctermbg=22
         hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
@@ -61,10 +61,10 @@
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#ef5000  guifg=#ffffff
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#0f5000  guifg=#ffffff
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#5fafdf  guifg=#ffffff
-        "--------------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------
         "red let g:indentLine_color_term = 251
         "red let g:indentLine_newVersion = 0
-        "--------------------------------------------------------------------------------- 
+        "---------------------------------------------------------------------------------
 
         " hi CursorLine term=underline
         " hi CursorLineNr term=bold,italic,reverse,underline
@@ -82,9 +82,11 @@
         hi ColorColumn    ctermbg=240
         hi ColorColumn    ctermbg=14   guibg=#005500
         hi Visual cterm=bold ctermbg=2 ctermfg=NONE  guibg=#000099
-        hi Comment        ctermfg=249 guifg=#dddddd  guibg=#0087ff
-        hi Comment        ctermfg=249 guifg=#dddddd  guifg=#50DFFF
-        hi Comment        ctermfg=249 guifg=#dddddd  guibg=#0F8F14
+        " hi Comment        ctermfg=249 guifg=#dddddd  guibg=#0087ff
+        " hi Comment        ctermfg=249 guifg=#dddddd  guifg=#50DFFF
+        " hi Comment        ctermfg=249 guifg=#eeeeee  guibg=#5F5F11
+        " hi Comment        ctermfg=249 guifg=#eeeeee  guibg=#005011 gui=bold
+        hi Comment        ctermfg=249 guifg=#eeeeee  guibg=#0F5F11
 
         hi Folded     ctermfg=249 guifg=#dddddd  guibg=#0087ff
         hi Folded     ctermfg=249 guifg=#0081FF  guibg=#aa0022

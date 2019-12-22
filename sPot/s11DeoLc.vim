@@ -2,10 +2,10 @@
 "= File: s10DeoLc.vim TOPFd
 "==============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      So 22 Dez 2019 06:33:11  CET
+" Lass Modified:      So 22 Dez 2019 04:33:15  CET
 "==============================================================================================================
-let g:vimrcversion= 10
-au VimEnter * echo "VIMRC v"g:vimrcversion
+" let g:vimrcversion= 11
+" au VimEnter * echo "VIMRC vs"g:vimrcversion
 "==============================================================================================================
 " after I improved indenting, highlighting and autocompletion slightly.
 " EditScope in NormalMode
@@ -189,7 +189,7 @@ set foldclose=all
 
 
 "++AAAPlug++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-"==HappyStart1==
+"==aHappyStart1==
 call plug#begin('~/.config/nvim/plugged/')
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -211,32 +211,23 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'LucHermitte/lh-vim-lib'
         Plug 'inkarkat/vim-ingo-library'
         "----------------------------------------------------------------------------------
-        Plug 'airblade/vim-gitgutter'
-                let g:gitgutter_signs = 1
-                let g:gitgutter_max_signs = 2000
-                let g:gitgutter_max_signs = 800
-                highlight GitGutterAdd ctermfg=green          guibg=#aa2211  guifg=#8ae234
-                highlight GitGutterChange ctermfg=yellow      guibg=#662211  guifg=#fce94f
-                highlight GitGutterDelete ctermfg=red         guibg=#666666  guifg=#ef2929
-                highlight GitGutterChangeDelete ctermfg=cyan  guibg=#aa8877  guifg=#fce94f
-                " if exists("*gitgutter#highlight#define_highlights")
-                "         " let vim-gitgutter know we changed the SignColumn colors!
-                "         call gitgutter#highlight#define_highlights()
-                " endif
-                "----------------ERR--NoWo-----------------------------------------
-                " vmap ih <Plug>(textobj-gitgutter-i)
-
-        "-------------------------------------------------------------------
-        "---------HULK--hulk--hunk--HUNK--SMA--888--------------------------
-        "-------------------------------------------------------------------
-        nmap [c <Plug>(GitGutterPrevHunk)
-        nmap ]c <Plug>(GitGutterNextHunk)
-        "-------------------------------------
-        nmap ]h <Plug>(GitGutterPreviewHunk)
-        nmap ]u <Plug>(GitGutterUndoHunk)
-        nmap ]s <Plug>(GitGutterStageHunk)
-        "------------------------------------------------------------------
-
+        " Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you
+        " can see the contents of the registers.
+        " You can toggle fullscreen mode by pressing spacebar.
+        Plug 'junegunn/vim-peekaboo'
+        "----------------------------------------------------------------------------------
+        " Plug 'bronson/vim-trailing-whitespace'
+        " :FixWhitespace
+        "--------------------------------------
+        Plug 'ntpeters/vim-better-whitespace'
+                " :StripWhitespace,
+                " g:strip_whitespace_on_save (defaults to 0)
+                let g:strip_whitespace_on_save = 1
+        "----------------------------------------------------------------------------------
+        Plug 'farmergreg/vim-lastplace'
+                let g:lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
+                " let g:lastplace_ignore_buftype = "quickfix,nofile,help",
+                let g:lastplace_open_folds = 0
 
         "----------------------------------------------------------------------------------
         "---DATABASE-CONSOLE---------------------------------------------------------------
@@ -244,6 +235,8 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'tpope/vim-fugitive'
         "==================================================================================
+        "----------------------------------------------------------------------------------
+        " Plug 'scrooloose/nerdcommenter'
         Plug 'tpope/vim-commentary'
         Plug 'tpope/vim-repeat'
         Plug 'vim-scripts/visualrepeat'
@@ -252,20 +245,60 @@ call plug#begin('~/.config/nvim/plugged/')
         " Extend abbreviation/substition.
         Plug 'tpope/vim-abolish'
         "-----------------------------------------------------------------------------------
-        Plug 'wesQ3/vim-windowswap'
+        " Plug 'wesQ3/vim-windowswap'
 
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "======================StartTO======================================================
 
-        "===================================================================================
+        "==================================================================================
         Plug 'kana/vim-textobj-user'
+
+        "++AAA1Hulk+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+                Plug 'airblade/vim-gitgutter'
+                        let g:gitgutter_signs = 1
+                        let g:gitgutter_max_signs = 2000
+                        let g:gitgutter_max_signs = 800
+
+                "-------------------------------------------------------------------
+                Plug 'gilligan/textobj-gitgutter'
+                        vmap ih <Plug>(textobj-gitgutter-i)
+
+                "-------------------------------------------------------------------
+                "---------HULK--hulk--hunk--HUNK--SMA--888--------------------------
+                "-------------------------------------------------------------------
+                nmap [c <Plug>(GitGutterPrevHunk)
+                nmap ]c <Plug>(GitGutterNextHunk)
+                "-------------------------------------
+                nmap ]h <Plug>(GitGutterPreviewHunk)
+                nmap ]u <Plug>(GitGutterUndoHunk)
+                nmap ]s <Plug>(GitGutterStageHunk)
+        "++AAA1Hulk++}}}
+        "++AAA2Hulk+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+                "Plug 'mhinz/vim-signify'
+                "Plug 'killphi/vim-textobj-signify-hunk'
+                "        "============================================
+                "        let g:signify_disable_by_default = 0
+                "        let g:signify_vcs_list = [ 'git' ]
+                "        let g:signify_realtime = 0
+                "        "let g:signify_update_on_bufenter = 1
+                "        "let g:signify_update_on_focusgained = 1
+                "        let g:signify_sign_change = '~'
+
+                "        nmap ]c <plug>(signify-next-hunk)
+                "        nmap [c <plug>(signify-prev-hunk)
+
+                "        omap ih <plug>(signify-motion-inner-pending)
+                "        xmap ih <plug>(signify-motion-inner-visual)
+                "        omap ah <plug>(signify-motion-outer-pending)
+                "        xmap ah <plug>(signify-motion-outer-visual)
+                "        "============================================
+        "++AAA2Hulk++}}}
+
         "===================================================================================
         Plug 'adriaanzon/vim-textobj-matchit'
         "`am` and `im` :if-ifend , for-endfore ..
 
-        "==!!!==============================================================================
-        " great text objects for selecting/changing parameters
-        " Plug 'wellle/targets.vim'
+
         "==================================================================================
         Plug 'kana/vim-textobj-diff'
         Plug 'reedes/vim-textobj-sentence'
@@ -311,22 +344,23 @@ call plug#begin('~/.config/nvim/plugged/')
                 " apple = 'juice'
                 " apple = 'juice'
 
-        "------------------------------------------------
-        Plug 'mhinz/vim-signify'
-        Plug 'killphi/vim-textobj-signify-hunk'
         "--------------------------------------------------------------------------
         Plug 'terryma/vim-expand-region'
                  let g:expand_region_text_objects = {
                                          \ 'iw'  :0,
                                          \ 'iW'  :0,
-                                         \ 'i"'  :0,
-                                         \ 'i''' :1,
+                                         \ 'iq'  :1,
                                          \ 'ib'  :1,
                                          \ 'iB'  :1,
                                          \ 'if'  :1,
                                          \ 'io'  :1,
                                          \ 'ip'  :1,
-                                         \ 'ih'  :1
+                                         \ 'ih'  :1,
+                                         \ 'ic'  :1,
+                                         \ 'it'  :1,
+                                         \ 'ii'  :1,
+                                         \ 'ix'  :1,
+                                         \ 'iz'  :1
                                          \ }
         "--------------------------------------------------------------------------
         "======TheBest======
@@ -595,9 +629,13 @@ call plug#begin('~/.config/nvim/plugged/')
         "   - q to close
         "--------------------------------------------------------------------------
         Plug 'ivyl/vim-bling'
-                let g:bling_time = 42
-                let g:bling_color_fg = 'green'
-                let g:bling_color_cterm = 'reverse'
+                " let g:bling_time = 42
+                let g:bling_time = 82
+                let g:bling_color_fg = 'red'
+                let g:bling_color_bg = 'green'
+                " let g:bling_color_cterm = 'reverse'
+                let g:bling_color_gui_fg = 'red'
+                let g:bling_color_gui_bg = 'green'
         "------------------------------------------------------------------------------------------
         Plug 'majutsushi/tagbar'
                 highlight TagbarHighlight   ctermfg=051 ctermbg=9 cterm=bold
@@ -625,7 +663,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "------------------TODO------------------------------------------------------------
         Plug 'morhetz/gruvbox'
         "----------------------------------------------------------------------------------
-        Plug 'haya14busa/incsearch.vim'
         Plug 'vim-scripts/SearchComplete'
         "----------------------------------------------------------------------------------
         Plug 'zgpio/tree.nvim/'
@@ -1029,8 +1066,6 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "--Gail-:StmSrch-------------------------------------------------------------------
         Plug 'msbmsb/stem-search.vim'
-        "----------------------------------------------------------------------------------
-        Plug 'dominikduda/vim_timebox'
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         Plug 'vlmarek/DiffGoFile'
 
@@ -1087,27 +1122,26 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'mhinz/vim-grepper'
         Plug 'haya14busa/is.vim'
+        " Plug 'haya14busa/incsearch.vim'
         "----------------------------------------------------------------------------------
 
 
-        "------------GALORE------------------------------------------------------------------------
-        Plug 'AndrewRadev/splitjoin.vim'
         Plug 'justinmk/vim-dirvish'
         " Plug 'rhysd/committia.vim'
         Plug 'mhinz/vim-halo'
-        Plug 'mhinz/vim-lookup'
+        " Plug 'mhinz/vim-lookup'
+        " autocmd FileType vim nnoremap <buffer><silent> <c-]>  :call lookup#lookup()<cr>
+        " autocmd FileType vim nnoremap <buffer><silent> <c-t>  :call lookup#pop()<cr>
         Plug 'chrisbra/unicode.vim', {'on': ['UnicodeName', 'UnicodeTable']}
         " Plug 'godlygeek/csapprox', {'for': 'fugitiveblame' }
 
-        "----------------------------------------------------------------------------------
-        " Maxima
+        "==================================================================================
+        "-Maxima-
         " Plug 'kovisoft/slimv'
         " Plug 'baruchel/vim-notebook'
-        "----------------------------------------------------------------------------------
+        "==================================================================================
         Plug 'vim-scripts/mru.vim'
         ":MRU
-        "----------------------------------------------------------------------------------
-        " Plug 'scrooloose/nerdcommenter'
         "----------------------------------------------------------------------------------
 
         "----------------------------------------------------------------------------------
@@ -1172,47 +1206,29 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'cespare/vim-toml'
 
-        "----------------------------------------------------------------------------------
-        " Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you
-        " can see the contents of the registers.
-        " You can toggle fullscreen mode by pressing spacebar.
-        Plug 'junegunn/vim-peekaboo'
-
-        "----------------------------------------------------------------------------------
-        Plug 'bronson/vim-trailing-whitespace'
-                " :FixWhitespace
-        "--------------------------------------
-        Plug 'ntpeters/vim-better-whitespace'
-                " :StripWhitespace,
-                " g:strip_whitespace_on_save (defaults to 0)
-                let g:strip_whitespace_on_save = 1
-        "----------------------------------------------------------------------------------
-        Plug 'farmergreg/vim-lastplace'
-                let g:lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
-                " let g:lastplace_ignore_buftype = "quickfix,nofile,help",
-                let g:lastplace_open_folds = 0
-
+        "==!!!==============================================================================
+        " Plug 'cohama/lexima.vim'
+        " Bracket completion
+        "Plug 'cohama/lexima.vim' " Same as delimitMate, but also completes unclosed brakcets when pressing enter for new line.
+        "Plug 'Raimondi/delimitMate'
+                "let delimitMate_expand_cr = 2
+                "let delimitMate_expand_space = 1
+        "Plug 'Townk/vim-autoclose' " No dot redo support
+        "Plug 'jiangmiao/auto-pairs' " No dot redo support
+        "==================================================================================
+        " complements bracket completion
+        " surround selections with things like quotes, parens, brakcets, etc.
+        " Plug 'tpope/vim-surround'
+        "==================================================================================
+        " great text objects for selecting/changing parameters
+        " Plug 'wellle/targets.vim'
+        " Plug 'wellle/targets.vim'
+        " Plug 'wellle/targets.vim'
 
 call plug#end()
-"==HappyEnd1====
+"==eHappyEnd1====
 "++AAAPlug++}}}
 
-                "==================================================================
-                "==================================================================
-                let g:signify_disable_by_default = 0
-                let g:signify_vcs_list = [ 'git' ]
-                let g:signify_realtime = 0
-                "let g:signify_update_on_bufenter = 1
-                "let g:signify_update_on_focusgained = 1
-                let g:signify_sign_change = '~'
-
-                nmap ]0 <plug>(signify-next-hunk)
-                nmap [9 <plug>(signify-prev-hunk)
-
-                omap ih <plug>(signify-motion-inner-pending)
-                xmap ih <plug>(signify-motion-inner-visual)
-                omap ah <plug>(signify-motion-outer-pending)
-                xmap ah <plug>(signify-motion-outer-visual)
 
         "==================================================================================
         autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
@@ -1224,8 +1240,30 @@ call plug#end()
         let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
         let g:lightline.component_type   = {'buffers': 'tabsel'}
         "==================================================================================
+
+
         let g:lightline = {
                 \ 'colorscheme': 'tender',
+                \ 'mode_map': {
+                \   '__' : '-',
+                \   'n'  : 'N11',
+                \   'no' : 'N·Operator Pending',
+                \   'v'  : 'V',
+                \   'V'  : 'V·Line',
+                \   's'  : 'Select',
+                \   'S'  : 'S·Line',
+                \   'i'  : 'I',
+                \   'R'  : 'R',
+                \   'Rv' : 'V·Replace',
+                \   'c'  : 'Command',
+                \   'cv' : 'Vim Ex',
+                \   'ce' : 'Ex',
+                \   'r'  : 'Prompt',
+                \   'rm' : 'More',
+                \   'r?' : 'Confirm',
+                \   '!'  : 'Shell',
+                \   't'  : 'Terminal'
+                \ },
                 \ 'enable': {
                 \   'statusline': 1,
                 \   'tabline': 0,
@@ -1259,6 +1297,7 @@ call plug#end()
                 \ 'separator': { 'left': 'L', 'right': 'R' },
                 \ 'subseparator': { 'left': '|', 'right': '|' }
                 \ }
+
 "++AAACtrlP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         let g:ctrlp_cmd = 'CtrlPMRU'
         let g:ctrlp_extensions = ['tag']
@@ -1314,9 +1353,14 @@ call plug#end()
         highlight DiffAdd           cterm=bold ctermbg=22  guibg=#0fDA95
         highlight DiffDelete        cterm=bold ctermbg=3   guibg=#ff0a78
         highlight DiffChange        cterm=bold ctermbg=52  guibg=#ff8a00
-        "==================================================================================
+        "=================================GitGutt==========================================
+
+                highlight GitGutterAdd ctermfg=green          guibg=#8ae234  guifg=#dd2211
+                highlight GitGutterChange ctermfg=yellow      guibg=#662211  guifg=#fce94f
+                highlight GitGutterDelete ctermfg=red         guibg=#333333  guifg=#FF2929
+                highlight GitGutterChangeDelete ctermfg=cyan  guibg=#aa8877  guifg=#fce94f
+
         "::::::CYAN::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "----------------------------------------------------------------------------------
         set wildmenu
         "black-List
         set wildmode=list:longest
@@ -1364,7 +1408,7 @@ call plug#end()
         "------------------------------------------------------------------------------------------
         nnoremap gv `[v`]
         "------------------------------------------------------------------------------------------
-        "noremap \\ #*
+        " noremap \\ #*
         "--------------------------------------------------------------------------
         nnoremap  <Esc><Esc> :<C-u>set nopaste<CR>:nohlsearch<CR>
         "------------------------
@@ -1373,8 +1417,8 @@ call plug#end()
         nmap  g* g*zz
         nmap  g# g#zz
         "------------------------
-        nmap <tab>     :bn<cr>
-        nmap <s-tab>   :bp<cr>
+        nnoremap <tab>     :bn<cr>
+        nnoremap <s-tab>   :bp<cr>
         "------------------------
         "###Accordion############
         "------------------------
@@ -1387,11 +1431,11 @@ call plug#end()
         nnoremap <M-up>    :resize +3<cr>
         nnoremap <M-down>  :resize -3<cr>
         "------------------SCROLL----------------------------------------------------------
-        noremap <silent> <S-up> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-        noremap <silent> <S-down> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+        nnoremap <silent> <S-up> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+        nnoremap <silent> <S-down> :call smooth_scroll#down(&scroll, 0, 2)<CR>
         "----------------------------------------------------------------------------------
-        noremap <C-9> :PreviewScroll -1<cr>
-        noremap <C-0> :PreviewScroll +1<cr>
+        nnoremap <C-9> :PreviewScroll -1<cr>
+        nnoremap <C-0> :PreviewScroll +1<cr>
         "----------------------------------------------------------------------------------
         fun! ScrollOtherWindow(dir)
                 if a:dir == "down"
@@ -1471,7 +1515,7 @@ call plug#end()
         nmap cc  gcl
         nnoremap W gwip
         nnoremap ;t :set tw=70<cr>v<s-}>gq<end>
-        noremap  ;a =ip
+        nnoremap  ;a =ip
         "==========================================================================================
         "===copyLastChangedLineHE==================================================================
         "==========================================================================================
@@ -1498,15 +1542,12 @@ call plug#end()
         "==================================================================================
         let g:rainbow_active = 1
         let g:rainbow_guifgs = ['cyan', 'DarkOrange1', 'RoyalBlue1', 'FireBrick', 'DarkOrchid1']
-
-
         "==================================================================================
         vmap     dg  :diffget<CR>
         vmap     dp  :diffput<CR>
         nnoremap do  :diffoff!<cr>
         "==================================================================================
-
-        "------------------------------------------------------------------
+        "--------------FuncArgsSwap----------------------------------------------------
         nmap ah <Plug>(swap-prev)
         nmap bh <Plug>(swap-next)
         "==========================================================================================
@@ -1636,6 +1677,7 @@ call plug#end()
         nnoremap <F6> :FFLines <C-r><C-w><CR> | wincmd p
         "==========================================================================================
         nnoremap <F7> :FFBLines <C-r><C-w><CR> | wincmd p
+        nnoremap \\ #* :FFBLines <C-r><C-w><CR> | wincmd p
         "==========================================================================================
         nnoremap <F8> :LocationToggle<cr>
         nnoremap <LocalLeader>n :lnext<cr>zvzz
@@ -1648,7 +1690,7 @@ call plug#end()
         nnoremap TT :TagbarToggle<CR>
         "==========================================================================================
         source ~/git/bTest/sPot/s9legoQuickMenu.vim
-        noremap <F12> :call quickmenu#toggle(0)<CR>
+        nnoremap <F12> :call quickmenu#toggle(0)<CR>
         "==========================================================================================
 "++AAA10F2++}}}
 "++AAA11Serch+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -2129,18 +2171,13 @@ call plug#end()
         "==========================================================================================
 "++AAA19Auto++}}}
 
+        map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
+        map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
+        map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
+        map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
+        map <Plug>(is-n)  <Plug>(is-nohl)n
+        map <Plug>(is-N)  <Plug>(is-nohl)N
 
-        "----------------------------------------------------------------------------------
-        autocmd FileType vim nnoremap <buffer><silent> <c-]>  :call lookup#lookup()<cr>
-        autocmd FileType vim nnoremap <buffer><silent> <c-t>  :call lookup#pop()<cr>
-
-        "----------------------------------------------------------------------------------
-        let g:splitjoin_split_mapping = ''
-        let g:splitjoin_join_mapping = ''
-        nmap <Leader>j :SplitjoinJoin<cr>
-        nmap <Leader>s :SplitjoinSplit<cr>
-
-        " foo 1, 2, { :bar => :baz }, { :baz => :qux }
         "----------------------------------------------------------------------------------
 
         autocmd BufEnter * call halo#run({'intervals': [100, 300, 600, 300, 100]})

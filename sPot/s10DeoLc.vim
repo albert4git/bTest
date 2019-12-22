@@ -2,7 +2,7 @@
 "= File: s10DeoLc.vim TOPFd
 "==============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      So 22 Dez 2019 06:33:11  CET
+" Lass Modified:      So 22 Dez 2019 12:53:45  CET
 "==============================================================================================================
 let g:vimrcversion= 10
 au VimEnter * echo "VIMRC v"g:vimrcversion
@@ -1095,7 +1095,9 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'justinmk/vim-dirvish'
         " Plug 'rhysd/committia.vim'
         Plug 'mhinz/vim-halo'
-        Plug 'mhinz/vim-lookup'
+        " Plug 'mhinz/vim-lookup'
+        " autocmd FileType vim nnoremap <buffer><silent> <c-]>  :call lookup#lookup()<cr>
+        " autocmd FileType vim nnoremap <buffer><silent> <c-t>  :call lookup#pop()<cr>
         Plug 'chrisbra/unicode.vim', {'on': ['UnicodeName', 'UnicodeTable']}
         " Plug 'godlygeek/csapprox', {'for': 'fugitiveblame' }
 
@@ -2130,9 +2132,6 @@ call plug#end()
 "++AAA19Auto++}}}
 
 
-        "----------------------------------------------------------------------------------
-        autocmd FileType vim nnoremap <buffer><silent> <c-]>  :call lookup#lookup()<cr>
-        autocmd FileType vim nnoremap <buffer><silent> <c-t>  :call lookup#pop()<cr>
 
         "----------------------------------------------------------------------------------
         let g:splitjoin_split_mapping = ''
