@@ -1,3 +1,29 @@
+
+" Plug 'scrooloose/nerdtree'
+" Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-surround'
+" Plug 'itchyny/lightline.vim'
+" Plug 'bronson/vim-trailing-whitespace'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'junegunn/limelight.vim'
+" Plug 'w0rp/ale'
+
+"" Go Lang Bundle
+" Plug 'fatih/vim-go'
+" Plug 'tweekmonster/hl-goimport.vim'
+" Plug 'buoto/gotests-vim'
+"no Python
+"no Plug 'vim-python/python-syntax', {'for': 'python'}
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
+" For async completion
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" For Denite features
+" Plug 'Shougo/denite.nvim'
+" Plug 'Yggdroot/indentLine'
+
+        Plug 'hallison/vim-rdoc'
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "-source ~/git/bTest/sPot/SYPLUG/nHydra.vim
         "-source ~/git/bTest/sPot/SYPLUG/NNV.vim

@@ -1,3 +1,155 @@
+
+        Plug 'tpope/vim-fugitive'
+        Plug 'tpope/vim-bundler'
+        Plug 'tpope/vim-projectionist'
+        Plug 'tpope/vim-rake'
+        Plug 'tpope/vim-rails'
+        Plug 'tpope/vim-endwise'
+        Plug 'tpope/vim-surround'
+        Plug 'tpope/vim-repeat'
+        Plug 'tpope/vim-haml'
+        Plug 'tpope/vim-eunuch'
+        Plug 'tpope/vim-markdown'
+        Plug 'tpope/vim-abolish'
+        Plug 'tpope/vim-dadbod'
+        Plug 'tpope/vim-rhubarb'
+        Plug 'tpope/vim-cucumber'
+        Plug 'tpope/vim-dispatch'
+        "err Plug 'raimondi/delimitmate'
+
+        """""""""""""""""""""""""""""""""""""""""""""""""""""""
+        Plug 'airblade/vim-rooter'
+                let g:rooter_manual_only = 1
+
+        "------------82Vim-------------------------------------------------------------------------
+        " Plug 'vim/killersheep'
+        "============================================================================================
+        Plug 'junegunn/vim-easy-align'
+        Plug 'junegunn/vim-easy-align'
+        Plug 'junegunn/vim-easy-align'
+        "============================================================================================
+        " Plug 'uarun/vim-protobuf'
+        " Plug 'editorconfig/editorconfig-vim'
+        " Plug 'danro/rename.vim'
+        " Plug 'tpope/vim-rhubarb'
+
+        " Other
+        " Plug 'tomlion/vim-solidity', {'for': 'solidity'}
+        " Plug 'hashivim/vim-terraform', {'for': 'terraform'}
+        " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
+        " Plug 'wannesm/wmgraphviz.vim'
+        " Plug 'amadeus/vim-mjml'
+        " Plug 'dart-lang/dart-vim-plugin'
+        " Comparison with vim-oblique
+        " Plug 'junegunn/vim-slash'
+        "============================================================================================
+
+        "============================================================================================
+        "pdf-graph
+        " Plug 'BurntSushi/erd'
+        " Plug 'abaldwin88/roamer.vim'
+        "============================================================================================
+                Plug 'cohama/lexima.vim'
+                " Bracket completion
+                "Plug 'cohama/lexima.vim' " Same as delimitMate, but also completes unclosed brakcets when pressing enter for new line.
+                "Plug 'Raimondi/delimitMate'
+                        "let delimitMate_expand_cr = 2
+                        "let delimitMate_expand_space = 1
+                "Plug 'Townk/vim-autoclose' " No dot redo support
+                "Plug 'jiangmiao/auto-pairs' " No dot redo support
+
+                " complements bracket completion
+                " surround selections with things like quotes, parens, brakcets, etc.
+                " Plug 'tpope/vim-surround'
+        "============================================================================================
+        " :call halo#run()
+        " :call halo#run({'shape': 'cross2halo1'})
+        " :call halo#run({'intervals': [100, 300, 600, 300, 100]})
+        " :call halo#run({'intervals': [200,200,200], 'hlgroup': 'IncSearch'})
+        " autocmd BufEnter * call halo#run()
+        " autocmd BufEnter * call halo#run({'shape': 'cross2halo1'})
+        " autocmd BufEnter * call halo#run({'intervals': [200,200,200], 'hlgroup': 'IncSearch'})
+
+        "============================================================================================
+
+        Plug 'dense-analysis/ale'
+        "============================================================================================
+        " Ruby
+        "----------------------------------------------------------------------------------
+        "-Plug 'tpope/vim-rake'
+        "-Plug 'tpope/vim-rails'
+        " Plug 'vim-ruby/vim-ruby'
+        Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+        Plug 'tpope/vim-endwise', {'for': 'ruby'}
+        Plug 'nelstrom/vim-textobj-rubyblock', {'for': 'ruby'}
+        Plug 'nelstrom/vim-textobj-rubyblock'
+        Plug 'danchoi/ri.vim'
+
+
+        " Javascript
+        Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+        Plug 'styled-components/vim-styled-components', {'for': ['javascript', 'typescript', 'typescript.tsx']}
+        Plug 'pangloss/vim-javascript'
+        Plug 'mxw/vim-jsx'
+
+        " Typescript
+        Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+
+        " Golang
+        Plug 'fatih/vim-go', {'for': 'go'}
+
+        " CSS
+        Plug 'JulesWang/css.vim', {'for': 'css'}
+        Plug 'othree/csscomplete.vim', {'for': 'css'}
+        Plug 'ap/vim-css-color', {'for': 'css'}
+
+
+        "----------------------------------------------------------------------------------
+        " Plug 'unblevable/quick-scope' SUPER SLOW!+!!!! https://github.com/unblevable/quick-scope/issues/8
+        " let g:plug_url_format = 'git@github.com:%s.git'
+        "Err Plug 'mhinz/nvim-panacea', {'for': 'elixir'}
+        "Err Plug 'mhinz/nvim-langserver'
+        "Err Plug 'xavierchow/vim-sequence-diagram'
+        "----------------------------------------------------------------------------------
+        " Plug 'easymotion/vim-easymotion', {'on': '<plug>(easymotion-s2)'}
+        " Plug 'junegunn/fzf', has('win32') ? {} : {'on': 'FZF', 'dir': '~/local/fzf', 'do': './install --bin'}
+        " Plug 'junegunn/gv.vim', {'on': 'GV'}
+        " Plug 'junegunn/vader.vim'
+        " Plug 'junegunn/vim-easy-align', {'on': '<plug>(LiveEasyAlign)'}
+        " Plug 'junegunn/vim-plug'
+        " Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
+        " Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
+        " Plug 'tpope/vim-commentary'
+        " Plug 'tpope/vim-endwise'
+        " Plug 'tpope/vim-fugitive'
+        " Plug 'tpope/vim-rhubarb'
+        " Plug 'tpope/vim-rsi'
+        " Plug 'tpope/vim-scriptease'
+        " Plug 'tpope/vim-surround'
+        " Plug 'tweekmonster/helpful.vim', {'on': 'MANUALLY'}
+
+        " Plug 'rust-lang/rust.vim', {'for': 'rust'}
+        " Plug 'rhysd/rust-doc.vim', {'for': 'rust'}
+        " Plug 'lifepillar/pgsql.vim', {'for': 'sql'}
+        " Plug 'mattn/emmet-vim', {'for': 'html'}
+        " Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
+        " Plug 'pangloss/vim-javascript'
+        " Plug 'HerringtonDarkholme/yats.vim'
+        " Plug 'elixir-lang/vim-elixir'
+        "----------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+
+        " Plug 'mhinz/vim-crates'
+        " Plug 'mhinz/vim-grepper'
+        " Plug 'mhinz/vim-mix-format'
+        " Plug 'mhinz/vim-rfc'
+        " Plug 'mhinz/vim-sayonara', {'on': 'Sayonara'}
+        " Plug 'mhinz/vim-signify'
+        " Plug 'mhinz/vim-startify'
+        " Plug 'mhinz/vim-tree'
+
+        "============================================================================================
+
         "===openFileWithSameBasenameDifferentExtension=============================================
         "nnoremap <expr> ,R  ":e ".expand("%:r")."."
         "==========================================================================================

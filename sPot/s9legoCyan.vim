@@ -71,7 +71,9 @@
         "--------------------------------------------------------------------------------
         " hi CursorLine     ctermbg=90  guibg=#870087 gui=underline
         " hi CursorLine     ctermbg=90  guibg=#662211 gui=underline
-        hi CursorLine    guibg=#331166   gui=underline
+
+        hi CursorLine    guibg=#331166   gui=underline cterm=underline
+
         set cursorcolumn
         " hi CursorColumn   ctermbg=16 guibg=#ff4040
 
