@@ -1,3 +1,12 @@
+"==================================================================================
+nmenu misc.beautify.for          :s/for\s*(\s*/for ( /<cr>:s/\s*)\s*$/ )/<cr>:s/\(\i\+\)\s*=\s*/\1 = /<cr>:s/\s*\([=<>!]=\\|[<>]\)\s*/ \1 /<cr>:s/\s*\(--\\|++\)/\1/<cr>:s/\s*;\s*/; /g<cr>
+nmenu misc.beautify.func        :s/\s*)/ )/g<cr>:s/\s*\([(,]\)\s*/\1 /g<cr>:s/(\s\+)/()/g<cr>
+nmenu misc.beautify.if              :s/if\s*(\s*/if ( /<cr>:s/\s*)\s*$/ )/<cr>:silent s/\s*\([=<>!]=\\|[<>]\)\s*/ \1 /<cr>
+nmenu misc.beautify.assign      :s/\s*\([-+*\/&\|]\?\)\s*=\s*/ \1= /g<cr>
+"==================================================================================
+"==============================================
+let g:badwolf_tabline = 2
+let g:badwolf_html_link_underline = 0
 
 " Plug 'scrooloose/nerdtree'
 " Plug 'tpope/vim-commentary'
@@ -31,6 +40,60 @@
         "-let g:nnv_search_paths = ['/media/red/124Black/']
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+
+" Django {{{
+
+augroup ft_django
+    au!
+
+    au BufNewFile,BufRead urls.py           setlocal nowrap
+    au BufNewFile,BufRead urls.py           normal! zR
+    au BufNewFile,BufRead dashboard.py      normal! zR
+    au BufNewFile,BufRead local_settings.py normal! zR
+
+    au BufNewFile,BufRead admin.py     setlocal filetype=python.django
+    au BufNewFile,BufRead urls.py      setlocal filetype=python.django
+    au BufNewFile,BufRead models.py    setlocal filetype=python.django
+    au BufNewFile,BufRead views.py     setlocal filetype=python.django
+    au BufNewFile,BufRead settings.py  setlocal filetype=python.django
+    au BufNewFile,BufRead settings.py  setlocal foldmethod=marker
+    au BufNewFile,BufRead forms.py     setlocal filetype=python.django
+    au BufNewFile,BufRead common_settings.py  setlocal filetype=python.django
+    au BufNewFile,BufRead common_settings.py  setlocal foldmethod=marker
+augroup END
+
+" }}}
+
+"-AAA-------------------------------------------------------------------------------------------------------{{{
+
+
+        " Plug 'nixprime/cpsm'
+        Plug 'tacahiroy/ctrlp-funky'
+        "         nnoremap <Leader>fu :CtrlPFunky<Cr>
+        "         " narrow the list down with a word under cursor
+                nnoremap <Leader>u :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+        "--------------------------------------
+
+        let g:ctrlp_map='<c-q>'
+        let g:ctrlp_cmd = 'CtrlPMRU'
+        let g:ctrlp_extensions = ['tag']
+        let g:ctrlp_match_window_bottom = 0
+        let g:ctrlp_match_window_reversed = 0
+        let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+        let g:ctrlp_dotfiles = 0
+        let g:ctrlp_switch_buffer = 0
+        let g:ctrlp_working_path_mode = 0
+        let g:ctrlp_working_path_mode = 'ar'
+        "-------------------------------------------------------------------------------
+        "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+        "nnoremap <silent> <C-o> :let g:cpsm_match_empty_query = 0<CR>:CtrlPMRU<CR>
+        "nnoremap <silent> <C-p> :let g:cpsm_match_empty_query = 1<CR>:CtrlP<CR>
+        "-------------------------------------------------------------------------------
+        let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+        nnoremap <silent> <C-z> :let g:cpsm_match_empty_query = 0<CR>:CtrlPMRU<CR>
+        nnoremap <silent> <C-p> :let g:cpsm_match_empty_query = 1<CR>:CtrlP<CR>
+"-}}}
         "-------------------------------------------------------------------------------
         "let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
         "nnoremap <silent> <C-o> :let g:cpsm_match_empty_query = 0<CR>:CtrlPMRU<CR>

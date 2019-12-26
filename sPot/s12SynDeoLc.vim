@@ -1,26 +1,77 @@
-"==============================================================================================================
-"= File: s10DeoLc.vim TOPFd
-"==============================================================================================================
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+" File: s12SynDeoLc.vim TOPF syn V12 bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mi 25 Dez 2019 11:35:47  CET
+" Lass Modified:      Do 26 Dez 2019 08:01:59  CET
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"================================TableModeToggle===============================================================
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+" | #1             | #2        | diff     | #4         | #5      | fzf                 | #Func       |
+" +================+===========+==========+============+=========+=====================+==========+
+" | #Completing    | #Serching |          | #Formating | #Maping | ZPlugHelp           | #Running |
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+" | #Deopleting    |           | fugitive |            |         | FZFDefinitions      |          |
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+" | #Snipping      | lline     | HULK     |            |         | FFBLines  F7,\\, v# |          |
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+" | #Templating    | navi      |          |            |         | VSearchMe   v*       |          |
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+" | #Functioning   |           |          |            |         | FZFMru              |          |
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+" | #Textobjecting |           |          |            |         |                     |          |
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+" | #xyz           |           |          |            |         |                     |          |
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+" | #xyz           |           |          |            |         |                     |          |
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+" |                |           |          |            |         |                     |          |
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+" |                |           |          |            |         |                     |          |
+" +----------------+-----------+----------+------------+---------+---------------------+----------+
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "==============================================================================================================
-" let g:vimrcversion= 11
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+"||1               |2            |3            |4             |5Leon:easy  |6           |7xyz|
+"||#Completing,    |#Gitting,    |#Serching,   |#Compiling,   |#Tabbing,   |#Sync,      |#xyz-help|
+"||#Deopleting,    |#Diffing,    |#Winding,    |#Running,     |#Spelling,  |#BackUp,    |#xyz|
+"||#Formating,     |#Syntax,     |#Linking,    |#RIPLing,     |#Maping,    |#VimBackUp, |#xyz|
+"||#Snipping,      |#Gruving,    |#Taging,     |#Tabing,      |#Fzfing,    |#           |#xyz|
+"||#Templating,    |#Linting,    |#Scoping,    |#lline,       |#HALK,      |#           |#xyz|
+"||#               |#            |#            |#             |#           |#           |#xyz|
+"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "==============================================================================================================
 " after I improved indenting, highlighting and autocompletion slightly.
 " EditScope in NormalMode
-" set foldclose=all
-set foldlevel=0
 "==============================================================================================================
+" 7. Can I use any ex-mode command in a function?
 "==============================================================================================================
+" you can browse project file by Project-plugin
+" you can global search and edit them by exUtility-plugin
+" you can jump tag and track code by exUtility-plugin
+" you can analysis code by taglist-plugin
+" you can choose buffer by minibuffer-plugin
+" you can set clear mark by showmark-plugin.
 "==============================================================================================================
-" Clean all autocommands
 autocmd!
-hi clear 
-"-syntax enable
+hi clear
+"syntax on
+set foldlevel=0
+" set foldclose=all
+"================================================================================
 if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 256
   finish
 endif
 set guicursor=a:block-blinkon100-Cursor/Cursor
+set gcr=a:block
+set gcr+=o:hor50-Cursor
+set gcr+=n:CursorN
+set gcr+=i-ci-sm:InsertCursor
+set gcr+=r-cr:ReplaceCursor-hor20
+set gcr+=c:CommandCursor
+set gcr+=v-ve:VisualCursor
+set gcr+=a:blinkon100
+
+"================================================================================
+" hi Cursor guifg=black guibg=green gui=reverse
 "================================================================================
 set confirm
 set browsedir=buffer
@@ -37,15 +88,9 @@ set helpheight=7
 set showmode
 set conceallevel=0
 let &showbreak='⮎ '
-set fillchars=fold:\ ,vert:│
+" set fillchars=fold:\ ,vert:│
+"==============================================================================================================
 
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"-Completing,      -Gitting,      -Serching,     -Compiling,      -Tabbing    -Sync
-"-Deopleting,      -Diffing,      -Winding,      -Running,        -Spelling   -BackUp
-"-Formating,       -Syntax,       -Linking,      -RIPLing,        -           -NVim BackUp
-"-Snipping,        -Gruving,      -Taging,       -Tabing,         -           -
-"-Templating,      -Linting,      -Scoping,      -lline,          -           -
-"::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 "++AAA0Py+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         " set path=.,,src/**,lib/**,docs/**
@@ -142,7 +187,7 @@ set fillchars=fold:\ ,vert:│
         silent! set title titlelen=100 titleold= titlestring=%f noicon norightleft showtabline=1
         silent! set cursorline nocursorcolumn colorcolumn= concealcursor=nvc conceallevel=3 norelativenumber
         silent! set list listchars=tab:>\ ,nbsp:_ synmaxcol=800 ambiwidth=double breakindent breakindentopt=
-        silent! set nosplitbelow nosplitleft startofline linespace=0 whichwrap=b,s scrolloff=3 sidescroll=0
+        silent! set nosplitbelow nosplitleft startofline linespace=0 whichwrap=b, scrolloff=3 sidescroll=0
         silent! set equalalways nowinfixwidth nowinfixheight winminwidth=3 winminheight=3 nowarn noconfirm
         silent! set fillchars=vert:\|,fold:\  eventignore= helplang=en viewoptions=options,cursor virtualedit=
         "======================================================================================================
@@ -197,6 +242,7 @@ set fillchars=fold:\ ,vert:│
         set matchpairs+=(:),{:},[:],<:>
         set matchpairs+=':'
         set matchtime=5
+        set scrolloff=3
 "++AAA2++}}}
 "++AAAPlug++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "=sHappyStart1=
@@ -225,7 +271,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " You can toggle fullscreen mode by pressing spacebar.
         Plug 'junegunn/vim-peekaboo'
         "----------------------------------------------------------------------------------
-        " Plug 'bronson/vim-trailing-whitespace'
+        Plug 'bronson/vim-trailing-whitespace'
         " :FixWhitespace
         "--------------------------------------
         Plug 'ntpeters/vim-better-whitespace'
@@ -261,10 +307,11 @@ call plug#begin('~/.config/nvim/plugged/')
 
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "======================StartTO======================================================
+        "------------StartTO----#Textobjecting---------------------------------------------------------------
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         Plug 'kana/vim-textobj-user'
 
-        "++AAA1Hulk+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        "++AAA1-HULK-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
                 Plug 'airblade/vim-gitgutter'
                         let g:gitgutter_signs = 1
                         let g:gitgutter_max_signs = 800
@@ -284,10 +331,12 @@ call plug#begin('~/.config/nvim/plugged/')
 
                 "-------------------------------------------------------------------
                 Plug 'gilligan/textobj-gitgutter'
-                        vmap ih <Plug>(textobj-gitgutter-i)
+                        " vmap ih <Plug>(textobj-gitgutter-i)
+                        " xmap ih <Plug>(textobj-gitgutter-i)
+                        " omap ih <Plug>(textobj-gitgutter-i)
 
                 "-------------------------------------------------------------------
-                "---------HULK--hulk--hunk--HUNK--888-------------------------------
+                "---------HULK--hunk--HUNK--888-------------------------------------
                 "-------------------------------------------------------------------
                 nmap [c <Plug>(GitGutterPrevHunk)
                 nmap ]c <Plug>(GitGutterNextHunk)
@@ -297,7 +346,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 nmap ]v <Plug>(GitGutterPreviewHunk)
                 nmap ]s <Plug>(GitGutterStageHunk)
                 nmap ]u <Plug>(GitGutterUndoHunk)
-        "++AAA1Hulk++}}}
+        "++AAA1-HULK-++}}}
 
         "===================================================================================
         Plug 'adriaanzon/vim-textobj-matchit'
@@ -648,8 +697,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'flrnprz/candid.vim', { 'as': 'candid' }
         Plug 'joshdick/onedark.vim'
         "----------------------------------------------------------------------------------
-        " Plug 'flazz/vim-colorschemes'
-        "------------------TODO------------------------------------------------------------
+        Plug 'flazz/vim-colorschemes'
         " Plug 'morhetz/gruvbox'
         "------------------CAR--------------------------------------------------------------
         Plug 'lilydjwg/colorizer'
@@ -739,6 +787,8 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'dhruvasagar/vim-table-mode'
                 let g:table_mode_corner_corner='+'
                 let g:table_mode_header_fillchar='='
+                let g:table_mode_align_char = ':'
+
                 " :TableModeToggle
                 " +-------+---------+--------+
                 " | hallo | albert  | montag |
@@ -1233,7 +1283,6 @@ call plug#end()
 "=eHappyEnd1=
 "++AAAPlug++}}}
 "++AAA-lline+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-
         set laststatus=2
         set statusline=%{StatusWindowNr()}
         set statusline+=%([\%R%M]\ %)
@@ -1265,7 +1314,7 @@ call plug#end()
                                         \   ]
                                         \ },
                                         \ 'mode_map': {
-                                        \ 'n' : 'N11LL',
+                                        \ 'n' : 'N12SYN',
                                         \ 'i' : 'INSERT',
                                         \ 'R' : 'REPLACE',
                                         \ 'v' : 'VISUAL',
@@ -1305,39 +1354,37 @@ call plug#end()
         source ~/git/bTest/sPot/s9legoFunc.vim
         source ~/git/bTest/sPot/SYPLUG/fliplr.vim
         source ~/git/bTest/sPot/SYPLUG/increment.vim
-        source ~/git/bTest/sPot/s9legoCyan.vim
+        " source ~/git/bTest/sPot/s9legoCyan.vim
         "==============================================
 
 "++AAA6Source++}}}
 "++AAA7CYAN++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 
-        "----------------------------------------------------------------------------------
-        "==============================================
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         set termguicolors
-        source MYX/n-badwolf.vim
+        " source ~/git/bTest/sPot/sJellybeans.vim
+        " source ~/git/bTest/sPot/gruvbox.vim
+        source ~/git/bTest/sPot/sGruvbox.vim
+        " autocmd BufEnter * if match(@%,'/otherdir/')>=0 | colo jellybeans | else | colorscheme mopkai | end
+        " source MYX/n-badwolf.vim
+        " colorscheme desert
         " colorscheme badwolf
-        " colorscheme chocolate
         " colorscheme mopkai
+        " colorscheme evokai
         " colorscheme inkpot
         " colorscheme molokai
         " colorscheme jellybeans
         " colorscheme neonwave
         " colorscheme anderson
-        " colorscheme mopkai
         " colorscheme gruvbox
-        " colorscheme desert
-        " source sThor.vim
-        " colorscheme solarized
-        " source sSolarized.vim
-        " source sEvokai.vim
+        "===========================
         " source sPablo.vim
         " source sDesert.vim
-        " source sGruvbox.vim
-        " source ~/git/bTest/sPot/sGruvbox.vim
-        " syntax on
-
-        "==============================================
-        "----------------------------------------------------------------------------------
+        " source sThor.vim
+        " source sEvokai.vim
+        " source sSolarized.vim
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "=================================================================================
         " source ~/git/bTest/sPot/s9legoCyan.vim
         silent! set complete& completeopt=menu infercase noshowfulltag
         "==================================================================================
@@ -1345,41 +1392,42 @@ call plug#end()
         hi NonText ctermfg=16 guifg=#Fa3a19
         hi SpecialKey ctermfg=16 guifg=#ff00af
         "==================================================================================
-                "hi LineNr        ctermbg=17 ctermfg=15   guibg=#5fafdf  guifg=#ffffff
-                "hi CursorLine    guibg=#000099   gui=underline cterm=underline  guisp=#FF0000
-
-                "highlight MatchParen gui=bold  guifg=yellow guibg=#FF0000
-                ""==================================================================================
-                "" guifg=#ff0ad8
-                "" guifg=#0fdad8
-                "" guifg=#ffda00
-                ""==================================================================================
-                "hi StatusLine                  ctermfg=8     ctermbg=2     cterm=NONE guibg=#0fdad8
-                "hi StatusLineNC                ctermfg=2     ctermbg=8     cterm=NONE guibg=#ffda00
-                ""==================================================================================
-                "highlight DiffAdd           cterm=bold ctermbg=22  guibg=#0fDA95
-                "highlight DiffDelete        cterm=bold ctermbg=3   guibg=#ff0a78
-                "highlight DiffChange        cterm=bold ctermbg=52  guibg=#ff8a00
-
-                ""==================================================================================
-                ""================================GitGutt===========================================
-                "highlight GitGutterAdd ctermfg=green          guibg=#8ae234  guifg=#dd2211
-                "highlight GitGutterChange ctermfg=yellow      guibg=#662211  guifg=#fce94f
-                "highlight GitGutterDelete ctermfg=red         guibg=#333333  guifg=#FF2929
-                "highlight GitGutterChangeDelete ctermfg=cyan  guibg=#aa8877  guifg=#fce94f
-
-                ""----------------------------------------------------------------------------------
-                "autocmd BufEnter * call halo#run({'intervals': [100, 300, 600, 300, 100]})
-                "highlight link Halo Search
-                "highlight Halo guifg=white guibg=#F92672 ctermfg=white ctermbg=197
-
-                ""==================================================================================
-                "hi InsertCursor  ctermfg=15 guifg=#0e4411 ctermbg=37  guibg=#FF0000
-                "hi VisualCursor  ctermfg=15 guifg=#0df6e3 ctermbg=125 guibg=#cc04a2
-                "hi ReplaceCursor ctermfg=15 guifg=#fd56e3 ctermbg=65  guibg=#00ff00
-                "hi CommandCursor ctermfg=15 guifg=#fdff63 ctermbg=166 guibg=#FF0000
-                ""==================================================================================
-
+        hi customPlus      ctermbg=245 ctermfg=White  guibg=#ffFFB7 guifg=#88114f
+        hi customGrayR     ctermbg=245 ctermfg=White  guibg=#444444 guifg=#ff3f00
+        hi customGrayD     ctermbg=245 ctermfg=White  guibg=#444444 guifg=#ddDDdd
+        hi customGrayO     ctermbg=245 ctermfg=White  guibg=#333333 guifg=#FF8700
+        hi customGrayG     ctermbg=245 ctermfg=White  guifg=#666666 guibg=#0FBF34
+        "==================================================================================
+        "----------------------------------------------------------------------------------
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        call matchadd('customGrayR', '#')
+        call matchadd('customGrayR', ':')
+        call matchadd('customGrayO', '-')
+        call matchadd('customGrayD', '=')
+        call matchadd('customPlus', '++')
+        "==================================================================================
+        hi MatchParen gui=bold  guifg=yellow guibg=#FF0000
+        "==================================================================================
+        hi CursorN ctermfg=15 guifg=#fdff63 ctermbg=166 guibg=#0df6e3
+        hi InsertCursor  ctermfg=15 guifg=#0e4411 ctermbg=37  guibg=#FF4020
+        hi VisualCursor  ctermfg=15 guifg=#0df6e3 ctermbg=125 guibg=#cc09aa
+        hi ReplaceCursor ctermfg=15 guifg=#fd56e3 ctermbg=65  guibg=#00ff00
+        hi CommandCursor ctermfg=15 guifg=#fdff63 ctermbg=166 guibg=#FF0000
+        "==================================================================================
+        hi link Halo Search
+        hi Halo guifg=white guibg=#F92672 ctermfg=white ctermbg=197
+        "==================================================================================
+        let g:underlinetag_syntax = 'syntax keyword UnderlineTag %s containedin=ALLBUT,.*String.*,.*Comment.*,cIncluded,.*Function.*'
+        let g:underlinetag_highlight = 'highlight UnderlineTag gui=underline cterm=underline term=underline'
+        "==================================================================================
+        set cursorcolumn
+        set colorcolumn=84,92,100,108,116
+        hi ColorColumn    ctermbg=14   guibg=#005500
+        hi CursorLine    guibg=#600060   gui=underline cterm=underline  guisp=#FF0000
+        hi CursorLine    guibg=#000099   gui=underline cterm=underline  guisp=#FF0000
+        hi cursorcolumn   ctermbg=16 guibg=#000099
+        ""==================================================================================
+        hi LineNr        ctermbg=17 ctermfg=15   guibg=#5fafdf  guifg=#ffffff
         "==================================================================================
         "::::::CYAN::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==================================================================================
@@ -1406,8 +1454,9 @@ call plug#end()
         set wildignore+=classes
         set wildignore+=lib
 "++AAA7CYAN++}}}
-"++AAA8NAVI++++++++++++++++++++++++++++=TOPF=++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-
+"++AAA8-navi++++++++++++++++++++++++++++=TOPF=++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        "------------------------------------------------------------------------------------------
+        "#navi
         "------------------------------------------------------------------------------------------
         "-Enter-I-never-use the default behavior of <cr> and this saves me a keystroke...
         nnoremap <cr> o<esc>
@@ -1487,7 +1536,7 @@ call plug#end()
         nmap <silent> <C-Down> :call ScrollOtherWindow("down")<CR>
         nmap <silent> <C-Up> :call ScrollOtherWindow("up")<CR>
 
-"++AAA8NAVI++}}}
+"++AAA8-navi++}}}
 "++AAA-EX-EXEC+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "==========================================================================================
         "Transport Down Ex:
@@ -1537,7 +1586,10 @@ call plug#end()
         nnoremap ;s :ls<cr>:b<space>
         "==========================================================================================
         nnoremap ee <c-w>w
+        "==================================================================================
+        nnoremap  \  <C-^>
         nnoremap hh <c-w>w
+        "==================================================================================
         nnoremap ll :execute "leftabove vsplit" bufname('#')<cr>
         " nnoremap vv <c-w>v<c-w>l<cr><c-w>w<cr>
         nnoremap ;v <c-w>v<c-w>l
@@ -1687,6 +1739,9 @@ call plug#end()
         nmap <M-h> <Esc>:helpgrep <C-r><C-w><CR>
         nmap <C-M-h> "zyw:exe  "h ".@z.""<CR>
         nmap <F2> <Esc>:help <C-r><C-w><CR>
+        " Help in help in help
+        " <F2> on any word and we can see vim help for that keyword.
+        map <F2> "zyw:exe  "h ".@z.""<CR>
         "==========================================================================================
         nnoremap <M-t> :CommandTJump<cr>
         nnoremap <C-t> :CommandTHelp<cr>
@@ -1712,6 +1767,10 @@ call plug#end()
         nnoremap <Leader>b :cprev<cr>zvzz
         nnoremap <Leader>n :cnext<cr>zvzz
         "==========================================================================================
+        " How to tell what syntax highlighting group *that* is!
+        nnoremap  <F10>  :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+        "==========================================================================================
+        "==========================================================================================
         nnoremap TT :TagbarToggle<CR>
         "==========================================================================================
         source ~/git/bTest/sPot/s9legoQuickMenu.vim
@@ -1736,14 +1795,14 @@ call plug#end()
         " call fzf#run(fzf#wrap({'source': 'git ls-files'}))
         "===========================================================================================
         "
-        function! s:VBSearch()
+        function! s:VSearchMe()
                 let temp = @@
                 norm! gvy
                 let xx ='\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
                 call fzf#vim#ag(xx, fzf#vim#with_preview())
         endfunction
 
-        vnoremap * :<C-u>call <SID>VBSearch()<CR>
+        vnoremap * :<C-u>call <SID>VSearchMe()<CR>
 
         " www.web.de
         " www.web.de
@@ -1787,6 +1846,9 @@ call plug#end()
         inoremap <silent> <C-l> <C-x><C-l>
         "inoremap <silent> <C-]> <C-x><C-]>
         "inoremap <silent> <C-u> <C-x><C-u>
+        "==================================================================================
+        " set Ctrl+j in insert mode, like VS.Net
+        " imap <C-j> <C-X><C-O>
         "------------------------------------------------------------------------------------------
         inoremap <silent> <C-a> <C-o>^
         inoremap <silent> <C-e> <End>
@@ -1833,8 +1895,13 @@ call plug#end()
         nmap zp <Plug>yankstack_substitute_older_paste
         nmap zn <Plug>yankstack_substitute_newer_paste
 
+        "==================================================================================
+        "-FoldToggle
+        nnoremap <M-space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+
+
 "++AAA13Unfuc++}}}
-"++AAA14Func+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+"++AAA14-#Func+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         command! LocationToggle call LocationToggle()
         function! LocationToggle()
                 if exists("w:is_location_window")
@@ -1863,7 +1930,6 @@ call plug#end()
                         endtry
                 endif
         endfunction
-
 
         "==================================================================================
         function! <SID>SynStack()
@@ -1899,7 +1965,24 @@ call plug#end()
                 let &grepformat = gf_s
                 let &grepprg = gp_s
         endfunc
-"++AAA14Func++}}}
+        "==================================================================================
+        "===================:TableModeToggle===============================================================
+        function! s:isAtStartOfLine(mapping)
+                let text_before_cursor = getline('.')[0 : col('.')-1]
+                let mapping_pattern = '\V' . escape(a:mapping, '\')
+                let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
+                return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
+        endfunction
+
+        inoreabbrev <expr> <bar><bar>
+                                \ <SID>isAtStartOfLine('\|\|') ?
+                                \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
+        inoreabbrev <expr> __
+                                \ <SID>isAtStartOfLine('__') ?
+                                \ '<c-o>:silent! TableModeDisable<cr>' : '__'
+        "==================================================================================
+
+"++AAA14Func++-#Func++}}}
 "++AAA15Fzf++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         let g:fzf_command_prefix = 'FF'
         let g:fzf_layout = { 'window': 'enew' }
@@ -2162,38 +2245,8 @@ call plug#end()
                 autocmd BufEnter *.py UnderlineTagOn
         augroup END
 
-        let g:underlinetag_syntax = 'syntax keyword UnderlineTag %s containedin=ALLBUT,.*String.*,.*Comment.*,cIncluded,.*Function.*'
-        let g:underlinetag_highlight = 'highlight UnderlineTag gui=underline cterm=underline term=underline'
         " highlight UnderlineTag  cterm=underline  gui=underline guifg=#555555
         "==========================================================================================
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "::::::
-
-                " function! NearestMethodOrFunction() abort
-                " return get(b:, 'vista_nearest_method_or_function', '')
-                " endfunction
-
-                " set statusline+=%{NearestMethodOrFunction()}
-
-                " By default vista.vim never run if you don't call it explicitly.
-                " If you want to show the nearest function in your statusline automatically,
-                " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-
-                "==================================================================================
-                " let g:lightline = {
-                "                 \ 'colorscheme': 'monokai_tasty',
-                "                 \ 'active': {
-                "                 \   'left': [ [ 'mode', 'paste' ],
-                "                 \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
-                "                 \ },
-                "                 \ 'component_function': {
-                "                 \   'cocstatus': 'coc#status',
-                "                 \   'currentfunction': 'CocCurrentFunction',
-                "                 \   'method': 'NearestMethodOrFunction'
-                "                 \ },
-                "                 \ }
-
-        "::::::
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
         "---Open-Quickfix-window-automatically-----------------------------------------------------
@@ -2212,4 +2265,5 @@ call plug#end()
         "==========================================================================================
         au! FocusLost * :silent! wall
         "==========================================================================================
+        autocmd BufEnter * call halo#run({'intervals': [100, 300, 600, 300, 100]})
 "++AAA19Auto++}}}

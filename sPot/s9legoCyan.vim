@@ -1,5 +1,5 @@
         "==================================================================================
-        Plug 'NLKNguyen/papercolor-theme'
+        " Plug 'NLKNguyen/papercolor-theme'
         " let g:lightline = { 'colorscheme': 'PaperColor' }
         " \ 'colorscheme': 'onedark',
         " \ 'colorscheme': 'gruvbox',
@@ -7,9 +7,9 @@
         " let g:lightline.colorscheme = 'space_vim_dark'
         " let g:lightline.colorscheme = 'Tomorrow_Night_Eighties'
         " \ 'colorscheme': 'tender',
-
-
         "==================================================================================
+
+
         "==================================================================================
         " Better gitcommit messages
         hi diffAdded   ctermbg=NONE ctermfg=46  cterm=NONE guibg=NONE guifg=#00FF00 gui=NONE
@@ -52,10 +52,13 @@
         hi Search         ctermbg=11
         " hi Normal         ctermbg=235 guibg=#333333
         hi ColorColumn    ctermbg=22
-        hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
         set signcolumn=yes
         hi signcolumn     ctermbg=23 guibg=14
+        "---------------------------------------------------------------------------------
         " highlight SignColumn     ctermbg=230       guibg=#00ff00
+        " hi MatchParen     ctermbg=39 ctermfg=11  cterm=bold
+        "---------------------------------------------------------------------------------
+
 
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#020202
         hi LineNr         ctermbg=17 ctermfg=15   guibg=#ef5000  guifg=#ffffff
@@ -73,15 +76,19 @@
         " hi CursorLine     ctermbg=90  guibg=#662211 gui=underline
 
         hi CursorLine    guibg=#331166   gui=underline cterm=underline
+        hi CursorLine    guibg=#000000   gui=underline cterm=underline  guisp=#FF0000
 
-        set cursorcolumn
-        " hi CursorColumn   ctermbg=16 guibg=#ff4040
+        hi cursorline    guibg=#600060   gui=underline cterm=underline  guisp=#ff0000
+        hi cursorline    guibg=#000099   gui=underline cterm=underline  guisp=#ff0000
+
+        " set cursorcolumn
+        " hi cursorcolumn   ctermbg=16 guibg=#ff4040
 
         "--------------------------------------------------------------------------------
         set colorcolumn=92,100,112,120
         hi ColorColumn    ctermbg=240
         hi ColorColumn    ctermbg=14   guibg=#005500
-        hi Visual cterm=bold ctermbg=2 ctermfg=NONE  guibg=#000099
+        hi Visual cterm=bold ctermbg=2 ctermfg=NONE  guibg=#700070
         " hi Comment        ctermfg=249 guifg=#dddddd  guibg=#0087ff
         " hi Comment        ctermfg=249 guifg=#dddddd  guifg=#50DFFF
         " hi Comment        ctermfg=249 guifg=#eeeeee  guibg=#5F5F11
@@ -113,11 +120,23 @@
 
         "--------------------------------------------------------------------------------
         hi customPink     ctermbg=245 ctermfg=White  guibg=#444444 guifg=#ff3f00
-        hi customBlue     ctermbg=245 ctermfg=White  guibg=#ccbbcc guifg=#0087ff
-        hi customBlue     ctermbg=245 ctermfg=White  guifg=#ff5f00 guibg=#0FBF34
+        hi customGrayB     ctermbg=245 ctermfg=White  guibg=#555555 guifg=#0087ff
+        hi customGrayG     ctermbg=245 ctermfg=White  guifg=#666666 guibg=#0FBF34
+
         hi customBlue     ctermbg=245 ctermfg=White  guifg=#ccCCcc guibg=#0F8F14
 
-        hi customPlus     ctermbg=245 ctermfg=White  guibg=#EcEcEc guifg=#0011ff
+        hi customPlus     ctermbg=245 ctermfg=White  guibg=#ffFFB7 guifg=#88114f
+
+        hi customEQ     ctermbg=245 ctermfg=White  guibg=#ffFFB9 guifg=#88114f
+        hi customEQ     ctermbg=245 ctermfg=White  guibg=#ffFFB9 guifg=#ff3f00
+        hi customEQ     ctermbg=245 ctermfg=White  guibg=#331174 guifg=#ff3f00
+        hi customEQ     ctermbg=245 ctermfg=White  guibg=#331174 guifg=#0fBf00
+        hi customEQ     ctermbg=245 ctermfg=White  guibg=#881144 guifg=#aaAAaa
+
+        hi customMin    ctermbg=245 ctermfg=White  guibg=#ffffB9 guifg=#ff3f00
+        hi customMin    ctermbg=245 ctermfg=White  guibg=#331194 guifg=#ffffb0
+        hi customMin    ctermbg=245 ctermfg=White  guibg=#331194 guifg=#aaaaaa
+        hi customMin    ctermbg=245 ctermfg=White  guibg=#881144 guifg=#aaaaaa
 
         hi lightGray      ctermbg=12  guibg=#afffaf guifg=#001100 gui=bold
         hi darkGray       ctermbg=211 guibg=#ffff00  guifg=#8000f0
@@ -139,12 +158,13 @@
         call matchadd('darkGray', 'TTT')
         call matchadd('darkGray', 'DDD')
         call matchadd('customBlue', '=')
-        call matchadd('customPink', '==')
         call matchadd('customPink', '#')
         call matchadd('customPink', ':')
         call matchadd('customBlue', '-')
         call matchadd('customPink', '-')
         call matchadd('customPlus', '++')
+        call matchadd('customEQ', '==')
+        call matchadd('customMin', '--')
         "------------------------------------------------------
 
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

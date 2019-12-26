@@ -2,7 +2,7 @@
 "= File: s10DeoLc.vim TOPFd
 "==============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      So 22 Dez 2019 12:53:45  CET
+" Lass Modified:      Mi 25 Dez 2019 12:31:56  CET
 "==============================================================================================================
 let g:vimrcversion= 10
 au VimEnter * echo "VIMRC v"g:vimrcversion
@@ -13,6 +13,29 @@ set foldlevel=0
 set foldclose=all
 "==============================================================================================================
 "==============================================================================================================
+"==============================================================================================================
+" Clean all autocommands
+autocmd!
+syntax enable
+set guicursor=a:block-blinkon100-Cursor/Cursor
+"================================================================================
+set confirm
+set browsedir=buffer
+set fileencoding=utf8
+set fileformats=unix,mac,dos
+set fileformat=unix
+set encoding=UTF-8
+scriptencoding utf-8
+set shortmess+=Ic
+set modelines=0
+set winaltkeys=no
+set guioptions=cMe
+set helpheight=7
+set showmode
+set conceallevel=0
+let &showbreak='⮎ '
+set fillchars=fold:\ ,vert:│
+
 
 "++AAA0-Py+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -1292,13 +1315,13 @@ call plug#end()
         set termguicolors
         syntax enable
         syntax on
-        colorscheme dracula
-        colorscheme badwolf
+        " colorscheme dracula
+        " colorscheme badwolf
         source ~/git/bTest/sPot/s9legoABB.vim
         source ~/git/bTest/sPot/s9legoFunc.vim
         source ~/git/bTest/sPot/SYPLUG/fliplr.vim
         source ~/git/bTest/sPot/SYPLUG/increment.vim
-        source ~/git/bTest/sPot/s9legoCyan.vim
+        " source ~/git/bTest/sPot/s9legoCyan.vim
         "==============================================
 "++AAA6Source++}}}
 "++AAA7CYAN++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -1308,6 +1331,9 @@ call plug#end()
         "suppress intro message
         "set shortmess+=c
         set shortmess+=I
+        " source evokai.vim
+        " source pablo.vim
+        colorscheme pablo
         "==================================================================================
         " guifg=#ff0ad8
         " guifg=#0fdad8
@@ -2147,3 +2173,4 @@ call plug#end()
         highlight link Halo Search
         highlight Halo guifg=white guibg=#F92672 ctermfg=white ctermbg=197
 
+        " source solarized.vim
