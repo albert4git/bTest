@@ -1,31 +1,29 @@
 
+
+"---------------------------------------------------------------------------------
 " how many occurrences of the current search pattern?           {{{2
 command! -range=% CountMatches          <line1>,<line2>s///n
-
+"---------------------------------------------------------------------------------
 " die, trailing whitespace! die!                                {{{2
 command! -range=% NukeTrailingWhitespace <line1>,<line2>s/\s\+$//
-
+"---------------------------------------------------------------------------------
 " where's that non-ascii character?                             {{{2
 command! FindNonAscii                   normal /[^\x00-\x7f]<cr>
 command! FindControlChars               normal /[\x00-\x08\x0a-\x1f\x7f]<cr>
+"---------------------------------------------------------------------------------
 
 " convert \uXXXX to actual characters                           {{{2
 command! -range=% ExpandUnicode         <line1>,<line2>s/\\u\([0-9a-fA-F]\{4}\)/\=nr2char(str2nr(submatch(1), 16))/gc
-
+"---------------------------------------------------------------------------------
 " diffoff used to set wrap as a side effect                     {{{2
 command! Diffoff                        diffoff | setlocal nowrap
-
-" See :help DiffOrig                                            {{{2
-command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-                \ | wincmd p | diffthis
-
+"---------------------------------------------------------------------------------
 " :Time SomeOtherCommand                                        {{{2
 command! -nargs=+ -complete=command TimeB
         \ let start = reltime() |
         \ exec <q-args> |
         \ echomsg reltimestr(reltime(start)) . " seconds"
-
-
+"---------------------------------------------------------------------------------
 function! s:Margin(...)
         if a:0
                 let &colorcolumn=join(range(a:1+1,a:1+256),",")
@@ -35,10 +33,9 @@ function! s:Margin(...)
 endf
 command! -nargs=? -bar Margin  call s:Margin(<args>)
 command! -bar MarginOff        set colorcolumn=
-
+"---------------------------------------------------------------------------------
 
 "===============================================================================================================
-
 "===============================================================================================================
 
 function! PrintCountry()
@@ -47,7 +44,7 @@ function! PrintCountry()
 endfunction
 command! -nargs=0 PrintCountry call PrintCountry()
 "===============================================================================================================
-"=============================================PP3===============================================================
+"=============================================PyF3==============================================================
 "===============================================================================================================
 
 function! WrapWordWith()
@@ -84,6 +81,7 @@ cabbrev w3 call WrapWordWith()<CR>
 "===============================================================================================================
 "===============================================================================================================
 
+command! TheSS call TheSilverSearcher()
 function! TheSilverSearcher()
 python3 << endPython
 
@@ -107,8 +105,6 @@ silver_search()
 
 endPython
 endfunction
-
-command! TheSS call TheSilverSearcher()
 
 "===============================================================================================================
 "===============================================================================================================
@@ -147,29 +143,15 @@ endfunction
 command! -register MiniPy3 call MiniPy3()
 
 "===============================================================================================================
-" function! ColorizeSignColumn()
-" python << endpython
-" import vim, struct, hashlib
-" fname = vim.eval("expand('%:t')")
-" hash_byte = hashlib.sha1(fname).hexdigest()[0]
-" fname_color = struct.unpack('B', hash_byte)[0]
-" vim.command(":hi SignColumn ctermbg={}".format(fname_color))
-" vim.command("autocmd FileType python highlight ColorColumn ctermbg={}".format(fname_color))
-" endpython
-" endfunction
-
-" command! CColorizeSignColumn call ColorizeSignColumn()
-" autocmd BufEnter * :call ColorizeSignColumn()
-"===============================================================================================================
 "Examples:
 ":call Exec('buffers')
 "This will include the output of :buffers into the current buffer.
 "
 "Also try:
-":call Exec('ls')
-":call Exec('autocmd')
+":call Exek('ls')
+":call Exek('autocmd')
 "
-funct! Exec(command)
+funct! Exek(command)
     redir =>output
     silent exec a:command
     redir END
@@ -279,6 +261,11 @@ function! InsertAtEnd(char)
 endfunction
 
 "==========================================================================================
+"==========================================================================================
+
+vnoremap <silent> <M-{> >gv:<C-u>call Enclose('{', 1)<CR>
+vnoremap <silent> <M-3> >gv:<C-u>call Enclose('#', 1)<CR>
+vnoremap <silent> <M-/> :<C-u>call Enclose('/', 0)<CR>
 "==========================================================================================
 " Visual mode functions
 function! Enclose(mode, indent)
