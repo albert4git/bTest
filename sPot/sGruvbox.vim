@@ -103,7 +103,7 @@ let s:gb.xGruen2     = ['#008080', 6]
 let s:gb.xGruen3     = ['#00ff00', 10]
 let s:gb.xGruen5     = ['#00ff87', 48]
 let s:gb.xRot1       = ['#800004', 1]
-let s:gb.xRot2       = ['#FF0004', 9]
+let s:gb.xRot2       = ['#FF0000', 9]
 let s:gb.xRot3       = ['#FF5054', 203]
 let s:gb.xRot4       = ['#FF6600', 202]
 let s:gb.xBlau1      = ['#00008f', 4]
@@ -470,7 +470,10 @@ call s:HL('GruvboxBg3', s:bg3)
 call s:HL('GruvboxBg4', s:bg4)
 
 "Pueblo-Pablo-Def
-call s:HL('XboxGruen', s:gb.xGruen1)
+call s:HL('XboxRot1', s:gb.xRot1, s:none, s:bold)
+call s:HL('XboxRot2', s:gb.xRot2, s:none, s:bold)
+call s:HL('XboxGruen', s:gb.xGruen5, s:none, s:bold)
+call s:HL('XboxGelb', s:gb.xGelb1)
 call s:HL('GruvboxRed', s:red)
 call s:HL('GruvboxRedBold', s:red, s:none, s:bold)
 call s:HL('GruvboxGreen', s:green)
@@ -621,8 +624,12 @@ call s:HL('FoldColumn', s:gray, s:gb.xRot2)
 "---------------------------------------------------------------------------------
 
 " Generic statement
+hi! link Statement XboxGelb
+hi! link Statement XboxGruen
 hi! link Statement GruvboxRed
-" hi! link Statement XboxGruen
+hi! link Statement XboxRot1
+hi! link Statement XboxRot2
+hi! link Statement GruvboxRedBold
 "-----------------------------
 " if, then, else, endif, swicth, etc.
 hi! link Conditional GruvboxRed

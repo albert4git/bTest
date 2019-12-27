@@ -1,4 +1,17 @@
 
+" after I improved indenting, highlighting and autocompletion slightly.
+"==================================================================================================================
+" EditScope in NormalMode
+"==============================================================================================================
+" 7. Can I use any ex-mode command in a function?
+"==============================================================================================================
+" you can browse project file by Project-plugin
+" you can global search and edit them by exUtility-plugin
+" you can jump tag and track code by exUtility-plugin
+" you can analysis code by taglist-plugin
+" you can choose buffer by minibuffer-plugin
+" you can set clear mark by showmark-plugin.
+"==============================================================================================================
 "==================================================================================
 "---The . register is basically everything you've just typed in input mode
 :let @a = @.
@@ -23,6 +36,12 @@
 ":g//
 nmap <F3>  :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR><CR>
 vnoremap <M-v> <C-v>
+
+"================================================================================
+if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 256
+  finish
+endif
+"================================================================================
 "==================================================================================
 "193: Insert the current filename at cursor postion.
 iabbrev cdate  <c-r>=strftime("%c")<cr>
@@ -38,6 +57,10 @@ endfunction
 :command! MHooremanSetDiffEnviron call MHooremanSetDiffEnviron()
 
 "==========================================================================================
+" autocmd BufEnter * if match(@%,'/otherdir/')>=0 | colo jellybeans | else | colorscheme mopkai | end
+"==========================================================================================
+        " let g:loaded_clipboard_provider = empty(provider#clipboard#Executable()) ? 1 : 2
+"==========================================================================================
         " map <M-v> viw"+gPb
         " map <M-c> viw"+y
         " map <M-x> viw"+x
@@ -50,6 +73,22 @@ endfunction
 "==========================================================================================
 let s:gb.bright_red     = ['#00e994', 167]     " 251-73-52
 
+"==========================================================================================
+"---Open-Quickfix-window-automatically-----------------------------------------------------
+"====NOWO======================================================================================
+"autocmd QuickFixCmdPost grep cwindow
+"autocmd! vimrc QuickfixCmdPost [^l]* nested copen | wincmd p
+"autocmd! vimrc QuickfixCmdPost l* nested lopen | wincmd p
+"augroup NewBuf
+"        autocmd!
+"        autocmd BufEnter * call halo#run({'intervals': [100, 300, 600, 300, 100]})
+"        "-Move to the directory each buffer
+"        autocmd vimrc BufEnter * silent! lcd %:p:h
+"        "-Always open read-only when a swap file is found
+"        autocmd! vimrc SwapExists * let v:swapchoice = 'o'
+"augroup END
+"==========================================================================================
+"==========================================================================================
 "==========================================================================================
 if &cmdheight == 1
         set cmdheight=2
