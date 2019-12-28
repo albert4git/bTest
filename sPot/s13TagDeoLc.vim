@@ -1,34 +1,34 @@
-" File: s12SynDeoLc.vim syn N12SYN bimini
+" File: s12SynDeoLc.vim syn N13SYN bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Fr 27 Dez 2019 10:51:33  CET
+" Lass Modified:      Sa 28 Dez 2019 04:49:48  CET
 "::::::::::::::::::::::::::::[#AutoCMD]::::::::[TOPF]:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "====================[#NMODE]========[#IMODE]=========[#CMODE]========[#VMODE]======================================
 "======[TableModeToggle]======[10F2]==========[#NAVI]======[#LeaderGuide]=======[#QMENU]====================================
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | [MainSet]         | [#Plugged] | [SourceMe] | [#WinCore]    | [Ssearch]    | [#FZF] ,        | [#FUNC] |    |
-" +===================+============+============+===============+==============+=================+=========+====+
-" | [#Coc], [LSP]     |            | fugitive   | #tag          | NV           | ZPlugHelp       |         | 1  |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | [#DEO], deoplete  | #Maping    | Gwrite     | [CYAN] AAA    | FFRg         | FZFDefinitions  |         | 2  |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | neosnippet, ulti  | [#FOLD]    |            | [DimInactive] | ZAg          | FFBLines F7, \\ |         | 3  |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | #Templating       | [#SPELL]   |            | [#EX#EXEC]    | scope        | VSearchMe   v*  |         | 4  |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | [#FORMAT] #BLACK  |            |            | [VimOmni]     | FindNonAscii | FZFMru          |         | 5  |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | [#TextO]          |            |            | [iInoremap]   |              | FZFFreshMru     |         | 6  |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | #Linting          |            |            |               |              | :MRU            |         | 7  |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | [#BOX]            | [Pyy]      |            | [LLine]       |              | ZGit            | #run    | 8  |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | [#SMART]  [#BEST] | [PDOC]     |            | [Clap]        |              | ZTag            | #REPL   | 9  |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | #leon, easy       | [PyF3]     |            |               |              |                 |         | 10 |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
-" | 1                 | 2          | 3          | 4             | 5            | 6               | 8       |    |
-" +-------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" | [#MainSet]       | [#Plugged] | [SourceMe] | [#WinCore]    | [#SEARCH]    | [#FZF]          | [#FUNC] |    |
+" +==================+============+============+===============+==============+=================+=========+====+
+" | [#Coc], [LSP]    |            | fugitive   | #tag          | NV           | ZPlugHelp       |         | 1  |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" | [#DEO], deoplete | #Maping    | Gwrite     | [CYAN] AAA    | FFRg         | FZFDefinitions  |         | 2  |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" | snippet, [#ulti] | [#FOLD]    |            | [DimInactive] | ZAg          | FFBLines F7, \\ |         | 3  |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" | #Templating      | [#SPELL]   |            | [#EX#EXEC]    | scope        | VSearchMe   v*  |         | 4  |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" | [#FORMAT] #BLACK |            |            | [VimOmni]     | FindNonAscii | FZFMru          |         | 5  |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" | [#TextObj]       |            |            | [iInoremap]   |              | FZFFreshMru     |         | 6  |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" | #Linting         |            |            |               |              | :MRU            |         | 7  |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" | [#BOX]           | [Pyy]      |            | [LLine]       |              | ZGit            | #run    | 8  |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" |                  | [PDOC]     |            | [Clap]        |              | ZTag            | #REPL   | 9  |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" | #leon, easy      | [PyF3]     |            |               |              |                 |         | 10 |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
+" | [#FRESH]         | [#TODO]    | [#NOWO]    | [#ERROR]      | [#NEXT]      | [#SMART]        | [#BEST] |    |
+" +------------------+------------+------------+---------------+--------------+-----------------+---------+----+
 "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "++AAAx[PreSet]++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -87,9 +87,21 @@ set conceallevel=0
         "----------------------------------------------------------------------------------
         set nocompatible
         set shell=/bin/zsh
-        let generate_tags=1
-        set tags=.tags;
-        set tags+=tags;
+
+        "++Ctags++{{{
+                let generate_tags=1
+                set tags=.tags;
+                set tags+=tags;
+                "----------------------------------------------------------------------------------
+                set tags=./tags;/,~/.vimtags
+                " Make tags placed in .git/tags file available in all levels of a repository
+                let gitroot = substitute(system('git rev-parse --show-toplevel'), '[\n\r]', '', 'g')
+                if gitroot != ''
+                        let &tags = &tags . ',' . gitroot . '/.git/tags'
+                endif
+        "++}}}
+
+        "==================================================================================
         "----------------------------------------------------------------------------------
         " set spelllang=de,tech_speak
         " 'zg': add, 'zw': remove.
@@ -145,7 +157,10 @@ set conceallevel=0
         "==================================================================================
 
 "++AAA1++}}}
-"++AAA2+[MainSet]++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+"++AAA2+[#MainSet]++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        set iskeyword-=.                    " '.' is an end of word.designator
+        set iskeyword-=#                    " '#' is an end of word#designator
+        set iskeyword-=-                    " '-' is an end of word=designator
         "-magic--------
         silent! set wrapscan ignorecase smartcase incsearch hlsearch magic
         "-Appearance---
@@ -229,6 +244,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'prabirshrestha/async.vim'
         Plug 'skywind3000/asyncrun.vim'
+                let g:asyncrun_open = 15
         "----------------------------------------------------------------------------------
         Plug 'vim-scripts/genutils'
         Plug 'LucHermitte/lh-vim-lib'
@@ -274,7 +290,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'wesQ3/vim-windowswap'
 
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        "======================[#TextO]======================================================
+        "======================[#TextObj]======================================================
         "------------StartTO----#Textobjecting---------------------------------------------------------------
         ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         Plug 'kana/vim-textobj-user'
@@ -318,13 +334,31 @@ call plug#begin('~/.config/nvim/plugged/')
         "===================================================================================
         Plug 'adriaanzon/vim-textobj-matchit'
         "`am` and `im` :if-ifend , for-endfore ..
-
         "==================================================================================
         Plug 'kana/vim-textobj-diff'
+        "==================================================================================
         Plug 'reedes/vim-textobj-sentence'
                 let g:textobj#sentence#select = 's'
                 let g:textobj#sentence#move_p = '('
                 let g:textobj#sentence#move_n = ')'
+        "=========================[#FRESH]=========================================================
+                Plug 'kana/vim-textobj-line'
+                Plug 'Julian/vim-textobj-variable-segment'
+                Plug 'kana/vim-textobj-entire'
+                Plug 'deathlyfrantic/vim-textobj-blanklines'
+                Plug 'whatyouhide/vim-textobj-xmlattr'
+
+
+                "---------------------------------------------------
+                " Plug 'paulhybryant/vim-textobj-path'
+                " Plug 'jceb/vim-textobj-uri'
+                " Plug 'mattn/vim-textobj-url'
+                " Plug 'vimtaku/vim-textobj-keyvalue'
+                "---------------------------------------------------
+                "-Plug 'kana/vim-textobj-lastpat'
+                "-Plug 'whatyouhide/vim-textobj-erb'
+                "-Plug 'rsrchboy/vim-textobj-heredocs'
+                "---------------------------------------------------
         "==================================================================================
         Plug 'kana/vim-textobj-function'
         Plug 'Julian/vim-textobj-brace'
@@ -365,7 +399,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 " apple = 'juice'
 
         "==================================================================================
-        "----------------------[#TextO]----------------------------------------------------
+        "----------------------[#TextObj]----------------------------------------------------
         "==================================================================================
         Plug 'terryma/vim-expand-region'
                  let g:expand_region_text_objects = {
@@ -374,6 +408,8 @@ call plug#begin('~/.config/nvim/plugged/')
                                          \ 'iq'  :1,
                                          \ 'ib'  :1,
                                          \ 'iB'  :1,
+                                         \ 'ij'  :1,
+                                         \ 'il'  :1,
                                          \ 'if'  :1,
                                          \ 'io'  :1,
                                          \ 'ic'  :1,
@@ -381,11 +417,13 @@ call plug#begin('~/.config/nvim/plugged/')
                                          \ 'ii'  :1,
                                          \ 'ix'  :1,
                                          \ 'ih'  :1,
+                                         \ 'im'  :1,
                                          \ 'ip'  :1,
-                                         \ 'iz'  :1
+                                         \ 'iz'  :1,
+                                         \ 'ie'  :1
                                          \ }
         "--------------------------------------------------------------------------
-        "=======[#BEST]===[#TextO]===[#SMART]=======
+        "=======[#BEST]===[#TextObj]===[#SMART]=======
         vmap v <Plug>(expand_region_expand)
         vmap <c-v> <Plug>(expand_region_shrink)
         "----------------------------------------------------------------------------------
@@ -1319,7 +1357,7 @@ call plug#end()
                                         \   ]
                                         \ },
                                         \ 'mode_map': {
-                                        \ 'n' : 'N12SYN',
+                                        \ 'n' : 'N13SYN',
                                         \ 'i' : 'INSERT',
                                         \ 'R' : 'REPLACE',
                                         \ 'v' : 'VISUAL',
@@ -1376,8 +1414,6 @@ call plug#end()
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "=================================================================================
         " source ~/git/bTest/sPot/s9legoCyan.vim
-        silent! set complete& completeopt=menu infercase noshowfulltag
-        "==================================================================================
         set listchars=tab:▸\ ,eol:¬,trail:⋅
         hi NonText ctermfg=16 guifg=#Fa3a19
         hi SpecialKey ctermfg=16 guifg=#ff00af
@@ -1387,10 +1423,10 @@ call plug#end()
         hi customGrayD     ctermbg=245 ctermfg=White  guibg=#444444 guifg=#ddDDdd
         hi customGrayP     ctermbg=245 ctermfg=White  guibg=#333333 guifg=#ff15ee
         hi customGrayG     ctermbg=245 ctermfg=White  guifg=#666666 guibg=#0FBF34
-        hi customGrayO     ctermbg=245 ctermfg=White  guibg=#222211 guifg=#ffd500 gui=bold
-        hi customGray1     ctermbg=245 ctermfg=White  guibg=#222211 guifg=#ee88ee gui=bold
+        hi customGray1     ctermbg=245 ctermfg=White  guibg=#555555 guifg=#ee88ee gui=bold
+        hi customGray2     ctermbg=245 ctermfg=White  guibg=#000000 guifg=#FF480e gui=bold
+        hi customGrayO     ctermbg=245 ctermfg=White  guibg=#008080 guifg=#ffd500 gui=bold
         "==================================================================================
-        call matchadd('customGray1', 'AAA')
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         call matchadd('customGrayR', '#')
         call matchadd('customGrayR', ':')
@@ -1400,17 +1436,19 @@ call plug#end()
         call matchadd('customPlus', '++')
         call matchadd('customGrayO', 'TOPF')
         call matchadd('customGrayO', '#BOX')
+        call matchadd('customGrayO', '#ulti')
         call matchadd('customGrayO', 'VimOmni')
         call matchadd('customGrayO', 'iInoremap')
         call matchadd('customGrayO', 'PDOC')
         call matchadd('customGrayO', '#Plugged')
-        call matchadd('customGrayO', 'Ssearch')
+        call matchadd('customGrayO', '#SEARCH')
         call matchadd('customGrayO', '#NAVI')
+        call matchadd('customGrayO', '#MainSet')
         call matchadd('customGrayO', '#NMODE')
         call matchadd('customGrayO', '#IMODE')
         call matchadd('customGrayO', '#CMODE')
         call matchadd('customGrayO', '#VMODE')
-        call matchadd('customGrayO', '#TextO')
+        call matchadd('customGrayO', '#TextObj')
         call matchadd('customGrayO', '#FZF')
         call matchadd('customGrayO', '#SMART')
         call matchadd('customGrayO', '#BEST')
@@ -1423,6 +1461,12 @@ call plug#end()
         call matchadd('customGrayO', '10F2')
         call matchadd('customGrayO', '#LeaderGuide')
         call matchadd('customGrayO', 'TableModeToggle')
+        "=================================================
+        call matchadd('customGray1', 'AAA')
+        call matchadd('customGray2', '#FRESH')
+        call matchadd('customGray2', '#NOWO')
+        call matchadd('customGray2', '#TODO')
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==================================================================================
         hi MatchParen gui=bold  guifg=yellow guibg=#FF0000
         "==================================================================================
@@ -1562,7 +1606,7 @@ call plug#end()
         nmap <silent> <C-Down> :call ScrollOtherWindow("down")<CR>
         nmap <silent> <C-Up> :call ScrollOtherWindow("up")<CR>
         "==========================================================================================
-        ":::::::::::::::[#FORMAT]::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        ":::::::::::::::::::::::::::::::[#FORMAT]::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
         vmap <M-h> =
         nmap cc  gcl
@@ -1613,18 +1657,35 @@ call plug#end()
         "==========================================================================================
         imap <C-b>    <Plug>(neosnippet_expand_or_jump)
         smap <C-b>    <Plug>(neosnippet_expand_or_jump)
-        xmap <C-b>    <Plug>(neosnippet_expand_target)
-        "==========================================================================================
+        " xmap <C-b>    <Plug>(neosnippet_expand_target)
+
+        "================================[#ulti]===================================================
         " nnoremap <leader>se :UltiSnipsEdit<CR>
-        " let g:UltiSnipsSnippetsDir = '~/.nvim/UltiSnips'
         " let g:UltiSnipsEditSplit = 'horizontal'
         " let g:UltiSnipsListSnippets = '<nop>'
         " let g:ulti_expand_or_jump_res = 0
+        "---------------------------------------------------------------------------------
+        " let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
+        " let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/UltiSnips', $HOME.'/.config/smithers/UltiSnips']
+        "---------------------------------------------------------------------------------
+        let g:UltiSnipsSnippetDirectories = ['~/git/bTest/sPot/MUltiSnips']
 
+        """""""""""""""""""""""""""""""""
+        "  hallo meine freund ulti-box  "
+        """""""""""""""""""""""""""""""""
         let g:UltiSnipsExpandTrigger="<C-b>"
         let g:UltiSnipsJumpForwardTrigger="<C-b>"
         let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+        "==========================================================================================
 
+        "==========================================================================================
+        let g:snipMate = {}
+        let g:snipMate.scope_aliases = {}
+        let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
+
+        "---------------------------------------------------------------------------------
+        imap <C-b> <Plug>snipMateNextOrTrigger
+        smap <C-b> <Plug>snipMateNextOrTrigger
         "==========================================================================================
         "::::::::::::::::::::::::::::::-2MAGIC2-:::::::::::::::::::::::::::::::::::::::::::::::::::
         "==========================================================================================
@@ -1709,6 +1770,9 @@ call plug#end()
         nnoremap vv <S-v>
         "==========================================================================================
         command! CD cd %:p:h
+
+        " nnoremap <leader>j :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
+        " autocmd filetype java nnoremap <F4> :w <bar> !javac % && java -enableassertions %:p <CR>
         "==================================================================================
         nmap ;; <Plug>(easymotion-overwin-w)
         let g:EasyOperator_line_do_mapping = 0
@@ -1746,7 +1810,6 @@ call plug#end()
         let g:ctrlp_mruf_max = 250
 "++AAACtrlP++}}}
 "++AAA+[10F2]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        let g:asyncrun_open = 15
         inoremap <F1> <ESC>
         nnoremap <F1> <ESC>
         vnoremap <F1> <ESC>
@@ -1784,7 +1847,7 @@ call plug#end()
         nnoremap <F12> :call quickmenu#toggle(0)<CR>
         "==========================================================================================
 "++AAA-[10F2]++}}}
-"++AAA11-[Ssearch]-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+"++AAA11-[#SEARCH]-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "==========================================================================================
         function! s:VSetSearch()
                 let temp = @@
@@ -1830,7 +1893,7 @@ call plug#end()
         " :Pydoc foo.bar.baz (e.g. :Pydoc re.compile)
         " Or search a word (uses pydoc -k) in the documentation by typing:
         " :PydocSearch foobar (e.g. :PydocSearch socket)
-        "====================[Ssearch]=============================================
+        "====================[#SEARCH]=============================================
         nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
         nnoremap ff :NV <C-r><C-w><CR> | wincmd p
         nnoremap FF :FFRg <C-r><C-w><CR> | wincmd p
@@ -1842,15 +1905,40 @@ call plug#end()
         "------------------------------------------------------------------
         " nnoremap oo :call CscopeFind('f', expand('<cword>'))<CR>
         "==================================================================
-"++AAA11++Ssearch++}}}
-"++AAA12++[iInoremap]+++[VimOmni]=++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+"++AAA11++[#SEARCH]++}}}
+
+"++AAA12++[#IMODE]+++[VimOmni]=++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        silent! set complete& completeopt=menu infercase noshowfulltag
+        "=======NewBatleUlti======
+        " set completeopt+=menu
+        " set completeopt+=preview
+        " 'completefunc' 'cfu'	string	(default: empty)
+        " 'completeopt' 'cot'	string	(default: "menu,preview")
+        "-----------------------------------------------------------------------------------
+        "set completeopt=menuone,menu,longest,preview
+        "----------------------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        " set complete=.,w,b,t,i,u,kspell
+        "            | | | | | | |
+        "            | | | | | | `-dict
+        "            | | | | | `-unloaded buffers
+        "            | | | | `-include files
+        "            | | | `-tags
+        "            | | `-other loaded buffers
+        "            | `-windows buffers
+        "            `-the current buffer
+        " set complete+=k
+        "==================================================================================
+        "==================================================================================
         inoremap <silent> <C-o> <C-x><C-o>
         inoremap <silent> <C-d> <C-x><C-d>
         inoremap <silent> <C-f> <C-x><C-f>
+        inoremap <silent> <C-v> <C-x><C-v>
+        inoremap <silent> <C-]> <C-x><C-]>
+        inoremap <silent> <C-0> <C-x><C-k>
         "inoremap <silent> <C-l> <C-x><C-l>
-        "inoremap <silent> <C-k> <C-x><C-k>
-        "inoremap <silent> <C-]> <C-x><C-]>
         "inoremap <silent> <C-u> <C-x><C-u>
+
         "==================================================================================
         " set Ctrl+j in insert mode, like VS.Net
         " imap <C-j> <C-X><C-O>
@@ -2119,6 +2207,7 @@ call plug#end()
 "++AAA17Coc++}}}
 "++AAA18-[#DEO]-jedi-LSP-CORE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         source ~/git/bTest/sPot/s9legoDeo.vim
+        "----------------------------------------------------------------------------------
         let g:SuperTabContextDefaultCompletionType = '<c-n>'
         let g:SuperTabDefaultCompletionType = '<C-n>'
         "----------------------------------------------------------------------------------
@@ -2159,8 +2248,6 @@ call plug#end()
         autocmd! FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
         autocmd! FileType ruby setlocal omnifunc=rubycomplete#Complete
         autocmd! FileType haskell setlocal omnifunc=necoghc#omnifunc
-        set completeopt+=menu
-        set completeopt+=preview
         "==========================================================================================
         "-CHECK-It-TODO-recheck
         autocmd! FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -2198,7 +2285,7 @@ call plug#end()
         augroup END
         "==========================================================================================
         autocmd! BufEnter * :call BookmarkMapKeys()
-        autocmd! BufEnter * :TableModeToggle
+        autocmd! BufEnter *.*DeoLc.vim :TableModeToggle
         "==========================================================================================
         augroup qs_colors
                 autocmd!
@@ -2226,6 +2313,17 @@ call plug#end()
         au! FocusLost * :silent! wall
         "==========================================================================================
         autocmd BufEnter * call halo#run({'intervals': [100, 300, 600, 300, 100]})
+        "==========================================================================================
+        " Most prefer to automatically switch to the current file directory when
+        " a new buffer is opened; to prevent this behavior, add the following to
+        " your .vimrc.before.local file:
+        "   let g:spf13_no_autochdir = 1
+        if !exists('g:spf13_no_autochdir')
+                autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+                " Always switch to the current file directory
+
+        endif
+        "-Move to the directory each buffer
+        " autocmd  BufEnter * silent! lcd %:p:h
 
 "++AAA19-[#AutoCMD]++}}}
-

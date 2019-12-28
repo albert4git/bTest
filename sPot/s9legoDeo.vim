@@ -17,7 +17,7 @@
         let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-6.0/lib/libclang.so.1"
         let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
         let g:deoplete#sources#clang#sort_algo = 'priority' " alphabetical
-        "---------------------------------------------------------------------------------- 
+        "----------------------------------------------------------------------------------
         let g:LanguageClient_serverCommands = {
         \ 'cpp': ['clangd'],
         \ 'c': ['ccls'],
@@ -33,7 +33,7 @@
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-"------------------------------------------------------------------------- 
+"-------------------------------------------------------------------------
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "::::::::::::::::::::::::::::DEO-START::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -42,7 +42,7 @@
         "call deoplete#custom#option('refresh_always', v:true)
         "call deoplete#custom#source('jedi', 'is_debug_enabled', 1)
         "call deoplete#enable_logging('DEBUG', 'deoplete.log')
-        "-------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------
         let g:deoplete#enable_at_startup = 1
         let g:deoplete#enable_ignore_case = 1
         let g:deoplete#enable_smart_case = 1
@@ -58,7 +58,7 @@
         let g:deoplete#skip_chars = ['(', ')', '<', '>']
         let g:deoplete#tag#cache_limit_size = 800000
         let g:deoplete#file#enable_buffer_path = 1
-        "-------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------
         let g:deoplete#sources#jedi#statement_length = 30
         let g:deoplete#sources#jedi#show_docstring = 1
         let g:deoplete#sources#jedi#short_types = 1
@@ -69,11 +69,11 @@
         call deoplete#custom#source('_', 'min_pattern_length', 1)
         " let g:autocomplete_deoplete = 'deoplete'
 
-        "-------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------
         " call deoplete#custom#option('auto_complete', v:false)
         " call deoplete#custom#option('manual_complete', v:true)
 
-        "-------------------------------------------------------------------------------- 
+        "--------------------------------------------------------------------------------
         autocmd! FileType python setlocal completeopt-=preview
         "--------------------------------------------------------------------------------
         autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -100,8 +100,9 @@
         set omnifunc=syntaxcomplete#Complete
         set completeopt=menu
         "--------------------------------------------------------------------------------
+        call deoplete#custom#source('ultisnips',     'rank', 1000)
         call deoplete#custom#source('neosnippet',    'rank', 690)
-        call deoplete#custom#source('ultisnips',     'rank', 680)
+        call deoplete#custom#source('snipmate',      'rank', 650)
         call deoplete#custom#source('padawan',       'rank', 660)
         call deoplete#custom#source('go',            'rank', 650)
         call deoplete#custom#source('vim',           'rank', 640)
@@ -123,16 +124,21 @@
         call deoplete#custom#source('LanguageClient','mark', 'langCl')
         call deoplete#custom#source('omni',          'mark', 'omni')
         call deoplete#custom#source('flow',          'mark', 'flow')
+        call deoplete#custom#source('padawan',       'mark', 'padawan')
         call deoplete#custom#source('TernJS',        'mark', 'tern')
-        call deoplete#custom#source('go',            'mark', 'go')
+        call deoplete#custom#source('go',            'mark', 'Go')
         call deoplete#custom#source('jedi',          'mark', 'Jedi')
-        call deoplete#custom#source('vim',           'mark', 'vim')
+        call deoplete#custom#source('vim',           'mark', 'nvim')
+        call deoplete#custom#source('snipmate',      'mark', 'snipM')
+        call deoplete#custom#source('ultisnips',     'mark', 'ulti')
         call deoplete#custom#source('neosnippet',    'mark', 'neoSnp')
         call deoplete#custom#source('around',        'mark', 'round')
         call deoplete#custom#source('buffer',        'mark', 'Buf')
         call deoplete#custom#source('tmux-complete', 'mark', 'tmux')
         call deoplete#custom#source('syntax',        'mark', 'synt')
         call deoplete#custom#source('member',        'mark', 'mmbr')
+        call deoplete#custom#source('file',          'mark', 'file')
+        call deoplete#custom#source('dictionary',    'mark', 'dict')
 
 
 
