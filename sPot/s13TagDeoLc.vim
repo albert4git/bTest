@@ -1,6 +1,6 @@
 " File: s12SynDeoLc.vim syn N13SYN bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Sa 28 Dez 2019 04:49:48  CET
+" Lass Modified:      Sa 28 Dez 2019 08:34:20  CET
 "::::::::::::::::::::::::::::[#AutoCMD]::::::::[TOPF]:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 "====================[#NMODE]========[#IMODE]=========[#CMODE]========[#VMODE]======================================
 "======[TableModeToggle]======[10F2]==========[#NAVI]======[#LeaderGuide]=======[#QMENU]====================================
@@ -230,9 +230,6 @@ set conceallevel=0
 "++AAA[#Plugged]++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "=sHappyStart1=
 call plug#begin('~/.config/nvim/plugged/')
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         Plug 'c9s/helper.vim'
         Plug 'c9s/treemenu.vim'
         Plug 'roxma/nvim-yarp'
@@ -253,7 +250,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " Peekaboo extends  and @ in normal mode and <CTRL-R> in insert mode so you
         " can see the contents of the registers.
         " You can toggle fullscreen mode by pressing spacebar.
-        Plug 'junegunn/vim-peekaboo'
+        " Plug 'junegunn/vim-peekaboo'
         "----------------------------------------------------------------------------------
         Plug 'bronson/vim-trailing-whitespace'
         " :FixWhitespace
@@ -333,7 +330,7 @@ call plug#begin('~/.config/nvim/plugged/')
 
         "===================================================================================
         Plug 'adriaanzon/vim-textobj-matchit'
-        "`am` and `im` :if-ifend , for-endfore ..
+        "am , im :if-ifend , for-endfore ..
         "==================================================================================
         Plug 'kana/vim-textobj-diff'
         "==================================================================================
@@ -410,14 +407,17 @@ call plug#begin('~/.config/nvim/plugged/')
                                          \ 'iB'  :1,
                                          \ 'ij'  :1,
                                          \ 'il'  :1,
-                                         \ 'if'  :1,
                                          \ 'io'  :1,
                                          \ 'ic'  :1,
                                          \ 'it'  :1,
                                          \ 'ii'  :1,
-                                         \ 'ix'  :1,
-                                         \ 'ih'  :1,
                                          \ 'im'  :1,
+                                         \ 'ix'  :1,
+                                         \ 'if'  :1,
+                                         \ 'af'  :1,
+                                         \ 'aF'  :1,
+                                         \ 'is'  :1,
+                                         \ 'ih'  :1,
                                          \ 'ip'  :1,
                                          \ 'iz'  :1,
                                          \ 'ie'  :1
@@ -655,11 +655,8 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'ervandew/supertab'
         "----------------------------------------------------------------------------------
         Plug 'MarcWeber/vim-addon-mw-utils'
-        Plug 'garbas/vim-snipmate'
         Plug 'honza/vim-snippets'
         Plug 'SirVer/ultisnips'
-        Plug 'Shougo/neosnippet.vim'
-        Plug 'Shougo/neosnippet-snippets'
         "------------------------------------------------------------------------------------------
         ":Tmux
         Plug 'tmux-plugins/vim-tmux'
@@ -684,7 +681,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:bling_color_fg = 'red'
                 let g:bling_color_bg = 'green'
                 " let g:bling_color_cterm = 'reverse'
-                let g:bling_color_gui_fg = 'red'
+                let g:bling_color_gui_fg = 'cyan'
                 let g:bling_color_gui_bg = 'green'
         "------------------------------------------------------------------------------------------
         Plug 'majutsushi/tagbar'
@@ -730,6 +727,7 @@ call plug#begin('~/.config/nvim/plugged/')
                  let NERDTreeShowHidden=1
                  let NERDTreeKeepTreeInNewTab=1
                  " always open NERDTree in the appropriate directory.
+
                  function! NERDTreeToggleInCurDir()
 
                          if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
@@ -742,6 +740,7 @@ call plug#begin('~/.config/nvim/plugged/')
                                  endif
                          endif
                  endfunction
+
                  let g:NERDDefaultAlign = 'left'
                  let g:NERDTrimTrailingWhitespace = 1
 
@@ -767,8 +766,8 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'easymotion/vim-easymotion'
                 let g:EasyMotion_smartcase = 1
-                let g:EasyMotion_do_mapping = 0 "-Disable default mappings
-                nmap <LocalLeader><LocalLeader> <Plug>(easymotion-overwin-w)
+                "-Disable default mappings
+                let g:EasyMotion_do_mapping = 0
         Plug 'wellle/visual-split.vim'
                 " :VSSplit, :VSSplitAbove or :VSSplitBelow to create the split
                 " :VSResize to execute the VSResize ex command on the selected range
@@ -950,13 +949,13 @@ call plug#begin('~/.config/nvim/plugged/')
         "---FUZZY-SEARCH------------------------------------------------------------------
         "---------------------------------------------------------------------------------
         Plug 'junegunn/vim-easy-align'
+                " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+                " nmap ga <Plug>(EasyAlign)
                 " Start interactive EasyAlign in visual mode (e.g. vipga)
                 xmap ga <Plug>(EasyAlign)
-                " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-                nmap ga <Plug>(EasyAlign)
 
         Plug 'janko-m/vim-test'
-                let test#strategy='neoterm'
+                let test#strategy = 'neoterm'
                 let test#strategy = "dispatch"
         " let test#python#runner = 'pytest'
         " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose'
@@ -971,12 +970,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------------------------------------------
         Plug 'ron89/thesaurus_query.vim'
         let g:tq_mthesaur_file="/home/red/git/bTest/sPot/DYCT/mthesaurGu.txt"
-        "------------------------------
-        "---TRANSPORTER-----------666------------------------------------------------------
-        Plug 'matze/vim-move'
-                let g:move_key_modifier = 'C'
-        "--NewNew---TODO------------------------------------------
-        " Plug 'haya14busa/vim-easyoperator-line'
         "---------------------------------------------------------------------------------
         Plug 'unblevable/quick-scope'
         "--------------------Nice----------------------------------------------------------
@@ -1173,14 +1166,14 @@ call plug#begin('~/.config/nvim/plugged/')
 "++AAAdeo-Jedi++}}}
 
         "----------------------------------------------------------------------------------
-        "================NextBigThig=======================================================
+        "========[#NEXT]========NextBigThig================================================
         "----------------------------------------------------------------------------------
         " Plug 'amiorin/vim-project'
         " Plug 'dmonllao/vim-IDE'
         Plug 'tpope/vim-projectionist'
         " Plug 'dyng/ctrlsf.vim'
         "----------------------------------------------------------------------------------
-        "================NextBigThig2======================================================
+        "========[#NEXT]=======NextBigThig2================================================
         "----------------------------------------------------------------------------------
         " Plug 'tpope/vim-apathy'
         " Plug 'tpope/vim-scriptease'
@@ -1196,7 +1189,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'frazrepo/vim-rainbow'
         "----------------------------------------------------------------------------------
         Plug 'mhinz/vim-grepper'
-        " Plug 'haya14busa/is.vim'
         "----------------------------------------------------------------------------------
         Plug 'justinmk/vim-dirvish'
         "----------------------------------------------------------------------------------
@@ -1211,9 +1203,10 @@ call plug#begin('~/.config/nvim/plugged/')
         "==================================================================================
         "----------------------------------------------------------------------------------
         "-Maxima-
+        "----------------------------------------------------------------------------------
         " Plug 'kovisoft/slimv'
         " Plug 'baruchel/vim-notebook'
-        "----------------------------------------------
+
         " Plug 'jvirtanen/vim-octave'
         " Plug 'ekalinin/Dockerfile.vim'
         " Plug 'hynek/vim-python-pep8-indent'
@@ -1223,20 +1216,21 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'nanotech/jellybeans.vim'
         " Plug 'tweekmonster/helpful.vim', {'on': 'MANUALLY'}
         " Plug 'mhinz/vim-sayonara', {'on': 'Sayonara'}
-        "----------------------------------------------------------------------------------
-        " Plug 'voldikss/vim-search-me'
+
+        "Plug 'voldikss/vim-search-me'
         "Plug 'tyru/caw.vim'
         "Plug 'rudrab/vimf90'
         "Plug 'idanarye/vim-merginal'
-        " Plug 'laurentgoudet/vim-howdoi.git'
+        "Plug 'laurentgoudet/vim-howdoi.git'
         "Plug 'jtmkrueger/vim-c-cr'
 
-        "----------------------------------------------------------------------------------
         "Plug 'notalex/vim-run-live'
         "Plug 'openuado/vimtips-fortune'
         "Plug 'twe4ked/vim-diff-toggle'
         "Plug 'szw/vim-dict'
         "Plug 'amdt/vim-niji'
+        "----------------------------------------------------------------------------------
+        "-vis.vim ??
         "==================================================================================
         Plug 'vim-scripts/mru.vim'
                 let MRU_Max_Entries = 1000
@@ -1450,8 +1444,6 @@ call plug#end()
         call matchadd('customGrayO', '#VMODE')
         call matchadd('customGrayO', '#TextObj')
         call matchadd('customGrayO', '#FZF')
-        call matchadd('customGrayO', '#SMART')
-        call matchadd('customGrayO', '#BEST')
         call matchadd('customGrayO', '#FORMAT')
         call matchadd('customGrayO', '#DEO')
         call matchadd('customGrayO', '#AutoCMD')
@@ -1466,6 +1458,9 @@ call plug#end()
         call matchadd('customGray2', '#FRESH')
         call matchadd('customGray2', '#NOWO')
         call matchadd('customGray2', '#TODO')
+        call matchadd('customGray2', '#SMART')
+        call matchadd('customGray2', '#BEST')
+        call matchadd('customGray2', '#NEXT')
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==================================================================================
         hi MatchParen gui=bold  guifg=yellow guibg=#FF0000
@@ -1566,6 +1561,7 @@ call plug#end()
         "------------------------------------------------------------------------------------------
         nnoremap gv `[v`]
         nnoremap <M-w> viw
+        nnoremap <M-v> viw
         nnoremap <M-\> vip
 
         "--------------------------------------------------------------------------
@@ -1655,40 +1651,20 @@ call plug#end()
         "------------------------------------------------------------------------------------------
         nnoremap <M-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
         "==========================================================================================
-        imap <C-b>    <Plug>(neosnippet_expand_or_jump)
-        smap <C-b>    <Plug>(neosnippet_expand_or_jump)
-        " xmap <C-b>    <Plug>(neosnippet_expand_target)
 
         "================================[#ulti]===================================================
-        " nnoremap <leader>se :UltiSnipsEdit<CR>
-        " let g:UltiSnipsEditSplit = 'horizontal'
-        " let g:UltiSnipsListSnippets = '<nop>'
         " let g:ulti_expand_or_jump_res = 0
-        "---------------------------------------------------------------------------------
-        " let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
         " let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/UltiSnips', $HOME.'/.config/smithers/UltiSnips']
         "---------------------------------------------------------------------------------
         let g:UltiSnipsSnippetDirectories = ['~/git/bTest/sPot/MUltiSnips']
-
         """""""""""""""""""""""""""""""""
-        "  hallo meine freund ulti-box  "
+        " hallo meine [#SMART] ulti-box "
         """""""""""""""""""""""""""""""""
+        let g:UltiSnipsListSnippets ="<c-q>"
         let g:UltiSnipsExpandTrigger="<C-b>"
         let g:UltiSnipsJumpForwardTrigger="<C-b>"
-        let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-        "==========================================================================================
-
-        "==========================================================================================
-        let g:snipMate = {}
-        let g:snipMate.scope_aliases = {}
-        let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
-
-        "---------------------------------------------------------------------------------
-        imap <C-b> <Plug>snipMateNextOrTrigger
-        smap <C-b> <Plug>snipMateNextOrTrigger
-        "==========================================================================================
-        "::::::::::::::::::::::::::::::-2MAGIC2-:::::::::::::::::::::::::::::::::::::::::::::::::::
-        "==========================================================================================
+        let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+        nnoremap <leader>e :UltiSnipsEdit<CR>
         vmap <M-c> :w !cat >> ./zbuf<CR>
         "================================================================================
         " Pressing ,ss will toggle and untoggle spell checking
@@ -1711,6 +1687,7 @@ call plug#end()
                 let g:i += a:0 > 0 ? a:1 : 1
                 return result
         endfunction
+
         " Suppose you want to replace each occurrence of abc with xyz_N
         " where N is an ascending number (xyz_1, xyz_2, xyz_3, and so on).
         " let i = 1 | %s/AAA/\='BBB-' . Inci() .'CCC'/g
@@ -2016,6 +1993,13 @@ call plug#end()
                         endif
                 endfor
         endfunction
+
+        fun Inkk()
+                let result = 3
+                echo result
+                return result
+        endf
+
         "==================================================================================
         command! ShowFunc call ShowFunc()
         function! ShowFunc()
@@ -2285,7 +2269,7 @@ call plug#end()
         augroup END
         "==========================================================================================
         autocmd! BufEnter * :call BookmarkMapKeys()
-        autocmd! BufEnter *.*DeoLc.vim :TableModeToggle
+        autocmd! BufEnter *.vim :TableModeToggle
         "==========================================================================================
         augroup qs_colors
                 autocmd!
@@ -2315,15 +2299,12 @@ call plug#end()
         autocmd BufEnter * call halo#run({'intervals': [100, 300, 600, 300, 100]})
         "==========================================================================================
         " Most prefer to automatically switch to the current file directory when
-        " a new buffer is opened; to prevent this behavior, add the following to
-        " your .vimrc.before.local file:
-        "   let g:spf13_no_autochdir = 1
+        " let g:spf13_no_autochdir = 1
         if !exists('g:spf13_no_autochdir')
                 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
                 " Always switch to the current file directory
 
         endif
-        "-Move to the directory each buffer
-        " autocmd  BufEnter * silent! lcd %:p:h
+        "==========================================================================================
 
 "++AAA19-[#AutoCMD]++}}}

@@ -116,7 +116,7 @@
 
         "--------------------------------------------------------------------------------
         " automatically open and close the popup menu / preview window
-        au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+        " au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
         "--------------------------------------------------------------------------------
         hi customPink     ctermbg=245 ctermfg=White  guibg=#444444 guifg=#ff3f00
@@ -185,7 +185,7 @@ highlight ExtraTabs ctermbg=red guibg=#FF9922
 match ExtraTabs /[^\t]\zs\t\+/
 " Show trailing whitespace:
 " match ErrorMsg '\s\+$'
-match ExtraWhitespace /\s\+$/
+match ExtraWhitespace /\s\+$/   
 
 ""===============================================================================================================
 "match ErrorMsg '/\t'

@@ -1,3 +1,28 @@
+        "==========================================================================================
+
+        "==========================================================================================
+        "---TRANSPORTER-----------666------------------------------------------------------
+        Plug 'matze/vim-move'
+                let g:move_key_modifier = 'C'
+        "--Wozu?---TODO------------------------------------------
+        " Plug 'haya14busa/vim-easyoperator-line'
+        "==========================================================================================
+
+        " Plug 'haya14busa/is.vim'
+        " Plug 'garbas/vim-snipmate'
+        " Plug 'Shougo/neosnippet.vim'
+        " Plug 'Shougo/neosnippet-snippets'
+        "==========================================================================================
+        imap <C-b>    <Plug>(neosnippet_expand_or_jump)
+        smap <C-b>    <Plug>(neosnippet_expand_or_jump)
+        " xmap <C-b>    <Plug>(neosnippet_expand_target)
+        "==========================================================================================
+        let g:snipMate = {}
+        let g:snipMate.scope_aliases = {}
+        let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
+        "---------------------------------------------------------------------------------
+        imap <C-b> <Plug>snipMateNextOrTrigger
+        smap <C-b> <Plug>snipMateNextOrTrigger
 
 " after I improved indenting, highlighting and autocompletion slightly.
 "==================================================================================================================
