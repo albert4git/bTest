@@ -646,6 +646,7 @@ hi! link Keyword GruvboxRed
 
 " Variable name
 hi! link Identifier GruvboxBlue
+hi! link Identifier XboxGelb
 " Function name
 hi! link Function GruvboxGreenBold
 

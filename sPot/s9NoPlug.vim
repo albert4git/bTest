@@ -1,3 +1,16 @@
+        "------------------------------------------------------------------------------------------
+        " Plug 'liquidz/vim-iced', {'for': 'clojure'}
+        "------------------------------------------------------------------------------------------
+        "---Perfection - Continuity------
+        Plug 'terryma/vim-smooth-scroll'
+        noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+        noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+        noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+        noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+        "----------------------------------------------------------------------------------
+        " Plug 'mustache/vim-mustache-handlebars'
+                " - section movement mappings `[[` and `]]`
+                " - text objects `ie` (inside element) and `ae` (around element)
         "----------------------------------------------------------------------------------
         Plug 'dominikduda/vim_timebox'
 

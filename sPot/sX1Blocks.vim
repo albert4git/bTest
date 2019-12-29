@@ -1,4 +1,170 @@
+
+"++AAA++++TYPESCRIPT-BLOCK++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        "===================================================================================
+        "-Plug 'mhartington/nvim-typescript'
+        " Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+        "-autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
+        "===================================================================================
+        "---css-highlight----
+        " Plug 'styled-components/vim-styled-components'
+        " Plug 'moll/vim-node'
+        " Plug 'sareyko/neat.vim'
+        " Plug 'pangloss/vim-javascript'
+        " Plug 'jparise/vim-graphql'
+        " Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript', 'typescript']}
+        " Plug 'MaxMEllon/vim-jsx-pretty'
+        " Plug 'HerringtonDarkholme/yats.vim'
+        " Plug 'leafgarland/typescript-vim', { 'for': [ 'typescript', 'vue' ] }
+        " Plug 'leafgarland/typescript-vim'
+        " Plug 'peitalin/vim-jsx-typescript'
+        "         autocmd BufNewFile,BufRead *.tsx,*.jsx,*.ts,*.js set filetype=typescript.tsx
+        "         - dark red
+        "         hi tsxTagName guifg=#E06C75
+        "         - orange
+        "         hi tsxCloseString guifg=#F99575
+        "         hi tsxCloseTag guifg=#F99575
+        "         hi tsxAttributeBraces guifg=#F99575
+        "         hi tsxEqual guifg=#F99575
+        "         - yellow
+        "         hi tsxAttrib guifg=#F8BD7F cterm=italic
+        "- Javascript Bundle
+        " Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+        " Plug 'othree/yajs.vim', {'for': 'javascript'}
+        " Plug 'posva/vim-vue', {'for': 'vue'}
+        " Plug 'heavenshell/vim-jsdoc'
+        "===================================================================================
+        "===================================================================================
+"++AAA+TYPESCRIPT-BLOCK++}}}
+
+"++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+" ****************************************************************************
+" ----------------------------------------------------------------------------
+" <Enter> | vim-easy-align
+" ----------------------------------------------------------------------------
+let g:easy_align_delimiters = {
+\ '>': { 'pattern': '>>\|=>\|>' }, \ '\': { 'pattern': '\\' },
+\ '/': { 'pattern': '//\+\|/\*\|\*/', 'delimiter_align': 'l', 'ignore_groups': ['!Comment'] },
+\ ']': {
+\     'pattern':       '\]\zs',
+\     'left_margin':   0,
+\     'right_margin':  1,
+\     'stick_to_left': 0
+\   },
+\ ')': {
+\     'pattern':       ')\zs',
+\     'left_margin':   0,
+\     'right_margin':  1,
+\     'stick_to_left': 0
+\   },
+\ 'f': {
+\     'pattern': ' \(\S\+(\)\@=',
+\     'left_margin': 0,
+\     'right_margin': 0
+\   },
+\ 'd': {
+\     'pattern': ' \ze\S\+\s*[;=]',
+\     'left_margin': 0,
+\     'right_margin': 0
+\   }
+\ }
+
+" -------------------------------------------------
+" Start interactive EasyAlign in visual mode
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign with a Vim movement
+nmap ga <Plug>(EasyAlign)
+" xmap <Leader>ga   <Plug>(LiveEasyAlign)
+" -------------------------------------------------
+
+nnoremap <leader>[ vi[<c-v>$: EasyAlign\ g/^\S/<cr>gv =
+nnoremap <leader>{ vi{<c-v>$: EasyAlign\ g/^\S/<cr>gv =
+nnoremap <leader>( vi(<c-v>$: EasyAlign\ g/^\S/<cr>gv =
+
+
+ ------------------+------------------------------------+--------------------
+ With visual map   | Description                        | Equivalent command ~
+ ------------------+------------------------------------+--------------------
+ <Enter><Space>    | Around 1st whitespaces             | :'<,'>EasyAlign\
+ <Enter>2<Space>   | Around 2nd whitespaces             | :'<,'>EasyAlign2\
+ <Enter>-<Space>   | Around the last whitespaces        | :'<,'>EasyAlign-\
+ <Enter>-2<Space>  | Around the 2nd to last whitespaces | :'<,'>EasyAlign-2\
+ <Enter>:          | Around 1st colon ( `key:  value` )   | :'<,'>EasyAlign:
+ <Enter><Right>:   | Around 1st colon ( `key : value` )   | :'<,'>EasyAlign:<l1
+ <Enter>=          | Around 1st operators with =        | :'<,'>EasyAlign=
+ <Enter>3=         | Around 3rd operators with =        | :'<,'>EasyAlign3=
+ <Enter>*=         | Around all operators with =        | :'<,'>EasyAlign*=
+ <Enter>**=        | Left-right alternating around =    | :'<,'>EasyAlign**=
+ <Enter><Enter>=   | Right alignment around 1st =       | :'<,'>EasyAlign!=
+ <Enter><Enter>**= | Right-left alternating around =    | :'<,'>EasyAlign!**=
+ ------------------+------------------------------------+--------------------
+
+" ----------------------------------------------------------------------------
+" ----------------------------------------------------------------------------
+" vim-after-object
+" ----------------------------------------------------------------------------
+silent! if has_key(g:plugs, 'vim-after-object')
+  autocmd VimEnter * silent! call after_object#enable('=', ':', '#', ' ', '|')
+endif
+
+" ----------------------------------------------------------------------------
+" vim-fugitive
+" ----------------------------------------------------------------------------
+nmap     <Leader>g :Gstatus<CR>gg<c-n>
+nnoremap <Leader>gd :Gdiff<CR>
+
+"++AAAx++}}}
+        " ----------------------------------------------------------------------------
+        " SonicTemplate {{{ Easy and high speed coding method.
+            " :Template <Tab>
+            let g:template_vim_template_dir = [
+                        \ '$HOME/.vim/template/SonicTemplate/'
+                        \ ]
+                " template filename rule:
+                " [kind]-[name].[extension]
+                "  `- 'base' or 'snip'
+                " template file keyword: {{_name_}}, {{_cursor_}}, {{_input_:var}} ....
+        " }}}
+        " ----------------------------------------------------------------------------
+
+        " ----------------------------------------------------------------------------
+        " Markdown headings
+        " ----------------------------------------------------------------------------
+        nnoremap <leader>1 m`yypVr=``
+        nnoremap <leader>2 m`yypVr-``
+        nnoremap <leader>3 m`^i### <esc>``4l
+        nnoremap <leader>4 m`^i#### <esc>``5l
+        nnoremap <leader>5 m`^i##### <esc>``6l
+
+        " ----------------------------------------------------------------------------
+        " Moving lines
+        " ----------------------------------------------------------------------------
+        nnoremap <silent> <C-k> :move-2<cr>
+        nnoremap <silent> <C-j> :move+<cr>
+        nnoremap <silent> <C-h> <<
+        nnoremap <silent> <C-l> >>
+        xnoremap <silent> <C-k> :move-2<cr>gv
+        xnoremap <silent> <C-j> :move'>+<cr>gv
+        xnoremap <silent> <C-h> <gv
+        xnoremap <silent> <C-l> >gv
+        xnoremap < <gv
+        xnoremap > >gv
+
+        " ----------------------------------------------------------------------------
+        " <Leader>c Close quickfix/location window
+        " ----------------------------------------------------------------------------
+        nnoremap <leader>c :cclose<bar>lclose<cr>
+
+
+        " Fugitive
+        au FileType gitcommit setlocal completefunc=emoji#complete
+        au FileType gitcommit nnoremap <buffer> <silent> cd :<C-U>Gcommit --amend --date="$(date)"<CR>
+
+        " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+        au BufNewFile,BufRead,InsertLeave * silent! match ExtraWhitespace /\s\+$/
+        au InsertEnter * silent! match ExtraWhitespace /\s\+\%#\@<!$/
+
         "==========================================================================================
+        nnoremap ;t :set tw=70<cr>v<s-}>gq<end>
 
         "==========================================================================================
         "---TRANSPORTER-----------666------------------------------------------------------
@@ -8,6 +174,9 @@
         " Plug 'haya14busa/vim-easyoperator-line'
         "==========================================================================================
 
+        "===!!!=================================
+        " The plugin defines a mapping to delete a surrounding function call (or
+        " Plug 'AndrewRadev/dsf.vim'
         " Plug 'haya14busa/is.vim'
         " Plug 'garbas/vim-snipmate'
         " Plug 'Shougo/neosnippet.vim'
