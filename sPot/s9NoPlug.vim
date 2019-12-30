@@ -1,3 +1,70 @@
+
+        "==========================================================================================
+
+        vnoremap <silent> <M-{> >gv:<C-u>call Enclose('{', 1)<CR>
+        vnoremap <silent> <M-3> >gv:<C-u>call Enclose('#', 1)<CR>
+        vnoremap <silent> <M-/> :<C-u>call Enclose('/', 0)<CR>
+        "==========================================================================================
+        " Visual mode functions
+        function! Enclose(mode, indent)
+                if a:mode == '{'
+                        let start = '{'
+                        let end = '}'
+                elseif a:mode == '/'
+                        if &ft == 'xml' || &ft == 'html'
+                                let start = '<!--'
+                                let end = '-->'
+                        else
+                                let start = '/**'
+                                let end = '/**/'
+                        endif
+                endif
+                let extra = ''
+                if a:indent
+                        let extra = "\<BS>"
+                endif
+                call cursor(line("'<"), col("'<"))
+                execute "normal! O" . extra . start
+                call cursor(line("'>"), col("'>"))
+                execute "normal! o" . extra . end
+        endfunction
+        "==========================================================================================
+        "==========================================================================================
+
+
+        "Err Plug 'psf/black'
+        " Plug 'psf/black', {'for': 'python'}
+                " autocmd BufWritePre *.py execute ':Black'
+                " nnoremap <F9> :Black<CR>
+        "----------------------------------------------------------------------------------
+        Plug 'laurentgoudet/vim-howdoi.git'
+        "==================================================================================
+        Plug 'jtmkrueger/vim-c-cr'
+
+        "==================================================================================
+        " randow
+        " Plug 'amdt/vim-niji'
+        "==================================================================================
+        Plug 'szw/vim-dict'
+        let g:dict_hosts = [
+                                \["dict.org", []],
+                                \["dict.mova.org", []]
+                                \]
+        "----------------------------------------------------------------------------------
+                Plug 'notalex/vim-run-live'
+                let g:run_mode_map = '<Leader>r'
+                let b:run_live_command = 'ruby'
+                let b:run_live_command = 'python'
+                let b:run_live_command = 'sh'
+                " autocmd! FileType coffee let b:run_live_command = 'coffee'
+                let g:run_live_remember_shell_command = 1
+                let g:run_live_results_window_skip_threshold = 2
+        "------------------------------------------------------------------------------------------
+        " Plug 'mhinz/vim-sayonara', {'on': 'Sayonara'}
+        " Plug 'tyru/caw.vim'
+        "------------------------------------------------------------------------------------------
+        "ERR Plug 'openuado/vimtips-fortune'
+        Plug 'nanotech/jellybeans.vim'
         "------------------------------------------------------------------------------------------
         " Plug 'liquidz/vim-iced', {'for': 'clojure'}
         "------------------------------------------------------------------------------------------
