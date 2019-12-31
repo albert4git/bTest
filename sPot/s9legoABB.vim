@@ -8,12 +8,10 @@ ab teh the
 ab fro for
 
 iabbrev yyy "---------------------------------------------------------------------------------
-iabbrev yyy1 "---------------------------------------------------------------------------------------------
-iabbrev yyy2 "--------------------------------------------------------------------------------------------------{{{
-iabbrev yyy3 "++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{<CR>"++AAAx++}}}
-
+iabbrev yyy1 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+iabbrev yyy2 "---------------------------------------------------------------------------------------------
+iabbrev yyy3 "++AAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{<CR>"++AAA++}}}
 iabbrev yyy4 "======================================================================================================
-iabbrev yyy5 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 iabbrev a@    albert@sv.com
 iabbrev c@ Copyright 2018 Albert, all rights reserved.
@@ -55,7 +53,7 @@ call MakeSpacelessIabbrev('gh/',  'http://github.com/')
 call MakeSpacelessIabbrev('ghs/', 'http://github.com/sjl/')
 
 
-"---------------------------------------------------------------------------------- 
+"----------------------------------------------------------------------------------
 let g:wrap_char = '#'
 let g:wrap_char = '"'
 command! BoxIt call BoxIt()
@@ -69,7 +67,7 @@ function! BoxIt() range
         for i in range(len(lines))
                 let ll = len(lines[i])
                 let lines[i] = g:wrap_char . ' ' . lines[i] . repeat(' ', maxl-ll) . ' ' . g:wrap_char
-        endfor  
+        endfor
         let result = [h]
         call extend(result, lines)
         call add(result,h)
@@ -83,54 +81,53 @@ endfunction
 "============================================================
 " call BoxMy("Gold Stuck.chen")
 
-
 command! BoxMyC call BoxMyC()
 
 function! BoxMyC(...)
-        " get the arguments properly 
-        if (a:0 == 0) 
-                let argString = "" 
-                let argChar = "-" 
-        elseif (a:0 == 1) 
-                let argString = a:1 
+        " get the arguments properly
+        if (a:0 == 0)
+                let argString = ""
                 let argChar = "-"
-        elseif (a:0 == 2) 
-                let argString = a:1 
+        elseif (a:0 == 1)
+                let argString = a:1
+                let argChar = "-"
+        elseif (a:0 == 2)
+                let argString = a:1
                 let argChar = strpart(a:2, 0, 1)
-        else 
-                echom "Too many arguments" 
+        else
+                echom "Too many arguments"
                 return
         endif
 
         " Get the characters to use at the beginning and the end of the title
-        let result = substitute(&commentstring, "commentstring=", "", "") 
-        let resultList = split(result, "%s") 
-        let Comment = resultList[0] 
-        if (len(resultList)>1) 
-                let EndComment = resultList[1] 
-        else 
+        let result = substitute(&commentstring, "commentstring=", "", "")
+        let resultList = split(result, "%s")
+        let Comment = resultList[0]
+        if (len(resultList)>1)
+                let EndComment = resultList[1]
+        else
                 let EndComment = Comment
         endif
 
-        " create the comment title 
-        let nb = (80 - strlen(argString) - len(Comment) - len(EndComment)) / 2 
-        let i = 0 
+        " create the comment title
+        let nb = (80 - strlen(argString) - len(Comment) - len(EndComment)) / 2
+        let i = 0
         let commentString = argString
 
-        while i < nb 
-                let i = i + 1 
+        while i < nb
+                let i = i + 1
                 let commentString = argChar . commentString . argChar
         endwhile
 
-        " append one more char if necessary 
-        if strlen(argString) % 2 != 0 
-                let commentString = commentString . argChar 
+        " append one more char if necessary
+        if strlen(argString) % 2 != 0
+                let commentString = commentString . argChar
         endif
 
         let commentString = Comment . commentString . EndComment
 
-        " Put the title in the buffer 
-        exe ":normal o" 
+        " Put the title in the buffer
+        exe ":normal o"
         exe ":normal i" . commentString
 
 endfunction
@@ -139,9 +136,9 @@ endfunction
 " We define <leader>b as a shortcut to create/delete a box.
 " nnoremap <leader>b :<c-u>call BoxC()<cr>
 
-" ############################################################################## 
+" ##############################################################################
 " snow2
-" ############################################################################## 
+" ##############################################################################
 
 command! BoxC call BoxC()
 function! BoxC()
@@ -244,7 +241,7 @@ function! BoxC()
 
 endfunction
 
-"--------------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------------
 
 
 

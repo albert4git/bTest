@@ -1,6 +1,6 @@
 " File: s12SynDeoLc.vim syn N13SYN bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mo 30 Dez 2019 06:21:34  CET
+" Lass Modified:      Mo 30 Dez 2019 08:21:04  CET
 "******************************************************************************************************************
 "%%DeoJedi%%%NextBigThig%%%[Pyy]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%[#SEARCH]%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,11 +19,11 @@
 " +------+-------------------+-----------------+---------+----------+---------------+------------+
 " | Help | [#MainSet]        | [#FZF]          | [#FUNC] | [#FOLDS] | [#SEARCH]     | [#Plugged] |
 " +======+===================+=================+=========+==========+===============+============+
-" | 1    | [TableModeToggle] | :MMBLines F7,\\ |         |          | :ThePS        |            |
+" | 1    | [TableModeToggle] | :FFBLines F7,\\ |         |          | :ThePS        |            |
 " | 2    | [#Coc], [LSP]     | :FZFDefinitions |         |          | :NV           |            |
 " | 3    | [#DEO], deoplete  | :FZFFreshMru    |         |          | :SS           |            |
 " | 4    | snippet,          | :FZFMru         |         |          | :MAg          |            |
-" | 5    | #Templating       | :MGit           |         |          | :MMRg         |            |
+" | 5    | #Templating       | :MGit           |         |          | :FFRg         |            |
 " | 6    | [#FORMAT] #BLACK  | :MLibList       |         |          | :FindNonAscii |            |
 " | 7    | [#TextObj]        | :MPlugHelp      |         |          | ?scope        |            |
 " | 8    | #Linting          | :MTag           |         |          | :TagbarToggle |            |

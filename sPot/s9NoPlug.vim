@@ -1,4 +1,42 @@
 
+        "============[#FRESH]======================================================================
+        " Plug 'vlmarek/DiffGoFile'
+        " nnoremap <silent><buffer> <C-]>      :call DiffGoFile('n')<CR>
+        " nnoremap <silent><buffer> <C-W><C-]> :call DiffGoFile('v')<CR>
+        " nnoremap <silent><buffer> <C-W>]     :call DiffGoFile('v')<CR>
+
+        "---------#FRESH-------------------------------------------------------------------
+        "----------------------------------------------------------------------------------
+        " Plug 'mhinz/vim-lookup'
+        " autocmd FileType vim nnoremap <buffer><silent> <c-]>  :call lookup#lookup()<cr>
+        " autocmd FileType vim nnoremap <buffer><silent> <c-t>  :call lookup#pop()<cr>
+        "==================================================================================
+        "----------------------------------------------------------------------------------
+        "-Maxima-
+        "----------------------------------------------------------------------------------
+        " Plug 'kovisoft/slimv'
+        " Plug 'baruchel/vim-notebook'
+        "----------------------------------------------------------------------------------
+        " Plug 'jvirtanen/vim-octave'
+        "==================================================================================
+        " Plug 'rudrab/vimf90'
+        "==================================================================================
+        " Plug 'voldikss/vim-search-me'
+                " Type <Leader>s to trig searching in normal mode
+                " nmap <silent> <Leader>s <Plug>SearchNormal
+                " Type <Leader>s to search selected text in visual mode
+                " vmap <silent> <Leader>s <Plug>SearchVisual
+                " Type <Leader>S to input the text you want to search in the cmdline
+                " nmap <silent> <Leader>S <Plug>SearchComand
+                " :SearchCurrentText [search engine] Search text under the cursor
+                " :SearchVisualText [search engine]  Search selected text
+                " :Search [search engine] {text}     Search text (using specified search engine)
+                " :SearchInGithub {text}             Search text in GitHub
+                " :SearchInGoogle {text}             Search in Google
+                " :SearchInGithub {text}             Search in GitHub
+                " :SearchInSO {text}                 Search in Stackoverflow
+                " :SearchInZhihu {text}              Search in Zhihu
+                " :SearchInBaidu {text}              Search in Baidu
         "==========================================================================================
 
         vnoremap <silent> <M-{> >gv:<C-u>call Enclose('{', 1)<CR>

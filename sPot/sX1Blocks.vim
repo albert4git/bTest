@@ -1,3 +1,130 @@
+"%%%%%%%%%%%%%%%%%%%%Hierarchie%%%%%%%Structur%%%%%%Beziehung%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{#EasyAlign}
+"---------------------------------------------------------------------------------
+
+
+"---------------------------------------------------------------------------------
+
+"---------------------------------------------------------------------------------
+" Keybinding for visiting the GitHub page of the plugin defined on the current line
+        augroup Vimrc
+                autocmd!
+                autocmd FileType vim nnoremap <silent> gp :call OpenPluginHomepage()<CR>
+        augroup END
+
+        function! OpenPluginHomepage() abort
+                " Get line under cursor
+                let line = getline(".")
+
+                " Matches for instance Plug 'tpope/surround' -> tpope/surround
+                " Greedy match in order to not capture trailing comments
+                let plugin_name = '\w\+ \([''"]\)\(.\{-}\)\1'
+
+                try
+                        let repository = matchlist(line, plugin_name)[2]
+
+                        " Open the corresponding GitHub homepage with $BROWSER
+                        " You need to set the BROWSER environment variable in order for this to work
+                        " For MacOS, you can set the following for opening it in your default
+                        " browser: 'export BROWSER=open'
+                        silent exec "!$BROWSER https://github.com/".repository
+                catch /.*/
+                        echo 'No match for "<user>/<repository>" on this line!'
+                endtry
+        endfunction
+"---------------------------------------------------------------------------------
+nnoremap <silent> <Leader>gf :call PutFixupCommandInPasteBoard()<CR>
+"---------------------------------------------------------------------------------
+
+"---------------------------------------------------------------------------------
+" run test under cursor
+autocmd FileType rust nmap <leader>t :RustTest<CR>
+autocmd FileType rust nmap <leader>T :RustTest!<CR>
+
+
+"---------------------------------------------------------------------------------
+" markdown - no conceal
+let g:vim_markdown_conceal = 0
+" Vim Move <CTRL> binding
+let g:move_key_modifier = 'C'
+" <TAB> to select from popup menu
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" Auto-insert shebangs
+inoreabbrev <expr> #!! "#!/usr/bin/env" . (empty(&filetype) ? '' : ' '.&filetype)
+" quick subtitutions
+nnoremap <leader>s :%s/
+" Echo path current directory
+nnoremap <silent> <F2> :lchdir %:p:h<CR>:pwd<CR>
+" Remove search highlighting
+nnoremap <silent> <BS> :nohlsearch<CR>
+" Quote words under cursor
+nnoremap <leader>" viW<esc>a"<esc>gvo<esc>i"<esc>gvo<esc>3l
+nnoremap <leader>' viW<esc>a'<esc>gvo<esc>i'<esc>gvo<esc>3l
+" <Leader>T = Delete all Trailing space in file
+nnoremap <Leader>t :%s/\s\+$//<CR>:let @/=''<CR>:nohlsearch<CR>
+"---------------------------------------------------------------------------------
+
+
+"---------------------------------------------------------------------------------
+Plug 'ap/vim-buftabline'
+Plug 'valloric/MatchTagAlways'
+let g:mta_set_default_matchtag_color = 0
+let g:mta_use_matchparen_group = 0
+nnoremap <leader>% :MtaJumpToOtherTag<cr>
+if !has('nvim')
+	set viminfo='100,n$HOME/.vim/files/info/viminfo'
+endif
+
+
+"---------------------------------------------------------------------------------
+
+"let g:dein#install_process_timeout=1000
+""eclim
+"let g:EclimCompletionMethod='omnifunc'
+"let g:EclimFileTypeValidate = 0
+"autocmd FileType scala nn <buffer> <leader>i :ScalaImport<cr>
+"autocmd FileType java nn <buffer> <leader>i :JavaImport<cr>
+
+" let g:LanguageClient_serverCommands = {
+"     \ 'rust': ['rls'],
+"     \ 'vue': ['vls'],
+"     \ }
+" let g:LanguageClient_signColumnAlwaysOn = 0
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_diagnosticsList = 'Location'
+
+"---------------------------------------------------------------------------------
+" Use `:Format` for format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` for fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+"---------------------------------------------------------------------------------
+
+" Python providers
+let g:python3_host_prog = '/Users/kim/.pyenv/shims/python3'  " Python 3
+
+"---------------------------------------------------------------------------------
+" FZF
+set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+nnoremap <leader>t :FZF!<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>g :GFiles?<CR>
+"---------------------------------------------------------------------------------
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+"---------------------------------------------------------------------------------
 
 "++AAA++++TYPESCRIPT-BLOCK++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "===================================================================================
@@ -80,7 +207,7 @@ nnoremap <leader>[ vi[<c-v>$: EasyAlign\ g/^\S/<cr>gv =
 nnoremap <leader>{ vi{<c-v>$: EasyAlign\ g/^\S/<cr>gv =
 nnoremap <leader>( vi(<c-v>$: EasyAlign\ g/^\S/<cr>gv =
 
-
+{#EasyAlign}
  ------------------+------------------------------------+--------------------
  With visual map   | Description                        | Equivalent command ~
  ------------------+------------------------------------+--------------------
