@@ -415,12 +415,95 @@ MinimapSync
 vertical help bash-support
 vertical help vim-oblique
 Obliq
+
++---+---+---+
+| y | z | x |
++===+===+===+
+| 1 | 2 | 3 |
++---+---+---+
+| 4 | 5 | 6 |
++---+---+---+
 '<,'>EasyAlign -
 '<,'>EasyAlign  '
 '<,'>EasyAlign ' '
 '<,'>EasyAlign <Space>
 '<,'>EasyAlign 2<Space>
 '<,'>EasyAlign    
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map  H  <Plug>(operator-align-left)                            " to the Right
+map  L  <Plug>(operator-align-right)                           " to the Left
+map  M  <Plug>(operator-align-center)                          " to the Middle
+
+map H  <Plug>(operator-align-left)    " to the Right
+map L    <Plug>(operator-align-right) " to the Left
+map M  <Plug>(operator-align-center)  " to the Middle
+
+map  H  <Plug>(operator-align-left)   " to the Right
+  map L <Plug>(operator-align-right)  " to the Left
+map  M  <Plug>(operator-align-center) " to the Middle
+
+
+call operator#user#define_ex_command('align-left', 'left')     "
+call operator#user#define_ex_command('align-right', 'right')   "
+call operator#user#define_ex_command('align-center', 'center') "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+'<,'>EasyAlign\ g/^\S/
+'<,'>Tabularize
+'<,'>Tabularize 
+'<,'>EasyAlign =
+'<,'>EasyAlign  
+'<,'>EasyAlign  =
+'<,'>EasyAlign  ct
+'<,'>EasyAlign   
+'<,'>BoxC
+'<,'>BoxIt
+'<,'>BoxM
+%normal .|A;
+'<,'>normal i" err- 
+'<,'>normal i-err-
+'<,'>noiirmal i-err-
+'<,'>EasyAlign 2=
+'<,'>EasyAlign 
+'<,'>FlipLR /=/
+'<,'>Join ', ' rk
+'<,'>Join ', ' k
+'<,'>Join ', ' r
+j ', ' 3
+J ', ' 3
+j ', ' -3
+'<,'>Transpose
+'<,'>TransposeCSV ,
+'<,'>Renum
+'<,'>EasyAlign!:
+'<,'>EasyAlign!**:
+'<,'>EasyAlign:=
+'<,'>EasyAlign: =
+'<,'>EasyAlign:
+'<,'>EasyAlign=
+e ../EXAMPLES.md
+Bwipeout
+LGHistory
+Bdelete
+b
+e sX1Blocks.vim
+W
+Grepper -tool rg
+'<,'>EasyAlign
+'<,'>EasyAlign!
+'<,'>EasyAlign!=
+'<,'>EasyAlign!\
+'<,'>EasyAlign**\
+'<,'>EasyAlign\
+'<,'>sort:
+'<,'>B left
+'<,'>B right
+'<,'>Viss
+'<,'>B Sum
+'<,'> 
+'<,'>B !sort!
+
+
 vertical help :Calendar
 vertical help vader
 e myPlug/nHydra.vim
@@ -1909,14 +1992,7 @@ e sGruvbox.vim
 V
 e zbuf
 xx
-'<,'>EasyAlign\ g/^\S/
-'<,'>Tabularize
-'<,'>Tabularize 
-'<,'>EasyAlign =
-'<,'>EasyAlign  
-'<,'>EasyAlign  =
-'<,'>EasyAlign  ct
-'<,'>EasyAlign   
+
 e popa.vim
 Grepack swap
 Gstatus
@@ -1927,33 +2003,6 @@ HL
 '<,'>s/-/*/g
 b 4
 b 7
-'<,'>EasyAlign!:
-'<,'>EasyAlign!**:
-'<,'>EasyAlign:=
-'<,'>EasyAlign: =
-'<,'>EasyAlign:
-'<,'>EasyAlign=
-e ../EXAMPLES.md
-Bwipeout
-LGHistory
-Bdelete
-b
-e sX1Blocks.vim
-W
-Grepper -tool rg
-'<,'>EasyAlign
-'<,'>EasyAlign!
-'<,'>EasyAlign!=
-'<,'>EasyAlign!\
-'<,'>EasyAlign**\
-'<,'>EasyAlign\
-'<,'>sort:
-'<,'>B left
-'<,'>B right
-'<,'>Viss
-'<,'>B Sum
-'<,'> 
-'<,'>B !sort!
 w 1t13TagDeoLc.vim
 '<,'>s/=/-/g
 '<,'>s/=/%/g

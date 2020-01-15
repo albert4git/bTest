@@ -1,17 +1,165 @@
+"++AAA++++TYPESCRIPT-BLOCK++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        "===================================================================================
+        "-Plug 'mhartington/nvim-typescript'
+        " Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+        "-autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
+        "===================================================================================
+        "---css-highlight----
+        " Plug 'styled-components/vim-styled-components'
+        " Plug 'moll/vim-node'
+        " Plug 'sareyko/neat.vim'
+        " Plug 'jparise/vim-graphql'
+        " Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript', 'typescript']}
+        " Plug 'MaxMEllon/vim-jsx-pretty'
+        " Plug 'HerringtonDarkholme/yats.vim'
+        " Plug 'leafgarland/typescript-vim', { 'for': [ 'typescript', 'vue' ] }
+        " Plug 'leafgarland/typescript-vim'
+        " Plug 'peitalin/vim-jsx-typescript'
+        "         autocmd BufNewFile,BufRead *.tsx,*.jsx,*.ts,*.js set filetype=typescript.tsx
+        "         - dark red
+        "         hi tsxTagName guifg=#E06C75
+        "         - orange
+        "         hi tsxCloseString guifg=#F99575
+        "         hi tsxCloseTag guifg=#F99575
+        "         hi tsxAttributeBraces guifg=#F99575
+        "         hi tsxEqual guifg=#F99575
+        "         - yellow
+        "         hi tsxAttrib guifg=#F8BD7F cterm=italic
+        "- Javascript Bundle
+        " Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+        " Plug 'othree/yajs.vim', {'for': 'javascript'}
+        " Plug 'posva/vim-vue', {'for': 'vue'}
+        " Plug 'heavenshell/vim-jsdoc'
+        "===================================================================================
+        "===================================================================================
+"++AAA+TYPESCRIPT-BLOCK++}}}
+
+"++AAA++LC-Jedi-Grab++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        " let g:LanguageClient_autoStart = 1
+        " " let g:LanguageClient_hoverPreview="Never"
+        " let g:LanguageClient_hoverPreview="Always"
+        " let g:LanguageClient_useFloatingHover=1
+        " let g:LanguageClient_serverCommands = {
+        "                         \ 'python': ['/usr/local/bin/pyls'],
+        "                         \ }
+        " let g:LanguageClient_autoStop=1
+        " nnoremap <LspF12> :call LanguageClient_contextMenu()<CR>
+
+        "----------------------------------------------------------------------------------
+        " let g:jedi#force_py_version=3
+        " let g:jedi#documentation_command = "gj"
+        " let g:jedi#completions_enabled = 1
+        " let g:jedi#popup_on_dot = 1
+        " let g:jedi#auto_close_doc = 1
+
+
+"++bbb++}}}
+
+
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        "---------------------------------------------------------
+        " highlight link LspErrorHighlight customAAA
+        " highlight link LspWarningHighlight customBBB
+        " highlight link LspInformationHighlight customGGG
+        " highlight link LspHintHighlight customOOO
+        " highlight link LspErrorText customAAA
+        "---------------------------------------------------------
+        " autocmd FileType python,go nmap gd <plug>(lsp-definition)
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+        " To change the style of the highlighting, you can set or link
+        " `LspErrorHighlight`, `LspWarningHighlight`, `LspInformationHighlight` and
+        " `LspHintHighlight` highlight groups.
+
+        Example: >
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        let g:lsp_virtual_text_enabled = 1
+        let g:lsp_virtual_text_prefix = "> "
+        let g:lsp_highlights_enabled = 0
+        let g:lsp_highlights_enabled = 1
+        highlight link LspErrorHighlight Error
+        let g:lsp_use_event_queue = 0
+        let g:lsp_use_event_queue = 1
+        let g:lsp_highlight_references_enabled = 0
+        let g:lsp_highlight_references_enabled = 1
+        let g:lsp_signature_help_enabled = 0
+        let g:lsp_signature_help_enabled = 1
+        ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        Plug 'prabirshrestha/vim-lsp'
+        let g:lsp_signs_enabled = 0
+        let g:lsp_signs_enabled = 1
+        let g:lsp_signs_priority = 9
+        let g:lsp_signs_priority = 11
+        "---------------------------------------
+        let g:lsp_virtual_text_enabled = 1
+        let g:lsp_virtual_text_prefix = " >!> "
+        let g:lsp_highlights_enabled = 0
+        let g:lsp_highlights_enabled = 1
+        " LspWarningHighlight
+        " LspInformationHighlight
+        let g:lsp_use_event_queue = 0
+        let g:lsp_use_event_queue = 1
+        let g:lsp_highlight_references_enabled = 0
+        let g:lsp_highlight_references_enabled = 1
+        let g:lsp_signature_help_enabled = 0
+        let g:lsp_signature_help_enabled = 1
+        "--------------------------------------------------------------------------------
+        hi custred     ctermbg=red   ctermfg=white  guibg=#ffff97  guifg=#ff0011
+        hi custgreen   ctermbg=green ctermfg=white  guibg=#afffaf  guifg=#0024ff
+        hi custyellow  ctermbg=blue  ctermfg=white  guibg=#afffdf  guifg=#ff5f00
+        "--------------------------------------------------------------------------------
+        highlight link LspErrorHighlight Error
+        highlight link LspErrorHighlight customAAA
+        "----------------------------------------------------------
+        highlight link LspWarningHighlight customBBB
+        "----------------------------------------------------------
+        highlight link LspInformationHighlight customGGG
+        "----------------------------------------------------------
+        highlight link LspHintHighlight customAAA
+        "----------------------------------------------------------
+        highlight link LspErrorText customBBB
+
+        autocmd FileType python,go nmap gd <plug>(lsp-definition)
+
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        let g:lsp_signs_priority_map = {
+                \'LspError': 11,
+                \'LspWarning': 7,
+                \'clangd_LspWarning': 11,
+                \'clangd_LspInformation': 11
+                \}
+
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        function! s:on_lsp_buffer_enabled() abort
+                setlocal omnifunc=lsp#complete
+                setlocal signcolumn=yes
+                nmap <buffer> gd <plug>(lsp-definition)
+                nmap <buffer> <f2> <plug>(lsp-rename)
+        endfunction
+
+        augroup lsp_install
+                au!
+                autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+        augroup END
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
 "%%%%%%%%%%%%%%%%%%%%Hierarchie%%%%%%%Structur%%%%%%Beziehung%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {#EasyAlign}
 "---------------------------------------------------------------------------------
-
-
-"---------------------------------------------------------------------------------
-
 "---------------------------------------------------------------------------------
 " Keybinding for visiting the GitHub page of the plugin defined on the current line
+mao
+
         augroup Vimrc
                 autocmd!
                 autocmd FileType vim nnoremap <silent> gp :call OpenPluginHomepage()<CR>
         augroup END
 
+"---------------------------------------------------------------------------------
         function! OpenPluginHomepage() abort
                 " Get line under cursor
                 let line = getline(".")
@@ -98,10 +246,9 @@ endif
 command! -nargs=0 Format :call CocAction('format')
 
 " Use `:Fold` for fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 "---------------------------------------------------------------------------------
-
 " Python providers
 let g:python3_host_prog = '/Users/kim/.pyenv/shims/python3'  " Python 3
 
@@ -126,42 +273,6 @@ function! s:show_documentation()
 endfunction
 "---------------------------------------------------------------------------------
 
-"++AAA++++TYPESCRIPT-BLOCK++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        "===================================================================================
-        "-Plug 'mhartington/nvim-typescript'
-        " Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-        "-autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
-        "===================================================================================
-        "---css-highlight----
-        " Plug 'styled-components/vim-styled-components'
-        " Plug 'moll/vim-node'
-        " Plug 'sareyko/neat.vim'
-        " Plug 'pangloss/vim-javascript'
-        " Plug 'jparise/vim-graphql'
-        " Plug 'jparise/vim-graphql', {'for': ['graphql', 'javascript', 'typescript']}
-        " Plug 'MaxMEllon/vim-jsx-pretty'
-        " Plug 'HerringtonDarkholme/yats.vim'
-        " Plug 'leafgarland/typescript-vim', { 'for': [ 'typescript', 'vue' ] }
-        " Plug 'leafgarland/typescript-vim'
-        " Plug 'peitalin/vim-jsx-typescript'
-        "         autocmd BufNewFile,BufRead *.tsx,*.jsx,*.ts,*.js set filetype=typescript.tsx
-        "         - dark red
-        "         hi tsxTagName guifg=#E06C75
-        "         - orange
-        "         hi tsxCloseString guifg=#F99575
-        "         hi tsxCloseTag guifg=#F99575
-        "         hi tsxAttributeBraces guifg=#F99575
-        "         hi tsxEqual guifg=#F99575
-        "         - yellow
-        "         hi tsxAttrib guifg=#F8BD7F cterm=italic
-        "- Javascript Bundle
-        " Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-        " Plug 'othree/yajs.vim', {'for': 'javascript'}
-        " Plug 'posva/vim-vue', {'for': 'vue'}
-        " Plug 'heavenshell/vim-jsdoc'
-        "===================================================================================
-        "===================================================================================
-"++AAA+TYPESCRIPT-BLOCK++}}}
 
 "++AAAx++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 " ****************************************************************************

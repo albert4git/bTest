@@ -142,9 +142,9 @@
         hi darkGray       ctermbg=211 guibg=#ffff00  guifg=#8000f0
 
         "--------------------------------------------------------------------------------
-        hi custRed     ctermbg=Red   ctermfg=White  guibg=#ffFF97  guifg=#ff0011
-        hi custGreen   ctermbg=Green ctermfg=White  guibg=#Afffaf  guifg=#0024fF
-        hi custYellow  ctermbg=Blue  ctermfg=White  guibg=#AfffDf  guifg=#ff5f00
+        hi custred     ctermbg=red   ctermfg=white  guibg=#ffff97  guifg=#ff0011
+        hi custgreen   ctermbg=green ctermfg=white  guibg=#afffaf  guifg=#0024ff
+        hi custyellow  ctermbg=blue  ctermfg=white  guibg=#afffdf  guifg=#ff5f00
         "--------------------------------------------------------------------------------
 
         "--------------------------------------------------------------------------------
