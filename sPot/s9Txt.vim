@@ -1,3 +1,61 @@
+"++AAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        function! FuzzyCompleteFunc(findstart, base)
+                let Func = function(get(g:, 'fuzzyfunc', &omnifunc))
+                let results = Func(a:findstart, a:base)
+
+                if a:findstart
+                        return results
+                endif
+
+                if type(results) == type({}) && has_key(results, 'words')
+                        let l:words = []
+                        for result in results.words
+                                call add(words, result.word . ' ' . result.menu)
+                        endfor
+                elseif len(results)
+                        let l:words = results
+                endif
+
+                if len(l:words)
+                        let result = fzf#run({ 'source': l:words, 'down': '~40%', 'options': printf('--query "%s" +s', a:base) })
+
+                        if empty(result)
+                                return [ a:base ]
+                        endif
+
+                        return [ split(result[0])[0] ]
+                else
+                        return [ a:base ]
+                endif
+        endfunction
+
+        "----=---=---=---=---=---=---=---=---=---=---=---=---=---------------------
+        command! FuzzyCompleteFunc call FuzzyCompleteFunc()
+        "-----------------------------------------
+        setlocal completefunc=FuzzyCompleteFunc
+        setlocal completeopt=menu
+        imap <M-8> :call FuzzyCompleteFunc()<cr>
+        imap <C-f>  FuzzyCompleteFunc<cr>
+        "----=---=---=---=---=---=---=---=---=---=---=---=---=---------------------
+
+        " nnoremap <leader>. :AgIn
+        " command! -nargs=+ -complete=dir AgIn call SearchWithAgInDirectory(<f-args>)
+        " autocmd! User FzfStatusLine call <SID>fzf_statusline()
+        " command! WrapWordWith call WrapWordWith()
+        " cabbrev w3 call WrapWordWith()<CR>
+"++bbb++}}}
+
+        "================#NOWO================================================
+        nnoremap <leader>. :AgIn
+        function! SearchWithAgInDirectory(...)
+                call fzf#vim#ag(join(a:000[1:], ' '), extend({'dir': a:1}, g:fzf#vim#default_layout))
+        endfunction
+        command! -nargs=+ -complete=dir AgIn call SearchWithAgInDirectory(<f-args>)
+        "==================================================================
+        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        autocmd FileType ruby :iabbrev <buffer> pry! require 'pry'; binding.pry;
+        autocmd  :iabbrev <buffer> arlog!  ActiveRecord::Base.logger = Logger.new(STDOUT);
+
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         autocmd FileType ruby :iabbrev <buffer> pry! require 'pry'; binding.pry;
         autocmd FileType ruby :iabbrev <buffer> arlog! ActiveRecord::Base.logger = Logger.new(STDOUT);

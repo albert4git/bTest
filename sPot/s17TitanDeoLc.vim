@@ -1,7 +1,7 @@
 "******************************************************************************************************************
 " File: s15SynDeoLc.vim syn N15SYN bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Di 21 Jan 2020 08:45:29  CET
+" Lass Modified:      Mo 27 Jan 2020 01:01:04  CET
 "******************************************************************************************************************
 "******************************************************************************************************************
 "%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%%%%%%%
@@ -41,6 +41,9 @@
 " +-------+--------------+-----------------+---------------------+-------------------+-------------+-----------+
 "******************************************************************************************************************
 "==================================================================================
+"==================================================================================
+"==================================================================================
+"******************************************************************************************************************
 " :Git[!] [args]
 " :Gstatus
 " :Gcommit [args]
@@ -367,16 +370,22 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         "======RepeatMove==================================================================
         Plug 'vim-scripts/repmo.vim'
-        "---Perfection - Continuity------
+                :let repmo_key = ")"
+                :let repmo_revkey = "("
+        "---Perfection--Continuity------
         Plug 'terryma/vim-smooth-scroll'
         "==================================================================================
         Plug 'Shougo/junkfile.vim'
         "==================================================================================
         Plug 'sickill/vim-pasta'
-                let g:pasta_disabled_filetypes = ['python', 'coffee', 'yaml']
-                let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'sh']
+                let g:pasta_disabled_filetypes = ['coffee', 'yaml']
+                let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'python', 'java', 'css', 'vim', 'sh']
                 let g:pasta_paste_before_mapping = ',P'
+                "---Perfection--Continuity------
                 let g:pasta_paste_after_mapping = ',p'
+                "---Perfection--Continuity------
+        "==================================================================================
+        Plug 'mbbill/undotree'
         "==================================================================================
 "++bbb+++++++++++++++ENDPLUG1+++}}}
 "++aaa++#WINPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -650,15 +659,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 xmap aa <Plug>(textobj-sandwich-auto-a)
                 "-----------------------------------------------
                 " [ {(hello) ( noch ) ('Mal') (tomos) } tormos]
-                " f ( noch, mal , nie, mals ) 
-        "==================================================================================
-        Plug 'machakann/vim-swap'
-        let g:swap_no_default_key_mappings = 0
-        "--------------------???---FuncArgsSwap----------------------------------------------------
-        " <-- ah - bh -->
-        " nnoremap ah <Plug>(swap-prev)
-        " nnoremap bh <Plug>(swap-next)
-        " function tofu(a1, a2, a3, a4, a5)
+                " f ( noch, mal , nie, mals )
 
         "===!!!=================================
         "Python text objects
@@ -677,7 +678,7 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:AutoPairsShortcutToggle = '<M-p>'
                 let g:AutoPairsShortcutFastWrap = '<M-e>'
                 let g:AutoPairsShortcutJump = '<M-n>'
-                " let g:AutoPairsShortcutBackInsert = '<M-b>'
+                let g:AutoPairsShortcutBackInsert = '<M-b>'
                 let g:AutoPairsShortcuts = 1
                 let g:AutoPairsMapBS = 1
                 " insert a new indented line if cursor in pairs.
@@ -704,14 +705,39 @@ call plug#begin('~/.config/nvim/plugged/')
         "--[#SMART] <c-a> and <c-x> to toggle true/false, on/off, increment dates weekday
         "--------------------------------------------------
         Plug 'nishigori/increment-activator'
+        " Normal-mode: customized
+        let g:increment_activator_no_default_key_mappings = 1
+        nmap <silent> ab <Plug>(increment-activator-increment)
+        nmap <silent> az <Plug>(increment-activator-decrement)
+        " Insert-mode
+        " imap <silent> <C-a> <Plug>(increment-activator-increment)
+        " imap <silent> <C-x> <Plug>(increment-activator-decrement)
+        let g:increment_activator_filetype_candidates =
+                                \ {
+                                \   '_': [
+                                \     ['info', 'warning', 'notice', 'error'],
+                                \     ['Pythonista', 'PHPer', 'Gopher'],
+                                \   ],
+                                \   'git-rebase-todo': [
+                                \     ['pick', 'reword', 'edit', 'squash', 'fixup', 'exec'],
+                                \   ],
+                                \   'go': [
+                                \     ['true', 'false', 'iota', 'nil'],
+                                \     ['byte', 'complex64', 'complex128'],
+                                \     ['int', 'int8', 'int16', 'int32', 'int64'],
+                                \     ['uint', 'uint8', 'uint16', 'uint32', 'uint64'],
+                                \     ['float32', 'float64'],
+                                \     ['interface', 'struct'],
+                                \   ],
+                                \ }
+
         "==[#OPER]==============================
-        Plug 'kana/vim-operator-user'
+        " Plug 'kana/vim-operator-user'
         "=======================================
 "++bbb+++++++++++++ENDTOBJECT+++++}}}
 "++AAA++#HULK+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         Plug 'airblade/vim-gitgutter'
-
-                let g:gitgutter_signs = 1
+                let g:gitgutter_signs = 0
                 let g:gitgutter_max_signs = 800
                 "--------------------------------------------------
                 let g:gitgutter_map_keys = 0
@@ -719,31 +745,24 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:gitgutter_realtime = 1
                 let g:gitgutter_eager = 1
                 let g:gitgutter_diff_args = '--ignore-space-at-eol'
-                "--------------------------------------------------------------
-                " Performance optimization
+                "--------------------------------------------------
+                "--Performance-optimization---
                 let g:gitgutter_realtime = 0
                 let g:gitgutter_eager = 0
-                "--------------------------------------------------
-                " nnoremap <silent> <Leader>gu :GitGutterRevertHunk<CR>
-                " nnoremap <silent> <Leader>gp :GitGutterPreviewHunk<CR><c-w>j
-                " nnoremap cog :GitGutterToggle<CR>
-                " nnoremap <Leader>gt :GitGutterAll<CR>
         "-------------------------------------------------------------------
         Plug 'gilligan/textobj-gitgutter'
-                " vmap ih <Plug>(textobj-gitgutter-i)
-                " xmap ih <Plug>(textobj-gitgutter-i)
-                " omap ih <Plug>(textobj-gitgutter-i)
+                vmap ih <Plug>(textobj-gitgutter-i)
+                xmap ih <Plug>(textobj-gitgutter-i)
+                omap ih <Plug>(textobj-gitgutter-i)
         "-------------------------------------------------------------------
         "---------HULK--hunk--HUNK--888-------------------------------------
         "-------------------------------------------------------------------
         nmap [c <Plug>(GitGutterPrevHunk)
         nmap ]c <Plug>(GitGutterNextHunk)
-        nmap <silent> ]h :GitGutterNextHunk<CR>
-        nmap <silent> [h :GitGutterPrevHunk<CR>
-        "----------------------------------------
-        nmap ]v <Plug>(GitGutterPreviewHunk)
-        nmap ]s <Plug>(GitGutterStageHunk)
-        nmap ]u <Plug>(GitGutterUndoHunk)
+        " nnoremap cog :GitGutterToggle<CR>
+        " nnoremap <Leader>gt :GitGutterAll<CR>
+        "-------------------------------------------------------------------
+
 "++bbb++++++++++++++ENDHULK++++}}}
 "++AAA++#GIT+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "--???------------------------------------------------------------------------------
@@ -857,7 +876,7 @@ call plug#begin('~/.config/nvim/plugged/')
         let g:side_search_splitter = 'vnew'
         let g:side_search_split_pct = 0.4
         "==================================================================================
-        " Plug 'jesseleite/vim-agriculture'
+        Plug 'jesseleite/vim-agriculture'
         "-:Acks- Plug 'wincent/ferret'
         "==================================================================================
         " Plug 'kien/ctrlp.vim'
@@ -1341,6 +1360,18 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \ }
                 let g:www_default_search_engine = 'google'
         "=================================================================================
+        Plug 'machakann/vim-swap'
+        let g:swap_no_default_key_mappings = 1
+        "--------------------???---FuncArgsSwap----------------------------------------------------
+        " <--,a -,b -->
+        " function tofu(a1, a3, a2, a4, a5)
+        nmap ,a <Plug>(swap-prev)
+        nmap ,b <Plug>(swap-next)
+        " Plug ''
+        "=======================================
+        " Plug 'tmsvg/pear-tree'
+        "=======================================
+        Plug 'dohsimpson/vim-macroeditor'
 "++bbb++++++++++++++++++}}}
 call plug#end()
 "=eHapyEnd=
@@ -1459,8 +1490,8 @@ call plug#end()
 "++AAA++#WRAP++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "----------------------------------------------------------------------------------
                 nnoremap <M-c>  :call WrapWordWith()<CR>
-                nnoremap <M-b>  :call BoxIt()<CR>
-                vnoremap <M-b>  :call BoxIt()<CR>
+                " nnoremap <M-b>  :call BoxIt()<CR>
+                " vnoremap <M-b>  :call BoxIt()<CR>
                 " '<,'>Tabularize /"
                 " '<,'>EasyAlign=
                 " '<,'>EasyAlign 3 \
@@ -1472,21 +1503,15 @@ call plug#end()
         "----------------------------------------------------------------------------------
 "++bbb++}}}
 "++AAA++#NMODE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        nnoremap <Leader>9 :set number!<return>
-        " ---------------------------------------------------------------------------------------
-        " vim-fugitive
-        " -----------------------------------------------------------------------------------------
+        nnoremap <Leader>0 :set number!<return>
         "==========================================================================================
-        nmap     <Leader>gs :Gstatus<CR>gg<c-n>
-        nnoremap <Leader>gd :Gdiff<CR>
-        "==========================================================================================
-        nnoremap <leader>0 :%s/\<<C-r><C-w>\>//g<Left><Left>
+        nmap <Leader>gs :Gstatus<CR>gg<c-n>
+        nmap <Leader>gd :Gdiff<CR>
         "------------------------------------------------------
-        vnoremap <leader>R "vy:%s/<C-r>v//g<Left><Left>
-        "=============================================
-        "hit qq to record, q to stop recording, and Q to apply.
-        nnoremap Q @q
-        vnoremap Q :norm @q<cr>
+        nmap <leader>2 :%s/\<<C-r><C-w>\>//g<Left><Left>
+        "------------------------------------------------------
+        " vnoremap <leader>5 "vy:%s/<C-r>v//g<Left><Left>
+        "==========================================================================================
         "==================V-SEL======================
         nnoremap vv <S-v>
         "=============================================
@@ -1542,24 +1567,23 @@ call plug#end()
         "==========================================================================================
         nnoremap ;d mayiw`a:exe ":Capture !dict -P - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
         nnoremap ,d mayiw`a:exe ":Capture !dict -d fd-eng-deu - $(echo " . @" . "\| recode latin1..utf-8)"<CR>
-        "==========================================================================================
-        nnoremap <Leader>d <Plug>DictSearch
-        nnoremap <Leader>t :!goldendict <C-r><C-w><CR>
-        nnoremap <Leader>s <Plug>(textobj-diff-hunk-n)
-        nnoremap <Leader>x :ThesaurusQueryReplaceCurrentWord<CR>
+        nmap <Leader>d <Plug>DictSearch
+        nmap <Leader>t :!goldendict <C-r><C-w><CR>
+        nmap <Leader>x :ThesaurusQueryReplaceCurrentWord<CR>
         "==========================================================================================
         "vnoremap <unique> <Leader>x "ky:ThesaurusQueryReplace <C-r>k<CR>
-        "nnoremap <LocalLeader>z :ThesaurusQueryReplaceCurrentWord<CR>
-        "==================================================================================
+        "==========================================================================================
+        " nmap <Leader>s <Plug>(textobj-diff-hunk-n)
         "==========================================================================================
         "---PlusMinus------------------------------------------------------------------------------
-        "==========================================================================================
-        nnoremap ( <c-x>:y x\|@x<cr>
-        nnoremap ) <c-a>:y x\|@x<cr>
+        " nnoremap ( <c-x>:y x\|@x<cr>
+        " nnoremap ) <c-a>:y x\|@x<cr>
         "==========================================================================================
         "===Control-] pop open a window and show the tag there.====================================
         "==========================================================================================
         nnoremap <M-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
+
+        "==========================================================================================
         "*********************************#TODO****************************************************
         " Pressing ,ss will toggle and untoggle spell checking
         nnoremap <leader>ss :setlocal spell!<cr>
@@ -1571,9 +1595,6 @@ call plug#end()
         "******************************************************************************************
         "================================[#Ulti]===================================================
         "******************************************************************************************
-        " let g:ulti_expand_or_jump_res = 0
-        " let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/UltiSnips', $HOME.'/.config/smithers/UltiSnips']
-        "---------------------------------------------------------------------------------
         let g:UltiSnipsSnippetDirectories = ['~/git/bTest/sPot/MUltiSnips']
         """""""""""""""""""""""""""""""""
         " hallo meine [#SMART] ulti-box "
@@ -1584,12 +1605,15 @@ call plug#end()
         let g:UltiSnipsJumpBackwardTrigger="<C-k>"
         "---------------------------------------------
         nnoremap <leader>e :UltiSnipsEdit<CR>
+        "==========================================================================================
         "=====www.web.de========================================
-        nnoremap ;o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
-        nnoremap ,o :Wopen <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
+        "===vim-ww===
+        nnoremap ;o :Wopen <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
+        nnoremap ,o :Wsearch <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
         "========================#Unfuc=============================================
         nnoremap fu :syntax sync fromstart<cr>:redraw!<cr>
         nnoremap zu :<c-u>update<cr>
+
 "++bbb++++++++++++NNN+++}}}
 "++AAA++#IMODE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "==========================================================================================
@@ -1673,6 +1697,11 @@ call plug#end()
         "=============================================
         vmap <M-c> :w !cat >> ./zbuf<CR>
         "=============================================
+        "---------------------------------------------
+        nmap hp <Plug>(GitGutterPreviewHunk)
+        nmap hs <Plug>(GitGutterStageHunk)
+        nmap hu <Plug>(GitGutterUndoHunk)
+        "---------------------------------------------
                 vmap     dg  :diffget<CR>
                 vmap     dp  :diffput<CR>
                 nnoremap do  :diffoff!<cr>
@@ -1802,10 +1831,15 @@ call plug#end()
         imap ;; <ESC>
         cmap ;; <ESC>
         vmap ;; <ESC>
-        nmap q <Nop>
-        nnoremap q <Nop>
+        "==========================================================================================
+        " nmap q <Nop>
+        " nnoremap q <Nop>
         nnoremap qq :bd<cr>
         nnoremap qa :wa<cr> :bd<cr>
+        "==========================================================================================
+        "hit qq to record, q to stop recording, and Q to apply.
+        nnoremap Q @q
+        vnoremap Q :norm @q<cr>
         "==========================================================================================
         let g:undoquit_mapping = ';q'
         nnoremap <c-w>c :call undoquit#SaveWindowQuitHistory()<cr><c-w>c
@@ -1925,20 +1959,6 @@ call plug#end()
         let g:CommandTTageIncludeFilenames = 1 " include filenames when matches
         let g:CommandTCancelMap=['<C-x>', '<C-c>'] " multiple alternative mapping.
 "++bbb+++++++++++++++++}}}
-"++AAA++#CtrlP++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        " let g:ctrlp_cmd = 'CtrlPMRU'
-        " let g:ctrlp_map='<c-p>'
-        " let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-        " let g:ctrlp_extensions = ['tag']
-        " let g:ctrlp_match_window_bottom = 0
-        " let g:ctrlp_match_window_reversed = 0
-        " let g:ctrlp_dotfiles = 0
-        " let g:ctrlp_switch_buffer = 1
-        " let g:ctrlp_working_path_mode = 0
-        " let g:ctrlp_open_new_file = 'R'
-        " let g:ctrlp_mruf_max = 250
-        "=============================================
-"++bbb++++++++++++++++++++}}}
 "++AAA++#FOLD++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "-FoldToggle
         " nnoremap <M-space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
@@ -1952,64 +1972,46 @@ call plug#end()
         "=============================================
 "++bbb++++++++++++++++++++}}}
 "++AAA++#FIND++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        nnoremap ss :StmSrch <C-r><C-w><CR> | wincmd p
-        "******************************************************************
-        nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
-        nnoremap ff :NV <C-r><C-w><CR> | wincmd p
-        nnoremap FF :MMRg <C-r><C-w><CR> | wincmd p
-        nnoremap AA :MMAg <C-r><C-w><CR> | wincmd p
-        nnoremap GG :MGit <C-r><C-w><CR> | wincmd p
+                nnoremap <Leader>i :DimInactive<CR>
         "------------------------------------------------------------------
-        nnoremap <Leader>a :Ack <C-r><C-w><CR> | wincmd p
-        "******************************************************************
-        nnoremap OO :call CscopeFindInteractive(expand('<cword>'))<CR>
+                nnoremap ff :NV <C-r><C-w><CR> | wincmd p
+                nnoremap FF :MMRg <C-r><C-w><CR> | wincmd p
+                nnoremap AA :MMAg <C-r><C-w><CR> | wincmd p
+                nnoremap GG :MGit <C-r><C-w><CR> | wincmd p
+                nnoremap SS :SideSearch <C-r><C-w><CR> | wincmd p
         "------------------------------------------------------------------
-        " nnoremap oo :call CscopeFind('f', expand('<cword>'))<CR>
-        "==================================================================
-        "--------------------GREPPER---------------------------------------
-        "==================================================================
-        nnoremap <leader>g :Grepper -tool rg<cr><C-w><CR> | wincmd p
-        nnoremap <leader>G :Grepper -tool rg -buffers<cr>
-        nnoremap <leader>* :Grepper -tool rg -cword -noprompt<cr>
-
-        "==================================================================
-        nnoremap <leader>. :AgIn
-        function! SearchWithAgInDirectory(...)
-                call fzf#vim#ag(join(a:000[1:], ' '), extend({'dir': a:1}, g:fzf#vim#default_layout))
-        endfunction
-        command! -nargs=+ -complete=dir AgIn call SearchWithAgInDirectory(<f-args>)
-
+                nnoremap ss :StmSrch <C-r><C-w><CR> | wincmd p
         "==================================================================
         "--------------------[v*#SEARCH]-----------------------------------
         "==================================================================
-                " find visually selected text
-                function! s:VSetSearch()
-                        let temp = @@
-                        norm! gvy
-                        let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-                        let @@ = temp
-                endfunction
-                vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
-                vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
-        "==========================================================================================
-        "--------------------[v*#SEARCH]-----------------------------------
-        "==========================================================================================
-                vnoremap # :<C-u>MMBLines <C-r>=expand("<cword>")<CR>
-                vnoremap _ :<C-u>MMRg <C-r>=expand("<cword>")<CR>
-                vnoremap * :<C-u>MMAg <C-r>=expand("<cword>")<CR>
+                vnoremap f :<C-u>call <SID>VSearchMe()<CR>
+                vnoremap * :<C-u>MMBLines <C-r>=expand("<cword>")<CR>
+                vnoremap # :<C-u>MMAg <C-r>=expand("<cword>")<CR>
+                vnoremap _ :<C-u>MGit <C-r>=expand("<cword>")<CR>
+                vnoremap - :<C-u>SideSearch <C-r>=expand("<cword>")<CR>
+        "*********************[vKey]***************************************
                 function! s:VSearchMe()
                         let temp = @@
                         norm! gvy
                         let xx ='\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
                         call fzf#vim#ag(xx, fzf#vim#with_preview())
                 endfunction
-                vnoremap * :<C-u>call <SID>VSearchMe()<CR>
-        "===========================================================================================
+        "==================================================================
+        "--------------------GREPPER--Ack----------------------------------
+        "==================================================================
+                nnoremap <leader>g :Grepper -tool rg<cr><C-w><CR> | wincmd p
+                nnoremap <leader>G :Grepper -tool rg -buffers<cr>
+                nnoremap <leader>* :Grepper -tool rg -cword -noprompt<cr>
+                nnoremap <Leader>a :Ack <C-r><C-w><CR> | wincmd p
+        "==================================================================
+        nnoremap OO :call CscopeFindInteractive(expand('<cword>'))<CR>
+        "------------------------------------------------------------------
+        " nnoremap oo :call CscopeFind('f', expand('<cword>'))<CR>
+        "==================================================================
         " return: Any command that lists files can be used as the source
         " call fzf#run(fzf#wrap({'source': 'git ls-files'}))
-        "===========================================================================================
-
-"++bbb+++++++++++EFIND++++++}}}
+        "==================================================================
+"++bbb+++++++++++++EFIND+++}}}
 "++AAA++#PyFunc+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 function! WrapWordWith()
 python3 << endPython
@@ -2042,6 +2044,7 @@ endfunction
 command! WrapWordWith call WrapWordWith()
 cabbrev w3 call WrapWordWith()<CR>
 "++bbb++++++++++++++++++}}}
+
 "++AAA++#FUNC+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 
         function! s:cursor_ping()
@@ -2199,7 +2202,6 @@ cabbrev w3 call WrapWordWith()<CR>
                                 \ 'ctrl-s': 'split',
                                 \ 'ctrl-x': ':Lynx',
                                 \ 'ctrl-v': 'vsplit' }
-
         "======================================================================================================
         "-[Buffers] Jump to the existing window if possible
         let g:fzf_buffers_jump = 1
@@ -2286,7 +2288,6 @@ cabbrev w3 call WrapWordWith()<CR>
                         autocmd FileType fzf call s:fzf_status()
                 augroup END
         endif
-
         "**********************************************************************************************************
         " On :LS!, <bang> evaluates to '!', and '!0' becomes 1
         command! -bang LS call fzf#run(fzf#wrap({'source': 'ls'}, <bang>0))
@@ -2298,7 +2299,6 @@ cabbrev w3 call WrapWordWith()<CR>
         "============================================================================================
         command! -bang -nargs=?  MGit
                                 \ call fzf#run({'source': 'git ls-files', 'sink': 'e', 'right': '40%'})
-
         "**************************************************************************************************
         "****************:Lag mao ~/Docs******************************************************************
         "**************************************************************************************************
@@ -2316,13 +2316,11 @@ cabbrev w3 call WrapWordWith()<CR>
         "============================================================================================
         command! -bang -nargs=?  Mag
                                 \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview(), <bang>0)
-
         "*********************************************************************************
         "**********************:DirAgList ~/Desc******************************************
         "*********************************************************************************
         command! AgLet call fzf#vim#ag('let', {'dir': '~/Desktop/nv402/nvim402/share/nvim/runtime/doc/', 'down': '40%'})
         command! AgSet call fzf#vim#ag('set', {'dir': '~/Desktop/nv402/nvim402/share/nvim/runtime/doc/', 'down': '40%'})
-
         command! AgPlg call fzf#vim#ag('W>', {'dir': '~/.config/nvim/plugged/', 'down': '40%'})
         command! AgPlg1 call fzf#vim#ag(''W>'', {'dir': '~/.config/nvim/plugged/', 'down': '40%'})
         command! AgPlg2 call fzf#vim#ag('E>', {'dir': '~/.config/nvim/plugged/', 'down': '40%'})
@@ -2338,18 +2336,16 @@ cabbrev w3 call WrapWordWith()<CR>
                                 \                 <bang>0 ? fzf#vim#with_preview('up:60%')
                                 \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
                                 \                 <bang>0)
-
         "*********************************************************************************
-        "**********************:BRg! mao **?**-*********************************************
+        "**********************:Brg! mao **?**-*********************************************
         "*********************************************************************************
         " Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
-        command! -bang -nargs=* BRg
+        command! -bang -nargs=* Brg
                                 \ call fzf#vim#grep(
                                 \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
                                 \   <bang>0 ? fzf#vim#with_preview('up:60%')
                                 \           : fzf#vim#with_preview('right:50%:hidden', '?'),
                                 \   <bang>0)
-        "====MMM===================================================================================
         "==========================================================================================
 
 "++bbb+++++++++++EFZF++}}}
@@ -2392,8 +2388,6 @@ cabbrev w3 call WrapWordWith()<CR>
         " imap <expr> <C-j>  deoplete#manual_complete()
         imap <expr> <M-Space>  deoplete#manual_complete()
         "--------------------------------------------------------------------------------
-
-
 "++bbb++++++++++++++++++}}}
 "++AAA++#AUTO+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         " autocmd BufWritePost,FileWritePost *.html call JavascriptLint()
@@ -2475,7 +2469,6 @@ cabbrev w3 call WrapWordWith()<CR>
         if !exists('g:spf13_no_autochdir')
                 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
                 " Always switch to the current file directory
-
         endif
         "==========================================================================================
         command! -nargs=0 JunkfileDay call junkfile#open_immediately(strftime('%Y-%m-%d.txt'))
@@ -2486,35 +2479,29 @@ cabbrev w3 call WrapWordWith()<CR>
 
 "++bbb+++++++++++EAUTO++++++}}}
 "++AAA++#OPER+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-
-                """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                 map  H  <Plug>(operator-align-left)                            " to the Right
-                 map  L  <Plug>(operator-align-right)                           " to the Left
-                 map  M  <Plug>(operator-align-center)                          " to the Middle
-                 call operator#user#define_ex_command('align-left', 'left')     "
-                 call operator#user#define_ex_command('align-right', 'right')   "
-                 call operator#user#define_ex_command('align-center', 'center') "
-                """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+        """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        " map  H  <Plug>(operator-align-left)                            " to the Right
+        " map  L  <Plug>(operator-align-right)                           " to the Left
+        " map  M  <Plug>(operator-align-center)                          " to the Middle
+        " call operator#user#define_ex_command('align-left', 'left')     "
+        " call operator#user#define_ex_command('align-right', 'right')   "
+        " call operator#user#define_ex_command('align-center', 'center') "
+        """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "++bbb++++++++++++++++++}}}
 "++AAA++#IABBR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-
-" insert tab with Shift-Tab
 inoremap <S-Tab> <C-V><Tab>
-
+" insert tab with Shift-Tab
 iabbrev yyy "---------------------------------------------------------------------------------
 iabbrev yy1 ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 iabbrev yy2 "*********************************************************************************************
 iabbrev yy3 "++AAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{<CR>"++bbb++}}}
 iabbrev yy4 "======================================================================================================
 iabbrev yy5 +++++++++++++
-
-        iabbrev xdate <C-r>=strftime("%m/%d/%y")<CR>
-        iabbrev fdate <C-r>=strftime("%B %d, %Y")<CR>
-        iabbrev xtime <C-r>=strftime("%H:%M")<CR>
-        iabbrev ftime <C-r>=strftime("%H:%M:%S")<CR>
-        iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
-
+iabbrev xdate <C-r>=strftime("%m/%d/%y")<CR>
+iabbrev fdate <C-r>=strftime("%B %d, %Y")<CR>
+iabbrev xtime <C-r>=strftime("%H:%M")<CR>
+iabbrev ftime <C-r>=strftime("%H:%M:%S")<CR>
+iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
 "++bbb++++++++++++++++++++}}}
 "++AAA++#TMUX++#FRESH++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 " " Make esc change modes in terminal
@@ -2525,7 +2512,6 @@ iabbrev yy5 +++++++++++++
 "=============================================
 " " Name tmux tabs after file open
 " autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window 'vim | " . expand("%:t") . "'")
-
 "=============================================
 " if has('nvim') " https://github.com/neovim/neovim/issues/2048
 "   nmap <bs> :<c-u>TmuxNavigateLeft<cr>
@@ -2534,21 +2520,15 @@ iabbrev yy5 +++++++++++++
 "++AAA++#CYAN+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         set background=dark
         set termguicolors
-        " source ~/git/bTest/sPot/sJellybeans.vim
-        " source ~/git/bTest/sPot/gruvbox.vim
         source ~/git/bTest/sPot/sGruvbox.vim
         " source MYX/n-badwolf.vim
         " colorscheme desert
-        " colorscheme badwolf
         " colorscheme molokai
         " colorscheme mopkai
         " colorscheme evokai
         " colorscheme inkpot
-        " colorscheme jellybeans
         " colorscheme neonwave
-        " colorscheme gruvbox
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        " hi VertSplit  guifg=#Fd5F00 guibg=#0df6e3
         "=================================================================================
         " source ~/git/bTest/sPot/s9legoCyan.vim
         set listchars=tab:▸\ ,eol:¬,trail:⋅
@@ -2577,8 +2557,8 @@ iabbrev yy5 +++++++++++++
         hi CursorLine    guibg=#000099   gui=underline cterm=underline  guisp=#FF0000
         hi cursorcolumn   ctermbg=16 guibg=#000099
         hi LineNr        ctermbg=17 ctermfg=15   guibg=#5fafdf  guifg=#ffffff
-        ":::::::::[#CYAN]::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "===========================OK1====================================================
+        ":::::::::[#CYAN]::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==================================================================================
         hi customAAA     ctermbg=245 ctermfg=White  guibg=#ffFFB5 guifg=#ff0000 gui=bold
         call matchadd('customAAA', 'AAA')
@@ -2601,7 +2581,6 @@ iabbrev yy5 +++++++++++++
         "==================================================================================
         hi customOOO     ctermbg=245 ctermfg=White  guibg=#ffFFB5 guifg=#ff6A00 gui=bold
         call matchadd('customOOO', 'OOO')
-
         "==================================================================================
         "======================Extra1======================================================
         "==================================================================================
@@ -2693,6 +2672,7 @@ iabbrev yy5 +++++++++++++
         call matchadd('customStar', '*')
         call matchadd('customProz', '%')
 
+        "==================================================================================
         "::::::::::::::::::::::::#ALE::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "==================================================================================
         " *LanguageClient.txt* Language Server Protocol support
@@ -2743,19 +2723,8 @@ iabbrev yy5 +++++++++++++
         nnoremap <silent> <F12> :call LanguageClient#textDocument_rename()<CR>
         nnoremap <F10> :call LanguageClient_contextMenu()<CR>
         ":::::::::::::::::::::::::::::#ALE:::::::::::::::::::::::::::::::::::::::::::::::::
+
 "++bbb++++++ECYAN++}}}
-
-
-
-
-
-
-
-
-
-
-
-
-
+:let @c='yyp'
 
 

@@ -34129,9 +34129,15 @@ I use Alt X to switch between buffers (X - # of buffer).
 VimTip	{{{1 968: Custom keyword completion (works only with Vim 7)
 http://vim.sourceforge.net/tip_view.php?tip_id=
 
-With Vim 7 (still in development), you can use complete code completion using CTRL-X CTRL-U. See :help 'completefunc'.
+With Vim 7 (still in development), you can use complete code completion using
+CTRL-X CTRL-U. See :help 'completefunc'.
 
-With this small script with which you can complete keywords using some kind wildcards. By default '\k\zs' reg-exp is used as wildcard. Usefull if you are using identifiers with mixed case, so aCN expands to anyCrazyName or anotherCodeName, but not AnotherCodeName neither BadCodeName.
+With this small script with which you can complete keywords using some kind
+wildcards. By default '\k\zs' reg-exp is used as wildcard. Usefull if you are
+using identifiers with mixed case, so aCN expands to anyCrazyName or
+anotherCodeName, but not AnotherCodeName neither BadCodeName.
+
+
 
 -- Marian
 
