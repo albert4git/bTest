@@ -1,7 +1,7 @@
 "******************************************************************************************************************
 " File: s15SynDeoLc.vim syn N15SYN bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mo 27 Jan 2020 04:36:16  CET
+" Lass Modified:      Di 28 Jan 2020 09:18:47  CET
 "******************************************************************************************************************
 "******************************************************************************************************************
 "%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%%%%%%%
@@ -340,6 +340,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "======================================
         Plug 'tpope/vim-eunuch'
         "======================================
+        " dog:cat
         " :%S/box{,es}/bag{,s}/g
         Plug 'tpope/vim-abolish'
         "----------------------------------------------------------------------------------
@@ -530,17 +531,53 @@ call plug#begin('~/.config/nvim/plugged/')
         "==========[#LeaderGuide]==========================================================
         Plug 'hecal3/vim-leader-guide'
         "==================================================================================
+        " Presuming you meant vim-lion, and it looks great. I have been using tabular,
+        Plug 'tommcdo/vim-lion'
+        let g:lion_squeeze_spaces = 1
+        Plug 'wellle/targets.vim'
+        "==================================================================================
+        " Bracket completion
+        " Same a delimitMate, also completes unclosed brakcets when pressing enter new line
+        "===========LEX=================================================================
+        " Plug 'cohama/lexima.vim'
+        " autocmd FileType clojure let b:lexima_disabled = 1
+        " let g:lexima_no_default_rules = 1
+        " call lexima#set_default_rules()
+        "==================================================================================
+        " inoremap <expr> ( lexima#expand('b', 'i')
+        " call lexima#add_rule({'char': ')', 'at': '\%#)', 'leave': 1})
+        " call lexima#add_rule({'char': '<BS>', 'at': '(\%#)', 'input': '<BS>', 'delete' : 1})
+        "==================================================================================
+        Plug 'vim-scripts/Emmet.vim'
+        let g:user_emmet_settings = {
+                                \  'indentation' : '  ',
+                                \  'perl' : {
+                                \    'aliases' : {
+                                \      'req' : 'require '
+                                \    },
+                                \    'snippets' : {
+                                \      'use' : "use strict\nuse warnings\n\n",
+                                \      'warn' : "warn \"|\";",
+                                \    }
+                                \  }
+                                \}
+        let g:user_emmet_expandabbr_key = '<c-\>'
+        let g:use_emmet_complete_tag = 1
+        "==================================================================================
+        " div>p#foo
+        " div>p#foo$*2
+        " div>p#foo$*2>div.baran
+        "----------------------------------------------------------------------------------
+
 "++bbb+++++++++++++++ENDBEST+++}}}
 "++AAA++#LLINEPLUG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+
         Plug 'itchyny/lightline.vim'
-        "----------------------------------------
         Plug 'sainnhe/lightline_foobar.vim'
-        "----------------------------------------
         Plug 'mengelbrecht/lightline-bufferline'
-        "----------------------------------------
         Plug 'jacoborus/tender.vim'
-        "----------------------------------------
         Plug 'zefei/vim-wintabs'
+
         "=========================================
         " Plug 'zefei/vim-wintabs-powerline'
         "----Nice-Tabs----------------------------
@@ -668,7 +705,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "-----------------------------------------------------------------------------------
         "---NoAutoClose-YCM-----------------------------------------------------------------
         "-----------------------------------------------------------------------------------
-        Plug 'jiangmiao/auto-pairs'
+        " Plug 'jiangmiao/auto-pairs'
                 "   <M-o> : neline with indentation
                 "   <M-a> : jump to of line
                 "   <M-n> : jump to next pairs
@@ -803,9 +840,8 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------
         " Plug 'vim-scripts/a.vim'
         "---------------------------------------
-        " Plug 'voldikss/vim-hello-word'
-        "---------------------------------------
-        " Plug 'aperezdc/vim-template'
+        Plug 'aperezdc/vim-template'
+        " `g:templates_directory`
         "---------------------------------------
 "++bbb++++++++++++++++++++}}}
 "++AAA++#XMLPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -814,7 +850,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         " HTML / CSS / XML Bundle
         " Plug 'tpope/vim-haml', {'for': ['haml', 'sass', 'scss']}
-        " Plug 'ap/vim-css-color'
         " Plug 'amadeus/vim-xml'
         "------------------------------------------------------------
         Plug 'elzr/vim-json'
@@ -822,6 +857,15 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'mrk21/yaml-vim'
         Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 "++bbb++++++++++++++++++++}}}
+
+"++AAA+#CSS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        " CSS
+        Plug 'JulesWang/css.vim', {'for': 'css'}
+        Plug 'othree/csscomplete.vim', {'for': 'css'}
+        Plug 'ap/vim-css-color', {'for': 'css'}
+        "--------------------------------------------------
+        " Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
+"++bbb++}}}
 "++AAA++#GREP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "-let g:nv_search_paths = ['~/git/bTest/']
         "-let g:nnv_search_paths = ['/media/red/124Black/']
@@ -941,6 +985,7 @@ call plug#begin('~/.config/nvim/plugged/')
 "++AAA++#TMUX++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "----------------------------------------
         ":Tmux
+        "----------------------------------------
         Plug 'tmux-plugins/vim-tmux'
         "----------------------------------------
         " Plug 'christoomey/vim-tmux-navigator'
@@ -952,19 +997,16 @@ call plug#begin('~/.config/nvim/plugged/')
         let g:tmuxline_powerline_separators = 0
         let g:tmuxline_preset = 'minimal'
         let g:tmuxline_theme = 'lightline'
-
-        " stock preset
         let g:tmuxline_preset = 'nightly_fox'
-
         " custom preset with shell commands
         let g:tmuxline_preset = {
-        \'a'    : '#S',
-        \'c'    : ['#(whoami)', '#(uptime  | cut -d " " -f 1,2,3)'],
-        \'win'  : ['#I', '#W'],
-        \'cwin' : ['#I', '#W', '#F'],
-        \'x'    : '#(date)',
-        \'y'    : ['%R', '%a', '%Y'],
-        \'z'    : '#H'}
+                                \'a'    : '#S',
+                                \'c'    : ['#(whoami)', '#(uptime  | cut -d " " -f 1,2,3)'],
+                                \'win'  : ['#I', '#W'],
+                                \'cwin' : ['#I', '#W', '#F'],
+                                \'x'    : '#(date)',
+                                \'y'    : ['%R', '%a', '%Y'],
+                                \'z'    : '#H'}
 "++AAA++++++++++++++++++}}}
 "++AAA++#TREE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "----------------------------------------------------------------------------------
@@ -1023,8 +1065,15 @@ call plug#begin('~/.config/nvim/plugged/')
                 " a,b,c
         "----------------------------------------------------------------------------------
         Plug 'dhruvasagar/vim-table-mode'
+                "-----------------------------------------------
+                "----------.....................................
+                "--------------------...........................
+                "-----------------------------..................
+                "--------------------------------------.........
+                "-----------------------------------------------
                 " Use this option to disable the plugin: 1
                 " let g:loaded_table_mode = 0
+                "-----------------------------------------------
                 let g:table_mode_auto_align = 1
                 let g:table_mode_corner_corner='+'
                 let g:table_mode_header_fillchar='='
@@ -1035,7 +1084,11 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:table_mode_eval_formula_map = '<M-e>'
                 let g:table_mode_cell_text_object_i_map = '<M-i>'
                 let g:table_mode_sort_map = '<M-s>'
+                "-----------------------------------------------
+                "-----------------------------------------------
                 " :TableModeToggle
+                "-----------------------------------------------
+                "-----------------------------------------------
                 " +-------+---------+--------+
                 " | hallo | albert  | montag |
                 " +=======+=========+========+
@@ -1075,35 +1128,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 "let g:bookmark_manage_per_buffer = 1`
                 "let g:bookmark_auto_save_file = '/bookmarks'`
 "++bbb+++++++++++++++++++++}}}
-"++AAA++#EMMET++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        " Plug 'tylerhunt/vim-spark'
-        Plug 'sjl/vim-sparkup'
-        " g:sparkupExecuteMapping (Default: '<c-e>') -
-		let g:sparkupExecuteMapping = '<M-e>' " expand/execute sparkup
-		let g:sparkupNextMapping = '<c-n>' " jump to next empty tag/attribute
-        "----------------------------------------------------------------------------------
-        Plug 'vim-scripts/Emmet.vim'
-        let g:user_emmet_settings = {
-                                \  'indentation' : '  ',
-                                \  'perl' : {
-                                \    'aliases' : {
-                                \      'req' : 'require '
-                                \    },
-                                \    'snippets' : {
-                                \      'use' : "use strict\nuse warnings\n\n",
-                                \      'warn' : "warn \"|\";",
-                                \    }
-                                \  }
-                                \}
-
-        let g:user_emmet_expandabbr_key = '<c-\>'
-        let g:use_emmet_complete_tag = 1
-        "----------------------------------------------------------------------------------
-        " div>p#foo
-        " div>p#foo$*2
-        " div>p#foo$*2>div.baran
-        "----------------------------------------------------------------------------------
-"++bbb+++++++++++++++++++++}}}
 "++AAA++#REPL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         Plug 'jalvesaq/vimcmdline'
                 let cmdline_vsplit      = 1      " Split the window vertically
@@ -1135,6 +1159,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 " highlight link EchoDocFloat Pmenu
 "++bbb+++++++++++++++++++++++}}}
 "++AAA++#DICTPLUG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        "--china-------------------------------------
+        " Plug 'voldikss/vim-hello-word'
         "=================================================================================
         Plug 'voldikss/vim-translate-me'
         "=================================================================================
@@ -1267,7 +1293,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "==================================================================================
         "----------------------------------------------------------------------------------
         " Plug 'google/vim-maktaba'
-        "-configuration of maktaba plugins.
+        "--- configuration of maktaba plugins.
         " Plug 'google/vim-glaive'
         "         let g:myplugin_enablefeature = 1
         "         let g:myplugin_defaultdir = $HOME
@@ -1373,11 +1399,7 @@ call plug#begin('~/.config/nvim/plugged/')
         nmap ,a <Plug>(swap-prev)
         nmap ,b <Plug>(swap-next)
         " Plug ''
-        "=======================================
-        " Plug 'tmsvg/pear-tree'
-        "=======================================
-        Plug 'dohsimpson/vim-macroeditor'
-"++bbb++++++++++++++++++}}}
+"++bbb+++++++++++++++++++++}}}
 call plug#end()
 "=eHapyEnd=
 "++AAA++#LLINE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
