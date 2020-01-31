@@ -1,6 +1,6 @@
 " File: s15SynDeoLc.vim syn N15SYN bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Do 30 Jan 2020 12:03:02  CET
+" Lass Modified:      Fr 31 Jan 2020 07:10:41  CET
 "++AAA++#TAG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%
 "*******************************************Extra1***********************************************************
@@ -33,37 +33,8 @@
 " | 9 |               | :               |                     |                  |            |          |
 " | 9 |               | :               | ABOLISH             |                  |            |          |
 " +---+---------------+-----------------+---------------------+------------------+------------+----------+
-"++++++++++++++++++++++++++++++++++bbb++}}}
-"++AAA++:EX++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-"==================================================================================
-" :Git[!] [args]
-" :Gstatus
-" :Gcommit [args]
-" :Gedit/:Gsplit/:Gvsplit/:Gtabedit/:Gpedit [revision]
-" :Gwrite/:Gwq {path}
-" :Gmove {destination}
-" :Gremove
-" :{range}Gread [revision]/[args]
-" :Gdiff/:Gsdiff/:Gvdiff [revision]
-" :Ggrep/:Glgrep [args] -- :grep/:lgrep with git-grep as 'grepprg'
-" :Glog [args] -- load all previous revisions of current file into quickfix
-" :[range]Gblame {flags}
-" :[range]Gbrowse {revision}
-"==================================================================================
-"**************************************************************************************************
-"-characters
-":%s/./&/gn
-"-words
-":%s/\i\+/&/gn
-"-lines
-":%s/^//n
-"-the anywhere
-":%s/the/&/gn
-"-the as a word
-":%s/\<the\>/&/gn
-"-example, to change the date mark in a file:
-":map <F2> msHmtgg/Last [cC]hange:\s*/e+1<CR>"_D"=strftime("%Y %b %d")<CR>p'tzt`s
-"**************************************************************************************************
+"++bbb++++++++++++++++++++++++++++++++++}}}
+"++AAA++:SS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "---------------------------------
 cabbrev SS  SideSearch
 cabbrev MA  MMMarks
@@ -87,6 +58,21 @@ nnoremap <C-p>  :Clap yanks<CR>
 "*********#SPELL****************
 nmap == :call FzfSpell()<CR>
 "---------------------------------
+"==================================================================================
+" :Git[!] [args]
+" :Gstatus
+" :Gcommit [args]
+" :Gedit/:Gsplit/:Gvsplit/:Gtabedit/:Gpedit [revision]
+" :Gwrite/:Gwq {path}
+" :Gmove {destination}
+" :Gremove
+" :{range}Gread [revision]/[args]
+" :Gdiff/:Gsdiff/:Gvdiff [revision]
+" :Ggrep/:Glgrep [args] -- :grep/:lgrep with git-grep as 'grepprg'
+" :Glog [args] -- load all previous revisions of current file into quickfix
+" :[range]Gblame {flags}
+" :[range]Gbrowse {revision}
+"==================================================================================
 "+++++++++++++++++++++++++++++++++++++bbb++}}}
 "++AAA++#PreSet+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 autocmd!
@@ -306,6 +292,9 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
         Plug 'tomtom/tlib_vim'
+        "----------------------------------------------------------------------------------
+        Plug 'vim-scripts/L9'
+        Plug 'vim-scripts/FuzzyFinder'
         "----------------------------------------------------------------------------------
         Plug 'prabirshrestha/async.vim'
         Plug 'skywind3000/asyncrun.vim'
@@ -1431,6 +1420,9 @@ call plug#begin('~/.config/nvim/plugged/')
         nmap ,a <Plug>(swap-prev)
         nmap ,b <Plug>(swap-next)
         " Plug ''
+        "=======================================
+        " Plug 'tmsvg/pear-tree'
+        Plug 'dohsimpson/vim-macroeditor'
 "++bbb+++++++++++++++++++++}}}
 call plug#end()
 "=eHapyEnd=
@@ -1561,8 +1553,11 @@ call plug#end()
         "----------------------------------------------------------------------------------
 "++bbb++}}}
 "++AAA++#NMODE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        noremap ' `
+        noremap ` '
+        "------------------------------------------------------
         nnoremap <Leader>0 :set number!<return>
-        "==========================================================================================
+        "------------------------------------------------------
         nmap <Leader>gs :Gstatus<CR>gg<c-n>
         nmap <Leader>gd :Gdiff<CR>
         "------------------------------------------------------
@@ -1581,7 +1576,7 @@ call plug#end()
         "--------------------------------------------------------------------------
         nnoremap  <Esc><Esc> :<C-u>set nopaste<CR>:nohlsearch<CR>
         "==========================================================================================
-        "---Reselect-last-pasted txt---------------------------------------------------------------
+        "---Reselect-last-pasted txt------x-y-z---------------------------------------------------
         "==========================================================================================
         nnoremap gv `[v`]
         nnoremap <M-w> viw
@@ -1691,7 +1686,7 @@ call plug#end()
         set complete=.,w,b,k,t,i,u,kspell
         "====================================[VimOmni]===================================
         inoremap <silent> <C-v> <C-x><C-v>
-        inoremap <silent> <C-o> <C-x><C-o>
+        " inoremap <silent> <C-o> <C-x><C-o>
         inoremap <silent> <C-]> <C-x><C-]>
         inoremap <silent> <C-d> <C-x><C-d>
         inoremap <silent> <C-f> <C-x><C-f>
@@ -2784,6 +2779,93 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
         ":::::::::::::::::::::::::::::#ALE:::::::::::::::::::::::::::::::::::::::::::::::::
 
 "++bbb++++++ECYAN++}}}
-:let @c='yyp'
+"*********************************************************************************************
+" qa starts a recording in register 'a'. q stops it. @a repeats the recording. 5@a repeats
+"split and join
+:let @a='rdd€ku€kupcc'
+"decrement
+:let @b='yyp'
 
 
+" command! -nargs=1 Csv :call CSVH(<args>)
+" :Csv 5 -- highlight fifth column -- call with
+"*********************************************************************************************
+" -- Pull Visually Highlighted text into LHS of a substitute
+:vmap <leader>z :<C-U>%s/\<<c-r>*\>/
+"*********************************************************************************************
+" -- Swap word with next word
+nmap <silent> gw    "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<cr><c-o><c-l>
+
+"++AAA+++:Ex+:EX+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+" qa starts a recording in register 'a'. q stops it. @a repeats the recording. 5@a repeats
+" -- complex diff parts of same file [N]
+" :1,2yank a | 7,8yank b
+" :new | put a | vnew | put b
+"*********************************************************************************************
+" -- inserting line number into file
+" :g/^/exec "s/^/".strpart(line(".")."    ", 0, 4)
+" will comment out lines  _pattern_ 
+" :g/_pattern_/s/^/#/g
+"*********************************************************************************************
+" vim -c "%s/ABC/DEF/ge | update" file1.c -- execute multiple command on a single file
+" vim -s "convert.vim" file.c -- Automate editing of a file (Ex commands in convert.vim)
+" gvim -u NONE -U NONE -N -- load VIM without .vimrc and plugins (clean VIM) e.g. for HUGE files
+"*********************************************************************************************
+" -- format a mysql query
+" :%s#\<from\>\|\<where\>\|\<left join\>\|\<\inner join\>#\r&#g
+" select * from aTable where ID >9
+"*********************************************************************************************
+" -- sub "fred" with contents of register "a"
+" :s/fred/<c-r>a/g
+" -- Search for FRED AND JOE in any ORDER!
+" /.*fred\&.*joe
+" /^[A-J]/
+" /<CTRL-r><CTRL-w>  pull the word under the cursor into search.
+"*********************************************************************************************
+" -- delete html tags, leave text (non-greedy)
+" :%s#<[^>]\+>##g
+" --reverse fields separated : by
+" :s/\(.*\):\(.*\)/\2 -- \1/
+" -- delete multiple duplicate lines [N]
+" :%s/^\(.*\)\(\n\1\)\+$/\1/
+" -- delete duplicate lines
+" :%s/^\(.*\)\n\1$/\1/
+" -- convert yy to Abc-10,11,12 etc
+" :let i=10 | 'd,'bg/Abc/s/yy/\=i/ |let i=i+1
+" -- Swapping first & last column (4 columns)
+" :%s:\(\w\+\)\(.*\s\+\)\(\w\+\)$:\3\2\1:
+" 1 2 3 4
+" 1 2 3 4
+" -- decrement numbers by 3
+" :'<,>'s/\d\+/\=(submatch(0)-3)/
+" -- delete lines not containing string
+" :g!/^dd/d
+" -- Join Lines [N]
+" :g/fred/,/joe/j
+" -- reverse lines right to left (toggles)
+" :set rl!
+" -- reverse lines top to bottom (toggles)
+" :g/^/m0
+" -- Reverse a section a to b
+" :'d,'bg/^/m'b
+" -- duplicate every line
+" :g/^/t.
+" -- copy (transfer) lines matching fred to EOF
+" :g/fred/t$
+" -- copy (transfer) lines matching stage to marker a (cannot use .) [C]
+" :g/stage/t'a
+" -- Automatically underline selecting headings [N]
+" :g/^Chapter/t.|s/./-/g
+" -- append all lines fred to register a
+" :g/fred/y A
+" -- filter lines to a file (file must already exist)
+" :'a,'bg/^Error/ . w >> errors.txt
+" -- Sort each block (note the crucial ;)
+" :g/^$/;/^$/-1!sort
+" -- sort all lines on second column [N]
+" :sort /.*\%2v/
+"---------------------------------
+"-example, to change the date mark in a file:
+":map <F2> msHmtgg/Last [cC]hange:\s*/e+1<CR>"_D"=strftime("%Y %b %d")<CR>p'tzt`s
+"**************************************************************************************************
+"++bbb++++++++++++++++++++++++++++++++++}}} 
