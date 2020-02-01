@@ -1,64 +1,49 @@
+"******************************************************************************************************************
 " File: s15SynDeoLc.vim syn N15SYN bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Sa 01 Feb 2020 08:12:34  CET
-"++AAA++#TAG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-"%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%
-"*******************************************Extra1***********************************************************
-"%%#LeaderGuide%%%#STARTIFY%%%#QMENU%%%#Pyy%%%%%%%#PDOC%%%#DeoJedi%%%#VimOmni%%%#ULTI%%%%%#VimOmni%%%#EXEC%%%
-"%%%%%%%%%%%%%%%%#PreSet%%%%%%%%#PySet%%%%%%%%%%%%%%%%#UNDO%%%%%%%%#MainSet%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-"%%%%%%%%%%%#ADVANCED%%%%%#BEST%%%%%#SMART%%%%%%%%%%%#NOWO%%%%%#NEXT%%%%%#FRESH%%%%#TODO%%%%#ERROR%%%%%%%%%%%
-"*****************************************COMPAS*************************************************************
-"%%%%#LLINE%%%%#SOURCE%%%#WILD%%%%#NMODE%%%#IMODE%%%%#VMODE%%%%#CMODE%%%%#NAVI%%%%#WINMODE%%%%%#F2%%%%%%%%%%%
-"************************************************************************************************************
-"%%%%#HELP%%%%%#DOC%%%%%#FORMAT%%%%%#CommandT%%%%#CtrlSF%%%%%#FOLD%%%%%#FIND%%%%#SEARCH%%%%#FUNC%%%%%#FZF%%%%
-"************************************************************************************************************
-"%%%%#LEADER%%%%%#COC%%%%%#DEO%%%%%#AUTO%%%%#OPER%%%%%%#TMUX%%%%%%#IABBR%%%%#CYAN%%%%#OOO%%%%%%%%%%%%%%%%%%%%
-"************************************************************************************************************
-"%%%%#PYYPLUG%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-"************************************************************************************************************
-" +---+---------------+-----------------+---------------------+------------------+------------+----------+
-" | H | [RUN]         | [FZF]           | [FIND]              | [FUNC]           | [Fugitive] | [EUNUCH] |
-" +===+===============+=================+=====================+==================+============+==========+
-" | 1 | [?]#REPL      | :MMBLines F7,\\ | :                   | :TableModeToggle | :Gwrite    |          |
-" | 2 |               | :FZFDefinitions | :NV                 | :DimInactive     | :Gdiff     |          |
-" | 3 | [?]#Linting   | :FZFFreshMru    | :SS                 | :Clap yanks      | :Gstatus   |          |
-" | 4 | [n]#Jedi      | :FZFMru         | :MAg                | :SignatureListM  | :Glog      |          |
-" | 5 | [x]#LSP       | :MGit           | :MMRg               |                  | :FZF!      |          |
-" | 6 | [t]#Coc       | :MLibList       | :FindNonAscii       |                  | :Buffers   |          |
-" | 7 | [x]#EasyAlign | :MPlugHelp      | ?scope              |                  | :GFiles?   |          |
-" | 8 | [x]#leon      | :MTag           | :TagbarToggle       |                  |            |          |
-" | 9 | []#EndTO      | :MRU            | :AG mao ~/Documents |                  |            |          |
-" | 1 |               | :VSearchMe v*   | :MMLocate           |                  |            |          |
-" | 9 |               | :MMFiles        |                     |                  |            |          |
-" | 9 |               | :               |                     |                  |            |          |
-" | 9 |               | :               | ABOLISH             |                  |            |          |
-" +---+---------------+-----------------+---------------------+------------------+------------+----------+
-"++bbb++++++++++++++++++++++++++++++++++}}}
-"++AAA++:SS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-"---------------------------------
-cabbrev SS  SideSearch
-cabbrev MA  MMMarks
-cabbrev ML  MMLines
-cabbrev MBL MMBLines
-cabbrev MM  FZFMru
-cabbrev MF  MFiles
-cabbrev MS  MMSnippets
-cabbrev MD  FZFDefinitions
-cabbrev MC  MMCommands
-cabbrev MH  MMHelptags
-cabbrev CY  Clap yanks
-cabbrev CJ  Clap jumps
-cabbrev CC  Clap command
-cabbrev CR  Clap registers
-cabbrev CM  Clap marks
-cabbrev CH  Clap hist:
-"---------------------------------
-nnoremap <C-p>  :Clap yanks<CR>
-"---------------------------------
-"*********#SPELL****************
-nmap == :call FzfSpell()<CR>
-"---------------------------------
+" Lass Modified:      Di 28 Jan 2020 09:18:47  CET
+"******************************************************************************************************************
+"******************************************************************************************************************
+"%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%%%%%%%
+"*******************************************Extra1*****************************************************************
+"%%#LeaderGuide%%%#STARTIFY%%%#QMENU%%%#Pyy%%%%%%%#PDOC%%%#DeoJedi%%%#VimOmni%%%#ULTI%%%%%#VimOmni%%%#EXEC%%%%%%%%%
+"*******************************************RAITING****************************************************************
+"%%%%%%%%%%%#ADVANCED%%%%%#BEST%%%%%#SMART%%%%%%%%%%%#NOWO%%%%%#NEXT%%%%%#FRESH%%%%#TODO%%%%#ERROR%%%%%%%%%%%%%%%%%
+"*******************************************TOPF1******************************************************************
+"%%%%%%%%%%%%%%%%#PreSet%%%%%%%%#PySet%%%%%%%%%%%%%%%%#UNDO%%%%%%%%#MainSet%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+"*********************************************2********************************************************************
+"%%%%#LLINE%%%%#SOURCE%%%#WILD%%%%#NMODE%%%#IMODE%%%%#VMODE%%%%#CMODE%%%%#NAVI%%%%#WINMODE%%%%%#F2%%%%%%%%%%%%%%%%%
+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+"%%%%#HELP%%%%%#DOC%%%%%#FORMAT%%%%%#CommandT%%%%#CtrlP%%%%%#FOLD%%%%%#FIND%%%%#SEARCH%%%%#FUNC%%%%%%#FZF%%%%%%%%%%
+"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+"%%%%#LEADER%%%%%#COC%%%%%#DEO%%%%%#AUTO%%%%#OPER%%%%#IABBR%%%%%#TMUX%%%%%#CYAN%%%%%%#OPER%%%%%%%%%%%%%%%%%%%%%%%%%
+"******************************************************************************************************************
+"***=====***============***==ActionTable==***===n_<,-w>=========***=====v_<*>=======***=======================*****
+"******************************************************************************************************************
+" +-------+--------------+-----------------+---------------------+-------------------+-------------+-----------+
+" | #HELP | [RUN]        | [FZF]           | [#FIND]             | [FUNC]            | [#Fugitive] | [#EUNUCH] |
+" +=======+==============+=================+=====================+===================+=============+===========+
+" | 1     | #REPL        | :MMBLines F7,\\ | :ThePS              | :TableModeToggle  | :Gwrite     |           |
+" | 2     |              | :FZFDefinitions | :NV                 | :DimInactive      | :Gdiff      |           |
+" | 3     |              | :FZFFreshMru    | :SS                 | :Clap yanks       | :Gstatus    |           |
+" | 4     |              | :FZFMru         | :MAg                | :SignatureListM.. | :Glog       |           |
+" | 5     |              | :MGit           | :MMRg               |                   | :FZF!       |           |
+" | 6     |              | :MLibList       | :FindNonAscii       |                   | :Buffers    |           |
+" | 7     |              | :MPlugHelp      | ?scope              |                   | :GFiles?    |           |
+" | 8     |              | :MTag           | :TagbarToggle       |                   |             |           |
+" | 9     | [#Linting]   | :MRU            | :AG mao ~/Documents |                   |             |           |
+" | 1     | [#Jedi]      | :VSearchMe v*   | :MMLocate           |                   |             |           |
+" | 9     | [#LSP]       | :MMFiles        |                     |                   |             |           |
+" | 9     | [#Coc]       | :               |                     |                   |             |           |
+" | 9     | [#EasyAlign] | :               |                     |                   |             |           |
+" | 9     | [#leon]      | :               |                     |                   |             |           |
+" | 9     | [#EndTO]     | :               | ABOLISH             |                   |             |           |
+" +-------+--------------+-----------------+---------------------+-------------------+-------------+-----------+
+"******************************************************************************************************************
 "==================================================================================
+"==================================================================================
+"==================================================================================
+"******************************************************************************************************************
 " :Git[!] [args]
 " :Gstatus
 " :Gcommit [args]
@@ -73,7 +58,37 @@ nmap == :call FzfSpell()<CR>
 " :[range]Gblame {flags}
 " :[range]Gbrowse {revision}
 "==================================================================================
-"+++++++++++++++++++++++++++++++++++++bbb++}}}
+"******************************************************************************************************************
+" :%s/./&/gn		characters
+" :%s/\i\+/&/gn		words
+" :%s/^//n		lines
+" :%s/the/&/gn		"the" anywhere
+" :%s/\<the\>/&/gn	"the" as a word
+
+" example, to change the date mark in a file: >
+"    :map <F2> msHmtgg/Last [cC]hange:\s*/e+1<CR>"_D"=strftime("%Y %b %d")<CR>p'tzt`s
+"******************************************************************************************************************
+"---------------------------------
+cabbrev SS  SideSearch
+"---------------------------------
+cabbrev MA  MMMarks
+cabbrev ML  MMLines
+cabbrev MBL MMBLines
+cabbrev MM  FZFMru
+cabbrev MF  MFiles
+cabbrev MS  MMSnippets
+cabbrev MD  FZFDefinitions
+cabbrev MC  MMCommands
+"---------------------------------
+cabbrev CY  Clap yanks
+cabbrev CJ  Clap jumps
+nnoremap <C-p>  :Clap yanks<CR>
+"---------------------------------
+"---------------------------------
+cabbrev MH  MMHelptags
+"*********#SPELL****************
+nmap == :call FzfSpell()<CR>
+"---------------------------------
 "++AAA++#PreSet+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 autocmd!
 hi clear
@@ -245,8 +260,6 @@ set conceallevel=2
         silent! set noautochdir write nowriteany writedelay=0 verbose=0 verbosefile= notildeop noinsertmode
         silent! set foldcolumn=1 nofoldenable foldlevel=0 foldmarker={{{,}}} foldmethod=marker foldminlines=6
         "------------------------------------------------------------------------------------------
-        set backspace=2
-        "------------------------------------------------------------------------------------------
         set linebreak
         set breakindentopt=sbr " showbreak will be handled correctly
         set virtualedit=block
@@ -294,9 +307,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
         Plug 'tomtom/tlib_vim'
-        "----------------------------------------------------------------------------------
-        Plug 'vim-scripts/L9'
-        Plug 'vim-scripts/FuzzyFinder'
         "----------------------------------------------------------------------------------
         Plug 'prabirshrestha/async.vim'
         Plug 'skywind3000/asyncrun.vim'
@@ -354,9 +364,6 @@ call plug#begin('~/.config/nvim/plugged/')
          Plug 'henrik/vim-qargs'
          "-----------------------------------------------------------
          Plug 'AndrewRadev/undoquit.vim'
-        "==================================================================================
-        Plug 'mbbill/undotree'
-        "==================================================================================
         "---c-w+u------
          Plug 'maxbrunsfeld/vim-yankstack'
         "==================================================================================
@@ -378,6 +385,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 "---Perfection--Continuity------
                 let g:pasta_paste_after_mapping = ',p'
                 "---Perfection--Continuity------
+        "==================================================================================
+        Plug 'mbbill/undotree'
         "==================================================================================
 "++bbb+++++++++++++++ENDPLUG1+++}}}
 "++aaa++#WINPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -410,7 +419,7 @@ call plug#begin('~/.config/nvim/plugged/')
 "++bbb++++++++++++++ENDWIN+++}}}
 "++AAA++#COLORPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "----------------------------------------------------------------------------------
-        Plug 'flazz/vim-colorschemes'
+        " Plug 'flazz/vim-colorschemes'
         " Plug 'morhetz/gruvbox'
         "----------------------------------------------------------------------------------
         Plug 'guns/xterm-color-table.vim'
@@ -481,7 +490,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "==================================================================================
         "=====================[#FRESH]===NICE==Pyy=========================================
         "==================================================================================
-        Plug 'vim-scripts/underlinetag'
+        " Plug 'vim-scripts/underlinetag'
         "----------------------------------------------------------------------------------
         " TagHighlight highlight names of class, variable, types in code.
         " Usage: :UpdateTypesFile
@@ -523,16 +532,15 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'hecal3/vim-leader-guide'
         "==================================================================================
         " Presuming you meant vim-lion, and it looks great. I have been using tabular,
-        " glip
         Plug 'tommcdo/vim-lion'
         let g:lion_squeeze_spaces = 1
-        "==================================================================================
         Plug 'wellle/targets.vim'
         "==================================================================================
-        " Same a delimitMate, also completes unclosed brakcets when pressing enter new line
         " Bracket completion
-        Plug 'cohama/lexima.vim'
-        autocmd FileType clojure let b:lexima_disabled = 1
+        " Same a delimitMate, also completes unclosed brakcets when pressing enter new line
+        "===========LEX=================================================================
+        " Plug 'cohama/lexima.vim'
+        " autocmd FileType clojure let b:lexima_disabled = 1
         " let g:lexima_no_default_rules = 1
         " call lexima#set_default_rules()
         "==================================================================================
@@ -555,7 +563,7 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \}
         let g:user_emmet_expandabbr_key = '<c-\>'
         let g:use_emmet_complete_tag = 1
-        "----------------------------------------------------------------------------------
+        "==================================================================================
         " div>p#foo
         " div>p#foo$*2
         " div>p#foo$*2>div.baran
@@ -583,7 +591,9 @@ call plug#begin('~/.config/nvim/plugged/')
 "++bbb++++++++++++++++++++}}}
 "++AAA++#OPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "===================================
+        "-----------------------------------
         Plug 'kana/vim-textobj-user'
+        "-----------------------------------
         "===================================
         Plug 'adriaanzon/vim-textobj-matchit'
         "am , im :if-ifend , for-endfore ..
@@ -611,16 +621,16 @@ call plug#begin('~/.config/nvim/plugged/')
                 "-Plug 'rsrchboy/vim-textobj-heredocs'
                 "---------------------------------------------------
         "==================================================================================
-                Plug 'kana/vim-textobj-function'
-                Plug 'Julian/vim-textobj-brace'
-                Plug 'glts/vim-textobj-indblock'
-                Plug 'kana/vim-textobj-indent'
-                Plug 'kana/vim-textobj-fold'
-                Plug 'beloglazov/vim-textobj-quotes'
-                "----vac---
-                Plug 'coderifous/textobj-word-column.vim'
-                "----vax---
-                Plug 'glts/vim-textobj-comment'
+        Plug 'kana/vim-textobj-function'
+        Plug 'Julian/vim-textobj-brace'
+        Plug 'glts/vim-textobj-indblock'
+        Plug 'kana/vim-textobj-indent'
+        Plug 'kana/vim-textobj-fold'
+        Plug 'beloglazov/vim-textobj-quotes'
+        "----vac---
+        Plug 'coderifous/textobj-word-column.vim'
+        "----vax---
+        Plug 'glts/vim-textobj-comment'
                 let g:textobj_comment_no_default_key_mappings = 1
                 xmap ax <Plug>(textobj-comment-a)
                 omap ax <Plug>(textobj-comment-a)
@@ -631,14 +641,14 @@ call plug#begin('~/.config/nvim/plugged/')
                 xmap iX <Plug>(textobj-comment-big-i)
                 omap iX <Plug>(textobj-comment-big-i)
         "------------------------------------------------
-                Plug 'nelstrom/vim-textobj-rubyblock'
+        Plug 'nelstrom/vim-textobj-rubyblock'
                 let g:textobj_rubyblock_no_default_key_mappings = 1
                 xmap ar  <Plug>(textobj-rubyblock-a)
                 omap ar  <Plug>(textobj-rubyblock-a)
                 xmap ir  <Plug>(textobj-rubyblock-i)
                 omap ir  <Plug>(textobj-rubyblock-i)
         "------------------------------------------------
-                Plug 'junegunn/vim-after-object'
+        Plug 'junegunn/vim-after-object'
                 autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
                 " va=  visual after =
                 " ca=  change after =
@@ -646,8 +656,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 " ya=  yank after =
                 " apple = 'juice'
                 " apple = 'juice'
-        "-----------------OK1----------------------------
-                Plug 'rhysd/vim-textobj-anyblock'
+        "---------------------------------------
+        Plug 'rhysd/vim-textobj-anyblock'
         "==================================================================================
         "----------------------[#TextObj]--------------------------------------------------
         "==================================================================================
@@ -673,10 +683,12 @@ call plug#begin('~/.config/nvim/plugged/')
                                          \ 'iz'  :1,
                                          \ 'ie'  :0
                                          \ }
+        "--------------------------------------------------------------------------
         "==================================================================================
         Plug 'machakann/vim-sandwich'
                 nmap s <Nop>
                 xmap s <Nop>
+        "-------------------------------------------------------------
                 let g:textobj_sandwich_no_default_key_mappings = 1
                 omap ia <Plug>(textobj-sandwich-auto-i)
                 xmap ia <Plug>(textobj-sandwich-auto-i)
@@ -694,6 +706,28 @@ call plug#begin('~/.config/nvim/plugged/')
         "---NoAutoClose-YCM-----------------------------------------------------------------
         "-----------------------------------------------------------------------------------
         " Plug 'jiangmiao/auto-pairs'
+                "   <M-o> : neline with indentation
+                "   <M-a> : jump to of line
+                "   <M-n> : jump to next pairs
+                "   <M-e> : jump to end of pairs.
+                "   Ctrl-V ) : insert ) without trigger the plugin.
+                let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
+                let g:AutoPairsShortcutToggle = '<M-p>'
+                let g:AutoPairsShortcutFastWrap = '<M-e>'
+                let g:AutoPairsShortcutJump = '<M-n>'
+                let g:AutoPairsShortcutBackInsert = '<M-b>'
+                let g:AutoPairsShortcuts = 1
+                let g:AutoPairsMapBS = 1
+                " insert a new indented line if cursor in pairs.
+                let g:AutoPairsMapCR = 0
+                " error in vimwiki <CR> Enter. but use upper inoremap can solve.
+                let g:AutoPairsMapSpace = 0
+                " error in abbreviations <space> auto expand.
+                let g:AutoPairsCenterLine = 1
+                let g:AutoPairsFlyMode = 1
+                let g:AutoPairsMapCR=0
+                let g:AutoPairsMapCh=1
+                let g:AutoPairsDelete = '<M-5>'
         "==================================================================================
         Plug 'alvan/vim-closetag'
         let g:closetag_close_shortcut = '<leader>>'
@@ -702,8 +736,11 @@ call plug#begin('~/.config/nvim/plugged/')
         "==================================================================================
         "{ log (sin [tan( cosin ( <b>'x2'</b> ) ) ] ) }
         "==================================================================================
-        "--[#SMART] <c-a> and <c-x> to toggle true/false, on/off, increment dates weekday
+        "--{#FRESH}----{#NEXT}-------------------------
+        " Plug 'wellle/targets.vim'
         "==================================================================================
+        "--[#SMART] <c-a> and <c-x> to toggle true/false, on/off, increment dates weekday
+        "--------------------------------------------------
         Plug 'nishigori/increment-activator'
         " Normal-mode: customized
         let g:increment_activator_no_default_key_mappings = 1
@@ -737,7 +774,7 @@ call plug#begin('~/.config/nvim/plugged/')
 "++bbb+++++++++++++ENDTOBJECT+++++}}}
 "++AAA++#HULK+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         Plug 'airblade/vim-gitgutter'
-                let g:gitgutter_signs = 1
+                let g:gitgutter_signs = 0
                 let g:gitgutter_max_signs = 800
                 "--------------------------------------------------
                 let g:gitgutter_map_keys = 0
@@ -750,7 +787,6 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:gitgutter_realtime = 0
                 let g:gitgutter_eager = 0
         "-------------------------------------------------------------------
-        "-------------------------------------------------------------------
         Plug 'gilligan/textobj-gitgutter'
                 vmap ih <Plug>(textobj-gitgutter-i)
                 xmap ih <Plug>(textobj-gitgutter-i)
@@ -760,7 +796,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "-------------------------------------------------------------------
         nmap [c <Plug>(GitGutterPrevHunk)
         nmap ]c <Plug>(GitGutterNextHunk)
-        "-------------------------------------------------------------------
         " nnoremap cog :GitGutterToggle<CR>
         " nnoremap <Leader>gt :GitGutterAll<CR>
         "-------------------------------------------------------------------
@@ -784,7 +819,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "--------------------------------------------------------------------------
         Plug 'jreybert/vimagit'
         "===========================================================================
-        " Plug 'junegunn/gv.vim'
+        Plug 'junegunn/gv.vim'
         "   - o or <cr> on a commit to display the content of it
         "   - o or <cr> on commits to display the diff in the range
         "   - O opens a new tab instead
@@ -809,7 +844,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " `g:templates_directory`
         "---------------------------------------
 "++bbb++++++++++++++++++++}}}
-"++AAA++#XMLPLUG++#CSS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+"++AAA++#XMLPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "------------------------------------------------------------
         " Plug 'sukima/xmledit/'
         "----------------------------------------------------------------------------------
@@ -821,30 +856,15 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'cespare/vim-toml'
         Plug 'mrk21/yaml-vim'
         Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+"++bbb++++++++++++++++++++}}}
+
+"++AAA+#CSS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         " CSS
         Plug 'JulesWang/css.vim', {'for': 'css'}
         Plug 'othree/csscomplete.vim', {'for': 'css'}
         Plug 'ap/vim-css-color', {'for': 'css'}
         "--------------------------------------------------
         " Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
-"++bbb++}}}
-"++AAA+#MD++#ORGANIZER++#ORG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        "----------------------------------------------------------------------------------
-        " Plug 'itchyny/calendar.vim'
-        Plug 'tpope/vim-markdown'
-        "----------------------------------------------------------------------------------
-        Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
-        "--DF16----------------------------------------------------------------------------
-        Plug 'mivok/vimtodo'
-        Plug 'hsitz/VimOrganizer'
-        Plug 'xolox/vim-notes'
-        "Plug 'dkarter/bullets.vim'
-                "let g:bullets_enabled_file_types = [
-                "\ 'markdown',
-                "\ 'text',
-                "\ 'scratch'
-                "\]
-
 "++bbb++}}}
 "++AAA++#GREP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "-let g:nv_search_paths = ['~/git/bTest/']
@@ -896,7 +916,7 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \. " --ignore='*.js.map'"
                                 \. " --heading --stats -B 1 -A 4"
         "---------------------------------------------------------
-        "*Can use vnew or new
+        " Can use vnew or new
         let g:side_search_splitter = 'vnew'
         let g:side_search_split_pct = 0.4
         "==================================================================================
@@ -1119,26 +1139,13 @@ call plug#begin('~/.config/nvim/plugged/')
                 let cmdline_outhl       = 1      " Syntax highlight the output
                 let cmdline_auto_scroll = 1      " Keep the cursor at the end of terminal (nvim)
                 let cmdline_app         = {}
-                let cmdline_app['python'] = 'python2'
+                " let cmdline_app['python'] = 'ptipython3'
                 " let cmdline_app['ruby']   = 'pry'
                 " let cmdline_app['sh']     = 'bash'
                 if has('gui_running') || &termguicolors
                         let cmdline_color_input    = '#9e9e9e'
                         let cmdline_color_normal   = '#00afff'
                 endif
-
-        " - `<LocalLeader>s` to start the interpreter.
-        " - `<Space>` to send the current line to the interpreter.
-        " - `<LocalLeader><Space>` to send the current line to the interpreter
-        " - `<LocalLeader>q` to send the quit command to the interpreter.
-        " For languages that can source chunks of code:
-        " - In Visual mode, press:
-        " - `<Space>` to send a selection of text to the interpreter.
-        " - And, in Normal mode, press:
-        " - `<LocalLeader>p` to send from the line to the end of paragraph.
-        " - `<LocalLeader>b` to send block of code between the two closest marks.
-        " - `<LocalLeader>f` to send the entire file to the interpreter.
-
 "++bbb++++++++++++++++EREPL+++}}}
 "++AAA++#ECHODOC+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         Plug 'Shougo/echodoc.vim'
@@ -1195,12 +1202,12 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'nvie/vim-flake8'
         Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
         "==================================================================================
-        " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-        "==================================================================================
         " Plug 'vim-python/python-syntax'
         " let python_highlight_all = 1
         " :Python2Syntax
         " :Python3Syntax
+        "==================================================================================
+        " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
         "===TODO===========================================================================
         " Plug 'SkyLeach/pudb.vim'
         " if has('nvim')
@@ -1246,22 +1253,21 @@ call plug#begin('~/.config/nvim/plugged/')
         "============[#NEXT]========#NextBigThig===========================================
         "----------------------------------------------------------------------------------
         Plug 'tpope/vim-projectionist'
-        "---------------------------------
         " Plug 'amiorin/vim-project'
-        "----#CtrlSF------------------------------------------------------------------------------
-        Plug 'dyng/ctrlsf.vim'
+        " Plug 'dmonllao/vim-IDE'
+        " Plug 'dyng/ctrlsf.vim'
         "----------------------------------------------------------------------------------
         "========[#NEXT]=======#NextBigThig2===============================================
         "----------------------------------------------------------------------------------
-        Plug 'tpope/vim-apathy'
-        Plug 'tpope/vim-scriptease'
-        Plug 'tpope/vim-classpath'
+        " Plug 'tpope/vim-apathy'
+        " Plug 'tpope/vim-scriptease'
+        " Plug 'tpope/vim-classpath'
         "--------[#NEXT]---#MAKE-------------------------------------
         " Plug 'tpope/vim-dispatch'
         " let g:dispatch_compilers = {
         "                         \ 'latex': 'tex',
         "                         \ 'bundle exec': ''}
-"++bbb+++++++++++++++++++++++++++++++++++++++++++}}}
+"++bbb++++++++++++++++++++++}}}
 "++AAA++#NORUN+++#RUN+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         " Plug 'Shougo/neomru.vim'
         "----------------------------------------------------------------------------------
@@ -1285,16 +1291,21 @@ call plug#begin('~/.config/nvim/plugged/')
                 " autocmd BufWritePre * undojoin | Neoformat
                 " augroup END
         "==================================================================================
-        Plug 'google/vim-maktaba'
+        "----------------------------------------------------------------------------------
+        " Plug 'google/vim-maktaba'
         "--- configuration of maktaba plugins.
-        Plug 'google/vim-glaive'
-                let g:myplugin_enablefeature = 1
-                let g:myplugin_defaultdir = $HOME
-                let g:myplugin_weirdmode = 'm'
+        " Plug 'google/vim-glaive'
+        "         let g:myplugin_enablefeature = 1
+        "         let g:myplugin_defaultdir = $HOME
+        "         let g:myplugin_weirdmode = 'm'
+        "----------------------------------------------------------------------------------
         "==================================================================================
-        Plug 'google/vim-syncopate'
-        Plug 'google/vim-codefmt'
-        Plug 'sheerun/vim-polyglot'
+        " Plug 'google/vim-syncopate'
+        "==================================================================================
+        " Plug 'google/vim-codefmt'
+        "----------------------------------------------------------------------------------
+        "=================[#TODO]===========================================================
+        " Plug 'sheerun/vim-polyglot'
 "++bbb++++++++++++++++EFMT++++}}}
 "++AAA++#DOCPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "-222------------------------------------------------------------------------------
@@ -1307,7 +1318,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " apt-get install dictd dict-gcide dict
         "==================================================================================
         Plug 'KabbAmine/zeavim.vim'
-        "==================================================================================
+        "----------------------------------------------------------------------------------
         Plug 'fs111/pydoc.vim', {'external_commands': ['pydoc']}
         let g:ref_pydoc_cmd = 'pydoc'
         let g:ref_pydoc_complete_head = 1
@@ -1319,7 +1330,7 @@ call plug#begin('~/.config/nvim/plugged/')
         " - let g:pydoc_window_lines=0.5
         " let g:pydoc_cmd = '/usr/bin/pydoc'
         " - let g:pydoc_highlight=0
-"++bbb++++++++++++++++++++++++++++++++++}}}
+"++bbb+++++++++++++++++++++}}}
 "++AAA++#ALEPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         " Plug 'w0rp/ale'
         " let g:ale_sign_column_always = 0
@@ -1360,32 +1371,6 @@ call plug#begin('~/.config/nvim/plugged/')
         let g:LanguageClient_diagnosticsEnable = 1
         "=================================================================================
 "**bbb************************}}}
-"++AAA++#Coc++#Vista+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        " Plug 'liuchengxu/vista.vim'
-        " let g:vista_fzf_preview = ['right:50%']
-        " let g:vista#renderer#icons = {
-        "                         \   "function": "\uf794",
-        "                         \   "variable": "\uf71b",
-        "                         \  }
-        " " let g:vista#executive#ctags#support_json_format = 1
-        " let g:vista#executives = ['coc', 'ctags', 'lcn', 'vim_lsp']
-        " let g:vista#executives = ['ale', 'coc', 'ctags', 'lcn', 'vim_lsp']
-        " let g:vista_executive_for = {'php': 'coc', 'java': 'coc', 'typescript': 'coc', 'go': 'coc', 'c': 'coc', 'javascript': 'coc', 'html': 'coc', 'rust': 'coc', 'cpp': 'coc', 'css': 'coc', 'python': 'coc'}
-        " let g:vista_icon_indent = ['╰─🞂 ', '├─🞂 ']
-        " let g:vista_default_executive = 'ctags'
-        " let g:vista_fzf_preview = ['right:50%']
-        " let g:vista#renderer#enable_icon = 1
-        " " By default vista.vim never run if you don't call it explicitly.
-        " " If you want to show the nearest function in your statusline automatically,
-        " autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-        ":::IRENE::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-        " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        "------------------------------------------------------------------------------------------
-        " Plug 'neoclide/coc-jedi', {'do': 'yarn install'}
-        "------------------------------------------------------------------------------------------
-        " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-        "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-"++bbb++++++++++++++++++++++++ECOC++++++}}}
 "++AAA++#WWWPLUG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "===REST===========================================================================
         "send css js to browser !!!
@@ -1408,19 +1393,12 @@ call plug#begin('~/.config/nvim/plugged/')
         "=================================================================================
         Plug 'machakann/vim-swap'
         let g:swap_no_default_key_mappings = 1
-        "--------------------???---FuncArgsSwap-------------------------------------------
+        "--------------------???---FuncArgsSwap----------------------------------------------------
         " <--,a -,b -->
         " function tofu(a1, a3, a2, a4, a5)
         nmap ,a <Plug>(swap-prev)
         nmap ,b <Plug>(swap-next)
         " Plug ''
-        Plug 'sjl/splice.vim'
-        Plug 'sjl/clam.vim'
-        Plug 'vim-scripts/taglist.vim'
-        Plug 'klen/rope-vim'
-        "=======================================
-        " Plug 'tmsvg/pear-tree'
-        Plug 'dohsimpson/vim-macroeditor'
 "++bbb+++++++++++++++++++++}}}
 call plug#end()
 "=eHapyEnd=
@@ -1439,62 +1417,63 @@ call plug#end()
         let g:lightline                  = {}
         let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
         "==================================================================================
-        let g:lightline = {
-                                \ 'colorscheme': 'tender',
-                                \ 'enable': {
-                                \   'statusline': 1,
-                                \   'tabline': 0,
-                                \ },
-                                \ 'active': {
-                                \   'left': [ [ 'mode', 'paste' ],
-                                \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-                                \ },
-                                \ 'inactive': {
-                                \   'left': [
-                                \       [ 'filename' ],
-                                \       [ ],
-                                \   ]
-                                \ },
-                                \ 'mode_map': {
-                                \ 'n' : 'N20',
-                                \ 'i' : 'INSERT',
-                                \ 'R' : 'REPLACE',
-                                \ 'v' : 'VISUAL',
-                                \ 'V' : 'V-LINE',
-                                \ "\<C-v>": 'V-BLOCK',
-                                \ 'c' : 'COMMAND',
-                                \ 's' : 'SELECT',
-                                \ 'S' : 'S-LINE',
-                                \ "\<C-s>": 'S-BLOCK',
-                                \ 't': 'TERMINAL',
-                                \ },
-                                \ 'component_function': {
-                                \   'gitbranch': 'fugitive#head'
-                                \ },
-                                \ 'separator': { 'left': 'L', 'right': 'R' },
-                                \ 'subseparator': { 'left': '|', 'right': '|' }
+                let g:lightline = {
+                                        \ 'colorscheme': 'tender',
+                                        \ 'enable': {
+                                        \   'statusline': 1,
+                                        \   'tabline': 0,
+                                        \ },
+                                        \ 'active': {
+                                        \   'left': [ [ 'mode', 'paste' ],
+                                        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+                                        \ },
+                                        \ 'inactive': {
+                                        \   'left': [
+                                        \       [ 'filename' ],
+                                        \       [ ],
+                                        \   ]
+                                        \ },
+                                        \ 'mode_map': {
+                                        \ 'n' : 'N15SYN',
+                                        \ 'i' : 'INSERT',
+                                        \ 'R' : 'REPLACE',
+                                        \ 'v' : 'VISUAL',
+                                        \ 'V' : 'V-LINE',
+                                        \ "\<C-v>": 'V-BLOCK',
+                                        \ 'c' : 'COMMAND',
+                                        \ 's' : 'SELECT',
+                                        \ 'S' : 'S-LINE',
+                                        \ "\<C-s>": 'S-BLOCK',
+                                        \ 't': 'TERMINAL',
+                                        \ },
+                                        \ 'component_function': {
+                                        \   'gitbranch': 'fugitive#head'
+                                        \ },
+                                        \ 'separator': { 'left': 'L', 'right': 'R' },
+                                        \ 'subseparator': { 'left': '|', 'right': '|' }
                                 \ }
-        "==================================================================================
-                " let g:lightline = {
-                " \ 'colorscheme': 'tender',
-                " \ 'active': {
-                " \   'left': [ ['mode', 'paste'],
-                " \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-                " \   'right': [ [ 'lineinfo' ], ['percent'] ]
-                " \ },
-                " \ 'component': {
-                " \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-                " \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-                " \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-                " \ },
-                " \ 'component_visible_condition': {
-                " \   'readonly': '(&filetype!="help"&& &readonly)',
-                " \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-                " \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-                " \ },
-                " \ 'separator': { 'left': ' ', 'right': ' ' },
-                " \ 'subseparator': { 'left': ' ', 'right': ' ' }
-                " \ }
+
+                " lightline
+                let g:lightline = {
+                                        \ 'colorscheme': 'tender',
+                                        \ 'active': {
+                                        \   'left': [ ['mode', 'paste'],
+                                        \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+                                        \   'right': [ [ 'lineinfo' ], ['percent'] ]
+                                        \ },
+                                        \ 'component': {
+                                        \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+                                        \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+                                        \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+                                        \ },
+                                        \ 'component_visible_condition': {
+                                        \   'readonly': '(&filetype!="help"&& &readonly)',
+                                        \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+                                        \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+                                        \ },
+                                        \ 'separator': { 'left': ' ', 'right': ' ' },
+                                        \ 'subseparator': { 'left': ' ', 'right': ' ' }
+                                        \ }
 "++bbb++++++++++++ELLINE+++}}}
 "++AAA++#SOURCE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
@@ -1551,11 +1530,8 @@ call plug#end()
         "----------------------------------------------------------------------------------
 "++bbb++}}}
 "++AAA++#NMODE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        noremap ' `
-        noremap ` '
-        "------------------------------------------------------
         nnoremap <Leader>0 :set number!<return>
-        "------------------------------------------------------
+        "==========================================================================================
         nmap <Leader>gs :Gstatus<CR>gg<c-n>
         nmap <Leader>gd :Gdiff<CR>
         "------------------------------------------------------
@@ -1574,7 +1550,7 @@ call plug#end()
         "--------------------------------------------------------------------------
         nnoremap  <Esc><Esc> :<C-u>set nopaste<CR>:nohlsearch<CR>
         "==========================================================================================
-        "---Reselect-last-pasted txt------x-y-z---------------------------------------------------
+        "---Reselect-last-pasted txt---------------------------------------------------------------
         "==========================================================================================
         nnoremap gv `[v`]
         nnoremap <M-w> viw
@@ -1664,6 +1640,7 @@ call plug#end()
         "========================#Unfuc=============================================
         nnoremap fu :syntax sync fromstart<cr>:redraw!<cr>
         nnoremap zu :<c-u>update<cr>
+
 "++bbb++++++++++++NNN+++}}}
 "++AAA++#IMODE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "==========================================================================================
@@ -1684,7 +1661,7 @@ call plug#end()
         set complete=.,w,b,k,t,i,u,kspell
         "====================================[VimOmni]===================================
         inoremap <silent> <C-v> <C-x><C-v>
-        " inoremap <silent> <C-o> <C-x><C-o>
+        inoremap <silent> <C-o> <C-x><C-o>
         inoremap <silent> <C-]> <C-x><C-]>
         inoremap <silent> <C-d> <C-x><C-d>
         inoremap <silent> <C-f> <C-x><C-f>
@@ -1946,7 +1923,7 @@ call plug#end()
         "==========================================================================================
         nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
         inoremap <F3> <esc>:NERDTreeToggle<cr>
-        "==========================================#STARTIFY=======================================
+        "==========================================================================================
         source ~/git/bTest/sPot/s9legoStartify.vim
         nnoremap <F4> <esc>:Startify<cr>
         "==========================================================================================
@@ -2616,12 +2593,10 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
         call matchadd('customAAA', '!!!')
         call matchadd('customAAA', '???')
         "==================================================================================
-        hi customBBB     ctermbg=245 ctermfg=White  guibg=#ffFFB5 guifg=#3f00ff
+        hi customBBB     ctermbg=245 ctermfg=White  guibg=#ffFFB5
         call matchadd('customBBB', 'BBB')
         call matchadd('customBBB', 'bbb')
-        call matchadd('customBBB', 'OK1')
-        call matchadd('customBBB', 'OK2')
-        call matchadd('customBBB', 'OK3')
+        call matchadd('customBBB', 'OK')
         call matchadd('customBBB', 'GAIL')
         "==================================================================================
         hi customGGG     ctermbg=245 ctermfg=White  guibg=#ffFFB5 guifg=#00AA00 gui=bold
@@ -2689,7 +2664,7 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
         call matchadd('customYR', '#DOC')
         call matchadd('customYR', '#FORMAT')
         call matchadd('customYR', '#CommandT')
-        call matchadd('customYR', '#CtrlSF')
+        call matchadd('customYR', '#CtrlP')
         call matchadd('customYR', '#FOLD')
         call matchadd('customYR', '#FIND')
         call matchadd('customYR', '#SEARCH')
@@ -2770,100 +2745,13 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
                                 \       },
                                 \  }
         let g:LanguageClient_diagnosticsDisplay=diagnosticsDisplaySettings
-        " nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-        " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-        " nnoremap <silent> <F12> :call LanguageClient#textDocument_rename()<CR>
-        " nnoremap <F10> :call LanguageClient_contextMenu()<CR>
+        nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+        nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+        nnoremap <silent> <F12> :call LanguageClient#textDocument_rename()<CR>
+        nnoremap <F10> :call LanguageClient_contextMenu()<CR>
         ":::::::::::::::::::::::::::::#ALE:::::::::::::::::::::::::::::::::::::::::::::::::
 
 "++bbb++++++ECYAN++}}}
-"*********************************************************************************************
-" qa starts a recording in register 'a'. q stops it. @a repeats the recording. 5@a repeats
-"split and join
-:let @a='rdd�ku�kupcc'
-"decrement
-:let @b='yyp'
+:let @c='yyp'
 
 
-" command! -nargs=1 Csv :call CSVH(<args>)
-" :Csv 5 -- highlight fifth column -- call with
-"*********************************************************************************************
-" -- Pull Visually Highlighted text into LHS of a substitute
-:vmap <leader>z :<C-U>%s/\<<c-r>*\>/
-"*********************************************************************************************
-" -- Swap word with next word
-nmap <silent> gw    "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<cr><c-o><c-l>
-
-"++AAA+++:Ex+:EX+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-" qa starts a recording in register 'a'. q stops it. @a repeats the recording. 5@a repeats
-" -- complex diff parts of same file [N]
-" :1,2yank a | 7,8yank b
-" :new | put a | vnew | put b
-"*********************************************************************************************
-" -- inserting line number into file
-" :g/^/exec "s/^/".strpart(line(".")."    ", 0, 4)
-" will comment out lines  _pattern_ 
-" :g/_pattern_/s/^/#/g
-"*********************************************************************************************
-" vim -c "%s/ABC/DEF/ge | update" file1.c -- execute multiple command on a single file
-" vim -s "convert.vim" file.c -- Automate editing of a file (Ex commands in convert.vim)
-" gvim -u NONE -U NONE -N -- load VIM without .vimrc and plugins (clean VIM) e.g. for HUGE files
-"*********************************************************************************************
-" -- format a mysql query
-" :%s#\<from\>\|\<where\>\|\<left join\>\|\<\inner join\>#\r&#g
-" select * from aTable where ID >9
-"*********************************************************************************************
-" -- sub "fred" with contents of register "a"
-" :s/fred/<c-r>a/g
-" -- Search for FRED AND JOE in any ORDER!
-" /.*fred\&.*joe
-" /^[A-J]/
-" /<CTRL-r><CTRL-w>  pull the word under the cursor into search.
-"*********************************************************************************************
-" -- delete html tags, leave text (non-greedy)
-" :%s#<[^>]\+>##g
-" --reverse fields separated : by
-" :s/\(.*\):\(.*\)/\2 -- \1/
-" -- delete multiple duplicate lines [N]
-" :%s/^\(.*\)\(\n\1\)\+$/\1/
-" -- delete duplicate lines
-" :%s/^\(.*\)\n\1$/\1/
-" -- convert Abc-yy to Abc-10,11,12 etc
-" :let i=10 | 'd,'bg/Abc/s/yy/\=i/ |let i=i+1
-" -- Swapping first & last column (4 columns)
-" :%s:\(\w\+\)\(.*\s\+\)\(\w\+\)$:\3\2\1:
-" 1 2 3 4
-" 1 2 3 4
-" -- decrement numbers by 3
-" :'<,>'s/\d\+/\=(submatch(0)-3)/
-" -- delete lines not containing string
-" :g!/^dd/d
-" -- Join Lines [N]
-" :g/fred/,/joe/j
-" -- reverse lines right to left (toggles)
-" :set rl!
-" -- reverse lines top to bottom (toggles)
-" :g/^/m0
-" -- Reverse a section a to b
-" :'d,'bg/^/m'b
-" -- duplicate every line
-" :g/^/t.
-" -- copy (transfer) lines matching fred to EOF
-" :g/fred/t$
-" -- copy (transfer) lines matching stage to marker a (cannot use .) [C]
-" :g/stage/t'a
-" -- Automatically underline selecting headings [N]
-" :g/^Chapter/t.|s/./-/g
-" -- append all lines fred to register a
-" :g/fred/y A
-" -- filter lines to a file (file must already exist)
-" :'a,'bg/^Error/ . w >> errors.txt
-" -- Sort each block (note the crucial ;)
-" :g/^$/;/^$/-1!sort
-" -- sort all lines on second column [N]
-" :sort /.*\%2v/
-"---------------------------------
-"-example, to change the date mark in a file:
-":map <F2> msHmtgg/Last [cC]hange:\s*/e+1<CR>"_D"=strftime("%Y %b %d")<CR>p'tzt`s
-"**************************************
-"++bbb++++++++++++++++++++++++++++++++++}}} 

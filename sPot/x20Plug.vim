@@ -513,11 +513,11 @@ nmenu misc.beautify.assign      :s/\s*\([-+*\/&\|]\?\)\s*=\s*/ \1= /g<cr>
         " great text objects for selecting/changing parameters
         " Plug 'wellle/targets.vim'
         " Plug 'wellle/targets.vim'
-        " Plug 'wellle/targets.vim'
         "==================================================================================
         " Presuming you meant vim-lion, and it looks great. I have been using tabular,
         " Plug 'tommcdo/vim-lion'
         " let g:lion_squeeze_spaces = 1
+        " Plug 'wellle/targets.vim'
 
 "++AAA++}}}
 "++AAA+#Mathe+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -924,14 +924,6 @@ nmenu misc.beautify.assign      :s/\s*\([-+*\/&\|]\?\)\s*=\s*/ \1= /g<cr>
         Plug 'daniel-samson/project-tree.vim'
         "------------------------------------------------------------------
         "-Plug 'amiorin/vim-project'
-"++bbb++}}}
-"++AAA+#CSS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        " CSS
-        Plug 'JulesWang/css.vim', {'for': 'css'}
-        Plug 'othree/csscomplete.vim', {'for': 'css'}
-        Plug 'ap/vim-css-color', {'for': 'css'}
-        "----------------------------------------------------------------------------------
-        " Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
 "++bbb++}}}
 "++AAA+#RUBY+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "============================================================================================

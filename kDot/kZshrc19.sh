@@ -1,13 +1,8 @@
 #---START--START----
 #-----NAUTILUS-----1
-#-----NAUTILUS-----2
-#-----NAUTILUS-----3
-#-----NAUTILUS-----4
 #-----NAUTILUS-----5
 #--FIN--FIN--FIN--FI
 
-#=============================================================
-#=============================================================
 #=============================================================
 # cprof
 #----------
@@ -238,6 +233,19 @@ alias s15='402nv.app  -u ~/git/bTest/sPot/s15ActTagDeoLc.vim'
 alias s16='402nv.app  -u ~/git/bTest/sPot/s16TitanDeoLc.vim'
 #============================================================
 alias s17='402nv.app  -u ~/git/bTest/sPot/s17TitanDeoLc.vim'
+alias s18='402nv.app  -u ~/git/bTest/sPot/s18TitanDeoLc.vim'
+alias s19='402nv.app  -u ~/git/bTest/sPot/s19TitanDeoLc.vim'
+#============================================================
+alias s20='402nv.app  -u ~/git/bTest/sPot/s20TitanDeoLc.vim'
+alias s21='402nv.app  -u ~/git/bTest/sPot/s21TitanDeoLc.vim'
+alias s22='402nv.app  -u ~/git/bTest/sPot/s22TitanDeoLc.vim'
+alias s23='402nv.app  -u ~/git/bTest/sPot/s23TitanDeoLc.vim'
+alias s24='402nv.app  -u ~/git/bTest/sPot/s24TitanDeoLc.vim'
+alias s25='402nv.app  -u ~/git/bTest/sPot/s25TitanDeoLc.vim'
+alias s26='402nv.app  -u ~/git/bTest/sPot/s26TitanDeoLc.vim'
+alias s27='402nv.app  -u ~/git/bTest/sPot/s27TitanDeoLc.vim'
+alias s28='402nv.app  -u ~/git/bTest/sPot/s28TitanDeoLc.vim'
+alias s29='402nv.app  -u ~/git/bTest/sPot/s29TitanDeoLc.vim'
 #============================================================
 
 alias g1='402nv.app  -u ~/git/bTest/sPot/galore.vim'

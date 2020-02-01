@@ -1,4 +1,3 @@
-
 "===============================================================================================================
 "===VIM-SARTIFY-1===============================================================================================
 "===============================================================================================================
@@ -31,7 +30,6 @@ let g:startify_skiplist = [
         \ '/data/repo/neovim/runtime/doc',
         \ '/Users/mhi/local/vim/share/vim/vim74/doc',
         \ ]
-
 "===============================================================================================================
 let g:startify_bookmarks = [
         \ '~/git/bTest/kDot/kIng19.sh',
@@ -40,11 +38,9 @@ let g:startify_bookmarks = [
         \ '~/git/bTest/kDot/kZshrc19.sh',
         \ '~/git/bTest/kDot/kBank21.yml',
         \ ]
-
 "===============================================================================================================
 let g:startify_custom_footer =
         \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
-
 "===============================================================================================================
 let g:startify_list_order = [
                         \ ['   Commands'], 'commands',
@@ -53,28 +49,23 @@ let g:startify_list_order = [
                         \ ['   MRU Files in Current Dir'], 'dir',
                         \ ['   Bookmarks'], 'bookmarks',
                         \ ]
-
 "===============================================================================================================
-let g:startify_session_dir = '~/git/bTest/kDot/zSS'
+let g:startify_session_dir = '~/git/bTest/sPot/xSS'
 let g:startify_session_sort = 1
 let g:startify_session_number = 5
-
 "===============================================================================================================
 let g:startify_commands = [
                         \ {'a': ['seti', ':colorscheme seti']},
                         \ {'b': ['FZFMru', ':FZFMru']},
-                        \ {'i': ['FFMarks', ':FFMarks']},
-                        \ {'c': ['FFHistory', ':FFHistory']},
-                        \ {'d': ['FFHelptags', ':FFHelptags']},
+                        \ {'c': ['FZFMruHistory', ':FZFMruHistory']},
+                        \ {'d': ['FZFMruHelptags', ':FZFMruHelptags']},
                         \ {'e': ['ZPlugHelp', ':ZPlugHelp']},
-                        \ {'k': ['ZTag', ':ZTag']},
-                        \ {'l': ['ZFiles', ':ZFiles']},
-                        \ {'n': ['ZLibList', ':ZLibList']},
+                        \ {'k': ['MTag', ':MTag']},
+                        \ {'l': ['MFiles', ':MFiles']},
+                        \ {'n': ['MLibList', ':MLibList']},
                         \ {'f': ['LGHistory', ':LGHistory']},
                         \ {'g': ['CommandTHelp', ':CommandTHelp']},
+                        \ {'i': ['FZFMruMarks', ':FZFMruMarks']},
                         \ {'x': ['FZFDefinitions', ':FZFDefinitions']},
                         \ {'p': ['List', ':List']},
-                        \ {'r': ['List', ':List']},
-                        \ {'u': ['unite', ':Unite help buffer file_mru file file_rec bookmark']},
                         \ ]
-

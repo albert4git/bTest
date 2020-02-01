@@ -1,23 +1,44 @@
 # Created:            Do 11 Apr 2019 11:52:32  CEST
-# Last Modified:      Fr 02 Aug 2019 08:00:02  CEST
+# Last Modified:      Sa 01 Feb 2020 08:17:24  CET
 # ~/.tmuxinator/kBank25.yml
 
 name: bank25
-root: ~/git/bTest/kDot
+root: ~/git/bTest/sPot/
 
 windows:
 
-  - TiG:
+  - sPot:
       layout: main-vertical
       panes:
         - T1:
-          - tig status
+          - s20 s20TitanDeoLc.vim
+
+  - sPot2:
+      layout: main-vertical
+      panes:
+        - T2:
+          - tree -L 2
 
   - kDot:
       layout: main-vertical
       panes:
-        - d2:
-          - d2 kMinit.vim k5DEO.vim 
+        - T3:
+            - cd ../kDot
+            - gst
+
+  - kDot2:
+      layout: main-vertical
+      panes:
+        - T4:
+            - cd ../kDot
+            - exa -l
+
+  - DODO10:
+      layout: main-vertical
+      panes:
+        - T5:
+            - cd ../DODO10
+            - gst
 
   - Plug:
       layout: tiled
