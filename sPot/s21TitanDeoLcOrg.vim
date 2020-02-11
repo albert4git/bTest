@@ -1,6 +1,6 @@
 " File: s15SynDeoLc.vim syn N15SYN bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mo 03 Feb 2020 03:38:37  CET
+" Lass Modified:      Fr 07 Feb 2020 07:25:55  CET
 "++AAA++#TAG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%
 "*******************************************Extra1***********************************************************
@@ -568,35 +568,27 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'sainnhe/lightline_foobar.vim'
         Plug 'mengelbrecht/lightline-bufferline'
         Plug 'jacoborus/tender.vim'
-        "==One=======================================
-        " Plug 'zefei/vim-wintabs'
+        "==OneWorkingBut=======================================
+        Plug 'zefei/vim-wintabs'
         "==================================================================================
-        Plug 'fholgado/minibufexpl.vim'
+        " Plug 'fholgado/minibufexpl.vim'
         "==================================================================================
-        " minibufexplorer options
         "map <F9> :MBEToggle<CR>
         "map <C-J> :bn<CR>
         "map <C-K> :bp<CR>
-        "
         let g:miniBufExplStatusLineText = "MiniBufExpl"
         let g:miniBufExplVSplit = 0
         let g:miniBufExplMinSize = 1
         let g:miniBufExplMaxSize = 1
         let g:miniBufExplShowBufNumbers = 1
-
-                " minibufexplorer (MBE) config
-                " always display syntax in minibufexpl
-                let g:miniBufExplForceSyntaxEnable = 1
-                " for other explorers like TagList
-                let g:miniBufExplModSelTarget = 1
-                " omit the buffer number from MBE's buffer display
-                "let g:miniBufExplShowBufNumbers = 0
-                " an empty status line instead of "-MiniBufExplorer-"
-                let g:statusLineText = "-Indi-"
-
-        "hi def link MBEVisibleActiveNormal None
-        "==================================================================================
-        " MiniBufExpl Colors
+        " always display syntax in minibufexpl
+        let g:miniBufExplForceSyntaxEnable = 1
+        " for other explorers like TagList
+        let g:miniBufExplModSelTarget = 1
+        " omit the buffer number from MBE's buffer display
+        let g:miniBufExplShowBufNumbers = 0
+        let g:statusLineText = "-Indi-"
+        "================?=================================================================
         hi MBENormal               guifg=#808080 guibg=fg
         hi MBEChanged              guifg=#CD5907 guibg=fg
         hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
@@ -872,11 +864,10 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------
         " Plug 'gabrielelana/vim-markdown'
         "---------------------------------------------
-        Plug 'godlygeek/tabular'
         Plug 'plasticboy/vim-markdown'
         "---------------------------------------------
-        Plug 'vim-pandoc/vim-pandoc'
-        Plug 'vim-pandoc/vim-pandoc-syntax'
+        " Plug 'vim-pandoc/vim-pandoc'
+        " Plug 'vim-pandoc/vim-pandoc-syntax'
         "--Syntax?-------------------------------------------
         " Plug 'hallison/vim-markdown'
         "----------------------------------------------------------------------------------
@@ -885,17 +876,19 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'mivok/vimtodo'
         " Plug 'hsitz/VimOrganizer'
         " Plug 'xolox/vim-notes'
+        " Plug 'axvr/org.vim'
         " Plug ''
-        Plug 'axvr/org.vim'
         Plug 'jceb/vim-orgmode'
+        Plug 'dstein64/vim-startuptime'
         Plug 'vim-scripts/SyntaxRange'
         Plug 'chrisbra/NrrwRgn'
-        "Plug 'dkarter/bullets.vim'
-                "let g:bullets_enabled_file_types = [
-                "\ 'markdown',
-                "\ 'text',
-                "\ 'scratch'
-                "\]
+        Plug 'dkarter/bullets.vim'
+                let g:bullets_enabled_file_types = [
+                \ 'markdown',
+                \ 'org',
+                \ 'text',
+                \ 'scratch'
+                \]
 
 "++bbb++}}}
 "++AAA++#GREP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -1015,6 +1008,18 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'SirVer/ultisnips'
 "++bbb+++++++++++++++++}}}
 "++AAA++#TMUX++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        Plug 'benmills/vimux'
+        noremap <leader>vp :VimuxPromptCommand<CR>
+        noremap <leader>vr :VimuxRunLastCommand<CR>
+        noremap <leader>vo :VimuxInspectRunner<CR>
+        noremap <leader>vc :VimuxCloseRunner<CR>
+        let g:VimuxHeight = "20"
+        let g:VimuxOrientation = "v"
+        let g:VimuxUseNearest = 1
+        let g:VimuxPromptString = "DDD"
+        let g:VimuxRunnerType = "pane"
+        "pane": for panes
+        "window": for windows
         "----------------------------------------
         ":Tmux
         "----------------------------------------
@@ -1159,8 +1164,23 @@ call plug#begin('~/.config/nvim/plugged/')
                 "------------------------------------------------------
                 "let g:bookmark_manage_per_buffer = 1`
                 "let g:bookmark_auto_save_file = '/bookmarks'`
-"++bbb+++++++++++++++++++++}}}
+"++bbb++++++++++++++++++++++++++++++++++++++++++++++}}}
 "++AAA++#REPL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        Plug 'jalvesaq/Nvim-R'
+        ",rf start
+        ",l
+        ":RStop
+        "----------------------------------------------------------------------------------
+        "---:T---:Tnew---:Topen---:TREPL--#REPL--------------------------------------------
+        "----------------------------------------------------------------------------------
+        Plug 'kassio/neoterm'
+                au VimEnter,BufRead,BufNewFile *.jl set filetype=julia
+                au VimEnter,BufRead,BufNewFile *.idr set filetype=idris
+                au VimEnter,BufRead,BufNewFile *.lidr set filetype=lidris
+                au VimEnter,BufRead,BufNewFile *.lfe, set filetype=lfe
+        ":vertical :Tnew
+        ":TREPLSendLine
+        "----------------------------------------------------------------------------------
         Plug 'jalvesaq/vimcmdline'
                 let cmdline_vsplit      = 1      " Split the window vertically
                 let cmdline_esc_term    = 1      " Remap <Esc> to :stopinsert in Neovim's terminal
@@ -1172,8 +1192,10 @@ call plug#begin('~/.config/nvim/plugged/')
                 let cmdline_auto_scroll = 1      " Keep the cursor at the end of terminal (nvim)
                 let cmdline_app         = {}
                 let cmdline_app['python'] = 'python2'
-                " let cmdline_app['ruby']   = 'pry'
-                " let cmdline_app['sh']     = 'bash'
+                let cmdline_app['ruby']   = 'irb'
+                let cmdline_app['sh']     = 'bash'
+                let cmdline_app['octave'] = 'octave-cli'
+                let cmdline_app['maxima'] = 'maxima-sage'
                 if has('gui_running') || &termguicolors
                         let cmdline_color_input    = '#9e9e9e'
                         let cmdline_color_normal   = '#00afff'
@@ -1282,13 +1304,6 @@ call plug#begin('~/.config/nvim/plugged/')
         " and Python's built-in 'unittest'
         " Plug 'jacobsimpson/nvim-example-python-plugin'
         "----------------------------------------------------------------------------------
-        "---:T---:Tnew---:Topen---:TREPL---------------------------------------------------
-        "----------------------------------------------------------------------------------
-        " Plug 'kassio/neoterm'
-        "         au VimEnter,BufRead,BufNewFile *.jl set filetype=julia
-        "         au VimEnter,BufRead,BufNewFile *.idr set filetype=idris
-        "         au VimEnter,BufRead,BufNewFile *.lidr set filetype=lidris
-        "         au VimEnter,BufRead,BufNewFile *.lfe, set filetype=lfe
         "----------------------------------------------------------------------------------
         " Plug 'roxma/python-support.nvim'
         "         let g:python_support_python2_require = 0
@@ -1548,7 +1563,6 @@ call plug#begin('~/.config/nvim/plugged/')
         nmap ,b <Plug>(swap-next)
         " Plug 'dstein64/vim-startuptime'
         "===========Venus============================
-        Plug 'dstein64/vim-startuptime'
         " Plug 'sjl/splice.vim'
         " Plug 'sjl/clam.vim'
         " Plug 'vim-scripts/taglist.vim'
@@ -1610,26 +1624,6 @@ call plug#end()
                                 \ 'subseparator': { 'left': '|', 'right': '|' }
                                 \ }
         "==================================================================================
-                " let g:lightline = {
-                " \ 'colorscheme': 'tender',
-                " \ 'active': {
-                " \   'left': [ ['mode', 'paste'],
-                " \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-                " \   'right': [ [ 'lineinfo' ], ['percent'] ]
-                " \ },
-                " \ 'component': {
-                " \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-                " \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-                " \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-                " \ },
-                " \ 'component_visible_condition': {
-                " \   'readonly': '(&filetype!="help"&& &readonly)',
-                " \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-                " \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-                " \ },
-                " \ 'separator': { 'left': ' ', 'right': ' ' },
-                " \ 'subseparator': { 'left': ' ', 'right': ' ' }
-                " \ }
 "++bbb++++++++++++ELLINE+++}}}
 "++AAA++#SOURCE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
@@ -1996,18 +1990,18 @@ call plug#end()
         nnoremap  <C-Up> :call ScrollOtherWindow("up")<CR>
         "==================================================================================
         " better pane navigation
-        " map <C-h> <C-W>h
-        " map <C-j> <C-W>j
-        " map <C-k> <C-W>k
-        " map <C-l> <C-W>l
+        map <C-h> <C-W>h
+        map <C-j> <C-W>j
+        map <C-k> <C-W>k
+        map <C-l> <C-W>l
         "===================================================
         " Simpler split navigation in vim and tmux
-        " let g:tmux_navigator_no_mappings = 1
-        " nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-        " nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-        " nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-        " nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-        " nnoremap <silent> <c-p> :TmuxNavigatePrevious<cr>
+        let g:tmux_navigator_no_mappings = 1
+        nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+        nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+        nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+        nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+        nnoremap <silent> <c-p> :TmuxNavigatePrevious<cr>
         "==================================================================================
 
 "++bbb+++++++++++++++ENAVI+++++}}}
@@ -2682,6 +2676,12 @@ iabbrev yy2 "*******************************************************************
 iabbrev yy3 "++AAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{<CR>"++bbb++}}}
 iabbrev yy4 "======================================================================================================
 iabbrev yy5 +++++++++++++
+iabbrev yy6 ###############################################################################
+iabbrev yy7 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+iabbrev yy8 ===============================================================================
+iabbrev yy9 -------------------------------------------------------------------------------
+
+
 iabbrev xdate <C-r>=strftime("%m/%d/%y")<CR>
 iabbrev fdate <C-r>=strftime("%B %d, %Y")<CR>
 iabbrev xtime <C-r>=strftime("%H:%M")<CR>
@@ -3026,11 +3026,21 @@ nmap <silent> gw    "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<cr><c-o><c-l>
 "**************************************
 "++bbb++++++++++++++++++++++++++++++++++}}}
 
-nmap <localleader>t @<Plug>OrgSetTags
+"********************************************************************************************* 
 
-:let g:org_todo_keywords = [['TODO(t)', '|', 'DONE(d)'],
-                        \ ['REPORT(r)', 'BUG(b)', 'KNOWNCAUSE(k)', '|', 'FIXED(f)'],
-                        \ ['CANCELED(c)']]
+let g:org_indent = 1
+" let g:org_plugins = ['ShowHide', '|', 'Navigator', 'EditStructure']
+" let g:org_aggressive_conceal = 1
+let g:org_todo_keywords = ['TODO', '|', 'DONE']
 
-:nmap g{
-                        \ :py ORGMODE.plugins["Navigator"].parent(mode="normal")<CR>
+"********************************************************************************************* 
+" AWK:
+" gawk '{ sum += $1 }; END { print sum }' file
+" gawk -F: '{ print $1 }' /etc/passwd
+"********************************************************************************************* 
+" :nmap g{ let g:org_agenda_files = ['~/org/index.org','~/org/projects.org'] :py ORGMODE.plugins["Navigator"].parent(mode="normal")<CR>
+" let g:org_agenda_files = ['~/org/index.org','~/org/projects.org']
+"********************************************************************************************* 
+
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown

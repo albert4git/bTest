@@ -1,6 +1,6 @@
-" File: s15SynDeoLc.vim syn N15SYN bimini
+" File: bPot
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mo 03 Feb 2020 03:38:37  CET
+" Lass Modified:      Di 11 Feb 2020 03:26:14  CET
 "++AAA++#TAG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%
 "*******************************************Extra1***********************************************************
@@ -116,7 +116,8 @@ set conceallevel=2
         " set path=.,,src/**,lib/**,docs/**
         set path+=.,/home/red/
         "----------------------------------------------------------------------------------
-        let $MYVIMRC='~/git/bTest/sPot/s11DeoLc.vim'
+        " let $MYVIMRC='~/git/bTest/sPot/s11DeoLc.vim'
+        " nnoremap EE :source $MYVIMRC<CR>
         "----------------------------------------------------------------------------------
         let g:python_host_prog = '/usr/bin/python2'
         let g:python3_host_prog = '/usr/bin/python3'
@@ -568,35 +569,27 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'sainnhe/lightline_foobar.vim'
         Plug 'mengelbrecht/lightline-bufferline'
         Plug 'jacoborus/tender.vim'
-        "==One=======================================
-        " Plug 'zefei/vim-wintabs'
+        "==OneWorkingBut=======================================
+        Plug 'zefei/vim-wintabs'
         "==================================================================================
-        Plug 'fholgado/minibufexpl.vim'
+        " Plug 'fholgado/minibufexpl.vim'
         "==================================================================================
-        " minibufexplorer options
         "map <F9> :MBEToggle<CR>
         "map <C-J> :bn<CR>
         "map <C-K> :bp<CR>
-        "
         let g:miniBufExplStatusLineText = "MiniBufExpl"
         let g:miniBufExplVSplit = 0
         let g:miniBufExplMinSize = 1
         let g:miniBufExplMaxSize = 1
         let g:miniBufExplShowBufNumbers = 1
-
-                " minibufexplorer (MBE) config
-                " always display syntax in minibufexpl
-                let g:miniBufExplForceSyntaxEnable = 1
-                " for other explorers like TagList
-                let g:miniBufExplModSelTarget = 1
-                " omit the buffer number from MBE's buffer display
-                "let g:miniBufExplShowBufNumbers = 0
-                " an empty status line instead of "-MiniBufExplorer-"
-                let g:statusLineText = "-Indi-"
-
-        "hi def link MBEVisibleActiveNormal None
-        "==================================================================================
-        " MiniBufExpl Colors
+        " always display syntax in minibufexpl
+        let g:miniBufExplForceSyntaxEnable = 1
+        " for other explorers like TagList
+        let g:miniBufExplModSelTarget = 1
+        " omit the buffer number from MBE's buffer display
+        let g:miniBufExplShowBufNumbers = 0
+        let g:statusLineText = "-Indi-"
+        "================?=================================================================
         hi MBENormal               guifg=#808080 guibg=fg
         hi MBEChanged              guifg=#CD5907 guibg=fg
         hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
@@ -872,11 +865,10 @@ call plug#begin('~/.config/nvim/plugged/')
         "---------------------------------------------
         " Plug 'gabrielelana/vim-markdown'
         "---------------------------------------------
-        Plug 'godlygeek/tabular'
         Plug 'plasticboy/vim-markdown'
         "---------------------------------------------
-        Plug 'vim-pandoc/vim-pandoc'
-        Plug 'vim-pandoc/vim-pandoc-syntax'
+        " Plug 'vim-pandoc/vim-pandoc'
+        " Plug 'vim-pandoc/vim-pandoc-syntax'
         "--Syntax?-------------------------------------------
         " Plug 'hallison/vim-markdown'
         "----------------------------------------------------------------------------------
@@ -885,17 +877,19 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'mivok/vimtodo'
         " Plug 'hsitz/VimOrganizer'
         " Plug 'xolox/vim-notes'
+        " Plug 'axvr/org.vim'
         " Plug ''
-        Plug 'axvr/org.vim'
         Plug 'jceb/vim-orgmode'
+        Plug 'dstein64/vim-startuptime'
         Plug 'vim-scripts/SyntaxRange'
         Plug 'chrisbra/NrrwRgn'
-        "Plug 'dkarter/bullets.vim'
-                "let g:bullets_enabled_file_types = [
-                "\ 'markdown',
-                "\ 'text',
-                "\ 'scratch'
-                "\]
+        Plug 'dkarter/bullets.vim'
+                let g:bullets_enabled_file_types = [
+                \ 'markdown',
+                \ 'org',
+                \ 'text',
+                \ 'scratch'
+                \]
 
 "++bbb++}}}
 "++AAA++#GREP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -1014,32 +1008,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------
         Plug 'SirVer/ultisnips'
 "++bbb+++++++++++++++++}}}
-"++AAA++#TMUX++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        "----------------------------------------
-        ":Tmux
-        "----------------------------------------
-        Plug 'tmux-plugins/vim-tmux'
-        "----------------------------------------
-        " Plug 'christoomey/vim-tmux-navigator'
-        Plug 'christoomey/vim-tmux-navigator'
-        "----------------------------------------
-        Plug 'edkolev/tmuxline.vim' " Keep tmux theme and vim theme in sync
-        "=============================================
-        " tmuxline
-        let g:tmuxline_powerline_separators = 0
-        let g:tmuxline_preset = 'minimal'
-        let g:tmuxline_theme = 'lightline'
-        let g:tmuxline_preset = 'nightly_fox'
-        " custom preset with shell commands
-        let g:tmuxline_preset = {
-                                \'a'    : '#S',
-                                \'c'    : ['#(whoami)', '#(uptime  | cut -d " " -f 1,2,3)'],
-                                \'win'  : ['#I', '#W'],
-                                \'cwin' : ['#I', '#W', '#F'],
-                                \'x'    : '#(date)',
-                                \'y'    : ['%R', '%a', '%Y'],
-                                \'z'    : '#H'}
-"++AAA++++++++++++++++++}}}
 "++AAA++#TREE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "----------------------------------------------------------------------------------
         Plug 'zgpio/tree.nvim/'
@@ -1159,8 +1127,103 @@ call plug#begin('~/.config/nvim/plugged/')
                 "------------------------------------------------------
                 "let g:bookmark_manage_per_buffer = 1`
                 "let g:bookmark_auto_save_file = '/bookmarks'`
-"++bbb+++++++++++++++++++++}}}
+"++bbb++++++++++++++++++++++++++++++++++++++++++++++}}}
+        "------------------------------------------------------------------------------------------
+        " Plug 'liquidz/vim-iced', {'for': 'clojure'}
+        "------------------------------------------------------------------------------------------
+"++AAA++#TMUX++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+
+        "-------------------------------------------------------------
+	    "# Grab some text and "send" to GNU screen / tmux session.
+	    "#VIM ---(text)---> screen / tmux
+	    "# Usage:
+	    "# [{Visual}]<C-c><C-c>
+	    "# :<range>SlimeSend
+        "#-------------------------------------------
+        " Plug 'jpalardy/vim-slime'
+        " let g:slime_target = "tmux"
+        " xmap <c-c><c-c> <Plug>SlimeRegionSend
+        " nmap <c-c><c-c> <Plug>SlimeParagraphSend
+        " nmap <c-c>v     <Plug>SlimeConfig
+        " let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
+
+        "--------------##CellPy##----------------------------------------
+        " Plug 'julienr/vim-cellmode'
+        " let g:cellmode_tmux_panenumber='2'
+        " vmap <silent> <C-c> :call RunTmuxPythonChunk()<CR>
+        " noremap <silent> <C-b> :call RunTmuxPythonCell(0)<CR>
+        " noremap <silent> <C-g> :call RunTmuxPythonCell(1)<CR>
+        "# let g:cellmode_tmux_sessionname='ipython'
+        "# let g:cellmode_tmux_windowname='ipython'
+        "# C-c sends the currently selected lines to tmux
+        "# C-g sends the current cell to tmux
+        "# C-b sends the current cell to tmux, moving to the next one
+        "--------------------------------------------------------------
+        " Plug 'jgdavey/tslime.vim'
+        " vmap <C-c><C-c> <Plug>SendSelectionToTmux
+        " nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+        " nmap <C-c>r <Plug>SetTmuxVars
+        " Plug 'thoughtbot/vim-rspec'
+        " Plug 'ivanov/vim-ipython/'
+        " Plug 'greghor/vim-pyShell'
+        " Plug 'ervandew/screen'
+        "--------------------------------------------------------------
+
+        "--------------------------------------------------------------
+        Plug 'benmills/vimux'
+        noremap <leader>vp :VimuxPromptCommand<CR>
+        noremap <leader>vr :VimuxRunLastCommand<CR>
+        noremap <leader>vo :VimuxInspectRunner<CR>
+        noremap <leader>vc :VimuxCloseRunner<CR>
+        let g:VimuxHeight = "20"
+        let g:VimuxOrientation = "v"
+        let g:VimuxUseNearest = 1
+        let g:VimuxPromptString = "Vimux: "
+        let g:VimuxRunnerType = "pane"
+        "pane": for panes
+        "window": for windows
+        "----------------------------------------
+        ":Tmux
+        "----------------------------------------
+        Plug 'tmux-plugins/vim-tmux'
+        "----------------------------------------
+        " Plug 'christoomey/vim-tmux-navigator'
+        Plug 'christoomey/vim-tmux-navigator'
+        "----------------------------------------
+        Plug 'edkolev/tmuxline.vim' " Keep tmux theme and vim theme in sync
+        "=============================================
+        " tmuxline
+        let g:tmuxline_powerline_separators = 1
+        let g:tmuxline_theme = 'lightline'
+        let g:tmuxline_preset = 'nightly_fox'
+        let g:tmuxline_preset = 'minimal'
+        " custom preset with shell commands
+        let g:tmuxline_preset = {
+                                \'a'    : '#S',
+                                \'c'    : ['#(whoami)', '#(uptime  | cut -d " " -f 1,2,3)'],
+                                \'win'  : ['#I', '#W'],
+                                \'cwin' : ['#I', '#W', '#F'],
+                                \'x'    : '#(date)',
+                                \'y'    : ['%R', '%a', '%Y'],
+                                \'z'    : '#H'}
+
+"++AAA++++++++++++++++++}}}
 "++AAA++#REPL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
+        " Plug 'jalvesaq/Nvim-R'
+        ",rf start
+        ",l
+        ":RStop
+        "----------------------------------------------------------------------------------
+        "---:T---:Tnew---:Topen---:TREPL--#REPL--------------------------------------------
+        "----------------------------------------------------------------------------------
+        Plug 'kassio/neoterm'
+                au VimEnter,BufRead,BufNewFile *.jl set filetype=julia
+                au VimEnter,BufRead,BufNewFile *.idr set filetype=idris
+                au VimEnter,BufRead,BufNewFile *.lidr set filetype=lidris
+                au VimEnter,BufRead,BufNewFile *.lfe, set filetype=lfe
+        ":vertical :Tnew
+        ":TREPLSendLine
+        "----------------------------------------------------------------------------------
         Plug 'jalvesaq/vimcmdline'
                 let cmdline_vsplit      = 1      " Split the window vertically
                 let cmdline_esc_term    = 1      " Remap <Esc> to :stopinsert in Neovim's terminal
@@ -1172,8 +1235,10 @@ call plug#begin('~/.config/nvim/plugged/')
                 let cmdline_auto_scroll = 1      " Keep the cursor at the end of terminal (nvim)
                 let cmdline_app         = {}
                 let cmdline_app['python'] = 'python2'
-                " let cmdline_app['ruby']   = 'pry'
-                " let cmdline_app['sh']     = 'bash'
+                let cmdline_app['ruby']   = 'irb'
+                let cmdline_app['sh']     = 'bash'
+                let cmdline_app['octave'] = 'octave-cli'
+                let cmdline_app['maxima'] = 'maxima-sage'
                 if has('gui_running') || &termguicolors
                         let cmdline_color_input    = '#9e9e9e'
                         let cmdline_color_normal   = '#00afff'
@@ -1214,8 +1279,8 @@ call plug#begin('~/.config/nvim/plugged/')
                 let g:keyfrom = "aioiyuuko"
         "=================================================================================
         Plug 'ron89/thesaurus_query.vim'
-        let g:tq_mthesaur_file="/home/red/git/bTest/sPot/DYCT/mthesaurGu.txt"
-        "----------------------------------------------------------------------------------
+        let g:tq_mthesaur_file="/home/red/git/bTest/bPot/TYCT/mthesaurGu.txt"
+        "=================================================================================
         " Plug 'vigoux/LanguageTool.nvim'
         " let g:languagetool_server='$HOME/LanguageTool-4.6-stable/languagetool-server.jar'
         " hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
@@ -1282,14 +1347,6 @@ call plug#begin('~/.config/nvim/plugged/')
         " and Python's built-in 'unittest'
         " Plug 'jacobsimpson/nvim-example-python-plugin'
         "----------------------------------------------------------------------------------
-        "---:T---:Tnew---:Topen---:TREPL---------------------------------------------------
-        "----------------------------------------------------------------------------------
-        " Plug 'kassio/neoterm'
-        "         au VimEnter,BufRead,BufNewFile *.jl set filetype=julia
-        "         au VimEnter,BufRead,BufNewFile *.idr set filetype=idris
-        "         au VimEnter,BufRead,BufNewFile *.lidr set filetype=lidris
-        "         au VimEnter,BufRead,BufNewFile *.lfe, set filetype=lfe
-        "----------------------------------------------------------------------------------
         " Plug 'roxma/python-support.nvim'
         "         let g:python_support_python2_require = 0
         "         let g:python_support_python3_require = 0
@@ -1327,7 +1384,7 @@ call plug#begin('~/.config/nvim/plugged/')
         "Plug 'nielsmadan/mercury'
         "Plug 'nielsmadan/yankee'
         "---------------------------------------------------------------------------------
-"++bbb++++++++++++++++++++++}}}
+"++bbb+++++++++++++++++++++++++++++++++}}}
 "++AAA++#FMT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         " Plug 'sbdchd/neoformat'
                 " :Neoformat jsbeautify
@@ -1348,8 +1405,7 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'google/vim-codefmt'
         Plug 'sheerun/vim-polyglot'
 "++bbb++++++++++++++++EFMT++++}}}
-"++AAA++#DOCPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        "-222------------------------------------------------------------------------------
+"++AAA+++#DOCPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         Plug 'gastonsimone/vim-dokumentary/'
                 "-=KKK=-
                 "let g:dokumentary_docprgs = {'c': 'cdoc {0}', 'python': ''}
@@ -1548,7 +1604,6 @@ call plug#begin('~/.config/nvim/plugged/')
         nmap ,b <Plug>(swap-next)
         " Plug 'dstein64/vim-startuptime'
         "===========Venus============================
-        Plug 'dstein64/vim-startuptime'
         " Plug 'sjl/splice.vim'
         " Plug 'sjl/clam.vim'
         " Plug 'vim-scripts/taglist.vim'
@@ -1591,7 +1646,7 @@ call plug#end()
                                 \   ]
                                 \ },
                                 \ 'mode_map': {
-                                \ 'n' : 'N20',
+                                \ 'n' : 'N22',
                                 \ 'i' : 'INSERT',
                                 \ 'R' : 'REPLACE',
                                 \ 'v' : 'VISUAL',
@@ -1610,26 +1665,6 @@ call plug#end()
                                 \ 'subseparator': { 'left': '|', 'right': '|' }
                                 \ }
         "==================================================================================
-                " let g:lightline = {
-                " \ 'colorscheme': 'tender',
-                " \ 'active': {
-                " \   'left': [ ['mode', 'paste'],
-                " \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-                " \   'right': [ [ 'lineinfo' ], ['percent'] ]
-                " \ },
-                " \ 'component': {
-                " \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-                " \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-                " \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-                " \ },
-                " \ 'component_visible_condition': {
-                " \   'readonly': '(&filetype!="help"&& &readonly)',
-                " \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-                " \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-                " \ },
-                " \ 'separator': { 'left': ' ', 'right': ' ' },
-                " \ 'subseparator': { 'left': ' ', 'right': ' ' }
-                " \ }
 "++bbb++++++++++++ELLINE+++}}}
 "++AAA++#SOURCE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
@@ -1640,9 +1675,9 @@ call plug#end()
                 let entry_format .= '. entry_path'
         endif
         "==============================================
-        source ~/git/bTest/sPot/s9legoFunc.vim
-        source ~/git/bTest/sPot/SYPLUG/fliplr.vim
-        source ~/git/bTest/sPot/SYPLUG/increment.vim
+        source ~/git/bTest/bPot/aa9legoFunc.vim
+        source ~/git/bTest/bPot/SYPLUG/fliplr.vim
+        source ~/git/bTest/bPot/SYPLUG/increment.vim
         "==============================================
 "++bbb+++++++++++++++}}}
 "++AAA++#WILD++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -1781,7 +1816,7 @@ call plug#end()
         "******************************************************************************************
         "================================[#Ulti]===================================================
         "******************************************************************************************
-        let g:UltiSnipsSnippetDirectories = ['~/git/bTest/sPot/MUltiSnips']
+        let g:UltiSnipsSnippetDirectories = ['~/git/bTest/bPot/UltiSnips']
         """""""""""""""""""""""""""""""""
         " hallo meine [#SMART] ulti-box "
         """""""""""""""""""""""""""""""""
@@ -1996,18 +2031,18 @@ call plug#end()
         nnoremap  <C-Up> :call ScrollOtherWindow("up")<CR>
         "==================================================================================
         " better pane navigation
-        " map <C-h> <C-W>h
-        " map <C-j> <C-W>j
-        " map <C-k> <C-W>k
-        " map <C-l> <C-W>l
+        map <C-h> <C-W>h
+        map <C-j> <C-W>j
+        map <C-k> <C-W>k
+        map <C-l> <C-W>l
         "===================================================
         " Simpler split navigation in vim and tmux
-        " let g:tmux_navigator_no_mappings = 1
-        " nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-        " nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-        " nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-        " nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-        " nnoremap <silent> <c-p> :TmuxNavigatePrevious<cr>
+        let g:tmux_navigator_no_mappings = 1
+        nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+        nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+        nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+        nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+        nnoremap <silent> <c-p> :TmuxNavigatePrevious<cr>
         "==================================================================================
 
 "++bbb+++++++++++++++ENAVI+++++}}}
@@ -2037,10 +2072,9 @@ call plug#end()
         nnoremap wq <C-w>q<CR>
         nnoremap ww <C-w>o<CR>
         "==========================================================================================
-        nnoremap EE :source $MYVIMRC<CR>
         nnoremap BB ggVG
         "==========================================================================================
-        "==xyz=yhallo=
+        "==xyz==
         "==================================================================================
         " nnoremap vv <c-w>v<c-w>l<cr><c-w>w<cr>
         nnoremap VV :execute "vsplit" bufname('#')<cr>
@@ -2051,7 +2085,6 @@ call plug#end()
         nnoremap hh <c-w>w
         "==========================================================================================
         command! CD cd %:p:h
-
         "==xyz==
         " nnoremap <leader>j :cd %:p:h <CR> :! javac %:t<CR> :! java %:t:r<CR>
         " autocmd filetype java nnoremap <F4> :w <bar> !javac % && java -enableassertions %:p <CR>
@@ -2082,7 +2115,7 @@ call plug#end()
         nnoremap <F3> :call NERDTreeToggleInCurDir()<CR>
         inoremap <F3> <esc>:NERDTreeToggle<cr>
         "==========================================#STARTIFY=======================================
-        source ~/git/bTest/sPot/s9legoStartify.vim
+        source ~/git/bTest/bPot/aa9legoStartify.vim
         nnoremap <F4> <esc>:Startify<cr>
         "==========================================================================================
         nnoremap <F5> :w<CR>:!python %<CR>
@@ -2101,7 +2134,7 @@ call plug#end()
         "==========================================================================================
         nnoremap TT :TagbarToggle<CR>
         "==========================================================================================
-        source ~/git/bTest/sPot/s9legoQuickMenu.vim
+        source ~/git/bTest/bPot/aa9legoQuickMenu.vim
         nnoremap <F12> :call quickmenu#toggle(0)<CR>
         "==========================================================================================
 "++bbb+++++++++++++++++++++EF2++++}}}
@@ -2536,7 +2569,7 @@ cabbrev w3 call WrapWordWith()<CR>
 "++bbb+++++++++++EFZF++}}}
 "++AAA++#LEADER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         "============================================
-        source ~/git/bTest/sPot/s9legoLeaderGuide.vim
+        source ~/git/bTest/bPot/aa9legoLeaderGuide.vim
         "============================================
         call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
         "============================================
@@ -2549,16 +2582,16 @@ cabbrev w3 call WrapWordWith()<CR>
         nnoremap ; :<c-u>LeaderGuide  ';'<CR>
         vnoremap ; :<c-u>LeaderGuideVisual  ';'<CR>
         "============================================
-"++bbb+++++++++++++++}}}
+"++bbb++++++++++++++++++++++++++++}}}
 "++AAA++#COC+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-         " source ~/git/bTest/sPot/s9legoCoc.vim
-         " source ~/git/bTest/sPot/s9legoCoc.vim
-         " source ~/git/bTest/sPot/s9legoCoc.vim
-         " source ~/git/bTest/sPot/s9legoCoc.vim
-         " source ~/git/bTest/sPot/s9legoCoc.vim
-"++bbb+++++++++++++++++++++++++++++}}}
+         " source ~/git/bTest/bPot/bb9legoCoc.vim
+         " source ~/git/bTest/bPot/bb9legoCoc.vim
+         " source ~/git/bTest/bPot/bb9legoCoc.vim
+         " source ~/git/bTest/bPot/bb9legoCoc.vim
+         " source ~/git/bTest/bPot/bb9legoCoc.vim
+"++bbb+++++++++++++++++++++++++++++++++}}}
 "++AAA++#DEO-jedi-LSP-CORE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        source ~/git/bTest/sPot/s9legoDeo.vim
+        source ~/git/bTest/bPot/aa9legoDeo.vim
         "----------------------------------------------------------------------------------
         let g:SuperTabContextDefaultCompletionType = '<c-n>'
         let g:SuperTabDefaultCompletionType = '<C-n>'
@@ -2601,7 +2634,7 @@ cabbrev w3 call WrapWordWith()<CR>
         "==========================================================================================
         augroup SourceVimrc
                 autocmd!
-                autocmd bufwritepost .vimrc source $MYVIMRC
+                " autocmd bufwritepost .vimrc source $MYVIMRC
         augroup END
         "==========================================================================================
         autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
@@ -2682,6 +2715,12 @@ iabbrev yy2 "*******************************************************************
 iabbrev yy3 "++AAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{<CR>"++bbb++}}}
 iabbrev yy4 "======================================================================================================
 iabbrev yy5 +++++++++++++
+iabbrev yy6 ###############################################################################
+iabbrev yy7 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+iabbrev yy8 ===============================================================================
+iabbrev yy9 -------------------------------------------------------------------------------
+
+
 iabbrev xdate <C-r>=strftime("%m/%d/%y")<CR>
 iabbrev fdate <C-r>=strftime("%B %d, %Y")<CR>
 iabbrev xtime <C-r>=strftime("%H:%M")<CR>
@@ -2705,7 +2744,7 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
 "++AAA++#CYAN+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         set background=dark
         set termguicolors
-        source ~/git/bTest/sPot/sGruvbox.vim
+        source ~/git/bTest/bPot/aaGruvbox.vim
         " source MYX/n-badwolf.vim
         " colorscheme desert
         " colorscheme molokai
@@ -2715,7 +2754,6 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
         " colorscheme neonwave
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "=================================================================================
-        " source ~/git/bTest/sPot/s9legoCyan.vim
         set listchars=tab:▸\ ,eol:¬,trail:⋅
         hi NonText ctermfg=16 guifg=#Fa3a19
         hi SpecialKey ctermfg=16 guifg=#ff00af
@@ -2911,7 +2949,11 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
         nnoremap <F12> :call LanguageClient_contextMenu()<CR>
         ":::::::::::::::::::::::::::::#ALE:::::::::::::::::::::::::::::::::::::::::::::::::
 
-"++bbb++++++ECYAN++}}}
+"++bbb+++++++++++++++++++++++++++++++++++++++++++ECYAN+++++}}}
+
+""""""""""""""""""
+"  VimEnd EndVim "
+""""""""""""""""""
 
 " Highlight a particular csv column (put in .vimrc)
 function! CSVH(x)
@@ -2928,7 +2970,7 @@ command! -nargs=1 Csv :call CSVH(<args>)
 :let @a='rdd�ku�kupcc'
 "decrement
 :let @b='yyp'
-"age
+"age USA 195 196
 " :let @c='03wdei^R=2012-^R"^M^[0j'
 :let @c='03wdei=2019-*'
 " :let @d='03wdei=2019-*^[kH'
@@ -3026,11 +3068,21 @@ nmap <silent> gw    "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<cr><c-o><c-l>
 "**************************************
 "++bbb++++++++++++++++++++++++++++++++++}}}
 
-nmap <localleader>t @<Plug>OrgSetTags
+"*********************************************************************************************
 
-:let g:org_todo_keywords = [['TODO(t)', '|', 'DONE(d)'],
-                        \ ['REPORT(r)', 'BUG(b)', 'KNOWNCAUSE(k)', '|', 'FIXED(f)'],
-                        \ ['CANCELED(c)']]
+let g:org_indent = 1
+" let g:org_plugins = ['ShowHide', '|', 'Navigator', 'EditStructure']
+" let g:org_aggressive_conceal = 1
+let g:org_todo_keywords = ['TODO', '|', 'DONE']
 
-:nmap g{
-                        \ :py ORGMODE.plugins["Navigator"].parent(mode="normal")<CR>
+"*********************************************************************************************
+" AWK:
+" gawk '{ sum += $1 }; END { print sum }' file
+" gawk -F: '{ print $1 }' /etc/passwd
+"*********************************************************************************************
+" :nmap g{ let g:org_agenda_files = ['~/org/index.org','~/org/projects.org'] :py ORGMODE.plugins["Navigator"].parent(mode="normal")<CR>
+" let g:org_agenda_files = ['~/org/index.org','~/org/projects.org']
+"*********************************************************************************************
+
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown

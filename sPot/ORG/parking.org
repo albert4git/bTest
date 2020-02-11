@@ -1,0 +1,10 @@
+
+** In general Vim Versions:~
+      <localleader>hN  - insert heading above
+      <localleader>hh  - insert heading below, taking over children
+      <localleader>hn  - insert heading above, after children
+
+      m{              - move heading up
+      m}              - move heading down
+      m[[             - move subtree up
+      m]]             - move subtree down

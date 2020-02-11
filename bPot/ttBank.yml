@@ -1,0 +1,47 @@
+# Created:            Do 11 Apr 2019 11:52:32  CEST
+# Last Modified:      Mo 10 Feb 2020 04:47:56  CET
+# ~/.tmuxinator/ttBank.yml
+
+name: ttBank
+root: ~/git/bTest/bPot/
+
+windows:
+
+  - bPot:
+      layout: main-vertical
+      panes:
+        - T1:
+          - a22 22DeoMuxOrg.vim
+
+  - sPot:
+      layout: main-vertical
+      panes:
+        - T2:
+          - cd ../sPot
+
+  - kDot:
+      layout: main-vertical
+      panes:
+        - T3:
+            - cd ../kDot
+
+  - TPlug:
+      layout: tiled
+      panes:
+        - T4:
+          - cd ~/.tmux/plugins/
+          - ls
+
+  - NPlug:
+      layout: tiled
+      panes:
+        - T5:
+          - cd ~/.config/nvim/plugged/
+          - ls
+
+  - ZPlug:
+      layout: tiled
+      panes:
+        - T6:
+          - cd ~/.zplug/repos/
+          - ls
