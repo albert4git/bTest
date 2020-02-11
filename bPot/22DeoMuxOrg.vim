@@ -1,6 +1,6 @@
 " File: bPot
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Di 11 Feb 2020 03:26:14  CET
+" Lass Modified:      Di 11 Feb 2020 06:26:47  CET
 "++AAA++#TAG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%
 "*******************************************Extra1***********************************************************
@@ -1611,6 +1611,8 @@ call plug#begin('~/.config/nvim/plugged/')
         "=======================================
         " Plug 'tmsvg/pear-tree'
         Plug 'dohsimpson/vim-macroeditor'
+        "=======================================
+        Plug 'tmux-plugins/vim-tmux-focus-events'
 "++bbb+++++++++++++++++++++++++}}}
 call plug#end()
 "=eHapyEnd=

@@ -1,9 +1,6 @@
 #---START--START----
 #-----NAUTILUS-----5
 #--FIN--FIN--FIN--FI
-#******************************************************************************************
-/bin/setfont /usr/share/consolefonts/Lat2-Terminus28x14.psf.gz
-#******************************************************************************************
 
 #=============================================================
 # cprof
@@ -50,8 +47,10 @@ set nobeep
 setopt vi
 set editing-mode vi
 #=============================================================
-export PATH=${PATH}:/home/red/nvim-linux64/bin/
+# Dircolors
+LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
 #=============================================================
+export PATH=${PATH}:/home/red/nvim-linux64/bin/
 export PATH=${PATH}:/home/red/.fzf/bin/
 export PATH=${PATH}:/home/red/Komodo-Edit-11/bin/
 export PATH=${PATH}:/media/red/124Black/git/mySoft/
@@ -85,63 +84,126 @@ alias pyconda='/media/red/124Black/3conda/bin/python3'
 #export PATH=/media/red/124Black/3conda/bin:$PATH
 #=============================================================
 export LS_COLORS
-
-#=============================================================
-alias ni='nvim'
-alias lnv='nvim -c "normal '\''0"'
-alias mux='tmuxinator'
-alias q='exit'
-alias c='clear'
-alias pd='pwd'
-alias t='time'
-alias k='kill'
-alias l='exa -l'
-alias d='dirs -v | head -10'
-alias exat='exa -lT'
-alias xx='exa -lT'
-alias lst='exa -lT'
-
-#==========================================================================================
-#-Pretty print the path--------------------------------------------------------------------
-alias ips="ip a | grep 'inet ' | sed -e 's/^.*inet //g' -e 's/\/.*//g' | grep -v '127.0.0.1'"
-alias lss='LC_COLLATE=C ls -A --color -h --group-directories-first'
-alias addr="ip -o a | cut -d ' ' -f2,7"
-alias mpath='echo $PATH | tr -s ":" "\n"'
-
-alias ggt="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gil="git log --oneline --graph"
 #=============================================================
 #export GREP_OPTIONS='--color=auto'
 alias grep= 'grep--color=auto'
+###-DEPRICATED-
+# Add some colour to LESS/MAN pages
+# export LESS_TERMCAP_mb=$'\E[01;31m'
+# export LESS_TERMCAP_md=$'\E[01;33m'
+# export LESS_TERMCAP_me=$'\E[0m'
+# export LESS_TERMCAP_se=$'\E[0m'
+# export LESS_TERMCAP_so=$'\E[01;42;30m'
+# export LESS_TERMCAP_ue=$'\E[0m'
+# export LESS_TERMCAP_us=$'\E[01;36m'
 #=============================================================
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias hh='history'
 alias so="source ~/.zshrc"
+###############################################################
+alias nv='nvim'
+alias wi1='vim -U NONE -u ~/git/bTest/kDot/WIMRC/wimrc-deopl-tern-min.vim'
+###############################################################
+# alias ni1='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
+# alias ni2='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
+# alias wi2='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/xvim-Marius.vim'
+# alias wi3='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/xvim-tinyX.vim'
+# alias wi4='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wimrc-erik.vim'
+# alias wi5='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wim-nakamura.vim'
+###############################################################
+# tail -f InPlayLog20190419.log | perl -pe 's/DEBUG/\e[1;31;43m$&\e[0m/g'
+# tail -f InPlayLog20190419.log | perl -pe 's/INFO/\e[1;30;43m$&\e[0m/g'
+###############################################################
 
-###############################################################
-alias py='python'
-alias py3='python3'
-alias ca='ccat'
-###############################################################
 alias grey-grep="GREP_COLOR='1;30' grep -E --color=always --line-buffered"
 alias red-grep="GREP_COLOR='1;31' grep -E --color=always --line-buffered"
 alias green-grep="GREP_COLOR='1;32' grep -E --color=always --line-buffered"
 alias yellow-grep="GREP_COLOR='1;33' grep -E --color=always --line-buffered"
 alias cyan-grep="GREP_COLOR='1;36' grep -E --color=always --line-buffered"
 
-###############################################################
-alias nv='nvim'
-alias vim='vim  -u ~/git/bTest/bPot/cc1CleanRC.vim'
+# tail -f InPlayLog20190419.log | grey-grep ".*DEBUG*|$" | cyan-grep "INFO|$" | yellow-grep "WARN|$" | red-grep "[ERROR].*|[FATAL].*|$" | green-grep "***|$"
 
-###############################################################
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias py='python'
+alias py3='python3'
+alias ca='ccat'
+
+#******************************************************************************************
+alias h00='402nv.app  -u ~/git/bTest/kDot/h00.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias h1='402nv.app  -u ~/git/bTest/kDot/h1Hunter.vim'
+alias h1coc='402nv.app  -u ~/git/bTest/kDot/h1HunterCoc.vim'
+alias h1de='402nv.app  -u ~/git/bTest/kDot/h1HunterDeo.vim'
+alias h1Vls='402nv.app  -u ~/git/bTest/kDot/h1HunterVimLsp.vim'
+alias h1lc='402nv.app  -u ~/git/bTest/kDot/h1HunterLc.vim'
+alias h1ycm='402nv.app  -u ~/git/bTest/kDot/h1HunteYCM.vim'
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias h2='402nv.app  -u ~/git/bTest/kDot/h2HunterLc.vim'
+alias h2de='deonvim  -u ~/git/bTest/kDot/h2HunterLc.vim'
+alias h500='500nv.app  -u ~/git/bTest/kDot/h2HunterLc.vim'
+alias h50='50nv  -u ~/git/bTest/kDot/h2HunterLc.vim'
+alias h3='deonvim  -u ~/git/bTest/kDot/h3HunterLc.vim'
+
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+alias h21='500nv.app  -u ~/git/bTest/kDot/h21wip.vim'
+alias h22='500nv.app  -u ~/git/bTest/kDot/h22ncm2B.vim'
+alias h23='500nv.app  -u ~/git/bTest/kDot/h23jacobGM.vim'
+alias h24='500nv.app  -u ~/git/bTest/kDot/h24ncm2.vim'
+alias h25='500nv.app  -u ~/git/bTest/kDot/h25ncm2.vim'
+alias h26='500nv.app  -u ~/git/bTest/kDot/h26mu.vim'
+alias h27='500nv.app  -u ~/git/bTest/kDot/h27deo.vim'
+alias h28='500nv.app  -u ~/git/bTest/kDot/h28Lc.vim'
+alias h29='500nv.app  -u ~/git/bTest/kDot/h29Lc.vim'
+alias h30='deonvim  -u ~/git/bTest/kDot/h30ncm2.vim'
+alias h31='deonvim  -u ~/git/bTest/kDot/h31YCM.vim'
+alias h32='deonvim  -u ~/git/bTest/kDot/h32deo.vim'
+alias h33c='deonvim  -u ~/git/bTest/kDot/h33coc.vim'
+alias h33d='deonvim  -u ~/git/bTest/kDot/h33deopl.vim'
+alias h34='deonvim  -u ~/git/bTest/kDot/h34coc.vim'
+alias h35='deonvim  -u ~/git/bTest/kDot/h35cocList.vim'
+alias h36='deonvim  -u ~/git/bTest/kDot/h36coc.vim'
+alias h37='deonvim  -u ~/git/bTest/kDot/h37cocList.vim'
+alias h38='deonvim  -u ~/git/bTest/kDot/h38cocTern.vim'
+alias h39='deonvim  -u ~/git/bTest/kDot/h39cocGT.vim'
+alias h40='deonvim  -u ~/git/bTest/kDot/h40tasty.vim'
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias h0de='402nv.app  -u ~/git/bTest/kDot/h0MinDeo.vim'
+alias h02de='402nv.app  -u ~/git/bTest/kDot/h0Min2Deo.vim'
+alias h01y='402nv.app  -u ~/git/bTest/kDot/h01YCM.vim'
+alias h02y='402nv.app  -u ~/git/bTest/kDot/h02YCM.vim'
+alias h0g='402nv.app  -u ~/git/bTest/kDot/hGreg.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias h03='402nv.app  -u ~/git/bTest/kDot/h03DeoClang.vim'
+alias h04='402nv.app  -u ~/git/bTest/kDot/h04DeoBig.vim'
+alias h05='402nv.app  -u ~/git/bTest/kDot/h05DeoMedium.vim'
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias de='deonvim  -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim  -u ~/git/bTest/kDot/kMinit.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias s13='deonvim  -u ~/git/bTest/kDot/s13DeoLc.vim'
+alias s2='deonvim  -u ~/git/bTest/kDot/s2DeoLc.vim'
+alias s3='deonvim  -u ~/git/bTest/kDot/s3DeoLc.vim'
+alias s03='deonvim  -u ~/git/bTest/kDot/s03-LightLine-DeoLc.vim'
+alias sn03='deonvim  -u ~/git/bTest/kDot/s03DeoLc-NoDeo.vim'
 
 #============================================================
-#=====================NEW====================================
+#==higlite problems===
+alias s4='deonvim  -u ~/git/bTest/kDot/s4DeoLc.vim'
+alias s5='402nv.app  -u ~/git/bTest/kDot/s5DeoLc.vim'
+alias s50='deonvim  -u ~/git/bTest/kDot/s5DeoLc.vim'
+alias s6='402nv.app  -u ~/git/bTest/kDot/s6DeoLc.vim'
+alias s7='402nv.app  -u ~/git/bTest/kDot/s7DeoLc.vim'
+alias s70='deonvim  -u ~/git/bTest/kDot/s7DeoLc.vim'
+alias s8='402nv.app  -u ~/git/bTest/kDot/s8DeoLc.vim'
+# alias s9='402nv.app  -u ~/git/bTest/kDot/s9DeoLc.vim'
+# alias s10='402nv.app  -u ~/git/bTest/kDot/s10DeoLc.vim'
 #============================================================
+#=====================NEW====================================
 alias s9='402nv.app  -u ~/git/bTest/sPot/s9DeoLc.vim'
 alias s10='402nv.app  -u ~/git/bTest/sPot/s10DeoLc.vim'
 alias s11='402nv.app  -u ~/git/bTest/sPot/s11DeoLc.vim'
@@ -150,14 +212,15 @@ alias s13='402nv.app  -u ~/git/bTest/sPot/s13TagDeoLc.vim'
 alias s14='402nv.app  -u ~/git/bTest/sPot/s14ActTagDeoLc.vim'
 alias s15='402nv.app  -u ~/git/bTest/sPot/s15ActTagDeoLc.vim'
 alias s16='402nv.app  -u ~/git/bTest/sPot/s16TitanDeoLc.vim'
+#============================================================
 alias s17='402nv.app  -u ~/git/bTest/sPot/s17TitanDeoLc.vim'
 alias s18='402nv.app  -u ~/git/bTest/sPot/s18TitanDeoLc.vim'
 alias s19='402nv.app  -u ~/git/bTest/sPot/s19TitanDeoLc.vim'
+#============================================================
 alias s20='402nv.app  -u ~/git/bTest/sPot/s20TitanDeoLc.vim'
 alias s21='402nv.app  -u ~/git/bTest/sPot/s21TitanDeoLcOrg.vim'
-###############################################################
 alias s22='402nv.app  -u ~/git/bTest/sPot/s22TitanDeoLcOrgMux.vim'
-###############################################################
+#============================================================
 alias a22='402nv.app  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
 alias a23='402nv.app  -u ~/git/bTest/bPot/23DeoMuxOrg.vim'
 alias a24='402nv.app  -u ~/git/bTest/sPot/24DeoMuxOrg.vim'
@@ -172,26 +235,45 @@ alias g3='402nv.app  -u ~/git/bTest/sPot/g3fzf.vim'
 alias g4='402nv.app  -u ~/git/bTest/sPot/g4Kim.vim'
 #============================================================
 
-###############################################################
+# alias wi5='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wim-nakamura.vim'
+# alias ni1='402nv.app -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
+# alias ni2='402nv.app -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
+
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias vi1='vim  -u ~/git/bTest/sPot/galore.vim'
 alias vi2='vim  -u ~/git/bTest/kDot/inkPreRc19.vim'
 alias vi82='82vim  -u ~/git/bTest/kDot/inkPreRc19.vim'
 alias vi83='82vim  -u ~/git/bTest/kDot/kill1rc.vim'
-###############################################################
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias ni3='vim  -u ~/git/bTest/kDot/WIMRC/wimrc-deopl-php.vim'
+alias ni4='vim  -u ~/git/bTest/kDot/WIMRC/gregorRC.vim'
+alias ni5='vim  -u ~/git/bTest/kDot/h0Min2Deo.vim'
+alias ni6='vim  -u ~/git/bTest/kDot/h01YCM.vim'
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias p1='500nv.app  -u ~/git/bTest/kDot/p1Deo.vim'
 alias p2='50nv  -u ~/git/bTest/kDot/p1Deo.vim'
 alias p3='deonvim  -u ~/git/bTest/kDot/p1Deo.vim'
 alias p4='401nv.app  -u ~/git/bTest/kDot/p1Deo.vim'
-###############################################################
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias e2='deonvim  -u ~/git/bTest/kDot/k2MinFF.vim'
+alias ne2='deonvim  -u ~/git/bTest/kDot/nd2MinFF.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # alias d50='nvim500  -u ~/git/bTest/kDot/k3MinFF.vim'
 # alias d42='nvim402  -u ~/git/bTest/kDot/k3MinFF.vim'
 # alias d41='nvim401  -u ~/git/bTest/kDot/k3MinFF.vim'
 # alias d40='nvim400  -u ~/git/bTest/kDot/k3MinFF.vim'
-###############################################################
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+alias e3='402nv.app  -u ~/git/bTest/kDot/k3MinFF.vim'
+alias e4='402nv.app  -u ~/git/bTest/kDot/k4MinFF.vim'
+alias e5='402nv.app  -u ~/git/bTest/kDot/k5MinFF.vim'
+alias e7='402nv.app  -u ~/git/bTest/kDot/kFF7Min.vim'
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias svim='vim -u ~/.SpaceVim/vimrc'
-
-###############################################################
 
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -244,10 +326,13 @@ export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:5,fg+:7,hl:1,hl+:32,promp
 #---------------------
 #--CYAN fg:80----
 #---------------------
+
 export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:80,fg+:7,hl:1,hl+:32,prompt:1,spinner:2,pointer:5 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
+
 #---------------------
 export FZF_DEFAULT_OPTS="--inline-info --color=dark,fg:80,fg+:7,hl:1,hl+:32,prompt:1,spinner:2,pointer:1,header:2,marker:5,info:1 --margin 1,1 --preview-window=up:50%:wrap --bind 'F2:toggle-preview'"
 #---------------------
+
 #--bind "F2:toggle-preview"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_COMMAND='rg --files'
@@ -260,7 +345,10 @@ export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #==============================================================
+
 #export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+
+
 
 ###############################################################
 #======================-ReFZF-=================================
@@ -269,8 +357,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 alias fff='fzf --preview="head -$LINES {}"'
 alias ffc='fzf --preview="ccat --color=always {}"'
 #==============================================================
+
 # Press F1 to open the file with less without leaving fzf
 # Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
+
 #==============================================================
 alias ff1='fff --bind "f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
 #==============================================================
@@ -280,13 +370,10 @@ alias ff4='fff --bind "f1:execute(deonvim NONE -u ~/git/bTest/kDot/kMinit.vim {}
 #==============================================================
 
 
-#################FFERUM########################################
 #==============================================================
 alias ffv='vim $(ffc)'
 alias ffe='de $(ffc)'
 alias ff2='d2 $(ffc)'
-#==============================================================
-###############################################################
 
 #==============================================================
 # Use fd to generate the list for directory completion
@@ -394,7 +481,31 @@ extract1 () {
 ### apt-get install dict-moby-thesaurus
 ###############################################################
 
+# alias deo1='deonvim NONE -u ~/git/aTest/dotFiles/nVim/minit.vim'
 
+alias ni='nvim'
+alias lnv='nvim -c "normal '\''0"'
+alias mux='tmuxinator'
+alias q='exit'
+alias c='clear'
+alias pd='pwd'
+alias t='time'
+alias k='kill'
+alias l='exa -l'
+alias d='dirs -v | head -10'
+alias exat='exa -lT'
+alias xx='exa -lT'
+alias lst='exa -lT'
+
+#==========================================================================================
+#-Pretty print the path--------------------------------------------------------------------
+alias ips="ip a | grep 'inet ' | sed -e 's/^.*inet //g' -e 's/\/.*//g' | grep -v '127.0.0.1'"
+alias lss='LC_COLLATE=C ls -A --color -h --group-directories-first'
+alias addr="ip -o a | cut -d ' ' -f2,7"
+alias mpath='echo $PATH | tr -s ":" "\n"'
+
+alias ggt="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gil="git log --oneline --graph"
 
 #==========================================================================================
 function mkd() {
@@ -444,16 +555,15 @@ ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 HISTSIZE=9000
 SAVEHIST=9000
 
-###########################################################################################
 #=============================================================
 export ZPLUG_HOME=$HOME/.zplug
 # zplug initialization
 [[ ! -f $ZPLUG_HOME/init.zsh ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
 source $ZPLUG_HOME/init.zsh
-#=============================================================
-###########################################################################################
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-# zplug "lib/completion",   from:oh-my-zsh
+/bin/setfont /usr/share/consolefonts/Lat2-Terminus28x14.psf.gz
+#==========================================================================================
+zplug "lib/completion",   from:oh-my-zsh
 zplug "lib/history",      from:oh-my-zsh
 zplug "lib/key-bindings", from:oh-my-zsh
 zplug "lib/termsupport", from:oh-my-zsh
@@ -469,12 +579,6 @@ zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 zplug 'zsh-users/zsh-history-substring-search', defer:3
-#=============================================================
-# warn when running command you have an alias for
-zplug "djui/alias-tips", from:github
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug 'zdharma/fast-syntax-highlighting', defer:2, hook-load:'FAST_HIGHLIGHT=()'
-zplug "unixorn/git-extra-commands", from:github
 
 #=============================================================
 ###zplug 'modules/environment', from:prezto
@@ -488,18 +592,24 @@ zplug "unixorn/git-extra-commands", from:github
 ###zplug "BuonOmo/yarn-completion"
 ###zplug "hlissner/zsh-autopair"
 ### zplug "MikeDacre/careful_rm"
+#=============================================================
+#==========================================================================================
+# warn when running command you have an alias for
+zplug "djui/alias-tips", from:github
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug 'zdharma/fast-syntax-highlighting', defer:2, hook-load:'FAST_HIGHLIGHT=()'
+zplug "unixorn/git-extra-commands", from:github
 #==========================================================================================
 DISABLE_AUTO_TITLE="true"
 # Grab binaries from GitHub Releases
 # and rename to use "file:" tag
 
+
+
 #==========================================================================================
 ### zplug "skx/sysadmin-util", from:github
 ### zplug "peterhurford/git-it-on.zsh", from:github
-###########################################################################################
-#============================DENISOSOVAN===================================================
-###########################################################################################
-
+#==========================================================================================
 zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
 
 #==========================================================================================
@@ -512,13 +622,13 @@ if ! zplug check --verbose; then
 fi
 #==========================================================================================
 
+
 #==========================================================================================
 # define RPS1 in order to avoid the annoying vim status
 # export RPS1=" "
 # zplug 'plugins/vi-mode', from:oh-my-zsh
 #==========================================================================================
 
-###########################################################################################
 #======================================================
 SPACESHIP_CHAR_COLOR_SUCCESS="green"
 SPACESHIP_CHAR_COLOR_FAILURE="red"
@@ -574,17 +684,15 @@ SPACESHIP_PROMPT_ORDER=(
   exit_code     # Exit code section
   char          # Prompt character
 )
-#===============================================================
-###########################################################################################
 
-###########################################################################################
+
 #===FIN==STOP==============================================================================
 zplug check || zplug install
+#zplug load
 zplug load --verbose
-###########################################################################################
 
+set -o vi
 
-###########################################################################################
 #==========================================================================================
 # export PATH="~/.pyenv/bin:$PATH"
 # eval "$(pyenv init -)"
@@ -683,7 +791,7 @@ function prev() {
 #=If you want to check out the whole list, again the=======================================
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 #==========================================================================================
-#################################NVIM-make#################################################
+#################################NVIM-make##############################
 ### cd vim-master-82/src
 ### --OR--
 ### cd git/vim82/vim/src
@@ -724,35 +832,27 @@ function prev() {
 #############################################################
 #############################################################
 
-#?? source ~/.config/up/up.sh
+source ~/.config/up/up.sh
 
-###################################TAR##############################################################################
-#-----DUDA-bdm-------
-# tar -P --listed-incremental=/media/red/124Black/TAR/TarTopX2Py/x2Snap.file -cJpf /media/red/124Black/TAR/TarTopX2Py/x2PyBack-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/x2PyCalc/ >> /dev/null 2>&1
-#--------------------------------------------------------------------------------------------------
+#-DUDA-bdm
+tar -P --listed-incremental=/media/red/124Black/TAR/TarTopX2Py/x2Snap.file -cJpf /media/red/124Black/TAR/TarTopX2Py/x2PyBack-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/x2PyCalc/ >> /dev/null 2>&1
+
 #----DotK------------------------------------------------------------------------------------------
-# tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kDot2Snap.file -cJpf /media/red/124Black/TAR/TarDotK/kDot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/
+tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kDot2Snap.file -cJpf /media/red/124Black/TAR/TarDotK/kDot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/
 #--------------------------------------------------------------------------------------------------
-#---.Config-----------------------------------------------------------------------------------------
-tar -P --listed-incremental=/media/red/124Black/TAR/TarRedConfig/RedConfig2Snap.file -cJpf /media/red/124Black/TAR/TarRedConfig/TarRedConfig-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/.config/
-#--------------------------------------------------------------------------------------------------
-#----sPot------------------------------------------------------------------------------------------
-# tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kSPot2Snap.file -cJpf /media/red/124Black/TAR/TarSPot/kDot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/sPot/
-#--------------------------------------------------------------------------------------------------
-#----bPot------------------------------------------------------------------------------------------
-tar -P --listed-incremental=/media/red/124Black/TAR/TarBPot/kBPot2Snap.file -cJpf /media/red/124Black/TAR/TarBPot/bPot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/bPot/
-#--------------------------------------------------------------------------------------------------
-####################################################################################################################
 
+#---.Config---
+tar -P --listed-incremental=/media/red/124Black/TAR/TarRedConfig/RedConfig2Snap.file -cJpf /media/red/124Black/TAR/TarRedConfig/TarRedConfig-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/.config/
+
+#----sPot------------------------------------------------------------------------------------------
+tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kSPot2Snap.file -cJpf /media/red/124Black/TAR/TarSPot/kDot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/sPot/
+#--------------------------------------------------------------------------------------------------
 
 #--------------------------------------------------------------------------------------------------
 # cd ~/git/bTest/kDot/
 #--------------------------------------------------------------------------------------------------
-# cd ~/git/bTest/sPot/
-#--------------------------------------------------------------------------------------------------
-set -o vi
+cd ~/git/bTest/sPot/
 
-#--------------------------------------------------------------------------------------------------
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/red/.sdkman"
 [[ -s "/home/red/.sdkman/bin/sdkman-init.sh" ]] && source "/home/red/.sdkman/bin/sdkman-init.sh"
