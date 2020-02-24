@@ -1,5 +1,4 @@
 #---START--START----
-#-----NAUTILUS-----1
 #-----NAUTILUS-----5
 #--FIN--FIN--FIN--FI
 
@@ -19,13 +18,7 @@
 # may have used it as it is primarily designed as front-end for
 # Valgrind
 # line_profiler and the memory_profiler projects.
-#=============================================================
-export ZPLUG_HOME=$HOME/.zplug
-# zplug initialization
-[[ ! -f $ZPLUG_HOME/init.zsh ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
-source $ZPLUG_HOME/init.zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-/bin/setfont /usr/share/consolefonts/Lat2-Terminus28x14.psf.gz
+
 #=============================================================
 # export PATH="$PATH:$HOME/bin:$HOME/.config/local/bin"
 # export MANPATH="$MANPATH:$HOME/.config/local/share/man"
@@ -68,6 +61,7 @@ export PATH=${PATH}:/home/red/bin/devicons-shell/
 export PATH=${PATH}:/home/red/git/bTest/sPot/82vim/bin/
 export PATH=${PATH}:/snap/bin/
 
+#=============================================================
 #GOPATH is the location of your work directory
 #For example my project directory is ~/Projects/Proj1
 #export GOPATH=/home/red/git/aTest/dotFiles/nVim/goLab
@@ -78,7 +72,6 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 #=============================================================
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle/"
 export PATH=$PATH:$JAVA_HOME/bin
-
 #=============================================================
 export JYTHON_HOME=/home/red/jython2.7.0
 export PATH=$JYTHON_HOME/bin:$PATH
@@ -94,8 +87,8 @@ export LS_COLORS
 #=============================================================
 #export GREP_OPTIONS='--color=auto'
 alias grep= 'grep--color=auto'
-# Add some colour to LESS/MAN pages
 ###-DEPRICATED-
+# Add some colour to LESS/MAN pages
 # export LESS_TERMCAP_mb=$'\E[01;31m'
 # export LESS_TERMCAP_md=$'\E[01;33m'
 # export LESS_TERMCAP_me=$'\E[0m'
@@ -104,7 +97,6 @@ alias grep= 'grep--color=auto'
 # export LESS_TERMCAP_ue=$'\E[0m'
 # export LESS_TERMCAP_us=$'\E[01;36m'
 #=============================================================
-
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
@@ -112,8 +104,6 @@ alias hh='history'
 alias so="source ~/.zshrc"
 ###############################################################
 alias nv='nvim'
-alias wi1='vim -U NONE -u ~/git/bTest/kDot/WIMRC/wimrc-deopl-tern-min.vim'
-
 ###############################################################
 # alias ni1='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
 # alias ni2='nvim -U NONE -u ~/git/aTest/dotFiles/nVim/start1ninit19.vim'
@@ -122,9 +112,9 @@ alias wi1='vim -U NONE -u ~/git/bTest/kDot/WIMRC/wimrc-deopl-tern-min.vim'
 # alias wi4='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wimrc-erik.vim'
 # alias wi5='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wim-nakamura.vim'
 ###############################################################
-
 # tail -f InPlayLog20190419.log | perl -pe 's/DEBUG/\e[1;31;43m$&\e[0m/g'
 # tail -f InPlayLog20190419.log | perl -pe 's/INFO/\e[1;30;43m$&\e[0m/g'
+###############################################################
 
 alias grey-grep="GREP_COLOR='1;30' grep -E --color=always --line-buffered"
 alias red-grep="GREP_COLOR='1;31' grep -E --color=always --line-buffered"
@@ -139,8 +129,8 @@ alias py='python'
 alias py3='python3'
 alias ca='ccat'
 
-#******************************************************************************************
-#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+alias vim='vim  -u ~/git/bTest/bPot/cc1CleanRC.vim'
+
 #******************************************************************************************
 alias h00='402nv.app  -u ~/git/bTest/kDot/h00.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,9 +148,7 @@ alias h500='500nv.app  -u ~/git/bTest/kDot/h2HunterLc.vim'
 alias h50='50nv  -u ~/git/bTest/kDot/h2HunterLc.vim'
 alias h3='deonvim  -u ~/git/bTest/kDot/h3HunterLc.vim'
 
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 alias h21='500nv.app  -u ~/git/bTest/kDot/h21wip.vim'
 alias h22='500nv.app  -u ~/git/bTest/kDot/h22ncm2B.vim'
 alias h23='500nv.app  -u ~/git/bTest/kDot/h23jacobGM.vim'
@@ -182,9 +170,6 @@ alias h37='deonvim  -u ~/git/bTest/kDot/h37cocList.vim'
 alias h38='deonvim  -u ~/git/bTest/kDot/h38cocTern.vim'
 alias h39='deonvim  -u ~/git/bTest/kDot/h39cocGT.vim'
 alias h40='deonvim  -u ~/git/bTest/kDot/h40tasty.vim'
-
-#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias h0de='402nv.app  -u ~/git/bTest/kDot/h0MinDeo.vim'
@@ -219,9 +204,6 @@ alias s8='402nv.app  -u ~/git/bTest/kDot/s8DeoLc.vim'
 # alias s9='402nv.app  -u ~/git/bTest/kDot/s9DeoLc.vim'
 # alias s10='402nv.app  -u ~/git/bTest/kDot/s10DeoLc.vim'
 #============================================================
-
-
-#============================================================
 #=====================NEW====================================
 alias s9='402nv.app  -u ~/git/bTest/sPot/s9DeoLc.vim'
 alias s10='402nv.app  -u ~/git/bTest/sPot/s10DeoLc.vim'
@@ -237,23 +219,22 @@ alias s18='402nv.app  -u ~/git/bTest/sPot/s18TitanDeoLc.vim'
 alias s19='402nv.app  -u ~/git/bTest/sPot/s19TitanDeoLc.vim'
 #============================================================
 alias s20='402nv.app  -u ~/git/bTest/sPot/s20TitanDeoLc.vim'
-alias s21='402nv.app  -u ~/git/bTest/sPot/s21TitanDeoLc.vim'
-alias s22='402nv.app  -u ~/git/bTest/sPot/s22TitanDeoLc.vim'
-alias s23='402nv.app  -u ~/git/bTest/sPot/s23TitanDeoLc.vim'
-alias s24='402nv.app  -u ~/git/bTest/sPot/s24TitanDeoLc.vim'
-alias s25='402nv.app  -u ~/git/bTest/sPot/s25TitanDeoLc.vim'
-alias s26='402nv.app  -u ~/git/bTest/sPot/s26TitanDeoLc.vim'
-alias s27='402nv.app  -u ~/git/bTest/sPot/s27TitanDeoLc.vim'
-alias s28='402nv.app  -u ~/git/bTest/sPot/s28TitanDeoLc.vim'
-alias s29='402nv.app  -u ~/git/bTest/sPot/s29TitanDeoLc.vim'
+alias s21='402nv.app  -u ~/git/bTest/sPot/s21TitanDeoLcOrg.vim'
+alias s22='402nv.app  -u ~/git/bTest/sPot/s22TitanDeoLcOrgMux.vim'
 #============================================================
-
+alias a22='402nv.app  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
+alias a23='402nv.app  -u ~/git/bTest/bPot/23DeoMuxOrg.vim'
+alias a24='402nv.app  -u ~/git/bTest/sPot/24DeoMuxOrg.vim'
+alias a25='402nv.app  -u ~/git/bTest/sPot/25DeoMuxOrg.vim'
+alias a26='402nv.app  -u ~/git/bTest/sPot/26DeoMuxOrg.vim'
+alias a27='402nv.app  -u ~/git/bTest/sPot/27DeoMuxOrg.vim'
+alias a28='402nv.app  -u ~/git/bTest/sPot/28DeoMuxOrg.vim'
+alias a29='402nv.app  -u ~/git/bTest/sPot/29DeoMuxOrg.vim'
+#============================================================
 alias g1='402nv.app  -u ~/git/bTest/sPot/galore.vim'
 alias g3='402nv.app  -u ~/git/bTest/sPot/g3fzf.vim'
 alias g4='402nv.app  -u ~/git/bTest/sPot/g4Kim.vim'
 #============================================================
-#============================================================
-
 
 # alias wi5='vim -U NONE -u ~/git/aTest/dotFiles/inkWim/wim-nakamura.vim'
 # alias ni1='402nv.app -U NONE -u ~/git/aTest/dotFiles/nVim/ninitOkt18.vim'
@@ -272,13 +253,6 @@ alias ni4='vim  -u ~/git/bTest/kDot/WIMRC/gregorRC.vim'
 alias ni5='vim  -u ~/git/bTest/kDot/h0Min2Deo.vim'
 alias ni6='vim  -u ~/git/bTest/kDot/h01YCM.vim'
 
-#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-alias s39='402nv.app  -u ~/git/bTest/sPot/s39DeoLc.vim'
-# alias s40='402nv.app  -u ~/git/bTest/sPot/s40DeoLc.vim'
-# alias s41='402nv.app  -u ~/git/bTest/sPot/s41DeoLc.vim'
-#""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-alias s19='402nv.app  -u ~/git/bTest/kDot/s1NoCs9DeoLc.vim'
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias p1='500nv.app  -u ~/git/bTest/kDot/p1Deo.vim'
 alias p2='50nv  -u ~/git/bTest/kDot/p1Deo.vim'
@@ -303,6 +277,8 @@ alias e7='402nv.app  -u ~/git/bTest/kDot/kFF7Min.vim'
 alias svim='vim -u ~/.SpaceVim/vimrc'
 
 
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#"""""""""""""""""""""""""""""""""""""FZF"""""""""""""""""""""""""""""""""""""""""""""""""
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias vif='vim $(fzf)'
 alias def='deo $(fzf)'
@@ -580,6 +556,13 @@ ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 HISTSIZE=9000
 SAVEHIST=9000
 
+#=============================================================
+export ZPLUG_HOME=$HOME/.zplug
+# zplug initialization
+[[ ! -f $ZPLUG_HOME/init.zsh ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
+source $ZPLUG_HOME/init.zsh
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+/bin/setfont /usr/share/consolefonts/Lat2-Terminus28x14.psf.gz
 #==========================================================================================
 zplug "lib/completion",   from:oh-my-zsh
 zplug "lib/history",      from:oh-my-zsh
@@ -625,12 +608,10 @@ DISABLE_AUTO_TITLE="true"
 
 
 #==========================================================================================
-### # MMM git helper scripts
-### # sysadmin helpers
 ### zplug "skx/sysadmin-util", from:github
-### # open branch/files in github
 ### zplug "peterhurford/git-it-on.zsh", from:github
 #==========================================================================================
+zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
 
 #==========================================================================================
 # Install plugins if there are plugins that have not been installed
@@ -648,10 +629,8 @@ fi
 # export RPS1=" "
 # zplug 'plugins/vi-mode', from:oh-my-zsh
 #==========================================================================================
-zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
 
 #======================================================
-# red:dirty, white:ahead, and green:clean.
 SPACESHIP_CHAR_COLOR_SUCCESS="green"
 SPACESHIP_CHAR_COLOR_FAILURE="red"
 SPACESHIP_CHAR_COLOR_SECONDARY="yellow"
@@ -659,23 +638,6 @@ SPACESHIP_CHAR_COLOR_SECONDARY="yellow"
 SPACESHIP_DIR_SHOW="true"
 SPACESHIP_DIR_COLOR="green"
 SPACESHIP_DIR_TRUNC=7
-
-#======================================================================
-# SPACESHIP_DIR_SHOW true Show directory section
-# SPACESHIP_DIR_PREFIX in· Prefix before current directory
-# SPACESHIP_DIR_SUFFIX $SPACESHIP_PROMPT_DEFAULT_SUFFIX Suffix after
-# current directory
-# SPACESHIP_DIR_TRUNC 3 Number of folders of cwd to show in prompt, 0 to
-# show all
-# SPACESHIP_DIR_TRUNC_PREFIX Prefix before cwd when it's truncated. For
-# example …/ or .../, empty to disable
-# SPACESHIP_DIR_TRUNC_REPO true While in git repo, show only root
-# directory and folders inside it
-# SPACESHIP_DIR_COLOR cyan Color of directory section
-# SPACESHIP_DIR_LOCK_SYMBOL
-# write-protected (requires powerline patched font)
-# SPACESHIP_DIR_LOCK_COLOR red Color for the lock symbol
-#======================================================================
 
 SPACESHIP_BATTERY_SHOW="true"
 SPACESHIP_BATTERY_SHOW="always"
@@ -691,28 +653,21 @@ spaceship_vi_mode_enable="true"
 SPACESHIP_VI_MODE_SHOW="true"
 #======================================================
 SPACESHIP_VI_MODE_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
+SPACESHIP_VI_MODE_SUFFIX="#"
 SPACESHIP_VI_MODE_NORMAL="[n]"
 SPACESHIP_VI_MODE_INSERT="[i]"
 SPACESHIP_VI_MODE_COLOR="yellow"
 
 #======================================================
-SPACESHIP_TIME_SHOW="true"
-SPACESHIP_TIME_PREFIX="at:"
-SPACESHIP_TIME_COLOR="blue"
-# SPACESHIP_TIME_FORMAT false Custom date formatting [67]ZSH date formats
-# SPACESHIP_TIME_12HR false Format time using 12-hour clock (am/pm)
-#======================================================
 SPACESHIP_GIT_STATUS_SHOW="true"
-SPACESHIP_GIT_BRANCH_SUFFIX=":::"
+SPACESHIP_GIT_BRANCH_SUFFIX=""
 SPACESHIP_GIT_STATUS_COLOR="cyan"
 SPACESHIP_GIT_STATUS_COLOR="red"
 
 #===============================================================
 SPACESHIP_PROMPT_ORDER=(
-  time
-  user
-  battery
   vi_mode       # Vi-mode indicator (Disabled)
+  user
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
   package
@@ -750,8 +705,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 #==========================================================================================
-
-
 # go to a path relative to the top directory
 # of the current git worktree.
 function gcd() {
@@ -769,6 +722,19 @@ function prev() {
   sh -c "pet new `printf %q "$PREV"`"
 }
 
+# !/usr/bin/env bash
+ is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+     | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+ tmux bind-key -n C-h if-shell "$is_vim" "send-keys C-h"  "select-pane -L"
+ tmux bind-key -n C-j if-shell "$is_vim" "send-keys C-j"  "select-pane -D"
+ tmux bind-key -n C-k if-shell "$is_vim" "send-keys C-k"  "select-pane -U"
+ tmux bind-key -n C-l if-shell "$is_vim" "send-keys C-l"  "select-pane -R"
+ tmux bind-key -n C-\\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
+ tmux bind-key -T copy-mode-vi C-h select-pane -L
+ tmux bind-key -T copy-mode-vi C-j select-pane -D
+ tmux bind-key -T copy-mode-vi C-k select-pane -U
+ tmux bind-key -T copy-mode-vi C-l select-pane -R
+ tmux bind-key -T copy-mode-vi C-\\ select-pane -l
 #==========================================================================================
 #==========================================================================================
 # zplug "junegunn/fzf-bin", \
@@ -810,18 +776,6 @@ function prev() {
 #fi
 
 #==========================================================================================
-# export PATH="${PATH}:${HOME}/bin:${HOME}/.cabal/bin"
-# export GOPATH="$HOME/go"
-#==========================================================================================
-# returning command and folder completion when line is empty like a bash, but better
-# blanktab() { [[ $#BUFFER == 0 ]] && CURSOR=3 zle list-choices || zle expand-or-complete }
-# zle -N blanktab && bindkey '^I' blanktab
-#==========================================================================================
-# We have environment variables available in our shells. Sometimes we want to
-# manipulate the value of these variables or just visually inspect them
-#==========================================================================================
-# cd ../.. = ...
-# cd ../../.. = ....
 # mkdir -p = md
 # git add = ga
 # git add --all = gaa
@@ -838,7 +792,7 @@ function prev() {
 #=If you want to check out the whole list, again the=======================================
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 #==========================================================================================
-###############################################################
+#################################NVIM-make##############################
 ### cd vim-master-82/src
 ### --OR--
 ### cd git/vim82/vim/src
@@ -846,13 +800,11 @@ function prev() {
 ### ./configure --prefix =/media/red/124Black/git/mySoft
 # ./configure --prefix =/media/red/124Black/git/mySoft/vim81/
 # ./configure --prefix =/media/red/124Black/git/mySoft/vim81/
-
 ### Unix: PUTTING vimrc IN /etc
 ### Some Linux distributions prefer to put the global vimrc file in /etc, and the
 ### Vim runtime files in /usr.  This can be done with:
 ### 	./configure --prefix=/usr
 ### 	make VIMRCLOC=/etc VIMRUNTIMEDIR=/usr/share/vim MAKE="make -e"
-
 # ./configure --prefix =/media/red/124Black/git/mySoft
 # ./configure --prefix =/media/red/124Black/git/mySoft/
 # make CMAKE_INSTALL_PREFIX=/media/red/124Black/git/mySoft/
@@ -878,12 +830,8 @@ function prev() {
 ### cp nvim deonvim
 ### ./deonvim -u ~/git/aTest/dotFiles/nVim/minit.vim
 #############################################################
-#" If installed using git
-#set rtp+=~/.fzf
-# tig on  master:
-#  make install
-#    INSTALL  src/tig -> /home/red/bin
-#    INSTALL  tigrc -> /home/red/etc
+#############################################################
+#############################################################
 
 source ~/.config/up/up.sh
 

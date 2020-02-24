@@ -475,7 +475,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
         " [ open with \o ] {{{ open: URL, preview doc: markdown, TeX, etc.
         " Utl {{{ :Utl to open links, files.
         " nnoremap <leader>o :Utl<CR>
-        " nnoremap ;o :Utl<CR>
+        nnoremap ;o :Utl<CR>
         " Syntax: no need to escape 'spaces'.
         " use '' contain filename(url) strings. e.g. = ":silent !evince '%p' &"
         " <url:#r=here> id=here | <url:tn=some text> <url:filename.txt#line=-10>
@@ -538,7 +538,6 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
         " let g:utl_cfg_hdl_mt_application_chm = ":silent !chmsee '%p' &"
         " application/doc
         let g:utl_cfg_hdl_mt_application_msword = ":silent !libreoffice '%p' &"
-        " }}}
 
         " - Open any URLs found in text with appropriate handler
         " - Open files of any media type from within Vim (.pdf, .jpg, etc)
@@ -550,7 +549,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
         " - Editing HTML
         " - Bookmark files, directories, URLs
         "---------------------------------------------------------------------------------
-"++AAAx++}}}
+"++AAA++++++++++++++++++++++++++++}}}
 
 
         "----------------------------------------------------------------------------------

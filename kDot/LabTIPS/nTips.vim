@@ -78,7 +78,8 @@ http://vim.sourceforge.net/tip_view.php?tip_id=
 Here's a (what should be a one-line) map to help you tell just what
 syntax highlighting groups the item under the cursor actually is:
 
-VimTip	{{{1 99: How to tell what syntax highlighting group *that* is!
+VimTip	{{{1 99:
+" How to tell what syntax highlighting group *that* is!
 map  <F10>  :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 Once known you can override the current highlighting with whatever you want.
@@ -325,7 +326,7 @@ VimTip	{{{1 430: Fast switching between buffers
 nmap <tab> :if &modifiable && !&readonly && &modified <cr> :w<cr> :endif<cr> :bn<cr>
 nmap <s-tab> :if &modifiable && !&readonly && &modified <cr> :w<cr> :endif<cr> :bp<cr>
 "AAA----------------------------------------------------------------------------------------------
-The . register is basically everything you've just typed in input mode
+" The . register is basically everything you've just typed in input mode
 :let @a = @.
 "aP
 
@@ -433,10 +434,12 @@ Let's say we have:
 } // end block
 
 "AAA----------------------------------------------------------------------------------------------
-VimTip	{{{1 605: replace a word with the yanked text
+VimTip	{{{1 605:
+
+" I rarely use S command, because it's equal to cc.
+" replace a word with the yanked text
 map S diw"0P
 
-I rarely use S command, because it's equal to cc.
 "AAA----------------------------------------------------------------------------------------------
 VimTip	{{{1 622: Deleting a buffer without changing your window layout
 http://vim.sourceforge.net/tip_view.php?tip_id=
@@ -572,25 +575,31 @@ switches you to the previous buffer you were editing.  With a number before it,
 it switches to that buffer number.  However, I find it's location on the
 keyboard inconvenient.
 
-With a few extra mappings, buffer switching can be easy indeed.  Pick an unused, easy-to-type char - I picked \ :
-   :nnoremap  \  <C-^>
+With a few extra mappings, buffer switching can be easy indeed.  Pick an
+unused, easy-to-type char - I picked \ :
+:nnoremap  \  <C-^>
 "AAA----------------------------------------------------------------------------------------------
 "Append the following to your .vimrc (_vimrc on windows):
-highlight ShowMatches guibg=darkgrey guifg=white
-au! Cursorhold * exe 'match ShowMatches /\v%(%#\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(\n|[^\{\}])*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(\n|[^\{\}])*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*%#\})/'
+highlight ShowMatches guibg=darkgrey guifg=white au! Cursorhold * exe 'match
+ShowMatches
+/\v%(%#\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(\n|[^\{\}])*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(%(\{%(\n|[^\{\}])*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*\})|%(\n|[^\{\}]))*%#\})/'
 set ut=30
 "AAA----------------------------------------------------------------------------------------------
 VimTip	{{{1 784: Word under cursor for command
 http://vim.sourceforge.net/tip_view.php?tip_id=
 
-During editing, there are many situations where one would like to do a command based on the word under cursor. Idea is to yank into a register and then use this register automatically.  Basis of this functionality are two commands
+During editing, there are many situations where one would like to do a command
+based on the word under cursor. Idea is to yank into a register and then use
+this register automatically.  Basis of this functionality are two commands
+
 1) Yanking into a register
      e.g: "zyw - will yank the word into z reg, "byy - yanks the line into b reg
  2)  Concatenating the register to a command and executing it.
      e.g:  :exe "/".@z.""<CR>  - searches for string in z reg      
 
-Some more e.g:
-a) Lets say that you have a file that has a list of files.  You don't want to edit all the files, but selectively.  
+Some more e.g: a) Lets say that you have a file that has a list of files.  You
+don't want to edit all the files, but selectively.  
+
      :map <F2> "zyw:exe "vs ".@z.""<CR>
       Pressing <F2> will open the file in vertically split window
 b) Browsing a text file and saving all those difficult words you want to refer to during leisure
@@ -608,10 +617,11 @@ http://vim.sourceforge.net/tip_view.php?tip_id=
 
 There never seem to be enough spare keys for maps.
 The command is executed by doing a @m
+
+" Preloading registers
 let @m=":'a,'bs/"
 let @s=":%!sort -u"
-
-here's a twisted one
+" here's a twisted one
 let @y='yy@"'
 
 
@@ -680,9 +690,10 @@ two:
 VimTip	{{{1 877: Replace all commas with new lines
 http://vim.sourceforge.net/tip_view.php?tip_id=
 
-If you wanted to turn a comma-separated list of items into a list where each item is on its own line do this in vim:
-:%s/,/^M/g
+If you wanted to turn a comma-separated list of items into a list where each
+item is on its own line do this in vim:
 do not type the "^M" literally but hit CTRL-ENTER to get it.
+:%s/,/^M/g
 "AAA----------------------------------------------------------------------------------------------
 "Last modified: Mo Okt 22, 2018  12:58
 " Search the first 20 lines for Last modified: Mo Okt 22, 2018  12:58
@@ -799,7 +810,8 @@ ins-completion". The completed word can be selected using the arrow keys,
 PageUp/Down, Enter and Esc. In addition to that, there is Ctrl-E, Ctrl-Y,
 Ctrl-N and Ctrl-P.
 
-Here's an alternative setup that feels a little more like the completion menu of other IDEs. Place in vimrc.
+Here's an alternative setup that feels a little more like the completion menu
+of other IDEs. Place in vimrc.
 
   inoremap <silent><Esc>      <C-r>=pumvisible()?"\<lt>C-e>":"\<lt>Esc>"<CR>
   inoremap <silent><CR>       <C-r>=pumvisible()?"\<lt>C-y>":"\<lt>CR>"<CR>
@@ -945,9 +957,22 @@ command -nargs=? G call GitGrep(<f-args>)
 VimTip	{{{1 1354: Online documentation for word under cursor
 http://vim.sourceforge.net/tip_view.php?tip_id=
 
-If you're like me and are often referring to online documentation for a language or technology while editing source from Vim, you may find this tip helpful.  Slip the following function and mapping into your vimrc file, and then simply press <M-d> when the cursor is over a documented language keyword/class name to open your browser to the online documentation.  This script is somewhat like a generalization of the "K" command, where the keyword can be embedded anywhere in the command string.  My inspiration came from Firefox's "Quick Searches" bookmarks, as well as the Firefox DictionarySearch extension, both of which are very handy.  
+If you're like me and are often referring to online documentation for a
+language or technology while editing source from Vim, you may find this tip
+helpful.  Slip the following function and mapping into your vimrc file, and
+then simply press <M-d> when the cursor is over a documented language
+keyword/class name to open your browser to the online documentation.  This
+script is somewhat like a generalization of the "K" command, where the keyword
+can be embedded anywhere in the command string.  My inspiration came from
+Firefox's "Quick Searches" bookmarks, as well as the Firefox DictionarySearch
+extension, both of which are very handy.  
 
-The script here is configured for C++/Qt (keywords are Qt class names), Ruby (keywords are Ruby class names), and Perl (keywords are Perl functions), but it should be easy to figure out how to add your favorite online doc page for a given file type.  Any online doc page will work, as long as the documentation's URL scheme contains the keyword.  You will of course need to modify the script to correctly refer to your browser's executable. 
+The script here is configured for C++/Qt (keywords are Qt class names), Ruby
+(keywords are Ruby class names), and Perl (keywords are Perl functions), but
+it should be easy to figure out how to add your favorite online doc page for a
+given file type.  Any online doc page will work, as long as the
+documentation's URL scheme contains the keyword.  You will of course need to
+modify the script to correctly refer to your browser's executable. 
 
 ''""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! OnlineDoc()
@@ -996,8 +1021,8 @@ http://amix.dk/vim/vimrc.html
 
 "AAA----------------------------------------------------------------------------------------------
 
-VimTip	{{{1 1379: [for script writers] make echo seen when it would otherwise disappear and go unseen
-http://vim.sourceforge.net/tip_view.php?tip_id=
+VimTip	{{{1 1379: [for script writers] make echo seen when it would otherwise
+disappear and go unseen http://vim.sourceforge.net/tip_view.php?tip_id=
 
 Sometimes echo from a mapping disappears and is not seen (every script writer knows this problem).
 This weird trick, PersistentEcho(), echoes the messages that will not disappear that easily. 
@@ -1055,7 +1080,11 @@ In most IDEs, you normally type some code, press ctrl-space for a completion pop
 The first step to "improve" the menu behavior is to execute this command:
 	:set completeopt=longest,menuone
 
-The above command will change the 'completeopt' option so that Vim's popup menu doesn't select the first completion item, but rather just inserts the longest common text of all matches; and the menu will come up even if there's only one match. (The "longest" setting is responsible for the former effect and the "menuone" is responsible for the latter.)
+The above command will change the 'completeopt' option so that Vim's popup
+menu doesn't select the first completion item, but rather just inserts the
+longest common text of all matches; and the menu will come up even if there's
+only one match. (The "longest" setting is responsible for the former effect
+and the "menuone" is responsible for the latter.)
 
 The next enhancement is the following mapping:
 	:inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
@@ -1066,7 +1095,15 @@ The above mapping will change the behavior of the "<enter>" key when the popup m
 	:inoremap <expr> <c-n> pumvisible() ? "\<lt>c-n>" : "\<lt>c-n>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
 	:inoremap <expr> <m-;> pumvisible() ? "\<lt>c-n>" : "\<lt>c-x>\<lt>c-o>\<lt>c-n>\<lt>c-p>\<lt>c-r>=pumvisible() ? \"\\<lt>down>\" : \"\"\<lt>cr>"
 
-In the above mappings, the first will make "ctrl-n" work the way it normally does; however, when the menu appears, the "<down>" key will be simulated. What this accomplishes is it keeps a menu item always highlighted... this way you can keep typing characters to narrow the matches, and the nearest match will be selected so that you can hit enter at any time to insert it. In the above mappings, the second one is a little more exotic: it simulates "ctrl-x, ctrl-o" to bring up the omni completion menu, then it simulates "ctrl-n, ctrl-p" to remove the "longest" common text, and finally it simulates "<down>" again to keep a match highlighted.
+In the above mappings, the first will make "ctrl-n" work the way it normally
+does; however, when the menu appears, the "<down>" key will be simulated. What
+this accomplishes is it keeps a menu item always highlighted... this way you
+can keep typing characters to narrow the matches, and the nearest match will
+be selected so that you can hit enter at any time to insert it. In the above
+mappings, the second one is a little more exotic: it simulates "ctrl-x,
+ctrl-o" to bring up the omni completion menu, then it simulates "ctrl-n,
+ctrl-p" to remove the "longest" common text, and finally it simulates "<down>"
+again to keep a match highlighted.
 
 Let this tip be a reminder that the possibilities in Vim are endless.
 

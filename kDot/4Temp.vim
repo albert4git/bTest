@@ -271,6 +271,7 @@ vnoremap <Leader>v :<C-u>call <SID>VAck()<CR>:exe "Ack! ".@z.""<CR>
 "?" map <F7> msHmtgg/Last [cC]hange:\s*/e+1<CR>"_D"=strftime("%Y %b %d")<CR>p'tzt`s
 
 setlocal completefunc=thesaurus_query#auto_complete_integrate
+
 setlocal errorformat=%E%f:%l:\ %m,%-Z%p^,%-C%.%#,%-G%.%#
         augroup NrHighlight
         autocmd!

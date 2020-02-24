@@ -105,3 +105,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/red/.sdkman"
+[[ -s "/home/red/.sdkman/bin/sdkman-init.sh" ]] && source "/home/red/.sdkman/bin/sdkman-init.sh"

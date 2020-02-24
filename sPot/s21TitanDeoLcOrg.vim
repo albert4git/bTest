@@ -1,6 +1,6 @@
 " File: s15SynDeoLc.vim syn N15SYN bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Fr 07 Feb 2020 07:25:55  CET
+" Lass Modified:      Fr 07 Feb 2020 07:28:07  CET
 "++AAA++#TAG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%
 "*******************************************Extra1***********************************************************
@@ -2911,7 +2911,7 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
         nnoremap <F12> :call LanguageClient_contextMenu()<CR>
         ":::::::::::::::::::::::::::::#ALE:::::::::::::::::::::::::::::::::::::::::::::::::
 
-"++bbb++++++ECYAN++}}}
+"++bbb+++++++++++++++++++++++++++++++++++++++++++ECYAN+++++}}}
 
 " Highlight a particular csv column (put in .vimrc)
 function! CSVH(x)

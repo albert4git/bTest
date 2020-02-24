@@ -50,7 +50,8 @@ set nobeep
 setopt vi
 set editing-mode vi
 #=============================================================
-export PATH=${PATH}:/home/red/nvim-linux64/bin/
+# export PATH=${PATH}:/home/red/nvim-linux64/bin/
+export PATH=${PATH}:/home/red/git/bTest/bPot/bbin/
 #=============================================================
 export PATH=${PATH}:/home/red/.fzf/bin/
 export PATH=${PATH}:/home/red/Komodo-Edit-11/bin/
@@ -139,6 +140,13 @@ alias vim='vim  -u ~/git/bTest/bPot/cc1CleanRC.vim'
 alias de='deonvim  -u ~/git/bTest/kDot/kMinit.vim'
 alias deo='deonvim  -u ~/git/bTest/kDot/kMinit.vim'
 
+###############################################################
+alias de1less='deonvim  -u ~/git/bTest/bPot/kkLess.vim'
+alias de2less='deonvim  -u ~/git/bTest/bPot/kkLess2.vim'
+alias vim2less='vim  -u ~/git/bTest/bPot/kkLess2.vim'
+
+###############################################################
+
 #============================================================
 #=====================NEW====================================
 #============================================================
@@ -156,16 +164,22 @@ alias s19='402nv.app  -u ~/git/bTest/sPot/s19TitanDeoLc.vim'
 alias s20='402nv.app  -u ~/git/bTest/sPot/s20TitanDeoLc.vim'
 alias s21='402nv.app  -u ~/git/bTest/sPot/s21TitanDeoLcOrg.vim'
 ###############################################################
-alias s22='402nv.app  -u ~/git/bTest/sPot/s22TitanDeoLcOrgMux.vim'
+alias s022='402nv.app  -u ~/git/bTest/sPot/s22TitanDeoLcOrgMux.vim'
+
+###############################################################
+#########################TARGET################################
 ###############################################################
 alias a22='402nv.app  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
-alias a23='402nv.app  -u ~/git/bTest/bPot/23DeoMuxOrg.vim'
-alias a24='402nv.app  -u ~/git/bTest/sPot/24DeoMuxOrg.vim'
-alias a25='402nv.app  -u ~/git/bTest/sPot/25DeoMuxOrg.vim'
-alias a26='402nv.app  -u ~/git/bTest/sPot/26DeoMuxOrg.vim'
-alias a27='402nv.app  -u ~/git/bTest/sPot/27DeoMuxOrg.vim'
-alias a28='402nv.app  -u ~/git/bTest/sPot/28DeoMuxOrg.vim'
-alias a29='402nv.app  -u ~/git/bTest/sPot/29DeoMuxOrg.vim'
+#============================================================
+alias n4='402neo.app  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
+alias n5='500neo.app  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
+alias n51='500neo14  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
+#============================================================
+alias v82='vi82  -u ~/git/bTest/bPot/cc1CleanRC.vim'
+#============================================================
+alias svim='vim -u ~/.SpaceVim/vimrc'
+###############################################################
+
 #============================================================
 alias g1='402nv.app  -u ~/git/bTest/sPot/galore.vim'
 alias g3='402nv.app  -u ~/git/bTest/sPot/g3fzf.vim'
@@ -173,24 +187,20 @@ alias g4='402nv.app  -u ~/git/bTest/sPot/g4Kim.vim'
 #============================================================
 
 ###############################################################
-alias vi1='vim  -u ~/git/bTest/sPot/galore.vim'
-alias vi2='vim  -u ~/git/bTest/kDot/inkPreRc19.vim'
-alias vi82='82vim  -u ~/git/bTest/kDot/inkPreRc19.vim'
-alias vi83='82vim  -u ~/git/bTest/kDot/kill1rc.vim'
+# alias vi1='vim  -u ~/git/bTest/sPot/galore.vim'
+# alias vi2='vim  -u ~/git/bTest/kDot/inkPreRc19.vim'
+# alias vi82='82vim  -u ~/git/bTest/kDot/inkPreRc19.vim'
+# alias vi83='82vim  -u ~/git/bTest/kDot/kill1rc.vim'
 ###############################################################
-alias p1='500nv.app  -u ~/git/bTest/kDot/p1Deo.vim'
-alias p2='50nv  -u ~/git/bTest/kDot/p1Deo.vim'
-alias p3='deonvim  -u ~/git/bTest/kDot/p1Deo.vim'
-alias p4='401nv.app  -u ~/git/bTest/kDot/p1Deo.vim'
+# alias p1='500nv.app  -u ~/git/bTest/kDot/p1Deo.vim'
+# alias p2='50nv  -u ~/git/bTest/kDot/p1Deo.vim'
+# alias p3='deonvim  -u ~/git/bTest/kDot/p1Deo.vim'
+# alias p4='401nv.app  -u ~/git/bTest/kDot/p1Deo.vim'
 ###############################################################
 # alias d50='nvim500  -u ~/git/bTest/kDot/k3MinFF.vim'
 # alias d42='nvim402  -u ~/git/bTest/kDot/k3MinFF.vim'
 # alias d41='nvim401  -u ~/git/bTest/kDot/k3MinFF.vim'
 # alias d40='nvim400  -u ~/git/bTest/kDot/k3MinFF.vim'
-###############################################################
-
-alias svim='vim -u ~/.SpaceVim/vimrc'
-
 ###############################################################
 
 
@@ -452,16 +462,16 @@ export ZPLUG_HOME=$HOME/.zplug
 source $ZPLUG_HOME/init.zsh
 #=============================================================
 ###########################################################################################
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # zplug "lib/completion",   from:oh-my-zsh
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "lib/history",      from:oh-my-zsh
 zplug "lib/key-bindings", from:oh-my-zsh
 zplug "lib/termsupport", from:oh-my-zsh
 #=============================================================
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/history", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/z", from:oh-my-zsh
+# zplug "plugins/history", from:oh-my-zsh
+# zplug "plugins/tmux", from:oh-my-zsh
+# zplug "plugins/z", from:oh-my-zsh
 
 #=============================================================
 #-???-source ~/.dotfiles/zsh/vi-mode.zsh
@@ -471,10 +481,10 @@ zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 zplug 'zsh-users/zsh-history-substring-search', defer:3
 #=============================================================
 # warn when running command you have an alias for
-zplug "djui/alias-tips", from:github
+# zplug "djui/alias-tips", from:github
 zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug 'zdharma/fast-syntax-highlighting', defer:2, hook-load:'FAST_HIGHLIGHT=()'
-zplug "unixorn/git-extra-commands", from:github
+# zplug 'zdharma/fast-syntax-highlighting', defer:2, hook-load:'FAST_HIGHLIGHT=()'
+# zplug "unixorn/git-extra-commands", from:github
 
 #=============================================================
 ###zplug 'modules/environment', from:prezto
@@ -538,14 +548,15 @@ SPACESHIP_USER_PREFIX="user:"
 SPACESHIP_USER_COLOR="red"
 
 #======================================================
-spaceship_vi_mode_enable="true"
+# spaceship_vi_mode_enable="true"
+# SPACESHIP_VI_MODE_SUFFIX="#"
+#======================================
 SPACESHIP_VI_MODE_SHOW="true"
-#======================================================
 SPACESHIP_VI_MODE_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_VI_MODE_SUFFIX="#"
-SPACESHIP_VI_MODE_NORMAL="[n]"
-SPACESHIP_VI_MODE_INSERT="[i]"
+SPACESHIP_VI_MODE_INSERT="[I]"
+SPACESHIP_VI_MODE_NORMAL="[N]"
 SPACESHIP_VI_MODE_COLOR="yellow"
+#======================================================
 
 #======================================================
 SPACESHIP_GIT_STATUS_SHOW="true"
@@ -553,10 +564,19 @@ SPACESHIP_GIT_BRANCH_SUFFIX=""
 SPACESHIP_GIT_STATUS_COLOR="cyan"
 SPACESHIP_GIT_STATUS_COLOR="red"
 
+#======================================================
+# SPACESHIP_EXEC_TIME_SHOW true
+# SPACESHIP_EXEC_TIME_PREFIX took·
+# SPACESHIP_EXEC_TIME_SUFFIX $SPACESHIP_PROMPT_DEFAULT_SUFFIX
+# SPACESHIP_EXEC_TIME_COLOR yellow
+#======================================================
+
+# vi_mode       # Vi-mode indicator (Disabled)
+###########################################################################################
 #===============================================================
 SPACESHIP_PROMPT_ORDER=(
-  vi_mode       # Vi-mode indicator (Disabled)
   user
+  vi_mode
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
   package
@@ -575,8 +595,25 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 #===============================================================
-###########################################################################################
-
+###############ZPLUG########################################################################
+# plugins=(
+#         git
+#         dotenv
+#         zsh-completions
+#         alias-tips
+# )
+# autoload -U compinit && compinit
+#===============================================================
+# plugins=(… zsh-completions)
+# plugins=(
+#   git
+#   bundler
+#   dotenv
+#   osx
+#   rake
+#   rbenv
+#   ruby
+# )
 ###########################################################################################
 #===FIN==STOP==============================================================================
 zplug check || zplug install
@@ -681,6 +718,7 @@ function prev() {
 # systemctl enable = sc-enable
 #==========================================================================================
 #=If you want to check out the whole list, again the=======================================
+
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 #==========================================================================================
 #################################NVIM-make#################################################
@@ -733,24 +771,25 @@ function prev() {
 #----DotK------------------------------------------------------------------------------------------
 # tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kDot2Snap.file -cJpf /media/red/124Black/TAR/TarDotK/kDot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/
 #--------------------------------------------------------------------------------------------------
-#---.Config-----------------------------------------------------------------------------------------
-tar -P --listed-incremental=/media/red/124Black/TAR/TarRedConfig/RedConfig2Snap.file -cJpf /media/red/124Black/TAR/TarRedConfig/TarRedConfig-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/.config/
 #--------------------------------------------------------------------------------------------------
 #----sPot------------------------------------------------------------------------------------------
 # tar -P --listed-incremental=/media/red/124Black/TAR/TarDotK/kSPot2Snap.file -cJpf /media/red/124Black/TAR/TarSPot/kDot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/sPot/
 #--------------------------------------------------------------------------------------------------
-#----bPot------------------------------------------------------------------------------------------
-tar -P --listed-incremental=/media/red/124Black/TAR/TarBPot/kBPot2Snap.file -cJpf /media/red/124Black/TAR/TarBPot/bPot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/bPot/
 #--------------------------------------------------------------------------------------------------
 ####################################################################################################################
+#---.Config-----------------------------------------------------------------------------------------
+# tar -P --listed-incremental=/media/red/124Black/TAR/TarRedConfig/RedConfig2Snap.file -cJpf /media/red/124Black/TAR/TarRedConfig/TarRedConfig-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/.config/
+#----bPot------------------------------------------------------------------------------------------
+# tar -P --listed-incremental=/media/red/124Black/TAR/TarBPot/kBPot2Snap.file -cJpf /media/red/124Black/TAR/TarBPot/bPot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/bPot/
+####################################################################################################################
 
+set -o vi
 
 #--------------------------------------------------------------------------------------------------
 # cd ~/git/bTest/kDot/
 #--------------------------------------------------------------------------------------------------
-# cd ~/git/bTest/sPot/
+# cd ~/git/bTest/bPot/
 #--------------------------------------------------------------------------------------------------
-set -o vi
 
 #--------------------------------------------------------------------------------------------------
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

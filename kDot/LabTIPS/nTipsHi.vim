@@ -87,10 +87,10 @@ and what I would like to see is
 Here are a few vimrc lines, that can help. Put them in your .vimrc, or .vim/after/ftplugin/cpp.vim (or whatever language you are using),
 then you can beautify at least single lines using one mouse click.
 
-nmenu Misc.Beautify.For          :s/for\s*(\s*/for ( /<CR>:s/\s*)\s*$/ )/<CR>:s/\(\i\+\)\s*=\s*/\1 = /<CR>:s/\s*\([=<>!]=\\|[<>]\)\s*/ \1 /<CR>:s/\s*\(--\\|++\)/\1/<CR>:s/\s*;\s*/; /g<CR>
-nmenu Misc.Beautify.Func        :s/\s*)/ )/g<CR>:s/\s*\([(,]\)\s*/\1 /g<CR>:s/(\s\+)/()/g<CR>
-nmenu Misc.Beautify.If              :s/if\s*(\s*/if ( /<CR>:s/\s*)\s*$/ )/<CR>:silent s/\s*\([=<>!]=\\|[<>]\)\s*/ \1 /<CR>
-nmenu Misc.Beautify.Assign      :s/\s*\([-+*\/&\|]\?\)\s*=\s*/ \1= /g<CR>
+nmenu misc.beautify.for          :s/for\s*(\s*/for ( /<cr>:s/\s*)\s*$/ )/<cr>:s/\(\i\+\)\s*=\s*/\1 = /<cr>:s/\s*\([=<>!]=\\|[<>]\)\s*/ \1 /<cr>:s/\s*\(--\\|++\)/\1/<cr>:s/\s*;\s*/; /g<cr>
+nmenu misc.beautify.func        :s/\s*)/ )/g<cr>:s/\s*\([(,]\)\s*/\1 /g<cr>:s/(\s\+)/()/g<cr>
+nmenu misc.beautify.if              :s/if\s*(\s*/if ( /<cr>:s/\s*)\s*$/ )/<cr>:silent s/\s*\([=<>!]=\\|[<>]\)\s*/ \1 /<cr>
+nmenu misc.beautify.assign      :s/\s*\([-+*\/&\|]\?\)\s*=\s*/ \1= /g<cr>
 
 (Each nmenu-line must be one single line!)
 Tip: if you need to beautify several lines, tear of the menu.

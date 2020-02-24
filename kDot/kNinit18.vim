@@ -696,8 +696,6 @@ call plug#begin()
                 let g:highlightedyank_highlight_duration = -1
         "----------------------------------------------------------------------------------
         Plug 'kana/vim-textobj-user'
-        Plug 'gilligan/textobj-gitgutter'
-                vmap ih <Plug>(textobj-gitgutter-i)
         "----------------------------------------------------------------------------------
         Plug 'kana/vim-textobj-user'
         Plug 'kana/vim-textobj-diff'
@@ -706,6 +704,8 @@ call plug#begin()
         Plug 'Julian/vim-textobj-brace'
         Plug 'glts/vim-textobj-indblock'
         Plug 'beloglazov/vim-textobj-quotes'
+        Plug 'gilligan/textobj-gitgutter'
+                vmap ih <Plug>(textobj-gitgutter-i)
         "---gi-----------------------------------------------------------------------------
         Plug 'bps/vim-textobj-python'
         "---gi-----------------------------------------------------------------------------
@@ -752,7 +752,7 @@ call plug#begin()
         nnoremap <buffer> <C-F2> <Esc>:helpgrep <C-r><C-w><CR>
         "----------------------------------------------------------------------------------
         " Maybe these mappings should be moved into FT_C() ?
-        " Toggle between .c (.cc, .cpp) and .h                          
+        " Toggle between .c (.cc, .cpp) and .h
         " ToggleHeader defined inHOME/.vim/plugin/cpph.vim
         map       ,h          :call ToggleHeader()<CR>
         map       <C-F6>      ,h

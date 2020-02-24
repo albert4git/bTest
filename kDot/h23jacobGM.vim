@@ -37,8 +37,8 @@ Plug 'tpope/vim-rhubarb'                                                " Open G
 
 " Editing
 Plug 'danro/rename.vim'                                                 " Enables :Rename <new_name>
-Plug 'fooSoft/vim-argwrap'                                              " Wrap function arguments with <leader>a
 Plug 'godlygeek/tabular'                                                " :Tab /<repexp> in order to allign
+Plug 'fooSoft/vim-argwrap'                                              " Wrap function arguments with <leader>a
 Plug 'peterrincker/vim-argumentative'                                   " Shifting arguments with <, and >,
 Plug 'tpope/vim-commentary'                                             " Adds comment action with 'gc'
 Plug 'tpope/vim-surround'                                               " Adds the surround motion bound to s
@@ -263,42 +263,44 @@ nnoremap <S-Right> :$tabnew<CR>
 " Press <Leader>bg in order to toggle light/dark background
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
+"---------------------------------------------------------------------------------
 " Keybinding for visiting the GitHub page of the plugin defined on the current line
-augroup Vimrc
-    autocmd!
-    autocmd FileType vim nnoremap <silent> gp :call OpenPluginHomepage()<CR>
-augroup END
+        augroup Vimrc
+                autocmd!
+                autocmd FileType vim nnoremap <silent> gp :call OpenPluginHomepage()<CR>
+        augroup END
 
-function! OpenPluginHomepage() abort
-  " Get line under cursor
-  let line = getline(".")
+        function! OpenPluginHomepage() abort
+                " Get line under cursor
+                let line = getline(".")
 
-  " Matches for instance Plug 'tpope/surround' -> tpope/surround
-  " Greedy match in order to not capture trailing comments
-  let plugin_name = '\w\+ \([''"]\)\(.\{-}\)\1'
+                " Matches for instance Plug 'tpope/surround' -> tpope/surround
+                " Greedy match in order to not capture trailing comments
+                let plugin_name = '\w\+ \([''"]\)\(.\{-}\)\1'
 
-  try
-    let repository = matchlist(line, plugin_name)[2]
+                try
+                        let repository = matchlist(line, plugin_name)[2]
 
-    " Open the corresponding GitHub homepage with $BROWSER
-    " You need to set the BROWSER environment variable in order for this to work
-    " For MacOS, you can set the following for opening it in your default
-    " browser: 'export BROWSER=open'
-    silent exec "!$BROWSER https://github.com/".repository
-  catch /.*/
-    echo 'No match for "<user>/<repository>" on this line!'
-  endtry
-endfunction
-
+                        " Open the corresponding GitHub homepage with $BROWSER
+                        " You need to set the BROWSER environment variable in order for this to work
+                        " For MacOS, you can set the following for opening it in your default
+                        " browser: 'export BROWSER=open'
+                        silent exec "!$BROWSER https://github.com/".repository
+                catch /.*/
+                        echo 'No match for "<user>/<repository>" on this line!'
+                endtry
+        endfunction
+"---------------------------------------------------------------------------------
 nnoremap <silent> <Leader>gf :call PutFixupCommandInPasteBoard()<CR>
+"---------------------------------------------------------------------------------
 
 function! PutFixupCommandInPasteBoard() abort
   let filepath = expand('%:p')
   let line_number = line('.')
   let sha1_hash = system(
     \ 'git blame ' .
-    \ '-L ' . line_number . ',' . line_number . 
-    \ ' --porcelain ' . filepath . 
+    \ '-L ' . line_number . ',' . line_number .
+    \ ' --porcelain ' . filepath .
     \ ' | xargs | cut -f 1 -d " "'
     \ )
   execute 'normal! :Gcommit --fixup ' . sha1_hash
@@ -383,7 +385,7 @@ au TermOpen * setlocal nonumber norelativenumber
 " Show live substitution results when using :s
 set inccommand=nosplit
 
-" Hide cursorline in inactive window 
+" Hide cursorline in inactive window
 augroup CrossHair
   au!
   au VimEnter * setlocal cursorline
@@ -409,7 +411,7 @@ au BufEnter */doc/* if &filetype=='help' | wincmd L | endif
 """ Searching
 
 " When searching ignore case
-set ignorecase            
+set ignorecase
 
 " Except when using Capital letters
 set smartcase

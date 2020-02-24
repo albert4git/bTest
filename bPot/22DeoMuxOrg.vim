@@ -1,6 +1,6 @@
 " File: bPot
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Di 11 Feb 2020 06:26:47  CET
+" Lass Modified:      Fr 21 Feb 2020 05:09:14  CET
 "++AAA++#TAG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%
 "*******************************************Extra1***********************************************************
@@ -440,15 +440,6 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'machakann/vim-highlightedyank'
                 let g:highlightedyank_highlight_duration = -1
-        "--111-----------------------------------------------------------------------------
-        Plug 'osyo-manga/vim-brightest'
-                " let g:brightest#highlight = { "group" : "Define" }
-                " let g:brightest#highlight = { "group" : "vimNumber" }
-                " let g:brightest#highlight = { "group" : "vimVar" }
-                " let g:brightest#highlight = { "group" : "op_lv0" }
-                 let g:brightest#highlight = { "group" : "GruveBoxRedBold" }
-                 let g:brightest#highlight = { "group" : "XboxGruen" }
-        "-JAPAN-
         "----------------------------------------------------------------------------------
         Plug 'ivyl/vim-bling'
                 " let g:bling_time = 42
@@ -1140,12 +1131,12 @@ call plug#begin('~/.config/nvim/plugged/')
 	    "# [{Visual}]<C-c><C-c>
 	    "# :<range>SlimeSend
         "#-------------------------------------------
-        " Plug 'jpalardy/vim-slime'
-        " let g:slime_target = "tmux"
-        " xmap <c-c><c-c> <Plug>SlimeRegionSend
-        " nmap <c-c><c-c> <Plug>SlimeParagraphSend
-        " nmap <c-c>v     <Plug>SlimeConfig
-        " let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
+        Plug 'jpalardy/vim-slime'
+        let g:slime_target = "tmux"
+        xmap <c-c><c-c> <Plug>SlimeRegionSend
+        nmap <c-c><c-c> <Plug>SlimeParagraphSend
+        nmap <c-c>v     <Plug>SlimeConfig
+        let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
 
         "--------------##CellPy##----------------------------------------
         " Plug 'julienr/vim-cellmode'
@@ -1183,10 +1174,18 @@ call plug#begin('~/.config/nvim/plugged/')
         "pane": for panes
         "window": for windows
         "----------------------------------------
+        " Plug 'tmux-plugins/vim-tmux-focus-events'
+        Plug 'tmux-plugins/vim-tmux-focus-events'
+        "=============================================
         ":Tmux
-        "----------------------------------------
+        "=============================================
         Plug 'tmux-plugins/vim-tmux'
-        "----------------------------------------
+        " K - jumps to the *exact* place in man tmux where the word under cursor (a helluva time saver).
+        " This should work correctly on practically anything in .tmux.conf.
+        " :make - invokes tmux source .tmux.conf and places all the errors (if any) in quicklist
+        " g! - executes lines as tmux commands. Works on visual selection or as a motion
+        " g!! executes just the current line.
+        "=============================================
         " Plug 'christoomey/vim-tmux-navigator'
         Plug 'christoomey/vim-tmux-navigator'
         "----------------------------------------
@@ -1429,20 +1428,22 @@ call plug#begin('~/.config/nvim/plugged/')
         " - let g:pydoc_highlight=0
 "++bbb++++++++++++++++++++++++++++++++++}}}
 "++AAA++#ALEPLUG++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        " Plug 'w0rp/ale'
-        " let g:ale_sign_column_always = 0
-        " let g:ale_emit_conflict_warnings = 0
-        " let g:ale_lint_on_text_changed = 'never'
-        " let g:ale_set_loclist = 0
-        " let g:ale_set_quickfix = 1
-        " let g:ale_set_signs = 1
-        " highlight link ALEWarningSign customGleich
-        " highlight link ALEErrorSign customDP
-        " highlight link ALEVirtualTextWarning customYR
-        " highlight link ALEVirtualTextInfo customYB
-        " highlight link ALEVirtualTextError customPi
-        " nnoremap <silent> <F9> :ALEHover<CR>
-        " nnoremap <silent> gd :ALEGoToDefinition<CR>
+        "---------------------------------------------
+        Plug 'w0rp/ale'
+        "---------------------------------------------
+        let g:ale_sign_column_always = 1
+        let g:ale_emit_conflict_warnings = 0
+        let g:ale_lint_on_text_changed = 'never'
+        let g:ale_set_loclist = 0
+        let g:ale_set_quickfix = 1
+        let g:ale_set_signs = 1
+        highlight link ALEWarningSign customGleich
+        highlight link ALEErrorSign customDP
+        highlight link ALEVirtualTextWarning customYR
+        highlight link ALEVirtualTextInfo customYB
+        highlight link ALEVirtualTextError customPi
+        nnoremap <silent> <F9> :ALEHover<CR>
+        nnoremap <silent> gd :ALEGoToDefinition<CR>
 "++bbb+++++++++++++++++++++++++++++++++++EALE+++++}}}
 "**AAA**#DEOPLUG**#TITAN********************************************************************************************{{{
         "----------------------------------------------------------------------------------
@@ -1466,6 +1467,9 @@ call plug#begin('~/.config/nvim/plugged/')
                                 \ }
         let g:LanguageClient_windowLogMessageLevel ='Error'
         let g:LanguageClient_diagnosticsEnable = 1
+
+        " Alternatively, set 'completefunc': >
+        " set completefunc=LanguageClient#complete
         "=================================================================================
 "**bbb************************}}}
 "++AAA++#Coc++#Vista+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -1612,7 +1616,19 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'tmsvg/pear-tree'
         Plug 'dohsimpson/vim-macroeditor'
         "=======================================
-        Plug 'tmux-plugins/vim-tmux-focus-events'
+        "--111-----------------------------------------------------------------------------
+        Plug 'osyo-manga/vim-brightest'
+                " let g:brightest#highlight = { "group" : "Define" }
+                " let g:brightest#highlight = { "group" : "vimVar" }
+                " let g:brightest#highlight = { "group" : "op_lv0" }
+                " let g:brightest#highlight = { "group" : "XboxGruen" }
+                " let g:brightest#highlight = { "group" : "GruveBoxRedBold" }
+                "--111---------------------------------------------------------------------
+                " let g:brightest#highlight = { "group" : "BrightestUnderline" }
+                " let g:brightest#highlight = { "group" : "Define" }
+                " let g:brightest#highlight = { "group" : "vimNumber" }
+                let g:brightest#highlight = { "group" : "op_lv3" }
+        "--JAPAN--
 "++bbb+++++++++++++++++++++++++}}}
 call plug#end()
 "=eHapyEnd=
@@ -2744,9 +2760,6 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
 " endif
 "++bbb+++++++++++++}}}
 "++AAA++#CYAN+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        set background=dark
-        set termguicolors
-        source ~/git/bTest/bPot/aaGruvbox.vim
         " source MYX/n-badwolf.vim
         " colorscheme desert
         " colorscheme molokai
@@ -2754,6 +2767,9 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
         " colorscheme evokai
         " colorscheme inkpot
         " colorscheme neonwave
+        set background=dark
+        set termguicolors
+        source ~/git/bTest/bPot/aaGruvbox.vim
         "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
         "=================================================================================
         set listchars=tab:▸\ ,eol:¬,trail:⋅
@@ -2781,9 +2797,10 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
         hi CursorLine    guibg=#600060   gui=underline cterm=underline  guisp=#FF0000
         hi CursorLine    guibg=#000099   gui=underline cterm=underline  guisp=#FF0000
         hi cursorcolumn   ctermbg=16 guibg=#000099
-        hi LineNr        ctermbg=17 ctermfg=15   guibg=#5fafdf  guifg=#ffffff
+        hi LineNr        ctermbg=17 ctermfg=15   guibg=#0000bb  guifg=#ffffff
         "===========================OK1====================================================
         ":::::::::[#CYAN]::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
         "==================================================================================
         hi customAAA     ctermbg=245 ctermfg=White  guibg=#ffFFB5 guifg=#ff0000 gui=bold
         call matchadd('customAAA', 'AAA')
@@ -2944,11 +2961,19 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
                                 \           'virtualTexthl': 'zevaHINT'
                                 \       },
                                 \  }
+        let g:LanguageClient_diagnosticsEnable = 0
+        let g:LanguageClient_diagnosticsSignsMax = 3
+        let g:LanguageClient_useVirtualText =0
+        let g:LanguageClient_virtualTextPrefix = "  -------:  "
         let g:LanguageClient_diagnosticsDisplay=diagnosticsDisplaySettings
-        nnoremap <silent> <F8> :call LanguageClient#textDocument_hover()<CR>
-        nnoremap <silent> <F9> :call LanguageClient#textDocument_definition()<CR>
-        nnoremap <silent> <F10> :call LanguageClient#textDocument_rename()<CR>
-        nnoremap <F12> :call LanguageClient_contextMenu()<CR>
+
+
+
+        " hi SpellBad  ctermbg=245 ctermfg=White  guibg=#ffFFB5 guifg=#ff0000 gui=bold
+        " nnoremap <silent> <F8> :call LanguageClient#textDocument_hover()<CR>
+        " nnoremap <silent> <F9> :call LanguageClient#textDocument_definition()<CR>
+        " nnoremap <silent> <F10> :call LanguageClient#textDocument_rename()<CR>
+        " nnoremap <F12> :call LanguageClient_contextMenu()<CR>
         ":::::::::::::::::::::::::::::#ALE:::::::::::::::::::::::::::::::::::::::::::::::::
 
 "++bbb+++++++++++++++++++++++++++++++++++++++++++ECYAN+++++}}}

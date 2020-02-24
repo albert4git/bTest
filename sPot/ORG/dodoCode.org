@@ -356,9 +356,21 @@ function buildTree(startPath) {
 
 buildTree('/home/red/git/bTest/DODO10/');
 "----------------------------------------------------------------------
-"--------------------JSCONSOLE3Php----------------------------------------------
+"--------------------JSCONSOl.pro.file----------------------------------------------
 "----------------------------------------------------------------------
 
+const fs = require('fs');
+function processFile(path) {
+  const text = fs.readFileSync(path, 'utf8');
+  text.split(/\r?\n/).forEach((line) => {
+    if (line.match('http:\/\/')) {
+      console.log(line.replace(/^\s+/, ''));
+      console.log(`${path}\n`);
+    }
+  });
+}
+
+processFile('/home/red/git/bTest/DODO10/p14Simple.py');
 "----------------------------------------------------------------------
 <script>
       var greetings = ["hello", "greetings", "hey there", "hi", "howdy"];

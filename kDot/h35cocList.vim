@@ -89,12 +89,12 @@ function! GitAddBuffer()
   w
   windo !git add %
 endfunction
- 
+
 command! GitAddBuffer :call GitAddBuffer()
 
 " :E to create a new file inside new folder(s)
 function s:MKDir(...)
-    if         !a:0 
+    if         !a:0
            \|| isdirectory(a:1)
            \|| filereadable(a:1)
            \|| isdirectory(fnamemodify(a:1, ':p:h'))
@@ -189,7 +189,6 @@ let g:tmux_navigator_save_on_switch = 1
 
 " Name tmux tabs after file open
 autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window 'vim | " . expand("%:t") . "'")
-
 
 " Simpler split navigation in vim and tmux
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>

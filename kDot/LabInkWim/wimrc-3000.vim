@@ -2783,6 +2783,7 @@ function! ErrorsToggle() " {{{
     let w:is_error_window = 1
   endif
 endfunction " }}}
+" nmap <silent> <f3> :ErrorsToggle<cr>
 
 command! LocationToggle call LocationToggle()
 function! LocationToggle() " {{{
@@ -2948,6 +2949,7 @@ function! s:AckMotion(type) abort
 endfunction
 
 " }}}
+
 " Pulse Line {{{
 
 function! s:Pulse() " {{{

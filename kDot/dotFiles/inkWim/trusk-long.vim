@@ -1350,9 +1350,9 @@ endif
 
                         highlight IndentGuidesOdd  guibg=red   ctermbg=235
                         highlight IndentGuidesEven guibg=green ctermbg=235
+                        highlight MatchParen cterm=bold,underline ctermbg=none ctermfg=yellow
 
                         highlight signcolumn guibg=#252525 ctermfg=8
-                        highlight MatchParen cterm=bold,underline ctermbg=none ctermfg=yellow
                         highlight TabLineSel cterm=bold ctermfg=yellow
                         highlight TabLineFill ctermfg=black
                         highlight TabLine ctermbg=darkgray ctermfg=black
@@ -1363,6 +1363,7 @@ endif
                         "highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
                         "highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
                         " highlight signs in Signify
+
                         highlight SignifySignAdd    cterm=bold ctermbg=234  ctermfg=119
                         highlight SignifySignDelete cterm=bold ctermbg=234  ctermfg=167
                         highlight SignifySignChange cterm=bold ctermbg=234  ctermfg=227

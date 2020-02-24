@@ -1,6 +1,6 @@
 " File: s15SynDeoLc.vim syn N15SYN bimini
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mo 03 Feb 2020 03:38:37  CET
+" Lass Modified:      Fr 07 Feb 2020 06:13:00  CET
 "++AAA++#TAG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%
 "*******************************************Extra1***********************************************************
@@ -511,12 +511,6 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'mhinz/vim-startify'
         "==================================================================================
         Plug 'ryanoasis/vim-devicons'
-        "==================================================================================
-        "===[OK]======[EasyAlign]====[#SMART]==============================================
-        "==================================================================================
-        Plug 'junegunn/vim-easy-align'
-        " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-        " nmap ga <Plug>(EasyAlign)
         "==[#BEST]==================[#QMENU]===============================================
         Plug 'skywind3000/quickmenu.vim'
         "==========[#LeaderGuide]==========================================================
@@ -568,35 +562,27 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'sainnhe/lightline_foobar.vim'
         Plug 'mengelbrecht/lightline-bufferline'
         Plug 'jacoborus/tender.vim'
-        "==One=======================================
-        " Plug 'zefei/vim-wintabs'
+        "==OneWorkingBut=======================================
+        Plug 'zefei/vim-wintabs'
         "==================================================================================
-        Plug 'fholgado/minibufexpl.vim'
+        " Plug 'fholgado/minibufexpl.vim'
         "==================================================================================
-        " minibufexplorer options
         "map <F9> :MBEToggle<CR>
         "map <C-J> :bn<CR>
         "map <C-K> :bp<CR>
-        "
         let g:miniBufExplStatusLineText = "MiniBufExpl"
         let g:miniBufExplVSplit = 0
         let g:miniBufExplMinSize = 1
         let g:miniBufExplMaxSize = 1
         let g:miniBufExplShowBufNumbers = 1
-
-                " minibufexplorer (MBE) config
-                " always display syntax in minibufexpl
-                let g:miniBufExplForceSyntaxEnable = 1
-                " for other explorers like TagList
-                let g:miniBufExplModSelTarget = 1
-                " omit the buffer number from MBE's buffer display
-                "let g:miniBufExplShowBufNumbers = 0
-                " an empty status line instead of "-MiniBufExplorer-"
-                let g:statusLineText = "-Indi-"
-
-        "hi def link MBEVisibleActiveNormal None
-        "==================================================================================
-        " MiniBufExpl Colors
+        " always display syntax in minibufexpl
+        let g:miniBufExplForceSyntaxEnable = 1
+        " for other explorers like TagList
+        let g:miniBufExplModSelTarget = 1
+        " omit the buffer number from MBE's buffer display
+        let g:miniBufExplShowBufNumbers = 0
+        let g:statusLineText = "-Indi-"
+        "================?=================================================================
         hi MBENormal               guifg=#808080 guibg=fg
         hi MBEChanged              guifg=#CD5907 guibg=fg
         hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
@@ -868,34 +854,33 @@ call plug#begin('~/.config/nvim/plugged/')
         "----------------------------------------------------------------------------------
         Plug 'itchyny/calendar.vim'
         "---------------------------------------------
-        " Plug 'tpope/vim-markdown'
-        "---------------------------------------------
-        " Plug 'gabrielelana/vim-markdown'
-        "---------------------------------------------
-        Plug 'godlygeek/tabular'
-        Plug 'plasticboy/vim-markdown'
-        "---------------------------------------------
-        Plug 'vim-pandoc/vim-pandoc'
-        Plug 'vim-pandoc/vim-pandoc-syntax'
+        " Plug 'vim-pandoc/vim-pandoc'
+        " Plug 'vim-pandoc/vim-pandoc-syntax'
         "--Syntax?-------------------------------------------
         " Plug 'hallison/vim-markdown'
+        "---------------------------------------------
+        " Plug 'gabrielelana/vim-markdown'
+        " Plug 'tpope/vim-markdown'
+        Plug 'plasticboy/vim-markdown'
         "----------------------------------------------------------------------------------
-        Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
+        " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
         "--DF16----------------------------------------------------------------------------
         " Plug 'mivok/vimtodo'
         " Plug 'hsitz/VimOrganizer'
         " Plug 'xolox/vim-notes'
+        " Plug 'axvr/org.vim'
         " Plug ''
-        Plug 'axvr/org.vim'
         Plug 'jceb/vim-orgmode'
+        Plug 'dstein64/vim-startuptime'
         Plug 'vim-scripts/SyntaxRange'
         Plug 'chrisbra/NrrwRgn'
-        "Plug 'dkarter/bullets.vim'
-                "let g:bullets_enabled_file_types = [
-                "\ 'markdown',
-                "\ 'text',
-                "\ 'scratch'
-                "\]
+        " Plug 'dkarter/bullets.vim'
+        " let g:bullets_enabled_file_types = [
+        " \ 'markdown',
+        " \ 'org',
+        " \ 'text',
+        " \ 'scratch'
+        " \]
 
 "++bbb++}}}
 "++AAA++#GREP+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
@@ -1090,42 +1075,45 @@ call plug#begin('~/.config/nvim/plugged/')
         " Plug 'justinmk/vim-dirvish'
 "++bbb++++++++++++++ETREE++++}}}
 "++AAA++#TAB++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
-        "--------------------------------555-----------------------------------------------
+        "==================================================================================
+        "===[OK]======[EasyAlign]====[#SMART]==============================================
+        "==================================================================================
+        Plug 'junegunn/vim-easy-align'
+        " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+        " nmap ga <Plug>(EasyAlign)
+        "---------------------------------------------
         Plug 'godlygeek/tabular'
-        "----------------------------------------------------------------------------------
-                " abc,def,ghi , some , shrt
-                " a,b,c
+        " :Tabularize /,/r1c1l0
+        " abc,def,ghi
+        " a,b
+        " a,b,c
+        " abc , def, ghi
+        "   a , b
+        "   a , b  ,  c
         "----------------------------------------------------------------------------------
         Plug 'dhruvasagar/vim-table-mode'
-                "-----------------------------------------------
-                "----------.....................................
-                "--------------------...........................
-                "-----------------------------..................
-                "--------------------------------------.........
-                "-----------------------------------------------
-                " Use this option to disable the plugin: 1
-                " let g:loaded_table_mode = 0
-                "-----------------------------------------------
-                let g:table_mode_auto_align = 1
-                let g:table_mode_corner_corner='+'
-                let g:table_mode_header_fillchar='='
-                let g:table_mode_align_char = ':'
-                let g:table_mode_delete_row_map = '<M-d>'
-                let g:table_mode_delete_column_map = '<M-c>'
-                let g:table_mode_add_formula_map = '<M-f>'
-                let g:table_mode_eval_formula_map = '<M-e>'
-                let g:table_mode_cell_text_object_i_map = '<M-i>'
-                let g:table_mode_sort_map = '<M-s>'
-                "-----------------------------------------------
-                "-----------------------------------------------
-                " :TableModeToggle
-                "-----------------------------------------------
-                "-----------------------------------------------
-                " +-------+---------+--------+
-                " | hallo | albert  | montag |
-                " +=======+=========+========+
-                " | isr   | student | id     |
-                " +-------+---------+--------+
+        "-----------------------------------------------
+        " Use this option to disable the plugin: 1
+        " let g:loaded_table_mode = 0
+        "-----------------------------------------------
+        let g:table_mode_auto_align = 1
+        let g:table_mode_corner_corner='+'
+        let g:table_mode_header_fillchar='='
+        let g:table_mode_align_char = ':'
+        let g:table_mode_delete_row_map = '<M-d>'
+        let g:table_mode_delete_column_map = '<M-c>'
+        let g:table_mode_add_formula_map = '<M-f>'
+        let g:table_mode_eval_formula_map = '<M-e>'
+        let g:table_mode_cell_text_object_i_map = '<M-i>'
+        let g:table_mode_sort_map = '<M-s>'
+        "-----------------------------------------------
+        " :TableModeToggle
+        "-----------------------------------------------
+        " +-------+---------+--------+
+        " | hallo | albert  | montag |
+        " +=======+=========+========+
+        " | isr   | student | id     |
+        " +-------+---------+--------+
 "++bbb++++++++++++++++ETAB+++++++}}}
 "++AAA++#BOOKMARK++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         Plug 'MattesGroeger/vim-bookmarks'
@@ -1160,6 +1148,19 @@ call plug#begin('~/.config/nvim/plugged/')
                 "let g:bookmark_manage_per_buffer = 1`
                 "let g:bookmark_auto_save_file = '/bookmarks'`
 "++bbb+++++++++++++++++++++}}}
+
+        Plug 'jalvesaq/Nvim-R'
+        "Plug 'christoomey/vim-tmux-navigator'
+        "----------------------------------------------------------------------------------
+        "---:T---:Tnew---:Topen---:TREPL--#REPL--------------------------------------------
+        "----------------------------------------------------------------------------------
+        Plug 'kassio/neoterm'
+                au VimEnter,BufRead,BufNewFile *.jl set filetype=julia
+                au VimEnter,BufRead,BufNewFile *.idr set filetype=idris
+                au VimEnter,BufRead,BufNewFile *.lidr set filetype=lidris
+                au VimEnter,BufRead,BufNewFile *.lfe, set filetype=lfe
+
+        " Plug 'vim-scripts/spreadsheet.vim'
 "++AAA++#REPL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
         Plug 'jalvesaq/vimcmdline'
                 let cmdline_vsplit      = 1      " Split the window vertically
@@ -1170,14 +1171,38 @@ call plug#begin('~/.config/nvim/plugged/')
                 let cmdline_tmp_dir     = '/tmp' " Temporary directory to save files
                 let cmdline_outhl       = 1      " Syntax highlight the output
                 let cmdline_auto_scroll = 1      " Keep the cursor at the end of terminal (nvim)
+
                 let cmdline_app         = {}
+                let cmdline_app           = {}
+                let cmdline_app['octave']   = 'octave'
+                let cmdline_app['php']   = 'php'
+                let cmdline_app['vim']   = 'vim'
+                let cmdline_app['ruby']   = 'ruby'
+                let cmdline_app['sh']     = 'bash'
                 let cmdline_app['python'] = 'python2'
-                " let cmdline_app['ruby']   = 'pry'
-                " let cmdline_app['sh']     = 'bash'
+                let cmdline_app['maxima'] = 'maxima-sage'
                 if has('gui_running') || &termguicolors
                         let cmdline_color_input    = '#9e9e9e'
                         let cmdline_color_normal   = '#00afff'
                 endif
+                let cmdline_color_input    = '#9e9e9e'
+                let cmdline_color_normal   = '#00afff'
+                let cmdline_color_number   = '#00ffff'
+                let cmdline_color_integer  = '#00ffff'
+                let cmdline_color_float    = '#00ffff'
+                let cmdline_color_complex  = '#00ffff'
+                let cmdline_color_negnum   = '#d7afff'
+                let cmdline_color_negfloat = '#d7afff'
+                let cmdline_color_date     = '#00d7af'
+                let cmdline_color_true     = '#5fd787'
+                let cmdline_color_false    = '#ff5f5f'
+                let cmdline_color_inf      = '#00afff'
+                let cmdline_color_constant = '#5fafff'
+                let cmdline_color_string   = '#5fd7af'
+                let cmdline_color_stderr   = '#0087ff'
+                let cmdline_color_error    = '#ff0000'
+                let cmdline_color_warn     = '#c0ffff'
+                let cmdline_color_index    = '#d7d787'
 
         " - `<LocalLeader>s` to start the interpreter.
         " - `<Space>` to send the current line to the interpreter.
@@ -1281,14 +1306,6 @@ call plug#begin('~/.config/nvim/plugged/')
         " Runners available are 'pytest', 'nose', 'nose2', 'djangotest', 'djangonose'
         " and Python's built-in 'unittest'
         " Plug 'jacobsimpson/nvim-example-python-plugin'
-        "----------------------------------------------------------------------------------
-        "---:T---:Tnew---:Topen---:TREPL---------------------------------------------------
-        "----------------------------------------------------------------------------------
-        " Plug 'kassio/neoterm'
-        "         au VimEnter,BufRead,BufNewFile *.jl set filetype=julia
-        "         au VimEnter,BufRead,BufNewFile *.idr set filetype=idris
-        "         au VimEnter,BufRead,BufNewFile *.lidr set filetype=lidris
-        "         au VimEnter,BufRead,BufNewFile *.lfe, set filetype=lfe
         "----------------------------------------------------------------------------------
         " Plug 'roxma/python-support.nvim'
         "         let g:python_support_python2_require = 0
@@ -1548,12 +1565,30 @@ call plug#begin('~/.config/nvim/plugged/')
         nmap ,b <Plug>(swap-next)
         " Plug 'dstein64/vim-startuptime'
         "===========Venus============================
-        Plug 'dstein64/vim-startuptime'
         " Plug 'sjl/splice.vim'
         " Plug 'sjl/clam.vim'
         " Plug 'vim-scripts/taglist.vim'
         " Plug 'klen/rope-vim'
+        "---------------------------------------------
+        " Plug 'tpope/vim-endwise'
+        Plug 'kovisoft/slimv'
+        Plug 'baruchel/vim-notebook'
+        "-------------Maxima-------------------------------------
+        " let g:notebook_cmd='stdbuf -i0 -o0 -e0 /usr/bin/maxima'
+        " \ . ' --disable-readline --very-quiet'
+        " let g:notebook_stop="quit();"
+        " let g:notebook_send0="\;"
+        " let g:notebook_send='print(\"VIMMAXIMANOTEBOOK\")\$'
+        " let g:notebook_detect='VIMMAXIMANOTEBOOK '
+        "---------------------------------------------
+        let g:notebook_cmd='octave'
+        let g:notebook_stop='exit'
+        let g:notebook_send='printf \"VIMOCTAVENOTEBOOK\n\"'
+        let g:notebook_detect='VIMOCTAVENOTEBOOK'
+        let g:notebook_send0=""
+        let g:notebook_shell_internal = '/bin/bash'
         "=======================================
+
         " Plug 'tmsvg/pear-tree'
         Plug 'dohsimpson/vim-macroeditor'
 "++bbb+++++++++++++++++++++++++}}}
@@ -2682,6 +2717,11 @@ iabbrev yy2 "*******************************************************************
 iabbrev yy3 "++AAA++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{<CR>"++bbb++}}}
 iabbrev yy4 "======================================================================================================
 iabbrev yy5 +++++++++++++
+iabbrev yy6 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+iabbrev yy7 ===================================================================================
+iabbrev yy8 -----------------------------------------------------------------------------------
+iabbrev yy9 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 iabbrev xdate <C-r>=strftime("%m/%d/%y")<CR>
 iabbrev fdate <C-r>=strftime("%B %d, %Y")<CR>
 iabbrev xtime <C-r>=strftime("%H:%M")<CR>
@@ -3026,11 +3066,20 @@ nmap <silent> gw    "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<cr><c-o><c-l>
 "**************************************
 "++bbb++++++++++++++++++++++++++++++++++}}}
 
-nmap <localleader>t @<Plug>OrgSetTags
+" nmap ga <Plug>(EasyAlign)
+" nmap <localleader>t <Plug>(OrgSetTags)
+" nmap <F12> <Plug>(OrgToggleFolding)
 
-:let g:org_todo_keywords = [['TODO(t)', '|', 'DONE(d)'],
-                        \ ['REPORT(r)', 'BUG(b)', 'KNOWNCAUSE(k)', '|', 'FIXED(f)'],
-                        \ ['CANCELED(c)']]
+let g:org_todo_keywords = ['TODO', '|', 'DONE']
+let g:org_indent = 1
+" let g:org_plugins = ['ShowHide', '|', 'Navigator', 'EditStructure']
+let g:org_aggressive_conceal = 1
 
-:nmap g{
-                        \ :py ORGMODE.plugins["Navigator"].parent(mode="normal")<CR>
+" :let g:org_todo_keywords = [['TODO(t)', '|', 'DONE(d)'],
+"                         \ ['REPORT(r)', 'BUG(b)', 'KNOWNCAUSE(k)', '|', 'FIXED(f)'],
+"                         \ ['CANCELED(c)']]
+" :nmap g{  :py ORGMODE.plugins["Navigator"].parent(mode="normal")<CR>
+
+" Examples:
+" gawk '{ sum += $1 }; END { print sum }' file
+" gawk -F: '{ print $1 }' /etc/passwd

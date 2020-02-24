@@ -1,13 +1,225 @@
-
-2<div>
-3  <p id="foo"></p>
-3  <p id="soo"></p>
-3  <p id="sno"></p>
-4</div>
+<body>
+<div>
+ <p id="foo"></p>
+  <p id="soo"></p>
+  <p id="sno"></p>
+</div>
+<table>
+        <td><tr>OPER</tr></td>
+</table>
 
 
 <div>
   <p id="faa"></p>
-  <p id="saa"></p>
   <p id="sna"></p>
+  <p id="rna"></p>
 </div>
+</body>
+
+
+	Before        Input         After~
+	--------------------------------------
+	if x == 42|   <CR>          if x == 42
+	                                |
+	                            end
+	--------------------------------------
+	def foo()|    <CR>          def foo()
+	                                |
+	                            end
+	--------------------------------------
+	bar.each do|  <CR>          bar.each do
+	                                |
+	                            end
+	--------------------------------------
+if x == 42
+
+
+
+autocmd User targets#mappings#user call targets#mappings#extend({~
+    \ 'b': {'pair': [{'o':'(', 'c':')'}]}~
+    \ })~
+
+  Old text                  Command     New text ~
+
+  $name = "Tom";            glip=       $name     = "Tom";
+  $birthday =* "Jan 12";                $birthday = "Jan 12";
+  $age = 25;                            $age      = 25;
+
+  fish, monkey, giraffe*    2gL3j,      fish,    monkey,   giraffe
+  a, b, c                               a,       b,        c
+  45, saturday, 0                       45,      saturday, 0
+  goodbye, cruel, lamp                  goodbye, cruel,    lamp
+
+  Old text
+
+  $name     = "Tom";
+  $birthday = "Jan 12";
+  $age      = 25;
+
+  fish   , monkey  , giraffe
+  a      , b       , c
+  45     , saturday, 0
+  goodbye, cruel   , lamp
+
+  fish, monkey, giraffe
+  a, b, c
+  45, saturday, 0
+  goodbye, cruel, lamp
+
+    this is example text (with a pair of parentheses) ~
+                          └───────── cin) ─────────┘
+
+to delete the item in a comma separated list under the cursor, use `da,`
+
+                                  .........
+    shopping list: oranges, apples, bananas, tomatoes ~
+                                  └─ da, ─┘
+
+notice how the selection includes exactly one of the surrounding commas to
+leave a proper comma separated list behind.
+
+
+==============================================================================
+overview                                                    *targets-overview*
+
+targets.vim comes with five kinds for text objects:
+
+    pair text objects           |targets-pair-text-objects|
+    quote text objects          |targets-quote-text-objects|
+    separator text objects      |targets-separator-text-objects|
+    argument text objects       |targets-argument-text-objects|
+    tag text objects
+
+each of those kinds is implemented by a targets source. third party plugins
+can provide additional sources to add even more text objects which behave like
+the built in ones. see plugins.md in the targets.vim repo for details on how
+to implement your own targets source.
+
+
+==============================================================================
+pair text objects                                  *targets-pair-text-objects*
+
+these text objects are similar to the built in text objects such as |i)|.
+supported trigger characters:
+
+    ( )       (work on parentheses)
+    { } b     (work on curly braces)
+    [ ]       (work on square brackets)
+    < >       (work on angle brackets)
+        t     (work on tags)
+
+pair text objects work over multiple lines and support |targets-pair-seek|.
+
+we borrowed the aliases `r` and `a` from the |surround| plugin by tim pope.
+the following examples will use parentheses, but they all work for each listed
+trigger character accordingly.
+
+i( i) i[ i] ib                                      *i(_t* *i)_t* *i[_t* *i]_t* *ib_t*
+i{ i} i< i> it                                      *i{_t* *i}_t* *i<_t* *i>_t* *it_t*
+    select inside of pair characters. this overrides vim's default text object
+    to allow seeking for the next pair in the current line to the right or
+    left when the cursor is not inside a pair. this behavior is similar to
+    vim's seeking behavior of `di'` when not inside of quotes, but it works
+    both ways. accepts a [count] to select multiple
+    blocks.
+
+              ............
+        a ( b ( cccccccc ) d ) e ~
+           │   └── i) ──┘   │
+           └───── 2i) ──────┘
+
+a( a) a[ a] ab                                      *a(_t* *a)_t* *a[_t* *a]_t* *ab_t*
+a{ a} a< a> at                                      *a{_t* *a}_t* *a<_t* *a>_t* *at_t*
+    select a pair. overrides vim's default text object to allow seeking.
+    accepts [count].
+
+              ............
+        a ( b ( cccccccc ) d ) e ~
+          │   └─── a) ───┘   │
+          └────── 2a) ───────┘
+
+i( i) i[ i] ib                                      *i(_t* *i)_t* *i[_t* *i]_t* *ib_t*
+i{ i} i< i> it                                      *i{_t* *i}_t* *i<_t* *i>_t* *it_t*
+    select contents of pair characters. like inside of parentheses, but
+    exclude whitespace at both ends. useful for changing contents while
+    preserving spacing. accepts [count].
+
+              ............
+        a ( b ( cccccccc ) d ) e ~
+            │   └─ i) ─┘   │
+            └──── 2i) ─────┘
+
+a( a) a[ a] ab                                      *a(_t* *a)_t* *a[_t* *a]_t* *ab_t*
+a{ a} a< a> at                                      *a{_t* *a}_t* *a<_t* *a>_t* *at_t*
+    select around pair characters. like a pair, but include whitespace at one
+    side of the pair. prefers to select trailing whitespace, falls back to
+    select leading whitespace. accepts [count].
+
+              ............
+        a ( b ( cccccccc ) d ) e ~
+          │   └─── a) ────┘   │
+          └────── 2a) ────────┘
+
+------------------------------------------------------------------------------
+next and last pair                                    *targets-next-last-pair*
+
+work directly on distant pairs without moving there separately.
+
+in( in) in[ in] inb                                      *in(* *in)* *in[* *in]* *inb*
+in{ in} in< in> int                                      *in{* *in}* *in<* *in>* *int*
+an( an) an[ an] anb                                      *an(* *an)* *an[* *an]* *anb*
+an{ an} an< an> ant                                      *an{* *an}* *an<* *an>* *ant*
+in( in) in[ in] inb                                      *in(* *in)* *in[* *in]* *inb*
+in{ in} in< in> int                                      *in{* *in}* *in<* *in>* *int*
+an( an) an[ an] anb                                      *an(* *an)* *an[* *an]* *anb*
+an{ an} an< an> ant                                      *an{* *an}* *an<* *an>* *ant*
+il( il) il[ il] ilb                                      *il(* *il)* *il[* *il]* *ilb*
+il{ il} il< il> ilt                                      *il{* *il}* *il<* *il>* *ilt*
+al( al) al[ al] alb                                      *al(* *al)* *al[* *al]* *alb*
+al{ al} al< al> alt                                      *al{* *al}* *al<* *al>* *alt*
+il( il) il[ il] ilb                                      *il(* *il)* *il[* *il]* *ilb*
+il{ il} il< il> ilt                                      *il{* *il}* *il<* *il>* *ilt*
+al( al) al[ al] alb                                      *al(* *al)* *al[* *al]* *alb*
+al{ al} al< al> alt                                      *al{* *al}* *al<* *al>* *alt*
+    all the above pair text objects can be shifted to the next pair by
+    including the letter `n`. the command `in)` selects inside of the next
+    pair. use the letter `l` instead to work on the previous (last) pair. uses
+    a [count] to skip multiple pairs. skipping works over multiple lines.
+
+                                                         *targets-pair-charts*
+the following charts summarizes all pair mappings for a list of pairs and
+nested pairs:
+
+    a ( bbbbbbbb ) ( ccccccc ) ( dddddd ) ( eeeeeee ) ( ffffffff ) g ~
+      ││└ 2il) ┘│││││└ il) ┘│││││└ i) ┘│││││└ in) ┘│││││└ 2in) ┘│││
+      │└─ 2il) ─┘│││└─ il) ─┘│││└─ i) ─┘│││└─ in) ─┘│││└─ 2in) ─┘││
+      ├── 2al) ──┘│├── al) ──┘│├── a) ──┘│├── an) ──┘│├── 2an) ──┘│
+      └── 2al) ───┘└── al) ───┘└── a) ───┘└── an) ───┘└── 2an) ───┘
+                               ..........
+    a ( bbbbbbbb ) ( ccccccc ) ( dddddd ) ( eeeeeee ) ( ffffffff ) g ~
+      ││└ 2il) ┘│││││└ il) ┘│││││└ i) ┘│││││└ in) ┘│││││└ 2in) ┘│││
+      │└─ 2il) ─┘│││└─ il) ─┘│││└─ i) ─┘│││└─ in) ─┘│││└─ 2in) ─┘││
+      ├── 2al) ──┘│├── al) ──┘│├── a) ──┘│├── an) ──┘│├── 2an) ──┘│
+      └── 2al) ───┘└── al) ───┘└── a) ───┘└── an) ───┘└── 2an) ───┘
+
+                               ..........
+    a ( b ( cccccccc ) d ) ( e ( ffffff ) g ) ( h ( iiiiiiii ) j ) k ~
+      │││ ││└ 2il) ┘││││││││││ ││└ i) ┘││││││││││ ││└ 2in) ┘│││││││
+      │││ │└─ 2il) ─┘│││││││││ │└─ i) ─┘│││││││││ │└─ 2in) ─┘││││││
+      │││ ├── 2al) ──┘││││││││ ├── a) ──┘││││││││ ├── 2an) ──┘│││││
+      │││ └── 2al) ───┘│││││││ └── a) ───┘│││││││ └── 2an) ───┘││││
+      ││└───── il) ────┘│││││└─── 2i) ────┘│││││└───── in) ────┘│││
+      │└────── il) ─────┘│││└──── 2i) ─────┘│││└────── in) ─────┘││
+      ├─────── al) ──────┘│├───── 2a) ──────┘│├─────── an) ──────┘│
+      └─────── al) ───────┘└───── 2a) ───────┘└─────── an) ───────┘
+
+------------------------------------------------------------------------------
+pair seek                                                  *targets-pair-seek*
+
+if any of the normal pair commands (not containing `n` or `l`) is executed
+when the cursor is not positioned inside a pair, it seeks for pairs before or
+after the cursor by searching for the appropriate delimiter on the current
+line. this is similar to using the explicit version containing `n` or `l`, but
+in only seeks on the current line.
+
+

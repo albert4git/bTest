@@ -44848,6 +44848,10 @@ or
 Example: "sqrt(98.7)".
 Then type:
 
+function MyCalc(str)
+    return system("echo \'scale=" . g:MyCalcPresition . " ; print " . a:str . "\' | bc -l")
+endfunction
+
 :B s/.*/\=MyCalc("12.7 + " . submatch(0))/
 
 The expression will be replaced by its result ("22.63" in the example).

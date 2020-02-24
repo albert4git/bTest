@@ -1,9 +1,5 @@
 
-
-
-
-
-"--------------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------------
 :LspCodeAction 	Gets a list of possible commands that can be applied to a file so it can be fixed (quick fix)
 :LspDeclaration 	Go to the declaration of the word under the cursor, and open in the current window
 :LspDefinition 	Go to the definition of the word under the cursor, and open in the current window

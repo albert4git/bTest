@@ -21,11 +21,13 @@ _BEGIN__
 " finding empty lines
 /^\n\{3}                    : find 3 empty lines
 /^str.*\nstr                : find 2 successive lines starting with str
+"*********************************************************************************************
 /\(^str.*\n\)\{2}           : find 2 successive lines starting with str
 " using rexexp memory in a search find fred.*joe.*joe.*fred *C*
 /\(fred\).*\(joe\).*\2.*\1
 " Repeating the Regexp (rather than what the Regexp finds)
 /^\([^,]*,\)\{8}
+"*********************************************************************************************
 " visual searching
 :vmap // y/<C-R>"<CR>       : search for visually highlighted text
 :vmap <silent> //    y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR> : with spec chars

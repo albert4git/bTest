@@ -18,9 +18,12 @@ badd +3 logoGit.vim
 badd +588 b5DEO.vim
 badd +1 xFZF.sh
 badd +1 zHighLight.vim
-badd +0 __XtermColorTable__
+badd +1 ~/.config/nvim/plugged/vim-markdown/doc/vim-markdown.txt
+badd +1 __XtermColorTable__
+badd +1 ~/.config/nvim/plugged/vim-notebook/README.md
+badd +75 ~/.config/nvim/plugged/neoterm/doc/neoterm.txt
 argglobal
-silent! argdel *
+%argdel
 $argadd NONE
 edit zHighLight.vim
 set splitbelow splitright
@@ -33,8 +36,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 15 + 17) / 35)
-exe '2resize ' . ((&lines * 15 + 17) / 35)
+exe '1resize ' . ((&lines * 14 + 17) / 34)
+exe '2resize ' . ((&lines * 15 + 17) / 34)
 argglobal
 setlocal fdm=marker
 setlocal fde=0
@@ -44,7 +47,7 @@ setlocal fdl=0
 setlocal fml=6
 setlocal fdn=20
 setlocal nofen
-let s:l = 11 - ((6 * winheight(0) + 7) / 15)
+let s:l = 11 - ((6 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -53,7 +56,8 @@ normal! 019|
 lcd ~/git/bTest/kDot
 wincmd w
 argglobal
-if bufexists('~/git/bTest/kDot/__XtermColorTable__') | buffer ~/git/bTest/kDot/__XtermColorTable__ | else | edit ~/git/bTest/kDot/__XtermColorTable__ | endif
+enew
+file ~/git/bTest/kDot/__XtermColorTable__
 setlocal fdm=marker
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -62,18 +66,57 @@ setlocal fdl=0
 setlocal fml=6
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 7) / 15)
+lcd ~/git/bTest/kDot
+wincmd w
+exe '1resize ' . ((&lines * 14 + 17) / 34)
+exe '2resize ' . ((&lines * 15 + 17) / 34)
+tabedit ~/.config/nvim/plugged/vim-markdown/doc/vim-markdown.txt
+set splitbelow splitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=marker
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=6
+setlocal fdn=20
+setlocal nofen
+let s:l = 217 - ((24 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+217
+normal! 038|
+lcd ~/.config/nvim/plugged/vim-markdown/doc
+tabedit ~/.config/nvim/plugged/vim-notebook/README.md
+set splitbelow splitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+setlocal fdm=expr
+setlocal fde=Foldexpr_markdown(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=6
+setlocal fdn=20
+setlocal nofen
+let s:l = 284 - ((24 * winheight(0) + 15) / 30)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+284
 normal! 0
-lcd ~/git/bTest/kDot
-wincmd w
-2wincmd w
-exe '1resize ' . ((&lines * 15 + 17) / 35)
-exe '2resize ' . ((&lines * 15 + 17) / 35)
-tabnext 1
+lcd ~/.config/nvim/plugged/vim-notebook
+tabnext 3
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

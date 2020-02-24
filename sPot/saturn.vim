@@ -72,3 +72,37 @@
 ":map <F2> msHmtgg/Last [cC]hange:\s*/e+1<CR>"_D"=strftime("%Y %b %d")<CR>p'tzt`s
 "**************************************
 "++bbb++++++++++++++++++++++++++++++++++}}}
+
+text columns, awk, sort, unique, sum column …
+How to show only nth column in a text file?
+
+# print the 7th column. (columns are separated by spaces by default.)
+cat myFile | awk '{print $7}'
+
+For delimiter other than space, for example tab, use -F option. Example:
+
+# print 12th atd 7th column, Tab is the separator
+cat myFile | awk -F\t '{print $12 , $7}'
+
+Alternative solution is to use the cut utility, but it does not accept regex as delimeters. So, if you have column separated by different number of spaces, “cut” cannot do it.
+How to show only uniq lines in a file?
+
+sort myFile -u
+
+or
+
+sort myFile | uniq
+
+To prepend the line with a count of repetition, use sort myFile | uniq -c
+How to sum up the 2nd column in a file?
+
+awk '{sum += $2} END {print sum}' file_name → sum the 2nd column in a file.
+How to show only first few lines of a huge file?
+
+head file_name → show first n lines of a file.
+
+head -n 100 file_name → show first 100 lines of a file.
+
+tail file_name → show the last n lines of a file.
+
+head -n 100 file_name → show last 100 lines of a file.

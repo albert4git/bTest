@@ -1,4 +1,5 @@
         "-----------------------------------------------------------------------------------
+
         "set completeopt=menuone,menu,longest,preview
         "set complete& completeopt=menu infercase noshowfulltag
         "--------------------------------------------------------------------------------
@@ -78,6 +79,8 @@
                 endif
         endfunction
 
+        "==================================================================================
+        "==================================================================================
         "==================================================================================
         "---Open-Quickfix-window-automatically---------------------------------------------
         "==================================================================================
@@ -441,7 +444,7 @@ let g:which_key_map.7 = { 'name' : '+open', 'q' : 'open-quickfix'    , 'l' : 'op
 "= File: s2DeoLc.vim
 "==================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Mo 28 Okt 2019 01:45:42  CET
+" Lass Modified:      Di 21 Jan 2020 07:20:07  CET
 "==================================================================================================
 "==================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -680,19 +683,19 @@ call plug#begin('~/.config/nvim/plugged/')
         Plug 'airblade/vim-gitgutter'
                 nmap ]c <Plug>GitGutterNextHunk
                 nmap [c <Plug>GitGutterPrevHunk
-        "------------------------------------------------------
+                "------------------------------------------------------
                 nmap hp <Plug>GitGutterPreviewHunk
                 nmap hs <Plug>GitGutterStageHunk
                 nmap hu <Plug>GitGutterUndoHunk
-        "------------------------------------------------------
+                "------------------------------------------------------
                 let g:gitgutter_signs = 1
                 let g:gitgutter_max_signs = 2000
-        "--------------------------------------------------------------------------
+                "------------------------------------------------------
                 highlight GitGutterAdd ctermfg=green   guifg=#00ffff 
                 highlight GitGutterChange ctermfg=yellow
                 highlight GitGutterDelete ctermfg=red
                 highlight GitGutterChangeDelete ctermfg=cyan
-        "--------------------------------------------------------------------------
+                "------------------------------------------------------
                 if exists("*gitgutter#highlight#define_highlights")
                         " let vim-gitgutter know we changed the SignColumn colors!
                         call gitgutter#highlight#define_highlights()

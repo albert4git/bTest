@@ -175,7 +175,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " let g:LanguageClient_loggingFile = '/tmp/lc.log'
 " let g:LanguageClient_loggingLevel = 'DEBUG'
 
-" If ALE is used, there is little sense to leave diagnostics errors 
+" If ALE is used, there is little sense to leave diagnostics errors
 let g:LanguageClient_diagnosticsEnable = 0
 
 let g:LanguageClient_rootMarkers = {
@@ -183,7 +183,7 @@ let g:LanguageClient_rootMarkers = {
   \ }
 
 " Language server commands
-" Use 
+" Use
 " \ 'go': ['bingo', '--trace', '--logfile', '/tmp/bingo.log'],
 " for debugging purposes
 let g:LanguageClient_serverCommands = {
@@ -201,7 +201,7 @@ nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 " *****************************************************************************
 
 " Clear vertical split character
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 
 highlight Comment cterm=italic
 
@@ -521,9 +521,6 @@ let g:rustfmt_autosave = 1
 " set Ctrl-] to navigate to definition
 " autocmd FileType rust nmap <c-]> <Plug>(rust-def)
 
-" run test under cursor
-autocmd FileType rust nmap <leader>t :RustTest<CR>
-autocmd FileType rust nmap <leader>T :RustTest!<CR>
 
 " *****************************************************************************
 " https://www.reddit.com/r/vim/comments/9xpb18/file_preview_with_fzf_rg_bat_and_devicons/
@@ -619,7 +616,7 @@ set clipboard=unnamedplus
 if has('nvim')
 	tnoremap <Esc> <C-\><C-n>
 	tnoremap <C-v><Esc> <Esc>
-				
+
 	highlight! link TermCursor Cursor
 	highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
 endif

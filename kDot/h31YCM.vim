@@ -26,6 +26,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+
 " maintained vim-fish fork
 Plug 'wilriker/vim-fish'
 Plug 'hynek/vim-python-pep8-indent'
@@ -45,17 +46,16 @@ Plug 'junegunn/seoul256.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-after-object'
-Plug 'junegunn/vim-slash'
+
 
 " Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you
 " can see the contents of the registers.
 " Plug 'junegunn/vim-peekaboo'
 
-Plug 'farmergreg/vim-lastplace'
 " Plug 'matze/vim-move'
 " Plug 'uarun/vim-protobuf'
 Plug 'alfredodeza/pytest.vim'
-Plug 'abaldwin88/roamer.vim'
+
 
 Plug 'jreybert/vimagit'
 
@@ -74,10 +74,8 @@ Plug 'janko-m/vim-test'
 
 
 
-Plug 'vim-scripts/diffchar.vim'
 
 
-Plug 'Valloric/ListToggle'
 
 Plug 'Valloric/YouCompleteMe', { 'do': '/usr/bin/python install.py' }
 Plug 'SirVer/ultisnips'
@@ -98,6 +96,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
+
 Plug 'nathanaelkane/vim-indent-guides'
 
 Plug 'machakann/vim-sandwich'
@@ -119,36 +118,63 @@ Plug 'luochen1990/rainbow'
 
 " Unused
 
+" Plug 'luochen1990/indent-detector.vim'
+" Plug 'boucherm/ShowMotion'
+" Plug 'bfredl/nvim-ipy'
+" Plug 'mtth/cursorcross.vim'
 " Plug 'RRethy/vim-illuminate'
 " Plug 'junegunn/vim-oblique'
+Plug 'wellle/targets.vim'
+Plug 'Valloric/ListToggle'
+Plug 'vim-scripts/diffchar.vim'
+Plug 'abaldwin88/roamer.vim'
+Plug 'farmergreg/vim-lastplace'
+
 " Plug 'henrik/vim-indexed-search'
 " Plug 'junegunn/vim-pseudocl'
-" Plug 'mtth/cursorcross.vim'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'MarcWeber/vim-addon-local-vimrc'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'Shougo/deoplete.nvim'
-" Plug 'bfredl/nvim-ipy'
 " Plug 'blueyed/vim-diminactive'
-" Plug 'boucherm/ShowMotion'
 " Plug 'dhruvasagar/vim-prosession'
+
+
 " Plug 'hecal3/vim-leader-guide'
 " Plug 'itchyny/lightline.vim'
 " Plug 'justinmk/vim-sneak'
-" Plug 'luochen1990/indent-detector.vim'
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'mbbill/undotree'
+
+
+Plug 'junegunn/vim-slash'
+" Plug 'uarun/vim-protobuf'
+Plug 'vim-python/python-syntax'
+let python_highlight_all = 1
+:Python2Syntax
+:Python3Syntax
+
 " Plug 'naddeoa/vim-visual-page-percent'
+
 " Plug 'rhysd/vim-operator-surround'
+
 " Plug 'rhysd/vim-textobj-anyblock'
+
 " Plug 't9md/vim-choosewin'
+
 " Plug 'terryma/vim-multiple-cursors'
+
 " Plug 'tpope/vim-fugitive'
+
 " Plug 'tpope/vim-obsession'
+
 " Plug 'vim-pandoc/vim-pandoc'
+
 " Plug 'vim-pandoc/vim-pandoc-syntax'
-" Plug 'vim-python/python-syntax'
+
+
 " Plug 'xtal8/traces.vim'
+
 " Plug 'zchee/deoplete-jedi'
 " if has('mac')
 "   Plug 'Valloric/YouCompleteMe', { 'do': 'MACOSX_DEPLOYMENT_TARGET=\"\" PATH=/usr/bin:$PATH ./install.py --clang-completer' }
@@ -928,6 +954,9 @@ nmap <silent><Leader>te <Esc>:Pytest fails<CR>
 " }}}
 " Digraphs {{{
 " ±
+
+
+
 :dig pm 177
 " ²
 :dig 22 178

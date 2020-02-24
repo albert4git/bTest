@@ -16,6 +16,6 @@ colorscheme vim-monokai-tasty                         " set the colorscheme
 let g:airline_theme='monokai_tasty'                   " airline theme
 let g:lightline = { 'colorscheme': 'monokai_tasty' }  " lightline theme
 
-" `What` will print out the syntax group that the cursor is currently above.
 " from https://www.reddit.com/r/vim/comments/6z4aau/how_to_stop_vim_from_autohighlighting_italics_in/
+" `What` will print out the syntax group that the cursor is currently above.
 command! What echo synIDattr(synID(line('.'), col('.'), 1), 'name')

@@ -3,32 +3,24 @@ import matplotlib.pylab as plb
 import matplotlib.path as pth
 import matplotlib.artist as art
 
-x = np.linspace(-np.pi, np.pi, 256)
-S, C = np.sin(x), np.cos(x)
-y = np.lexsort(k, a)
-
-plt.sin()
+plt.plot(1, 2)
+plt.axes(1, 2)
 plt.plot()
-plt.sci(x)
-plt.semilogy()
-plt.semilogx()
-plt.silent_list(1)
-plt.sci(2)
-plt.scatter(1, 3, 4)
 plt.savefig(1, 2)
 plt.stackplot(1, 3)
-plt.savefig(1, 0)
-plt.silent_list(1, 2)
-plt.scatter(1, 2, 3)
-plt.scatter(1, 8, 9)
-plt.scatter(1, 3, 9)
-plt.scatter(4, 7, 0)
-plt.scatter(5, 5, 5)
 plt.specgram(5, 7, 8)
+plt.dedent(1)
+plt.sca(2)
+plt.sci(1)
+plt.semilogx(1, 2)
+plt.figaspect(3)
+plt.silent_list(1, 2)
+plt.scatter(1, 3, 5)
+plt.scatter(1, 3, 7)
+plt.scatter()
 
 
-#=================================================================================
-class some_class(object):
+class someclass(object):
     """
     This is the docstring of this class containing information
     about its contents : it does nothing !
@@ -43,7 +35,7 @@ def some_function():
     """
 
 
-print(some_class.__doc__)
+print(someclass.__doc__)
 print(some_function.__doc__)
 
 

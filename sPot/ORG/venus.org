@@ -1,44 +1,20 @@
-* hallo VimOrg 1.Heading
-[[www.web.de][WEB]]
-[[https://devhints.io/projectionist][io]]
-
-* NMAPs LocalLeadder
-# nmap <localleader>t <Plug>(OrgSetTags)
-# nmap <F12> <Plug>(OrgToggleFolding)
-
-
-**In general Vim Versions:~
-   YYYY
-**In general Vim Versions:~
-      <localleader>hN  - insert heading above
-      <localleader>hh  - insert heading below, taking over children
-      <localleader>hn  - insert heading above, after children
-
-      m}              - move heading down
-      m{              - move heading up
-      m]]             - move subtree down
-      m[[             - move subtree up
-
+* var vah
       yah             - yank heading
       dah             - delete heading
       yar             - yank subtree
       dar             - delete subtree
       p               - paste subtree
 
-      >> or >ah       - demote heading
+* PROMOTE
       << or <ah       - promote heading
-      >ar             - demote subtree
+      >> or >ah       - demote heading
       <ar             - promote subtree
+      >ar             - demote subtree
+      -list 03022019
+      -list2
+      -list3
 
-  Hyperlinks:~
-    gl              - goto link
-    gyl             - yank link
-    gil             - insert new link
-
-    gn              - next link
-    go              - previous link
-
-  TODO Lists:~
+* TODO Lists:~									     :CULT:
     <localleader>d  - select keyword
     <S-Left>        - previous keyword
     <S-Right>       - next keyword
@@ -49,21 +25,24 @@
     <localleader>cl or <CR>     - insert plainlist item below
     <localleader>cL or <C-S-CR> - insert plainlist item above
 
-  Checkboxes:~
-    <localleader>cc             - toggle status
-    <localleader>cn or <CR>     - insert checkbox below
-    <localleader>cN or <C-S-CR> - insert checkbox above
+* TODO Checkboxes[80%][4/5]:~							     :CULT:
+    - [X] <localleader>cc             - toggle status
+    - [X] <localleader>cn or <CR>     - insert checkbox below
+    - [X] <localleader>cN or <C-S-CR> - insert checkbox above
+    - [ ] dxxxd <2020-02-03 Mon>
+    - [X] <2020-02-03 Mon>
 
   TAGS and properties:~
     <localleader>st     - set tags
 
-  Dates:~
+* Dates:~
     <localleader>sa     - insert date
     <localleader>si     - insert inactive date
     <localleader>pa     - insert date by using calendar selection
     <localleader>pi     - insert inactive date by using calendar selection
+    <localleader>pi     - insert inactive date by using calendar selection
 
-  Agenda:~
+* Agenda:~
     <localleader>caa    - agenda for the week
     <localleader>cat    - agenda of all TODOs
     <localleader>caA    - agenda for the week for current buffer
@@ -78,167 +57,60 @@
     <C-S-Left>      - previous keyword set
     <C-S-Right>     - next keyword set
 
-  Plain List:~
-    <localleader>cl or <CR>     - insert plainlist item below
-    <localleader>cL or <C-S-CR> - insert plainlist item above
+* Structure editing~
+  <S-CR>                Insert new heading with same level as current. If the
+                        cursor is in a plain list item, a new item is created
+                        (see section [[#Plain-lists][Plain lists]]). When this
+                        command is used in the middle of a line, the line is
+                        split and the rest of the line becomes the new
+                        headline.
 
-  Checkboxes:~
-    <localleader>cc             - toggle status
-    <localleader>cn or <CR>     - insert checkbox below
-    <localleader>cN or <C-S-CR> - insert checkbox above
+  Not yet implemented in vim-orgmode~
+  M-S-<CR>              Insert new TODO entry with same level as current
+                        heading.
 
-  Dates:~
-    <localleader>sa     - insert date
-    <localleader>si     - insert inactive date
-    <localleader>pa     - insert date by using calendar selection
-    <localleader>pi     - insert inactive date by using calendar selection
-
-  Agenda:~
-    <localleader>caa    - agenda for the week
-    <localleader>cat    - agenda of all TODOs
-    <localleader>caA    - agenda for the week for current buffer
-    <localleader>caT    - agenda of all TODOs for current buffer
-
-    Not yet implemented in vim-orgmode~
-    <localleader>caL    - timeline of current buffer
-
-  Export:~
+* Export:~
     <localleader>ep     - export as PDF
     <localleader>eb     - export as Beamer PDF
     <localleader>eh     - export as HTML
     <localleader>el     - export as LaTeX
-* CODE
+    <localleader>el     - export as LaTeX
 
-**DODO10
-***RUBY
-To highlight the text between the markers
-#+BEGIN_SRC ruby
-require 'sqlite3'
-  db = SQLite3::Database.open "dodo10.db"
-  stm = db.prepare "SELECT * FROM Cars LIMIT 20"
-  rs = stm.execute
-  rs.each do |row|
-    puts row.join "\s"
-  end
-#+END_SRC
+* Note:
+  - /italic/ is rendered as reverse in most terms (works fine in gVim, though)
+  - +strike-through+ doesn't work on Vim / GVim
+  - the non-standard `code' markup is also supported
+  - =code= and ~verbatim~ are also supported as block-level markup, see below.
+  - =code= and ~verbatim~ are also supported as block-level markup, see below.
 
-***PYTHON2 Lea
-#+BEGIN_SRC python
-import math
-Z = 111
-i = math.floor(Z / 2)
+* Link
+[[www.web.de][WEB]]
+[[https://devhints.io/projectionist][io]]
+[[https://devhints.io/projectionist][io]]
+[[https://devhints.io/projectionist][io]]
+[[https://devhints.io/projectionist][io]]
+** Hyperlinks:~
+- Li
+- li
+    gl              - goto link
+    gyl             - yank link
+    gil             - insert new link
+    gn              - next link
+    go              - previous link
 
-while i > 1:
-        if Z % i == 0:
-                print i
-        i -= 1
-#+END_SRC
+*** Link
+      [[link][description]]       or alternatively           [[link]]
+      'Insert/edit Link' command by pressing 'gil'.
 
+      gil                   Insert a link. This prompts for a link to be inserted
+                              into the buffer. You can just type a link, or use
+                              history keys <Up> and <Down> to access stored links.
+                              You will be prompted for the description part of the
+                              link. File name completion is enabled to link to a
+                              local file. In addition vim-orgmode provides the
+                              command :OrgHyperlinkInsert to insert a link from
+                              command line.
 
-***BASH
-#+BEGIN_SRC sh
-ls -al
-sqlite3 test.db  "create table n (id INTEGER PRIMARY KEY,f TEXT,l TEXT);"
-sqlite3 test.db  "insert into n (f,l) values ('john','smith');"
-sqlite3 test.db  "select * from n";
-
-sqlite3 dodo10.db  "select * from Cars";
-sqlite3 dodo10.db  "select * from people";
-#+END_SRC
-
-***PHP
-#+BEGIN_SRC php
-<?php
-
-$db = new SQLite3('dodo10.db');
-
-$results = $db->query('SELECT Name FROM Cars');
-while ($row = $results->fetchArray()) {
-        var_dump($row);
-}
-
-?>
-#+END_SRC
-
-
-***VIM
-#+BEGIN_SRC vim
-"------------
-fun! MyTest2()
-      let result = 3
-      echo result
-      return result
-endf
-command! MyTest2 call MyTest2()
-:call MyTest2()
-"------------
-#+END_SRC
-
-***Kotlin
-#+BEGIN_SRC cpp
-fun printMessage(message: String): Unit {                               // 1
-    println(message)
-}
-
-fun sum(x: Int, y: Int): Int {                                          // 3
-    return x + y
-}
-
-fun main() {
-    printMessage("Hello")                                               // 5
-    println(sum(1, 2))                                                  // 9
-}
-#+END_SRC
-
-
-***Kotlin
-#+BEGIN_SRC lua
-a = "Hello "
-b = "World"
-print("Concatenation of string a with b is ", a..b )
-print("Length of b is ",#b )
-print("Length of b is ",#"Test" )
-#+END_SRC
-
-***Java
-#+BEGIN_SRC java
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
-public class jaHelloCl
-{
-        public static void main(String[] args)
-        {
-                Calendar calendar = GregorianCalendar.getInstance();
-                System.out.print(calendar.getTime());
-                System.out.println("swaziland");
-        }
-
-        public jaHelloCl() {
-                System.out.printf("servus");
-        }
-}
-#+END_SRC
-
-***Perl
-#+BEGIN_SRC perl
-#!/usr/bin/perl -w
-use DBI;
-use strict;
-use warnings;
-
-my $db = DBI->connect("dbi:SQLite:dodo10.db", "", "", {RaiseError => 1, AutoCommit => 1});
-my $all = $db->selectall_arrayref("SELECT * FROM cars");
-
-foreach my $row (@$all) {
-        my ($id, $first, $last) = @$row;
-        print "$id|$first|$last \n";
-}
-#+END_SRC
-
-***CPP
-#+BEGIN_SRC cpp
-#+END_SRC
 
 * TODO Organize party [1/3]
       - [-] call people [1/2]
@@ -247,22 +119,8 @@ foreach my $row (@$all) {
       - [X] order food
       - [ ] think about what music to play
       - [ ] think about what music to play
-** bigTodo
-  #+BEGIN_EXAMPLE
-      #+TODO: TODO(t) | DONE(d)
-      #+TODO: REPORT(r) BUG(b) KNOWNCAUSE(k) | FIXED(f)
-      #+TODO: | CANCELED(c)
-  #+END_EXAMPLE
 
-
-* Note:
-  - /italic/ is rendered as reverse in most terms (works fine in gVim, though)
-  - +strike-through+ doesn't work on Vim / GVim
-  - the non-standard `code' markup is also supported
-  - =code= and ~verbatim~ are also supported as block-level markup, see below.
-
-
-** Lord of the Rings
+* Lord of the Rings
      My favorite scenes are (in this order)
      1. The attack of the Rohirrim
      2. Eowyn's fight with the witch king
@@ -271,8 +129,8 @@ foreach my $row (@$all) {
      Important actors in this film are:
      - Elijah Wood :: He plays Frodo
      - Sean Austin :: He plays Sam, Frodo's friend.
-     -
-*SyntaxHi
+
+* SyntaxHi
 For quick, ad-hoc manipulation of the syntax withing a range of lines, the
 following commands are provided:
 
@@ -292,3 +150,18 @@ following commands are provided:
                         Line numbers in [range] are fixed; i.e. they do not
                         adapt to inserted / deleted lines. But when in a
 
+* Task for the day
+** Morning Tasks [2/3]
+   - [X] Exercise
+   - [X] Eat breakfast
+   - [ ] Read emails
+** Server setup [0/3]
+   - [ ] Buy account
+   - [ ] Set up apache
+   - [ ] Set up mysql
+** Research [0/2]
+   - [ ] How to use org mode
+   - [ ] Wrtiing vim scripts
+** Night tasks [0/2]
+   - [ ] Read book
+   - [ ] Write blog post

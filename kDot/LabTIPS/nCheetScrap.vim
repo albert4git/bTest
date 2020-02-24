@@ -127,7 +127,6 @@ k: move up a line. This puts us on the line containing the heading's text.
                 autocmd BufWrite * :echom "Cats"
             augroup END
 
-
             augroup testgroup
                 autocmd BufWrite * :echom "Foo"
                 autocmd BufWrite * :echom "Bar"

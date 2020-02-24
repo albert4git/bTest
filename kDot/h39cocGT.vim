@@ -239,9 +239,10 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 noremap <F3> :Format<CR>
 
 let g:airline#extensions#coc#enabled = 1
-let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}' 
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
 let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 
+Plug 'ap/vim-buftabline'
 Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
 set laststatus=2
@@ -274,6 +275,7 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+Plug 'ap/vim-buftabline'
 Plug 'valloric/MatchTagAlways'
 let g:mta_set_default_matchtag_color = 0
 let g:mta_use_matchparen_group = 0
@@ -311,9 +313,14 @@ highlight Normal ctermfg=grey ctermbg=black
 highlight MatchTag ctermfg=black ctermbg=Yellow guifg=black guibg=Yellow
 
 filetype plugin on
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2                                                   
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
+Plug 'ap/vim-buftabline'
+Plug 'valloric/MatchTagAlways'
+let g:mta_set_default_matchtag_color = 0
+let g:mta_use_matchparen_group = 0
+nnoremap <leader>% :MtaJumpToOtherTag<cr>
 if !has('nvim')
 	set viminfo='100,n$HOME/.vim/files/info/viminfo'
 endif
@@ -321,6 +328,13 @@ endif
 vmap <C-c> :w !xclip -selection clipboard<CR><CR>
 noremap <F2> :set hlsearch! hlsearch?<CR>
 nnoremap <CR> :nohlsearch<CR><CR>
+
+
+Plug 'ap/vim-buftabline'
+Plug 'valloric/MatchTagAlways'
+let g:mta_set_default_matchtag_color = 0
+let g:mta_use_matchparen_group = 0
+nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 function InlineCommand()
     let l:cmd = input('Command: ')

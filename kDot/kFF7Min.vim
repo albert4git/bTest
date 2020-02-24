@@ -3,7 +3,7 @@
 " Last Modified: 19 Feb 2019
 "===============================================================================================================
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Last Modified:      Fr 27 Sep 2019 02:52:55  CEST
+" Last Modified:      Mi 11 Dez 2019 02:29:32  CET
 "===============================================================================================================
 "===============================================================================================================
         "set path+=.,/home/red/git/aTest/pyLabGitPdbPythonMode27
@@ -724,16 +724,6 @@
         "---------------------------------------------------------------------------------- 
 
 
-nnoremap <leader>f :Denite -direction=dynamicbottom -auto-preview file_rec<CR>
-nnoremap <leader>b :Denite -direction=dynamicbottom -auto-preview buffer<CR>
-
-call denite#custom#var('file/rec', 'command', ['ag', '--follow', '-g', '--nogroup', '--nocolor', '-u', ''])
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
 
 "==================================================================================================
 

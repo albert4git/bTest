@@ -723,6 +723,7 @@ if HasExec('tmux')
   endif
   " }
   " Vimux: {
+    nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
   Plug 'benmills/vimux'
   noremap <leader>vp :VimuxPromptCommand<CR>
   noremap <leader>vr :VimuxRunLastCommand<CR>
