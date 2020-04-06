@@ -1,0 +1,52 @@
+# Created:            Do 11 Apr 2019 11:52:32  CEST
+# Last Modified:      Di 31 Mär 2020 10:49:57  CEST
+# ~/.tmuxinator/ttBank42.yml
+
+name: ttBank42
+root: ~/git/bTest/
+
+windows:
+  - kDot:
+      layout: main-vertical
+      panes:
+        - Duo1:
+          - cd kDot
+          - clear
+
+  - Vert50:
+      layout: main-vertical
+      panes:
+        - Duo1:
+          - vim 50%
+        - Duo2:
+          - ls
+
+  - Vert70:
+      layout: main-vertical
+      panes:
+        - Duo3:
+          - vim 70%
+        - Duo4:
+          - ls
+
+#======================================
+
+  - kDot:
+      layout: main-vertical
+      panes:
+        - T3:
+            - cd ../kDot
+
+  - NPlg:
+      layout: tiled
+      panes:
+        - T5:
+          - cd ~/.config/nvim/plugged/
+          - ls
+
+  - Log:
+      layout: main-vertical
+      panes:
+        - T8:
+            - cd /var/log/
+            - de2less syslog

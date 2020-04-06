@@ -25,11 +25,11 @@
     <localleader>cl or <CR>     - insert plainlist item below
     <localleader>cL or <C-S-CR> - insert plainlist item above
 
-* TODO Checkboxes[80%][4/5]:~							     :CULT:
+* TODO Checkboxes[80%][4/5]:
     - [X] <localleader>cc             - toggle status
     - [X] <localleader>cn or <CR>     - insert checkbox below
     - [X] <localleader>cN or <C-S-CR> - insert checkbox above
-    - [ ] dxxxd <2020-02-03 Mon>
+    - [ ] dxxxd <2020-02-03 Mon>  <localleader>sa     - insert date
     - [X] <2020-02-03 Mon>
 
   TAGS and properties:~
@@ -124,11 +124,13 @@
      My favorite scenes are (in this order)
      1. The attack of the Rohirrim
      2. Eowyn's fight with the witch king
+     3. NEW
         + this was already my favorite scene in the book
         + I really like Miranda Otto.
      Important actors in this film are:
      - Elijah Wood :: He plays Frodo
      - Sean Austin :: He plays Sam, Frodo's friend.
+     - Sued Corea
 
 * SyntaxHi
 For quick, ad-hoc manipulation of the syntax withing a range of lines, the
@@ -165,3 +167,4 @@ following commands are provided:
 ** Night tasks [0/2]
    - [ ] Read book
    - [ ] Write blog post
+   - [ ] 

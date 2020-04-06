@@ -1,0 +1,189 @@
+GutenTag.txt
+
+:Author: red
+:Email: red@red-Swift-SF113-31
+:Date: 2019-12-03 13:29
+
+Installation
+
+vim-plug:
+
+Plug 'skywind3000/gutentags_plus'
+
+vundle:
+
+Plugin 'skywind3000/gutentags_plus'
+
+Configuration
+
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
+
+" enable gtags module
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+
+" config project root markers.
+let g:gutentags_project_root = ['.root']
+
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+" change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+
+NOTE: gutentags will identify current project root by by root markers (.git/.svn/.root). if your project is not in any git/svn repository, gutentags will not generate gtags database for it. To avoid this, you can create an empty .root file in your project root, and gutentags will know where is your project root and generate gtags database for it.
+Demo
+
+Gutentags_plus works very well when searching definition/references in huge projects like linux kernel:
+
+Searching is very fast, You can't browse linux kernel source in IDEs, but you can read it in vim easily with the help of this plugin.
+Command
+
+:GscopeFind {querytype} {name}
+
+Perform a cscope search and take care of database switching before searching.
+
+{querytype} corresponds to the actual cscope line interface numbers as well as default nvi commands:
+
+0 or s: Find this symbol
+1 or g: Find this definition
+2 or d: Find functions called by this function
+3 or c: Find functions calling this function
+4 or t: Find this text string
+6 or e: Find this egrep pattern
+7 or f: Find this file
+8 or i: Find files #including this file
+9 or a: Find places where this symbol is assigned a value
+
+Keymaps
+keymap 	desc
+<leader>cs 	Find symbol (reference) under cursor
+<leader>cg 	Find symbol definition under cursor
+<leader>cd 	Functions called by this function
+<leader>cc 	Functions calling this function
+<leader>ct 	Find text string under cursor
+<leader>ce 	Find egrep pattern under cursor
+<leader>cf 	Find file name under cursor
+<leader>ci 	Find files #including the file name under cursor
+<leader>ca 	Find places where current symbol is assigned
+
+You can disable the default keymaps by:
+
+let g:gutentags_plus_nomap = 1
+
+and define your new maps like:
+
+noremap <silent> <leader>gs :GscopeFind s <C-R><C-W><cr>
+noremap <silent> <leader>gg :GscopeFind g <C-R><C-W><cr>
+noremap <silent> <leader>gc :GscopeFind c <C-R><C-W><cr>
+noremap <silent> <leader>gt :GscopeFind t <C-R><C-W><cr>
+noremap <silent> <leader>ge :GscopeFind e <C-R><C-W><cr>
+noremap <silent> <leader>gf :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
+noremap <silent> <leader>gi :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
+noremap <silent> <leader>gd :GscopeFind d <C-R><C-W><cr>
+noremap <silent> <leader>ga :GscopeFind a <C-R><C-W><cr>
+
+Troubleshooting
+ERROR: gutentags: gtags-cscope job failed, returned: 1
+
+step1: add the line below to your .vimrc:
+
+let g:gutentags_define_advanced_commands = 1
+
+step2: restart vim and execute command:
+
+:GutentagsToggleTrace
+
+step3: open some files and generate gtags again with current project:
+
+:GutentagsUpdate
+
+step4: you may see a lot of gutentags logs, after that:
+
+:messages
+
+To see the gtags log.
+Hers's my confiuration in .vimrc
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+let g:gutentags_project_root = ['.git']
+let g:gutentags_ctags_tagfile = '.tags'
+let s:vim_tags = expand('~/.cache/.tags')
+let g:gutentags_cache_dir = s:vim_tags
+let g:gutentags_file_list_command = 'find . -type f -name *.c -o -type f -name *.h' if !isdirectory(s:vim_tags) silent! call mkdir(s:vim_tags, 'p') endif
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extras=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+let g:gutentags_trace = 1
+
+map <F11> :!ctags -R -f ./tags *site-packages-path-goes-here*<CR>
+map <F11> :!ctags -R -f ./tags $VIRTUAL_ENV/lib/python2.7/site-packages<CR>
+map <F11> :exe '!ctags -R -f ./tags ' . shellescape(system('python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"'))<CR>
+map <F11> :!ctags -R -f ./tags `python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()`<CR>
+
+
+
+    " gutentags --------------------------
+    " enable gtags module
+    let g:gutentags_modules = ['ctags', 'gtags_cscope']
+
+    " config project root markers.
+    let g:gutentags_project_root = ['.root', '.git', '.svn', '.hg', '.project']
+
+    " generate datebases in my cache directory, prevent gtags files polluting my project
+    let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+    " change focus to quickfix window after search (optional).
+    let g:gutentags_plus_switch = 1
+
+ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./.tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")
+
+"---------------------------------------------------------------------------------------------
+
+#!/bin/bash
+
+CSCOPE_DIR="$PWD/cscope"
+
+if [ ! -d "$CSCOPE_DIR" ]; then
+mkdir "$CSCOPE_DIR"
+fi
+
+echo "Finding files ..."
+find "$PWD" -name '*.[ch]' \
+-o -name '*.java' \
+-o -name '*properties' \
+-o -name '*.cpp' \
+-o -name '*.cc' \
+-o -name '*.hpp' \
+-o -name '*.py' \
+-o -name '*.php' > "$CSCOPE_DIR/cscope.files"
+
+echo "Adding files to cscope db: $PWD/cscope.db ..."
+cscope -b -i "$CSCOPE_DIR/cscope.files"
+
+export CSCOPE_DB="$PWD/cscope.out"
+echo "Exported CSCOPE_DB to: '$CSCOPE_DB'"
+"---------------------------------------------------------------------------------------------
+$ cscope -R
+
+This will produce a cscope.out file which is where the symbol cross-references
+are stored. In the interface, you can look up symbols, definition of a symbol,
+all instances of a function call and even do find-replace. To exit the
+interface, press Ctrl-D.
+"---------------------------------------------------------------------------------------------
+
+"---------------------------------------------------------------------------------------------
+
+"---------------------------------------------------------------------------------------------
+
+"---------------------------------------------------------------------------------------------
+
+"---------------------------------------------------------------------------------------------
+
+"---------------------------------------------------------------------------------------------
+
+
+
+
+
+

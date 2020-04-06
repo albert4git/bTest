@@ -1,0 +1,4 @@
+remote/host: python3 host registered plugins ['denite', 'nvim_typescript', 'deoplete', 'far', 'semshi']
+remote/host: generated rplugin manifest: /home/red/.local/share/nvim/rplugin.vim
+remote/host: python3 host registered plugins ['denite', 'nvim_typescript', 'deoplete', 'far', 'semshi']
+remote/host: generated rplugin manifest: /home/red/.local/share/nvim/rplugin.vim

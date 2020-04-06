@@ -1,2 +1,0 @@
-IncludeLocals:True
-UserLibraries:/home/user/libraries/lib1/types_c.taghl

@@ -1,0 +1,3 @@
+let l:bm_file_version = 1
+let l:bm_sessions = {'default': {'/home/red/git/bTest/kDot/s8DeoLc.vim': [{'sign_idx': 9501, 'line_nr': 770, 'content': ''},{'sign_idx': 9502, 'line_nr': 737, 'content': '        "===BOOKMARK======================================================================='},],}}
+let l:bm_current_session = 'default'

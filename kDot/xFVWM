@@ -1,0 +1,83 @@
+###--------------------------------------------
+Key    Up     A S  MoveAndGotoPage -1p +0p
+Key    Down    A S  MoveAndGotoPage +1p +0p
+###--------------------------------------------
+# Silent Key 5 A C WindowListFunc
+# Silent Key 6 A C ToggleBGC
+# Silent Key 7 A C WindowToggleTiling
+# Silent Key 8 A C  Maximize-and-SetFloating
+
+
+##############################################################################
+### Ctrl+Alt virtual desktop navigation
+Key Up         A    M    Scroll -100000 0
+Key Down       A    M    Scroll  100000 0
+
+Key s      A    M    SwapWindowsDir NorthEast NorthWest 
+###############GLYPHOSAT####################################################
+############################################################################
+###--!!! Silent Key Super_L A A GotoPage 1 1   ---!!!--###
+#--------------------------------------------------------------------------
+#YES>>
+#Silent Key Super_L A A GotoPage -1p +0p
+#Silent Key Super_L A M GotoPage +1p +0p
+#Silent Key Super_L A S GotoPage +1p +0p
+#Yes>> Key Super_L    A   C GotoPage +1p +0p
+###------------------------------------------------------------------------
+### Ctrl+Alt virtual desktop navigation
+Key Super_L   A  C         Scroll -100000 0
+Key Super_L   A  M         Scroll  100000 0
+Key Super_L   A  A         GotoDesk 1 1
+###------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------
+#----------------NEXT----------------------------------------------------
+
+#No= Key Super_L     A    S    GotoPage +1p +0p
+#No= Key Super_L     Up    S    GotoPage +1p +0p
+
+#JustDown#
+Super_L     A    A    GotoPage +1p +0p
+
+#--------------------------------------------------------------------------
+#>> Key Super_L       Up A  GotoPage +1p +0p
+
+#next- Key Super_L      A    Down    GotoPage 0p +1p
+#--------------------------------------------------------------------------
+
+
+############################################################################
+# Silent Key Super_R A A Exec exec $[infostore.terminal]
+# Key Super_R A A SwapWindowsDir SouthEast SouthWest 
+# Key Super_R A M SwapWindowsDir SouthEast SouthWest 
+
+
+
+#--------------------------------------------
+#Nothing# Key    Super_L     A Up  GotoPage 0p +1p
+#--------------------------------------------
+#Nothing# Key    Up       A Super_L  GotoPage 0p -1p
+#Nothing# Key    Down     A Super_L  GotoPage 0p +1p
+#Nothing# Key Up        A Super_L       GotoPage +1p +0p 
+#--------------------------------------------
+#Silent Key F2 A Super_L GotoPage 1 0
+#--------------------------------------------
+
+
+#--------------------------------------------------------------------------
+
+#Yes>>Key    Up       A S  GotoPage 0p -1p
+#Yes>>Key    Down     A S  GotoPage 0p +1p
+#--------------------------------------------
+#Yes>>Key    Left     A S  GotoPage -1p +0p
+#Yes>>Key    Right    A S  GotoPage +1p +0p
+#--------------------------------------------------------------------------
+#--------------------------------------------
+#Nothing# Key    Super_L     A Up  GotoPage 0p +1p
+#--------------------------------------------
+#Nothing# Key    Up       A Super_L  GotoPage 0p -1p
+#Nothing# Key    Down     A Super_L  GotoPage 0p +1p
+#Nothing# Key Up        A Super_L       GotoPage +1p +0p 
+#--------------------------------------------
+#Silent Key F2 A Super_L GotoPage 1 0
+#--------------------------------------------

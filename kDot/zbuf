@@ -1,0 +1,389 @@
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' \ 
+| grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+
+is_fzf="ps -o state= -o comm= -t '#{pane_tty}' \
+  | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?fzf$'"
+
+bind -n C-h run "($is_vim && tmux send-keys C-h) || \
+                          tmux select-pane -L"
+
+bind -n C-j run "($is_vim && tmux send-keys C-j)  || \
+                         ($is_fzf && tmux send-keys C-j) || \
+                         tmux select-pane -D"
+
+bind -n C-k run "($is_vim && tmux send-keys C-k) || \
+                          ($is_fzf && tmux send-keys C-k)  || \
+                          tmux select-pane -U"
+
+bind -n C-l run  "($is_vim && tmux send-keys C-l) || \
+                          tmux select-pane -R"
+
+bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
+
+
+:put =range(5,10)
+:put =range(1,5)
+
+HALLO WORLD 
+
+HALLO WORLD
+servu miru
+servu miru
+
+call foo(arg1, arg2, arg3)
+call foo(arg1, arg2, arg3)
+call foo(arg1, arg2, arg3)
+
+	foo
+	bar
+	baz
+
+0 0 0
+1 1 1
+2 2 2
+
+0,1,2
+0,1,2
+0,1,2
+
+0,0,0
+1,1,1
+2,2,2
+
+000
+111
+222
+
+
+"SnipMate"
+call MakeSnip(&ft, "arr", "= ['${1}', '${2}']")
+
+11
+14
+17
+20
+23
+
+0006, 0005, 0004, 0003, 0002, 0001, 
+0001
+0002
+0003
+0004
+0005
+0006
+0007
+0008
+0009
+0010
+0011
+0012
+0013
+0014
+0015
+
+0
+5
+10
+15
+20
+25
+
+a = b
+
+1 =2
+:FlipLR /.\?=/
+
+1 " a = b
+2 " a != b
+3 " a |= b
+4 " a ~= bb ~= cccc
+5 " a + c \= b
+
+
+ZX = cos(x)
+YX = sin(x)
+XX = cos(x)
+
+;"==============================================================================;;;
+;;"::::::::::::::::::::::::::::::-MAGIC-:::::::::::::::::::::::::::::::::::::::::;;
+;;"==============================================================================;;
+
+
+3**2 = 9
+3^2  = 9
+3+5  = 8
+10/3 = 3.33 
+------
+Sum  = 29.33
+
+
+
+3**2 = 9
+3^2  = 9
+3+5  = 8
+10/3 = 3.33
+------
+Sum  = 29.33
+
+ 100+200                 = 300 
+ pow(2.0, 2.0) + abs(-5) = 9 
+ s(45)                   = .85
+ sin(45)                 = 0.85 
+
+4, 3, 2, 1
+1, 2, 3, 4
+4, 3, 2, 1, 
+1: 2: 3: 4
+
+""###;;"==============================================================================;;
+20 15 13  12  11 10 5 3 2 1
+""###;;"::::::::::::::::::::::::::::::-MAGIC-:::::::::::::::::::::::::::::::::::::::::;;
+""###;;"==============================================================================;;
+
+        { sin ( cosin ( <b>'x2'</b> ) ) }
+
+        { sin ( cosin ( <b>'x2'</b> ) ) }
+
+1 man - 2 dog
+2 dog - 1 man
+dogman
+
+
+英 [yīng] (surname); England; English; a hero; brave; flower; leaf; petal
+
+英国 [yīng guó] Britain; England; English
+
+英文 [yīng wén] English (language)
+
+英语 [yīng yǔ] English (language)
+
+
+
+todo
+# 20 15 13  12  11 10 5 3 2 1
+# 20 15 13  12  11 10 5 3 2 1
+
+todo
+31 26 24  23  22 21 6 4 3 2
+
+todo
+# 20 15 13  12  11 10 5 3 2 1
+20 15 13  12  11 10 5 3 2 1
+# 20 15 13  12  11 10 5 3 2 1
+# 20 15 13  12  11 10 5 3 2 1
+
+====================
+::::::::::::::::::::
+====================
+
+    " [ open with \o ] {{{ open: URL, preview doc: markdown, TeX, etc.
+        " Utl {{{ :Utl to open links, files.
+            nnoremap <leader>o :Utl<CR>
+                " Syntax: no need to escape 'spaces'.
+                " use '' contain filename(url) strings. e.g. = ":silent !evince '%p' &"
+                " <url:#r=here> id=here | <url:tn=some text> <url:filename.txt#line=-10>
+                " <url:foo bar.pdf> | <url:./tepm> folder |
+                " <url:foo bra.jpg> | <url:./temp> folder |
+                " <url:foo bar.png> | <url:./temp> folder |
+                " <url:../plugin/utl.vim#tn=text>
+                " <url:file:///home/stb/.vim/plugin/utl.vim>
+                " <url:http://www.google.com> www.vim.org
+                " <url:man:ls> || <url:config:>
+                " download from [1] || [1] www.google.com
+                " It brings the benefits of URL-based hyperlinking to plain text,
+                " extending the URL syntax for plain text needs.
+            let g:utl_opt_verbose=0 " 0=no (default), 1=yes
+            let g:utl_opt_highlight_urls='yes' " 'yes' is default / 'no'
+
+            " reference utl_rc.vim
+            " HTTP
+            " %u, %p for Unix, %P for Windows.
+            if !exists("g:utl_cfg_hdl_scm_http_system")
+                if has("unix")
+                    " let g:utl_cfg_hdl_scm_http_system = 'silent !xdg-open %u' " for ubuntu system
+                    "let g:utl_cfg_hdl_scm_http_system = "!xterm -e lynx '%u#%f'" "	console browser
+                    " if browser is GUI, don't use "silent" => "silent !browser", will crash terminal vim screen
+                    " Check if an instance is already running, and if yes use it, else start firefox.
+                    " let g:utl_cfg_hdl_scm_http_system = "silent !firefox -remote 'ping()' && firefox -remote 'openURL( %u )' || firefox '%u#%f' &"
+                    " use lightweight browser like : luakit, jumanji, urbl etc.
+                    let g:utl_cfg_hdl_scm_http_system = "!luakit '%u#%f' &"
+                endif
+                let g:utl_cfg_hdl_scm_http=g:utl_cfg_hdl_scm_http_system
+            endif
+            " http wget:
+            let g:utl_cfg_hdl_scm_http__wget="call Utl_if_hdl_scm_http__wget('%u')"
+            " scp
+            if !exists("g:utl_cfg_hdl_scm_scp")
+                let g:utl_cfg_hdl_scm_scp = "silent %d %u"
+            endif
+            " mailto:
+            if !exists("g:utl_cfg_hdl_scm_mailto")
+                let g:utl_cfg_hdl_scm_mailto = "!urxvt -e mutt '%u'"
+            endif
+            " generic
+            if !exists("g:utl_cfg_hdl_mt_generic")
+                if has("unix")
+                    if $WINDOWMANAGER =~? 'kde'
+                        let g:utl_cfg_hdl_mt_generic = 'silent !konqueror "%p" &'
+                    else
+                        let g:utl_cfg_hdl_mt_generic = 'silent !urxvt -e sh -c ranger "%p"'
+                    endif
+                endif
+            endif
+            " directory
+            let g:utl_cfg_hdl_mt_text_directory__cmd = ':!urxvt -e sh -c ranger "%p"'
+            let g:utl_cfg_hdl_mt_text_directory__vim = 'VIM'   " Vim builtin file explorer
+            " let g:utl_cfg_hdl_mt_text_directory='VIM'
+            " let g:utl_cfg_hdl_mt_text_directory = ':silent !nautilus "%p" &'
+            let g:utl_cfg_hdl_mt_text_directory=g:utl_cfg_hdl_mt_text_directory__cmd
+            " application/pdf
+            let g:utl_cfg_hdl_mt_application_pdf = ":silent !evince '%p' &"
+            " TODO application/djvu
+            let g:utl_cfg_hdl_mt_application_djvu = ":silent !evince '%p' &"
+            " application/chm
+            " let g:utl_cfg_hdl_mt_application_chm = ":silent !chmsee '%p' &"
+            " application/doc
+            let g:utl_cfg_hdl_mt_application_msword = ":silent !libreoffice '%p' &"
+        " }}}
+
+
+
+    " [ ASCII Draw ] {{{
+        " DrawIt {{{ Ascii drawing plugin: lines, ellipses, arrows, fills, and more!
+            " \di to start DrawIt, \ds to stop DrawIt.
+            " <left>, <right>, <up>, <down>, -- move and draw left
+            " <shift-left> <shift-....> -- move left ...
+            " >, <, ^, v, -- draw (-> <- ^ v) arrow.
+            " <pgup> <pgdn> ... -- replace with a \, move down and right, and insert a \.
+            " \>, \<, \^, \v, -- draw fat (-> <- ^ v) arrow
+            " \a           draw arrow based on corners of visual-block
+            " \b           draw box using visual-block selected region
+            " \e           draw an ellipse inside visual-block
+            " \f           fill a figure with some character
+            " \h           create a canvas for \a \b \e \l
+            " \l           draw line based on corners of visual block
+            " \s           adds spaces to canvas
+            " <leftmouse>  select visual block
+            " <s-leftmouse>  drag and draw with current brush (register)
+            " \ra ... \rz  replace text with given brush/register
+            " \pa ...      like \ra ... \rz, except that blanks are considered
+                            " to be transparent
+        " }}}
+
+        " boxdraw
+            " Draw diagrams and tables using boxdrawing characters
+
+        " sketch.vim
+            " Draw with mouse: boxes, arrows, lines, fills.
+            " Transparent/opaque drag and drop.
+
+        " drawing.vim
+            " Ascii drawing primitives with mouse in vim GUI (box, arrow, line).
+
+        " ditaa {{{ convert ASCII diagrams into proper bitmap graphics.
+        " }}}
+    " }}}
+
+
+    " [ format ] {{{
+        " Tabular {{{ flexible, intuitive text aligning.
+            " Usage:
+            " /{char} -> /,
+            " /{char}/[range] -> /,/r0 -> [range]: l,r,c => left, right, center.
+            " :Tabularize [first_comma,multiple_spaces,]
+            " /,/r1c1l0 | /^[^,]*\zs,/r0c0l0
+            " Tabularize scripts.
+        " }}}
+
+        " vim-align
+
+        " surround {{{ cs, ds, ys[(text object)|iw|W|t(<p>)], (Visual)S
+            " cs"', cs'<q>, cst", ds", ysiw], yss(, ds{, ds),
+            " Visual(V): S<p class="important">
+            " :help surround.txt
+        " }}}
+
+        " Abolish {{{ quick find, substitute, abbreviate
+        " several variations of a word at once
+            " three case variants (foo, Foo, and FOO) are operated on by every command.
+            " :Abolish, :Subvert.
+        " }}}
+
+
+                " :KeyHelper => makes viewing and inputting these symbols easier.
+        " [ Android ] {{{
+                " Eclim {{{ bring Eclipse functionality to Vim support various languages
+                        " code complete: <C-X><C-U>
+                        " :Validate/:w to check syntax error.
+                        " }}}
+        " }}}
+
+
+    " [ C & C++ ] {{{
+        augroup CSettings
+            au!
+            au FileType c,cpp setlocal cindent
+            au FileType c,cpp,java set matchpairs+==:;
+        augroup END
+
+        " clang_complete {{{ use of clang to complete in C/C++.
+            " :h clang_complete.txt
+            let g:clang_auto_select = 0 " 0/1/2 auto select first entry in popup menu
+            " disable with 0 to solve neocomplcache problem
+            let g:clang_complete_auto = 1 " auto complete after -> . ::
+            let g:clang_complete_copen = 1 " 1: open quickfix window on error
+            let g:clang_hl_errors = 1 " highlight warnings and errors
+            let g:clang_periodic_quickfix = 0 " periodically update quickfix
+                " you can use g:ClangUpdateQuickFix() with a mapping to do this
+            let g:clang_snippets = 1
+            " clang_complete, snipmate, ultisnips
+            let g:clang_snippets_engine = "ultisnips"
+            let g:clang_conceal_snippets = 1
+            let g:clang_trailing_placeholder = 0 " for clang_complete snippet engine
+            let g:clang_close_preview = 0 " auto close preview window after completion
+            let g:clang_exec = "clang" " name or path of clang executable.
+            let g:clang_user_options =
+                        \ '-std=gnu99' .
+                        \ '-stdlib=libc' .
+                        \ '-I /usr/include'
+            " let g:clang_user_options = '-std=gnu++0x -include malloc.h -fms-extensions -fgnu-runtime'
+            " let g:clang_user_options = '-std=c++11 -stdlib=libc++'
+            let g:clang_auto_user_options = "path, .clang_complete, clang"
+            let g:clang_use_library = 1
+            let g:clang_library_path = "/usr/lib/"
+            let g:clang_sort_algo = "priority"
+            let g:clang_complete_macros = 1
+            let g:clang_complete_patterns = 1
+        " }}}
+
+        " neocomplcache-clang {{{ clang_complete for neocomplcache.
+            " Require: clang_complete
+                " clang.so, clang.dll, libclang.dylib
+            let g:neocomplcache_clang_use_library = 1 " use clang library
+            let g:neocomplcache_clang_library_path = '/usr/lib/'
+            let g:neocomplcache_clang_executable_path = '/usr/bin/clang'
+            let g:neocomplcache_clang_macros = 1 " -code-completion-macros option
+            let g:neocomplcache_clang_patterns = 1 " -code-completion-patterns option
+            let g:neocomplcache_clang_auto_options = "path, .clang_complete, clang"
+            let g:neocomplcache_clang_user_options = '-std=gnu99 -stdlib=libc'
+            " let g:neocomplcache_clang_user_options = '-std=c++11 -stdlib=libc++'
+            let g:neocomplcache_clang_debug = 0 " enable debug message.
+        " }}}
+
+        " OmniCppComplete {{{ C/C++ omni-completion with ctags database
+        " TODO
+        " }}}
+
+        " inccomplete {{{ Vim plugin for #include directive completion
+            let g:inccomplete_addclosebracket = "always"
+            let g:inccomplete_sort = "ignorecase"
+            let g:inccomplete_showdirs = 1
+            let g:inccomplete_appendslash = 0 " append slash to directory name
+        " }}}
+
+        " c.vim {{{ C/C++ IDE
+        " }}}
+    " }}}
+        "==========================================================================================
+        "::::::::::::::::::::::::::::::-2MAGIC2-:::::::::::::::::::::::::::::::::::::::::::::::::::
+        "==========================================================================================

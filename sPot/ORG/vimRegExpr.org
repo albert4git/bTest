@@ -1,0 +1,56 @@
+* Matching
+. any character except new line
+\s whitespace character
+\S non-whitespace character
+\d digit
+\D non-digit
+\h head of word character (a,b,c...z,A,B,C...Z and _)
+\H non-head of word character
+\p printable character
+\P like \p, but excluding digits
+\w word character
+\W non-word character
+\a alphabetic character
+\A non-alphabetic character
+\l lowercase character
+\L non-lowercase character
+\u uppercase character
+\U non-uppercase character
+
+- this will search for the Section line and yank (copy) one line after into the memory.
+:/Section/+ y
+
+- and that will search for the next Section line and put (paste) the saved text on the next line.
+:// normal p
+
+* 4.1 Anchors
+s/vi/VIM/g
+s: vi : VIM :g
+s:\<vi\>:VIM:g
+%s:^vi\>:VIM:
+%s:vi:VIM:gi
+%s:[Vv]i:VIM:
+
+* Gready
+ this file is normally "$VIM/.gvimrc". You can check this with ":version".
+
+* xxxxx /.\{-}
+* xxx /x\{3}
+
+* High Dig to 70.   southeast wind around 10
+\.\s\+[a-z]
+
+* 4.5 Grouping and Backreferences group parts of the pattern expression
+  enclosing them with "\(" and "\)" and refer to them inside the replacement
+  pattern by their special number \1, \2 ... \9. Typical example is swapping
+  first two words of the line:
+:s:\(\w\+\)\(\s\+\)\(\w\+\):\3\2\1:
+
+
+* 4.6 Alternations
+
+Using "\|" you can combine several expressions into one which matches
+any of its components. The first one matched will be used.
+
+\(Date:\|Subject:\|From:\)\(\s.*\)
+

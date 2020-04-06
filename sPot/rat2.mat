@@ -1,0 +1,8 @@
+    printf ("Hello, world!\n");
+
+    A = [ 1, 1, 2; 3, 5, 8; 13, 21, 34 ]
+    B = rand (3, 2);
+
+    x = linspace(0, 2*pi, 100);
+    y = sin(x);
+    plot(x, y);

@@ -1,6 +1,6 @@
 " File: bPot
 " Created:            Di 09 Apr 2019 12:46:44  CEST
-" Lass Modified:      Fr 21 Feb 2020 05:09:14  CET
+" Lass Modified:      Sa 04 Apr 2020 07:22:55  CEST
 "++AAA++#TAG+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{{{
 "%%%%!!!%%%OK1%%%NICE%%%???%%%GAIL%%%OnTOP%%%%%%%%%%%%%%%%%%%%%%%%%%%%PROJECTIONIST%%%%TEMPLATING%%%%%%%%%%%%
 "*******************************************Extra1***********************************************************
@@ -2594,8 +2594,8 @@ cabbrev w3 call WrapWordWith()<CR>
         nnoremap <leader> :<c-u>LeaderGuide '<Space>'<CR>
         vnoremap <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
         "============================================
-        nnoremap <localleader> :<c-u>LeaderGuide  ','<CR>
-        vnoremap <localleader> :<c-u>LeaderGuideVisual  ','<CR>
+        " nnoremap <localleader> :<c-u>LeaderGuide  ','<CR>
+        " vnoremap <localleader> :<c-u>LeaderGuideVisual  ','<CR>
         "============================================
         nnoremap ; :<c-u>LeaderGuide  ';'<CR>
         vnoremap ; :<c-u>LeaderGuideVisual  ';'<CR>
@@ -2966,7 +2966,6 @@ iabbrev dts   <C-r>=strftime("%Y/%m/%d %H:%M:%S -")<CR>
         let g:LanguageClient_useVirtualText =0
         let g:LanguageClient_virtualTextPrefix = "  -------:  "
         let g:LanguageClient_diagnosticsDisplay=diagnosticsDisplaySettings
-
 
 
         " hi SpellBad  ctermbg=245 ctermfg=White  guibg=#ffFFB5 guifg=#ff0000 gui=bold

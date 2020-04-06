@@ -1,0 +1,36 @@
+        nnoremap <buffer> <leader>[ vi[<c-v>$:EasyAlign\ g/^\S/<cr>gv=
+        nnoremap <buffer> <leader>{ vi{<c-v>$:EasyAlign\ g/^\S/<cr>gv=
+        nnoremap <buffer> <leader>( vi(<c-v>$:EasyAlign\ g/^\S/<cr>gv=
+
+    ab,e,klm
+    cd,f,no
+    ,gh,
+    ,ij,
+
+        "--------------------------------------------------------------
+        " [ {(hello) ( noch ) ('Mal') ("tomos") } tormos]
+
+        "---------------SYMPY--MySANDWICH--BREXIT------------------------------------------
+                vmap ss "zdi sympy.pprint(<c-r>z)<esc>
+                vmap sp "zdi print(<c-r>z)<esc>
+                vmap st "zdi<b><c-r>z</b><esc>
+                vmap sh "zdi<?= <c-r>z ?><esc>
+
+                vmap ss "zdi sympy.pprint(<c-r>z)<esc>
+                vmap sp "zdi print(<c-r>z)<esc>
+                vmap st "zdi<b><c-r>z</b><esc>
+                vmap sh "zdi<?= <c-r>z ?><esc>
+
+                vmap ss "zdi sympy.pprint(<c-r>z)<esc>
+                vmap sp "zdi print(<c-r>z)<esc>
+                vmap st "zdi<b><c-r>z</b><esc>
+                vmap sh "zdi<?= <c-r>z ?><esc>
+
+
+
+                vmap ss="zdi sympy.pprint(<c-r>z)<esc>
+
+                map sp="zdi print(<c-r>z)<esc>
+                mp st="zdi<b><c-r>z</b><esc>
+
+

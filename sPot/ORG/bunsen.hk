@@ -1,0 +1,81 @@
+import qualified Data.ByteString.Lazy.Char8 as LC
+import qualified Data.List as DL
+import qualified Data.List.Split as LS
+import Data.Monoid
+import System.IO
+
+main = hSetEncoding stdout utf8 >>
+       LC.getContents >>= mapM_ putStrLn . process
+
+process =   affixStrip
+          . startsWith
+          . splitOnMode
+          . modeSub
+          . capStrings
+          . split mark
+          . preprocess
+
+subs = appEndo . mconcat . map (Endo . sub)
+
+sub (s,r) lst@(x:xs)
+    | s `DL.isPrefixOf` lst = sub'
+    | otherwise = x:sub (s,r) xs
+    where
+        sub' = r ++ sub (s,r) (drop (length s) lst)
+sub (_,_) [] = []
+
+preprocess =   subs meta
+             . DL.intercalate " "
+             . DL.words
+             . DL.unwords
+             . DL.lines
+             . LC.unpack
+
+splitOnMode = DL.concat . map (\el -> split mode el)
+
+startsWith = filter (\el -> mark `DL.isPrefixOf` el
+                         && el /= mark)
+
+modeSub = map (subs mtsl)
+
+split s r = filter (/= "") $ s `LS.splitOn` r
+
+affixStrip =   clean
+             . concat
+             . map (\el -> split mark el)
+
+capStrings = map (\el -> mark ++ el ++ mark)
+
+clean = filter (not . DL.isInfixOf "[M")
+
+(mark, mode, n) = ("-(*)-","-(!)-", "")
+meta = [("\"",n),
+        ("\\",n),
+        ("\195\130\194\128\195\131\194\189`",n),
+        ("\194\128\195\189`",n),
+        ("\194\128kb\ESC",n),
+        ("\194\128kb",n),
+        ("[>0;95;c",n),
+        ("[>0;95;0c",n),
+        ("\ESC",mark),
+        ("\ETX",mark),
+        ("\r",mark)]
+mtsl = [(":",mode),
+        ("A",mode),
+        ("a",mode),
+        ("I",mode),
+        ("i",mode),
+        ("O",mode),
+        ("o",mode),
+        ("v", mode),
+        ("/",mode),
+        ("\ENQ","⌃e"),
+        ("\DLE","⌃p"),
+        ("\NAK","⌃u"),
+        ("\EOT","⌃d"),
+        ("\ACK","⌃f"),
+        ("\STX","⌃f"),
+        ("\EM","⌃y"),
+        ("\SI","⌃o"),
+        ("\SYN","⌃v"),
+        ("\DC2","⌃r")

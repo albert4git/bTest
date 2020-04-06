@@ -1,0 +1,173 @@
+c-tags.txt
+
+:Author: red
+:Email: red@red-Swift-SF113-31
+:Date: 2019-12-05 00:00
+
+" Options {{{1
+let g:tags_options_cpp = '--c++-kinds=+p --fields=+imaS --extra=+q'
+
+function! s:CtagsExecutable()
+  let tags_executable = lh#option#Get('tags_executable', s:tags_executable, 'bg')
+  return tags_executable
+endfunction
+
+function! s:CtagsOptions()
+  let ctags_options = lh#option#Get('tags_options_'.&ft, '')
+  let ctags_options .= ' '.lh#option#Get('tags_options', '', 'wbg')
+  return ctags_options
+endfunction
+
+function! s:CtagsDirname()
+  let ctags_dirname = lh#option#Get('tags_dirname', '', 'b').'/'
+  return ctags_dirname
+endfunction
+
+function! s:CtagsFilename()
+  let ctags_filename = lh#option#Get('tags_filename', 'tags', 'bg')
+  return ctags_filename
+endfunction
+
+function! s:CtagsCmdLine(ctags_pathname)
+  let cmd_line = s:CtagsExecutable().' '.s:CtagsOptions().' -f '.a:ctags_pathname
+  return cmd_line
+endfunction
+
+
+" ######################################################################
+" Tag generating functions {{{1
+" ======================================================================
+" Interface {{{2
+" ======================================================================
+" Mappings {{{3
+" inoremap <expr> ; <sid>Run('UpdateTags_for_ModifiedFile',';')
+
+nnoremap <silent> <Plug>CTagsUpdateCurrent :call <sid>UpdateCurrent()<cr>
+if !hasmapto('<Plug>CTagsUpdateCurrent', 'n')
+  nmap <silent> <c-x>tc  <Plug>CTagsUpdateCurrent
+endif
+
+nnoremap <silent> <Plug>CTagsUpdateAll     :call <sid>UpdateAll()<cr>
+if !hasmapto('<Plug>CTagsUpdateAll', 'n')
+  nmap <silent> <c-x>ta  <Plug>CTagsUpdateAll
+endif
+
+
+" ======================================================================
+" Auto command for automatically tagging a file when saved {{{3
+augroup LH_TAGS
+  au!
+  autocmd BufWritePost,FileWritePost * if ! lh#option#Get('LHT_no_auto', 0) | call s:Run('UpdateTags_for_SavedFile') | endif
+aug END
+
+" ======================================================================
+" Internal functions {{{2
+" ======================================================================
+" generate tags on-the-fly {{{3
+function! UpdateTags_for_ModifiedFile(ctags_pathname)
+  let source_name    = expand('%')
+  let temp_name      = tempname()
+  let temp_tags      = tempname()
+
+  " 1- purge old references to the source name
+  if filereadable(a:ctags_pathname)
+    " it exists => must be changed
+    call system('grep -v "  '.source_name.' " '.a:ctags_pathname.' > '.temp_tags.
+      \ ' && mv -f '.temp_tags.' '.a:ctags_pathname)
+  endif
+
+  " 2- save the unsaved contents of the current file
+  call writefile(getline(1, '$'), temp_name, 'b')
+
+  " 3- call ctags, and replace references to the temporary source file to the
+  " real source file
+  let cmd_line = s:CtagsCmdLine(a:ctags_pathname).' '.source_name.' --append'
+  let cmd_line .= ' && sed "s#\t'.temp_name.'\t#\t'.source_name.'\t#" > '.temp_tags
+  let cmd_line .= ' && mv -f '.temp_tags.' '.a:ctags_pathname
+  call system(cmd_line)
+  call delete(temp_name)
+
+  return ';'
+endfunction
+
+" ======================================================================
+" generate tags for all files {{{3
+function! s:UpdateTags_for_All(ctags_pathname)
+  call delete(a:ctags_pathname)
+  let cmd_line  = 'cd '.s:CtagsDirname()
+  " todo => use project directory
+  "
+  let cmd_line .= ' && '.s:CtagsCmdLine(a:ctags_pathname).' -R'
+  echo cmd_line
+  call system(cmd_line)
+endfunction
+
+" ======================================================================
+" generate tags for the current saved file {{{3
+function! s:UpdateTags_for_SavedFile(ctags_pathname)
+  let source_name    = expand('%')
+  let temp_tags      = tempname()
+
+  if filereadable(a:ctags_pathname)
+    " it exists => must be changed
+    call system('grep -v "  '.source_name.' " '.a:ctags_pathname.' > '.temp_tags.' && mv -f '.temp_tags.' '.a:ctags_pathname)
+  endif
+  let cmd_line = 'cd '.s:CtagsDirname()
+  let cmd_line .= ' && ' . s:CtagsCmdLine(a:ctags_pathname).' --append '.source_name
+  " echo cmd_line
+  call system(cmd_line)
+endfunction
+
+" ======================================================================
+" (public) Run a tag generating function {{{3
+function! LHTagsRun(tag_function)
+  call s:Run(a:tag_function)
+endfunction
+
+" ======================================================================
+" (private) Run a tag generating function {{{3
+" See this function as a /template method/.
+function! s:Run(tag_function)
+  try
+    let ctags_dirname  = s:CtagsDirname()
+    if strlen(ctags_dirname)==1
+      throw "tags-error: empty dirname"
+    endif
+    let ctags_filename = s:CtagsFilename()
+    let ctags_pathname = ctags_dirname.ctags_filename
+    if !filewritable(ctags_dirname) && !filewritable(ctags_pathname)
+      throw "tags-error: ".ctags_pathname." cannot be modified"
+    endif
+
+    let Fn = function("s:".a:tag_function)
+    call Fn(ctags_pathname)
+  catch /tags-error:/
+    " call lh#common#ErrorMsg(v:exception)
+    return 0
+  finally
+  endtry
+
+  echo ctags_pathname . ' updated.'
+  return 1
+endfunction
+
+function! s:Irun(tag_function, res)
+  call s:Run(a:tag_function)
+  return a:res
+endfunction
+
+" ======================================================================
+" Main function for updating all tags {{{3
+function! s:UpdateAll()
+  let done = s:Run('UpdateTags_for_All')
+endfunction
+
+" Main function for updating the tags from one file {{{3
+" @note the file may be saved or "modified".
+function! s:UpdateCurrent()
+  if &modified
+    let done = s:Run('UpdateTags_for_ModifiedFile')
+  else
+    let done = s:Run('UpdateTags_for_SavedFile')
+  endif
+endfunction

@@ -53,16 +53,19 @@ set editing-mode vi
 # export PATH=${PATH}:/home/red/nvim-linux64/bin/
 export PATH=${PATH}:/home/red/git/bTest/bPot/bbin/
 #=============================================================
+export PATH=${PATH}:/snap/bin/
 export PATH=${PATH}:/home/red/.fzf/bin/
 export PATH=${PATH}:/home/red/Komodo-Edit-11/bin/
-export PATH=${PATH}:/media/red/124Black/git/mySoft/
-export PATH=${PATH}:/media/red/124Black/git/mySoft/nvim64/bin/
 export PATH=${PATH}:/home/red/bin/
 export PATH=${PATH}:/home/red/bin/better-ls-master/
 export PATH=${PATH}:/home/red/bin/devicons-shell/
-export PATH=${PATH}:/home/red/git/bTest/sPot/82vim/bin/
-export PATH=${PATH}:/snap/bin/
 
+#=============================================================
+#=============================================================
+# export PATH=${PATH}:/home/red/git/bTest/sPot/82vim/bin/
+# export PATH=${PATH}:/media/red/124Black/git/mySoft/
+# export PATH=${PATH}:/media/red/124Black/git/mySoft/nvim64/bin/
+#=============================================================
 #=============================================================
 #GOPATH is the location of your work directory
 #For example my project directory is ~/Projects/Proj1
@@ -104,6 +107,7 @@ alias lst='exa -lT'
 
 #==========================================================================================
 #-Pretty print the path--------------------------------------------------------------------
+#==========================================================================================
 alias ips="ip a | grep 'inet ' | sed -e 's/^.*inet //g' -e 's/\/.*//g' | grep -v '127.0.0.1'"
 alias lss='LC_COLLATE=C ls -A --color -h --group-directories-first'
 alias addr="ip -o a | cut -d ' ' -f2,7"
@@ -133,43 +137,37 @@ alias yellow-grep="GREP_COLOR='1;33' grep -E --color=always --line-buffered"
 alias cyan-grep="GREP_COLOR='1;36' grep -E --color=always --line-buffered"
 
 ###############################################################
-alias nv='nvim'
 alias vim='vim  -u ~/git/bTest/bPot/cc1CleanRC.vim'
-
-###############################################################
-alias de='deonvim  -u ~/git/bTest/kDot/kMinit.vim'
-alias deo='deonvim  -u ~/git/bTest/kDot/kMinit.vim'
 
 ###############################################################
 alias de1less='deonvim  -u ~/git/bTest/bPot/kkLess.vim'
 alias de2less='deonvim  -u ~/git/bTest/bPot/kkLess2.vim'
 alias vim2less='vim  -u ~/git/bTest/bPot/kkLess2.vim'
 
-###############################################################
 
-#============================================================
-#=====================NEW====================================
-#============================================================
-alias s9='402nv.app  -u ~/git/bTest/sPot/s9DeoLc.vim'
-alias s10='402nv.app  -u ~/git/bTest/sPot/s10DeoLc.vim'
-alias s11='402nv.app  -u ~/git/bTest/sPot/s11DeoLc.vim'
-alias s12='402nv.app  -u ~/git/bTest/sPot/s12SynDeoLc.vim'
-alias s13='402nv.app  -u ~/git/bTest/sPot/s13TagDeoLc.vim'
-alias s14='402nv.app  -u ~/git/bTest/sPot/s14ActTagDeoLc.vim'
-alias s15='402nv.app  -u ~/git/bTest/sPot/s15ActTagDeoLc.vim'
-alias s16='402nv.app  -u ~/git/bTest/sPot/s16TitanDeoLc.vim'
-alias s17='402nv.app  -u ~/git/bTest/sPot/s17TitanDeoLc.vim'
-alias s18='402nv.app  -u ~/git/bTest/sPot/s18TitanDeoLc.vim'
-alias s19='402nv.app  -u ~/git/bTest/sPot/s19TitanDeoLc.vim'
-alias s20='402nv.app  -u ~/git/bTest/sPot/s20TitanDeoLc.vim'
-alias s21='402nv.app  -u ~/git/bTest/sPot/s21TitanDeoLcOrg.vim'
-###############################################################
-alias s022='402nv.app  -u ~/git/bTest/sPot/s22TitanDeoLcOrgMux.vim'
+#================================================================
+#=====================NEW========================================
+#====================nv-neo======================================
+alias s9='402neo.app  -u ~/git/bTest/sPot/s9DeoLc.vim'
+alias s10='402neo.app  -u ~/git/bTest/sPot/s10DeoLc.vim'
+alias s11='402neo.app  -u ~/git/bTest/sPot/s11DeoLc.vim'
+alias s12='402neo.app  -u ~/git/bTest/sPot/s12SynDeoLc.vim'
+alias s13='402neo.app  -u ~/git/bTest/sPot/s13TagDeoLc.vim'
+alias s14='402neo.app  -u ~/git/bTest/sPot/s14ActTagDeoLc.vim'
+alias s15='402neo.app  -u ~/git/bTest/sPot/s15ActTagDeoLc.vim'
+alias s16='402neo.app  -u ~/git/bTest/sPot/s16TitanDeoLc.vim'
+alias s17='402neo.app  -u ~/git/bTest/sPot/s17TitanDeoLc.vim'
+alias s18='402neo.app  -u ~/git/bTest/sPot/s18TitanDeoLc.vim'
+alias s19='402neo.app  -u ~/git/bTest/sPot/s19TitanDeoLc.vim'
+alias s20='402neo.app  -u ~/git/bTest/sPot/s20TitanDeoLc.vim'
+alias s21='402neo.app  -u ~/git/bTest/sPot/s21TitanDeoLcOrg.vim'
+##################################################################
+alias s022='402neo.app  -u ~/git/bTest/sPot/s22TitanDeoLcOrgMux.vim'
 
-###############################################################
-#########################TARGET################################
-###############################################################
-alias a22='402nv.app  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
+##################################################################
+#########################TARGET###################################
+##################################################################
+alias a22='402neo.app  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
 #============================================================
 alias n4='402neo.app  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
 alias n5='500neo.app  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
@@ -178,15 +176,13 @@ alias n51='500neo14  -u ~/git/bTest/bPot/22DeoMuxOrg.vim'
 alias v82='vi82  -u ~/git/bTest/bPot/cc1CleanRC.vim'
 #============================================================
 alias svim='vim -u ~/.SpaceVim/vimrc'
-###############################################################
-
+##################################################################
 #============================================================
 alias g1='402nv.app  -u ~/git/bTest/sPot/galore.vim'
 alias g3='402nv.app  -u ~/git/bTest/sPot/g3fzf.vim'
 alias g4='402nv.app  -u ~/git/bTest/sPot/g4Kim.vim'
 #============================================================
-
-###############################################################
+##################################################################
 # alias vi1='vim  -u ~/git/bTest/sPot/galore.vim'
 # alias vi2='vim  -u ~/git/bTest/kDot/inkPreRc19.vim'
 # alias vi82='82vim  -u ~/git/bTest/kDot/inkPreRc19.vim'
@@ -214,12 +210,12 @@ alias def='deo $(fzf)'
 alias fde='de $(fzf --height 40%)'
 alias deless='deonvim NONE -u ~/git/bTest/kDot/kLess.vim'
 #export EDITOR="vim"
-export EDITOR="deonvim NONE -u ~/git/bTest/kDot/kMinit.vim"
+# export EDITOR="deonvim NONE -u ~/git/bTest/kDot/kMinit.vim"
+export EDITOR="402neo.app  -u ~/git/bTest/bPot/22DeoMuxOrg.vim"
 
-#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-alias b5deo='deo64nvim NONE -u /media/red/124Black/git/bTest/kDot/bMinit.vim'
-alias b124='deo64nvim NONE -u /media/red/124Black/git/bTest/kDot/bMinit.vim'
-
+###############################################################
+alias deo='deonvim  -u ~/git/bTest/kDot/kMinit.vim'
+###############################################################
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -285,17 +281,17 @@ alias ffc='fzf --preview="ccat --color=always {}"'
 alias ff1='fff --bind "f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
 #==============================================================
 alias ff3='fff --bind "f1:execute(vi {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
-#==============================================================
-alias ff4='fff --bind "f1:execute(deonvim NONE -u ~/git/bTest/kDot/kMinit.vim {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
-#==============================================================
+#==========================================================================================================
+alias ff2='fff --bind "f1:execute(402neo.app NONE -u ~/git/bTest/bPot/00DeoMuxOrg.vim {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort"'
+#==========================================================================================================
 
 
 #################FFERUM########################################
-#==============================================================
+#============================================================
 alias ffv='vim $(ffc)'
-alias ffe='de $(ffc)'
-alias ff2='d2 $(ffc)'
-#==============================================================
+alias ffe='s9 $(ffc)'
+alias ff4='n4 $(ffc)'
+#============================================================
 ###############################################################
 
 #==============================================================
@@ -305,7 +301,7 @@ _fzf_compgen_dir() {
 }
 
 #==============================================================
-ffd() {
+ffcd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf --preview 'tree -C {} | head -200' ) &&
@@ -313,7 +309,7 @@ ffd() {
 }
 
 #==============================================================
-fft() {
+ffct() {
   local dir
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf --preview 'tree -C {} | head -200') && cd "$dir"
 }
@@ -340,6 +336,7 @@ ffgshow() {
                 {}
 FZF-EOF"
 }
+
 #==============================================================
 ffglog() {
   hash=$(git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |  fzf | awk '{print $1}')
@@ -347,8 +344,17 @@ ffglog() {
   echo $hash
 }
 
-###############################################################
+#==========================================================================================
 fkill() {
+        pid=$(ps -ux | sed 1d | fzf -m | awk '{print $2}')
+
+        if [ "x$pid" != "x" ]
+        then
+                kill -${1:-9} $pid
+        fi
+}
+###############################################################
+ffkill() {
     local pid
     if [ "$UID" != "0" ]; then
         pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
@@ -405,24 +411,14 @@ extract1 () {
 ###############################################################
 
 
-
 #==========================================================================================
 function mkd() {
         mkdir -p "$@" && cd "$_";
 }
+
 #==========================================================================================
-function tre() {
+function tre4() {
         tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
-}
-
-#==========================================================================================
-fkill() {
-        pid=$(ps -ux | sed 1d | fzf -m | awk '{print $2}')
-
-        if [ "x$pid" != "x" ]
-        then
-                kill -${1:-9} $pid
-        fi
 }
 
 #==========================================================================================
@@ -433,19 +429,23 @@ autoload -U compinit && compinit
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 #zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #==========================================================================================
+#=========================WHY==============================================================
+#==========================================================================================
 bindkey -v
-bindkey '^R' history-incremental-search-backward
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^?' backward-delete-char
-bindkey '^H' backward-delete-char
-# Common emacs bindings for vi mode
-bindkey '\e[3~'   delete-char
-bindkey '^A'      beginning-of-line
-bindkey '^E'      end-of-line
-bindkey '^R'      history-incremental-pattern-search-backward
-# Tmux home/end
-bindkey '\e[1~'      beginning-of-line
-bindkey '\e[4~'      end-of-line
+# bindkey '^R' history-incremental-search-backward
+# bindkey '^R' history-incremental-pattern-search-backward
+# bindkey '^?' backward-delete-char
+# bindkey '^H' backward-delete-char
+# # Common emacs bindings for vi mode
+# bindkey '\e[3~'   delete-char
+# bindkey '^A'      beginning-of-line
+# bindkey '^E'      end-of-line
+# bindkey '^R'      history-incremental-pattern-search-backward
+# # Tmux home/end
+# bindkey '\e[1~'      beginning-of-line
+# bindkey '\e[4~'      end-of-line
+#==========================================================================================
+###########################################################################################
 # user-friendly command output
 export CLICOLOR=1
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
@@ -457,7 +457,6 @@ SAVEHIST=9000
 ###########################################################################################
 #=============================================================
 export ZPLUG_HOME=$HOME/.zplug
-# zplug initialization
 [[ ! -f $ZPLUG_HOME/init.zsh ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
 source $ZPLUG_HOME/init.zsh
 #=============================================================
@@ -467,12 +466,11 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "lib/history",      from:oh-my-zsh
 zplug "lib/key-bindings", from:oh-my-zsh
 zplug "lib/termsupport", from:oh-my-zsh
-#=============================================================
+zplug  "soimort/you-get"
 zplug "plugins/git", from:oh-my-zsh
 # zplug "plugins/history", from:oh-my-zsh
 # zplug "plugins/tmux", from:oh-my-zsh
 # zplug "plugins/z", from:oh-my-zsh
-
 #=============================================================
 #-???-source ~/.dotfiles/zsh/vi-mode.zsh
 zplug 'zsh-users/zsh-autosuggestions'
@@ -486,7 +484,7 @@ zplug "plugins/colored-man-pages", from:oh-my-zsh
 # zplug 'zdharma/fast-syntax-highlighting', defer:2, hook-load:'FAST_HIGHLIGHT=()'
 # zplug "unixorn/git-extra-commands", from:github
 
-#=============================================================
+#========================================================
 ###zplug 'modules/environment', from:prezto
 ###zplug 'modules/terminal', from:prezto
 ###zplug 'modules/directory', from:prezto
@@ -764,6 +762,7 @@ function prev() {
 
 #?? source ~/.config/up/up.sh
 
+
 ###################################TAR##############################################################################
 #-----DUDA-bdm-------
 # tar -P --listed-incremental=/media/red/124Black/TAR/TarTopX2Py/x2Snap.file -cJpf /media/red/124Black/TAR/TarTopX2Py/x2PyBack-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/kDot/x2PyCalc/ >> /dev/null 2>&1
@@ -782,6 +781,10 @@ function prev() {
 #----bPot------------------------------------------------------------------------------------------
 # tar -P --listed-incremental=/media/red/124Black/TAR/TarBPot/kBPot2Snap.file -cJpf /media/red/124Black/TAR/TarBPot/bPot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/bPot/
 ####################################################################################################################
+
+tar -P --listed-incremental=/media/red/250Black/TAR/TarRedConfig/RedConfig2Snap.file -cJpf /media/red/250Black/TAR/TarRedConfig/TarRedConfig-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/.config/
+tar -P --listed-incremental=/media/red/250Black/TAR/TarBPot/kBPot2Snap.file -cJpf /media/red/250Black/TAR/TarBPot/bPot2BCK-`date +%d-%b-%Y-%H-%M-%S`.tar.xz /home/red/git/bTest/bPot/
+
 
 set -o vi
 

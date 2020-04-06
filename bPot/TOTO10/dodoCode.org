@@ -1,0 +1,628 @@
+* DODO10 Code Examples
+
+with syntax checking, linting, autocompletion, quick documentation lookup,
+  tons of killer abbreviations, and plugins for every filetype under the sun,
+  vim approaches true IDE-status in both productivity, and startup time
+
+** ?? Run/highlight code using babel in org-mode
+** ## PYTHON ##############################################################################
+*** ==PyLea================================================================================
+#+BEGIN_SRC python
+import math
+Z = 111
+i = math.floor(Z / 2)
+
+while i > 1:
+        if Z % i == 0:
+                print i
+        i -= 1
+#+END_SRC
+*** ==PyBabel==============================================================================
+#+BEGIN_SRC python :results output
+
+import random
+random.seed(1)
+print("Hello World! Here's a random number: %f" % random.random())
+
+from sympy import *
+x, y, z = symbols("x y z")
+expr = cos(x) + 1
+expr.subs(x, y)
+expr = sin(2*x) + cos(2*x)
+expand_trig(expr)
+
+
+#+END_SRC
+
+#+RESULTS:
+
+*** ==PySympy==============================================================================
+#+BEGIN_SRC python
+import sympy
+from sympy import *
+
+x = Symbol('x')
+y = Symbol('y')
+sympy.pprint(simplify((x + x * y) / x))
+print('-1---------------------------------------------------')
+expr = x**3 + 4
+sympy.pprint(expr)
+print('-2---------------------------------------------------')
+tex = latex(expr)
+sympy.pprint(tex)
+print('-3---------------------------------------------------')
+d = Derivative(expr, x)
+sympy.pprint(d)
+print('-4---------------------------------------------------')
+r = d.doit()  # builds the derivative result (3*x**2)
+sympy.pprint(r)
+print('-5---------------------------------------------------')
+n1 = d.doit_numerically(5)  # 75.0000000000000
+sympy.pprint(n1)
+print('-6---------------------------------------------------')
+n2 = r.subs(x, 5)  # 75
+sympy.pprint(n2)
+#+END_SRC
+
+*** ==PyPlot==============================================================================
+#+BEGIN_SRC python :results drawer :async t :session py2session
+import numpy as np
+import matplotlib.pyplot as plt
+fig=plt.figure(facecolor='white')
+plt.hist(np.random.randn(500000), bins=100);
+plt.show()
+#+END_SRC
+
+*** ==PyPlotSave===========================================================================
+#+BEGIN_SRC python :results drawer :async t :session py2session
+import matplotlib, numpy
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+fig=plt.figure(figsize=(4,2))
+x=numpy.linspace(-15,15)
+plt.plot(numpy.sin(x)/x)
+fig.tight_layout()
+plt.savefig('python-matplot-fig.png')
+# plt.savefig('~/Pictures/python-matplot-fig.png')
+# return 'images/python-matplot-fig.png' # return filename to org-mode
+# return '~/Pictures/py-matplot-fig1.png'
+# plt.show('python-matplot-fig.png')
+#+END_SRC
+
+** ## RUBY ################################################################################
+#+BEGIN_SRC ruby
+require 'sqlite3'
+  db = SQLite3::Database.open "dodo10.db"
+  stm = db.prepare "SELECT * FROM Cars LIMIT 20"
+  rs = stm.execute
+  rs.each do |row|
+    puts row.join "\s"
+  end
+output = `ls`
+puts output
+
+system "bash", "-c", "cmp <( ls ~/bakBuk ) <( ls ~/bakBuk2 )"
+if $?.exitstatus == 0
+  puts "They are the same, yay!"
+else
+  puts "They are not the same"
+end
+
+system "sudo apt-get -y install vim"
+if $?.exitstatus > 0
+  puts "I failed to install Vim, I am very sorry :'("
+end
+#+END_SRC
+
+** ## PHP #################################################################################
+#+BEGIN_SRC php
+<?php
+
+$db = new SQLite3('dodo10.db');
+
+$results = $db->query('SELECT Name FROM Cars');
+while ($row = $results->fetchArray()) {
+        var_dump($row);
+}
+?>
+#+END_SRC
+
+** ## KOTLIN ##############################################################################
+#+BEGIN_SRC cpp
+fun printMessage(message: String): Unit {                               // 1
+    println(message)
+}
+fun sum(x: Int, y: Int): Int {                                          // 3
+    return x + y
+}
+fun main() {
+    printMessage("Hello")                                               // 5
+    println(sum(1, 2))                                                  // 9
+}
+** ## VIM #################################################################################
+"------------
+fun! MyTest2()
+      let result = 3
+      echo result
+      return result
+endf
+command! MyTest2 call MyTest2()
+:call MyTest2()
+"------------
+** ## BASH ################################################################################
+** Dir
+#+BEGIN_SRC bash :dir ~/
+  pwd
+  echo $USER
+  hostname -I
+
+#!/bin/bash
+function hello {
+   echo world!
+}
+hello
+
+function say {
+    echo $1
+}
+say "hello world!"
+#+END_SRC
+
+#+RESULTS:
+
+*** ==dodo10 ==============================================================================
+#+BEGIN_SRC python
+ls -al
+sqlite3 test.db  "create table n (id INTEGER PRIMARY KEY,f TEXT,l TEXT);"
+sqlite3 test.db  "insert into n (f,l) values ('john','smith');"
+sqlite3 test.db  "select * from n";
+
+sqlite3 dodo10.db  "select * from Cars";
+sqlite3 dodo10.db  "select * from people";
+#+END_SRC
+*** ==Bash1================================================================================
+#+BEGIN_SRC bash :dir ~/Desktop
+  pwd
+#+END_SRC
+
+#+RESULTS:
+
+
+** ## JAVA ################################################################################
+#+BEGIN_SRC cpp
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class jaHelloCl
+{
+        public static void main(String[] args)
+        {
+                Calendar calendar = GregorianCalendar.getInstance();
+                System.out.print(calendar.getTime());
+                System.out.println("swaziland");
+        }
+
+        public jaHelloCl() {
+                System.out.printf("servus");
+        }
+}
+#+END_SRC
+** ## PERL ################################################################################
+#+BEGIN_SRC perl
+#!/usr/bin/perl -w
+use DBI;
+use strict;
+use warnings;
+
+my $db = DBI->connect("dbi:SQLite:dodo10.db", "", "", {RaiseError => 1, AutoCommit => 1});
+my $all = $db->selectall_arrayref("SELECT * FROM cars");
+
+foreach my $row (@$all) {
+        my ($id, $first, $last) = @$row;
+        print "$id|$first|$last \n";
+}
+#+END_SRC
+** ## CPP #################################################################################
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+    int max = 100;
+    int primes[max];
+    int n_primes = 0;
+    int i;
+    for (i = 2; n_primes < max; i++) {
+        int j;
+        for (j = 0; j < n_primes; j++) {
+            if (i % primes[j] == 0) {
+                goto not_prime;
+            }
+        }
+        primes[n_primes] = i;
+        n_primes++;
+        not_prime: ;
+    }
+    /* Now display the list. */
+    printf ("The first %d primes are:\n", max);
+    for (i = 0; i < n_primes; i++) {
+        printf ("%4d ", primes[i]);
+        if (i % 10 == 9) {
+            printf ("\n");
+        }
+    }
+    printf ("\n");
+    return 0;
+}
+#+END_SRC
+** ## FORTRAN f90 ##################################################################################
+#+begin_src fortran
+    program hello
+
+    print *,"hello, world!"
+
+    stop
+
+    end program hello
+#+end_src
+
+#+begin_src fortran
+program arrayDotProduct
+
+   real, dimension(5) :: a, b
+   integer:: i, asize, bsize
+
+   asize = size(a)
+   bsize = size(b)
+
+   do i = 1, asize
+      a(i) = i
+   end do
+
+   do i = 1, bsize
+      b(i) = i*2
+   end do
+
+   do i = 1, asize
+      Print *, a(i)
+   end do
+
+   do i = 1, bsize
+      Print *, b(i)
+   end do
+
+   Print*, 'Vector Multiplication: Dot Product:'
+   Print*, dot_product(a, b)
+
+end program arrayDotProduct
+#+end_src
+
+** ## JavaScript ##########################################################################
+#+BEGIN_SRC javascript
+console.log("Hello, World!");
+"--------------------JSCONSOLE--------------------------------------------------
+const fs = require('fs');
+
+function buildTree(startPath) {
+  fs.readdir(startPath, (err, entries) => {
+    console.log(entries);
+  });
+}
+
+buildTree('/home/red/Documents');
+"----------------------------------------------------------------------
+"--------------------JSCONSOLE2-------------------------------------------------
+"----------------------------------------------------------------------
+const fs = require('fs');
+
+function buildTree(startPath) {
+  fs.readdir(startPath, (err, entries) => {
+    console.log(entries);
+    entries.forEach((file) => {
+      const path = `${startPath}/${file}`;
+
+      if (fs.lstatSync(path).isDirectory()) {
+        buildTree(path);
+      }
+    });
+  });
+}
+
+buildTree('/home/red/Documents');
+"----------------------------------------------------------------------
+"--------------------JSCONSOLE3Php----------------------------------------------
+"----------------------------------------------------------------------
+
+const fs = require('fs');
+const Path = require('path');
+
+function processFile(path) {
+  console.log(path);
+}
+
+function buildTree(startPath) {
+  fs.readdir(startPath, (err, entries) => {
+    entries.forEach((file) => {
+      const path = Path.join(startPath, file);
+
+      if (fs.lstatSync(path).isDirectory()) {
+        buildTree(path);
+      } else if (file.match(/\.php$/)) {
+        processFile(path);
+      }
+    });
+  });
+}
+
+buildTree('/home/red/git/bTest/DODO10/');
+"----------------------------------------------------------------------
+"--------------------JSCONSOl.pro.file----------------------------------------------
+"----------------------------------------------------------------------
+
+const fs = require('fs');
+function processFile(path) {
+  const text = fs.readFileSync(path, 'utf8');
+  text.split(/\r?\n/).forEach((line) => {
+    if (line.match('http:\/\/')) {
+      console.log(line.replace(/^\s+/, ''));
+      console.log(`${path}\n`);
+    }
+  });
+}
+
+processFile('/home/red/git/bTest/DODO10/p14Simple.py');
+"----------------------------------------------------------------------
+<script>
+      var greetings = ["hello", "greetings", "hey there", "hi", "howdy"];
+      var places = ["city", "country", "world", "solar system", "galaxy"];
+
+      function choice(t) {
+      return t[Math.floor(Math.random()*t.length)];
+      }
+
+      for (var i = 0; i < 10; i++) {
+      console.log(choice(greetings) + ", " + choice(places));
+      }
+    // Constructing an iterable object
+    var a = new Set([ 5, 10, 15, 20, 25 ]);
+    var b = new Set([ 1, 2, 3, 4, 5 ]);
+    var c = new Set([ 1, 3, 5, 7, 9 ]);
+    var d = new Set([ 2, 4, 6, 8, 10 ]);
+
+    // Calling from() function
+    A = Uint8Array.from(a);
+    B = Uint8Array.from(b);
+    C = Uint8Array.from(c);
+    D = Uint8Array.from(d);
+
+   // Printing new typedArray instance
+    document.write(A + "<br>");
+    document.write(B + "<br>");
+    document.write(C + "<br>");
+    document.write(D);
+
+</script>
+
+<script>
+function func() { return (5 * 19); }
+console.log(func());
+</script>
+
+var obj = (function() {
+   var privateField = 42;
+   var publicField = 'foobar';
+   function processInternals() { alert('Internal stuff: ' + privateField); }
+   function run() {
+   processInternals();
+   alert('Still private stuff: ' + privateField);
+   alert('Public stuff: ' + publicField);
+   }
+   return {
+   publicField: publicField,
+   run: run
+   };
+})();
+   obj.run() // three alerts: Internal, still private, public
+   obj.publicField // foobar
+   obj.processInternals() // Undefined
+   obj.privateField // Undefined
+var love = { firstName: 'Élodie', lastName: 'Porteneuve' };
+var useFirstName = true;
+(love[useFirstName ? 'firstName' : 'lastName']); // => "Élodie"
+#+end_src
+
+** ## OCaml ###################################################################################
+#+BEGIN_SRC ocaml
+print_string"hello ocaml\n";;
+#+end_src
+
+** ## haskell ###################################################################################
+#+BEGIN_SRC haskell
+import Control.Applicative
+import Database.SQLite.Simple
+import Database.SQLite.Simple.FromRow
+
+data TestField = TestField Int String deriving (Show)
+
+instance FromRow TestField where
+  fromRow = TestField <$> field <*> field
+
+main :: IO ()
+main = do
+  r <- query_ conn "SELECT * from cars" :: IO [TestField]
+  mapM_ print r
+  close conn
+#+END_SRC
+
+#+BEGIN_SRC haskell
+main :: IO ()
+main = putStrLn "Hello World!"
+#+END_SRC
+** ## LUA #################################################################################
+#+BEGIN_SRC python
+a = "Hello "
+b = "World"
+print("Concatenation of string a with b is ", a..b )
+print("Length of b is ",#b )
+print("Length of b is ",#"Test" )
+#+END_SRC
+
+
+** ## OCTAVE #################################################################################
+A simple example comes from chemistry and the need to obtain balanced
+chemical equations. Consider the burning of hydrogen and oxygen to produce water.
+H2 + O2 --> H2O
+
+The equation above is not accurate. The Law of Conservation of Mass
+requires that the number of molecules of each type balance on the left- and
+right-hand sides of the equation. Writing the variable overall reaction
+with individual equations for hydrogen and oxygen one finds:
+
+x1*H2 + x2*O2 --> H2O
+H: 2*x1 + 0*x2 --> 2
+O: 0*x1 + 2*x2 --> 1
+
+The solution in Octave is found in just three steps.
+#+BEGIN_SRC octave
+A = [ 2, 0; 0, 2 ];
+b = [ 2; 1 ];
+x = A \ b
+
+
+#+END_SRC
+
+** ## jython #################################################################################
+#+BEGIN_SRC jython
+class Hello:
+   def __init__(self, name="John Doe"):
+      self.name = name
+
+   def greeting(self):
+      print "Hello, %s" % self.name
+
+jane = Hello("Jane Doe")
+joe = Hello("Joe")
+default = Hello()
+
+jane.greeting()
+joe.greeting()
+default.greeting()
+
+from java.lang import Float, Double
+
+foo(Float(5.5))
+foo(Double(5.5))
+#+END_SRC
+**
+
+** ## R #################################################################################
+#+BEGIN_SRC R
+#++++++++++++++++++++++--NotWorking--+++++++++++++++++++++
+data1<-data.frame(island = c("A", "B", "B", "A", "A"), count = c(2, 5, 12, 2, 3))
+g1<-ggplot(data1) +  geom_boxplot(aes(x = factor(island), y = count))
+g1 + geom_path(x = c(1, 1, 2, 2), y = c(25, 26, 26, 25))
+
+data2 <- data.frame(x = c(1, 1, 2, 2), y = c(25, 26, 26, 25))
+
+ggplot(data = data1, aes(x = factor(island), y = count)) +
+  geom_boxplot() +
+  geom_path(data = data2, aes(x = x, y = y))
+
+#+++++++++++++++
+A = c(1, 5, 8, 17, 16, 3, 24, 19, 6)
+B = c(2, 16, 5, 7, 4, 7, 3)
+C = c(1, 1, 3, 7, 9, 6, 10, 13)
+D = c(2, 15, 2, 9, 7)
+junk = list(g1=A, g2=B, g3=C, g4=D)
+boxplot(junk)
+
+#+END_SRC
+
+** ## typescript #################################################################################
+#+BEGIN_SRC typescript
+function greeter(person) {
+    return "Hello, " + person;
+}
+
+let user = "Jane User";
+
+document.body.textContent = greeter(user);
+
+interface Person {
+    firstName: string;
+    lastName: string;
+}
+
+function greeter(person: Person) {
+    return "Hello, " + person.firstName + " " + person.lastName;
+}
+
+let user = { firstName: "Jane", lastName: "User" };
+
+document.body.textContent = greeter(user);
+
+Classes #
+#+END_SRC
+
+* ## TMUX #################################################################################
+name: sample
+root: ~/
+
+windows:
+  - stats:
+    - ssh stats@example.com
+    - tail -f /var/log/stats.log
+  - logs:
+      layout: main-vertical
+      panes:
+        - logs:
+          - ssh logs@example.com
+          - cd /var/logs
+          - tail -f development.log
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
+
+
+# Plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-open'
+set -g @plugin 'tmux-plugins/tmux-copycat'
+set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+set -g @plugin 'tmux-plugins/tmux-urlview'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+
+* ## clojure  #################################################################################
+First, set up cider-nrepl. (If you skip this step, only a subset of functionality will be available.)
+Install Fireplace using your favorite package manager, or use Vim's built-in package support:
+mkdir -p ~/.vim/pack/tpope/start
+cd ~/.vim/pack/tpope/start
+git clone https://tpope.io/vim/fireplace.git
+vim -u NONE -c "helptags fireplace/doc" -c q
+You might also want salve.vim for assorted static project support.
+
+42, 3.14159
+"Hello, World!"
+#"\d{3}-\d{3}-\d{4}"
+true, false
+(fn [name] (str "Hello, " name))
+((fn [name] (str "Hello, " name)) "ClojureScript")
+
+(def greeting
+(fn [name] (str "Hello, " name)))
+(greeting "functions!")
+
+;; ClojureScript
+(def message "Hello, World!")
+(def msg-length (.-length message))
+(def insult (.replace message #"World" "idiots"))
+
+

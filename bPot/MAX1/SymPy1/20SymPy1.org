@@ -1,0 +1,429 @@
+* TODO Checkboxes[50%][3/6]:
+    - [X] <localleader>cc             - toggle status
+    - [X] <localleader>cn or <CR>     - insert checkbox below
+    - [X] <localleader>cN or <C-S-CR> - insert checkbox above
+    - [ ] dxxxd <2020-02-03 Mon>  <localleader>sa     - insert date
+    - [ ] <2020-02-03 Mon>
+    - [ ] HALLO ORGA use <,,>
+
+* Lord of the Bullets:
+     1. The attack of the Rohirrim
+     2. Eowyn's fight with the witch king
+        + this was already my favorite scene in the book
+     - Elijah Wood :: He plays Frodo
+     - Sean Austin :: He plays Sam, Frodo's friend.
+
+* == CALCULUS =============================================================================
+
+# VIM syntax checking, linting, autocompletion, quick documentation lookup,
+# tons of killer abbreviations, and plugins for every filetype under the sun,
+# vim approaches true IDE-status in both productivity, and startup time
+
+** == PYTHON ==============================================================================
+
+#+BEGIN_SRC python
+
+import sympy
+from sympy import *
+x = Symbol('x')
+y = Symbol('y')
+print('-----------------------------------------------1--')
+a = sympy.limit(sin(x) / x, x, 0)
+sympy.pprint(a)
+a = sympy.limit(x ** x, x, 0)
+sympy.pprint(a)
+print('--------------------------------------------------')
+sympy.pprint(simplify((x + x * y) / x))
+expr = x**3 + 4
+print('-----------------------------------------------2--')
+sympy.pprint(expr)
+tex = latex(expr)
+print('-----------------------------------------------3--')
+sympy.pprint(tex)
+d = Derivative(expr, x)
+print('-----------------------------------------------4--')
+sympy.pprint(d)
+print('-----------------------------------------------5--')
+
+import sympy
+from sympy import *
+x = Symbol('x')
+y = Symbol('y')
+print('-----------------------------------------------1--')
+print('--------------------------------------------------')
+sympy.pprint(simplify((x + x * y) / x))
+print('-----------------------------------------------2--')
+expr = x**3 + 4
+sympy.pprint(expr)
+print('-----------------------------------------------3--')
+tex = latex(expr)
+sympy.pprint(tex)
+print('-----------------------------------------------4--')
+d = Derivative(expr, x)
+sympy.pprint(d)
+print('-----------------------------------------------5--')
+#+END_SRC
+
+*** ==PySympy==============================================================================
+#+BEGIN_SRC python
+import sympy
+from sympy import *
+x = Symbol('x')
+y = Symbol('y')
+sympy.pprint(simplify((x + x * y) / x))
+print('----------------------------------------------1--')
+print('-------------------------------------------------')
+expr = x**3 + 4
+sympy.pprint(expr)
+print('----------------------------------------------2--')
+tex = latex(expr)
+sympy.pprint(tex)
+print('----------------------------------------------3--')
+d = Derivative(expr, x)
+sympy.pprint(d)
+print('----------------------------------------------4--')
+r = d.doit()  # builds the derivative result (3*x**2)
+sympy.pprint(r)
+print('----------------------------------------------5--')
+n1 = d.doit_numerically(5)  # 75.0000000000000
+sympy.pprint(n1)
+print('----------------------------------------------6--')
+n2 = r.subs(x, 5)  # 75
+sympy.pprint(n2)
+#+END_SRC
+
+***==PyPlot==============================================================================
+#+BEGIN_SRC python
+import numpy as np
+import matplotlib.pyplot as plt
+fig=plt.figure(facecolor='white')
+plt.hist(np.random.randn(500000), bins=100);
+plt.show()
+#+END_SRC
+
+
+*** ==PySympy0=============================================================================
+
+#+BEGIN_SRC python
+import sympy
+from sympy import *
+x, y, z, t = symbols('x y z t')
+k, m, n = symbols('k m n', integer=True)
+f, g, h = symbols('f g h', cls=Function)
+
+# sympy.pprint(show_simplify((x**3 + x**2 - x - 1)/(x**2 + 2*x + 1)))
+print('----------------------------------------------------')
+sympy.pprint(simplify(sin(x)**2 + cos(x)**2))
+print('----------------------------------------------------')
+sympy.pprint(simplify((x**3 + x**2 - x - 1)/(x**2 + 2*x + 1)))
+print('----------------------------------------------------')
+sympy.pprint(simplify(gamma(x)/gamma(x - 2)))
+print('----------------------------------------------------')
+#+END_SRC
+
+*** ==PySympy1=============================================================================
+
+#+BEGIN_SRC python
+import sympy as sy
+h, z, e = sy.S('h z e'.split())
+equations = [
+    sy.Eq(z + h + e, 18),
+    sy.Eq(h - 6, 2 * z),
+    sy.Eq(e - 6, 3 * z),
+]
+print('-------------------------------------------------6--')
+print(sy.solve(equations))
+#+END_SRC
+
+*** ==PySympy2=============================================================================
+
+#+BEGIN_SRC python
+
+import sympy
+from sympy import *
+x = Symbol('x')
+y = Symbol('y')
+sympy.pprint(simplify((x + x * y) / x))
+print('-------------------------------------------------1--')
+expr = x**3 + 4
+sympy.pprint(expr)
+print('-------------------------------------------------2--')
+tex = latex(expr)
+sympy.pprint(tex)
+print('-------------------------------------------------3--')
+d = Derivative(expr, x)
+sympy.pprint(d)
+print('-------------------------------------------------4--')
+r = d.doit()  # builds the derivative result (3*x**2)
+sympy.pprint(r)
+print('-------------------------------------------------5--')
+n1 = d.doit_numerically(5)  # 75.0000000000000
+sympy.pprint(n1)
+print('-------------------------------------------------6--')
+n2 = r.subs(x, 5)  # 75
+sympy.pprint(n2)
+
+#+END_SRC
+
+
+*** ==PySympy3=============================================================================
+
+#+BEGIN_SRC python
+
+#------------------------------------------------------------------
+#--readthedocs--XXX1--Solve--4REPL---------------------------------
+#------------------------------------------------------------------
+
+import sympy
+from sympy import *
+a, b, c, x = sympy.symbols(('a', 'b', 'c', 'x'))
+z = Symbol('z')
+quadratic_equation = sympy.Eq(a * x**2 + b * x + c, 0)
+print '----------------------------------------------------0--'
+print '-------------------------------------------------------'
+sympy.pprint(quadratic_equation)
+print '----------------------------------------------------1--'
+sympy.pprint(sympy.solve(quadratic_equation))
+print '----------------------------------------------------2--'
+sympy.pprint(sympy.solve(quadratic_equation, x))
+print '---------------------------------------------------P3--'
+roots = sympy.solve(quadratic_equation, x)
+xplus, xminus = sympy.symbols(('x_{+}', 'x_{-}'))
+xplus = roots[0]
+xminus = roots[1]
+sympy.pprint(xplus)
+print '---------------------------------------------------M4--'
+sympy.pprint(xminus)
+print '--------------------------------------------------xP5--'
+xplus_solution = xplus.subs([(a, 1), (b, 2), (c, 3)])
+sympy.pprint(xplus_solution)
+print '--------------------------------------------------xM6--'
+xminus_solution = xminus.subs([(b, a), (c, a + z)])
+sympy.pprint(xminus_solution)
+print '-------------------------------------------------------'
+print '-------------------------------------------------------'
+
+#+END_SRC
+
+*** ==PySympy4=============================================================================
+
+#+BEGIN_SRC python
+#--readthedocs--XXX2--Solve-----------------------------------
+import sympy
+from sympy import *
+a, b, c, x = sympy.symbols(('a', 'b', 'c', 'x'))
+g = symbols('g', cls=Function)
+z = Symbol('z')
+y = Symbol('y')
+n = Symbol('n')
+q = Symbol('q')
+eq1 = Symbol('eq1')
+eq2 = Symbol('eq2')
+print '------------------------------------------------1--'
+print '---------------------------------------------------'
+eq1 = sympy.Eq(x + 2 * y, 0)
+sympy.pprint(eq1)
+print '------------------------------------------------2--'
+eq2 = sympy.Eq(x * y, z)
+sympy.pprint(eq2)
+print '------------------------------------------------3--'
+q = sympy.solve([eq1, eq2], [x, y])
+sympy.pprint(q)
+print '------------------------------------------------4--'
+n = (x + 1)**2
+sympy.pprint(n)
+print '------------------------------------------------5--'
+q = expand(n)
+sympy.pprint(q)
+print '---------------------------------------------------'
+#+END_SRC
+
+
+*** ==PySympy5=============================================================================
+
+#+BEGIN_SRC python
+
+import sympy
+from sympy import *
+a, b, c, x = sympy.symbols(('a', 'b', 'c', 'x'))
+z = Symbol('z')
+y = Symbol('y')
+n = Symbol('n')
+q = Symbol('q')
+g = symbols('g', cls=Function)
+f = symbols('f', cls=Function)
+print '------------------------------------------------1--'
+f = (x + 1)**2
+sympy.pprint(f)
+print '------------------------------------------------2--'
+a = expand(f)
+sympy.pprint(a)
+print '------------------------------------------------3--'
+g = factor(x**2*z + 4*x*y*z + 4*y**2*z)
+sympy.pprint(g)
+print '------------------------------------------------4--'
+g = factor_list(x**2*z + 4*x*y*z + 4*y**2*z)
+sympy.pprint(g)
+print '------------------------------------------------5--'
+g = factor(x**2*z + 4*x*y*z + 4*y**2*z)
+sympy.pprint(g)
+print '------------------------------------------------6--'
+g = factor_list(x**2*z + 4*x*y*z + 4*y**2*z)
+sympy.pprint(g)
+print '------------------------------------------------7--'
+g = expr = x*y + x - 3 + 2*x**2 - z*x**2 + x**3
+sympy.pprint(g)
+print '------------------------------------------------8--'
+g = cancel((x**2 + 2*x + 1)/(x**2 + x))
+sympy.pprint(g)
+print '------------------------------------------------9--'
+a = factor(g)
+sympy.pprint(a)
+print '-----------------------------------------------10--'
+a = apart(g)
+sympy.pprint(a)
+print '-----------------------------------------------11--'
+g = trigsimp(sin(x)**4 - 2*cos(x)**2*sin(x)**2 + cos(x)**4)
+sympy.pprint(g)
+print '-----------------------------------------------12--'
+g = expand_trig(sin(x + y))
+sympy.pprint(g)
+print '-----------------------------------------------13--'
+g = trigsimp(sin(x)*cos(y) + sin(y)*cos(x))
+sympy.pprint(g)
+print '-----------------------------------------------14--'
+#+END_SRC
+
+*** ==PySympyYYY===========================================================================
+
+#+BEGIN_SRC python
+import sympy
+from sympy import *
+# help ('print')
+help ('powsimp')
+a, b, c, x = sympy.symbols(('a', 'b', 'c', 'x'))
+z = Symbol('z')
+y = Symbol('y')
+k = Symbol('k')
+n = Symbol('n')
+m = Symbol('m')
+t = Symbol('t')
+q = Symbol('q')
+g = symbols('g', cls=Function)
+f = symbols('f', cls=Function)
+print '------------------------------------------------1--'
+f = (x + 1)**2
+sympy.pprint(f)
+print '------------------------------------------------2--'
+f =  powsimp(z**2*t**2)
+sympy.pprint(f)
+print '------------------------------------------------3--'
+f =  expand_power_exp(x**(a + b))
+sympy.pprint(f)
+print '------------------------------------------------4--'
+f =  expand_log(log(x*y))
+sympy.pprint(f)
+print '------------------------------------------------5--'
+f =  expand_log(log(x/y))
+sympy.pprint(f)
+print '------------------------------------------------6--'
+f =  expand_log(log(x**2))
+sympy.pprint(f)
+print '------------------------------------------------7--'
+f =  expand_log(log(x**n))
+sympy.pprint(f)
+print '------------------------------------------------8--'
+f =  expand_log(log(z*t))
+sympy.pprint(f)
+print '------------------------------------------------9--'
+f =  expand_log(log(z**2))
+sympy.pprint(f)
+print '-----------------------------------------------10--'
+f =  logcombine(log(x) + log(y))
+sympy.pprint(f)
+print '-----------------------------------------------11--'
+f =  logcombine(n*log(z), force=True)
+sympy.pprint(f)
+print '-----------------------------------------------12--'
+f =  trigsimp(sin(x)**4 - 2*cos(x)**2*sin(x)**2 + cos(x)**4)
+sympy.pprint(f)
+print '-----------------------------------------------13--'
+f =  expand_trig(sin(x + y))
+sympy.pprint(f)
+print '-----------------------------------------------14--'
+f =  trigsimp(sin(x)*cos(y) + sin(y)*cos(x))
+sympy.pprint(f)
+print '-----------------------------------------------15--'
+f =  factorial(n)
+sympy.pprint(f)
+print '-----------------------------------------------16--'
+f =  binomial(n, k)
+sympy.pprint(f)
+print '-----------------------------------------------17--'
+f =  gamma(z)
+sympy.pprint(f)
+print '-----------------------------------------------18--'
+f =  hyper([1, 2], [3], z)
+sympy.pprint(f)
+print '-----------------------------------------------19--'
+f =  tan(x).rewrite(sin)
+sympy.pprint(f)
+print '-----------------------------------------------20--'
+f =  factorial(x).rewrite(gamma)
+sympy.pprint(f)
+print '-----------------------------------------------21--'
+f =  expand_func(gamma(x + 3))
+sympy.pprint(f)
+print '-----------------------------------------------22--'
+f =  hyperexpand(hyper([1, 1], [2], z))
+sympy.pprint(f)
+print '-----------------------------------------------23--'
+f =  expr = meijerg([[1],[1]], [[1],[]], -z)
+sympy.pprint(f)
+print '-----------------------------------------------24--'
+f =  combsimp(factorial(n)/factorial(n - 3))
+sympy.pprint(f)
+print '-----------------------------------------------25--'
+f =  combsimp(binomial(n+1, k+1)/binomial(n, k))
+sympy.pprint(f)
+print '-----------------------------------------------26--'
+f =  gammasimp(gamma(x)*gamma(1 - x))
+sympy.pprint(f)
+print '-----------------------------------------------27--'
+#+END_SRC
+
+*** ==PySympy7=============================================================================
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+*** ==PySympy8=============================================================================
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+*** ==PySympy9=============================================================================
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+*** ==PySympy10============================================================================
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+*** ==PySympy11============================================================================
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+*** ==PySympy12============================================================================
+
+#+BEGIN_SRC python
+
+#+END_SRC

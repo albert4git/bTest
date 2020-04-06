@@ -1,0 +1,3 @@
+let l:bm_file_version = 1
+let l:bm_sessions = {'default': {'/home/red/git/bTest/sPot/s16TitanDeoLc.vim': [{'sign_idx': 9505, 'line_nr': 1780, 'content': '        nnoremap wq <C-w>q<CR>'},{'sign_idx': 9504, 'line_nr': 1777, 'content': '        nnoremap ee :ls<cr>:b<space>'},{'sign_idx': 9500, 'line_nr': 1786, 'content': '        "==xyz=='},{'sign_idx': 9502, 'line_nr': 1796, 'content': '        command! CD cd %:p:h'},],}}
+let l:bm_current_session = 'default'

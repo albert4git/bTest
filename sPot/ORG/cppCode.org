@@ -1,0 +1,66 @@
+#+BEGIN_SRC cpp
+
+#+END_SRC
+
+#+BEGIN_SRC c
+#include <stdio.h>
+int main()
+{
+      int var;
+      for (var =100; var>=10; var --)
+      {
+           printf("var: %d\n", var);
+           if (var==99)
+           {
+               break;
+           }
+      }
+     printf("Out of for-loop");
+     return 0;
+}
+#+END_SRC
+
+#+BEGIN_SRC c
+#include <stdio.h>
+int main()
+{
+     int num =0;
+     while(num<=100)
+     {
+        printf("value of variable num is: %d\n", num);
+        if (num==2)
+        {
+            break;
+        }
+        num++;
+     }
+     printf("Out of while-loop");
+     return 0;
+}
+#+END_SRC
+
+#+BEGIN_SRC c
+#include <stdio.h>
+int main()
+{
+     int i=2;
+     switch (i)
+     {
+          case 1:
+             printf("Case1 ");
+             break;
+          case 2:
+             printf("Case2 ");
+             break;
+          case 3:
+             printf("Case3 ");
+             break;
+          case 4:
+             printf("Case4 ");
+             break;
+          default:
+             printf("Default ");
+     }
+     return 0;
+}
+#+END_SRC

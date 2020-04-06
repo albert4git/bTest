@@ -1,0 +1,203 @@
+* ====CALCULUS=====
+
+# with syntax checking, linting, autocompletion, quick documentation lookup,
+# tons of killer abbreviations, and plugins for every filetype under the sun,
+# vim approaches true IDE-status in both productivity, and startup time
+
+** == PYTHON ==============================================================================
+*** ==PyLea================================================================================
+#+BEGIN_SRC python
+import math
+Z = 111
+i = math.floor(Z / 2)
+
+while i > 1:
+        if Z % i == 0:
+                print i
+        i -= 1
+#+END_SRC
+
+
+*** ==PySympy==============================================================================
+#+BEGIN_SRC python
+import sympy
+from sympy import *
+
+x = Symbol('x')
+y = Symbol('y')
+sympy.pprint(simplify((x + x * y) / x))
+print('-1---------------------------------------------------')
+expr = x**3 + 4
+sympy.pprint(expr)
+print('-2---------------------------------------------------')
+tex = latex(expr)
+sympy.pprint(tex)
+print('-3---------------------------------------------------')
+d = Derivative(expr, x)
+sympy.pprint(d)
+print('-4---------------------------------------------------')
+r = d.doit()  # builds the derivative result (3*x**2)
+sympy.pprint(r)
+print('-5---------------------------------------------------')
+n1 = d.doit_numerically(5)  # 75.0000000000000
+sympy.pprint(n1)
+print('-6---------------------------------------------------')
+n2 = r.subs(x, 5)  # 75
+sympy.pprint(n2)
+#+END_SRC
+
+***==PyPlot==============================================================================
+#+BEGIN_SRC python :results drawer :async t :session py2session
+import numpy as np
+import matplotlib.pyplot as plt
+fig=plt.figure(facecolor='white')
+plt.hist(np.random.randn(500000), bins=100);
+plt.show()
+#+END_SRC
+
+
+* *==OCTAVE===========================================================================OCTAVE=
+# http://www.hs-weingarten.de/~ertel/vorlesungen/mae/matheng-skript-1314.pdf
+
+# Here is how we specify a row vector in Octave:
+x = [1, 3, 2]
+
+# To specify a column vector, we simply replace the commas with semicolons:
+x = [1; 3; 2]
+
+#==OCTAVE============================================================================OCTAVE=
+x = [-2*pi:0.1:2*pi];
+y = sin(x);
+plot(x,y)
+z = cos(x);
+plot(x,z)
+plot(x,y)
+grid on
+waitfor(1)
+
+hold on
+close all
+
+
+#==OCTAVE=============================PrinterPNG=====================================OCTAVE=
+#Plot Points:
+disp("Print:")
+plot([0 1 2 3 4], [0 1 4 9 16], 'o')
+print -dpng octavePoint.png
+waitfor(1)
+
+#Plot x^1/2:
+f = @(x) (x.^(1/2));
+xs = [0 1 2 3 4 5];
+plot(xs, f(xs), 'o')
+waitfor(1)
+
+help plot
+
+#==OCTAVE============================================================================OCTAVE=
+# A simple example comes from chemistry and the need to obtain balanced
+# chemical equations. Consider the burning of hydrogen and oxygen to produce water.
+# H2 + O2 --> H2O
+# x1*H2 + x2*O2 --> H2O
+# H: 2*x1 + 0*x2 --> 2
+# O: 0*x1 + 2*x2 --> 1
+
+A = [ 2, 0; 0, 2 ];
+b = [ 2; 1 ];
+x = A \ b
+#==OCTAVE============================================================================OCTAVE=
+
+x = 0;
+for i = 1:15,
+      if round(i/2) == i/2,
+            x = x + i.^2;
+            x
+      end
+end
+
+#======================================================================================
+A = [1, 1, 2; 3, 5, 8; 13, 21, 34]
+disp("Transpose:")
+A'
+y = A(2,1)
+A(3,3) = 17
+disp("Det:")
+det(A)
+disp("Inv:")
+inv(A)
+b = [3 7 12]
+b = [3 7 12]'
+
+
+#======================================================================================
+#two matrices of the same size, you can perform element by element operations on them.
+#example, the following divides each element of A by the corresponding element in B:
+A = [1, 6, 3; 2, 7, 4]
+
+B = [2, 3, 2; 3, 2, 1]
+
+A ./ B
+
+a =5;
+C = a .^ B
+D = a ./ B
+# The colon operator (:) can be used to select all rows or columns from a matrix.
+# So, to select all the elements from the 2nd row, type
+
+A = [1, 6, 3; 2, 7, 4]
+A(2, :)
+A(:, 2)
+
+
+#==OCTAVE============================================================================OCTAVE=
+
+A = [1, 2, 3; 4, 5, 6; 7, 8, 9]
+x = diag(A)
+diag(x)
+
+fliplr(A)
+flipud(A)
+rot90(A)
+reshape(A, 1, 9)
+Y = rand(1, 6)
+
+#==OCTAVE============================================================================OCTAVE=
+# linspace(a, b, n) returns a vector with n values, such that the first element equals a,
+# the last element equals b and the difference between consecutive elements is constant. The last argument, n, is optional with default value 100.
+
+linspace(2, 4, 2)
+ans =
+  2   4
+
+linspace(2, 4, 4)
+ans =
+  2.0000   2.6667   3.3333   4.0000
+
+linspace(2, 4, 6)
+ans =
+  2.0000   2.4000   2.8000   3.2000   3.6000   4.0000
+
+
+# logspace(a, b, n) returns a vector with n values, such that the first element equals 10
+# {\displaystyle 10^{a}} 10^{a}, the last element equals 10 b {\displaystyle 10^{b}} 10^{b} and the ratio between consecutive elements is constant. The last argument, n is optional with default value 50.
+
+logspace(2, 4, 2)
+ans =
+    100   10000
+
+logspace(2, 4, 4)
+ans =
+  1.0000e+02   4.6416e+02   2.1544e+03   1.0000e+04
+
+logspace(2, 4, 5)
+ans =
+  1.0000e+02   3.1623e+02   1.0000e+03   3.1623e+03   1.0000e+04
+
+#==OCTAVE============================================================================OCTAVE=
+
+
+#======================================================================================
+*---PROCT---
+Venteliator
+**===XXX===============================================================================
+Covid19

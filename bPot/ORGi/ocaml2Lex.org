@@ -1,0 +1,68 @@
+13.6  A complete example
+
+The all-time favorite: a desk calculator. This program reads arithmetic expressions on standard input, one per line, and prints their values. Here is the grammar definition:
+
+        /* File parser.mly */
+        %token <int> INT
+        %token PLUS MINUS TIMES DIV
+        %token LPAREN RPAREN
+        %token EOL
+        %left PLUS MINUS        /* lowest precedence */
+        %left TIMES DIV         /* medium precedence */
+        %nonassoc UMINUS        /* highest precedence */
+        %start main             /* the entry point */
+        %type <int> main
+        %%
+        main:
+            expr EOL                { $1 }
+        ;
+        expr:
+            INT                     { $1 }
+          | LPAREN expr RPAREN      { $2 }
+          | expr PLUS expr          { $1 + $3 }
+          | expr MINUS expr         { $1 - $3 }
+          | expr TIMES expr         { $1 * $3 }
+          | expr DIV expr           { $1 / $3 }
+          | MINUS expr %prec UMINUS { - $2 }
+        ;
+
+Here is the definition for the corresponding lexer:
+
+        (* File lexer.mll *)
+        {
+        open Parser        (* The type token is defined in parser.mli *)
+        exception Eof
+        }
+        rule token = parse
+            [' ' '\t']     { token lexbuf }     (* skip blanks *)
+          | ['\n' ]        { EOL }
+          | ['0'-'9']+ as lxm { INT(int_of_string lxm) }
+          | '+'            { PLUS }
+          | '-'            { MINUS }
+          | '*'            { TIMES }
+          | '/'            { DIV }
+          | '('            { LPAREN }
+          | ')'            { RPAREN }
+          | eof            { raise Eof }
+
+Here is the main program, that combines the parser with the lexer:
+
+        (* File calc.ml *)
+        let _ =
+          try
+            let lexbuf = Lexing.from_channel stdin in
+            while true do
+              let result = Parser.main Lexer.token lexbuf in
+                print_int result; print_newline(); flush stdout
+            done
+          with Lexer.Eof ->
+            exit 0
+
+To compile everything, execute:
+
+        ocamllex lexer.mll       # generates lexer.ml
+        ocamlyacc parser.mly     # generates parser.ml and parser.mli
+        ocamlc -c parser.mli
+        ocamlc -c lexer.ml
+        ocamlc -c parser.ml
+        ocamlc -c calc.ml

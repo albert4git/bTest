@@ -1,0 +1,45 @@
+*=====CALCULUS=====
+
+
+
+**==PyPlot==============================================================================
+#+BEGIN_SRC python :results drawer :async t :session py2session
+import numpy as np
+import matplotlib.pyplot as plt
+fig=plt.figure(facecolor='white')
+plt.hist(np.random.randn(500000), bins=100);
+plt.show()
+#+END_SRC
+
+
+**==OCTAVE================================================================================
+# A simple example comes from chemistry and the need to obtain balanced
+# chemical equations. Consider the burning of hydrogen and oxygen to produce water.
+# H2 + O2 --> H2O
+# x1*H2 + x2*O2 --> H2O
+# H: 2*x1 + 0*x2 --> 2
+# O: 0*x1 + 2*x2 --> 1
+
+#+BEGIN_SRC octave
+A = [ 2, 0; 0, 2 ];
+b = [ 2; 1 ];
+x = A \ b
+
+#======================================================================================
+A = [1, 1, 2; 3, 5, 8; 13, 21, 34]
+#Transpose:
+A'
+#======================================================================================
+#two matrices of the same size, you can perform element by element operations on them.
+#example, the following divides each element of A by the corresponding element in B:
+A = [1, 6, 3; 2, 7, 4]
+
+B = [2, 7, 2; 7, 3, 9]
+
+A ./ B
+#======================================================================================
+#+END_SRC
+*---PROCT---
+Venteliator
+**===XXX===============================================================================
+Covid19

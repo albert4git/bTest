@@ -1,0 +1,128 @@
+* TODO Checkboxes[50%][3/6]:
+    - [X] <localleader>cc             - toggle status
+    - [X] <localleader>cn or <CR>     - insert checkbox below
+    - [X] <localleader>cN or <C-S-CR> - insert checkbox above
+    - [ ] dxxxd <2020-02-03 Mon>  <localleader>sa     - insert date
+    - [ ] <2020-02-03 Mon>
+    - [ ] HALLO ORGA use <,,>
+
+* Lord of the Bullets:
+     1. The attack of the Rohirrim
+     2. Eowyn's fight with the witch king
+        + this was already my favorite scene in the book
+     - Elijah Wood :: He plays Frodo
+     - Sean Austin :: He plays Sam, Frodo's friend.
+
+* == CALCULUS =============================================================================
+
+# VIM syntax checking, linting, autocompletion, quick documentation lookup,
+# tons of killer abbreviations, and plugins for every filetype under the sun,
+# vim approaches true IDE-status in both productivity, and startup time
+
+** == PYTHON ==============================================================================
+
+*** ==PySympyM0=============================================================================
+#+BEGIN_SRC python
+import sympy
+from sympy import *
+from sympy import MatrixSymbol, Matrix
+a, b, c, x = sympy.symbols(('a', 'b', 'c', 'x'))
+g = symbols('g', cls=Function)
+f = symbols('f', cls=Function)
+z = Symbol('z')
+print '---------------------------------------------1--'
+A = MatrixSymbol('A', 3, 3)
+sympy.pprint(A)
+sympy.pprint(A.as_explicit())
+print '---------------------------------------------2--'
+y = MatrixSymbol('y', 3, 1)
+sympy.pprint(y)
+sympy.pprint(y.as_explicit())
+print '---------------------------------------------3--'
+sympy.pprint((A.T*A).I * A * y)
+I = Identity(3)
+print '---------------------------------------------4--'
+sympy.pprint(I)
+print '---------------------------------------------5--'
+sympy.pprint(I.as_explicit())
+print '---------------------------------------------6--'
+#+END_SRC
+
+*** ==PySympyMM1=============================================================================
+#+BEGIN_SRC python
+import sympy
+from sympy import *
+from sympy import MatrixSymbol, Matrix
+a, b, c, x = sympy.symbols(('a', 'b', 'c', 'x'))
+g = symbols('g', cls=Function)
+f = symbols('f', cls=Function)
+z = Symbol('z')
+print '---------------------------------------------1--'
+A = MatrixSymbol('A', 3, 3)
+B = MatrixSymbol('A', 3, 3)
+C = MatrixSymbol('A', 3, 3)
+sympy.pprint(A)
+sympy.pprint(A.as_explicit())
+print '---------------------------------------------2--'
+sympy.pprint(MatAdd(A, B, C))
+
+#+END_SRC
+
+*** ==PySympyMM2============================================================================
+#+BEGIN_SRC python
+import sympy
+from sympy import *
+from sympy import MatrixSymbol, Matrix
+a, b, c, x = sympy.symbols(('a', 'b', 'c', 'x'))
+g = symbols('g', cls=Function)
+f = symbols('f', cls=Function)
+z = Symbol('z')
+print '---------------------------------------------1--'
+A = MatrixSymbol('A', 3, 3)
+sympy.pprint(A)
+sympy.pprint(A.as_explicit())
+print '---------------------------------------------2--'
+
+#+END_SRC
+
+*** ==PySympyMM3============================================================================
+#+BEGIN_SRC python
+
+#+END_SRC
+
+*** ==PySympyMM4============================================================================
+#+BEGIN_SRC python
+
+#+END_SRC
+
+
+*** ==PySympyMM5============================================================================
+#+BEGIN_SRC python
+
+#+END_SRC
+
+*** ==PySympyMM6============================================================================
+#+BEGIN_SRC python
+
+#+END_SRC
+
+*** ==PySympyMM7============================================================================
+#+BEGIN_SRC python
+
+#+END_SRC
+
+
+
+
+*** ==REST=TRASH============================================================================
+MatrixSymbol('X', 3, 3)
+# sympy.pprint(X)
+print '------------------------------------------------2--'
+MatrixSymbol('Y', 3, 3)
+# sympy.pprint(Y)
+print '------------------------------------------------2--'
+# Z=(X.T*X).I*Y
+# sympy.pprint((X.T*X).I*Y)
+print '------------------------------------------------3--'
+sympy.pprint(Matrix(X))
+print '---------------------------------------------------'

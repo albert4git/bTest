@@ -1,0 +1,235 @@
+#+BEGIN_SRC python
+* expandtab
+nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
+nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+
+* CtrlP
+
+nmap ; :CtrlPBuffer<CR>
+
+It’s worth showing a few settings for Ctrl-P. The following are the settings
+  I use which map it to ,t, put it at the top of the screen, hide unnecessary
+  files from the search results, and a few more things. Run :help
+  ctrlp-options to read more about them.
+
+let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
+
+* AAA
+| 3 | [?]#Linting   | :FZFFreshM | :SS                 |
+| 4 | [n]#Jedi      | :FZFMru    | :MAg                |
+| 5 | [x]#LSP       | :MGit      | :MMRg               |
+| 6 | [t]#Coc       | :MLibList  | :FindNonAscii       |
+| 7 | [x]#EasyAlign | :MPlugHelp | ?scope              |
+| 8 | [x]#leon      | :MTag      | :TagbarToggle       |
+| 9 | []#EndTO      | :MRU       | :AG mao ~/Documents |
+
+* ALIAS
+I aliased vim in my shell to record all my keystrokes into a log file:
+alias vim='vim -w ~/.vimlog "$@"'
+
+*Lexer
+file:///home/red/Desktop/WikiVim/Dr.%20Bunsen%20_%20Vim%20Croquet.html
+I wrote a crude lexer in Haskell to tokenize the keystrokes I collected into
+  individual vim commands. My lexer uses monoids to extract normal mode
+  commands from my log for further analysis. Here’s the source code for the
+  lexer:
+
+import qualified Data.ByteString.Lazy.Char8 as LC
+import qualified Data.List as DL
+import qualified Data.List.Split as LS
+import Data.Monoid
+import System.IO
+
+main = hSetEncoding stdout utf8 >>
+       LC.getContents >>= mapM_ putStrLn . process
+
+process =   affixStrip
+          . startsWith
+          . splitOnMode
+          . modeSub
+          . capStrings
+          . split mark
+          . preprocess
+
+subs = appEndo . mconcat . map (Endo . sub)
+
+sub (s,r) lst@(x:xs)
+    | s `DL.isPrefixOf` lst = sub'
+    | otherwise = x:sub (s,r) xs
+    where
+        sub' = r ++ sub (s,r) (drop (length s) lst)
+sub (_,_) [] = []
+
+preprocess =   subs meta
+             . DL.intercalate " "
+             . DL.words
+             . DL.unwords
+             . DL.lines
+             . LC.unpack
+
+splitOnMode = DL.concat . map (\el -> split mode el)
+
+startsWith = filter (\el -> mark `DL.isPrefixOf` el
+                         && el /= mark)
+
+modeSub = map (subs mtsl)
+
+split s r = filter (/= "") $ s `LS.splitOn` r
+
+affixStrip =   clean
+             . concat
+             . map (\el -> split mark el)
+
+capStrings = map (\el -> mark ++ el ++ mark)
+
+clean = filter (not . DL.isInfixOf "[M")
+
+(mark, mode, n) = ("-(*)-","-(!)-", "")
+meta = [("\"",n),
+        ("\\",n),
+        ("\195\130\194\128\195\131\194\189`",n),
+        ("\194\128\195\189`",n),
+        ("\194\128kb\ESC",n),
+        ("\194\128kb",n),
+        ("[>0;95;c",n),
+        ("[>0;95;0c",n),
+        ("\ESC",mark),
+        ("\ETX",mark),
+        ("\r",mark)]
+mtsl = [(":",mode),
+        ("A",mode),
+        ("a",mode),
+        ("I",mode),
+        ("i",mode),
+        ("O",mode),
+        ("o",mode),
+        ("v", mode),
+        ("/",mode),
+        ("\ENQ","⌃e"),
+        ("\DLE","⌃p"),
+        ("\NAK","⌃u"),
+        ("\EOT","⌃d"),
+        ("\ACK","⌃f"),
+        ("\STX","⌃f"),
+        ("\EM","⌃y"),
+        ("\SI","⌃o"),
+        ("\SYN","⌃v"),
+        ("\DC2","⌃r")]
+
+Here’s a sample of the data in its unprocessed form and its structure after lexing:
+
+cut -c 1-42 ~/.vimlog | tee >(cat -v;echo) | ./lexer
+`Mihere's some text^Cyyp$bimore ^C0~A.^C:w^M:q
+
+`M
+yyp$b
+0~
+
+My lexer reads from stdin and sends processed normal mode commands to stdout.
+  In the above example pipe, I use a process substitution to print a
+  representation of the unprocessed data on the second line and the resulting
+  output of the lexer on subsequent lines. Each line in the output of the
+  lexer represents a grouping of normal mode commands executed in sequence.
+  The lexer correctly determined that I started in normal mode by navigating
+  to a specific buffer using the `M mark, then typed here's some text in
+  insert mode, then copy and pasted the line and moved to the start of the
+  last word on the line using yyp$b, then entered additional text, and
+  finally navigating to the start of the line and capitalizing the first
+  character using 0~.
+
+* STRFTIME
+  :Tabularize / \+/
+  :sort
+  :%s/\d\{4}/\=strftime('%Y')-submatch(0)/
+
+* AWK
+:%!awk '/tcp/{print $2}'
+
+* Advanced insertion
+g?m   perform rot13 encoding on movement m
+n^A n^X     +n, -n to number under cursor
+gqm   format lines of movement m to fixed width
+:rce w↵     center lines in range r to width w
+:rle i↵     left align lines in range r with indent i
+:rri w↵     right align lines in range r to width w
+!mc↵  filter lines of movement m through command c
+n!!c↵ filter n lines through command c
+:r!c↵ filter range r lines through command c
+
+* minRC
+set nocompatible                " choose no compatibility with legacy vi
+syntax enable
+set encoding=utf-8
+set showcmd                     " display incomplete commands
+filetype plugin indent on       " load file type plugins + indentation
+
+"" Whitespace
+set nowrap                      " don't wrap lines
+set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
+set expandtab                   " use spaces, not tabs (optional)
+set backspace=indent,eol,start  " backspace through everything in insert mode
+
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
+
+* extraReg
+syntax match PythonArg /(.*\,\s*\zs\w\+\ze\s*=.*)/
+hi PythonArg guibg=blue
+Here is where you can start from:
+
+/([^,]\+,\s\(\w\+\)=.*)
+
+Decomposing:
+
+/(       start matching a (
+[^,]\+   match multiple characters that are not ,
+,\s      match a , and a space
+\(       start a matching group
+\w\+     match word characters
+\)       end the matching group
+=.*)      match an = and anything until the closing )
+
+
+* MATCH like polyglot??
+syn match pythonFunctionKeyword "\v\s{-}\zs\w+\ze\=(\=)@!(\_s)@!" display
+syn cluster pythonExpression add=pythonFunctionKeyword
+syn region pythonFunctionKwargs start=+(+ end=+)+ contains=@pythonExpression
+
+And the regex breakdown is very similar to @Wolfie's answer:
+
+\v      set to very magic mode
+\s{-}   capture whitespace, nongreedy
+\zs     start of the match (what to actually highlight)
+\w+     one or more alphanumeric character, underscore included
+\ze     stop matching; anything after this is delimiting only
+\=      one single equal sign
+(\=)@!  ...not followed by another equal sign
+(\_s)@! ...not followed by any whitespace or newline character
+
+** Match Optionally, I think you can use this to highlight function calls, using a matchgroup:
+syn region FCall matchgroup=FName start='[[:alpha:]_]\i*\s*(' end=')' contains=FCall,FCallKeyword
+syn match FCallKeyword /\i*\ze\s*=[^=]/ contained
+hi FCallKeyword ctermfg=yellow
+hi FName ctermfg=blue
+hallo
+hallo
+* TABLE2
++--------------+--------------+--------------+
+|      1       |      2       |      3       |
+|    a.txt     |    b.txt     |    c.txt     |
+|              |              |              |
++--------------+--------------+--------------+
+
+#+END_SRC

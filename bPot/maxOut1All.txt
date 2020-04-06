@@ -1,0 +1,8 @@
+
+load(maxOut . txt);
+batch("maxOut.txt");
+integrate(x/(x^3+1),x);
+diff(%,x);
+ratsimp(%);
+false = true;
+load("maxOut.txt");

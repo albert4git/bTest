@@ -1,0 +1,1156 @@
+cscope 15 /home/red/git/bTest/kDot/x3PyCalc -c 0000007241
+	@./502calculator.py
+
+1 from 
+	~tkinter
+ import *
+
+2 from 
+	~tkinter
+ import 
+messagebox
+
+4 
+	=calculator
+ = 
+	`Tk
+ ( )
+
+5 
+calculator
+ . 
+	`title
+ ( "CALCULATOR" )
+
+7 
+calculator
+ . 
+	`resizable
+ ( 0 , 1 )
+
+10 class 
+	cApplication
+ ( 
+Frame
+ ) :
+
+11 def 
+	$__init__
+ ( 
+self
+ , 
+master
+ , * 
+args
+ , ** 
+kwargs
+ ) :
+
+12 
+Frame
+ . 
+	`__init__
+ ( 
+self
+ , 
+master
+ , * 
+args
+ , ** 
+kwargs
+ )
+
+13 
+self
+ . 
+	`createWidgets
+ ( ) 
+	}
+
+15 def 
+	$replaceText
+ ( 
+self
+ , 
+text
+ ) :
+
+16 
+self
+ . 
+display
+ . 
+	`delete
+ ( 0 , 
+END
+ )
+
+17 
+self
+ . 
+display
+ . 
+	`insert
+ ( 0 , 
+text
+ ) 
+	}
+
+19 def 
+	$appendToDisplay
+ ( 
+self
+ , 
+text
+ ) :
+
+20 
+self
+ . 
+	=entryText
+ = 
+self
+ . 
+display
+ . 
+	`get
+ ( )
+
+21 
+self
+ . 
+	=textLength
+ = 
+	`len
+ ( 
+self
+ . 
+entryText
+ )
+
+23 if 
+self
+ . 
+entryText
+ == "0" :
+
+24 
+self
+ . 
+	`replaceText
+ ( 
+text
+ )
+
+26 
+self
+ . 
+display
+ . 
+	`insert
+ ( 
+self
+ . 
+textLength
+ , 
+text
+ ) 
+	}
+
+28 def 
+	$calculateExpression
+ ( 
+self
+ ) :
+
+29 
+self
+ . 
+	=expression
+ = 
+self
+ . 
+display
+ . 
+	`get
+ ( )
+
+30 
+self
+ . 
+	=expression
+ = 
+self
+ . 
+expression
+ . 
+	`replace
+ ( "%" , "/ 100" )
+
+33 
+self
+ . 
+	=result
+ = 
+	`eval
+ ( 
+self
+ . 
+expression
+ )
+
+34 
+self
+ . 
+	`replaceText
+ ( 
+self
+ . 
+result
+ )
+
+36 
+messagebox
+ . 
+	`showinfo
+ ( "ERROR"
+
+37 , "Invalid input" , 
+icon
+ = "warning" , 
+parent
+ = 
+calculator
+ ) 
+	}
+
+39 def 
+	$clearText
+ ( 
+self
+ ) :
+
+40 
+self
+ . 
+	`replaceText
+ ( "0" ) 
+	}
+
+42 def 
+	$createWidgets
+ ( 
+self
+ ) :
+
+43 
+self
+ . 
+	=display
+ = 
+	`Entry
+ (
+
+44 
+self
+ ,
+
+45 
+font
+ = ( "Helvetica" , 16 ) ,
+
+46 
+borderwidth
+ = 0 ,
+
+47 
+relief
+ = 
+RAISED
+ ,
+
+48 
+justify
+ = 
+RIGHT
+ )
+
+49 
+self
+ . 
+display
+ . 
+	`insert
+ ( 0 , "0" )
+
+50 
+self
+ . 
+display
+ . 
+	`grid
+ ( 
+row
+ = 0 , 
+column
+ = 0 , 
+columnspan
+ = 5 )
+
+53 
+self
+ . 
+	=sevenButton
+ = 
+	`Button
+ (
+
+54 
+self
+ ,
+
+55 
+font
+ = ( "Helvetica" , 11 ) ,
+
+56 
+text
+ = "7" ,
+
+57 
+borderwidth
+ = 0 ,
+
+58 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "7" ) )
+
+59 
+self
+ . 
+sevenButton
+ . 
+	`grid
+ ( 
+row
+ = 1 , 
+column
+ = 0 , 
+sticky
+ = "NWNESWSE" )
+
+61 
+self
+ . 
+	=eightButton
+ = 
+	`Button
+ (
+
+62 
+self
+ ,
+
+63 
+font
+ = ( "Helvetica" , 11 ) ,
+
+64 
+text
+ = "8" ,
+
+65 
+borderwidth
+ = 0 ,
+
+66 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "8" ) )
+
+67 
+self
+ . 
+eightButton
+ . 
+	`grid
+ ( 
+row
+ = 1 , 
+column
+ = 1 , 
+sticky
+ = "NWNESWSE" )
+
+69 
+self
+ . 
+	=nineButton
+ = 
+	`Button
+ (
+
+70 
+self
+ ,
+
+71 
+font
+ = ( "Helvetica" , 11 ) ,
+
+72 
+text
+ = "9" ,
+
+73 
+borderwidth
+ = 0 ,
+
+74 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "9" ) )
+
+75 
+self
+ . 
+nineButton
+ . 
+	`grid
+ ( 
+row
+ = 1 , 
+column
+ = 2 , 
+sticky
+ = "NWNESWSE" )
+
+77 
+self
+ . 
+	=timesButton
+ = 
+	`Button
+ (
+
+78 
+self
+ ,
+
+79 
+font
+ = ( "Helvetica" , 11 ) ,
+
+80 
+text
+ = "*" ,
+
+81 
+borderwidth
+ = 0 ,
+
+82 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "*" ) )
+
+83 
+self
+ . 
+timesButton
+ . 
+	`grid
+ ( 
+row
+ = 1 , 
+column
+ = 3 , 
+sticky
+ = "NWNESWSE" )
+
+85 
+self
+ . 
+	=clearButton
+ = 
+	`Button
+ (
+
+86 
+self
+ ,
+
+87 
+font
+ = ( "Helvetica" , 11 ) ,
+
+88 
+text
+ = "C" ,
+
+89 
+borderwidth
+ = 0 ,
+
+90 
+command
+ = lambda : 
+self
+ . 
+	`clearText
+ ( ) )
+
+91 
+self
+ . 
+clearButton
+ . 
+	`grid
+ ( 
+row
+ = 1 , 
+column
+ = 4 , 
+sticky
+ = "NWNESWSE" )
+
+94 
+self
+ . 
+	=fourButton
+ = 
+	`Button
+ (
+
+95 
+self
+ ,
+
+96 
+font
+ = ( "Helvetica" , 11 ) ,
+
+97 
+text
+ = "4" ,
+
+98 
+borderwidth
+ = 0 ,
+
+99 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "4" ) )
+
+100 
+self
+ . 
+fourButton
+ . 
+	`grid
+ ( 
+row
+ = 2 , 
+column
+ = 0 , 
+sticky
+ = "NWNESWSE" )
+
+102 
+self
+ . 
+	=fiveButton
+ = 
+	`Button
+ (
+
+103 
+self
+ ,
+
+104 
+font
+ = ( "Helvetica" , 11 ) ,
+
+105 
+text
+ = "5" ,
+
+106 
+borderwidth
+ = 0 ,
+
+107 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "5" ) )
+
+108 
+self
+ . 
+fiveButton
+ . 
+	`grid
+ ( 
+row
+ = 2 , 
+column
+ = 1 , 
+sticky
+ = "NWNESWSE" )
+
+110 
+self
+ . 
+	=sixButton
+ = 
+	`Button
+ (
+
+111 
+self
+ ,
+
+112 
+font
+ = ( "Helvetica" , 11 ) ,
+
+113 
+text
+ = "6" ,
+
+114 
+borderwidth
+ = 0 ,
+
+115 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "6" ) )
+
+116 
+self
+ . 
+sixButton
+ . 
+	`grid
+ ( 
+row
+ = 2 , 
+column
+ = 2 , 
+sticky
+ = "NWNESWSE" )
+
+118 
+self
+ . 
+	=divideButton
+ = 
+	`Button
+ (
+
+119 
+self
+ ,
+
+120 
+font
+ = ( "Helvetica" , 11 ) ,
+
+121 
+text
+ = "/" ,
+
+122 
+borderwidth
+ = 0 ,
+
+123 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "/" ) )
+
+124 
+self
+ . 
+divideButton
+ . 
+	`grid
+ ( 
+row
+ = 2 , 
+column
+ = 3 , 
+sticky
+ = "NWNESWSE" )
+
+126 
+self
+ . 
+	=percentageButton
+ = 
+	`Button
+ (
+
+127 
+self
+ ,
+
+128 
+font
+ = ( "Helvetica" , 11 ) ,
+
+129 
+text
+ = "%" ,
+
+130 
+borderwidth
+ = 0 ,
+
+131 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "%" ) )
+
+132 
+self
+ . 
+percentageButton
+ . 
+	`grid
+ ( 
+row
+ = 2 , 
+column
+ = 4 , 
+sticky
+ = "NWNESWSE" )
+
+135 
+self
+ . 
+	=oneButton
+ = 
+	`Button
+ (
+
+136 
+self
+ ,
+
+137 
+font
+ = ( "Helvetica" , 11 ) ,
+
+138 
+text
+ = "1" ,
+
+139 
+borderwidth
+ = 0 ,
+
+140 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "1" ) )
+
+141 
+self
+ . 
+oneButton
+ . 
+	`grid
+ ( 
+row
+ = 3 , 
+column
+ = 0 , 
+sticky
+ = "NWNESWSE" )
+
+143 
+self
+ . 
+	=twoButton
+ = 
+	`Button
+ (
+
+144 
+self
+ ,
+
+145 
+font
+ = ( "Helvetica" , 11 ) ,
+
+146 
+text
+ = "2" ,
+
+147 
+borderwidth
+ = 0 ,
+
+148 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "2" ) )
+
+149 
+self
+ . 
+twoButton
+ . 
+	`grid
+ ( 
+row
+ = 3 , 
+column
+ = 1 , 
+sticky
+ = "NWNESWSE" )
+
+151 
+self
+ . 
+	=threeButton
+ = 
+	`Button
+ (
+
+152 
+self
+ ,
+
+153 
+font
+ = ( "Helvetica" , 11 ) ,
+
+154 
+text
+ = "3" ,
+
+155 
+borderwidth
+ = 0 ,
+
+156 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "3" ) )
+
+157 
+self
+ . 
+threeButton
+ . 
+	`grid
+ ( 
+row
+ = 3 , 
+column
+ = 2 , 
+sticky
+ = "NWNESWSE" )
+
+159 
+self
+ . 
+	=minusButton
+ = 
+	`Button
+ (
+
+160 
+self
+ ,
+
+161 
+font
+ = ( "Helvetica" , 11 ) ,
+
+162 
+text
+ = "-" ,
+
+163 
+borderwidth
+ = 0 ,
+
+164 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "-" ) )
+
+165 
+self
+ . 
+minusButton
+ . 
+	`grid
+ ( 
+row
+ = 3 , 
+column
+ = 3 , 
+sticky
+ = "NWNESWSE" )
+
+167 
+self
+ . 
+	=equalsButton
+ = 
+	`Button
+ (
+
+168 
+self
+ ,
+
+169 
+font
+ = ( "Helvetica" , 11 ) ,
+
+170 
+text
+ = "=" ,
+
+171 
+borderwidth
+ = 0 ,
+
+172 
+command
+ = lambda : 
+self
+ . 
+	`calculateExpression
+ ( ) )
+
+173 
+self
+ . 
+equalsButton
+ . 
+	`grid
+ ( 
+row
+ = 3 , 
+column
+ = 4 , 
+sticky
+ = "NWNESWSE" , 
+rowspan
+ = 2 )
+
+176 
+self
+ . 
+	=zeroButton
+ = 
+	`Button
+ (
+
+177 
+self
+ ,
+
+178 
+font
+ = ( "Helvetica" , 11 ) ,
+
+179 
+text
+ = "0" ,
+
+180 
+borderwidth
+ = 0 ,
+
+181 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "0" ) )
+
+182 
+self
+ . 
+zeroButton
+ . 
+	`grid
+ ( 
+row
+ = 4 , 
+column
+ = 0 , 
+columnspan
+ = 2 , 
+sticky
+ = "NWNESWSE" )
+
+184 
+self
+ . 
+	=dotButton
+ = 
+	`Button
+ (
+
+185 
+self
+ ,
+
+186 
+font
+ = ( "Helvetica" , 11 ) ,
+
+187 
+text
+ = "." ,
+
+188 
+borderwidth
+ = 0 ,
+
+189 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "." ) )
+
+190 
+self
+ . 
+dotButton
+ . 
+	`grid
+ ( 
+row
+ = 4 , 
+column
+ = 2 , 
+sticky
+ = "NWNESWSE" )
+
+192 
+self
+ . 
+	=plusButton
+ = 
+	`Button
+ (
+
+193 
+self
+ ,
+
+194 
+font
+ = ( "Helvetica" , 11 ) ,
+
+195 
+text
+ = "+" ,
+
+196 
+borderwidth
+ = 0 ,
+
+197 
+command
+ = lambda : 
+self
+ . 
+	`appendToDisplay
+ ( "+" ) )
+
+198 
+self
+ . 
+plusButton
+ . 
+	`grid
+ ( 
+row
+ = 4 , 
+column
+ = 3 , 
+sticky
+ = "NWNESWSE" ) 
+	}
+
+201 
+	=app
+ = 
+	`Application
+ ( 
+calculator
+ ) . 
+	`grid
+ ( )
+
+202 
+calculator
+ . 
+	`mainloop
+ ( )
+
+
+	@
+1
+.
+0
+1
+19
+./502calculator.py

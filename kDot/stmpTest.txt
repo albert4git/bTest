@@ -1,9 +1,0 @@
-timeStmpTest.txt
-
-:Author: red
-:Email: red@red-Swift-SF113-31
-:Date: 2019-04-07 19:27
-
-
-"    Created:            So 07 Apr 2019 03:52:27  CEST
-"    Last Modified:      So 07 Apr 2019 07:28:17  CEST

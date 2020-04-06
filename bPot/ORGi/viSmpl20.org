@@ -1,0 +1,103 @@
+* VIM SAMPLE
+** tmux plugins
+https://github.com/tmux-plugins
+** vim-test & SLIME
+" Add vim-test and tslime to vim plugins.
+Plug 'janko/vim-test'
+Plug 'jgdavey/tslime.vim'
+
+...
+
+" Configure vim-test to execute test command using tslime
+let test#strategy = "tslime"
+
+" Configure <CR> aka the Return key to run my test file.
+nmap <CR> :TestFile<CR>
+" I'm still figuring out which test commands make the most sense
+" in my workflow. Right now, this feels pretty good.
+nmap <leader><CR> :TestLast<CR>
+
+* Mini TMUX.conf
+# better prefix key
+set -g prefix C-a
+bind C-a send-prefix
+# better splitting
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+# less colourful status
+set -g status-bg colour240
+set -g status-fg white
+# 256 colors support
+set -g default-terminal "screen-256color"
+# sane scrolling
+set -g mouse on
+# list of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+# TMUX plugin manager (keep at the bottom of tmux.conf)
+run -b '~/.tmux/plugins/tpm/tpm'
+
+* rspec tmux
+Tying it all together
+
+First install vim-rspec and tslime.vim using Vundle:
+
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'jgdavey/tslime.vim'
+
+Add the following to your .vimrc:
+
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+
+This tells vim-rspec to use Send_to_Tmux to run the selected specs.
+
+Finally, all this wouldn’t be of much use if we couldn’t run it at the
+  press of a key. Add these keybindings to your .vimrc (this step is
+  unnecessary if you’re using thoughtbot/dotfiles):
+
+" vim-rspec mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+Thats all you have to do! The first time you run a spec this way, you will be
+  asked to input the names of your tmux session, window and pane (protip, you
+  can tab-complete these). Every subsequent time, your tests will just
+  magically run in the desired pane without you ever needing to leave vim.
+  Bonus
+
+You can completely customize the command that gets sent to your tmux pane.
+  For example, to run the specs using Spring you would use
+
+let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
+
+* What is YADR?
+sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh `"
+Always be sure to run rake update after pulling to ensure plugins are updated
+
+* virtualenv sand20py
+    rename app directory git mv baseproject newapp
+    rename source files sed -i 's/baseproject/newapp/g' $(grep -lr baseproject .)
+    sudo pip3 install virtualenv
+    create env virtualenv -p python3 djangoEnv3
+    activate env:
+      source djangoEnv3/bin/activate
+      deactivate
+
+    pip3 install -r ./requirements.txt
+    create RSA keys:
+      openssl genrsa -out rsakey.pem openssl rsa -in rsakey.pem -pubout > rsakey.pub
+    migrate dB python:
+      manage.py migrate
+    create admin python
+      manage.py createsuperuser
+    build frontend
+      cd frontend && npm i && npm run build && cd -
+
+sudo -u postgres psql 
+create user alf with encrypted password 'apass';
+grant all privileges on database tutorial to alf;
+
+psql -Ualf -dapass -h127.0.0.1 -W
