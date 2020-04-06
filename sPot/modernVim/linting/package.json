@@ -10,6 +10,6 @@
   "author": "Drew Neil",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^3.19.0"
+    "eslint": "^6.8.0"
   }
 }
